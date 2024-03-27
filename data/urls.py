@@ -25,7 +25,8 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('inputimg/', views.inputimg),
+    path('inputimg/', views.inputimg, name="inputimg"),
+    path('upload/', views.upload),
     path('capture/', views.capture_input_image, name='capture'),
     path('find-matching-faces/', views.find_matching_faces, name='find_matching_faces'),
 ]

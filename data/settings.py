@@ -38,18 +38,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
     'dom'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+    'http://127.0.0.1:8181',
+]
+CORS_ALLOW_HEADERS = [
+    'x-csrf-token',
+    'content-type',
+    'accept',
+]
+
 
 ROOT_URLCONF = 'data.urls'
 
@@ -130,6 +144,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Media files (uploaded by users)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'dom', 'media')
+
+IMAGE_FOLDER_NAME = 'capture_image' 
+IMAGE_CAPTURE_PATH = os.path.join(BASE_DIR, 'dom', IMAGE_FOLDER_NAME)
+
+IMAGE_FOLDER_NAME = 'upload_image' 
+IMAGE_UPLOAD_PATH = os.path.join(BASE_DIR, 'dom', IMAGE_FOLDER_NAME)
 
 
 # Default primary key field type

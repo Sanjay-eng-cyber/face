@@ -13,17 +13,23 @@ from django.http import HttpResponseBadRequest
 import json
 import numpy as np
 import base64
+from datetime import datetime
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.http import JsonResponse
 
 def index(request):
     return render(request, 'index.html')
 
+def upload(request):
+    return render(request, 'upload.html')
+
+@api_view(['POST'])
 def inputimg(request):
     if request.method == 'POST':
         try:
-            # Get the list of uploaded images
             images = request.FILES.getlist('images')
-
-            # Iterate over each uploaded image
+            # print("This is images **********", images)
             for image in images:
                 img = face_recognition.load_image_file(image)
                 face_locations = face_recognition.face_locations(img)
@@ -43,62 +49,93 @@ def inputimg(request):
                 with connections['default'].cursor() as cursor:
                     cursor.execute("INSERT INTO image (image, face_encoding, face_locations) VALUES (%s, %s, %s)", [image, face_encoding, face_locations])
             
-            # Redirect or render a response after processing all images
-            # return HttpResponseRedirect('/success/')
-            return render(request, 'success.html')
+              # Return a success response
+            return JsonResponse({'message': 'Images processed successfully'})
+            # return render(request, 'success.html')
         
         except Exception as e:
+           
             # Handle exceptions
             print("Error:", e)
+            return JsonResponse({'error': str(e)}, status=500)
     
-    return render(request, 'upload.html')
+    # return render(request, 'upload.html')
+    return JsonResponse({'error': 'Method not allowed'}, status=405)
 
 
+
+@api_view(['POST'])
 def capture_input_image(request):
+    permitted_extensions = ['.png', '.jpg', '.jpeg','.webp','.jfif']
     if request.method == 'POST':
         if 'imageData' in request.POST:
-            # print(request.FILES)
-
-            # Get the image data from the request
             image_data = request.POST.get('imageData', '')
+            # print('************** capture image', image_data)
             _, encoded = image_data.split(',', 1)
             decoded = base64.b64decode(encoded)
 
-            # Save the decoded image to a file
-            with open('captured_image.jpg', 'wb') as f:
+            if not os.path.exists(settings.IMAGE_CAPTURE_PATH):
+                os.makedirs(settings.IMAGE_CAPTURE_PATH)
+            
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            image_name = f"image_{timestamp}.jpg"
+                
+            input_image_path = os.path.join(settings.IMAGE_CAPTURE_PATH, image_name)
+            with open(input_image_path, 'wb') as f:
                 f.write(decoded)
-
-            # Process the captured image using your face recognition code
-            input_image_path = 'captured_image.jpg'
+                
             matched_images = find_matching_faces(input_image_path)
-            return render(request, 'output.html', {'matched_images': matched_images})
+            # return render(request, 'output.html', {'matched_images': matched_images})
+            return JsonResponse({'matched_images': matched_images})
+
 
 
         elif 'imageUpload' in request.FILES:
             uploaded_file = request.FILES.get('imageUpload')
             image_data = uploaded_file.read()
-            with open('uploaded_image.jpg', 'wb') as f:
+            
+            
+               # Ensure the folder exists, create it if it doesn't
+            if not os.path.exists(settings.IMAGE_UPLOAD_PATH):
+                os.makedirs(settings.IMAGE_UPLOAD_PATH)
+            file_name, file_extension = os.path.splitext(uploaded_file.name)
+            if file_extension.lower() not in permitted_extensions:
+                return HttpResponse("Only PNG, JPG, webp and JPEG extensions are allowed for image uploads.")
+
+            # Save the uploaded image to the custom folder
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            image_name = f"image_{timestamp}{file_extension}"
+            
+            file_path = os.path.join(settings.IMAGE_UPLOAD_PATH, image_name)
+            
+            with open(file_path, 'wb') as f:
                 f.write(image_data)
-            input_image_path = 'uploaded_image.jpg'
+                
+            # with connections['default'].cursor() as cursor:
+            #     cursor.execute("INSERT INTO image (upload_image) VALUES (%s)", [image_name])
+
+
+            input_image_path = file_path  # Use the path where the image is saved
             matched_images = find_matching_faces(input_image_path)
-           
-            return render(request, 'output.html', {'matched_images': matched_images})
+            return JsonResponse({'matched_images': matched_images})
+
+            # return render(request, 'output.html', {'matched_images': matched_images})
 
         else:
-            return HttpResponse('Invalid request method or missing image data')
+            return JsonResponse({'error': 'Invalid request method or missing image data'}, status=400)
+            # return HttpResponse('Invalid request method or missing image data')
 
     else:
-        return HttpResponse('Invalid request method')
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+        # return HttpResponse('Invalid request method')
     
 def find_matching_faces(input_image_path):
-    # Check if the input image file exists
     if not os.path.isfile(input_image_path):
         print(f"Error: The input image file '{input_image_path}' does not exist.")
         return []
 
-    # Load the input image
-    input_image = face_recognition.load_image_file(input_image_path)
-    
+    input_image = face_recognition.load_image_file(input_image_path)    
     input_face_locations = face_recognition.face_locations(input_image)
     input_face_encodings = face_recognition.face_encodings(input_image, input_face_locations)
 
@@ -110,20 +147,14 @@ def find_matching_faces(input_image_path):
     for row in rows:
        
         try:
-            # Decode Base64 encoded strings
-            face_encodings_db = json.loads((row[1]))
-      
-            # Performing Face Recognition
+            face_encodings_db = json.loads((row[1]))      
             for input_encoding in input_face_encodings:
-                # print('input_encoding..***',input_encoding)
-                matches = face_recognition.compare_faces(face_encodings_db, input_encoding, tolerance=0.45)
-                face_distances = face_recognition.face_distance(face_encodings_db, input_encoding)
-                # print('face_distances**********',face_distances);
-
-                # print('maches**********', matches)
-                # print('matches:', matches)
+                matches = face_recognition.compare_faces(face_encodings_db, input_encoding, tolerance=0.48)
                 if True in matches:
-                    matched_images.append(row[0]) 
+                    image_name = row[0]
+                    if image_name not in matched_images:  
+                        # print("Matched image found:", image_name)
+                        matched_images.append(image_name)
         except Exception as e:
             print("Error:", e)
             
