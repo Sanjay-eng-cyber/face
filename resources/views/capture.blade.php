@@ -100,7 +100,7 @@
                         matchedImagesContainer.innerHTML = '';
                         if (data.matched_images.length > 0) {
                             data.matched_images.forEach(function(imageUrl) {
-                                var fullImageUrl = '/static/' + imageUrl;
+                                var fullImageUrl = 'http://127.0.0.1:8000/media/' + imageUrl;
                                 var imgElement = document.createElement('img');
                                 imgElement.src = fullImageUrl;
                                 imgElement.alt = 'Matched Image';
