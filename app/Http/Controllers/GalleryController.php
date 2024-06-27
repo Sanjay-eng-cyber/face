@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Upload;
+use App\Models\Event; // Assuming your Event model is named Event
+
 class GalleryController extends Controller
 {
     public function index()
@@ -21,17 +23,8 @@ class GalleryController extends Controller
 
         ]);
     
-        // Storage::makeDirectory('public/images/upload/');
         if ($request->hasFile('images')) {
-            // foreach ($request->file('images') as $image) {
-            //     $filename = $image->getClientOriginalName();
-            //     // dd($filename);
-            //     $path = $image->storeAs('public/images/upload/', $filename);
-            //     $upload = new Upload(); 
-            //     $upload->images = $filename;
-            //     $upload->save();
-            // }
-    
+      
             try {
                 $responseDataArray = [];
     
@@ -74,7 +67,7 @@ class GalleryController extends Controller
     
         if ($request->hasFile('imageUpload')) {
             $mainImgFilename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $request->file('imageUpload')->getClientOriginalExtension();
-    
+            
             try {
                 $response = Http::attach(
                     'imageUpload', 
@@ -82,6 +75,7 @@ class GalleryController extends Controller
                     $mainImgFilename 
                 )->post('http://127.0.0.1:8000/capture/');
                 $responseData = $response->json();
+                //dd($responseData);
                     return view('upload_success', ['responseData' => $responseData]);
     
             } catch (\Exception $e) {
@@ -89,26 +83,26 @@ class GalleryController extends Controller
             }
         }
     
-        // if ($request->filled('imageData')) {
+        if ($request->filled('imageData')) {
             
-        //     $imageData = $request->input('imageData');  
+            $imageData = $request->input('imageData');  
 
-        //     try {
-        //         $response = Http::attach(
-        //             'imageData', 
-        //             file_get_contents($request->file('imageData')->getRealPath()), 
-        //             $imageData
-        //         )->post('http://127.0.0.1:8000/capture/');
+            try {
+                $response = Http::attach(
+                    'imageData', 
+                    file_get_contents($request->file('imageData')->getRealPath()), 
+                    $imageData
+                )->post('http://127.0.0.1:8000/capture/');
     
-        //         $responseData = $response->json();
-        //         return view('upload_success', ['responseData' => $responseData]);
+                $responseData = $response->json();
+                return view('upload_success', ['responseData' => $responseData]);
     
-        //     } catch (\Exception $e) {
-        //         // Handle exceptions
-        //         return view('upload_error', ['error' => $e->getMessage()]);
-        //     }
+            } catch (\Exception $e) {
+                // Handle exceptions
+                return view('upload_error', ['error' => $e->getMessage()]);
+            }
             
-        // }
+        }
     
         return redirect()->back()->with('error', 'No image data provided.');
     }
@@ -116,7 +110,27 @@ class GalleryController extends Controller
 
 
 
-    
+    public  function event(){
+        return view('frontend.event.index');
+    }
+
+    public  function eventstore(Request $request){
+      // dd($request->all());
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id', // Validate user_id exists in the users table
+
+        ]);
+
+          // Create a new Event instance
+          $event = new Event();
+          $event->name = $request->input('name');
+          $event->user_id = $request->input('user_id'); // Assign the user_id from the form data
+
+        $event->save();
+        return redirect()->route('dashboard')->with('success', 'Event created successfully!');
+    }
+
 
     
 }

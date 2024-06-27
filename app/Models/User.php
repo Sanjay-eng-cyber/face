@@ -11,7 +11,21 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+    
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+    
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
