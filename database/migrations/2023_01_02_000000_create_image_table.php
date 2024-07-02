@@ -11,24 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('image', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('event_id')->references('id')->on('events');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('cms_users'); // Update to reference cms_users
-            $table->string('image_name');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('image');
             $table->longText('face_encoding');
             $table->longText('face_locations');
             $table->timestamps();
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('image');
     }
 };

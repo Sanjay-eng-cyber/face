@@ -55,26 +55,26 @@ class UploadController extends Controller
 
 
 
-    if ($request->hasFile('imageData')) {
+    // if ($request->hasFile('imageData')) {
         
-        $imageData = $request->input('imageData');  
+    //     $imageData = $request->input('imageData');  
 
-        try {
-            $response = Http::attach(
-                'imageData', 
-                file_get_contents($request->file('imageData')->getRealPath()), 
-                $imageData
-            )->post('http://127.0.0.1:8000/capture/');
+    //     try {
+    //         $response = Http::attach(
+    //             'imageData', 
+    //             file_get_contents($request->file('imageData')->getRealPath()), 
+    //             $imageData
+    //         )->post('http://127.0.0.1:8000/capture/');
 
-            $responseData = $response->json();
-            return view('upload_success', ['responseData' => $responseData]);
+    //         $responseData = $response->json();
+    //         return view('upload_success', ['responseData' => $responseData]);
 
-        } catch (\Exception $e) {
-            // Handle exceptions
-            return view('upload_error', ['error' => $e->getMessage()]);
-        }
+    //     } catch (\Exception $e) {
+    //         // Handle exceptions
+    //         return view('upload_error', ['error' => $e->getMessage()]);
+    //     }
         
-    }
+    // }
 
         return redirect()->back()->with('error', 'No image data provided.');
     }

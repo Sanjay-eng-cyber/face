@@ -11,24 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('cms_users'); // Update to reference cms_users
-            $table->string('image_name');
-            $table->longText('face_encoding');
-            $table->longText('face_locations');
+            $table->string('name');
+            // $table->string('url')->unique();
             $table->timestamps();
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('events');
     }
 };
