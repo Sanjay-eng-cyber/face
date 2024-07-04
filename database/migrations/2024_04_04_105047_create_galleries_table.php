@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('cms_users'); // Update to reference cms_users
+            $table->string('image_url');
             $table->string('image_name');
             $table->longText('face_encoding');
             $table->longText('face_locations');
