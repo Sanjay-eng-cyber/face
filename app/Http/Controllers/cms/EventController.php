@@ -15,28 +15,108 @@ class EventController extends Controller
 {
     public function index()
     {
-            // $events = Event::all();
-            // dd($events);
-        return view('backend.event.index');
+        $events = Event::latest()->paginate(10);
+        return view('backend.event.index', compact('events'));
+    }
+
+    public function show($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('backend.event.show', compact('event'));
+    }
+
+    public function create()
+    {
+        return view('backend.event.create');
     }
 
     public function store(Request $request)
     {
         // Validate the request data
         $request->validate([
-            'name' => 'required|string|max:255',
-            // 'user_id' => 'required|exists:users,id', 
+            'name' => 'required|string|min:3|max:30',
+            'link_visibility' => 'required|in:1,0',
+            'date' => 'required|date',
+            'descriptions' => 'required|string|min:3|max:20000',
         ]);
 
         // Create a new Event instance
         $event = new Event();
         $event->name = $request->name;
-        $event->user_id = $request->user_id;
-        // $event->url = Str::random(10); 
-        $event->save();
-
-        // Redirect to the gallery index page with the event ID as a parameter
-        return redirect()->route('backend.gallery.index', ['eventId' => $event->id]);
+        $event->link_visibility = $request->link_visibility;
+        $event->date = $request->date;
+        $event->descriptions = $request->descriptions;
+        if ($event->save()) {
+            return redirect()->route('backend.events.index')->with(
+                [
+                    "message" => "Event Added Successfully", "alert-type" => "success"
+                ]
+            );
+        } else {
+            return redirect()->back()->with([
+                "message" => "Something went wrong",
+                "alert-type" => "error"
+            ]);
+        }
     }
 
+    public function edit($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('backend.event.edit', compact('event'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Validate the request data
+        $request->validate([
+            'name' => 'required|string|min:3|max:30',
+            'link_visibility' => 'required|in:1,0',
+            'date' => 'required|date',
+            'descriptions' => 'required|string|min:3|max:20000',
+        ]);
+
+        // Create a new Event instance
+        $event = Event::findOrFail($id);
+        $event->name = $request->name;
+        $event->link_visibility = $request->link_visibility;
+        $event->date = $request->date;
+        $event->descriptions = $request->descriptions;
+        if ($event->save()) {
+            return redirect()->route('backend.events.index')->with(
+                [
+                    "message" => "Event Update Successfully", "alert-type" => "success"
+                ]
+            );
+        } else {
+            return redirect()->back()->with([
+                "message" => "Something went wrong",
+                "alert-type" => "error"
+            ]);
+        }
+    }
+
+    public function delete($id)
+    {
+        $event = Event::findOrFail($id);
+        if ($event->delete()) {
+            return redirect()->route('backend.events.index')->with(
+                [
+                    "message" => "Event Deleted Successfully", "alert-type" => "success"
+                ]
+            );
+        } else {
+            return redirect()->route('backend.events.index')->with(
+                [
+                    "message" => "Something Went Wrong", "alert-type" => "error"
+                ]
+            );
+        }
+    }
+
+    public function gallery($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('backend.event.gallery', compact('event'));
+    }
 }

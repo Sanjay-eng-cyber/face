@@ -39,10 +39,17 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/user/print/{user_id}', 'App\Http\Controllers\cms\UserController@pdf')->name('backend.user.print');
 
         Route::post('/user/add/subscription/{user_id}', 'App\Http\Controllers\cms\UserController@createSubscription')->name('backend.user.subscription.create');
-  
-  
-        Route::get('/event/index', [EventController::class, 'index'])->name('backend.events.index');
-        Route::post('/event/store', [EventController::class, 'store'])->name('backend.events.store');
+
+
+        Route::get('/events/', [EventController::class, 'index'])->name('backend.events.index');
+        Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
+        Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
+        Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
+        Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');
+        Route::post('/event/update/{id}', [EventController::class, 'update'])->name('backend.event.update');
+        Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
+        Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
+
 
         Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
         Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');

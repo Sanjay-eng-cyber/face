@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('cms_users'); // Update to reference cms_users
             $table->string('name');
-            // $table->string('url')->unique();
+            $table->date('date');
+            $table->text('descriptions');
+            $table->boolean('link_visibility')->default(1);
             $table->timestamps();
         });
     }
