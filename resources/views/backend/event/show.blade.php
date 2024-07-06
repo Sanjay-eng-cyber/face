@@ -25,6 +25,25 @@
                 </div>
             </div>
 
+
+            <div class="statbox widget box box-shadow my-1">
+                <div class="widget-header">
+                    <div class="row  mb-1">
+                       
+                        <div class="col-12 mb-2  mt-2 ">
+                            <div class="" style="font-weight: bold;font-size:24px;padding-bottom:20px" >Find a matching image from your collection</div>
+                            @if($event->link_visibility == 1)
+                                <a href="http://127.0.0.1:8181/upload/{{$event->id}}" target="_blank" style="color:blue">
+                                    http://127.0.0.1:8181/upload/{{$event->id}}
+                                </a>
+                            @else
+                                <span>Link is not available</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="info statbox widget box box-shadow">
                 <div class="row widget-header">
                     <div class="col-md-12">

@@ -27,12 +27,16 @@
             <div class="statbox widget box box-shadow temp-a col-xl-12">
                 <div class="row m-0">
                     <div class="col-12">
-                        <form class="mt-3" method="POST" action="#" enctype="multipart/form-data" autocomplete="off">
+                        <form class="mt-3" method="POST" action="{{ route('backend.gallery.store') }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
+                            @csrf
+                            <input type="hidden" name="event_id" value="{{ $event->id }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+
                             <div class="form-group mb-12 row">
                                 <div class="col-xl-6 col-md-12 col-sm-12">
                                     <label for="image" class="">Images</label>
-                                    <input type="file" class="form-control" id="image" required name="image" multiple>
+                                    <input type="file" class="form-control" id="image"  required  name="image_name[]" multiple>
                                     @if ($errors->has('name'))
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif

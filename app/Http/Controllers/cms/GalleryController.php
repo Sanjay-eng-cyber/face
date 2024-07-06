@@ -35,7 +35,7 @@ class GalleryController extends Controller
     
     public function store(Request $request)
     {
-    //dd($request->all());
+   // dd($request->all());
         $request->validate([
             'image_name.*' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048', 
         ]);
@@ -55,6 +55,7 @@ class GalleryController extends Controller
                 ]);
             
                 $responseData = $response->json();
+                dd($responseData);
                 $responseDataArray[] = $responseData;
             }
             

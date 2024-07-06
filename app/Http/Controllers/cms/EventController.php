@@ -22,6 +22,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
+      //  dd($event);
         return view('backend.event.show', compact('event'));
     }
 
