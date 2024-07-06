@@ -55,12 +55,12 @@ class GalleryController extends Controller
                 ]);
             
                 $responseData = $response->json();
-                dd($responseData);
+              //  dd($responseData);
                 $responseDataArray[] = $responseData;
             }
             
         
-            return view('upload.index', ['responseDataArray' => $responseDataArray]);
+            return view('backend.img-upload-success', ['responseDataArray' => $responseDataArray]);
         } catch (\Exception $e) {
             return view('upload_error', ['error' => $e->getMessage()]);
         }

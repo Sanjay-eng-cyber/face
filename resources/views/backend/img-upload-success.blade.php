@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>uploaded successfully</h1>
+
+    {{-- <a class="btn btn-info"
+    href="{{ route('backend.event.gallery', $event->id) }}">Back to gallery</a> --}}
 </body>
 </html>

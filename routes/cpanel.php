@@ -57,7 +57,6 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('/upload', [UploadController::class, 'index'])->name('backend.upload.index');
         Route::post('/upload/store', [UploadController::class, 'store'])->name('backend.upload.store');
-
         Route::get('/upload/{eventid}', [UploadController::class, 'show'])->name('upload.show');
 
     });
