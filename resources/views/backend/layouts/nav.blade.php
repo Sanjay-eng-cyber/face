@@ -14,7 +14,7 @@
           <ul class="navbar-nav theme-brand flex-row  text-center blue-color">
 
               <li class="nav-item theme-text w-auto">
-                
+
               </li>
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
@@ -53,8 +53,9 @@
                           <div class="media mx-auto">
                               {{-- <img src="assets/img/90x90.svg" class="img-fluid mr-2" alt="avatar"> --}}
                               <div class="media-body">
-                                  <h5>{{ ucfirst(auth()->user()->name) }}</h5>
-                                  <h5>{{ ucfirst(auth()->user()->role) }}</h5>
+                                Admin
+                                  {{-- <h5>{{ ucfirst(auth()->user()->name) }}</h5>
+                                  <h5>{{ ucfirst(auth()->user()->role) }}</h5> --}}
                                   <!-- <p>Project Leader</p> -->
                               </div>
                           </div>
@@ -101,7 +102,7 @@
                           aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
-                    
+
                               <svg class=" {{ URL::current() == url('/') ? 'svg-color' : '' }} xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 576 512">
                                   <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
@@ -156,8 +157,8 @@
                     </a>
                 </li>
 
-             
-               
+
+
 
 
               </ul>
