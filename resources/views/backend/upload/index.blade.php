@@ -50,10 +50,14 @@
             </div>
         </div>
     </div>
-    <div id="matchedImagesContainer">
-        <!-- Matched images will be displayed here -->
-    </div>
 
+    
+
+    <div class="container pt-3">
+    <div class="row row-cols-xl-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1" id="matchedImagesContainer">
+        <!-- Images will be appended here -->
+        </div>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -141,16 +145,21 @@
                             console.log('Appending image:', data.matched_images[key]); // Log each image name
                             var imagename =  data.matched_images[key];
                             imagename.forEach(function (imageObject) {
-                              //  console.log('Name:', imageObject.name); // Log the image name
-                                //console.log('URL:', imageObject.url); // Log the image URL
+                                console.log('Name:', imageObject.name); // Log the image name
+                                console.log('URL:', imageObject.url); // Log the image URL
 
-                            var fullImageUrl = 'http://127.0.0.1:8000' + imageObject.url;
-                            var imgElement = document.createElement('img');
-                            imgElement.src = fullImageUrl;
-                            imgElement.alt = 'Matched Image';
-                            imgElement.style.maxWidth = '400px';
-                            imgElement.style.maxHeight = '400px';0
-                            matchedImagesContainer.appendChild(imgElement);
+                                var fullImageUrl = 'http://127.0.0.1:8000' + imageObject.url;
+                                var imgElement = document.createElement('img');
+                                imgElement.src = fullImageUrl;
+                                imgElement.alt = 'Matched Image';
+                                imgElement.className = 'img-fluid'; // Add img-fluid class
+
+
+                                var colElement = document.createElement('div');
+                                colElement.className = 'col';
+                                colElement.appendChild(imgElement);
+
+                                document.getElementById('matchedImagesContainer').appendChild(colElement);
                             })
                             
                         });
