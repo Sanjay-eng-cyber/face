@@ -140,9 +140,11 @@
                         Object.keys(data.matched_images).forEach(function (key) {
                             console.log('Appending image:', data.matched_images[key]); // Log each image name
                             var imagename =  data.matched_images[key];
-                            imagename.forEach(function (imageName) {
+                            imagename.forEach(function (imageObject) {
+                              //  console.log('Name:', imageObject.name); // Log the image name
+                                //console.log('URL:', imageObject.url); // Log the image URL
 
-                              var fullImageUrl = 'http://127.0.0.1:8000/media/' + imageName;
+                            var fullImageUrl = 'http://127.0.0.1:8000' + imageObject.url;
                             var imgElement = document.createElement('img');
                             imgElement.src = fullImageUrl;
                             imgElement.alt = 'Matched Image';
