@@ -41,7 +41,8 @@
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12">
                                     <label for="date" class="">Date</label>
-                                    <input type="date" class="form-control" id="date" required name="date" value="{{old('date')}}" >
+                                    <input type="date" class="form-control" id="date" required name="date"
+                                        value="{{ old('date') }}">
                                     @if ($errors->has('date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('date') }}</div>
                                     @endif
@@ -49,11 +50,20 @@
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label for="link_visibility" class="">Link Visibility</label><br>
 
-                                    <label for="yes" class="">Yes</label>
-                                    <input type="radio" id="yes" name="link_visibility" value="1" required><br>
+                                    {{-- <label for="yes" class="">Yes</label>
+                                    <input type="radio" id="yes" name="link_visibility" value="1" style="margin-top: 20%" required><br>
 
                                     <label for="no" class="">No</label>
-                                    <input type="radio" id="no" name="link_visibility" value="0" required>
+                                    <input type="radio" id="no" name="link_visibility" value="0" required> --}}
+                                    <div class="radio-container">
+                                        <input type="radio" id="yes" name="link_visibility" value="1" required>
+                                        <label for="yes">Yes</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="link_visibility" value="0" required>
+                                        <label for="no">No</label>
+                                    </div>
                                     @if ($errors->has('link_visibility'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link_visibility') }}
                                         </div>

@@ -51,13 +51,24 @@
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label for="link_visibility" class="">Link Visibility</label><br>
 
-                                    <label for="yes" class="">Yes</label>
+                                    {{-- <label for="yes" class="">Yes</label>
                                     <input type="radio" id="yes" name="link_visibility" value="1"
                                         {{ $event->link_visibility == 1 ? 'checked' : '' }} required><br>
 
                                     <label for="no" class="">No</label>
                                     <input type="radio" id="no" name="link_visibility" value="0"
-                                        {{ $event->link_visibility == 0 ? 'checked' : '' }} required>
+                                        {{ $event->link_visibility == 0 ? 'checked' : '' }} required> --}}
+                                    <div class="radio-container">
+                                        <input type="radio" id="yes" name="link_visibility" value="1"
+                                            {{ $event->link_visibility == 1 ? 'checked' : '' }} required>
+                                        <label for="yes">Yes</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="link_visibility" value="0"
+                                            {{ $event->link_visibility == 0 ? 'checked' : '' }} required>
+                                        <label for="no">No</label>
+                                    </div>
                                     @if ($errors->has('link_visibility'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link_visibility') }}
                                         </div>
