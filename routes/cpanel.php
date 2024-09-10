@@ -59,5 +59,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::post('/upload/store', [UploadController::class, 'store'])->name('backend.upload.store');
         Route::get('/upload/{eventid}', [UploadController::class, 'show'])->name('upload.show');
 
+        Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
+
     });
 });
