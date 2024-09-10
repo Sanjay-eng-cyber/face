@@ -31,20 +31,18 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-12 row">
-                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2" id="email-section" >
-                                   <div >
-                                        <div class="mb-3" style="display: flex;align-items: center;justify-content: space-between;">
+                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2"  >
+                                    <div>
+                                        <div class="mb-3">
                                             <label for="name" class="">Email</label>
-                                            <div class="d-flex     align-items-center">
-                                                <button type="button" class="btn btn-secondary" id="add-email-btn">Add More Email</button>
-                                            </div>
                                         </div>
-                                        <input type="email" class="form-control" placeholder="Enter Email" minlength="3"
-                                            maxlength="30" required name="email" value="{{ old('email') }}">
+                                        <input type="email" class="form-control" placeholder="Enter Email" required name="email" 
+                                        value="{{ old('email') }}" multiple>
                                         @if ($errors->has('email'))
                                             <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                         @endif
-                                   </div>
+                                    </div>
+                                    
 
                                   
                                 </div>
@@ -67,24 +65,22 @@
     </div>
 @endsection
 @section('js')
-<script>
+{{-- <script>
+     <div class="d-flex     align-items-center">
+                                                <button type="button" class="btn btn-secondary" id="add-email-btn">Add More Email</button>
+                                            </div>
     document.getElementById('add-email-btn').addEventListener('click', function() {
-        // Get the email section div
         const emailSection = document.getElementById('email-section');
-
-        // Create a new div for additional email input
         const newEmailDiv = document.createElement('div');
         newEmailDiv.classList.add('mt-2');
 
-        // Add a new email input field
         newEmailDiv.innerHTML = `
             <input type="email" class="form-control mt-2" placeholder="Enter Email" minlength="3" maxlength="30" required name="email[]">
         `;
 
-        // Append the new input to the email section
         emailSection.appendChild(newEmailDiv);
     });
-</script>
+</script> --}}
     {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
     </script>
     <script>
