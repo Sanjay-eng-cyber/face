@@ -28,7 +28,9 @@
 
     @include('frontend.layouts.footer')
 
+    <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
 
 
     @yield('js')
