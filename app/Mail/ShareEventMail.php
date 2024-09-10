@@ -16,9 +16,11 @@ class ShareEventMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-        //
+        // dd($data);
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +29,7 @@ class ShareEventMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Share Event Mail',
+            subject: $this->data->email_subject,
         );
     }
 
@@ -39,6 +41,13 @@ class ShareEventMail extends Mailable
         return new Content(
             markdown: 'mail.share-event-mail',
         );
+    }
+
+    public function build()
+    {
+        return $this->with([
+            'data' => $this->data,
+        ]);
     }
 
     /**

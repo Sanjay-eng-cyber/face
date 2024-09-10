@@ -27,32 +27,45 @@
             <div class="statbox widget box box-shadow temp-a col-xl-12">
                 <div class="row m-0">
                     <div class="col-12">
-                        <form class="mt-3" method="POST" action="#"
+                        <form class="mt-3" method="POST" action="{{ route('share.event.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-12 row">
-                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2"  >
-                                    <div>
-                                        <div class="mb-3">
-                                            <label for="name" class="">Email</label>
-                                        </div>
-                                        <input type="email" class="form-control" placeholder="Enter Email" required name="email" 
-                                        value="{{ old('email') }}" multiple>
-                                        @if ($errors->has('email'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
-                                        @endif
+                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
+                                    <div class="mb-3">
+                                        <label for="email" class="">Email</label>
                                     </div>
-                                    
-
-                                  
+                                    <select class="form-control tagging" name="email[]" minlength="3" maxlength="30"
+                                        multiple="multiple" required>
+                                    </select>
+                                    @if ($errors->has('email'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}
+                                        </div>
+                                    @endif
+                                    @if ($errors->has('email.*'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email.*') }}
+                                        </div>
+                                    @endif
                                 </div>
-                                            <!-- Add More Email Button -->
-                               
-                                <div class="col-xl-6 col-md-6 col-sm-12">
-                                    <label for="descriptions">Description</label>
-                                    <textarea id="team-about" class="form-control team-about" name="descriptions" minlength="3" maxlength="20000" required>{{ old('descriptions') }}</textarea>
-                                    @if ($errors->has('descriptions'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}</div>
+
+                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
+                                    <div class="mb-3">
+                                        <label for="email" class="">Email Subject</label>
+                                    </div>
+                                    <input type="text" class="form-control" required name="email_subject"
+                                        value="Register for {{ $event->name }}">
+                                    @if ($errors->has('email_subject'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email_subject') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <!-- Add More Email Button -->
+
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                    <label for="descriptions">Message</label>
+                                    <textarea id="team-about" class="form-control team-about" name="message" minlength="3" maxlength="20000" required>{{ old('message') }}</textarea>
+                                    @if ($errors->has('message'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('message') }}</div>
                                     @endif
                                 </div>
                             </div>
@@ -65,7 +78,7 @@
     </div>
 @endsection
 @section('js')
-{{-- <script>
+    {{-- <script>
      <div class="d-flex     align-items-center">
                                                 <button type="button" class="btn btn-secondary" id="add-email-btn">Add More Email</button>
                                             </div>
@@ -108,4 +121,10 @@
             // ]
         });
     </script> --}}
+    <script>
+        $(".tagging").select2({
+            tags: true,
+            placeholder: "Enter Emails",
+        });
+    </script>
 @endsection
