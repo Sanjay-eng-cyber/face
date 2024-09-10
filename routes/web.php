@@ -51,9 +51,9 @@ use App\Http\Controllers\GalleryController;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
-    // Route::get('/', function () {
-    //     return view('frontend.index');
-    // })->name('index');
+    Route::get('/', function () {
+        return view('frontend.index');
+    })->name('index');
 
 
     // Route::get('/about-us', function () {
