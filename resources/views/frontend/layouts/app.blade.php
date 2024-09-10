@@ -18,7 +18,7 @@
     
 </head>
 
-<body>
+<body style="background-color:#000000;">
     <header>
         @include('frontend.layouts.nav')
     </header>
