@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('cms_users', function (Blueprint $table) {
             $table->id();
+            $table->enum('role', ['admin', 'super admin']);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

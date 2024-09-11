@@ -14,10 +14,20 @@ class CmsUserSeeder extends Seeder
     public function run()
     {
         DB::table('cms_users')->insert([
-            "email" => 'admin@test.com',
-            "password" => bcrypt('password'),
-            "created_at" => now(),
-            "updated_at" => now()
+            [
+                "role" => 'admin',
+                "email" => 'admin@test.com',
+                "password" => bcrypt('password'),
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "role" => 'super admin',
+                "email" => 'superadmin@test.com',
+                "password" => bcrypt('password'),
+                "created_at" => now(),
+                "updated_at" => now()
+            ]
         ]);
     }
 }
