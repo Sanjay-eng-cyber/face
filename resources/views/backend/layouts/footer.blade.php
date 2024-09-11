@@ -1,14 +1,14 @@
-<div class="footer-wrapper justify-content-center align-items-end px-1">
-    <div class="footer-section f-section-1 ">
-        {{-- <p class="px-3 p-0">
+<div class="footer-wrapper justify-content-center align-items-end">
+    <div class="footer-section f-section-1">
+        <p class="text-center">
             &copy;
             {{ date('Y') }}
             {{ config('app.name') }}. All Rights Reserved |
 
-            Designed & Developed by
-            <a href="http://acetrot.com" target="_blank"><b>Acetrot</b><img src="{{ url('backend/images/acetrot.png') }}" width="24" alt="">
+            Designed & Developed By
+            <a href="http://acetrot.com" target="_blank">Acetrot<img src="{{ url('backend/images/acetrot.png') }}" width="24" alt="">
             </a>
-        </p> --}}
+        </p>
     </div>
     <div class="footer-section f-section-2">
     </div>

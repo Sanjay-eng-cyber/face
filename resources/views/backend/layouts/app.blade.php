@@ -9,7 +9,28 @@
     <title> @yield('title') - Admin </title>
     @include('backend.layouts.header')
     @yield('cdn')
-    <link rel="icon" type="image/png" href="{{url('frontend/image/icons/favicon.png')}}">
+    <style>
+        .mce-notification-inner{
+            display: none !important;
+        }
+        .mce-notification .mce-close{
+            display: none !important;
+        }
+        .mce-notification.mce-has-close{
+            display: none !important;
+        }
+        #mceu_40{
+            display: none !important;
+        }
+        .mce-notification.mce-has-close{
+            left: 0px;
+            top:0px;
+        }
+        .mce-notification-warning{
+            background-color: transparent !important;
+            border-color:transparent !important;
+        }
+    </style>
 </head>
 
 <body class="sidebar-noneoverflow">
@@ -26,32 +47,6 @@
 
     @include('backend.layouts.js')
     @yield('js')
-    <link rel="stylesheet" href="{{ url('backend/assets/css/tinymce.min.css') }}">
-    <script src="{{ url('backend/assets/js/tinymce.min.js') }}"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea.description',
-            height: 500,
-            theme: 'modern',
-            plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help',
-            toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
-            image_advtab: true,
-            templates: [{
-                    title: 'Test template 1',
-                    content: 'Test 1'
-                },
-                {
-                    title: 'Test template 2',
-                    content: 'Test 2'
-                }
-            ],
-            content_css: [
-                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-                '//www.tinymce.com/css/codepen.min.css'
-            ]
-        });
-    </script>
-
 </body>
 
 </html>

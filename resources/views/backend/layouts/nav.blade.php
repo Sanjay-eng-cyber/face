@@ -11,11 +11,17 @@
   <div class="header-container fixed-top">
       <header class="header navbar navbar-expand-sm">
 
-          <ul class="navbar-nav theme-brand flex-row  text-center blue-color">
+          <ul class="navbar-nav theme-brand flex-row  text-center">
 
-              <li class="nav-item theme-text w-auto">
+              <li class="nav-item theme-text w-auto d-block">
+                  <a href="/" class="nav-link">
+                      <img src="{{ asset('frontend/assets/images/backgrounds/logo.png') }}" width="20%"
+                          class="navbar-logo img-fluid" alt="logo">
 
+                      {{-- <h3 class="text-warning">Techplastiks</h3> --}}
+                  </a>
               </li>
+
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -29,6 +35,7 @@
                       </svg>
                   </a>
               </li>
+
           </ul>
 
           <ul class="navbar-item flex-row search-ul">
@@ -51,11 +58,11 @@
                   <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                       <div class="user-profile-section">
                           <div class="media mx-auto">
-                              {{-- <img src="assets/img/90x90.svg" class="img-fluid mr-2" alt="avatar"> --}}
+                              {{-- <img src="{{asset('backend/assets/img/90x90.svg')}}" class="img-fluid mr-2" alt="avatar"> --}}
                               <div class="media-body">
-                                Admin
+                                  <h5>Admin</h5>
                                   {{-- <h5>{{ ucfirst(auth()->user()->name) }}</h5>
-                                  <h5>{{ ucfirst(auth()->user()->role) }}</h5> --}}
+                                <h5>{{ ucfirst(auth()->user()->role) }}</h5> --}}
                                   <!-- <p>Project Leader</p> -->
                               </div>
                           </div>
@@ -97,66 +104,41 @@
       <div class="sidebar-wrapper sidebar-theme">
           <nav id="sidebar">
               <ul class="list-unstyled menu-categories" id="accordionExample">
-                  {{-- <li class="menu">
+                  <li class="menu">
                       <a href="{{ route('cms.statistics.index') }}"
                           aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
-
-                              <svg class=" {{ URL::current() == url('/') ? 'svg-color' : '' }} xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 576 512">
-                                  <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                              <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                  viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                   <path
-                                      d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" />
+                                      d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                               </svg>
                               <span>Dashboard</span>
                           </div>
                       </a>
-                  </li> --}}
-                  {{-- <li class="menu">
-                      <a href="{{ route('backend.user.index') }}"
-                          aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
+                  </li>
+                  <li class="menu">
+                      <a href="{{ route('backend.events.index') }}"
+                          aria-expanded="{{ route('backend.events.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
-                              <svg class="{{ URL::current() == url('/users') ? 'svg-color' : '' }}"
-                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                  <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                  <path
-                                      d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z" />
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                  viewBox="0 0 24 24">
+                                  <path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3" />
                               </svg>
-                              <span>Users</span>
+                              <span>Events</span>
                           </div>
                       </a>
-                  </li> --}}
-
+                  </li>
                   <li class="menu">
-                    <a href="{{ route('backend.events.index') }}"
-                        aria-expanded="{{ route('backend.events.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
+                      <a href="" aria-expanded="true">
 
-                            <svg class="{{ URL::current() == url('/event/index') ? 'svg-color' : '' }}" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-                                <path d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z"></path>
-                            </svg>
-                            <span>Events</span>
-                        </div>
-                    </a>
-                </li>
-
-
-
-
-
-
+                      </a>
+                  </li>
               </ul>
 
           </nav>
 
       </div>
       <!--  END SIDEBAR  -->
-
-      <style>
-          #sidebar ul.menu-categories li.menu>.dropdown-toggle svg {
-              fill: rgb(68 94 222 / 84%);
-          }
-      </style>
