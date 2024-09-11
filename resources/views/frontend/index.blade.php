@@ -118,10 +118,10 @@
             </div>
         </div>
         <div class="" style="position: relative;  
-    display: flex;
-    align-items: center;
-    padding-top:70px;
-    " >
+                display: flex;
+                align-items: center;
+                padding-top:70px;
+                " >
             <img src="{{asset('frontend/images/index/triglebox.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute">
             <img src="{{asset('frontend/images/index/half-trigle.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;right:0px">
        
@@ -145,6 +145,22 @@
                                 Transform every client interaction into an unforgettable experience.
                             </div>
                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="h2 mb-0 fw-275 text-white text-center" style="padding-top:71px;padding-bottom:71px">Features you don’t want to miss</div>
+                    <div style="border:1px solid #FF3895;border-radius:135px;">
+                        <div style="    display: grid;grid-template-columns: 50% 50%;    align-items: center;    padding: 10px 13px;">
+                            <div class="text-white h2 mb-0 text-white text-center">Blazing Fast AI Recognition</div>
+                            <div style="display: flex;align-items: center;justify-content: center;border-radius:135px;border:1px solid #FF3895;background: linear-gradient(104.73deg, #360C21 18.06%, #9C215F 109.83%);">
+                                <img src="{{asset('frontend/images/index/fetuaresimg.png')}}" alt="" srcset="" class="img-fluid">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
