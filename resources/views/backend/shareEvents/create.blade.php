@@ -31,45 +31,100 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-12 row">
-                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
-                                    <div class="mb-3">
-                                        <label for="email" class="">Email</label>
-                                    </div>
-                                    <select class="form-control tagging" name="email[]" minlength="3" maxlength="30"
-                                        multiple="multiple" required>
-                                    </select>
-                                    @if ($errors->has('email'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}
-                                        </div>
-                                    @endif
-                                    @if ($errors->has('email.*'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('email.*') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
-                                    <div class="mb-3">
-                                        <label for="email" class="">Email Subject</label>
-                                    </div>
-                                    <input type="text" class="form-control" required name="email_subject"
-                                        value="Register for {{ $event->name }}">
-                                    @if ($errors->has('email_subject'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('email_subject') }}
-                                        </div>
-                                    @endif
-                                </div>
-                                <!-- Add More Email Button -->
-
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
-                                    <label for="descriptions">Message</label>
-                                    <textarea id="team-about" class="form-control team-about" name="message" minlength="3" maxlength="20000" required>{{ old('message') }}</textarea>
-                                    @if ($errors->has('message'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('message') }}</div>
-                                    @endif
+                                    <div class="h4">Choose how you want to share</div>
+                                    <label>
+                                        <input type="radio" name="shareOption" value="email" checked onclick="showOption('email')"> Custom email
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="shareOption" value="qr" onclick="showOption('qr')"> QR code / Direct link
+                                    </label><br><br>
+
                                 </div>
+
+
+                                <div class="col-xl-12 col-md-12 col-sm-12 mt-2" class="hidden">
+
+                                    {{-- <div id="emailOption" >
+                                        <label for="customEmail">Enter custom email:</label>
+                                        <div>
+                                            <input type="email" id="customEmail" name="customEmail" placeholder="Enter your email">
+                                        </div>
+                                    </div> --}}
+
+                                    
+                                    <div id="qrOption" class="hidden">
+                                        <div>
+                                            <label for="qrCode">QR code:</label>
+                                        </div>
+                                        {{-- <input type="text" id="qrCode" name="qrCode" value="Generated QR code here" readonly><br> --}}
+                                        <img src="{{asset('backend/images/share/shareqr.jpg')}}" alt="" srcset="" class="img-fluid" style="width:250px">
+                                        <div>
+                                            <label for="directLink">Direct link:</label>
+                                            <input type="url" id="directLink" name="directLink" value="https://example.com" readonly>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+
+                              
+
+
+
+                            <div class="container" id="emailOption">
+                                <div class="row">
+                                    
+                                
+                                    <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
+                                        <div class="mb-3">
+                                            <label for="email" class="">Email</label>
+                                        </div>
+                                        
+                                        <select class="form-control tagging" name="email[]" minlength="3" maxlength="30"
+                                            multiple="multiple" required>
+                                        </select>
+                                        @if ($errors->has('email'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('email') }}
+                                            </div>
+                                        @endif
+                                        @if ($errors->has('email.*'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('email.*') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+
+
+                                    <div class="col-xl-6 col-md-12 col-sm-12 mt-2">
+                                        <div class="mb-3">
+                                            <label for="email" class="">Email Subject</label>
+                                        </div>
+                                        <input type="text" class="form-control" required name="email_subject"
+                                            value="Register for {{ $event->name }}">
+                                        @if ($errors->has('email_subject'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('email_subject') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <!-- Add More Email Button -->
+
+                                    <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                        <label for="descriptions">Message</label>
+                                        <textarea id="team-about" class="form-control team-about" name="message" minlength="3" maxlength="20000" required>{{ old('message') }}</textarea>
+                                        @if ($errors->has('message'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('message') }}</div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary mt-3">
                             </div>
-                            <input type="submit" class="btn btn-primary">
+
+                             
+
+
+                            </div>
+                           
                         </form>
                     </div>
                 </div>
@@ -78,6 +133,22 @@
     </div>
 @endsection
 @section('js')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Include Select2 CSS and JS -->
+<!-- Include Select2 CSS and JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+   $(document).ready(function() {
+        $(".tagging").select2({
+            tags: true,
+            placeholder: "Enter Emails",
+            tokenSeparators: [',', ' '],  // Use comma and space as separators
+            allowClear: true,  // Allows clearing the input field
+            maximumInputLength: 1000  // Set a maximum length for email input
+        });
+    });
+</script>
     {{-- <script>
      <div class="d-flex     align-items-center">
                                                 <button type="button" class="btn btn-secondary" id="add-email-btn">Add More Email</button>
@@ -121,10 +192,43 @@
             // ]
         });
     </script> --}}
-    <script>
-        $(".tagging").select2({
-            tags: true,
-            placeholder: "Enter Emails",
-        });
-    </script>
+  
+
+<script>
+    // Function to show/hide options
+    function showOption(option) {
+        // Hide both options by default
+        document.getElementById('emailOption').classList.add('hidden');
+        document.getElementById('qrOption').classList.add('hidden');
+        
+        // Show the selected option
+        if (option === 'email') {
+            document.getElementById('emailOption').classList.remove('hidden');
+        } else if (option === 'qr') {
+            document.getElementById('qrOption').classList.remove('hidden');
+        }
+    }
+
+    // Call the function to show email option by default on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        showOption('email');
+    });
+</script>
+
+
 @endsection
+
+
+<style>
+    .select2-selection.select2-selection--multiple{
+        padding: 0px !important;
+    }
+    .select2-dropdown.select2-dropdown--above{
+        display: none !important;
+    }
+
+    .select2-dropdown.select2-dropdown--below{
+        display: none !important;
+
+    }
+</style>

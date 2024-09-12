@@ -24,7 +24,7 @@
 <link href="assets/css/elements/breadcrumb.css" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('backend/plugins/select2/select2.min.css') }}" rel="stylesheet" />
+{{-- <link href="{{ asset('backend/plugins/select2/select2.min.css') }}" rel="stylesheet" /> --}}
 
 <link href="{{ asset('plugins/lightgallery/css/lightgallery.min.css') }}" rel="stylesheet" />
 
