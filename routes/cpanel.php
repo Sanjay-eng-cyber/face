@@ -15,6 +15,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
     Route::post("/login", 'App\Http\Controllers\cms\LoginController@login')->name('cms.login.submit');
 
     Route::get('/forgot-password', 'App\Http\Controllers\cms\ForgotPasswordController@index')->name('cms.forgotPassword.index');
+    Route::get('/register-event/{eventname}', 'App\Http\Controllers\cms\ShareEventController@registerEvent')->name('register.event');
+
 
     // admin auth routes
     Route::group(['middleware' => 'auth:admin'], function () {
@@ -52,8 +54,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
 
             Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
-            Route::post('/share-event/store', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
-            
+            Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
+
             Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
         });
