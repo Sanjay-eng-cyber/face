@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,9 +13,15 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('date');
-            $table->text('descriptions');
-            $table->boolean('link_visibility')->default(1);
+            $table->string('slug');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->longText('descriptions')->nullable();
+            $table->enum('download_size', ['original', '1600'])->default('original');
+            $table->boolean('sharing')->default(0);
+            $table->boolean('visibility')->default(1);
+            $table->boolean('single_image_download')->default(1);
+            $table->boolean('bulk_image_download')->default(1);
             $table->timestamps();
         });
     }
