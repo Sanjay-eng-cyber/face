@@ -16,7 +16,7 @@
                 <div style="padding-top: 40px;padding-bottom:40px;">
 
                     <div class="row gx-5" style="display: flex;align-items: center;">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-lg-6">
                             <div class="display-4 text-white">
                                 <div style="line-height:95px">Share Images Using </br> Face Recognition</div>
                             </div>
@@ -25,20 +25,20 @@
                                 Started</button>
 
                         </div>
-                        <div class="col-12 col-md-6" style="position: relative; overflow: hidden;">
+                        <div class="col-12 col-lg-6" style="position: relative;">
 
 
                             <img src="{{ asset('frontend/images/index/frame.svg') }}" alt="" class="img-fluid"
-                                style="position: absolute; left: 50%; transform: translate(-50%);">
+                                style="position: absolute; left: 50%; transform: translate(-50%);bottom:-17px">
 
                             <img src="{{ asset('frontend/images/index/faceline.svg') }}" alt="" class="img-fluid"
                                 style="position: absolute; left: 50%; transform: translate(-50%); z-index: 1; top: 80px;">
+                            <img src="{{ asset('frontend/images/index/shaddowline.svg') }}" alt=""
+                                class="img-fluid scanning-line"
+                                style="position: absolute; left: 50%; transform: translate(-50%); z-index: 2;">
 
-                            <div style="position: relative">
-                                <img src="{{ asset('frontend/images/index/shaddowline.svg') }}" alt=""
-                                        class="img-fluid scanning-line"
-                                        style="position: absolute; left: 50%; transform: translate(-50%); z-index: 2;">
-                                        
+                            <div style="">
+                               
                                 <div class="heroslider text-white">
                                     
                                     <div><img src="{{ asset('frontend/images/index/1.png') }}" alt="" class="img-fluid">

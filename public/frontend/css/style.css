@@ -78,11 +78,12 @@ body {
 }
 
 .slick-slide.slick-current.slick-active.slick-center img{
-    background-color:#8FA5FF;;
+    background-color: #8FA5FF;
     width: 292px;
-    height:364px;
+    height: 364px;
     object-fit: cover;
     border-radius: 156px;
+    padding: 12px;
 
 }
 
@@ -128,7 +129,7 @@ body {
         top: -5%; /* Start off-screen at the top */
     }
     50% {
-        top: 100%; /* Move to the bottom of the container */
+        top: 90%; /* Move to the bottom of the container */
     }
     100% {
         top: -5%; /* Move back to the top */
