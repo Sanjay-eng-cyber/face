@@ -25,20 +25,34 @@
                                 Started</button>
 
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="heroslider text-white">
-                                <div><img src="{{ asset('frontend/images/index/1.png') }}" alt="" srcset=""
-                                        class="img-fluid"></div>
-                                <div><img src="{{ asset('frontend/images/index/2.png') }}" alt="" srcset=""
-                                        class="img-fluid"></div>
-                                <div><img src="{{ asset('frontend/images/index/1.png') }}" alt="" srcset=""
-                                        class="img-fluid"></div>
-                                <div><img src="{{ asset('frontend/images/index/3.png') }}" alt="" srcset=""
-                                        class="img-fluid"></div>
+                        <div class="col-12 col-md-6" style="position: relative; overflow: hidden;">
 
+
+                            <img src="{{ asset('frontend/images/index/frame.svg') }}" alt="" class="img-fluid"
+                                style="position: absolute; left: 50%; transform: translate(-50%);">
+
+                            <img src="{{ asset('frontend/images/index/faceline.svg') }}" alt="" class="img-fluid"
+                                style="position: absolute; left: 50%; transform: translate(-50%); z-index: 1; top: 80px;">
+
+                            <div style="position: relative">
+                                <img src="{{ asset('frontend/images/index/shaddowline.svg') }}" alt=""
+                                        class="img-fluid scanning-line"
+                                        style="position: absolute; left: 50%; transform: translate(-50%); z-index: 2;">
+                                        
+                                <div class="heroslider text-white">
+                                    
+                                    <div><img src="{{ asset('frontend/images/index/1.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div><img src="{{ asset('frontend/images/index/2.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div><img src="{{ asset('frontend/images/index/1.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div><img src="{{ asset('frontend/images/index/3.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -55,20 +69,22 @@
         </div>
 
         <div class="container" style="position: relative">
-            <img src="{{asset('frontend/images/index/main-border.png')}}" alt="" class="img-fluid" style="    position: absolute;
+            <img src="{{ asset('frontend/images/index/main-border.png') }}" alt="" class="img-fluid"
+                style="    position: absolute;
                         left: 50%;
                         top: 26%;
                         transform: translate(-50%);
                         z-index: -1;
 
                     ">
-                    <div class="row">
+            <div class="row">
                 <div class="col-3">
                     <div style="display: flex;justify-content: center;min-height:122px;min-width:122px">
-                        <div style="    display: flex;
+                        <div
+                            style="    display: flex;
                             align-items: center;
                             justify-content: center;border-radius:15px;box-shadow: 0px 4px 4px 20px #000000CC;padding:37px;border: 1px solid #082399;background-color:#161313">
-                            <img src="{{asset('frontend/images/index/chain.svg')}}" alt="" class="img-fluid">
+                            <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <h4 class="mb-0 text-white text-center" style="padding-top: 44px">
@@ -79,10 +95,11 @@
 
                 <div class="col-3">
                     <div style="    display: flex;justify-content: center;min-height:122px;min-width:122px">
-                        <div style="    display: flex;
+                        <div
+                            style="    display: flex;
                          align-items: center;
                                     justify-content: center;border-radius:15px;box-shadow: 0px 4px 4px 20px #000000CC;padding:37px;border: 1px solid #082399;background-color:#161313">
-                            <img src="{{asset('frontend/images/index/camera.svg')}}" alt="" class="img-fluid">
+                            <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <h4 class="mb-0 text-white text-center" style="padding-top: 44px">
@@ -93,10 +110,11 @@
 
                 <div class="col-3">
                     <div style="    display: flex;justify-content: center;min-height:122px;min-width:122px">
-                        <div style="    display: flex;
+                        <div
+                            style="    display: flex;
                             align-items: center;
                             justify-content: center;border-radius:15px;box-shadow: 0px 4px 4px 20px #000000CC;padding:37px;border: 1px solid #082399;background-color:#161313">
-                            <img src="{{asset('frontend/images/index/faceai.svg')}}" alt="" class="img-fluid">
+                            <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <h4 class="mb-0 text-white text-center" style="padding-top: 44px">
@@ -107,8 +125,9 @@
 
                 <div class="col-3">
                     <div style="display: flex;justify-content: center;min-height:122px;min-width:122px">
-                        <div style="border-radius:15px;box-shadow: 0px 4px 4px 20px #000000CC;padding:37px;border: 1px solid #082399;background-color:#161313">
-                            <img src="{{asset('frontend/images/index/photo.svg')}}" alt="" class="img-fluid">
+                        <div
+                            style="border-radius:15px;box-shadow: 0px 4px 4px 20px #000000CC;padding:37px;border: 1px solid #082399;background-color:#161313">
+                            <img src="{{ asset('frontend/images/index/photo.svg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <h4 class="mb-0 text-white text-center" style="padding-top: 44px">
@@ -117,19 +136,23 @@
                 </div>
             </div>
         </div>
-        <div class="" style="position: relative;  
+        <div class=""
+            style="position: relative;  
                 display: flex;
                 align-items: center;
                 padding-top:70px;
-                " >
-            <img src="{{asset('frontend/images/index/triglebox.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute">
-            <img src="{{asset('frontend/images/index/half-trigle.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;right:0px">
-       
+                ">
+            <img src="{{ asset('frontend/images/index/triglebox.svg') }}" alt="" srcset="" class="img-fluid"
+                style="position: absolute">
+            <img src="{{ asset('frontend/images/index/half-trigle.svg') }}" alt="" srcset="" class="img-fluid"
+                style="position: absolute;right:0px">
+
             <div class="container my-5" style="position: relative">
                 <div class="row">
                     <div class="col-12">
-                        
-                            <div class="h2 text-white text-center mb-0"  style="
+
+                        <div class="h2 text-white text-center mb-0"
+                            style="
                               border: 1px solid #FF3895;
                                 border-radius: 135px;
                                 padding: 10px;
@@ -140,11 +163,11 @@
                                 justify-content: center;
                                 backdrop-filter: blur(11px);
                                 ">
-                                Showcase your work to the world. <br/>
+                            Showcase your work to the world. <br />
 
-                                Transform every client interaction into an unforgettable experience.
-                            </div>
-                       
+                            Transform every client interaction into an unforgettable experience.
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -153,12 +176,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="h2 mb-0 fw-275 text-white text-center" style="padding-top:71px;padding-bottom:71px">Features you don’t want to miss</div>
+                    <div class="h2 mb-0 fw-275 text-white text-center"
+                        style="padding-top:71px;padding-bottom:71px
+                    ">Features you don’t want to miss
+                    </div>
                     <div style="border:1px solid #FF3895;border-radius:135px;">
-                        <div style="    display: grid;grid-template-columns: 50% 50%;    align-items: center;    padding: 10px 13px;">
+                        <div
+                            style="    display: grid;grid-template-columns: 50% 50%;    align-items: center;    padding: 10px 13px;">
                             <div class="text-white h2 mb-0 text-white text-center">Blazing Fast AI Recognition</div>
-                            <div style="display: flex;align-items: center;justify-content: center;border-radius:135px;border:1px solid #FF3895;background: linear-gradient(104.73deg, #360C21 18.06%, #9C215F 109.83%);">
-                                <img src="{{asset('frontend/images/index/fetuaresimg.png')}}" alt="" srcset="" class="img-fluid">
+                            <div
+                                style="display: flex;align-items: center;justify-content: center;border-radius:135px;border:1px solid #FF3895;background: linear-gradient(104.73deg, #360C21 18.06%, #9C215F 109.83%);">
+                                <img src="{{ asset('frontend/images/index/fetuaresimg.png') }}" alt=""
+                                    srcset="" class="img-fluid">
                             </div>
                         </div>
                     </div>

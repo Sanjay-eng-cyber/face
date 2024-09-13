@@ -114,6 +114,29 @@ body {
     background: linear-gradient(101.22deg, #FF3895 38.55%, rgba(13, 11, 12, 0) 100.18%);
     z-index: -1;
 }
+
+.scanning-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: scan 7s infinite linear; /* Adjust timing as needed */
+}
+
+@keyframes scan {
+    0% {
+        top: -5%; /* Start off-screen at the top */
+    }
+    50% {
+        top: 100%; /* Move to the bottom of the container */
+    }
+    100% {
+        top: -5%; /* Move back to the top */
+    }
+}
+
+
+
 /*end hero slider */
 
 
