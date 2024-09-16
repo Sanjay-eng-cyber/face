@@ -27,6 +27,8 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'web_domain' => env('WEB_DOMAIN'),
+    'cms_domain' => env('CMS_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
