@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cms\EventController;
-use App\Http\Controllers\cms\GalleryController;
 use App\Http\Controllers\cms\UploadController;
-
+use App\Http\Controllers\cms\GalleryController;
+use App\Http\Controllers\cms\CategoryController;
 
 Route::domain(config('app.cms_domain'))->group(function () {
 
@@ -58,6 +59,14 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
             Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
+
+            Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.categories.index');
+            Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
+            Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
+            Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
+            Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('backend.category.edit');
+            Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('backend.category.update');
+            Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
         });
 
 
