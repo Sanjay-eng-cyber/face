@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('cms_users'); // Update to reference cms_users
+            $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('image_url');
             $table->string('image_name');
             $table->longText('face_encoding');
