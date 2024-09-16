@@ -41,44 +41,132 @@
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12">
-                                    <label for="date" class="">Date</label>
-                                    <input type="date" class="form-control" id="date" required name="date"
-                                        value="{{ old('date') ?? $event->date }}">
-                                    @if ($errors->has('date'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('date') }}</div>
+                                    <label for="start_date" class="">Start Date</label>
+                                    <input type="date" class="form-control" id="start_date" required name="start_date"
+                                        value="{{ old('start_date') ?? dd_format($event->start_date, 'Y-m-d') }}">
+                                    @if ($errors->has('start_date'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('start_date') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-md-6 col-sm-12">
+                                    <label for="end_date" class="">End Date</label>
+                                    <input type="date" class="form-control" id="end_date" required name="end_date"
+                                        value="{{ old('end_date') ?? dd_format($event->end_date, 'Y-m-d') }}">
+                                    @if ($errors->has('end_date'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('end_date') }}</div>
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
-                                    <label for="link_visibility" class="">Link Visibility</label><br>
-
-                                    {{-- <label for="yes" class="">Yes</label>
-                                    <input type="radio" id="yes" name="link_visibility" value="1"
-                                        {{ $event->link_visibility == 1 ? 'checked' : '' }} required><br>
-
-                                    <label for="no" class="">No</label>
-                                    <input type="radio" id="no" name="link_visibility" value="0"
-                                        {{ $event->link_visibility == 0 ? 'checked' : '' }} required> --}}
+                                    <label for="visibility" class="">Link Visibility</label><br>
                                     <div class="radio-container">
-                                        <input type="radio" id="yes" name="link_visibility" value="1"
-                                            {{ $event->link_visibility == 1 ? 'checked' : '' }} required>
+                                        <input type="radio" id="yes" name="visibility" value="1"
+                                            {{ (old('visibility') == 1 ? 'checked' : '' ?? $event->visibility == 1) ? 'checked' : '' }}
+                                            required>
                                         <label for="yes">Yes</label>
                                     </div>
 
                                     <div class="radio-container">
-                                        <input type="radio" id="no" name="link_visibility" value="0"
-                                            {{ $event->link_visibility == 0 ? 'checked' : '' }} required>
+                                        <input type="radio" id="no" name="visibility" value="0"
+                                            {{ (old('visibility') == 0 ? 'checked' : '' ?? $event->visibility == 0) ? 'checked' : '' }}
+                                            required>
                                         <label for="no">No</label>
                                     </div>
-                                    @if ($errors->has('link_visibility'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('link_visibility') }}
+                                    @if ($errors->has('visibility'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                    <label for="sharing" class="">Sharing</label><br>
+                                    <div class="radio-container">
+                                        <input type="radio" id="yes" name="sharing" value="1"
+                                            {{ (old('sharing') == 1 ? 'checked' : '' ?? $event->sharing == 1) ? 'checked' : '' }}
+                                            required>
+                                        <label for="yes">Yes</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="sharing" value="0"
+                                            {{ (old('sharing') == 0 ? 'checked' : '' ?? $event->sharing == 0) ? 'checked' : '' }}
+                                            required>
+                                        <label for="no">No</label>
+                                    </div>
+                                    @if ($errors->has('sharing'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                    <label for="single_image_download" class="">Single Image Download</label><br>
+                                    <div class="radio-container">
+                                        <input type="radio" id="yes" name="single_image_download" value="1"
+                                            {{ (old('single_image_download') == 1 ? 'checked' : '' ?? $event->single_image_download == 1) ? 'checked' : '' }}
+                                            required>
+                                        <label for="yes">Yes</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="single_image_download" value="0"
+                                            {{ (old('single_image_download') == 0 ? 'checked' : '' ?? $event->single_image_download == 0) ? 'checked' : '' }}
+                                            required>
+                                        <label for="no">No</label>
+                                    </div>
+                                    @if ($errors->has('single_image_download'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('single_image_download') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                    <label for="bulk_image_download" class="">Bulk_Image Download</label><br>
+                                    <div class="radio-container">
+                                        <input type="radio" id="yes" name="bulk_image_download" value="1"
+                                            {{ (old('bulk_image_download') == 1 ? 'checked' : '' ?? $event->bulk_image_download == 1) ? 'checked' : '' }}
+                                            required>
+                                        <label for="yes">Yes</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="bulk_image_download" value="0"
+                                            {{ (old('bulk_image_download') == 0 ? 'checked' : '' ?? $event->bulk_image_download == 0) ? 'checked' : '' }}
+                                            required>
+                                        <label for="no">No</label>
+                                    </div>
+                                    @if ($errors->has('bulk_image_download'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('bulk_image_download') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
+                                    <label for="bulk_image_download" class="">Download Size</label><br>
+                                    <div class="radio-container">
+                                        <input type="radio" id="download_size" name="download_size" value="original"
+                                            {{ (old('download_size') == 'original' ? 'checked' : '' ?? $event->download_size == 'original') ? 'checked' : '' }}
+                                            required>
+                                        <label for="original">original</label>
+                                    </div>
+
+                                    <div class="radio-container">
+                                        <input type="radio" id="no" name="download_size" value="1600"
+                                            {{ (old('download_size') == 1600 ? 'checked' : '' ?? $event->download_size == 1600) ? 'checked' : '' }}
+                                            required>
+                                        <label for="1600">1600 px</label>
+                                    </div>
+                                    @if ($errors->has('download_size'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('download_size') }}
                                         </div>
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label for="descriptions">Description</label>
-                                    <textarea id="team-about" class="form-control team-about" name="descriptions" minlength="3" maxlength="20000" required>{{ old('descriptions') ?? $event->descriptions }}</textarea>
+                                    <textarea id="team-about" class="form-control team-about" name="descriptions" minlength="3" maxlength="20000"
+                                        required>{{ old('descriptions') ?? $event->descriptions }}</textarea>
                                     @if ($errors->has('descriptions'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}</div>
+                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                        </div>
                                     @endif
                                 </div>
                             </div>

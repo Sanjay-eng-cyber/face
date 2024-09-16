@@ -22,7 +22,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
-      //  dd($event);
+        //  dd($event);
         return view('backend.event.show', compact('event'));
     }
 
@@ -36,21 +36,33 @@ class EventController extends Controller
         // Validate the request data
         $request->validate([
             'name' => 'required|string|min:3|max:30',
-            'link_visibility' => 'required|in:1,0',
-            'date' => 'required|date',
+            'visibility' => 'required|in:1,0',
+            'sharing' => 'required|in:1,0',
+            'single_image_download' => 'required|in:1,0',
+            'bulk_image_download' => 'required|in:1,0',
+            'download_size' => 'required|in:original,1600',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'descriptions' => 'required|string|min:3|max:20000',
         ]);
 
         // Create a new Event instance
         $event = new Event();
         $event->name = $request->name;
-        $event->link_visibility = $request->link_visibility;
-        $event->date = $request->date;
+        $event->slug =  Str::slug($request->name);
+        $event->visibility = $request->visibility;
+        $event->sharing = $request->sharing;
+        $event->download_size = $request->download_size;
+        $event->single_image_download = $request->single_image_download;
+        $event->bulk_image_download = $request->bulk_image_download;
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
         if ($event->save()) {
             return redirect()->route('backend.events.index')->with(
                 [
-                    "message" => "Event Added Successfully", "alert-type" => "success"
+                    "message" => "Event Added Successfully",
+                    "alert-type" => "success"
                 ]
             );
         } else {
@@ -72,21 +84,33 @@ class EventController extends Controller
         // Validate the request data
         $request->validate([
             'name' => 'required|string|min:3|max:30',
-            'link_visibility' => 'required|in:1,0',
-            'date' => 'required|date',
+            'visibility' => 'required|in:1,0',
+            'sharing' => 'required|in:1,0',
+            'single_image_download' => 'required|in:1,0',
+            'bulk_image_download' => 'required|in:1,0',
+            'download_size' => 'required|in:original,1600',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'descriptions' => 'required|string|min:3|max:20000',
         ]);
 
         // Create a new Event instance
         $event = Event::findOrFail($id);
         $event->name = $request->name;
-        $event->link_visibility = $request->link_visibility;
-        $event->date = $request->date;
+        $event->slug =  Str::slug($request->name);
+        $event->visibility = $request->visibility;
+        $event->sharing = $request->sharing;
+        $event->download_size = $request->download_size;
+        $event->single_image_download = $request->single_image_download;
+        $event->bulk_image_download = $request->bulk_image_download;
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
         if ($event->save()) {
             return redirect()->route('backend.events.index')->with(
                 [
-                    "message" => "Event Update Successfully", "alert-type" => "success"
+                    "message" => "Event Update Successfully",
+                    "alert-type" => "success"
                 ]
             );
         } else {
@@ -103,13 +127,15 @@ class EventController extends Controller
         if ($event->delete()) {
             return redirect()->route('backend.events.index')->with(
                 [
-                    "message" => "Event Deleted Successfully", "alert-type" => "success"
+                    "message" => "Event Deleted Successfully",
+                    "alert-type" => "success"
                 ]
             );
         } else {
             return redirect()->route('backend.events.index')->with(
                 [
-                    "message" => "Something Went Wrong", "alert-type" => "error"
+                    "message" => "Something Went Wrong",
+                    "alert-type" => "error"
                 ]
             );
         }
