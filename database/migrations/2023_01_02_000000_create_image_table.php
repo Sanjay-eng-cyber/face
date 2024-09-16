@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,10 +12,8 @@ return new class extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('image');
             $table->longText('face_encoding');
             $table->longText('face_locations');

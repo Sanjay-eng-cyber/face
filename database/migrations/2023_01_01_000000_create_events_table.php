@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('slug');
             $table->dateTime('start_date');

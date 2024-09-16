@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('gallery_images', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cms_user_id');
-            $table->foreign('cms_user_id')->references('id')->on('cms_users');
-            $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categorys')->onDelete('cascade');
+            $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('image_name');
             $table->string('image_url');
             $table->longText('image_encoding');
