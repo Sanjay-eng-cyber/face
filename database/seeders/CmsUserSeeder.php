@@ -22,7 +22,7 @@ class CmsUserSeeder extends Seeder
                 "updated_at" => now()
             ],
             [
-                "role" => 'super admin',
+                "role" => 'super-admin',
                 "email" => 'superadmin@test.com',
                 "password" => bcrypt('password'),
                 "created_at" => now(),
