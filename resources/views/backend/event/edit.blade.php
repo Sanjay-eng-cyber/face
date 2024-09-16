@@ -60,15 +60,13 @@
                                     <label for="visibility" class="">Link Visibility</label><br>
                                     <div class="radio-container">
                                         <input type="radio" id="yes" name="visibility" value="1"
-                                            {{ (old('visibility') == 1 ? 'checked' : '' ?? $event->visibility == 1) ? 'checked' : '' }}
-                                            required>
+                                            {{ old('visibility', $event->visibility) == 1 ? 'checked' : '' }} required>
                                         <label for="yes">Yes</label>
                                     </div>
 
                                     <div class="radio-container">
                                         <input type="radio" id="no" name="visibility" value="0"
-                                            {{ (old('visibility') == 0 ? 'checked' : '' ?? $event->visibility == 0) ? 'checked' : '' }}
-                                            required>
+                                            {{ old('visibility', $event->visibility) == 0 ? 'checked' : '' }} required>
                                         <label for="no">No</label>
                                     </div>
                                     @if ($errors->has('visibility'))
@@ -81,15 +79,13 @@
                                     <label for="sharing" class="">Sharing</label><br>
                                     <div class="radio-container">
                                         <input type="radio" id="yes" name="sharing" value="1"
-                                            {{ (old('sharing') == 1 ? 'checked' : '' ?? $event->sharing == 1) ? 'checked' : '' }}
-                                            required>
+                                            {{ old('sharing', $event->sharing) == 1 ? 'checked' : '' }} required>
                                         <label for="yes">Yes</label>
                                     </div>
 
                                     <div class="radio-container">
                                         <input type="radio" id="no" name="sharing" value="0"
-                                            {{ (old('sharing') == 0 ? 'checked' : '' ?? $event->sharing == 0) ? 'checked' : '' }}
-                                            required>
+                                            {{ old('sharing', $event->sharing) == 0 ? 'checked' : '' }} required>
                                         <label for="no">No</label>
                                     </div>
                                     @if ($errors->has('sharing'))
@@ -101,14 +97,14 @@
                                     <label for="single_image_download" class="">Single Image Download</label><br>
                                     <div class="radio-container">
                                         <input type="radio" id="yes" name="single_image_download" value="1"
-                                            {{ (old('single_image_download') == 1 ? 'checked' : '' ?? $event->single_image_download == 1) ? 'checked' : '' }}
+                                            {{ old('single_image_download', $event->single_image_download) == 1 ? 'checked' : '' }}
                                             required>
                                         <label for="yes">Yes</label>
                                     </div>
 
                                     <div class="radio-container">
                                         <input type="radio" id="no" name="single_image_download" value="0"
-                                            {{ (old('single_image_download') == 0 ? 'checked' : '' ?? $event->single_image_download == 0) ? 'checked' : '' }}
+                                            {{ old('single_image_download', $event->single_image_download) == 0 ? 'checked' : '' }}
                                             required>
                                         <label for="no">No</label>
                                     </div>
@@ -122,14 +118,14 @@
                                     <label for="bulk_image_download" class="">Bulk_Image Download</label><br>
                                     <div class="radio-container">
                                         <input type="radio" id="yes" name="bulk_image_download" value="1"
-                                            {{ (old('bulk_image_download') == 1 ? 'checked' : '' ?? $event->bulk_image_download == 1) ? 'checked' : '' }}
+                                            {{ old('bulk_image_download', $event->bulk_image_download) == 1 ? 'checked' : '' }}
                                             required>
                                         <label for="yes">Yes</label>
                                     </div>
 
                                     <div class="radio-container">
                                         <input type="radio" id="no" name="bulk_image_download" value="0"
-                                            {{ (old('bulk_image_download') == 0 ? 'checked' : '' ?? $event->bulk_image_download == 0) ? 'checked' : '' }}
+                                            {{ old('bulk_image_download', $event->bulk_image_download) == 0 ? 'checked' : '' }}
                                             required>
                                         <label for="no">No</label>
                                     </div>
@@ -143,14 +139,14 @@
                                     <label for="bulk_image_download" class="">Download Size</label><br>
                                     <div class="radio-container">
                                         <input type="radio" id="download_size" name="download_size" value="original"
-                                            {{ (old('download_size') == 'original' ? 'checked' : '' ?? $event->download_size == 'original') ? 'checked' : '' }}
+                                            {{ old('download_size', $event->download_size) == 'original' ? 'checked' : '' }}
                                             required>
                                         <label for="original">original</label>
                                     </div>
 
                                     <div class="radio-container">
                                         <input type="radio" id="no" name="download_size" value="1600"
-                                            {{ (old('download_size') == 1600 ? 'checked' : '' ?? $event->download_size == 1600) ? 'checked' : '' }}
+                                            {{ old('sharing', $event->download_size) == '1600' ? 'checked' : '' }}
                                             required>
                                         <label for="1600">1600 px</label>
                                     </div>
