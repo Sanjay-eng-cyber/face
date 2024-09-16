@@ -59,14 +59,15 @@
 
         </div>
 
-        <div style="padding-top:100px;padding-bottom:100px ">
+        <div style="padding-top:100px;padding-bottom:100px;">
             <div class="index-slogn"
-                style=";display:flex;align-items: center;position:relative;min-height:131px;background:linear-gradient(90deg, #082399 0%, #030C33 100%);">
+                style="display:flex;align-items: center;position:relative;min-height:131px;background:linear-gradient(90deg, #082399 0%, #030C33 100%);">
                 <div class="container">
                     <h2 class="mb-0 text-white text-center">let your clients discover their images within seconds</h2>
                 </div>
             </div>
         </div>
+      
 
         <div class="container" style="position: relative">
             <img src="{{ asset('frontend/images/index/main-border.png') }}" alt="" class="img-fluid"
