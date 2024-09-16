@@ -49,6 +49,7 @@ class EventController extends Controller
         // Create a new Event instance
         $event = new Event();
         $event->name = $request->name;
+        $event->cms_user_id = auth()->user()->id;
         $event->slug =  Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
@@ -97,6 +98,7 @@ class EventController extends Controller
         // Create a new Event instance
         $event = Event::findOrFail($id);
         $event->name = $request->name;
+        $event->cms_user_id = auth()->user()->id;
         $event->slug =  Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
