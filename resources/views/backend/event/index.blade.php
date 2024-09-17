@@ -55,7 +55,63 @@
                 </div>
             </div>
 
+          
+
             <div class="statbox widget box box-shadow temp-index">
+
+                <div style="    display: flex; justify-content: space-between;">
+                    <div>
+                        <form class="form-inline">
+                            <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div style="display: flex;align-items: center;gap: 1.5rem;">
+                        <a class="h5" href="http://" style="color:rgb(0 183 184/var(--tw-text-opacity))">
+                           
+                                Global Analytics
+                         
+                        </a>
+        
+                        <div>
+                        <i class="fas fa-cog" style="font-size:22px"></i>
+                        </div>
+        
+                        <div class="form-group">
+                            <select class="form-control" id="exampleSelect">
+                            <option value="" disabled selected>Select an option</option>
+                        
+                            <option value="date" disabled>Date</option>
+                            <option value="new-old">New - Old</option>
+                            <option value="old-new">Old - New</option>
+                        
+                            <option disabled>──────────</option>
+                        
+                            <option value="event-name" disabled>Event Name</option>
+                            <option value="a-z">A - Z</option>
+                            <option value="z-a">Z - A</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control" id="exampleSelect">
+                            <option value=""  selected>All tags</option>
+                            
+                            </select>
+                        </div>
+        
+                    </div>
+
+                </div>
+
+
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">

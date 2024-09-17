@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="backend/plugins/font-icons/fontawesome/css/fontawesome.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link href="assets/css/elements/breadcrumb.css" rel="stylesheet" type="text/css" />
+<!-- Font Awesome CDN link -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
 {{-- <link href="{{ asset('backend/plugins/select2/select2.min.css') }}" rel="stylesheet" /> --}}
