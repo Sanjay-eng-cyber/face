@@ -16,7 +16,7 @@ class ShareEventController extends Controller
     {
         $event = Event::findOrFail($id);
         // dd($event);
-        $registerEventUrl = env('CMS_DOMAIN') . '/register-event/' . $event->name;
+        $registerEventUrl = env('CMS_DOMAIN') . '/register-event/' . $event->slug;
         $regerterEventqr = QrCode::size(150)->generate($registerEventUrl);
         return view('backend.shareEvents.create', compact('event', 'regerterEventqr', 'registerEventUrl'));
     }
