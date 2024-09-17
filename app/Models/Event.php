@@ -8,15 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'user_id'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function galleries()
-    {
-        return $this->hasMany(Gallery::class);
-    }
 }

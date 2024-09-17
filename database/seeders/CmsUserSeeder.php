@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CmsUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         DB::table('cms_users')->insert([
             [
@@ -22,7 +22,7 @@ class CmsUserSeeder extends Seeder
                 "updated_at" => now()
             ],
             [
-                "role" => 'super admin',
+                "role" => 'super-admin',
                 "email" => 'superadmin@test.com',
                 "password" => bcrypt('password'),
                 "created_at" => now(),

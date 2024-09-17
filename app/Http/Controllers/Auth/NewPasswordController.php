@@ -57,7 +57,7 @@ class NewPasswordController extends Controller
         return $status == $this->broker()::PASSWORD_RESET
             ? redirect()->route('cms.login')->with('status', __($status))
             : back()->withInput($request->only('email'))
-            ->withErrors(['email' => __($status)]);
+                ->withErrors(['email' => __($status)]);
     }
 
     public function broker()

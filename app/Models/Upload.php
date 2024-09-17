@@ -8,7 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Upload extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'image', 'file_path',
-    ];
 }

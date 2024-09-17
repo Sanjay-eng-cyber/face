@@ -19,7 +19,6 @@ class ShareEventMail extends Mailable
     public $data;
     public function __construct($data)
     {
-        // dd($data);
         $this->data = $data;
     }
 
@@ -29,7 +28,7 @@ class ShareEventMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->data->email_subject,
+            subject: 'Register For' . $this->data->email_subject,
         );
     }
 
@@ -45,8 +44,8 @@ class ShareEventMail extends Mailable
 
     public function build()
     {
-        return $this->with([
-            'data' => $this->data,
+        return $this->replyTo($this->data->email)->with([
+            'data' => $this->data
         ]);
     }
 

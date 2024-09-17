@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cms_users', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->enum('role', ['admin', 'super admin']);
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('image');
+            $table->longText('face_encoding');
+            $table->longText('face_locations');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cms_users');
+        Schema::dropIfExists('images');
     }
 };

@@ -1,7 +1,7 @@
 @component('mail::message')
     ## Details
 
-    - **Code:** {{ $data->code }}
     - **Message:** {{ $data->message }}
+    - **Code:** {{ $data->code }}
     - **Link:** {{ $data->register_event_url }}
 @endcomponent
