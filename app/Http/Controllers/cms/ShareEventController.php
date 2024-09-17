@@ -45,7 +45,7 @@ class ShareEventController extends Controller
         $data->message = $request->get('message');
         $data->email_subject = $request->get('email_subject');
         $data->code = 4526;
-        $data->register_event_url = env('CMS_DOMAIN') . '/register-event/' . $event->name;;
+        $data->register_event_url = env('CMS_DOMAIN') . '/register-event/' . $event->slug;;
 
         if ($data) {
             foreach ($data->email as $email) {
