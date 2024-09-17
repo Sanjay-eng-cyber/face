@@ -28,7 +28,7 @@ class ShareEventMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register For' . $this->data->email_subject,
+            subject: $this->data->email_subject,
         );
     }
 
