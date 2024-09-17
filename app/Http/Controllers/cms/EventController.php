@@ -13,10 +13,25 @@ use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $sortOption = $request->input('sort_option');
+
+        $query = Event::query();
+    
+        if ($sortOption == 'new-old') {
+            $query->orderBy('created_at', 'desc'); 
+        } elseif ($sortOption == 'old-new') {
+            $query->orderBy('created_at', 'asc'); 
+        } elseif ($sortOption == 'a-z') {
+            $query->orderBy('name', 'asc');
+        } elseif ($sortOption == 'z-a') {
+            $query->orderBy('name', 'desc');
+        }
+
+       
         $events = Event::latest()->paginate(10);
-        return view('backend.event.index', compact('events'));
+        return view('backend.event.index', compact('events','sortOption'));
     }
 
     public function show($id)
