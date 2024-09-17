@@ -84,21 +84,24 @@
                         <i class="fas fa-cog" style="font-size:22px"></i>
                         </div>
         
-                        <div class="form-group">
-                            <select class="form-control" id="exampleSelect">
-                            <option value="" disabled selected>Select an option</option>
+                        <form method="GET" action="{{ route('backend.events.index') }}">
+                            <div class="form-group">
+                                <select class="form-control" name="sort_option" id="exampleSelect" onchange="this.form.submit()">
+                                    <option value="" disabled {{ request('sort_option') ? '' : 'selected' }}>Select an option</option>
+                                    
+                                    <option value="date" disabled>Date</option>
+                                    <option value="new-old" {{ request('sort_option') == 'new-old' ? 'selected' : '' }}>New - Old</option>
+                                    <option value="old-new" {{ request('sort_option') == 'old-new' ? 'selected' : '' }}>Old - New</option>
+                                    
+                                    <option disabled>──────────</option>
+                                    
+                                    <option value="event-name" disabled>Event Name</option>
+                                    <option value="a-z" {{ request('sort_option') == 'a-z' ? 'selected' : '' }}>A - Z</option>
+                                    <option value="z-a" {{ request('sort_option') == 'z-a' ? 'selected' : '' }}>Z - A</option>
+                                </select>
+                            </div>
+                        </form>
                         
-                            <option value="date" disabled>Date</option>
-                            <option value="new-old">New - Old</option>
-                            <option value="old-new">Old - New</option>
-                        
-                            <option disabled>──────────</option>
-                        
-                            <option value="event-name" disabled>Event Name</option>
-                            <option value="a-z">A - Z</option>
-                            <option value="z-a">Z - A</option>
-                            </select>
-                        </div>
                         
                         <div class="form-group">
                             <select class="form-control" id="exampleSelect">
