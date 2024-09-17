@@ -83,7 +83,10 @@
                         </a>
         
                         <div>
-                        <i class="fas fa-cog" style="font-size:22px"></i>
+                        <a href="{{route('backend.event.gsetting')}}">
+                            <i class="fas fa-cog" style="font-size:22px"></i>
+
+                        </a>
                         </div>
         
                         <form method="GET" action="{{ route('backend.events.index') }}">

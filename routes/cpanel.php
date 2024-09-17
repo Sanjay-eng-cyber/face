@@ -54,6 +54,10 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
             Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
 
+            // general setting page
+            Route::get('/event/general-setting', [EventController::class, 'gsetting'])->name('backend.event.gsetting');
+
+
             Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
             Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
 

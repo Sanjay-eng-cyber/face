@@ -13,10 +13,13 @@ use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
+    public function gsetting(){
+        return view('backend.event.general-setting');
+    }
     public function index(Request $request)
     {
 
-        
+
     $query = Event::query();
     $search = $request->input('search');
     if ($search) {
