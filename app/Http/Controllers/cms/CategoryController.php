@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\cms;
 
+use App\Models\Event;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
@@ -12,25 +14,27 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::latest()->paginate(10);
-        return view('backend.event.index', compact('categories'));
+        return view('backend.category.index', compact('categories'));
     }
 
     public function show($id)
     {
         $category = Category::findOrFail($id);
-        return view('backend.event.show', compact('category'));
+        return view('backend.category.show', compact('category'));
     }
 
     public function create()
     {
-        return view('backend.event.create');
+        $events = Event::all();
+        return view('backend.category.create', compact('events'));
     }
 
     public function store(Request $request)
     {
-        // Validate the request data
+        $events = Event::pluck('id')->toArray();
         $request->validate([
             'name' => 'required|string|min:3|max:30',
+            'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
         ]);
@@ -41,6 +45,7 @@ class CategoryController extends Controller
         $event->cms_user_id = auth()->user()->id;
         $event->slug =  Str::slug($request->name);
         $event->visibility = $request->visibility;
+        $event->event_id = $request->event_id;
         $event->sharing = $request->sharing;
         if ($event->save()) {
             return redirect()->route('backend.categories.index')->with(
@@ -60,14 +65,17 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('backend.event.edit', compact('category'));
+        $events = Event::all();
+        return view('backend.category.edit', compact('category', 'events'));
     }
 
     public function update(Request $request, $id)
     {
         // Validate the request data
+        $events = Event::pluck('id')->toArray();
         $request->validate([
             'name' => 'required|string|min:3|max:30',
+            'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
         ]);
@@ -75,6 +83,7 @@ class CategoryController extends Controller
         // Create a new Event instance
         $event = Category::findOrFail($id);
         $event->name = $request->name;
+        $event->event_id = $request->event_id;
         $event->cms_user_id = auth()->user()->id;
         $event->slug =  Str::slug($request->name);
         $event->visibility = $request->visibility;
