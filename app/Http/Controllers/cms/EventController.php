@@ -15,23 +15,32 @@ class EventController extends Controller
 {
     public function index(Request $request)
     {
-        $sortOption = $request->input('sort_option');
 
-        $query = Event::query();
-    
-        if ($sortOption == 'new-old') {
-            $query->orderBy('created_at', 'desc'); 
-        } elseif ($sortOption == 'old-new') {
-            $query->orderBy('created_at', 'asc'); 
-        } elseif ($sortOption == 'a-z') {
-            $query->orderBy('name', 'asc');
-        } elseif ($sortOption == 'z-a') {
-            $query->orderBy('name', 'desc');
-        }
+        
+    $query = Event::query();
+    $search = $request->input('search');
+    if ($search) {
+        $query->where('name', 'LIKE', "%{$search}%");
+    }
+
+    $sortOption = $request->input('sort_option');
+    if ($sortOption == 'new-old') {
+        $query->orderBy('created_at', 'desc'); 
+    } elseif ($sortOption == 'old-new') {
+        $query->orderBy('created_at', 'asc'); 
+    } elseif ($sortOption == 'a-z') {
+        $query->orderBy('name', 'asc');
+    } elseif ($sortOption == 'z-a') {
+        $query->orderBy('name', 'desc');
+    }
+
+    $events = $query->paginate(10);
+    return view('backend.event.index', compact('events', 'sortOption'));
+        
 
        
-        $events = Event::latest()->paginate(10);
-        return view('backend.event.index', compact('events','sortOption'));
+        // $events = Event::latest()->paginate(10);
+        // return view('backend.event.index', compact('events','sortOption'));
     }
 
     public function show($id)

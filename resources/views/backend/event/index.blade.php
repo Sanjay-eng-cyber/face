@@ -59,18 +59,20 @@
 
             <div class="statbox widget box box-shadow temp-index">
 
-                <div style="    display: flex; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between;">
                     <div>
-                        <form class="form-inline">
+                        
+                        <form class="form-inline" method="GET" action="{{ route('backend.events.index') }}">
                             <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">
-                                <i class="fa fa-search"></i>
-                                </button>
-                            </div>
+                                <input type="text" class="form-control" name="search" value="{{ request('search') }}" placeholder="Search by event name">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
                         </form>
+                        
                     </div>
 
                     <div style="display: flex;align-items: center;gap: 1.5rem;">
