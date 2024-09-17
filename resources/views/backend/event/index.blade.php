@@ -61,7 +61,7 @@
 
                 <div style="display: flex; justify-content: space-between;">
                     <div>
-                        
+
                         <form class="form-inline" method="GET" action="{{ route('backend.events.index') }}">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" value="{{ request('search') }}" placeholder="Search by event name">
@@ -89,7 +89,7 @@
                         <form method="GET" action="{{ route('backend.events.index') }}">
                             <div class="form-group">
                                 <select class="form-control" name="sort_option" id="exampleSelect" onchange="this.form.submit()">
-                                    <option value="" disabled {{ request('sort_option') ? '' : 'selected' }}>Select an option</option>
+                                    <option value="" disabled {{ request('sort_option') ? '' : 'selected' }}>Sort By</option>
                                     
                                     <option value="date" disabled>Date</option>
                                     <option value="new-old" {{ request('sort_option') == 'new-old' ? 'selected' : '' }}>New - Old</option>
