@@ -9,6 +9,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
+    Route::get('/test-progress', function () {
+        return view('frontend.test');
+    })->name('test-progress');
+
 
     // Route::get('/about-us', function () {
     //     return view('frontend.about-us');
