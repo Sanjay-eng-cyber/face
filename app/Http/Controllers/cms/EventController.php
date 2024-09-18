@@ -19,9 +19,7 @@ class EventController extends Controller
     }
     public function index(Request $request)
     {
-
-
-        $query = Event::query();
+        $query = Event::latest();
         $search = $request->input('search');
         if ($search) {
             $query->where('name', 'LIKE', "%{$search}%");
@@ -61,44 +59,40 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
+
         // Validate the request data
         $request->validate([
-            'name' => 'required|string|min:3|max:30',
-            'visibility' => 'required|in:1,0',
+            'name' => 'required|string|min:3|max:60',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
             'sharing' => 'required|in:1,0',
+            'visibility' => 'required|in:1,0',
             'single_image_download' => 'required|in:1,0',
             'bulk_image_download' => 'required|in:1,0',
             'download_size' => 'required|in:original,1600',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'descriptions' => 'required|string|min:3|max:20000',
+            'descriptions' => 'nullable|string|min:3|max:20000',
         ]);
+
+        // dd($request);
 
         // Create a new Event instance
         $event = new Event();
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
         $event->slug = Str::slug($request->name);
-        $event->visibility = $request->visibility;
-        $event->sharing = $request->sharing;
-        $event->download_size = $request->download_size;
-        $event->single_image_download = $request->single_image_download;
-        $event->bulk_image_download = $request->bulk_image_download;
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
+        $event->download_size = $request->download_size;
+        $event->sharing = $request->sharing;
+        $event->visibility = $request->visibility;
+        $event->single_image_download = $request->single_image_download;
+        $event->bulk_image_download = $request->bulk_image_download;
         if ($event->save()) {
-            return redirect()->route('backend.events.index')->with(
-                [
-                    "message" => "Event Added Successfully",
-                    "alert-type" => "success"
-                ]
-            );
+            return redirect()->route('backend.events.index')->with(toast('Event Added Successfully', 'success'));
         } else {
-            return redirect()->back()->with([
-                "message" => "Something went wrong",
-                "alert-type" => "error"
-            ]);
+            return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }
     }
 
