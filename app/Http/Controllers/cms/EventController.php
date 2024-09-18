@@ -13,35 +13,36 @@ use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
-    public function gsetting(){
+    public function gsetting()
+    {
         return view('backend.event.general-setting');
     }
     public function index(Request $request)
     {
 
 
-    $query = Event::query();
-    $search = $request->input('search');
-    if ($search) {
-        $query->where('name', 'LIKE', "%{$search}%");
-    }
+        $query = Event::query();
+        $search = $request->input('search');
+        if ($search) {
+            $query->where('name', 'LIKE', "%{$search}%");
+        }
 
-    $sortOption = $request->input('sort_option');
-    if ($sortOption == 'new-old') {
-        $query->orderBy('created_at', 'desc'); 
-    } elseif ($sortOption == 'old-new') {
-        $query->orderBy('created_at', 'asc'); 
-    } elseif ($sortOption == 'a-z') {
-        $query->orderBy('name', 'asc');
-    } elseif ($sortOption == 'z-a') {
-        $query->orderBy('name', 'desc');
-    }
+        $sortOption = $request->input('sort_option');
+        if ($sortOption == 'new-old') {
+            $query->orderBy('created_at', 'desc');
+        } elseif ($sortOption == 'old-new') {
+            $query->orderBy('created_at', 'asc');
+        } elseif ($sortOption == 'a-z') {
+            $query->orderBy('name', 'asc');
+        } elseif ($sortOption == 'z-a') {
+            $query->orderBy('name', 'desc');
+        }
 
-    $events = $query->paginate(10);
-    return view('backend.event.index', compact('events', 'sortOption'));
-        
+        $events = $query->paginate(10);
+        return view('backend.event.index', compact('events', 'sortOption'));
 
-       
+
+
         // $events = Event::latest()->paginate(10);
         // return view('backend.event.index', compact('events','sortOption'));
     }
@@ -49,7 +50,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
-        //  dd($event);
+        // dd($event);
         return view('backend.event.show', compact('event'));
     }
 
@@ -77,7 +78,7 @@ class EventController extends Controller
         $event = new Event();
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
-        $event->slug =  Str::slug($request->name);
+        $event->slug = Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
         $event->download_size = $request->download_size;
@@ -126,7 +127,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
-        $event->slug =  Str::slug($request->name);
+        $event->slug = Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
         $event->download_size = $request->download_size;
