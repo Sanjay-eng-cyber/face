@@ -320,7 +320,8 @@
                           </div>
                       </a>
                   </li>
-                  <li class="menu">
+                  
+                  {{-- <li class="menu">
                       <a href="{{ route('backend.user.index') }}"
                           aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
@@ -333,10 +334,11 @@
                               <span>Users</span>
                           </div>
                       </a>
-                  </li>
+                  </li> --}}
+
                   <li class="menu">
-                      <a href="{{ route('backend.product.index') }}"
-                          aria-expanded="{{ route('backend.product.index') == request()->url() ? 'true' : 'false' }}"
+                      <a href="{{ route('backend.events.index') }}"
+                          aria-expanded="{{ route('backend.events.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -344,165 +346,11 @@
                                   <path
                                       d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
                               </svg>
-                              <span>Products</span>
+                              <span>Events</span>
                           </div>
                       </a>
                   </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.order.index') }}"
-                          aria-expanded="{{ route('backend.order.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" />
-                              </svg>
-                              <span>Orders</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.delivery.index') }}"
-                          aria-expanded="{{ route('backend.delivery.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" />
-                              </svg>
-                              <span>Deliveries</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.transaction.index') }}"
-                          aria-expanded="{{ route('backend.transaction.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z" />
-                              </svg>
-                              <span>Transactions</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.category.index') }}"
-                          aria-expanded="{{ route('backend.category.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M12 0L3 7L4.63 8.27L12 14L19.36 8.27L21 7L12 0M19.37 10.73L12 16.47L4.62 10.74L3 12L12 19L21 12L19.37 10.73M19.37 15.73L12 21.47L4.62 15.74L3 17L12 24L21 17L19.37 15.73Z" />
-                              </svg>
-                              <span>Categories</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.sub_category.index') }}"
-                          aria-expanded="{{ route('backend.sub_category.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M12,16L19.36,10.27L21,9L12,2L3,9L4.63,10.27M12,18.54L4.62,12.81L3,14.07L12,21.07L21,14.07L19.37,12.8L12,18.54Z" />
-                              </svg>
-                              <span>Sub Categories</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.brand.index') }}"
-                          aria-expanded="{{ route('backend.brand.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z" />
-                              </svg>
-                              <span>Brands</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.attribute.index') }}"
-                          aria-expanded="{{ route('backend.attribute.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                  stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                              </svg>
-                              <span>Attributes</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.product_attribute_value.index') }}"
-                          aria-expanded="{{ route('backend.product_attribute_value.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                  stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                              </svg>
-                              <span>Attribute Values</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.coupon.index') }}"
-                          aria-expanded="{{ route('backend.coupon.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M4,4A2,2 0 0,0 2,6V10C3.11,10 4,10.9 4,12A2,2 0 0,1 2,14V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V14A2,2 0 0,1 20,12C20,10.89 20.9,10 22,10V6C22,4.89 21.1,4 20,4H4M15.5,7L17,8.5L8.5,17L7,15.5L15.5,7M8.81,7.04C9.79,7.04 10.58,7.83 10.58,8.81A1.77,1.77 0 0,1 8.81,10.58C7.83,10.58 7.04,9.79 7.04,8.81A1.77,1.77 0 0,1 8.81,7.04M15.19,13.42C16.17,13.42 16.96,14.21 16.96,15.19A1.77,1.77 0 0,1 15.19,16.96C14.21,16.96 13.42,16.17 13.42,15.19A1.77,1.77 0 0,1 15.19,13.42Z" />
-                              </svg>
-                              <span>Coupons</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.slider.index') }}"
-                          aria-expanded="{{ route('backend.slider.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path
-                                      d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z" />
-                              </svg>
-                              <span>Sliders</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu">
-                      <a href="{{ route('backend.showcase.index') }}"
-                          aria-expanded="{{ route('backend.showcase.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M12,18H6V14H12M21,14V12L20,7H4L3,12V14H4V20H14V14H18V20H20V14M20,4H4V6H20V4Z" />
-                              </svg>
-                              <span>Showcases</span>
-                          </div>
-                      </a>
-                  </li>
+
                   <li class="menu">
                       <a href="" aria-expanded="true">
 

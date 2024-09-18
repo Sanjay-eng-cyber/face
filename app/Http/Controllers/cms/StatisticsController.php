@@ -12,8 +12,8 @@ class StatisticsController extends Controller
 {
     public function index()
     {
-        $users = User::count();
+        $totalUsers = User::count();
         $totalEvents = Event::count();
-        return view('backend.statistics.index', compact('users', 'totalEvents'));
+        return view('backend.statistics.index', compact('totalUsers', 'totalEvents'));
     }
 }
