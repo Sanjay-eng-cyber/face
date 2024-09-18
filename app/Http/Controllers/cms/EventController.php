@@ -106,15 +106,15 @@ class EventController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'name' => 'required|string|min:3|max:30',
-            'visibility' => 'required|in:1,0',
+            'name' => 'required|string|min:3|max:60',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
             'sharing' => 'required|in:1,0',
+            'visibility' => 'required|in:1,0',
             'single_image_download' => 'required|in:1,0',
             'bulk_image_download' => 'required|in:1,0',
             'download_size' => 'required|in:original,1600',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'descriptions' => 'required|string|min:3|max:20000',
+            'descriptions' => 'nullable|string|min:3|max:20000',
         ]);
 
         // Create a new Event instance
@@ -131,17 +131,9 @@ class EventController extends Controller
         $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
         if ($event->save()) {
-            return redirect()->route('backend.events.index')->with(
-                [
-                    "message" => "Event Update Successfully",
-                    "alert-type" => "success"
-                ]
-            );
+            return redirect()->route('backend.events.index')->with(toast('Event Update Successfully', 'success'));
         } else {
-            return redirect()->back()->with([
-                "message" => "Something went wrong",
-                "alert-type" => "error"
-            ]);
+            return redirect()->back()->with(toast('Something went wrong', 'error'));
         }
     }
 

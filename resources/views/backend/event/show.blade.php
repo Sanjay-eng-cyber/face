@@ -59,14 +59,15 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Download
                                                     Size</label><br>
-                                                <p class="label-title">{{ $event->download_size }}</p>
+                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
+                                                <p class="text-white badge badge-primary">{{ ucfirst($event->download_size) }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Sharing</label><br>
-                                                @if ($event->status)
+                                                @if ($event->sharing)
                                                     <label class="text-white badge badge-primary">Yes</label>
                                                     {{-- @elseif ($event->status == '')
                                                     <label
