@@ -27,99 +27,38 @@
 
                     </div>
                     <div class="row">
-                        {{-- <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
-                            <div class="">
-                                <form class="form-inline row px-4 pa_form_responsive" action="{{ route('backend.event.index') }}" method="GET">
-                                    <input class="form-control form-control-sm pa_form_input" type="text"
-                                        placeholder="Search By MRD/Name/Mobile" name="q"
-                                        value="{{ request('q') ?? '' }}" minlength="3" maxlength="40">
-                                    <input type="submit" value="Search" class="btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn_size pa_search_btn">
-                                </form>
-                                @if ($errors->has('q'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div> --}}
-                        <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
+                        <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
+                            {{-- <form class="form-inline row app_form" action="{{ route('backend.events.index') }}"
+                                method="GET">
+                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="brand">
+                                    <option value="">Select Brand</option>
+                                </select>
+                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="category">
+                                    <option value="">Select Category</option>
+                                </select>
+                                <input class="form-control form-control-sm app_form_input col-md-2 mt-md-0 mt-3" type="text"
+                                    placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
+                                    maxlength="40">
+                                <input type="submit" value="Search"
+                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                            </form>
+                            @if ($errors->has('q'))
+                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                </div>
+                            @endif --}}
                         </div>
-
                         <div
-                            class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
-                                Add New Events
+                            class="align-items-center col-xl-3 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
+                            <a href="{{ route('backend.event.create') }}" name="txt"
+                                class="btn btn-primary mt-2 ml-3 ">
+                                Add Event
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
 
-          
-
             <div class="statbox widget box box-shadow temp-index">
-
-                <div style="display: flex; justify-content: space-between;">
-                    <div>
-
-                        <form class="form-inline" method="GET" action="{{ route('backend.events.index') }}">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" value="{{ request('search') }}" placeholder="Search by event name">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-
-                    <div style="display: flex;align-items: center;gap: 1.5rem;">
-                        <a class="h5" href="http://" style="color:rgb(0 183 184/var(--tw-text-opacity))">
-                           
-                                Global Analytics
-                         
-                        </a>
-        
-                        <div>
-                        <a href="{{route('backend.event.gsetting')}}">
-                            <i class="fas fa-cog" style="font-size:22px"></i>
-
-                        </a>
-                        </div>
-        
-                        <form method="GET" action="{{ route('backend.events.index') }}">
-                            <div class="form-group">
-                                <select class="form-control" name="sort_option" id="exampleSelect" onchange="this.form.submit()">
-                                    <option value="" disabled {{ request('sort_option') ? '' : 'selected' }}>Sort By</option>
-                                    
-                                    <option value="date" disabled>Date</option>
-                                    <option value="new-old" {{ request('sort_option') == 'new-old' ? 'selected' : '' }}>New - Old</option>
-                                    <option value="old-new" {{ request('sort_option') == 'old-new' ? 'selected' : '' }}>Old - New</option>
-                                    
-                                    <option disabled>──────────</option>
-                                    
-                                    <option value="event-name" disabled>Event Name</option>
-                                    <option value="a-z" {{ request('sort_option') == 'a-z' ? 'selected' : '' }}>A - Z</option>
-                                    <option value="z-a" {{ request('sort_option') == 'z-a' ? 'selected' : '' }}>Z - A</option>
-                                </select>
-                            </div>
-                        </form>
-                        
-                        
-                        <div class="form-group">
-                            <select class="form-control" id="exampleSelect">
-                            <option value=""  selected>All tags</option>
-                            
-                            </select>
-                        </div>
-        
-                    </div>
-
-                </div>
-
-
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">

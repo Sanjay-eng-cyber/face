@@ -1,25 +1,24 @@
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="backend/assets/js/libs/jquery-3.1.1.min.js"></script>
 <script src="backend/bootstrap/js/popper.min.js"></script>
 <script src="backend/bootstrap/js/bootstrap.min.js"></script>
 <script src="backend/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="assets/js/app.js"></script>
-<script src="{{asset('assets/node_modules/tinymce/tinymce.min.js')}}"></script>
-
+<script src="backend/assets/js/app.js"></script>
 <script>
     $(document).ready(function() {
         App.init();
     });
 </script>
-<script src="assets/js/custom.js"></script>
+<script src="backend/assets/js/custom.js"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 {{-- <script src="backend/plugins/apex/apexcharts.min.js"></script> --}}
-<script src="assets/js/dashboard/dash_1.js"></script>
+<script src="backend/assets/js/dashboard/dash_1.js"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 {{-- <script src="{{asset('assets/js/components/notification/custom-snackbar.js')}}"></script> --}}
+<script src="{{ asset('backend/assets/js/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
 <script>
     @if (Session::get('alert-type') == 'success')
