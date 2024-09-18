@@ -15,8 +15,9 @@
 
               <li class="nav-item theme-text w-auto">
                   <a href="/" class="nav-link">
-                      <img src="{{ asset('backend/images/channel-logo-white.svg') }}" class="navbar-logo img-fluid"
-                          alt="logo" style="width: 150px">
+                      FACE RECOG
+                      {{-- <img src="{{ asset('backend/images/channel-logo-white.svg') }}" class="navbar-logo img-fluid"
+                          alt="logo" style="width: 150px"> --}}
                   </a>
               </li>
               <li class="nav-item toggle-sidebar">
@@ -56,7 +57,7 @@
                           <div class="media mx-auto">
                               {{-- <img src="{{asset('backend/assets/img/90x90.svg')}}" class="img-fluid mr-2" alt="avatar"> --}}
                               <div class="media-body">
-                                <h5>Admin</h5>
+                                  <h5>Admin</h5>
                                   {{-- <h5>{{ ucfirst(auth()->user()->name) }}</h5>
                                   <h5>{{ ucfirst(auth()->user()->role) }}</h5> --}}
                                   <!-- <p>Project Leader</p> -->
@@ -320,7 +321,7 @@
                           </div>
                       </a>
                   </li>
-                  
+
                   {{-- <li class="menu">
                       <a href="{{ route('backend.user.index') }}"
                           aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
@@ -338,7 +339,7 @@
 
                   <li class="menu">
                       <a href="{{ route('backend.events.index') }}"
-                          aria-expanded="{{ route('backend.events.index') == request()->url() ? 'true' : 'false' }}"
+                          aria-expanded="{{ str_contains(request()->url(), 'event') ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"

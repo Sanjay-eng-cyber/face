@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Eevnt Edit')
+@section('title', 'Event Edit')
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -8,7 +8,7 @@
                     <div class="row justify-content-between align-items-center ">
                         <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
                             <legend class="h4">
-                                Edit Eevnt
+                                Edit Event
                             </legend>
                         </div>
 
@@ -17,7 +17,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
-                                            Edit Eevnt</a></li>
+                                            Edit Event</a></li>
                                 </ol>
                             </nav>
                         </div>
