@@ -61,7 +61,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area">
                     <div class="row layout-top-spacing">
-                        
+
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
@@ -75,13 +75,15 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{route('backend.events.index')}}" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{ route('backend.events.index') }}"
+                                            class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
@@ -95,7 +97,30 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{route('backend.events.index')}}" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{ route('backend.events.index') }}"
+                                            class="btn btn-outline-primary mx-auto">
+                                            <small><i class="far fa-edit"> </i></small> Manage
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
+                            <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
+                                <div class="widget-heading p-0 m-0">
+                                    <h4 class="text-center">Total Categories</h4>
+                                    <div class="w-title justify-content-center align-items-center">
+                                        <div class="w-icon">
+                                            <i class="far fa-chart-bar big-font-icon"> </i>
+                                        </div>
+                                        <div class="">
+                                            <p class="w-value">{{ $totalCategories }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="{{ route('backend.categories.index') }}"
+                                            class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -108,11 +133,11 @@
             </div>
         </div>
     </div>
-    @endsection
-    <style>
-        .widget {
-            padding: 20 px !important;
-        }
-    </style>
-    @section('js')
-    @endsection
+@endsection
+<style>
+    .widget {
+        padding: 20 px !important;
+    }
+</style>
+@section('js')
+@endsection
