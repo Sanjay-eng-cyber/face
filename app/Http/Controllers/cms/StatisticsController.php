@@ -5,6 +5,7 @@ namespace App\Http\Controllers\cms;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,6 +15,7 @@ class StatisticsController extends Controller
     {
         $totalUsers = User::count();
         $totalEvents = Event::count();
-        return view('backend.statistics.index', compact('totalUsers', 'totalEvents'));
+        $totalCategories = Category::count();
+        return view('backend.statistics.index', compact('totalUsers', 'totalEvents', 'totalCategories'));
     }
 }
