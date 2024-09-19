@@ -211,79 +211,140 @@
             integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
-            var dropzone = new Dropzone('.demo-upload', {
-                url: "/upload/",
-                maxFilesize: 4,
-                addRemoveLinks: true,
-                acceptedFiles: ".jpeg, .jpg, .png, .gif, .WebP, .svg",
-                previewTemplate: document.querySelector('#preview-template').innerHTML,
-                parallelUploads: 2,
-                thumbnailHeight: 50,
-                thumbnailWidth: 50,
-                maxFilesize: 1,
-                filesizeBase: 100000000000,
-                success: function(file, response) {
-                    file.previewElement.classList.add("image__open");
-                },
-                thumbnail: function(file, dataUrl) {
-                    if (file.previewElement) {
-                        file.previewElement.classList.remove("dz-file-preview");
-                        var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-                        for (var i = 0; i < images.length; i++) {
-                            var thumbnailElement = images[i];
-                            thumbnailElement.alt = file.name;
-                            thumbnailElement.src = dataUrl;
-                        }
-                        setTimeout(function() {
-                            file.previewElement.classList.add("dz-image-preview");
-                        }, 800);
-                    }
-                }
+            Dropzone.autoDiscover = false;
 
+            // Customize the preview template to only show filename and size
+            var previewTemplate = `
+                <div class="dz-preview dz-file-preview">
+                    <div>
+                        <span class="dz-filename"><strong data-dz-name></strong></span>
+                        (<span class="dz-size" data-dz-size></span>)
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-dz-uploadprogress></div>
+                    </div>
+                    <div class="dz-success-mark"><span>✔</span></div>
+                    <div class="dz-error-mark"><span>✘</span></div>
+                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                </div>
+            `;
+            var dropzone = new Dropzone('.demo-upload', {
+                url: "/upload",
+                autoProcessQueue: false, // Prevent automatic upload
+                maxFiles: 10000, // Process one file at a time
+                maxFilesize: 4, // Max file size (in MB)
+                addRemoveLinks: true,
+                acceptedFiles: ".jpeg, .jpg, .png",
+                parallelUploads: 1, // Only one upload at a time
+                previewTemplate: previewTemplate, // Custom preview template
+                thumbnailHeight: null, // No thumbnail
+                thumbnailWidth: null, // No thumbnail
+                init: function() {
+                    var myDropzone = this;
+
+                    // Event: when a file is added, process it immediately if it's the first file
+                    myDropzone.on("addedfile", function(file) {
+                        // Check if the queue is empty and the file is ready to be processed
+                        if (myDropzone.getUploadingFiles().length === 0 && myDropzone.getQueuedFiles()
+                            .length > 0) {
+                            myDropzone.processQueue(); // Process the first file in the queue
+                        }
+                    });
+
+                    // Event: when a file upload is successful, remove it from the queue
+                    myDropzone.on("success", function(file, response) {
+                        console.log("File uploaded successfully:", response);
+                        file.previewElement.classList.add("dz-success");
+                        file.fileName = response.fileName;
+                        // Process the next file in the queue after the current one is done
+                        if (myDropzone.getQueuedFiles().length > 0) {
+                            myDropzone.processQueue();
+                        }
+                    });
+
+                    // Event: when a file upload fails, process the next file in the queue
+                    myDropzone.on("error", function(file, errorMessage) {
+                        console.log("File upload error:", errorMessage);
+                        file.previewElement.classList.add("dz-error");
+                        // Continue processing the next file even if an error occurs
+                        if (myDropzone.getQueuedFiles().length > 0) {
+                            myDropzone.processQueue();
+                        }
+                    });
+
+                    // Event: when the upload progress changes, update the progress bar
+                    myDropzone.on("uploadprogress", function(file, progress) {
+                        var progressElement = file.previewElement.querySelector("[data-dz-uploadprogress]");
+                        progressElement.style.width = progress + "%"; // Update progress bar width
+                        progressElement.textContent = progress + "%"; // Update progress percentage
+                    });
+
+                    var eventSlug = '{{ $event->slug }}';
+                    var categorySlug = '{{ $category->slug }}';
+
+                    // Handle file removal
+                    myDropzone.on("removedfile", function(file) {
+                        if (file.fileName) {
+                            fetch(`/delete-upload-image/${eventSlug}/${categorySlug}/${file.fileName}`, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                })
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error("Network response was not ok");
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    if (data.success) { // Assuming the API returns a `success` field
+                                        console.log("File deleted successfully:", data);
+                                        // Only now remove the file from Dropzone
+                                        file.previewElement.remove();
+                                    } else {
+                                        console.error("File deletion failed:", data);
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error("Error deleting file:", error);
+                                    // Optionally, re-add the file to Dropzone if deletion fails
+                                    myDropzone.emit("addedfile", file);
+
+                                    // Reset the file status so it can be requeued for upload
+                                    file.status = Dropzone.ADDED;
+                                    file.accepted = true; // Set the file as accepted
+
+                                    // After re-adding the file, process the queue to upload the file again
+                                    myDropzone.enqueueFile(
+                                        file); // Ensures the file is added back to the queue for upload
+                                    if (myDropzone.getQueuedFiles().length > 0) {
+                                        myDropzone.processQueue(); // Starts the upload
+                                    }
+                                    console.log('came here 2');
+                                    
+                                });
+                        } else {
+                            console.warn("File not uploaded, so no need to delete.");
+                            file.previewElement.remove();
+                        }
+                    });
+                }
             });
 
-
-            var minSteps = 6,
-                maxSteps = 100,
-                timeBetweenSteps = 300,
-                bytesPerStep = 10000;
-
-            dropzone.uploadFiles = function(files) {
-                var self = this;
-
-                for (var i = 0; i < files.length; i++) {
-
-                    var file = files[i];
-                    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-                    for (var step = 0; step < totalSteps; step++) {
-                        var duration = timeBetweenSteps * (step + 1);
-                        setTimeout(function(file, totalSteps, step) {
-                            return function() {
-                                file.upload = {
-                                    progress: 100 * (step + 1) / totalSteps,
-                                    total: file.size,
-                                    bytesSent: (step + 1) * file.size / totalSteps
-                                };
-
-                                self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-                                if (file.upload.progress == 100) {
-                                    file.status = Dropzone.SUCCESS;
-                                    self.emit("success", file, 'success', null);
-                                    self.emit("complete", file);
-                                    self.processQueue();
-                                }
-                            };
-                        }(file, totalSteps, step), duration);
-                    }
+            // Ensure that files are processed one by one in sequence
+            dropzone.on("addedfile", function() {
+                if (dropzone.getUploadingFiles().length === 0 && dropzone.getQueuedFiles().length > 0) {
+                    dropzone.processQueue(); // Process one file at a time
                 }
-            }
+            });
         </script>
     @endsection
 
 
 
-{{-- 
+    {{-- 
 @extends('frontend.layouts.app')
 @section('title')
 @section('cdn')
@@ -367,7 +428,7 @@
 @endsection --}}
 
 
-{{-- 
+    {{-- 
 @extends('frontend.layouts.app')
 @section('title')
 @section('cdn')
@@ -497,7 +558,7 @@
 @endsection --}}
 
 
-{{-- 
+    {{-- 
 
 @extends('frontend.layouts.app')
 @section('title')
@@ -573,7 +634,7 @@
 @endsection --}}
 
 
-{{-- 
+    {{-- 
 @extends('frontend.layouts.app')
 @section('title')
 @section('cdn')

@@ -11,13 +11,34 @@ Route::domain(config('app.web_domain'))->group(function () {
     })->name('index');
 
     Route::get('/test-progress', function () {
-        return view('frontend.test');
+        $event = (object) ['slug' => 'Test Event Slug'];
+        $category = (object) ['slug' => 'Test Category Slug'];
+
+        return view('frontend.test', compact('event', 'category'));
     })->name('test-progress');
 
-    Route::get('/upload', function () {
-        Log::info(request());
-        return true;
+    Route::post('/upload', function () {
+        $file = request()->file('file');
+
+        // Get the original file name
+        $originalFileName = $file->getClientOriginalName();
+
+        // Log the original file name
+        // Log::info('Uploaded file: ' . $originalFileName);
+
+        return response()->json([
+            'status' => true,
+            'fileName' => $originalFileName
+        ]);
     })->name('upload');
+
+    Route::delete('/delete-upload-imaged/{eventSlug}/{categorySlug}/{filename}', function () {
+        sleep(3);
+        // Log::info('EventSlug : ' . request('eventSlug'));
+        // Log::info('CategorySlug : ' . request('categorySlug'));
+        // Log::info('Delete file Name : ' . request('filename'));
+        return true;
+    })->name('delete-upload-image');
 
 
     // Route::get('/about-us', function () {
