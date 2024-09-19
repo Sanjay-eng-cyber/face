@@ -32,7 +32,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         ]);
     })->name('upload');
 
-    Route::delete('/delete-upload-imaged/{eventSlug}/{categorySlug}/{filename}', function () {
+    Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{filename}', function () {
         sleep(3);
         // Log::info('EventSlug : ' . request('eventSlug'));
         // Log::info('CategorySlug : ' . request('categorySlug'));
