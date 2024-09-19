@@ -73,9 +73,37 @@ body {
 
 /*end hero slider */
 
+/* nav */
+
+.navleftp{
+    padding-right: 63px;
+}
+
+.navbar-wrapper {
+    padding: 1px;
+    border-radius: 10px;
+    background: linear-gradient(106.38deg, #FFD7E9 -18.13%, #161313 73.43%);
+    display: inline-block; 
+}
+
+.nav-main {
+    background-color: #000;
+    padding: 25px;
+    border-radius: 10px;
+}
 
 
+/* end nav */
 
+/* media query */
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: center;
+    }
+}
+/*end media query */
 
 
 
