@@ -18,11 +18,15 @@
             letter-spacing: 1px;
             font-family: 'Roboto', sans-serif;
         }
+        .dropzone .dz-preview.dz-image-preview{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
         .dropzone {
             background: white;
             border-radius: 5px;
-            max-width: 500px;
+            max-width: 560px;
             margin: 50px auto;
             padding: 0 0;
             height: auto;
@@ -54,7 +58,6 @@
         .dropzone .img-circle {
             position: relative;
             display: inline-block;
-            padding-left: 45px;
         }
 
         .dropzone .camera-img img {
@@ -62,7 +65,14 @@
             height: 100%;
             display: block;
         }
+        .dz-filename{
 
+        display: inline-block;    /* Ensure it behaves like a block for text overflow */
+    max-width: 200px;         /* Set a maximum width for the filename container */
+    white-space: nowrap;      /* Prevent text from wrapping to the next line */
+    overflow: hidden;         /* Hide the overflowing text */
+    text-overflow: ellipsis;  /* Add ellipsis (...) to indicate that the text is truncated */
+        }
         .dropzone .dz-preview .dz-details .dz-filename:hover span {
             border: 1px solid transparent;
         }
@@ -93,7 +103,7 @@
 
         .dropzone .dz-preview {
             width: 100%;
-            height: 50px;
+            height: 55px;
             min-height: 50px;
             margin: 0;
         }
@@ -156,7 +166,7 @@
             padding: 0 25px;
             position: absolute;
             right: 0;
-            top: 50%;
+            top: 27%;
             transform: translateY(-50%);
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -195,13 +205,22 @@
 
         </section>
         <div id="preview-template" style="display: none;">
-            <div class="dz-preview dz-file-preview">
-                <div class="dz-image"><img data-dz-thumbnail=""></div>
-                <div class="dz-details">
-                    <div class="dz-filename"><span class="uploading">Uploading - </span><span data-dz-name=""></span></div>
+            <div class="dz-preview dz-file-preview" style="position: relative;isolation:isolate">
+                <div class="dz-image">
+                    <img data-dz-thumbnail="">
                 </div>
-                <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
-                <div class="dz-error-message"><span data-dz-errormessage=""></span></div>
+                <div class="dz-details">
+                    <div class="dz-filename">
+                        <span class="uploading">Uploading - </span>
+                        <span data-dz-name=""></span>
+                    </div>
+                </div>
+                <div class="dz-progress" >
+                    <span class="dz-upload" data-dz-uploadprogress=""></span>
+                </div>
+                <div class="dz-error-message">
+                    <span data-dz-errormessage=""></span>
+                </div>
             </div>
         </div>
 
@@ -216,11 +235,11 @@
             // Customize the preview template to only show filename and size
             var previewTemplate = `
                 <div class="dz-preview dz-file-preview">
-                    <div>
-                        <span class="dz-filename"><strong data-dz-name></strong></span>
+                    <div style="display: flex;align-items: center;">
+                        <span class="dz-filename"  ><strong data-dz-name></strong></span>
                         (<span class="dz-size" data-dz-size></span>)
                     </div>
-                    <div class="progress">
+                    <div class="progress" style="margin-top: 8px">
                         <div class="progress-bar" role="progressbar" data-dz-uploadprogress></div>
                     </div>
                     <div class="dz-success-mark"><span>✔</span></div>
@@ -323,7 +342,7 @@
                                         myDropzone.processQueue(); // Starts the upload
                                     }
                                     console.log('came here 2');
-                                    
+
                                 });
                         } else {
                             console.warn("File not uploaded, so no need to delete.");
