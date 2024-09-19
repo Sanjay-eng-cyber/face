@@ -1,6 +1,11 @@
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
+
+.kanit-thin {
+    font-family: "Kanit", sans-serif;
+
+  }
 
 .fw-275{
     font-weight:275;
