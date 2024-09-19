@@ -2,6 +2,16 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+:root {
+    --granny-lipgloss: #FF3895;
+}
+
+
+.granny-lipgloss {
+    color: var(--granny-lipgloss);
+}
+
+
 .kanit-thin {
     font-family: "Kanit", sans-serif;
 
@@ -34,6 +44,10 @@ body {
 
 .fw-900{
     font-weight: 900;
+}
+
+.isolation{
+    isolation: isolate;
 }
 
 
