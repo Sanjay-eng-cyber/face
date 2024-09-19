@@ -211,6 +211,9 @@
             integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
+            var eventSlug = '{{ $event->slug }}';
+            var categorySlug = '{{ $category->slug }}';
+
             Dropzone.autoDiscover = false;
 
             // Customize the preview template to only show filename and size
@@ -229,7 +232,7 @@
                 </div>
             `;
             var dropzone = new Dropzone('.demo-upload', {
-                url: "/upload",
+                url: `/upload/${eventSlug}/${categorySlug}`,
                 autoProcessQueue: false, // Prevent automatic upload
                 maxFiles: 10000, // Process one file at a time
                 maxFilesize: 4, // Max file size (in MB)
@@ -278,9 +281,6 @@
                         progressElement.style.width = progress + "%"; // Update progress bar width
                         progressElement.textContent = progress + "%"; // Update progress percentage
                     });
-
-                    var eventSlug = '{{ $event->slug }}';
-                    var categorySlug = '{{ $category->slug }}';
 
                     // Handle file removal
                     myDropzone.on("removedfile", function(file) {

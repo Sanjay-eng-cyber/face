@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ProfileController;
 
 Route::domain(config('app.web_domain'))->group(function () {
@@ -17,27 +18,47 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.test', compact('event', 'category'));
     })->name('test-progress');
 
-    Route::post('/upload', function () {
-        $file = request()->file('file');
+    Route::post('/upload/{eventSlug}/{categorySlug}', function () {
+        try {
+            $eventSlug = request('eventSlug');
+            $categorySlug = request('categorySlug');
+            $file = request()->file('file');
+            $originalFileName = $file->getClientOriginalName();
 
-        // Get the original file name
-        $originalFileName = $file->getClientOriginalName();
+            $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
 
-        // Log the original file name
-        // Log::info('Uploaded file: ' . $originalFileName);
+            // Store the file in the defined path using the original file name
+            $file->storeAs($destinationPath, $originalFileName, 'public');
 
-        return response()->json([
-            'status' => true,
-            'fileName' => $originalFileName
-        ]);
+            return response()->json([
+                'status' => true,
+                'fileName' => $originalFileName,
+                'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+            ]);
+        } catch (\Throwable $th) {
+            Log::info($th->getMessage());
+            return response()->json(['status' => false], 500);
+        }
     })->name('upload');
 
     Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{filename}', function () {
-        sleep(3);
+        $eventSlug = request('eventSlug');
+        $categorySlug = request('categorySlug');
+        $filename = request('filename');
+        $filePath = "images/galleries/{$eventSlug}/{$categorySlug}/{$filename}";
+
+        // Check if the file exists before attempting to delete it
+        if (Storage::disk('public')->exists($filePath)) {
+            // Delete the file
+            Storage::disk('public')->delete($filePath);
+            return response()->json(['success' => true, 'message' => 'File deleted successfully.', 'path' => $filePath]);
+        } else {
+            return response()->json(['success' => false, 'message' => 'File not found.', 'path' => $filePath], 404);
+        }
         // Log::info('EventSlug : ' . request('eventSlug'));
         // Log::info('CategorySlug : ' . request('categorySlug'));
         // Log::info('Delete file Name : ' . request('filename'));
-        return true;
+        // return true;
     })->name('delete-upload-image');
 
 
