@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
@@ -12,6 +13,11 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/test-progress', function () {
         return view('frontend.test');
     })->name('test-progress');
+
+    Route::get('/upload', function () {
+        Log::info(request());
+        return true;
+    })->name('upload');
 
 
     // Route::get('/about-us', function () {

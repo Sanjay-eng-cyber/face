@@ -97,6 +97,9 @@
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
                                                         <a class="dropdown-item"
+                                                            href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
+                                                            Images</a>
+                                                        <a class="dropdown-item"
                                                             href="{{ route('backend.category.delete', $category->id) }}"
                                                             onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
                                                     </div>

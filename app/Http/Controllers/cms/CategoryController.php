@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $event = new Category();
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
-        $event->slug =  Str::slug($request->name);
+        $event->slug = Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->event_id = $request->event_id;
         $event->sharing = $request->sharing;
@@ -85,7 +85,7 @@ class CategoryController extends Controller
         $event->name = $request->name;
         $event->event_id = $request->event_id;
         $event->cms_user_id = auth()->user()->id;
-        $event->slug =  Str::slug($request->name);
+        $event->slug = Str::slug($request->name);
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
         if ($event->save()) {
@@ -121,5 +121,13 @@ class CategoryController extends Controller
                 ]
             );
         }
+    }
+
+    public function uploadImages(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        $event = Event::findOrFail($category->event_id);
+        // dd($category, $event);
+        return view('backend.category.upload-images', compact('category', 'event'));
     }
 }

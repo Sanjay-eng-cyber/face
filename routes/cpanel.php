@@ -71,6 +71,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('backend.category.edit');
             Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('backend.category.update');
             Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
+            Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImages'])->name('backend.category.upload-image-index');
         });
 
 
