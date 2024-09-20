@@ -28,29 +28,24 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
-                            {{-- <form class="form-inline row app_form" action="{{ route('backend.events.index') }}"
+                            <form class="form-inline row app_form" action="{{ route('backend.events.index') }}"
                                 method="GET">
-                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="brand">
-                                    <option value="">Select Brand</option>
-                                </select>
-                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="category">
-                                    <option value="">Select Category</option>
-                                </select>
-                                <input class="form-control form-control-sm app_form_input col-md-2 mt-md-0 mt-3" type="text"
-                                    placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
-                                    maxlength="40">
+                                <input class="form-control form-control-sm app_form_input col-md-2 mt-md-0 mt-3"
+                                    type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
+                                    minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
                             </form>
-                            @if ($errors->has('q'))
-                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                </div>
-                            @endif --}}
+                            <div class="mt-2">
+                                @if ($errors->has('q'))
+                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                         <div
                             class="align-items-center col-xl-3 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.event.create') }}" name="txt"
-                                class="btn btn-primary mt-2 ml-3 ">
+                            <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
                                 Add Event
                             </a>
                         </div>
