@@ -50,9 +50,40 @@
 
                                     </div>
                                     <div class="row">
-                                        <div id="cust_dropzone">
+                                        <section class="col-md-12">
+                                            <div id="dropzone">
+                                                <form class="dropzone needsclick demo-upload"
+                                                    action="{{ route('upload', ['eventSlug' => $event->slug, 'categorySlug' => $category->slug]) }}">
+                                                    @csrf
+                                                    <div class="dz-message needsclick">
+                                                        <div class=" img-circle"> Add photo </div>
+                                                    </div>
 
-                                        </div>
+                                                </form>
+                                            </div>
+                                        </section>
+
+                                        {{-- <div id="preview-template" style="display: none;">
+                                            <div class="dz-preview dz-file-preview"
+                                                style="position: relative;isolation:isolate">
+                                                <div class="dz-image">
+                                                    <img data-dz-thumbnail="">
+                                                </div>
+                                                <div class="dz-details">
+                                                    <div class="dz-filename">
+                                                        <span class="uploading">Uploading - </span>
+                                                        <span data-dz-name=""></span>
+                                                    </div>
+                                                </div>
+                                                <div class="dz-progress">
+                                                    <span class="dz-upload" data-dz-uploadprogress=""></span>
+                                                </div>
+                                                <div class="dz-error-message">
+                                                    <span data-dz-errormessage=""></span>
+                                                </div>
+                                            </div>
+                                        </div> --}}
+
                                     </div>
                                 </div>
                             </div>
@@ -66,47 +97,351 @@
         </div>
     </div>
 @endsection
-@section('cdn')
-    <link href="{{ asset('assets/css/components/tabs-accordian/custom-tabs.css') }}" rel="stylesheet" type="text/css" />
-@endsection
 @section('js')
-    <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
-    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"
+        integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        var eventSlug = '{{ $event->slug }}';
+        var categorySlug = '{{ $category->slug }}';
         $(document).ready(function() {
-            $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-                localStorage.setItem('activeTab', $(e.target).attr('href'));
+
+            Dropzone.autoDiscover = false;
+
+            // Customize the preview template to only show filename and size
+            var previewTemplate = `
+                <div class="dz-preview dz-file-preview">
+                    <div style="display: flex;align-items: center;">
+                        <span class="dz-filename"  ><strong data-dz-name></strong></span>
+                        (<span class="dz-size" data-dz-size></span>)
+                    </div>
+                    <div class="progress" style="margin-top: 8px">
+                        <div class="progress-bar" role="progressbar" data-dz-uploadprogress></div>
+                    </div>
+                    <div class="dz-success-mark"><span>✔</span></div>
+                    <div class="dz-error-mark"><span>✘</span></div>
+                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                </div>
+            `;
+
+            var totalFiles = 0; // Track the total number of files being processed
+
+            var dropzone = new Dropzone('.cust_dropzone', {
+                url: `/upload/${eventSlug}/${categorySlug}`,
+                autoProcessQueue: false, // Prevent automatic upload
+                maxFiles: 10000, // Set a high limit
+                maxFilesize: 4, // Max file size (in MB)
+                addRemoveLinks: true,
+                acceptedFiles: ".jpeg, .jpg, .png",
+                parallelUploads: 1, // Only one upload at a time
+                previewTemplate: previewTemplate,
+                thumbnailHeight: null,
+                thumbnailWidth: null,
+                init: function() {
+                    var myDropzone = this;
+
+                    // Warn the user if files are still in the queue before unloading the page
+                    function warnBeforeUnload(event) {
+                        var message = "You have files still being processed.";
+                        event.preventDefault();
+                        event.returnValue = message; // This will show the warning dialog
+                        return message;
+                    }
+
+                    // Enable or disable the unload warning based on file count
+                    function checkFileCount() {
+                        if (totalFiles > 0) {
+                            window.addEventListener('beforeunload', warnBeforeUnload); // Add warning
+                        } else {
+                            window.removeEventListener('beforeunload',
+                                warnBeforeUnload); // Remove warning
+                        }
+                    }
+
+                    // Event: when a file is added
+                    myDropzone.on("addedfile", function(file) {
+                        totalFiles++; // Increase the count when a file is added
+                        checkFileCount(); // Check if the warning needs to be enabled
+
+                        // Automatically process the queue if no files are currently uploading
+                        if (myDropzone.getUploadingFiles().length === 0 && myDropzone
+                            .getQueuedFiles()
+                            .length > 0) {
+                            myDropzone.processQueue(); // Process the first file in the queue
+                        }
+                    });
+
+                    // Event: when a file upload is successful
+                    myDropzone.on("success", function(file, response) {
+                        console.log("File uploaded successfully:", response);
+                        file.previewElement.classList.add("dz-success");
+                        file.fileName = response
+                            .fileName; // Store the file name for potential removal later
+
+                        totalFiles--; // Decrease the count after successful upload
+                        checkFileCount(); // Check if the warning can be removed
+
+                        // Process the next file in the queue after the current one is done
+                        if (myDropzone.getQueuedFiles().length > 0) {
+                            myDropzone.processQueue();
+                        }
+                    });
+
+                    // Event: when a file upload fails
+                    myDropzone.on("error", function(file, errorMessage) {
+                        console.log("File upload error:", errorMessage);
+                        file.previewElement.classList.add("dz-error");
+
+                        totalFiles--; // Decrease the count after error
+                        checkFileCount(); // Check if the warning can be removed
+
+                        // Continue processing the next file in the queue, even if an error occurs
+                        if (myDropzone.getQueuedFiles().length > 0) {
+                            myDropzone.processQueue();
+                        }
+                    });
+
+                    // Event: when the upload progress changes
+                    myDropzone.on("uploadprogress", function(file, progress) {
+                        var progressElement = file.previewElement.querySelector(
+                            "[data-dz-uploadprogress]");
+                        progressElement.style.width = progress +
+                            "%"; // Update progress bar width
+                        progressElement.textContent = progress +
+                            "%"; // Update progress percentage
+                    });
+
+                    // Handle file removal
+                    myDropzone.on("removedfile", function(file) {
+                        if (file.fileName) {
+                            // Only delete if the file has been uploaded
+                            fetch(`/delete-upload-image/${eventSlug}/${categorySlug}/${file.fileName}`, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                })
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error("Network response was not ok");
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    if (data.success) {
+                                        console.log("File deleted successfully:", data);
+                                        totalFiles--; // Decrease the count when a file is removed
+                                        checkFileCount
+                                            (); // Check if the warning can be removed
+                                    } else {
+                                        console.error("File deletion failed:", data);
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error("Error deleting file:", error);
+                                });
+                        } else {
+                            // For files that weren't uploaded yet
+                            totalFiles--; // Decrease the count
+                            checkFileCount(); // Check if the warning can be removed
+                        }
+                    });
+                }
             });
-            let activeTab = localStorage.getItem('activeTab');
-            if (activeTab) {
-                $('a[href="' + activeTab + '"]').tab('show');
-            }
-        })
-    </script>
-    <link type=" text/css" rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
-    <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
-    {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
-        <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
-    <script>
-        $(document).ready(function() {
-            // lightGallery(document.getElementById('lightgallery1'), {
-            //     speed: 500,
-            //     download: false,
-            //     thumbnail: true,
-            // });
-            // lightGallery(document.getElementById('lightgallery2'), {
-            //     speed: 500,
-            //     download: false,
-            //     thumbnail: true,
-            // });
-            // getValues();
+
+            // Ensure that files are processed one by one in sequence
+            dropzone.on("addedfile", function() {
+                if (dropzone.getUploadingFiles().length === 0 && dropzone.getQueuedFiles().length > 0) {
+                    dropzone.processQueue(); // Process one file at a time
+                }
+            });
         });
     </script>
 @endsection
-<style>
-    .lg-icon {
-        background: transparent !important;
-    }
-</style>
+
+@section('cdn')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css"
+        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .lg-icon {
+            background: transparent !important;
+        }
+
+        .dropzone .dz-preview.dz-image-preview {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .dropzone {
+            background: white;
+            border-radius: 5px;
+            max-width: 560px;
+            margin: 50px auto;
+            padding: 0 0;
+            height: auto;
+            min-height: 50px;
+        }
+
+
+        /* Custom css */
+        .dropzone.dz-clickable {
+            cursor: pointer;
+            background: #fafafa;
+            color: #396E90;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Roboto', sans-serif;
+            border: 1px solid #cccccc;
+            border-radius: 2px;
+        }
+
+        .dropzone .camera-img {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 15px;
+            position: absolute;
+            left: 0;
+        }
+
+        .dropzone .img-circle {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropzone .camera-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .dz-filename {
+
+            display: inline-block;
+            /* Ensure it behaves like a block for text overflow */
+            max-width: 200px;
+            /* Set a maximum width for the filename container */
+            white-space: nowrap;
+            /* Prevent text from wrapping to the next line */
+            overflow: hidden;
+            /* Hide the overflowing text */
+            text-overflow: ellipsis;
+            /* Add ellipsis (...) to indicate that the text is truncated */
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename:hover span {
+            border: 1px solid transparent;
+        }
+
+        .dropzone .dz-message {
+            margin: 15px;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-size {
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details {
+            height: 50px;
+            min-height: 50px;
+            padding: 0;
+            padding-left: 25px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            justify-content: space-between;
+        }
+
+        .dropzone .dz-preview.image__open .dz-details {
+            padding-left: 55px;
+        }
+
+        .dropzone .dz-preview {
+            width: 100%;
+            height: 55px;
+            min-height: 50px;
+            margin: 0;
+        }
+
+        .dropzone .dz-preview .dz-progress {
+            left: -1px;
+            right: -1px;
+            margin: 0;
+            top: -5px;
+            height: 5px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            width: auto;
+        }
+
+        .dropzone .dz-preview .dz-image {
+            height: 50px;
+            width: 50px;
+            border-radius: 0 !important;
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename {
+            display: flex;
+        }
+
+        .dropzone .dz-preview:hover .dz-image img {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+            -webkit-filter: none;
+            filter: none;
+        }
+
+        .dropzone .dz-preview .dz-image img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .dropzone .dz-preview .dz-progress .dz-upload {
+            background: #396E90;
+        }
+
+        .dropzone .dz-preview .dz-error-message {
+            top: auto;
+            left: 0;
+            background: linear-gradient(to bottom, #ff0000, #ff0000);
+            background: #ff0000;
+        }
+
+        .dropzone .dz-preview .dz-error-message:after {
+            border-bottom: 6px solid #ff0000;
+        }
+
+        .dropzone .dz-preview .dz-remove {
+            color: #396E90;
+            text-decoration: none;
+            padding: 0 25px;
+            position: absolute;
+            right: 0;
+            top: 27%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            z-index: 999999;
+        }
+
+        .dropzone .dz-preview .dz-remove:hover {
+            text-decoration: none;
+        }
+
+        .dropzone .dz-preview.image__open .dz-image {
+            display: block;
+        }
+
+        .dropzone .dz-preview.image__open .uploading {
+            display: none;
+        }
+    </style>
+@endsection

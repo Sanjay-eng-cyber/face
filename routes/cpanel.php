@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\cms\EventController;
 use App\Http\Controllers\cms\UploadController;
 use App\Http\Controllers\cms\CmsUserController;
@@ -74,6 +76,49 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
         Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImages'])->name('backend.category.upload-image-index');
         // });
+
+        Route::post('/upload/{eventSlug}/{categorySlug}', function () {
+            try {
+                $eventSlug = request('eventSlug');
+                $categorySlug = request('categorySlug');
+                $file = request()->file('file');
+                $originalFileName = $file->getClientOriginalName();
+    
+                $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
+    
+                // Store the file in the defined path using the original file name
+                $file->storeAs($destinationPath, $originalFileName, 'public');
+    
+                return response()->json([
+                    'status' => true,
+                    'fileName' => $originalFileName,
+                    'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+                ]);
+            } catch (\Throwable $th) {
+                Log::info($th->getMessage());
+                return response()->json(['status' => false], 500);
+            }
+        })->name('upload');
+    
+        Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{filename}', function () {
+            $eventSlug = request('eventSlug');
+            $categorySlug = request('categorySlug');
+            $filename = request('filename');
+            $filePath = "images/galleries/{$eventSlug}/{$categorySlug}/{$filename}";
+    
+            // Check if the file exists before attempting to delete it
+            if (Storage::disk('public')->exists($filePath)) {
+                // Delete the file
+                Storage::disk('public')->delete($filePath);
+                return response()->json(['success' => true, 'message' => 'File deleted successfully.', 'path' => $filePath]);
+            } else {
+                return response()->json(['success' => false, 'message' => 'File not found.', 'path' => $filePath], 404);
+            }
+            // Log::info('EventSlug : ' . request('eventSlug'));
+            // Log::info('CategorySlug : ' . request('categorySlug'));
+            // Log::info('Delete file Name : ' . request('filename'));
+            // return true;
+        })->name('delete-upload-image');
         
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {
             Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-users.index');
