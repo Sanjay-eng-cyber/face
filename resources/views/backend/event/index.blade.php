@@ -32,10 +32,13 @@
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
                                     type="text" placeholder="Search by event name" name="search"
-                                    value="{{ request('search') ?? '' }}">
+                                    value="{{ request('search') ?? '' }}" minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4 search_btn search_btn_size">
                             </form>
+                            @if ($errors->has('search'))
+                                <div class="text-danger mt-2">{{ $errors->first('search') }}</div>
+                            @endif
                         </div>
                         <div
                             class="align-items-center col-xl-3 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">

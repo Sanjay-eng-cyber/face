@@ -19,6 +19,12 @@ class EventController extends Controller
     }
     public function index(Request $request)
     {
+        $request->validate([
+            'search' => 'nullable|string|min:3|max:40',
+        ], [
+            'search.min' => 'Search term must be at least 3 characters.',
+            'search.max' => 'Search term may not be greater than 40 characters.',
+        ]);
         $query = Event::latest();
         $search = $request->input('search');
         if ($search) {
