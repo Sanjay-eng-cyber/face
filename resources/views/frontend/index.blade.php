@@ -4,7 +4,7 @@
 @section('content')
 
     <section>
-        <div class="container">
+        <div class="container" style="overflow: hidden">
             <div class="row" style="    display: flex;
                         align-items: center;
                         justify-content: center;">
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row position-relative">
                 <div class="col-12">
 
                       <div style="display: flex;
@@ -69,12 +69,35 @@
                             </div>
                          </div>
 
-                         <button type="button" class="btn btn-warning">button</button>
+                         <button type="button h4 mb-0" class="btn btn-warning" style="padding: 19px 45px">
+                            Get Started
+                        </button>
 
 
 
                       </div>
     
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img src="{{asset('frontend/images/index/clientmain.png')}}" alt="" srcset="" class="img-fluid w-100">
+                    <h5 class="mb-0 text-white">
+                        Facial recognition system that works like a charm, allowing your friends and acquaintances to see every photo that
+                        they've made an appearance in!
+                    </h5>
+                </div>
+                <div class="col-6">
+                    <h1 class="text-white" style="font-size: 36px">How Kwikpic Works?</h1>
+                    <h5 class="text-white">let your clients discover their images within seconds</h5>
+                    <div>
+                        <div style="border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;">
+                            <img src="{{asset('frontend/images/index/chain.svg')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
