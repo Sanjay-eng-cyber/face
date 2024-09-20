@@ -19,36 +19,52 @@ class EventController extends Controller
     }
     public function index(Request $request)
     {
-        $request->validate([
-            'search' => 'nullable|string|min:3|max:40',
-        ], [
-            'search.min' => 'Search term must be at least 3 characters.',
-            'search.max' => 'Search term may not be greater than 40 characters.',
-        ]);
-        $query = Event::latest();
-        $search = $request->input('search');
-        if ($search) {
-            $query->where('name', 'LIKE', "%{$search}%");
-        }
+        // $query = Event::latest();
+        // $search = $request->input('search');
+        // if ($search) {
+        //     $query->where('name', 'LIKE', "%{$search}%");
+        // }
 
-        $sortOption = $request->input('sort_option');
-        if ($sortOption == 'new-old') {
-            $query->orderBy('created_at', 'desc');
-        } elseif ($sortOption == 'old-new') {
-            $query->orderBy('created_at', 'asc');
-        } elseif ($sortOption == 'a-z') {
-            $query->orderBy('name', 'asc');
-        } elseif ($sortOption == 'z-a') {
-            $query->orderBy('name', 'desc');
-        }
+        // $sortOption = $request->input('sort_option');
+        // if ($sortOption == 'new-old') {
+        //     $query->orderBy('created_at', 'desc');
+        // } elseif ($sortOption == 'old-new') {
+        //     $query->orderBy('created_at', 'asc');
+        // } elseif ($sortOption == 'a-z') {
+        //     $query->orderBy('name', 'asc');
+        // } elseif ($sortOption == 'z-a') {
+        //     $query->orderBy('name', 'desc');
+        // }
 
-        $events = $query->paginate(10);
-        return view('backend.event.index', compact('events', 'sortOption'));
+        // $events = $query->paginate(10);
+        $events = Event::latest();
+        $events = $this->filterResults($request, $events);
+        $events = $events->paginate(10);
+        return view('backend.event.index', compact('events'));
 
 
 
         // $events = Event::latest()->paginate(10);
         // return view('backend.event.index', compact('events','sortOption'));
+    }
+
+    protected function filterResults($request, $events)
+    {
+        if ($request->q !== '' && !is_null($request->q)) {
+            $request->validate([
+                'q' => 'nullable|string|min:3|max:40',
+            ], [
+                'q.min' => 'Name must be at least 3 characters.',
+                'q.max' => 'Name may not be greater than 40 characters.',
+            ]);
+        }
+
+        if ($request !== null && $request->has('q') && $request['q'] !== '') {
+            $search = $request['q'];
+
+            $events = $events->where('name', 'LIKE', '%' . $search . '%');
+        }
+        return $events;
     }
 
     public function show($id)
