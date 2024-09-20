@@ -199,14 +199,14 @@
         }
 
 
-        @media screen and (max-width:576px){
+        @media screen and (max-width:576px) {
             .dz-filename {
-    display: inline-block;
-    max-width: 73px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+                display: inline-block;
+                max-width: 73px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     </style>
 @endsection
@@ -270,26 +270,28 @@
                                                         @csrf
                                                         <div class="dz-message needsclick ">
                                                             <div class="d-flex flex-column align-items-center">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
-                                                                    <path d="M12 2l-5 5h3v6h4V7h3l-5-5zm6 15H6v2h12v-2z"/>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                    width="40" height="40" fill="currentColor">
+                                                                    <path d="M12 2l-5 5h3v6h4V7h3l-5-5zm6 15H6v2h12v-2z" />
                                                                 </svg>
-                                                                  
-                                                                <div class=" img-circle h5">
-                                                                    Drag and Drop here photos 
-                                                                </div>
-                                                                <div  class="h5">Or</div>
 
-                                                                <div class=" img-circle h5" style="color:#445ede;font-weight:600">
-                                                                  Browse Photos
+                                                                <div class=" img-circle h5">
+                                                                    Drag and Drop here photos
+                                                                </div>
+                                                                <div class="h5">Or</div>
+
+                                                                <div class=" img-circle h5"
+                                                                    style="color:#445ede;font-weight:600">
+                                                                    Browse Photos
                                                                 </div>
                                                             </div>
 
                                                         </div>
-    
+
                                                     </form>
                                                 </div>
                                             </section>
-    
+
                                             <div id="preview-template" style="display: none;">
                                                 <div class="dz-preview dz-file-preview"
                                                     style="position: relative;isolation:isolate">
@@ -420,6 +422,13 @@
                 myDropzone.on("error", function(file, errorMessage) {
                     console.log("File upload error:", errorMessage);
                     file.previewElement.classList.add("dz-error");
+                    var message = (typeof errorMessage === 'object' && errorMessage.message) ?
+                        errorMessage.message : errorMessage;
+                    var errorDisplay = file.previewElement.querySelector("[data-dz-errormessage]");
+                    if (errorDisplay) {
+                        errorDisplay.textContent =
+                            message; // Set the error message in the preview template
+                    }
 
                     totalFiles--; // Decrease the count after error
                     checkFileCount(); // Check if the warning can be removed
@@ -492,5 +501,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css"
         integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* .dropzone .dz-preview.dz-error:hover .dz-error-message {
+                width: 100% !important;
+            } */
+    </style>
 
 @endsection

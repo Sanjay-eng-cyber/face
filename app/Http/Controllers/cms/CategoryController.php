@@ -174,8 +174,8 @@ class CategoryController extends Controller
                 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
             ]);
         } catch (\Throwable $th) {
-            Log::info($th->getMessage());
-            return response()->json(['status' => false], 500);
+            // Log::info($th->getMessage());
+            return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
         }
     }
 
