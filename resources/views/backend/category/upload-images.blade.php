@@ -40,7 +40,7 @@
         .dropzone {
             background: white;
             border-radius: 5px;
-            max-width: 560px;
+            /* max-width: 560px; */
             margin: 50px auto;
             padding: 0 0;
             height: auto;
@@ -56,7 +56,7 @@
             font-weight: 700;
             letter-spacing: 1px;
             font-family: 'Roboto', sans-serif;
-            border: 1px solid #cccccc;
+            border: 4px dashed #cccccc;
             border-radius: 2px;
             padding: 5px 10px 10px 10px;
         }
@@ -197,6 +197,17 @@
         .dropzone .dz-preview.image__open .uploading {
             display: none;
         }
+
+
+        @media screen and (max-width:576px){
+            .dz-filename {
+    display: inline-block;
+    max-width: 73px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+        }
     </style>
 @endsection
 
@@ -251,37 +262,56 @@
                                     </div>
                                     <div class="row">
 
-                                        <section>
-                                            <div id="dropzone">
-                                                <form class="dropzone needsclick demo-upload" action="/upload">
-                                                    @csrf
-                                                    <div class="dz-message needsclick">
-                                                        <div class=" img-circle"> Add photo </div>
-                                                    </div>
+                                        <div class="col-12">
 
-                                                </form>
-                                            </div>
-                                        </section>
+                                            <section>
+                                                <div id="dropzone">
+                                                    <form class="dropzone needsclick demo-upload" action="/upload">
+                                                        @csrf
+                                                        <div class="dz-message needsclick ">
+                                                            <div class="d-flex flex-column align-items-center">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                                                                    <path d="M12 2l-5 5h3v6h4V7h3l-5-5zm6 15H6v2h12v-2z"/>
+                                                                </svg>
+                                                                  
+                                                                <div class=" img-circle h5">
+                                                                    Drag and Drop here photos 
+                                                                </div>
+                                                                <div  class="h5">Or</div>
 
-                                        <div id="preview-template" style="display: none;">
-                                            <div class="dz-preview dz-file-preview"
-                                                style="position: relative;isolation:isolate">
-                                                <div class="dz-image">
-                                                    <img data-dz-thumbnail="">
+                                                                <div class=" img-circle h5" style="color:#445ede;font-weight:600">
+                                                                  Browse Photos
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+    
+                                                    </form>
                                                 </div>
-                                                <div class="dz-details">
-                                                    <div class="dz-filename">
-                                                        <span class="uploading">Uploading - </span>
-                                                        <span data-dz-name=""></span>
+                                            </section>
+    
+                                            <div id="preview-template" style="display: none;">
+                                                <div class="dz-preview dz-file-preview"
+                                                    style="position: relative;isolation:isolate">
+                                                    <div class="dz-image">
+                                                        <img data-dz-thumbnail="">
+                                                    </div>
+                                                    <div class="dz-details">
+                                                        <div class="dz-filename">
+                                                            <span class="uploading">Uploading - </span>
+                                                            <span data-dz-name=""></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dz-progress">
+                                                        <span class="dz-upload" data-dz-uploadprogress=""></span>
+                                                    </div>
+                                                    <div class="dz-error-message">
+                                                        <span data-dz-errormessage=""></span>
                                                     </div>
                                                 </div>
-                                                <div class="dz-progress">
-                                                    <span class="dz-upload" data-dz-uploadprogress=""></span>
-                                                </div>
-                                                <div class="dz-error-message">
-                                                    <span data-dz-errormessage=""></span>
-                                                </div>
                                             </div>
+
+
                                         </div>
 
                                     </div>
