@@ -93,11 +93,51 @@
                 <div class="col-6">
                     <h1 class="text-white" style="font-size: 36px">How Kwikpic Works?</h1>
                     <h5 class="text-white">let your clients discover their images within seconds</h5>
-                    <div>
-                        <div style="border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;">
+                    <div style="padding-bottom:30px;display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
+                        <div style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
                             <img src="{{asset('frontend/images/index/chain.svg')}}" alt="" class="img-fluid">
                         </div>
+
+                        <h4 class="text-white kanit-thin">
+                            Share event link with attendees via email, QR code or WhatsApp
+                        </h4>
                     </div>
+
+
+                    <div style="padding-bottom:30px;    display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
+                        <div style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                            <img src="{{asset('frontend/images/index/camera.svg')}}" alt="" class="img-fluid">
+                        </div>
+
+                        <h4 class="text-white kanit-thin">
+                            Attendees go to the link and take a selfie
+                        </h4>
+                    </div>
+
+
+                    <div style="padding-bottom:30px; display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
+                        <div style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                            <img src="{{asset('frontend/images/index/faceai.svg')}}" alt="" class="img-fluid">
+                        </div>
+
+                        <h4 class="text-white kanit-thin">
+                            Our AI recognizes attendees with 99% accuracy and show them all their images
+                        </h4>
+                    </div>
+
+                    
+                    <div style="padding-bottom:30px;display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
+                        <div style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                            <img src="{{asset('frontend/images/index/ciframe.svg')}}" alt="" class="img-fluid">
+                        </div>
+
+                        <h4 class="text-white kanit-thin">
+                            Images can be printed or downloaded right from mobile
+                        </h4>
+                    </div>
+
+
+                    
                 </div>
             </div>
         </div>
