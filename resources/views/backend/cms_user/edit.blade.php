@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Create Category')
+@section('title', 'Edit Cms User')
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -8,7 +8,7 @@
                     <div class="row justify-content-between align-items-center ">
                         <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
                             <legend class="h4">
-                                Create Category
+                                Edit Cms User
                             </legend>
                         </div>
 
@@ -17,7 +17,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
-                                            Create Category</a></li>
+                                            Edit Cms User</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -27,62 +27,51 @@
             <div class="statbox widget box box-shadow col-md-6">
                 <div class="row m-0">
                     <div class="col-md-12">
-                        <form class="mt-3" method="POST" action="{{ route('backend.category.store') }}"
+                        <form class="mt-3" method="POST" action="{{ route('backend.cms-user.update', $cmsUser->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Name*</label>
+                                    <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="30" required name="name"
-                                        value="{{ old('name') }}">
+                                        value="{{ old('name') ?? $cmsUser->name }}">
                                     @if ($errors->has('name'))
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Event</label>
-                                    <select class="form-control" name="event_id" required>
-                                        <option value="">Select Any</option>
-                                        @foreach ($events as $event)
-                                            <option value="{{ $event->id }}"
-                                                @if (old('event_id')) {{ 'selected' }} @endif>
-                                                {{ $event->name }}</option>
-                                        @endforeach
+                                    <label for="formGroupExampleInput" class="">Role</label>
+                                    <select name="role" class="form-control" required>
+                                        <Option value="">
+                                            Select Any
+                                        </Option>
+                                        <option value="admin" @if (old('role') == 'admin' || $cmsUser->role == 'admin') {{ 'selected' }} @endif>
+                                            Admin</option>
+                                        <option value="super-admin"
+                                            @if (old('role') == 'super-admin' || $cmsUser->role == 'super-admin') {{ 'selected' }} @endif>Super Admin
+                                        </option>
                                     </select>
-                                    @if ($errors->has('event_id'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('event_id') }}</div>
+                                    @if ($errors->has('role'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('role') }}</div>
                                     @endif
                                 </div>
-
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Sharing :</label><br>
-                                    <input type="radio" id="sharingYes" name="sharing" value="1"
-                                        @if (old('sharing')) {{ 'checked' }} @endif required>
-                                    <label for="sharingYes">Yes</label>
-                                    <input type="radio" id="sharingNo" name="sharing" value="0"
-                                        @if (old('sharing')) {{ 'checked' }} @endif required>
-                                    <label for="sharingNo">No</label>
-
-                                    @if ($errors->has('sharing'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
-                                        </div>
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Email</label>
+                                    <input type="email" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Email" minlength="5" maxlength="40" required name="email"
+                                        value="{{ old('email') ?? $cmsUser->email }}">
+                                    @if ($errors->has('email'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
                                 </div>
-
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Visibility :</label><br>
-                                    <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                        @if (old('visibility')) {{ 'checked' }} @endif required>
-                                    <label for="visibilityYes">Yes</label>
-                                    <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                        @if (old('visibility')) {{ 'checked' }} @endif required>
-                                    <label for="visibilityNo">No</label>
-
-                                    @if ($errors->has('visibility'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
-                                        </div>
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Password</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Password" minlength="8" maxlength="16" required name="password"
+                                        value="{{ old('password') }}">
+                                    @if ($errors->has('password'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                                     @endif
                                 </div>
                             </div>

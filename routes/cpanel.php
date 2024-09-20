@@ -4,6 +4,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cms\EventController;
 use App\Http\Controllers\cms\UploadController;
+use App\Http\Controllers\cms\CmsUserController;
 use App\Http\Controllers\cms\GalleryController;
 use App\Http\Controllers\cms\CategoryController;
 
@@ -73,8 +74,15 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
             Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImages'])->name('backend.category.upload-image-index');
         });
-
-
+        Route::group(["middleware" => "cms_user_role:super-admin"], function () {
+            Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-users.index');
+            Route::get('/cms-user/show/{id}', [CmsUserController::class, 'show'])->name('backend.cms-user.show');
+            Route::get('/cms-user/create', [CmsUserController::class, 'create'])->name('backend.cms-user.create');
+            Route::post('/cms-user/store', [CmsUserController::class, 'store'])->name('backend.cms-user.store');
+            Route::get('/cms-user/edit/{id}', [CmsUserController::class, 'edit'])->name('backend.cms-user.edit');
+            Route::post('/cms-user/update/{id}', [CmsUserController::class, 'update'])->name('backend.cms-user.update');
+            Route::get('/cms-user/delete/{id}', [CmsUserController::class, 'delete'])->name('backend.cms-user.delete');
+        });
 
         Route::get('/upload', [UploadController::class, 'index'])->name('backend.upload.index');
         Route::post('/upload/store', [UploadController::class, 'store'])->name('backend.upload.store');

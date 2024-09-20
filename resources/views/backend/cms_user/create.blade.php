@@ -1,0 +1,85 @@
+@extends('backend.layouts.app')
+@section('title', 'Create Cms user')
+@section('content')
+    <div class="layout-px-spacing row layout-top-spacing m-0">
+        <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+            <div class="statbox widget box box-shadow my-1">
+                <div class="widget-header">
+                    <div class="row justify-content-between align-items-center ">
+                        <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
+                            <legend class="h4">
+                                Create Cms User
+                            </legend>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
+                            <nav class="breadcrumb-two" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
+                                            Create Cms User</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="statbox widget box box-shadow col-md-6">
+                <div class="row m-0">
+                    <div class="col-md-12">
+                        <form class="mt-3" method="POST" action="{{ route('backend.cms-user.store') }}"
+                            enctype="multipart/form-data" autocomplete="off">
+                            @csrf
+                            <div class="form-group mb-3 row">
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Name</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Name" minlength="3" maxlength="30" required name="name"
+                                        value="{{ old('name') }}">
+                                    @if ($errors->has('name'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Role</label>
+                                    <select name="role" class="form-control" required>
+                                        <Option value="">
+                                            Select Any
+                                        </Option>
+                                        <option value="admin" @if (old('role')) {{ 'selected' }} @endif>
+                                            Admin</option>
+                                        <option value="super-admin"
+                                            @if (old('role')) {{ 'selected' }} @endif>Super Admin
+                                        </option>
+                                    </select>
+                                    @if ($errors->has('role'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('role') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Email</label>
+                                    <input type="email" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Email" minlength="5" maxlength="40" required name="email"
+                                        value="{{ old('email') }}">
+                                    @if ($errors->has('email'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Password</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Password" minlength="8" maxlength="16" required name="password"
+                                        value="{{ old('password') }}">
+                                    @if ($errors->has('password'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
+                                    @endif
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

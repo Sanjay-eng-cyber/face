@@ -15,6 +15,7 @@ class CmsUserSeeder extends Seeder
     {
         DB::table('cms_users')->insert([
             [
+                "name" => 'Admin',
                 "role" => 'admin',
                 "email" => 'admin@test.com',
                 "password" => bcrypt('password'),
@@ -22,6 +23,7 @@ class CmsUserSeeder extends Seeder
                 "updated_at" => now()
             ],
             [
+                "name" => 'Super Admin',
                 "role" => 'super-admin',
                 "email" => 'superadmin@test.com',
                 "password" => bcrypt('password'),
