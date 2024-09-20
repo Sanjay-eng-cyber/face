@@ -11,10 +11,31 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::latest()->paginate(10);
+        $categories = Category::latest();
+        $categories = $this->filterResults($request, $categories);
+        $categories = $categories->paginate(10);
         return view('backend.category.index', compact('categories'));
+    }
+
+    protected function filterResults($request, $categories)
+    {
+        if ($request->q !== '' && !is_null($request->q)) {
+            $request->validate([
+                'q' => 'nullable|string|min:3|max:40',
+            ], [
+                'q.min' => 'Name must be at least 3 characters.',
+                'q.max' => 'Name may not be greater than 40 characters.',
+            ]);
+        }
+
+        if ($request !== null && $request->has('q') && $request['q'] !== '') {
+            $search = $request['q'];
+
+            $categories = $categories->where('name', 'LIKE', '%' . $search . '%');
+        }
+        return $categories;
     }
 
     public function show($id)
