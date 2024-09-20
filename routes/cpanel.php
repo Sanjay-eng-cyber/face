@@ -44,36 +44,37 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::post('/user/add/subscription/{user_id}', 'App\Http\Controllers\cms\UserController@createSubscription')->name('backend.user.subscription.create');
 
-        Route::group(["middleware" => "cms_user_role:admin"], function () {
+        // Route::group(["middleware" => "cms_user_role:admin"], function () {
 
-            Route::get('/events', [EventController::class, 'index'])->name('backend.events.index');
-            Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
-            Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
-            Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
-            Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');
-            Route::post('/event/update/{id}', [EventController::class, 'update'])->name('backend.event.update');
-            Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
-            Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
+        Route::get('/events', [EventController::class, 'index'])->name('backend.events.index');
+        Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
+        Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
+        Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
+        Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');
+        Route::post('/event/update/{id}', [EventController::class, 'update'])->name('backend.event.update');
+        Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
+        // Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
 
-            // general setting page
-            Route::get('/event/general-setting', [EventController::class, 'gsetting'])->name('backend.event.gsetting');
+        // general setting page
+        Route::get('/event/general-setting', [EventController::class, 'gsetting'])->name('backend.event.gsetting');
 
 
-            Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
-            Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
+        Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
+        Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
 
-            Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
-            Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
+        Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
+        Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
 
-            Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.categories.index');
-            Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
-            Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
-            Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
-            Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('backend.category.edit');
-            Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('backend.category.update');
-            Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
-            Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImages'])->name('backend.category.upload-image-index');
-        });
+        Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.categories.index');
+        Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
+        Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
+        Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
+        Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('backend.category.edit');
+        Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('backend.category.update');
+        Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
+        Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImages'])->name('backend.category.upload-image-index');
+        // });
+        
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {
             Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-users.index');
             Route::get('/cms-user/show/{id}', [CmsUserController::class, 'show'])->name('backend.cms-user.show');
