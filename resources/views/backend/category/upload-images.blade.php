@@ -1,5 +1,203 @@
 @extends('backend.layouts.app')
 @section('title', 'Upload Images | ' . $event->name . ' | ' . $category->name)
+
+@section('cdn')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css"
+        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .lg-icon {
+            background: transparent !important;
+        }
+        .dropzone .dz-preview.dz-complete .dz-progress {
+            opacity: 1;
+        }
+
+        .dropzone .dz-preview .dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 9px;
+    left: 0%;
+    top: 79%;
+    margin-top: 0px;
+    width: 100%;
+    /* margin-left: -40px; */
+    background: rgba(255, 255, 255, .9);
+    -webkit-transform: scale(1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0px;
+}
+        .dropzone .dz-preview.dz-image-preview {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .dropzone {
+            background: white;
+            border-radius: 5px;
+            max-width: 560px;
+            margin: 50px auto;
+            padding: 0 0;
+            height: auto;
+            min-height: 50px;
+        }
+
+
+        /* Custom css */
+        .dropzone.dz-clickable {
+            cursor: pointer;
+            background: #fafafa;
+            color: #396E90;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Roboto', sans-serif;
+            border: 1px solid #cccccc;
+            border-radius: 2px;
+            padding:5px 10px 10px 10px;
+        }
+
+        .dropzone .camera-img {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 15px;
+            position: absolute;
+            left: 0;
+        }
+
+        .dropzone .img-circle {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropzone .camera-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .dz-filename {
+
+            display: inline-block;
+            /* Ensure it behaves like a block for text overflow */
+            max-width: 200px;
+            /* Set a maximum width for the filename container */
+            white-space: nowrap;
+            /* Prevent text from wrapping to the next line */
+            overflow: hidden;
+            /* Hide the overflowing text */
+            text-overflow: ellipsis;
+            /* Add ellipsis (...) to indicate that the text is truncated */
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename:hover span {
+            border: 1px solid transparent;
+        }
+
+        .dropzone .dz-message {
+            margin: 15px;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-size {
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details {
+            height: 50px;
+            min-height: 50px;
+            padding: 0;
+            padding-left: 25px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            justify-content: space-between;
+        }
+
+        .dropzone .dz-preview.image__open .dz-details {
+            padding-left: 55px;
+        }
+
+        .dropzone .dz-preview {
+            width: 100%;
+            height: 55px;
+            min-height: 50px;
+            margin: 0;
+        }
+
+ 
+
+        .dropzone .dz-preview .dz-image {
+            height: 50px;
+            width: 50px;
+            border-radius: 0 !important;
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename {
+            display: flex;
+        }
+
+        .dropzone .dz-preview:hover .dz-image img {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+            -webkit-filter: none;
+            filter: none;
+        }
+
+        .dropzone .dz-preview .dz-image img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .dropzone .dz-preview .dz-progress .dz-upload {
+            background: #396E90;
+        }
+
+        .dropzone .dz-preview .dz-error-message {
+            top: auto;
+            left: 0;
+            background: linear-gradient(to bottom, #ff0000, #ff0000);
+            background: #ff0000;
+        }
+
+        .dropzone .dz-preview .dz-error-message:after {
+            border-bottom: 6px solid #ff0000;
+        }
+
+        .dropzone .dz-preview .dz-remove {
+            color: #396E90;
+            text-decoration: none;
+            padding: 0 25px;
+            position: absolute;
+            right: 0;
+            top: 27%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            z-index: 999999;
+        }
+
+        .dropzone .dz-preview .dz-remove:hover {
+            text-decoration: none;
+        }
+
+        .dropzone .dz-preview.image__open .dz-image {
+            display: block;
+        }
+
+        .dropzone .dz-preview.image__open .uploading {
+            display: none;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -261,187 +459,4 @@
     </script>
 @endsection
 
-@section('cdn')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css"
-        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .lg-icon {
-            background: transparent !important;
-        }
 
-        .dropzone .dz-preview.dz-image-preview {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .dropzone {
-            background: white;
-            border-radius: 5px;
-            max-width: 560px;
-            margin: 50px auto;
-            padding: 0 0;
-            height: auto;
-            min-height: 50px;
-        }
-
-
-        /* Custom css */
-        .dropzone.dz-clickable {
-            cursor: pointer;
-            background: #fafafa;
-            color: #396E90;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-family: 'Roboto', sans-serif;
-            border: 1px solid #cccccc;
-            border-radius: 2px;
-        }
-
-        .dropzone .camera-img {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 15px;
-            position: absolute;
-            left: 0;
-        }
-
-        .dropzone .img-circle {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropzone .camera-img img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .dz-filename {
-
-            display: inline-block;
-            /* Ensure it behaves like a block for text overflow */
-            max-width: 200px;
-            /* Set a maximum width for the filename container */
-            white-space: nowrap;
-            /* Prevent text from wrapping to the next line */
-            overflow: hidden;
-            /* Hide the overflowing text */
-            text-overflow: ellipsis;
-            /* Add ellipsis (...) to indicate that the text is truncated */
-        }
-
-        .dropzone .dz-preview .dz-details .dz-filename:hover span {
-            border: 1px solid transparent;
-        }
-
-        .dropzone .dz-message {
-            margin: 15px;
-        }
-
-        .dropzone .dz-preview .dz-details .dz-size {
-            display: none;
-        }
-
-        .dropzone .dz-preview .dz-details {
-            height: 50px;
-            min-height: 50px;
-            padding: 0;
-            padding-left: 25px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            opacity: 1;
-            justify-content: space-between;
-        }
-
-        .dropzone .dz-preview.image__open .dz-details {
-            padding-left: 55px;
-        }
-
-        .dropzone .dz-preview {
-            width: 100%;
-            height: 55px;
-            min-height: 50px;
-            margin: 0;
-        }
-
-        .dropzone .dz-preview .dz-progress {
-            left: -1px;
-            right: -1px;
-            margin: 0;
-            top: -5px;
-            height: 5px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            width: auto;
-        }
-
-        .dropzone .dz-preview .dz-image {
-            height: 50px;
-            width: 50px;
-            border-radius: 0 !important;
-            display: none;
-        }
-
-        .dropzone .dz-preview .dz-details .dz-filename {
-            display: flex;
-        }
-
-        .dropzone .dz-preview:hover .dz-image img {
-            -webkit-transform: none;
-            -moz-transform: none;
-            -ms-transform: none;
-            -o-transform: none;
-            transform: none;
-            -webkit-filter: none;
-            filter: none;
-        }
-
-        .dropzone .dz-preview .dz-image img {
-            height: 100%;
-            width: 100%;
-        }
-
-        .dropzone .dz-preview .dz-progress .dz-upload {
-            background: #396E90;
-        }
-
-        .dropzone .dz-preview .dz-error-message {
-            top: auto;
-            left: 0;
-            background: linear-gradient(to bottom, #ff0000, #ff0000);
-            background: #ff0000;
-        }
-
-        .dropzone .dz-preview .dz-error-message:after {
-            border-bottom: 6px solid #ff0000;
-        }
-
-        .dropzone .dz-preview .dz-remove {
-            color: #396E90;
-            text-decoration: none;
-            padding: 0 25px;
-            position: absolute;
-            right: 0;
-            top: 27%;
-            transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            z-index: 999999;
-        }
-
-        .dropzone .dz-preview .dz-remove:hover {
-            text-decoration: none;
-        }
-
-        .dropzone .dz-preview.image__open .dz-image {
-            display: block;
-        }
-
-        .dropzone .dz-preview.image__open .uploading {
-            display: none;
-        }
-    </style>
-@endsection
