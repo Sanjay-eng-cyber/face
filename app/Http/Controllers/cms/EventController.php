@@ -157,9 +157,9 @@ class EventController extends Controller
         }
     }
 
-    public function gallery($id)
-    {
-        $event = Event::findOrFail($id);
-        return view('backend.event.gallery', compact('event'));
-    }
+    // public function gallery($id)
+    // {
+    //     $event = Event::findOrFail($id);
+    //     return view('backend.event.gallery', compact('event'));
+    // }
 }
