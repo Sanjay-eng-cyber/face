@@ -14,37 +14,37 @@
                            
                            <div class=" py-5 position-relative isolation" style="    display: flex;align-items: center;justify-content: center;">
 
-                            <div style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 0px;top: 28px;">
+                            <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 0px;top: 28px;">
                                 Share Party Album With Friends 
                             </div>
 
                             
-                            <div style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;">
+                            <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;">
                                 Share Memories Of Friends 
                             </div>
 
 
                             
-                            <div style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;">
+                            <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop " style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;">
                               We Have Found Common Images With People 
                             </div>
 
-                            <div style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;">
+                            <div class="animate__animated animate__fadeInRight delayed-animationrightbottom" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;">
                              We Found 6 New Photos! 
                             </div>
 
-                            <div style="position: relative;left: 79px;z-index: -1;">
-                                <img src="{{asset('frontend/images/index/one.png')}}" alt="" class="img-fluid" >
+                            
+                            <div class="first-glow-main" style="position: relative;left: 79px;z-index: -1;">
+                                <img src="{{asset('frontend/images/index/one.png')}}" alt="" class="img-fluid first-glow" >
                             </div>
 
-                            <div>
-                                <img src="{{asset('frontend/images/index/two.png')}}" alt="" class="img-fluid">
-
+                            <div class="grow-image-main">
+                                <img src="{{asset('frontend/images/index/two.png')}}" alt="" class="img-fluid grow-image-middle">
                             </div>
                                 
 
-                            <div style="position: relative;z-index: -1;right: 79px;">
-                                <img src="{{asset('frontend/images/index/three.png')}}" alt="" class="img-fluid" > 
+                            <div class="third-glow-main" style="position: relative;z-index: -1;right: 79px;">
+                                <img src="{{asset('frontend/images/index/three.png')}}" alt="" class="img-fluid third-glow" > 
                             </div>
                            
 
@@ -58,8 +58,8 @@
                 <div class="col-12">
 
                       <div style="display: flex;
-    justify-content: space-between;
-    align-items: center;">
+                            justify-content: space-between;
+                            align-items: center;">
                          <div>
                             <div class="h1 text-white">
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
