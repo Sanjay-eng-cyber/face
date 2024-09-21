@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('image_name');
             $table->string('image_url');
-            $table->longText('image_encoding');
             $table->longText('face_encoding');
+            $table->longText('face_locations');
             $table->timestamps();
         });
     }

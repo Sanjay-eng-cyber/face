@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
@@ -168,6 +169,27 @@ class CategoryController extends Controller
             // Store the file in the defined path using the original file name
             $file->storeAs($destinationPath, $originalFileName, 'public');
 
+
+            // call python api - url -> 
+            // $res = Http::post(config('app.python_api_url') . '/inputimg', [
+            //     'event_id' => $event->id,
+            //     'category_id' => $category->id,
+            //     'cms_user_id' => auth()->user()->id
+            // ])->attach(
+            //         'file', // The name of the file field in the request
+            //         file_get_contents($file->getRealPath()), // The file's content
+            //         $originalFileName // The file name
+            //     );
+
+            // if ($res->successful()) {
+            //     // Handle the success response
+            //     return response()->json([
+            //         'status' => true,
+            //         'fileName' => $originalFileName,
+            //         'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+            //     ]);
+            // }
+
             return response()->json([
                 'status' => true,
                 'fileName' => $originalFileName,
@@ -175,8 +197,8 @@ class CategoryController extends Controller
             ]);
         } catch (\Throwable $th) {
             // Log::info($th->getMessage());
-            return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
         }
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
     }
 
     public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $filename)
