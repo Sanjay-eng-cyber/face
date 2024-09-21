@@ -29,6 +29,9 @@ return [
     'env' => env('APP_ENV', 'production'),
     'web_domain' => env('WEB_DOMAIN'),
     'cms_domain' => env('CMS_DOMAIN'),
+    
+    'python_api_url' => env('PYTHON_API_URL'),
+
 
     /*
     |--------------------------------------------------------------------------
