@@ -82,7 +82,7 @@
         </div>
 
         <div class="container">
-            <div class="row">
+            <div class="row gx-5">
                 <div class="col-6">
                     <img src="{{asset('frontend/images/index/clientmain.png')}}" alt="" srcset="" class="img-fluid w-100">
                     <h5 class="mb-0 text-white">
@@ -141,6 +141,55 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
+                    <div class="text-white" style="font-size: 36px"> <span class="granny-lipgloss">Smartly</span> Deliver Photos to your Clients</div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="
+                        border-radius:45px;
+                        padding:1px;
+                        background: linear-gradient(101.22deg, #FFFFFF 38.55%, rgba(13, 11, 12, 0) 100.18%);
+
+">
+                            <div style="background-color: #040404;
+                            border-radius:45px;padding:68px 34px;    
+                            display: grid;
+                            grid-template-columns: 64% 34%;
+                            grid-gap: 2%;
+                            ">
+                               <div>
+                                    <h4 class="text-white mb-0">            
+                                        Clicking photos is one half of the task. The second half is delivering them to your clients. 
+                                    </h4>
+                                    <h4 class="text-white mb-0 pt-4">
+                                        Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock Kwikpic s best features to grow your brand and customer reach, choose from a range of gallery templates to best represent your style, get different download settings and much more!
+                                    </h4>
+                               </div>
+                               <div style="position: relative">
+                                    <img src="{{asset('frontend/images/index/flowline.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;
+    z-index: 1;
+    right: -30px;
+    top: -65px;">
+                                    <img src="{{asset('frontend/images/index/mobilesize.png')}}" alt="" srcset="" class="img-fluid" style="position: absolute;bottom:-67px">
+                               </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </section>
 
 
