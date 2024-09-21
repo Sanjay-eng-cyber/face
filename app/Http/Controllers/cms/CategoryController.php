@@ -164,39 +164,42 @@ class CategoryController extends Controller
             $file = request()->file('file');
             $originalFileName = $file->getClientOriginalName();
 
-            $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
+            // $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
 
-            // Store the file in the defined path using the original file name
-            $file->storeAs($destinationPath, $originalFileName, 'public');
+            // // Store the file in the defined path using the original file name
+            // $file->storeAs($destinationPath, $originalFileName, 'public');
 
 
             // call python api - url -> 
-            // $res = Http::post(config('app.python_api_url') . '/inputimg', [
-            //     'event_id' => $event->id,
-            //     'category_id' => $category->id,
-            //     'cms_user_id' => auth()->user()->id
-            // ])->attach(
-            //         'file', // The name of the file field in the request
-            //         file_get_contents($file->getRealPath()), // The file's content
-            //         $originalFileName // The file name
-            //     );
+            $res = Http::attach(
+                'file', // The name of the file field in the request
+                file_get_contents($file->getRealPath()), // The file's content
+                $originalFileName, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/', [
+                        'cms_user_id' => auth()->user()->id,
+                        'event_id' => $event->id,
+                        'category_id' => $category->id,
+                    ]);
+            Log::info('came here');
+            Log::info($res);
+            if ($res->successful()) {
+                // Handle the success response
+                Log::info('came here 2');
+                return response()->json([
+                    'status' => true,
+                    'fileName' => $originalFileName,
+                    'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+                ], 200);
+            }
 
-            // if ($res->successful()) {
-            //     // Handle the success response
-            //     return response()->json([
-            //         'status' => true,
-            //         'fileName' => $originalFileName,
-            //         'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
-            //     ]);
-            // }
-
-            return response()->json([
-                'status' => true,
-                'fileName' => $originalFileName,
-                'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
-            ]);
+            // return response()->json([
+            //     'status' => true,
+            //     'fileName' => $originalFileName,
+            //     'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+            // ]);
         } catch (\Throwable $th) {
-            // Log::info($th->getMessage());
+            Log::info($th->getMessage());
         }
         return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
     }
