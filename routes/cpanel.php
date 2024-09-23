@@ -75,6 +75,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('backend.category.update');
         Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('backend.category.delete');
         Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImagesIndex'])->name('backend.category.upload-image-index');
+        Route::get('/category/uploaded-images/{id}', [CategoryController::class, 'uploadedImagesIndex'])->name('backend.category.upload-image-show');
         // });
 
         Route::post('/upload/{eventSlug}/{categorySlug}', [CategoryController::class, 'uploadImages'])->name('backend.category.image-upload');

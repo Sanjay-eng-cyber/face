@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Categories')
+@section('title', 'Uploaded Images')
 @section('content')
     <div class="row layout-top-spacing m-0 pa-padding-remove">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h4">
-                                Categories
+                                Uploaded Images (Total - {{ $totalImages }})
                             </legend>
                         </div>
 
@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Categories</a></li>
+                                            href="javascript:void(0);">Uploaded Images</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -26,7 +26,7 @@
 
 
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
                             <form class="form-inline row app_form" action="{{ route('backend.categories.index') }}"
                                 method="GET">
@@ -48,7 +48,7 @@
                                 Add Category
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
@@ -60,17 +60,27 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        <th>Name</th>
-                                        {{-- <th>Image</th> --}}
-                                        <th class="text-center">Action</th>
+                                        <th>Image Name</th>
+                                        <th class="text-center">Image</th>
+                                        {{-- <th class="text-center">Action</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($categories as $category)
+                                    @forelse($images as $image)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $categories) }}</td>
-                                            <td>{{ $category->name }}</td>
+                                            <td>{{ tableRowSrNo($loop->index, $images) }}</td>
+                                            <td>{{ $image->image_name }}</td>
                                             <td class="text-center">
+                                                <span class="lightgallery1">
+                                                    <a href="{{ getPythonImageUrl($image->image_url) }}">
+                                                        {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
+                                                            style="height: 100px;width:150px;object-fit:contain;"
+                                                            alt=""> --}}
+                                                            View
+                                                    </a>
+                                                </span>
+                                            </td>
+                                            {{-- <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
@@ -95,14 +105,14 @@
                                                             Images</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.category.upload-image-show', $category->id) }}">View
-                                                            Uploaded Images</a>
+                                                            Images</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.category.delete', $category->id) }}"
                                                             onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
                                                     </div>
                                                 </div>
 
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
@@ -115,7 +125,7 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $categories->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
@@ -128,5 +138,17 @@
 
 @endsection
 @section('js')
-
+    <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
+    <script>
+        $(document).ready(function() {
+            $(".lightgallery1").each(function() {
+                lightGallery(this, {
+                    speed: 500,
+                    download: false,
+                    thumbnail: true,
+                });
+            });
+        });
+    </script>
 @endsection

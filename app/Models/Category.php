@@ -14,4 +14,9 @@ class Category extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    public function gallery_images()
+    {
+        return $this->hasMany(GalleryImage::class);
+    }
 }

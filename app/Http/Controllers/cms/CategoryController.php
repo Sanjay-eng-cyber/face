@@ -219,4 +219,13 @@ class CategoryController extends Controller
             return response()->json(['success' => false, 'message' => 'File not found.', 'path' => $filePath], 404);
         }
     }
+
+    public function uploadedImagesIndex(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        $images = $category->gallery_images()->paginate(10);
+        $totalImages = $category->gallery_images()->count();
+        // dd($images);
+        return view('backend.category.uploaded-images-index', compact('category', 'images', 'totalImages'));
+    }
 }

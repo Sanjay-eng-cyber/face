@@ -31,6 +31,7 @@ return [
     'cms_domain' => env('CMS_DOMAIN'),
     
     'python_api_url' => env('PYTHON_API_URL'),
+    'python_media_url' => env('PYTHON_MEDIA_URL'),
 
 
     /*

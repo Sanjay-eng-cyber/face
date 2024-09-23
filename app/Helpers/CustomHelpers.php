@@ -70,7 +70,7 @@ if (!function_exists('uploadFile')) {
     {
         $fileWithExt = $file;
         $extension = $fileWithExt->clientExtension();
-        $filename =  date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+        $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
         $destinationPath = storage_path('app/public/' . $location . '/');
         if (in_array($extension, ['png', 'jpg', 'jpeg'])) {
             $coverImg = Image::make($fileWithExt->getRealPath())->resize(null, 1000, function ($constraint) {
@@ -81,15 +81,16 @@ if (!function_exists('uploadFile')) {
             $coverImg->save($destinationPath . $filename, $quality);
             $extension = 'image';
         } else {
-            Storage::disk('public')->put($location . '/' . $filename,  file_get_contents($fileWithExt));
+            Storage::disk('public')->put($location . '/' . $filename, file_get_contents($fileWithExt));
         }
         return ['filename' => $filename, 'type' => $extension];
     }
 }
 
-function saveFile($file,$destinationPath){
-    $filename =  date('Ymd-his'). "." .uniqid().".". $file->clientExtension();
-    $coverImg=Image::make($file->getRealPath())->resize(600, null, function ($constraint) {
+function saveFile($file, $destinationPath)
+{
+    $filename = date('Ymd-his') . "." . uniqid() . "." . $file->clientExtension();
+    $coverImg = Image::make($file->getRealPath())->resize(600, null, function ($constraint) {
         $constraint->aspectRatio();
         $constraint->upsize();
     });
@@ -141,6 +142,13 @@ if (!function_exists('struniq')) {
     function struniq()
     {
         return substr(uniqid(), 11) . rand(10, 99) . substr(strtotime(now()), 6);
+    }
+}
+
+if (!function_exists('getPythonImageUrl')) {
+    function getPythonImageUrl($loc)
+    {
+        return config('app.python_media_url') . $loc;
     }
 }
 
