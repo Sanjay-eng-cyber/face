@@ -162,6 +162,9 @@ class EventController extends Controller
     public function delete($id)
     {
         $event = Event::findOrFail($id);
+        if ($event->categories()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
+        };
         if ($event->delete()) {
             return redirect()->route('backend.events.index')->with(
                 [
