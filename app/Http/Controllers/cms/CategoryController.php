@@ -130,6 +130,9 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category = Category::findOrFail($id);
+        if ($category->gallery_images()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Gallery Images is present']);
+        };
         if ($category->delete()) {
             return redirect()->route('backend.categories.index')->with(
                 [
@@ -170,17 +173,17 @@ class CategoryController extends Controller
             // $file->storeAs($destinationPath, $originalFileName, 'public');
 
 
-            // call python api - url -> 
+            // call python api - url ->
             $res = Http::attach(
                 'file', // The name of the file field in the request
                 file_get_contents($file->getRealPath()), // The file's content
                 $originalFileName, // The file name
                 ['Content-Type' => 'image/jpeg']
             )->post(config('app.python_api_url') . '/inputimg/', [
-                        'cms_user_id' => auth()->user()->id,
-                        'event_id' => $event->id,
-                        'category_id' => $category->id,
-                    ]);
+                'cms_user_id' => auth()->user()->id,
+                'event_id' => $event->id,
+                'category_id' => $category->id,
+            ]);
             Log::info('came here');
             Log::info($res);
             if ($res->successful()) {
