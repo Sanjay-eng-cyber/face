@@ -216,6 +216,51 @@ body {
 
 
 /* end nav */
+/* fetures index page */
+
+
+.custome-accordion .accordion-button:not(.collapsed)::after {
+  display: none;
+}
+
+.custome-accordion .accordion-button::after {
+    display: none;
+}
+
+.custome-accordion .accordion-item{
+    border-top: 1px solid #FD59FF;
+    border-bottom: 1px solid #FD59FF;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background-color: transparent;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+.custome-accordion .accordion-button:not(.collapsed){
+    background-color: transparent;
+    color: white;
+    box-shadow: unset;
+}
+
+
+.custome-accordion .accordion-button{
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 0px;
+
+background-color: transparent;
+color:white;
+}
+
+.custome-accordion .accordion-button:focus {
+    box-shadow:unset;
+}
+
+.custome-accordion .accordion-body{
+padding-left: 0px;
+}
+/* end nav */
 
 /* media query */
 @media (min-width: 992px) {

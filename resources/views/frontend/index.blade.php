@@ -158,7 +158,7 @@
                         padding:1px;
                         background: linear-gradient(101.22deg, #FFFFFF 38.55%, rgba(13, 11, 12, 0) 100.18%);
 
-">
+                                        ">
                             <div style="background-color: #040404;
                             border-radius:45px;padding:68px 34px;    
                             display: grid;
@@ -175,9 +175,9 @@
                                </div>
                                <div style="position: relative">
                                     <img src="{{asset('frontend/images/index/flowline.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;
-    z-index: 1;
-    right: -30px;
-    top: -65px;">
+                                        z-index: 1;
+                                        right: -30px;
+                                        top: -65px;">
                                     <img src="{{asset('frontend/images/index/mobilesize.png')}}" alt="" srcset="" class="img-fluid" style="position: absolute;bottom:-67px">
                                </div>
                             </div>
@@ -189,6 +189,107 @@
             </div>
         </div>
 
+        <div style="position:relative">
+            <img src="{{asset('frontend/images/index/robothand.svg')}}" alt="" srcset="" class="img-fluid" style="
+                    position: absolute;
+    right: 0px;
+    top: 109px;
+    width: 246px;
+    z-index: 999;
+
+                ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="fw-500 mb-0 text-center text-white py-5">Features you don’t want to miss</h2>
+                        <div class="custome-accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                <h2 class="accordion-header " id="headingOne">
+                                    <button class="accordion-button display-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Blazing Fast AI Recognition
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                
+                                        <div style="    
+                                        display: grid;
+                                    grid-template-columns: 65% 31%;
+                                    grid-gap: 4%;">
+                                            <div class="text-white">
+                                                Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+                                            </div>
+                                            <div class="position-relative">
+                                                <img src="{{asset('frontend/images/index/blazingimg.png')}}" alt="" srcset="" class="img-fluid" style="    
+                                              position: absolute;
+    z-index: 99;
+    transform: rotate(10deg);
+    left: 31px;
+    top: -146px;
+    border-radius: 24px 0px 0px 15px;
+                                                ">
+                                            </div>
+                                        </div>
+                                
+                                    </div>
+
+                                </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Intelligent Statistics
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="text-white">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nostrum quis suscipit cumque non. At facilis dicta rem iste enim pariatur est ratione itaque modi consequatur expedita cumque, aperiam repudiandae? Sit, ut amet minima tempore sunt fuga ad modi molestias, porro facilis sapiente a, atque minus culpa. Eos architecto quas nulla molestiae labore voluptatum quia numquam consequuntur eligendi deleniti suscipit assumenda ut excepturi dolores similique repellendus sint illum id, odit quis. Quod ullam minima dolore expedita aut ducimus similique vel, iusto assumenda nisi corrupti inventore dolorum soluta libero a, sapiente beatae velit! Ipsum alias labore dolorum sed doloribus delectus necessitatibus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Custom web App
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="text-white">
+                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque iure ullam labore error animi, quasi soluta nulla ipsum, eos dolor obcaecati possimus! Voluptatem eligendi, repudiandae accusamus nisi molestias nemo accusantium culpa atque dolore alias nihil fuga, vero vitae porro nulla sit. Sunt nesciunt, eveniet vel magni id hic illum maxime dolores praesentium harum reprehenderit et dignissimos alias dolorum tempore quam placeat aspernatur numquam blanditiis corporis! Debitis fugiat laboriosam rerum, veritatis consequuntur voluptas omnis asperiores quidem ea deserunt consectetur ratione corrupti exercitationem magni aperiam laudantium obcaecati id vel saepe quae? Magnam repellendus reiciendis enim aperiam et dignissimos quis quasi labore voluptatum.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Safe, Secure & Private
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                                <div class="text-white">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum, esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus sapiente perferendis necessitatibus molestias ab non quisquam placeat consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium itaque recusandae maiores repellat vero? Rerum, magnam maiores?
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </section>
 
