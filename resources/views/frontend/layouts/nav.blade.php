@@ -3,13 +3,13 @@
         style="    position: absolute;right: 0px;">
 
     <div class="container-fluid position-relative" >
-        <a class="navbar-brand " href="#" style="position: absolute">
+        <a class="navbar-brand " href="{{url('/')}}" style="position: absolute">
             <img src="{{ asset('frontend/images/index/mainlogo.png') }}" alt="" srcset=""
                 class="img-fluid" style="width: 164px">
         </a>
 
         <nav class="navbar navbar-expand-lg" style="display: flex;justify-content: flex-end;">
-               
+
                 <button class="navbar-toggler position-relative bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
