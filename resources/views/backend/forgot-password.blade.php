@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Forgot-Password</title>
-    <link rel="icon" type="image/x-icon" href="backend/assets/img/90x90.svg" />
+    <title>Forgot-Password - face</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('backend/images/mainlogo.png') }}" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
