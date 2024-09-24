@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('backend/images/mainlogo.png') }}" type="image/x-icon">
     <title>Reset Password - Vission EMR</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -24,25 +24,31 @@
         }
 
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, rgba(0, 175, 239, 0.29) 100%);
+            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%);
             background-repeat: no-repeat;
 
             /* Set the height of the container */
         }
 
         .bg-pink-color {
-            background-color: #EC268F;
-            border-radius: 12.666px;
+            background-color: #64002F;
+            border-radius: 50px;
             color: white;
+            border: 1px solid white;
             transition: none;
+            padding: 18px 45px;
+            width: 200px;
+            margin: auto;
+            font-weight: 500;
+            font-size:18px;
             /* Remove default transition effect */
 
         }
 
         .bg-pink-color:hover {
             background-color: transparent;
-            color: #EC268F;
-            border: 2px solid #EC268F;
+            color: #64002F;
+            border: 2px solid #64002F;
         }
 
         input[data-custom-attribute="channels-login"] {
@@ -63,7 +69,7 @@
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px">
             <img class="d-block mx-auto w-100 mt-5" style="max-width:250px"
-                src="backend/images/vission-eye-logo-circle.svg" alt="">
+                src="backend/images/mainlogo.png" alt="">
             <h1 class="text-center h3 mt-5 auth-text-primary cubold text-cl">Reset Password</h1>
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
@@ -93,9 +99,11 @@
                     <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                 @endif
 
-                <button type="submit" class="form-control btn-lg  h-auto mt-3 auth-bg-primary font-bold bg-pink-color">
-                    Login
-                </button>
+                <div class="text-center">
+                    <button type="submit" class="form-control btn-lg mx-auto  h-auto mt-3 auth-bg-primary font-bold bg-pink-color">
+                        Login
+                    </button>
+                </div>
 
             </form>
             <div class="text-center text-muted mt-3">

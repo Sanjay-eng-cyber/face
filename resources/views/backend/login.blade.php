@@ -8,7 +8,7 @@
     <title>Login - {{ config('app.name') }}</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('backend/images/mainlogo.png') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="backend/css/cms.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
@@ -22,7 +22,7 @@
         }
 
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, rgba(0, 175, 239, 0.29) 100%);
+            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%,#0FACB3 100%);
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
@@ -32,18 +32,22 @@
         }
 
         .bg-pink-color {
-            background-color: #EC268F;
-            border-radius: 12.666px;
+            background-color: #64002F;
+            border-radius: 50px;
             color: white;
+            border: 1px solid white;
             transition: none;
+            padding: 18px 45px;
+            width: 200px;
+            margin: auto
             /* Remove default transition effect */
 
         }
 
         .bg-pink-color:hover {
             background-color: transparent;
-            color: #EC268F;
-            border: 2px solid #EC268F;
+            color: #64002F;
+            border: 2px solid #64002F;
         }
 
         input[data-custom-attribute="channels-login"] {
@@ -59,7 +63,7 @@
     <div class="container ">
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px;">
-            <img class="d-block mx-auto " style="max-width:47%" src="{{ asset('backend/images/channel-logo.svg') }}"
+            <img class="d-block mx-auto " style="max-width:47%" src="{{ asset('backend/images/mainlogo.png') }}"
                 alt="">
             <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl">Login</h1>
             <form method="POST" action="{{ route('cms.login.submit') }}">

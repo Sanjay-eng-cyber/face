@@ -15,29 +15,35 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="backend/assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="backend/assets/css/forms/switches.css">
-    <link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('backend/images/mainlogo.png') }}" type="image/x-icon">
 
     <style>
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, rgba(0, 175, 239, 0.29) 100%);
+            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%);
             background-repeat: no-repeat;
 
             /* Set the height of the container */
         }
 
         .bg-pink-color {
-            background-color: #EC268F;
-            border-radius: 12.666px;
+            background-color: #64002F;
+            border-radius: 50px;
             color: white;
+            border: 1px solid white;
             transition: none;
+            padding: 18px 45px;
+            width: 200px;
+            margin: auto;
+            font-weight: 500;
+            font-size:18px;
             /* Remove default transition effect */
 
         }
 
         .bg-pink-color:hover {
             background-color: transparent;
-            color: #EC268F;
-            border: 2px solid #EC268F;
+            color: #64002F;
+            border: 2px solid #64002F;
         }
 
         input[data-custom-attribute="channels-login"] {
@@ -66,7 +72,7 @@
                             <div class="col col-12">
                                 <a href="/">
                                     <img class="d-block mx-auto " style="max-width:47%"
-                                        src="{{ asset('backend/images/channel-logo.svg') }}" alt="">
+                                        src="{{ asset('backend/images/mainlogo.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="col col-12 py-3">
@@ -105,8 +111,8 @@
                                     @endif
                                 </div>
                                 <div class=" w-100">
-                                    <div class="field-wrapper">
-                                        <button type="submit" class="btn  bg-pink-color w-100 fw-bold"
+                                    <div class="field-wrapper text-center">
+                                        <button type="submit" class="btn  bg-pink-color mx-auto fw-bold"
                                             value="">Submit</button>
                                     </div>
                                 </div>
