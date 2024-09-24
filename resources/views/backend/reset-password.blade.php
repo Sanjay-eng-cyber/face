@@ -100,7 +100,7 @@
                 @endif
 
                 <div class="text-center">
-                    <button type="submit" class="form-control btn-lg mx-auto  h-auto mt-3 auth-bg-primary font-bold bg-pink-color">
+                    <button type="submit" class="form-control  mx-auto  h-auto mt-3  font-bold bg-pink-color">
                         Login
                     </button>
                 </div>
