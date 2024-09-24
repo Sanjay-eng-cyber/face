@@ -8,9 +8,9 @@
     <link rel="shortcut icon" href="{{ asset('frontend/images/index/mainlogo.png') }}" type="image/x-icon">
     <title>
         @hasSection('title')
-            @yield('title') |  Lorem
+            @yield('title') |  Face Recognition
         @else
-           Lorem
+        Face Recognition
         @endif
     </title>
     @include('frontend.layouts.header')
