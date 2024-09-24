@@ -24,7 +24,7 @@
         }
 
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%);
+            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%) !important;
             background-repeat: no-repeat;
 
             /* Set the height of the container */
@@ -64,7 +64,7 @@
     </style>
 </head>
 
-<body class="auth-page-bg">
+<body class="auth-page-bg body-bg">
     <div class="container">
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px">
