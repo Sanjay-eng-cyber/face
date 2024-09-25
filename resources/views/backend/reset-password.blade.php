@@ -68,7 +68,7 @@
     <div class="container">
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px">
-            <img class="d-block mx-auto w-100 mt-5" style="max-width:250px"
+            <img class="d-block mx-auto w-100 mt-5" style="max-width:250px;border-radius:10px"
                 src="backend/images/mainlogo.png" alt="">
             <h1 class="text-center h3 mt-5 auth-text-primary cubold text-cl">Reset Password</h1>
             <form method="POST" action="{{ route('password.update') }}">

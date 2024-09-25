@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Forgot-Password - face</title>
+    <title>Forgot-Password - Face Recognition</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('backend/images/mainlogo.png') }}" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
@@ -23,6 +23,9 @@
             background-repeat: no-repeat;
 
             /* Set the height of the container */
+        }
+        .radius-10{
+            border-radius: 10px;
         }
 
         .bg-pink-color {
@@ -71,7 +74,7 @@
                         <div class="row text-center">
                             <div class="col col-12">
                                 <a href="/">
-                                    <img class="d-block mx-auto " style="max-width:47%"
+                                    <img class="d-block mx-auto " style="max-width:47%;border-radius:10px"
                                         src="{{ asset('backend/images/mainlogo.png') }}" alt="">
                                 </a>
                             </div>
@@ -100,7 +103,7 @@
                                     <span><i class="bi bi-envelope-fill "></i></span>
                                     <input id="email" name="email" type="email" value=""
                                         placeholder="Email" minlength="8" maxlength="30" required
-                                        data-custom-attribute="channels-login" class=" py-0 ">
+                                        data-custom-attribute="channels-login" class=" py-2  radius-10 rounded">
                                     @if ($errors->has('email'))
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
