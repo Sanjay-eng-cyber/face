@@ -24,6 +24,9 @@
 
             /* Set the height of the container */
         }
+        .radius-10{
+            border-radius: 10px;
+        }
 
         .bg-pink-color {
             background-color: #64002F;
@@ -100,7 +103,7 @@
                                     <span><i class="bi bi-envelope-fill "></i></span>
                                     <input id="email" name="email" type="email" value=""
                                         placeholder="Email" minlength="8" maxlength="30" required
-                                        data-custom-attribute="channels-login" class=" py-0 ">
+                                        data-custom-attribute="channels-login" class=" py-2  radius-10 rounded">
                                     @if ($errors->has('email'))
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
