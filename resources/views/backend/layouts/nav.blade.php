@@ -15,9 +15,9 @@
 
               <li class="nav-item theme-text w-auto">
                   <a href="/" class="nav-link">
-                      FACE RECOG
-                      {{-- <img src="{{ asset('backend/images/channel-logo-white.svg') }}" class="navbar-logo img-fluid"
-                          alt="logo" style="width: 150px"> --}}
+                      {{-- FACE RECOG --}}
+                      <img src="{{ asset('backend/images/mainlogo.png') }}" class="navbar-logo img-fluid"
+                          alt="logo" style="width: 150px">
                   </a>
               </li>
               <li class="nav-item toggle-sidebar">
