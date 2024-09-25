@@ -14,7 +14,7 @@ div {
 }
 
 .blue-col-a {
-    color: #445ede !important;
+    color: #64002F !important;
 }
 
 #sidebar,
@@ -35,7 +35,7 @@ div {
 }
 
 .cust-title {
-    color: #4361ee !important;
+    color: #64002F !important;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 1px;
@@ -54,14 +54,14 @@ div {
     font-family: lg !important;
 }
 .fc .fc-button-primary {
-    color: #4361ee !important;
-    border-color: #4361ee !important;
+    color: #64002F !important;
+    border-color: #64002F !important;
     background-color: transparent !important;
 }
 
 .fc .fc-button-active {
     color: #fff !important;
-    background-color: #4361ee !important;
+    background-color: #64002F !important;
 }
 
 .fc .fc-button-primary:focus {
@@ -70,7 +70,7 @@ div {
 .form-group label,
 legend,
 label {
-    color: #4361ee;
+    color: #000;
     font-weight: bolder;
 }
 legend {
@@ -78,7 +78,7 @@ legend {
 }
 
 form .widget-heading {
-    color: #4361ee;
+    color: #64002F;
     font-weight: bolder;
     font-size: 1rem;
 }
@@ -287,14 +287,15 @@ select.form-control {
     background-color: #f1f2f8;
 }
 .auth-text-primary{
-    color: #2D358B;
+    color: #64002F;
 }
 .auth-bg-primary{
-    background-color: #2D358B !important;
+    background-color: #64002F !important;
 }
 .header-container .navbar-nav.theme-brand {
 
-    background: #445ede !important;
+    background:#000 !important;
+    border-color: #000;
 }
 
 .mce-notification-warning {
@@ -303,4 +304,34 @@ select.form-control {
 
 thead tr th:first-child{
     width: 75px;
+}
+.navbar{
+
+    background: #64002F !important;
+}
+#sidebar ul.menu-categories li.menu:not(.active) > .dropdown-toggle[aria-expanded="true"]
+{
+    background: #64002F !important;
+}
+.breadcrumb-two .breadcrumb li.active a
+{
+    background: #64002F !important;
+}
+.breadcrumb-two .breadcrumb li a{
+    color:#64002F;
+}
+
+.btn-outline-primary{
+    border-color: #64002F !important;
+    color:#64002F !important;
+    &:hover{
+        background: #64002F;
+    }
+}
+.btn-primary{
+    background: #64002F !important;
+    border-color: #64002F !important;
+}
+.table > thead > tr > th{
+    color:#64002F;
 }
