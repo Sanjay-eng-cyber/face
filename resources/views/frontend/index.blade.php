@@ -246,7 +246,10 @@
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <div class="text-white">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nostrum quis suscipit cumque non. At facilis dicta rem iste enim pariatur est ratione itaque modi consequatur expedita cumque, aperiam repudiandae? Sit, ut amet minima tempore sunt fuga ad modi molestias, porro facilis sapiente a, atque minus culpa. Eos architecto quas nulla molestiae labore voluptatum quia numquam consequuntur eligendi deleniti suscipit assumenda ut excepturi dolores similique repellendus sint illum id, odit quis. Quod ullam minima dolore expedita aut ducimus similique vel, iusto assumenda nisi corrupti inventore dolorum soluta libero a, sapiente beatae velit! Ipsum alias labore dolorum sed doloribus delectus necessitatibus.
+                                                Intelligent statistics often refer to the application of advanced statistical methods and data analytics to derive meaningful insights from data. Here are some key concepts and techniques,
+                                                Descriptive Statistics: Summarizes data using measures like mean, median, mode, variance, and standard deviation.
+
+Inferential Statistics: Allows for making predictions or inferences about a population based on a sample, using techniques like hypothesis testing and confidence intervals.
                                             </div>
                                         </div>
                                     </div>
@@ -260,22 +263,27 @@
                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <div class="text-white">
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque iure ullam labore error animi, quasi soluta nulla ipsum, eos dolor obcaecati possimus! Voluptatem eligendi, repudiandae accusamus nisi molestias nemo accusantium culpa atque dolore alias nihil fuga, vero vitae porro nulla sit. Sunt nesciunt, eveniet vel magni id hic illum maxime dolores praesentium harum reprehenderit et dignissimos alias dolorum tempore quam placeat aspernatur numquam blanditiis corporis! Debitis fugiat laboriosam rerum, veritatis consequuntur voluptas omnis asperiores quidem ea deserunt consectetur ratione corrupti exercitationem magni aperiam laudantium obcaecati id vel saepe quae? Magnam repellendus reiciendis enim aperiam et dignissimos quis quasi labore voluptatum.
+                                                Creating a custom web app involves several key steps, from initial planning to deployment. Here’s a general overview of the process.
+                                                Identify the Problem: What problem does your web app solve?
+Target Audience: Who will use it? Understand their needs and preferences.
+Goals: What do you want to achieve with this web app? Define success metrics.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h2 class="accordion-header" id="headingfour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
                                             Safe, Secure & Private
                                         </button>
                                     </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                                 <div class="text-white">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum, esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus sapiente perferendis necessitatibus molestias ab non quisquam placeat consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium itaque recusandae maiores repellat vero? Rerum, magnam maiores?
+                                                    Ensuring that a web app is safe, secure, and private involves implementing best practices at every stage of development. Here are key considerations,
+                                                    Code Security. Regularly review and audit your code for vulnerabilities. Use tools like static analysis to identify potential security flaws.
+Dependency Management: Keep libraries and frameworks up-to-date. Use tools like npm audit or Snyk to check for vulnerabilities in third-party packages.
                                                 </div>
                                         </div>
                                     </div>
