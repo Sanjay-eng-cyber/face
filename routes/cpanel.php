@@ -48,7 +48,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         // Route::group(["middleware" => "cms_user_role:admin"], function () {
 
-        Route::get('/events', [EventController::class, 'index'])->name('backend.events.index');
+        Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
         Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
         Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
         Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
@@ -67,7 +67,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
         Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
 
-        Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.categories.index');
+        Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.category.index');
         Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
         Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
         Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
@@ -83,7 +83,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{filename}', [CategoryController::class, 'deleteUploadedImage'])->name('backend.category.delete-uploaded-image');
 
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {
-            Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-users.index');
+            Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-user.index');
             Route::get('/cms-user/show/{id}', [CmsUserController::class, 'show'])->name('backend.cms-user.show');
             Route::get('/cms-user/create', [CmsUserController::class, 'create'])->name('backend.cms-user.create');
             Route::post('/cms-user/store', [CmsUserController::class, 'store'])->name('backend.cms-user.store');
@@ -94,6 +94,6 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('/upload', [UploadController::class, 'index'])->name('backend.upload.index');
         Route::post('/upload/store', [UploadController::class, 'store'])->name('backend.upload.store');
-        Route::get('/upload/{eventid}', [UploadController::class, 'show'])->name('upload.show');
+        Route::get('/upload/{eventid}', [UploadController::class, 'show'])->name('backend.upload.show');
     });
 });

@@ -112,7 +112,7 @@ class EventController extends Controller
         $event->single_image_download = $request->single_image_download;
         $event->bulk_image_download = $request->bulk_image_download;
         if ($event->save()) {
-            return redirect()->route('backend.events.index')->with(toast('Event Added Successfully', 'success'));
+            return redirect()->route('backend.event.index')->with(toast('Event Added Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }
@@ -153,7 +153,7 @@ class EventController extends Controller
         $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
         if ($event->save()) {
-            return redirect()->route('backend.events.index')->with(toast('Event Update Successfully', 'success'));
+            return redirect()->route('backend.event.index')->with(toast('Event Update Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something went wrong', 'error'));
         }
@@ -166,14 +166,14 @@ class EventController extends Controller
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
         };
         if ($event->delete()) {
-            return redirect()->route('backend.events.index')->with(
+            return redirect()->route('backend.event.index')->with(
                 [
                     "message" => "Event Deleted Successfully",
                     "alert-type" => "success"
                 ]
             );
         } else {
-            return redirect()->route('backend.events.index')->with(
+            return redirect()->route('backend.event.index')->with(
                 [
                     "message" => "Something Went Wrong",
                     "alert-type" => "error"

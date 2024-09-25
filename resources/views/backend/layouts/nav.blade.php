@@ -338,8 +338,8 @@
                   </li> --}}
 
                   <li class="menu">
-                      <a href="{{ route('backend.events.index') }}"
-                          aria-expanded="{{ str_contains(request()->url(), 'event') ? 'true' : 'false' }}"
+                      <a href="{{ route('backend.event.index') }}"
+                          aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -352,8 +352,8 @@
                       </a>
                   </li>
                   <li class="menu">
-                      <a href="{{ route('backend.categories.index') }}"
-                          aria-expanded="{{ str_contains(request()->url(), 'category') || str_contains(request()->url(), 'categories') ? 'true' : 'false' }}"
+                      <a href="{{ route('backend.category.index') }}"
+                          aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.category') ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -367,7 +367,7 @@
                   </li>
                   <li class="menu">
                       <a href="{{ route('backend.user.index') }}"
-                          aria-expanded="{{ str_contains(request()->url(), 'user') ? 'true' : 'false' }}"
+                          aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.user') ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -381,8 +381,8 @@
                   </li>
                   @cmsUserRole('super-admin')
                       <li class="menu">
-                          <a href="{{ route('backend.cms-users.index') }}"
-                              aria-expanded="{{ str_contains(request()->url(), 'cms-user') ? 'true' : 'false' }}"
+                          <a href="{{ route('backend.cms-user.index') }}"
+                              aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.cms-user') ? 'true' : 'false' }}"
                               class="dropdown-toggle">
                               <div class="">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"

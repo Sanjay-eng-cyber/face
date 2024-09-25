@@ -13,6 +13,7 @@ class StatisticsController extends Controller
 {
     public function index()
     {
+        // dd(request()->route()->getName());
         $totalUsers = User::count();
         $totalEvents = Event::count();
         $totalCategories = Category::count();

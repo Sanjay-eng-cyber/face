@@ -72,7 +72,7 @@ class CategoryController extends Controller
         $event->event_id = $request->event_id;
         $event->sharing = $request->sharing;
         if ($event->save()) {
-            return redirect()->route('backend.categories.index')->with(
+            return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Added Successfully",
                     "alert-type" => "success"
@@ -113,7 +113,7 @@ class CategoryController extends Controller
         $event->visibility = $request->visibility;
         $event->sharing = $request->sharing;
         if ($event->save()) {
-            return redirect()->route('backend.categories.index')->with(
+            return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Update Successfully",
                     "alert-type" => "success"
@@ -134,14 +134,14 @@ class CategoryController extends Controller
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Gallery Images is present']);
         };
         if ($category->delete()) {
-            return redirect()->route('backend.categories.index')->with(
+            return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Deleted Successfully",
                     "alert-type" => "success"
                 ]
             );
         } else {
-            return redirect()->route('backend.categories.index')->with(
+            return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Something Went Wrong",
                     "alert-type" => "error"

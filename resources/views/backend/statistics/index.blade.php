@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('backend.events.index') }}"
+                                        <a href="{{ route('backend.event.index') }}"
                                             class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('backend.events.index') }}"
+                                        <a href="{{ route('backend.event.index') }}"
                                             class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
@@ -119,7 +119,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('backend.categories.index') }}"
+                                        <a href="{{ route('backend.category.index') }}"
                                             class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>

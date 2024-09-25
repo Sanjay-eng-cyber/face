@@ -42,7 +42,7 @@ class CmsUserController extends Controller
         $cmsUser->password = Hash::make($request->password);
         $cmsUser->role = $request->role;
         if ($cmsUser->save()) {
-            return redirect()->route('backend.cms-users.index')->with(
+            return redirect()->route('backend.cms-user.index')->with(
                 [
                     "message" => "Cms User Added Successfully",
                     "alert-type" => "success"
@@ -79,7 +79,7 @@ class CmsUserController extends Controller
         $cmsUser->role = $request->role;
         $cmsUser->password = Hash::make($request->password);
         if ($cmsUser->save()) {
-            return redirect()->route('backend.cms-users.index')->with(
+            return redirect()->route('backend.cms-user.index')->with(
                 [
                     "message" => "Cms User Update Successfully",
                     "alert-type" => "success"
@@ -97,14 +97,14 @@ class CmsUserController extends Controller
     {
         $cmsUser = CmsUser::where('id', '!=', auth()->user()->id)->findOrFail($id);
         if ($cmsUser->delete()) {
-            return redirect()->route('backend.cms-users.index')->with(
+            return redirect()->route('backend.cms-user.index')->with(
                 [
                     "message" => "Cms User Deleted Successfully",
                     "alert-type" => "success"
                 ]
             );
         } else {
-            return redirect()->route('backend.cms-users.index')->with(
+            return redirect()->route('backend.cms-user.index')->with(
                 [
                     "message" => "Something Went Wrong",
                     "alert-type" => "error"
