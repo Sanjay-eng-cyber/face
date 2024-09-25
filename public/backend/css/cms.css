@@ -335,3 +335,8 @@ thead tr th:first-child{
 .table > thead > tr > th{
     color:#64002F;
 }
+
+.widget-one_hybrid.widget-referral .widget-heading .w-icon
+{
+    color: #64002F;
+}
