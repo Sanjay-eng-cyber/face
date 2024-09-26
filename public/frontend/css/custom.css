@@ -1,3 +1,61 @@
 .custome-accordion .accordion-button{
     font-size: 1.5rem;
 }
+
+
+.footer h3{
+    font-weight: 600;
+}
+.footer-links{
+    list-style: none;
+    padding: 0px;
+
+}
+.footer-links li{
+margin: 0px;
+display: inline-block;
+
+margin-right: 20px !important;
+
+}
+.footer-links li a{
+
+font-size: 16px;
+font-weight: 500;
+text-decoration: none;
+color: #ffffff;
+
+&:hover{
+    color: #FD59FF;
+}
+
+}
+
+.bottom-footer{
+    border-top: 1px solid #9C215F;
+    padding: 30px 0px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-footer a{
+   text-decoration: none;
+    color: #ffffff;
+}
+.social
+{
+    display: flex;
+}
+
+.social a img
+{
+    width: 20px;
+}
+
+.social a
+{
+    border: 1px solid #FF3895;
+    padding: 5px 8px;
+    margin: 0px 15px;
+}
