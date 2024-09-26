@@ -204,3 +204,18 @@ height: 800px;
 .uppersection{
     z-index: 10;
 }
+@media screen and (max-width:1116px) {
+.curve{
+    height: auto;
+    background: none !important;
+}
+.robot{
+    right: -80px !important;
+}
+}
+@media screen and (max-width:767px) {
+.card-price{
+    width: 100%;
+    margin: 10px;
+}
+}

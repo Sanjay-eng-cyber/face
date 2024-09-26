@@ -23,7 +23,7 @@
     <header>
         @include('frontend.layouts.nav')
     </header>
-    <main>
+    <main class="w-100">
         @yield('content')
     </main>
 
