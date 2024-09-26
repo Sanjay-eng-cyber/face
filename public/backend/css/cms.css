@@ -157,6 +157,9 @@ padding all page */
         font-size: 15px;
         padding: 10px;
     }
+    .header-container .navbar-nav.theme-brand {
+ background: #64002F !important;
+    }
 }
 
 .app_form .app_form_input {
@@ -294,7 +297,7 @@ select.form-control {
 }
 .header-container .navbar-nav.theme-brand {
 
-    background:#000 !important;
+    background:#000 ;
     border-color: #000;
 }
 
@@ -340,3 +343,4 @@ thead tr th:first-child{
 {
     color: #64002F;
 }
+

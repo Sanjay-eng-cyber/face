@@ -20,6 +20,7 @@
                           alt="logo" style="width: 150px">
                   </a>
               </li>
+
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -34,6 +35,12 @@
                   </a>
               </li>
           </ul>
+         <div class="d-lg-none d-block m-0 p-0">
+         <a href="{{url('/')}}">
+            <img src="{{ asset('backend/images/mainlogo.png') }}" class="navbar-logo  m-0 p-0 h-100 w-100 img-fluid"
+            alt="logo" style="width: 150px">
+         </a>
+         </div>
 
           <ul class="navbar-item flex-row search-ul">
 
