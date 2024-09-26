@@ -11,29 +11,29 @@
                 <div class="col-10">
                     <div class="row">
                         <div class="col-12 py-5">
-                           
+
                            <div class=" py-5 position-relative isolation" style="    display: flex;align-items: center;justify-content: center;">
 
                             <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 0px;top: 28px;">
-                                Share Party Album With Friends 
+                                Share Party Album With Friends
                             </div>
 
-                            
+
                             <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;">
-                                Share Memories Of Friends 
+                                Share Memories Of Friends
                             </div>
 
 
-                            
+
                             <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop " style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;">
-                              We Have Found Common Images With People 
+                              We Have Found Common Images With People
                             </div>
 
                             <div class="animate__animated animate__fadeInRight delayed-animationrightbottom" style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;">
-                             We Found 6 New Photos! 
+                             We Found 6 New Photos!
                             </div>
 
-                            
+
                             <div class="first-glow-main" style="position: relative;left: 79px;z-index: -1;">
                                 <img src="{{asset('frontend/images/index/one.png')}}" alt="" class="img-fluid first-glow" >
                             </div>
@@ -41,12 +41,12 @@
                             <div class="grow-image-main">
                                 <img src="{{asset('frontend/images/index/two.png')}}" alt="" class="img-fluid grow-image-middle">
                             </div>
-                                
+
 
                             <div class="third-glow-main" style="position: relative;z-index: -1;right: 79px;">
-                                <img src="{{asset('frontend/images/index/three.png')}}" alt="" class="img-fluid third-glow" > 
+                                <img src="{{asset('frontend/images/index/three.png')}}" alt="" class="img-fluid third-glow" >
                             </div>
-                           
+
 
                            </div>
                         </div>
@@ -65,7 +65,7 @@
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
                             </div>
                             <div class="h5 text-white">
-                                wow your clients and get <span class="granny-lipgloss">8X</span> more visibility 
+                                wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
                             </div>
                          </div>
 
@@ -76,7 +76,7 @@
 
 
                       </div>
-    
+
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                         </h4>
                     </div>
 
-                    
+
                     <div style="padding-bottom:30px;display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
                         <div style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
                             <img src="{{asset('frontend/images/index/ciframe.svg')}}" alt="" class="img-fluid">
@@ -137,7 +137,7 @@
                     </div>
 
 
-                    
+
                 </div>
             </div>
         </div>
@@ -160,14 +160,14 @@
 
                                         ">
                             <div style="background-color: #040404;
-                            border-radius:45px;padding:68px 34px;    
+                            border-radius:45px;padding:68px 34px;
                             display: grid;
                             grid-template-columns: 64% 34%;
                             grid-gap: 2%;
                             ">
                                <div>
-                                    <h4 class="text-white mb-0">            
-                                        Clicking photos is one half of the task. The second half is delivering them to your clients. 
+                                    <h4 class="text-white mb-0">
+                                        Clicking photos is one half of the task. The second half is delivering them to your clients.
                                     </h4>
                                     <h4 class="text-white mb-0 pt-4">
                                         Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock Kwikpic s best features to grow your brand and customer reach, choose from a range of gallery templates to best represent your style, get different download settings and much more!
@@ -190,14 +190,14 @@
         </div>
 
         <div style="position:relative">
-            <img src="{{asset('frontend/images/index/robothand.svg')}}" alt="" srcset="" class="img-fluid" style="
+            {{-- <img src="{{asset('frontend/images/index/robothand.svg')}}" alt="" srcset="" class="img-fluid" style="
                     position: absolute;
     right: 0px;
     top: 109px;
     width: 246px;
     z-index: 999;
 
-                ">
+                "> --}}
 
             <div class="container">
                 <div class="row">
@@ -213,8 +213,8 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                
-                                        <div style="    
+
+                                        <div style="
                                         display: grid;
                                     grid-template-columns: 65% 31%;
                                     grid-gap: 4%;">
@@ -222,7 +222,7 @@
                                                 Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
                                             </div>
                                             <div class="position-relative">
-                                                <img src="{{asset('frontend/images/index/blazingimg.png')}}" alt="" srcset="" class="img-fluid" style="    
+                                                <img src="{{asset('frontend/images/index/blazingimg.png')}}" alt="" srcset="" class="img-fluid" style="
                                               position: absolute;
     z-index: 99;
     transform: rotate(10deg);
@@ -244,7 +244,7 @@ z-index: 999;">
                                                 </div>
                                             </div>
                                         </div>
-                                
+
                                     </div>
 
                                 </div>
@@ -302,7 +302,51 @@ z-index: 999;">
                 </div>
             </div>
         </div>
-        
+
+    </section>
+
+    <section class="mt-4">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-lg-4">
+                      <h3 class="section-title"><span class="text-white">Included in every</span><br>
+                        <span class="text-pink">algoshare plan</span></h3>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row box-outer">
+                        <div class="col-6">
+                            <div class="box">
+                                  <h4 class="title">Analytics</h4>
+                                  <p>See user trends, download the list of all users who accessed the event.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="box">
+                                  <h4 class="title">Face Searches</h4>
+                                  <p>Allow users to find their own photos, just by clicking a selfie</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="box">
+                                  <h4 class="title">Pre Registrations</h4>
+                                  <p>Allow guests to pre register to get their photos directly in their email when you upload.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="box">
+                                  <h4 class="title">Print Store</h4>
+                                  <p>Users can order prints directly from the gallery. You get comission on every sale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </section>
 
 

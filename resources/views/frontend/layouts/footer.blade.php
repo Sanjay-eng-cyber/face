@@ -22,7 +22,7 @@
                     <a href=""> <img src="{{asset('frontend/images/index/fb.png')}}" alt=""></a>
                     <a href=""> <img src="{{asset('frontend/images/index/wa.png')}}" alt=""></a>
                     <a href=""> <img src="{{asset('frontend/images/index/twit.png')}}" alt=""></a>
-                    <a href=""> <img src="{{asset('frontend/images/index/insta.png')}}" alt=""></a>
+                    <a href="" class="mr-0"> <img src="{{asset('frontend/images/index/insta.png')}}" alt=""></a>
 
                    </div>
             </div>

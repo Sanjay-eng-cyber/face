@@ -26,7 +26,7 @@ text-decoration: none;
 color: #ffffff;
 
 &:hover{
-    color: #FD59FF;
+    color:#ed0571;
 }
 
 }
@@ -58,4 +58,50 @@ color: #ffffff;
     border: 1px solid #FF3895;
     padding: 5px 8px;
     margin: 0px 15px;
+}
+.section-title{
+
+font-size: 32px;
+font-weight: 700;
+text-align: left;
+
+}
+
+.text-white{
+    color: #ffffff !important;
+}
+
+.text-pink{
+    color:#ed0571 !important;
+}
+.box{
+    border: 1px solid #630430;
+    padding: 40px 30px;
+    height: 200px;
+    align-items: center;
+
+}
+.box .title{
+
+font-size: 24px;
+font-weight: 600;
+color: #ffffff;
+text-align: center;
+
+}
+.box p{
+
+font-size: 16px;
+font-weight: 500;
+line-height: 19.5px;
+text-align: center;
+color: #ffffff;
+
+}
+.box-outer .col-6{
+padding: 0px;
+}
+.mr-0
+{
+    margin-right: 0px !important;
 }
