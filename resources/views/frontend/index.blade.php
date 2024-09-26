@@ -219,7 +219,7 @@
             </div>
         </div>
 
-        <div style="position:relative">
+        {{-- <div style="position:relative">
             <img src="{{ asset('frontend/images/index/robothand.svg') }}" alt="" srcset=""
                 class="img-fluid"
                 style="
@@ -229,7 +229,7 @@
     width: 246px;
     z-index: 999;
 
-                ">
+                "> --}}
 
             <div class="container">
                 <div class="row">
@@ -269,6 +269,17 @@
     top: -146px;
     border-radius: 24px 0px 0px 15px;
                                                 ">
+
+<div style="position:relative">
+    <img src="{{ asset('frontend/images/index/robothand.svg') }}" alt="" srcset=""
+        class="img-fluid"
+        style="
+            position: absolute;
+right: -140px;
+top: -139px;
+width: 246px;
+z-index: 999;">
+</div>
                                                 </div>
                                             </div>
 
