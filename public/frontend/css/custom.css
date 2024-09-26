@@ -105,3 +105,102 @@ padding: 0px;
 {
     margin-right: 0px !important;
 }
+.card-price{
+    border-radius: 10px;
+    border: 1px soild #FFFFFF !important;
+    width:200px;
+    padding: 40px 0px 30px 0px;
+
+}
+.card-price h5{
+
+font-size: 26px;
+font-weight: 500;
+color:#D1DEDE;
+text-align: center;
+
+}
+.card-price .data{
+
+font-size: 38px;
+font-weight: 600;
+color: #E8EEEE;
+text-align: center;
+
+}
+.card-price .duration{
+    color: #B5CBC8;
+font-size: 14px;
+font-weight: 400;
+text-align: center;
+
+}
+.card-price .btn-round{
+border: 2px solid #427096;
+width:125px;
+margin: auto;
+background: transparent;
+padding: 10px 13px ;
+color: #DBE6E0;
+border-radius: 23.5px 19.75px 18.5px 21.25px;
+
+font-size: 10px;
+font-weight: 600;
+
+
+
+}
+.card-price .points{
+font-size: 14px;
+font-weight: 600;
+text-align: center;
+color: #BAC5BA;
+}
+.second{
+    border-color: #FD692A !important;
+}
+.third{
+    border-color: #8E00CB !important;
+}
+.fifth{
+    border-color: #84FF89 !important;
+}
+.recomend
+{
+
+    font-size: 13.5px;
+    font-weight: 600;
+
+padding: 4px 15px;
+border-radius: 9px;
+position: absolute;
+top: -15px;
+left: 17%;
+background: #37054D;
+color: #ffffff;
+}
+.algoshare{
+
+font-size: 24px;
+font-weight: 500;
+text-align: center;
+color: #ffffff;
+}
+.algobottom{
+font-size: 16px;
+font-weight: 500;
+text-align: center;
+
+color: #ffffff;
+}
+.curve{
+ background: url('../images/index/curve.png');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: 50% -100% !important;
+z-index: 0;
+height: 800px;
+}
+.uppersection{
+    z-index: 10;
+}

@@ -305,8 +305,108 @@ z-index: 999;">
 
     </section>
 
+<section class="my-5 position-relative pb-5 uppersection">
+
+
+
+    <div class="container">
+
+        <div class="curve">
+        <div class="text-center mb-4">
+            <p class="algoshare">Algoshare offers tiered pricing plans with options for free basic access, mid-tier advanced features, and a premium plan with full access to all tools and priority support.</p>
+        </div>
+        <div class="row d-flex gap-4 justify-content-center mt-5 ">
+
+            <div class="card-price" style="border:1px solid White">
+                 <h5>FREE</h5>
+                 <p class="data">10GB</p>
+                 <span class="duration d-block"> 14 day trial</span>
+                <div class="text-center my-4">
+                    <button class="btn-round"> TRY NOW</button>
+                </div>
+                <p class="points">10GB</p>
+                <p class="points">5MB</p>
+                <p class="points">25 per event</p>
+                <p class="points">25 per event</p>
+            </div>
+
+            <div class="card-price" style="border:1px solid #FD692A">
+                <h5>BASIC</h5>
+                <p class="data">100GB</p>
+                <span class="duration d-block"> Contact Sales for Pricing</span>
+               <div class="text-center my-4">
+                   <button class="btn-round second"> CONTACT SALES</button>
+               </div>
+               <p class="points">100GB</p>
+               <p class="points">5MB</p>
+               <p class="points">15 per event</p>
+               <p class="points">15 per event</p>
+               <p class="points">100</p>
+               <p class="points">6000</p>
+           </div>
+
+
+           <div class="card-price">
+            <h5>Pricing plans for algoshare</h5>
+
+     <div class="mt-5  pt-5">
+        <p class="points">Storage</p>
+        <p class="points">Max Image Size</p>
+        <p class="points">Face Searches</p>
+        <p class="points">Pre Registrations</p>
+
+        <p class="points">Events</p>
+        <p class="points">Storage</p>
+           <p class="points">Image Limit Per Sub Event</p>
+     </div>
+       </div>
+
+       <div class="card-price position-relative" style="border:1px solid #8E00CB">
+        <span class="recomend">Recommended</span>
+        <h5>ADVANCE</h5>
+        <p class="data">1TB</p>
+        <span class="duration d-block"> Contact Sales For Pricing</span>
+       <div class="text-center my-4">
+           <button class="btn-round third"> Try Now</button>
+       </div>
+       <p class="points">1TB</p>
+       <p class="points">15MB</p>
+       <p class="points">2000 per event</p>
+       <p class="points">2000 per event</p>
+       <p class="points">200</p>
+       <p class="points">10000</p>
+   </div>
+
+   <div class="card-price" style="border:1px solid #84FF89">
+    <h5>PREMIUM</h5>
+    <p class="data">10GB</p>
+    <span class="duration d-block"> Contact Sales For Pricing</span>
+   <div class="text-center my-4">
+       <button class="btn-round fifth"> Try Now</button>
+   </div>
+   <p class="points">5TB</p>
+   <p class="points">25MB</p>
+   <p class="points">Unlimited</p>
+   <p class="points">Unlimited</p>
+   <p class="points">Unlimited</p>
+   <p class="points">20000</p>
+</div>
+
+
+
+        </div>
+
+        <div class="text-center mt-5">
+           <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing your data securely.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
     <section class="mt-4">
         <div class="container">
+
             <div class="row py-4 d-flex align-items-center">
                 <div class="col-lg-4">
                       <h3 class="section-title"><span class="text-white">Included in every</span><br>
