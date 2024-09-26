@@ -30,7 +30,7 @@
                         <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
                             <form class="form-inline row app_form" action="{{ route('backend.category.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm app_form_input col-md-2 mt-md-0 mt-3"
+                                <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
                                     type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
                                     minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
