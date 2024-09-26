@@ -275,7 +275,7 @@
         class="img-fluid"
         style="
             position: absolute;
-right: -140px;
+right: -137px;
 top: -139px;
 width: 246px;
 z-index: 999;">
