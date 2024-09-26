@@ -9,5 +9,5 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/slick-theme.css') }}" />
 <link rel="stylesheet" href="{{asset('frontend/css/animated-min.css')}}"/>
 <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
 
