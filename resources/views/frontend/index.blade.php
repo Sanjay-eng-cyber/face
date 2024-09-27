@@ -490,21 +490,21 @@ z-index: 999;">
 
                 <div class="col-lg-8">
                     <div class="row box-outer">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="box">
                                 <h4 class="title">Analytics</h4>
                                 <p>See user trends, download the list of all users who accessed the event.</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="box">
                                 <h4 class="title">Face Searches</h4>
                                 <p>Allow users to find their own photos, just by clicking a selfie</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="box">
                                 <h4 class="title">Pre Registrations</h4>
                                 <p>Allow guests to pre register to get their photos directly in their email when you upload.
@@ -512,7 +512,7 @@ z-index: 999;">
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="box">
                                 <h4 class="title">Print Store</h4>
                                 <p>Users can order prints directly from the gallery. You get comission on every sale.</p>

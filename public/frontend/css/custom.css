@@ -98,7 +98,7 @@ text-align: center;
 color: #ffffff;
 
 }
-.box-outer .col-6{
+.box-outer .col-md-6{
 padding: 0px;
 }
 .mr-0
@@ -233,5 +233,8 @@ height: 800px;
 .card-price{
     width: 100%;
     margin: 10px;
+}
+.footer-links li{
+
 }
 }
