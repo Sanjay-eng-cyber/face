@@ -156,14 +156,30 @@ font-weight: 600;
 text-align: center;
 color: #BAC5BA;
 }
+.first:hover{
+background: #427096;
+color: #000;
+}
 .second{
     border-color: #FD692A !important;
+    &:hover{
+        background: #FD692A ;
+        color: #000;
+    }
 }
 .third{
     border-color: #8E00CB !important;
+    &:hover{
+        background:#8E00CB;
+        color: #000;
+    }
 }
 .fifth{
     border-color: #84FF89 !important;
+    &:hover{
+        background: #84FF89;
+        color: #000;
+    }
 }
 .recomend
 {

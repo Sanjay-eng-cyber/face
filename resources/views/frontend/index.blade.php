@@ -395,7 +395,7 @@ z-index: 999;">
                         <p class="data">10GB</p>
                         <span class="duration d-block"> 14 day trial</span>
                         <div class="text-center my-4">
-                            <button class="btn-round"> TRY NOW</button>
+                            <button class="btn-round first"> TRY NOW</button>
                         </div>
                         <p class="points">10GB</p>
                         <p class="points">5MB</p>
@@ -406,7 +406,7 @@ z-index: 999;">
                     <div class="card-price" style="border:1px solid #FD692A">
                         <h5>BASIC</h5>
                         <p class="data">100GB</p>
-                        <span class="duration d-block"> Contact Sales for Pricing</span>
+                        <span class="duration d-block"> Contact Sales For Pricing</span>
                         <div class="text-center my-4">
                             <button class="btn-round second"> CONTACT SALES</button>
                         </div>
@@ -440,7 +440,7 @@ z-index: 999;">
                         <p class="data">1TB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
                         <div class="text-center my-4">
-                            <button class="btn-round third"> Try Now</button>
+                            <button class="btn-round third"> CONTACT SALES</button>
                         </div>
                         <p class="points">1TB</p>
                         <p class="points">15MB</p>
@@ -455,7 +455,7 @@ z-index: 999;">
                         <p class="data">10GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
                         <div class="text-center my-4">
-                            <button class="btn-round fifth"> Try Now</button>
+                            <button class="btn-round fifth"> CONTACT SALES</button>
                         </div>
                         <p class="points">5TB</p>
                         <p class="points">25MB</p>
