@@ -264,7 +264,7 @@
     z-index: 99;
     transform: rotate(10deg);
     left: 31px;
-    top: -146px;
+    top: -126px;
     border-radius: 24px 0px 0px 15px;
                                                 ">
 
@@ -274,8 +274,8 @@
                                                             style="
             position: absolute;
 right: -137px;
-top: -139px;
-width: 246px;
+top: -119px;
+width: 150px;
 z-index: 999;">
                                                     </div>
                                                 </div>
@@ -393,7 +393,7 @@ z-index: 999;">
                                 <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
                             </div>
                             <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">1Market Smartly <span class="text-white">At Every Step</span></h4>
+                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
                             <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
                             </div>
                         </div>
@@ -413,7 +413,7 @@ z-index: 999;">
                                 <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
                             </div>
                             <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">2Market Smartly <span class="text-white">At Every Step</span></h4>
+                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
                             <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
                             </div>
                         </div>
@@ -433,7 +433,7 @@ z-index: 999;">
                                 <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
                             </div>
                             <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">3Market Smartly <span class="text-white">At Every Step</span></h4>
+                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
                             <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
                             </div>
                         </div>
