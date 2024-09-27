@@ -377,6 +377,24 @@ z-index: 999;">
 
     </section>
 
+    <section class="slider-sec">
+        <div class="container ">
+            <div class="row ">
+                <div class="bg-slider">
+                    <div class="img-group d-flex position-relative">
+                        <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
+                        <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
+                        <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
+                    </div>
+                    <div class="textgroup">
+                        <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
+                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="my-5 position-relative pb-5 uppersection">
 
 
