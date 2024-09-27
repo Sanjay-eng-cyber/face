@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Models\GalleryImage;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -230,5 +231,25 @@ class CategoryController extends Controller
         $totalImages = $category->gallery_images()->count();
         // dd($images);
         return view('backend.category.uploaded-images-index', compact('category', 'images', 'totalImages'));
+    }
+
+    public function deleteUploadImage($id)
+    {
+        $gallery_images = GalleryImage::findOrFail($id);
+        if ($gallery_images->delete()) {
+            return redirect()->route('backend.category.uploaded-images-index')->with(
+                [
+                    "message" => "gallery Images Deleted Successfully",
+                    "alert-type" => "success"
+                ]
+            );
+        } else {
+            return redirect()->route('backend.category.uploaded-images-index')->with(
+                [
+                    "message" => "Something Went Wrong",
+                    "alert-type" => "error"
+                ]
+            );
+        }
     }
 }
