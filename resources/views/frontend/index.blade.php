@@ -93,9 +93,11 @@
 
         <div class="container">
             <div class="row gx-5">
-                <div class="col-6">
+                <div class="col-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
-                        class="img-fluid w-100">
+                        class="img-fluid w-100" style="z-index:0">
+                       <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt="" srcset=""
+                        class=" scan up-down" ></span>
                     <h5 class="mb-0 text-white">
                         Facial recognition system that works like a charm, allowing your friends and acquaintances to see
                         every photo that
@@ -667,4 +669,29 @@ slider.slick({
 
 
 
+<script>
+
+
+
+    var mq = window.matchMedia("(min-width: 1116px)");
+            if (mq.matches) {
+
+                $(function() {
+                    $(window).scroll(function() {
+                        if ($(this).scrollTop() > 400 && $(this).scrollTop() <= 1000) {
+                            $('.scan').css('transition','all 1s linear');
+    $('.scan').css('top','-200px');
+
+
+    setInterval(function () {
+        $('.scan').css('top','300px');
+    }, 400);
+
+                        }
+                    })});
+
+            }
+
+
+</script>
 @endsection
