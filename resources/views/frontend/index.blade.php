@@ -377,6 +377,74 @@ z-index: 999;">
 
     </section>
 
+
+<div class="slider-outer">
+	<a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+	<div class="slider">
+		<div class="slide">
+            <section class="slider-sec">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="bg-slider">
+                            <div class="img-group d-flex position-relative">
+                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
+                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
+                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
+                            </div>
+                            <div class="textgroup">
+                                <h4 class="text-pink text-center slider-title">1Market Smartly <span class="text-white">At Every Step</span></h4>
+                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+		</div>
+		<div class="slide">
+            <section class="slider-sec">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="bg-slider">
+                            <div class="img-group d-flex position-relative">
+                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
+                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
+                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
+                            </div>
+                            <div class="textgroup">
+                                <h4 class="text-pink text-center slider-title">2Market Smartly <span class="text-white">At Every Step</span></h4>
+                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+		</div>
+		<div class="slide">
+            <section class="slider-sec">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="bg-slider">
+                            <div class="img-group d-flex position-relative">
+                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
+                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
+                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
+                            </div>
+                            <div class="textgroup">
+                                <h4 class="text-pink text-center slider-title">3Market Smartly <span class="text-white">At Every Step</span></h4>
+                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+		</div>
+	</div>
+</div>
+{{--
     <section class="slider-sec">
         <div class="container ">
             <div class="row ">
@@ -393,7 +461,7 @@ z-index: 999;">
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="my-5 position-relative pb-5 uppersection">
 
@@ -570,5 +638,29 @@ z-index: 999;">
                 }
             ]
         });
+
+
+        var slider = $('.slider');
+
+$('.prev').click(function(){
+    slider.slick('slickPrev');
+    return false;
+});
+
+$('.next').click(function(){
+    slider.slick('slickNext');
+    return false;
+});
+
+slider.slick({
+  infinite: true,
+	dots: false,
+	arrows: false,
+	fade: true,
+	fadeSpeed: 1000
+});
     </script>
+
+
+
 @endsection
