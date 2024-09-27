@@ -515,3 +515,9 @@ padding: 10px 30px;
     transform: rotate(180deg);
     border-radius: 15px;
 }
+.kwik-bg{
+   width: 60%;
+   height: 3500px;
+   position: absolute;
+   top: 200px;
+}

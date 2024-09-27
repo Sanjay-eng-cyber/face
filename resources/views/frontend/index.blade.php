@@ -162,7 +162,11 @@
             </div>
         </div>
 
-        <div class="container">
+
+        <section class=" mb-5 pb-5">
+     <img src="{{asset('frontend/images/index/kwik-bg.png')}}" alt="" class="kwik-bg">
+        </section>
+        <div class="container mt-5 pt-5">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
