@@ -27,7 +27,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
+                        <div class="col-lg-9  mt-2 px-xl-0">
                             <form class="form-inline row app_form" action="{{ route('backend.category.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
@@ -42,7 +42,7 @@
                             @endif
                         </div>
                         <div
-                            class="align-items-center col-xl-3 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
+                            class="align-items-center col-lg-3  d-flex justify-content-end row mb-2">
                             <a href="{{ route('backend.category.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
                                 Add Category
