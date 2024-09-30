@@ -85,7 +85,7 @@
 
         <div class="container">
             <div class="row gx-5">
-                <div class="col-6 position-relative anim-bg">
+                <div class="col-12 col-md-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
                        <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt="" srcset=""
@@ -96,7 +96,7 @@
                         they've made an appearance in!
                     </h5>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <h1 class="text-white" style="font-size: 36px">How Kwikpic Works?</h1>
                     <h5 class="text-white">let your clients discover their images within seconds</h5>
                     <div
