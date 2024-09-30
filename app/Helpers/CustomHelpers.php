@@ -5,6 +5,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Seshac\Shiprocket\Shiprocket;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\ImageManager;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
@@ -66,19 +67,16 @@ if (!function_exists('getPreviousRoute')) {
 }
 
 if (!function_exists('uploadFile')) {
-    function uploadFile($file, $location, $quality = 90)
+    function uploadFile($file, $location, $width = 600, $height = null, $quality = 85)
     {
         $fileWithExt = $file;
         $extension = $fileWithExt->clientExtension();
         $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
         $destinationPath = storage_path('app/public/' . $location . '/');
         if (in_array($extension, ['png', 'jpg', 'jpeg'])) {
-            $coverImg = Image::make($fileWithExt->getRealPath())->resize(null, 1000, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $coverImg->orientate();
-            $coverImg->save($destinationPath . $filename, $quality);
+            $manager = ImageManager::gd();
+            $image = $manager->read($fileWithExt->getRealPath())->scale($width, $height);
+            $image->save($destinationPath . $filename, $quality);
             $extension = 'image';
         } else {
             Storage::disk('public')->put($location . '/' . $filename, file_get_contents($fileWithExt));
@@ -87,15 +85,17 @@ if (!function_exists('uploadFile')) {
     }
 }
 
-function saveFile($file, $destinationPath)
-{
-    $filename = date('Ymd-his') . "." . uniqid() . "." . $file->clientExtension();
-    $coverImg = Image::make($file->getRealPath())->resize(600, null, function ($constraint) {
-        $constraint->aspectRatio();
-        $constraint->upsize();
-    });
-    $coverImg->save($destinationPath . $filename, 85);
-    return $filename;
+if (!function_exists('saveImage')) {
+    function saveImage($file, $destinationPath, $width = 600, $height = null, $quality = 85)
+    {
+        // dd($width, $height);
+        $filename = date('Ymd-his') . "." . uniqid() . "." . $file->clientExtension();
+        $manager = ImageManager::gd();
+        $image = $manager->read($file->getRealPath());
+        $image->scale($width, $height);
+        $image->save($destinationPath . $filename, $quality);
+        return $filename;
+    }
 }
 
 if (!function_exists('getYoutubeEmbedUrl')) {

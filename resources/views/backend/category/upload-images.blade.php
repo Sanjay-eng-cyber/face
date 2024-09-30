@@ -266,7 +266,8 @@
 
                                             <section>
                                                 <div id="dropzone">
-                                                    <form class="dropzone needsclick demo-upload" action="/upload">
+                                                    <form class="dropzone needsclick demo-upload" method="post"
+                                                        action="/upload/{{ $event->slug }}/{{ $category->slug }}">
                                                         @csrf
                                                         <div class="dz-message needsclick ">
                                                             <div class="d-flex flex-column align-items-center">
@@ -312,10 +313,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -504,8 +502,8 @@
 
     <style>
         /* .dropzone .dz-preview.dz-error:hover .dz-error-message {
-                width: 100% !important;
-            } */
+                                width: 100% !important;
+                            } */
     </style>
 
 @endsection
