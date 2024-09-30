@@ -373,6 +373,10 @@ a.next {
 }
 
 @media screen and (max-width:992px){
+
+    .navbar-wrapper{
+        width: 100% !important;
+    }
     .scan{
         width: 325px !important;
         top: 210px !important;
@@ -461,6 +465,15 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .prev-mobile {
+
+left: 60px !important;
+    }
+
+    .next-mobile {
+
+        right: 60px !important;
+            }
     .recomend{
         left: 31%;
     }
@@ -512,6 +525,9 @@ padding-top: 170px !important;
     }
 }
 @media screen and (max-width:361px){
+    .img-group {
+  left: -18px !important;
+    }
     div.slider-outer a.prev {
         top: 547% !important;
       }
@@ -533,7 +549,7 @@ padding-top: 170px !important;
     .img-group{
     position: relative;
     top: -10px !important;
-    left: -5px;
+    left: -10px;
 
     }
     .img-group .f-img{
