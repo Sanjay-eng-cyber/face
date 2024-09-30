@@ -5,37 +5,29 @@
 
     <section>
         <div class="container" style="overflow: hidden">
-            <div class="row"
-                style="    display: flex;
-                        align-items: center;
-                        justify-content: center;">
-                <div class="col-10">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
-                        <div class="col-12 py-5">
+                        <div class="col-12  py-5">
 
-                            <div class=" py-5 position-relative isolation"
-                                style="    display: flex;align-items: center;justify-content: center;">
+                            <div class=" py-5 position-relative isolation d-flex align-items-center justify-content-center">
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 0px;top: 28px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop tape-line">
                                     Share Party Album With Friends
                                 </div>
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
                                     Share Memories Of Friends
                                 </div>
 
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop "
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
                                     We Have Found Common Images With People
                                 </div>
 
-                                <div class="animate__animated animate__fadeInRight delayed-animationrightbottom"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;">
+                                <div class="animate__animated animate__fadeInRight delayed-animationrightbottom tape-line-eerht">
                                     We Found 6 New Photos!
                                 </div>
 
@@ -371,9 +363,15 @@
 
 
 <div class="slider-outer">
-	<a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+{{-- <div class=" d-none">
+    <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-	<div class="slider">
+</div> --}}
+<div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
+    <a class="prev-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+	<a class="next-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+</div>
+	<div class="slider px-1">
 		<div class="slide">
             <section class="slider-sec">
                 <div class="container ">
@@ -455,7 +453,7 @@
         </div>
     </section> --}}
 
-    <section class="my-5 position-relative pb-5 uppersection">
+    <section class="mb-md-5 position-relative pb-md-5 uppersection">
 
 
 
@@ -560,8 +558,8 @@
         <div class="container">
 
             <div class="row py-4 d-flex align-items-center">
-                <div class="col-lg-4">
-                    <h3 class="section-title"><span class="text-white">Included in every</span><br>
+                <div class="col-lg-4 ">
+                    <h3 class="section-title text-md-start text-center"><span class="text-white">Included in every</span><br>
                         <span class="text-pink">algoshare plan</span>
                     </h3>
                 </div>
@@ -680,4 +678,28 @@ slider.slick({
 
 
 </script>
+
+<script>
+
+var slider = $('.slider');
+
+$('.prev-mobile').click(function(){
+    slider.slick('slickPrev');
+    return false;
+});
+
+$('.next-mobile').click(function(){
+    slider.slick('slickNext');
+    return false;
+});
+
+slider.slick({
+  infinite: true,
+	dots: false,
+	arrows: false,
+	fade: true,
+	fadeSpeed: 1000
+});
+    </script>
+
 @endsection

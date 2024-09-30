@@ -169,6 +169,25 @@ body {
       }
   }
   
+
+  .tape-line{
+    position: absolute;background: white;
+    padding: 15px 23px;
+    border-radius: 30px;
+    left: 0px;
+    top: 28px;
+  }
+  .tape-line-eno{
+    position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;
+  }
+
+  .tape-line-owt{
+    position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;
+  }
+
+  .tape-line-eerht{
+    position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;
+  }
 /*end hero section*/
 
 .scanning-line {
