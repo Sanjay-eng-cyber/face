@@ -100,6 +100,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: 79px;
+    z-index: -1;
 }
 
 .first-glow {
@@ -125,6 +128,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: -1;
+    right: 79px;
 }
 
 .third-glow {
@@ -303,7 +309,51 @@ padding-left: 0px;
         position: relative;
         top: 39px;
     }
+    .tape-line-owt {
+        position: absolute;
+        background: white;
+        padding: 9px 15px;
+        border-radius: 24px;
+        right: 0px;
+        top: 20px;
+        font-size: 11px;
+    }
+
+    .tape-line-eerht {
+        position: absolute;
+        background: white;
+        padding: 9px 15px;
+        border-radius: 30px;
+        bottom: 41px;
+        right: 0px;
+        font-size: 11px;
+    }
+
+    .tape-line {
+        position: absolute;
+        background: white;
+        padding: 9px 16px;
+        border-radius: 30px;
+        left: 0px;
+        top: 28px;
+        font-size: 11px;
+    }
+    .tape-line-eno {
+        position: absolute;
+        background: white;
+        padding: 9px 15px;
+        border-radius: 30px;
+        left: 149px;
+        bottom: 13px;
+        font-size: 11px;
+    }
 }
+
+
+@media screen and (max-width:768px){
+
+}
+
 /*end media query */
 
 
