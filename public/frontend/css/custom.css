@@ -721,3 +721,8 @@ z-index: 999;
 }
 
 }
+.social a:hover{
+
+    border-radius: 5px;
+    background:#9C215F;
+}

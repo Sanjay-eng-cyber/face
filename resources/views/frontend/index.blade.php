@@ -32,7 +32,7 @@
                                 </div>
 
 
-                                <div class="first-glow-main" style="position: relative;left: 79px;z-index: -1;">
+                                <div class="first-glow-main" >
                                     <img src="{{ asset('frontend/images/index/one.png') }}" alt=""
                                         class="img-fluid first-glow">
                                 </div>
@@ -43,7 +43,7 @@
                                 </div>
 
 
-                                <div class="third-glow-main" style="position: relative;z-index: -1;right: 79px;">
+                                <div class="third-glow-main" >
                                     <img src="{{ asset('frontend/images/index/three.png') }}" alt=""
                                         class="img-fluid third-glow">
                                 </div>
