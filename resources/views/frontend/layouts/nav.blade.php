@@ -1,6 +1,5 @@
-<div class="position-relative">
-    <img src="{{ asset('frontend/images/index/herotopmirror.svg') }}" alt="" srcset="" class="img-fluid"
-        style="    position: absolute;right: 0px;">
+<div class="position-relative isolation">
+    <img src="{{ asset('frontend/images/index/heromirro-ptn.svg') }}" alt="" srcset="" class="img-fluid heromirro-ptn">
 
     <div class="container-fluid position-relative" >
         <a class="navbar-brand " href="{{url('/')}}" style="position: absolute">

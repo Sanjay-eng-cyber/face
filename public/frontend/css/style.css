@@ -197,6 +197,7 @@ body {
 
 /* nav */
 
+
 .navleftp{
     padding-right: 63px;
 }
@@ -260,6 +261,11 @@ color:white;
 .custome-accordion .accordion-body{
 padding-left: 0px;
 }
+
+.heromirro-ptn{
+    position: absolute;
+    right: 0px;
+}
 /* end nav */
 
 /* media query */
@@ -268,6 +274,15 @@ padding-left: 0px;
         display: flex !important;
         flex-basis: auto;
         justify-content: center;
+    }
+
+   
+}
+
+@media screen and (max-width:992px){
+    .navbar-collapse{
+        position: relative;
+        top: 39px;
     }
 }
 /*end media query */
