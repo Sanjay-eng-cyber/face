@@ -371,9 +371,15 @@
 
 
 <div class="slider-outer">
-	<a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+{{-- <div class=" d-none">
+    <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-	<div class="slider">
+</div> --}}
+<div class=" d-bock position-relative justify-content-space-between pt-sm-5 pt-3 index100 ">
+    <a class="prev-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+	<a class="next-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+</div>
+	<div class="slider px-1">
 		<div class="slide">
             <section class="slider-sec">
                 <div class="container ">
@@ -680,4 +686,28 @@ slider.slick({
 
 
 </script>
+
+<script>
+
+var slider = $('.slider');
+
+$('.prev-mobile').click(function(){
+    slider.slick('slickPrev');
+    return false;
+});
+
+$('.next-mobile').click(function(){
+    slider.slick('slickNext');
+    return false;
+});
+
+slider.slick({
+  infinite: true,
+	dots: false,
+	arrows: false,
+	fade: true,
+	fadeSpeed: 1000
+});
+    </script>
+
 @endsection
