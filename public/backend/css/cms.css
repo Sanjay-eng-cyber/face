@@ -362,3 +362,7 @@ border-color: #64002F;
 .btn-primary{
     box-shadow: 0 10px 20px -10px #64002f ;
 }
+.btn-outline-primary:hover
+{
+    box-shadow: 0 10px 20px -10px #64002f ;
+}
