@@ -308,10 +308,17 @@ padding: 10px 30px;
         right: 3%;
 
     }
-    .prev,
+    .prev
+    {
+
+        top: 417% !important;
+
+    }
+
+
     .next {
 
-        top: 380% !important;
+        top: 415% !important;
 
     }
 
@@ -337,6 +344,19 @@ padding: 10px 30px;
     }
 }
 
+
+@media screen and (max-width:830px){
+
+    a.prev{
+        top: 462% !important;
+    }
+
+a.next {
+  top: 460% !important;
+}
+
+}
+
 @media screen and (max-width:992px){
     .scan{
         width: 325px !important;
@@ -344,11 +364,11 @@ padding: 10px 30px;
         left: 6% !important;
     }
     .prev{
-        top: 432% !important;
+        top: 447% !important;
     }
 
 .next {
-  top: 430% !important;
+  top: 445% !important;
 }
     .img-group{
     position: relative;
@@ -370,18 +390,29 @@ padding: 10px 30px;
     }
 }
 
+
+@media screen and (max-width:650px){
+
+    .slider-outer a.prev {
+      top: 552% !important;
+    }
+
+  .slider-outer  a.next {
+      top: 550% !important;
+    }
+}
 @media screen and (max-width:767px){
     .scan{
         width: 240px !important;
         top: 140px !important;
         left: 7% !important;
     }
-    .prev {
-      top: 522% !important;
+    a.prev {
+      top: 542% !important;
     }
 
-    .next {
-      top: 520% !important;
+    a.next {
+      top: 540% !important;
     }
     .img-group{
     position: relative;
@@ -414,12 +445,12 @@ padding: 10px 30px;
     .scan{
         display: none;
     }
-    .prev {
-      top: 542% !important;
+    .slider-outer a.prev {
+      top: 562% !important;
     }
 
-    .next {
-      top: 540% !important;
+   .slider-outer a.next {
+      top: 560% !important;
     }
     .img-group{
     position: relative;
@@ -455,15 +486,24 @@ padding: 10px 30px;
         background-size: cover;
     }
 }
-
-
-@media screen and (max-width:440px){
-    .prev {
-        top: 552% !important;
+@media screen and (max-width:361px){
+    div.slider-outer a.prev {
+        top: 547% !important;
       }
 
-      .next {
-        top: 550% !important;
+      div.slider-outer a.next {
+        top: 545% !important;
+      }
+
+    }
+
+@media screen and (max-width:440px){
+    .slider-outer a.prev {
+        top: 577% !important;
+      }
+
+      .slider-outer a.next {
+        top: 575% !important;
       }
     .img-group{
     position: relative;
@@ -524,13 +564,13 @@ padding: 10px 30px;
 }
 
 .prev {
-    top: 412%;
+    top: 432%;
 	left: 17%;
 	background-color:transparent;
 }
 
 .next {
-    top: 410%;
+    top: 430%;
 	right: 17%;
 	background-color:transparent;
     transform: rotate(180deg);
