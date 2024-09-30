@@ -1,7 +1,7 @@
 <section class="mt-5 image">
     <footer class="footer">
      <div class="container">
-        <div class="row pt-4 pb-3">
+        <div class="row pt-4 pb-3 text-lg-start text-center">
 
             <div class="col-lg-8 ">
                 <ul class="footer-links ">
@@ -17,7 +17,7 @@
 
             </div>
 
-            <div class="col-lg-4 text-right justify-content-md-end d-flex">
+            <div class="col-lg-4 text-right justify-content-md-end  justify-content-center  d-flex">
                 <div class="social">
                     <a href=""> <img src="{{asset('frontend/images/index/fb.png')}}" alt=""></a>
                     <a href=""> <img src="{{asset('frontend/images/index/wa.png')}}" alt=""></a>

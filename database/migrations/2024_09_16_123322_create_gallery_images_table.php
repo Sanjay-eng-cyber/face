@@ -15,10 +15,10 @@ return new class extends Migration {
             $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
-            $table->string('image_name');
-            $table->string('image_url');
-            $table->longText('face_encoding');
-            $table->longText('face_locations');
+            $table->string('image_name')->nullable();
+            $table->string('image_url')->nullable();
+            $table->longText('face_encoding')->nullable();
+            $table->longText('face_locations')->nullable();
             $table->timestamps();
         });
     }

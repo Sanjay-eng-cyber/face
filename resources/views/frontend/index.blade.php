@@ -367,7 +367,7 @@
     <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 </div> --}}
-<div class=" d-bock position-relative justify-content-space-between pt-sm-5 pt-3 index100 ">
+<div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
     <a class="prev-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 	<a class="next-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 </div>
