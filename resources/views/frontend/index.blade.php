@@ -264,25 +264,11 @@
                                                 </div>
                                                 <div class="position-relative">
                                                     <img src="{{ asset('frontend/images/index/blazingimg.png') }}"
-                                                        alt="" srcset="" class="img-fluid"
-                                                        style="
-                                              position: absolute;
-    z-index: 99;
-    transform: rotate(10deg);
-    left: 31px;
-    top: -126px;
-    border-radius: 24px 0px 0px 15px;
-                                                ">
+                                                        alt="" srcset="" class="img-fluid accordion-img">
 
                                                     <div style="position:relative">
                                                         <img src="{{ asset('frontend/images/index/robothand.svg') }}"
-                                                            alt="" srcset="" class="img-fluid robot"
-                                                            style="
-            position: absolute;
-right: -137px;
-top: -119px;
-width: 150px;
-z-index: 999;">
+                                                            alt="" srcset="" class="img-fluid robot accordion-img-robot">
                                                     </div>
                                                 </div>
                                             </div>
