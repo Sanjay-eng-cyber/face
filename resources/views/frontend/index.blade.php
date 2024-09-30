@@ -461,7 +461,7 @@
         </div>
     </section> --}}
 
-    <section class="my-5 position-relative pb-5 uppersection">
+    <section class="mb-md-5 position-relative pb-md-5 uppersection">
 
 
 
@@ -566,8 +566,8 @@
         <div class="container">
 
             <div class="row py-4 d-flex align-items-center">
-                <div class="col-lg-4">
-                    <h3 class="section-title"><span class="text-white">Included in every</span><br>
+                <div class="col-lg-4 ">
+                    <h3 class="section-title text-md-start text-center"><span class="text-white">Included in every</span><br>
                         <span class="text-pink">algoshare plan</span>
                     </h3>
                 </div>

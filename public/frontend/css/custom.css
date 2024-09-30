@@ -236,6 +236,9 @@ height: 800px;
 }
 }
 @media screen and (max-width:767px) {
+    .box{
+    margin: 0px 10px;
+    }
 .card-price{
     width: 100%;
     margin: 10px;
