@@ -11,6 +11,7 @@ use Intervention\Image\Image;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
@@ -135,7 +136,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         if ($category->gallery_images()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Gallery Images is present']);
-        };
+        }
         if ($category->delete()) {
             return redirect()->route('backend.category.index')->with(
                 [
@@ -167,73 +168,48 @@ class CategoryController extends Controller
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
 
-        // try {
-        $gallery_images = new GalleryImage();
-        // if ($request->hasFile('file')) {
-        $fileWithExt = request()->file('file');
-        $extension = $fileWithExt->clientExtension();
-        $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
-        $destinationPath = storage_path("images/galleries/{$event->slug}/{$category->slug}/{$filename}");
-        if (in_array($extension, ['png', 'jpg', 'jpeg'])) {
+        try {
+            $fileWithExt = request()->file('file');
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+            $destinationPath = public_path("storage/images/galleries/{$event->slug}/{$category->slug}");
+            if (!File::exists($destinationPath)) {
+                File::makeDirectory($destinationPath);
+            }
             $manager = ImageManager::gd();
             $image = $manager->read($fileWithExt->getRealPath());
-            $image->save($destinationPath . $filename, 90);
-            $extension = 'image';
-        } else {
-            Storage::disk('public')->put($destinationPath . '/' . $filename, file_get_contents($fileWithExt));
+            $image->save($destinationPath . '/' . $filename, 90);
+
+            $res = Http::attach(
+                'image_name', // The name of the file field in the request
+                file_get_contents($fileWithExt->getRealPath()), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
+            Log::info('came here');
+            Log::info($res);
+            if ($res->successful()) {
+                $gallery_images = new GalleryImage();
+                $gallery_images->cms_user_id = auth()->user()->id;
+                $gallery_images->event_id = $event->id;
+                $gallery_images->category_id = $category->id;
+                $gallery_images->image_name = $filename;
+                $gallery_images->image_url = "images/galleries/{$event->slug}/{$category->slug}/{$filename}";
+                $gallery_images->face_encoding = '[]';
+                $gallery_images->face_locations = '[]';
+                if ($gallery_images->save()) {
+                    return response()->json([
+                        'status' => true,
+                        'fileName' => $filename,
+                        'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                    ], 200);
+                }
+            }
+        } catch (\Throwable $th) {
+            dd($th->getMessage());
         }
-        return ['filename' => $filename, 'type' => $extension];
-        // }
-
-        $gallery_images->cms_user_id =  auth()->user()->id;
-        $gallery_images->event_id =  $event->id;
-        $gallery_images->category_id =  $category->id;
-        $gallery_images->image_name =  $fileWithExt;
-        $gallery_images->image_name = $filename;
-        $gallery_images->image_url = storage_path("app/public/images/galleries/{$event->slug}/{$category->slug}/{$filename}");
-        if ($gallery_images->save()) {
-            return response()->json(['success' => true, 'message' => 'File Store successfully.']);
-        } else {
-            return response()->json(['success' => false, 'message' => 'File not found.'], 404);
-        }
-        // $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
-
-        // // Store the file in the defined path using the original file name
-        // $file->storeAs($destinationPath, $originalFileName, 'public');
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
 
 
-        // call python api - url ->
-        // $res = Http::attach(
-        //     'file', // The name of the file field in the request
-        //     file_get_contents($file->getRealPath()), // The file's content
-        //     $originalFileName, // The file name
-        //     ['Content-Type' => 'image/jpeg']
-        // )->post(config('app.python_api_url') . '/inputimg/', [
-        //     'cms_user_id' => auth()->user()->id,
-        //     'event_id' => $event->id,
-        //     'category_id' => $category->id,
-        // ]);
-        // Log::info('came here');
-        // Log::info($res);
-        // if ($res->successful()) {
-        //     // Handle the success response
-        //     Log::info('came here 2');
-        //     return response()->json([
-        //         'status' => true,
-        //         'fileName' => $originalFileName,
-        //         'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
-        //     ], 200);
-        // }
-
-        // return response()->json([
-        //     'status' => true,
-        //     'fileName' => $originalFileName,
-        //     'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
-        // ]);
-        // } catch (\Throwable $th) {
-        //     Log::info($th->getMessage());
-        // }
-        // return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
     }
 
     public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $filename)
