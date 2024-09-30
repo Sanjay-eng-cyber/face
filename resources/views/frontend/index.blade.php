@@ -5,37 +5,29 @@
 
     <section>
         <div class="container" style="overflow: hidden">
-            <div class="row"
-                style="    display: flex;
-                        align-items: center;
-                        justify-content: center;">
-                <div class="col-10">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
-                        <div class="col-12 py-5">
+                        <div class="col-12  py-5">
 
-                            <div class=" py-5 position-relative isolation"
-                                style="    display: flex;align-items: center;justify-content: center;">
+                            <div class=" py-5 position-relative isolation d-flex align-items-center justify-content-center">
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 0px;top: 28px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop tape-line">
                                     Share Party Album With Friends
                                 </div>
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;left: 149px;bottom: 13px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
                                     Share Memories Of Friends
                                 </div>
 
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop "
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;right: 0px;top: 16px;">
+                                <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
                                     We Have Found Common Images With People
                                 </div>
 
-                                <div class="animate__animated animate__fadeInRight delayed-animationrightbottom"
-                                    style="position: absolute;background: white;padding: 15px 23px;border-radius: 30px;bottom: 41px;right: 0px;">
+                                <div class="animate__animated animate__fadeInRight delayed-animationrightbottom tape-line-eerht">
                                     We Found 6 New Photos!
                                 </div>
 
