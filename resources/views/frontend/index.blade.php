@@ -252,7 +252,7 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <div class="text-white">
+                                        <div class="text-white py-2">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nostrum quis
                                             suscipit cumque non. At facilis dicta rem iste enim pariatur est ratione itaque
                                             modi consequatur expedita cumque, aperiam repudiandae? Sit, ut amet minima
@@ -278,7 +278,7 @@
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <div class="text-white">
+                                        <div class="text-white py-2">
                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque iure ullam
                                             labore error animi, quasi soluta nulla ipsum, eos dolor obcaecati possimus!
                                             Voluptatem eligendi, repudiandae accusamus nisi molestias nemo accusantium culpa
@@ -295,31 +295,21 @@
                             </div>
 
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
+                                <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
+                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         Safe, Secure & Private
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <div class="text-white">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at
-                                            fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at
-                                            inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum,
-                                            esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur
-                                            repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure
-                                            magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet
-                                            dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus
-                                            sapiente perferendis necessitatibus molestias ab non quisquam placeat
-                                            consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium
-                                            itaque recusandae maiores repellat vero? Rerum, magnam maiores?
+                                        <div class="text-white py-2">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum, esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus sapiente perferendis necessitatibus molestias ab non quisquam placeat consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium itaque recusandae maiores repellat vero? Rerum, magnam maiores?
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
 
 
                         </div>
