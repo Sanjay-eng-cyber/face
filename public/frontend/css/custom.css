@@ -238,6 +238,12 @@ height: 800px;
 }
 }
 @media screen and (max-width:767px) {
+    .sub-title{
+        font-size: 26px !important;
+    }
+    .main-title{
+        font-size: 30px !important;
+    }
     .recomend{
         left: 37%;
     }
@@ -739,4 +745,10 @@ margin: 10px auto;
 .get-section{
     justify-content: space-between;
     padding-bottom: 10px;
+}
+.sub-title{
+    font-size: 32px;
+}
+.main-title{
+    font-size: 36px;
 }
