@@ -148,7 +148,7 @@
         </div>
 
 
-        <section class=" mb-5 pb-5">
+        <section class=" mb-md-4 pb-md-4">
             <img src="{{ asset('frontend/images/index/kwik-bg.png') }}" alt="" class="kwik-bg">
         </section>
         <div class="container">
