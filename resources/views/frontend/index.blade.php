@@ -5,7 +5,7 @@
 
     <section>
         <div class="container" style="overflow: hidden">
-            <div class="row d-flex align-items-center justify-content-center">
+            <div class="row d-flex align-items-center justify-content-center hero-mh">
                 <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
                         <div class="col-12  py-5">

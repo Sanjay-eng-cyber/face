@@ -77,7 +77,9 @@ body {
 
 
 /* hero slider */
-
+.hero-mh{
+    min-height: 481px;
+}
 .delayed-animation-righttop {
     animation-delay: 4s;
   }
@@ -304,7 +306,17 @@ padding-left: 0px;
    
 }
 
+@media screen and (max-width:1200px){
+    .hero-mh {
+        min-height: 440px;
+    }
+}
+
+
 @media screen and (max-width:992px){
+    .hero-mh {
+        min-height: 394px;
+    }
     .navbar-collapse{
         position: relative;
         top: 39px;
@@ -351,6 +363,9 @@ padding-left: 0px;
 
 
 @media screen and (max-width:768px){
+    .hero-mh {
+        min-height: 344px;
+    }
     .first-glow-main {
         display: flex;
         justify-content: center;
@@ -466,7 +481,11 @@ padding-left: 0px;
         font-size: 8px;
     }
 }
-
+@media screen and (max-width: 480px) {
+    .hero-mh {
+        min-height: 301px;
+    }
+}
 /*end media query */
 
 
