@@ -332,10 +332,10 @@
 
     <div class="slider-outer">
         {{-- <div class=" d-none">
-    <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-</div> --}}
-        <div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
+                <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+                <a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
+            </div> --}}
+        {{-- <div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
             <a class="prev-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
                     alt=""></a>
             <a class="next-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
@@ -420,8 +420,64 @@
                 </section>
 
             </div>
+        </div> --}}
+    </div>
+
+    <div class="container" style="padding-top: 200px; padding-bottom: 200px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="img-mainslider" style=" background-color: #070707;">
+                    <div class="slider-container">
+                        <!-- Image slider -->
+                        <div class="image-slider">
+                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1"></div>
+                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 2"></div>
+                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 3"></div>
+                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 4"></div>
+                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 5"></div>
+                        </div>
+                        <!-- Text content for each slide -->
+                        <div class="text-slider" style="border: 1px solid #FF3895; border-radius: 36px;padding-top: 94px;margin-top: -90px;">
+                            <div class="slide-text text-white" id="slide1">
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">1 Market smartly</span> at every step</div>
+                                <h4 class="fw-500">
+                                    1  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                </h4>
+                            </div>
+                            <div class="slide-text text-white" id="slide2">
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">2 Market smartly</span> at every step</div>
+                                <h4 class="fw-500">
+                                    2  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                </h4>
+                            </div>
+                            <div class="slide-text text-white" id="slide3">
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">3 Market smartly</span> at every step</div>
+                                <h4 class="fw-500">
+                                    3  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                </h4>
+                            </div>
+                            <div class="slide-text text-white" id="slide4">
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">4 Market smartly</span> at every step</div>
+                                <h4 class="fw-500">
+                                    4 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                </h4>
+                            </div>
+                            <div class="slide-text text-white" id="slide5">
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">5 Market smartly</span> at every step</div>
+                                <h4 class="fw-500">
+                                    5 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
+
     {{--
     <section class="slider-sec">
         <div class="container ">
@@ -664,7 +720,7 @@
         }
     </script>
 
-    <script>
+    {{-- <script>
         var slider = $('.slider');
 
         $('.prev-mobile').click(function() {
@@ -684,6 +740,129 @@
             fade: true,
             fadeSpeed: 1000
         });
-    </script>
+    </script> --}}
+
+    <script>
+        $(document).ready(function() {
+            // Initialize the slick slider
+            $('.image-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                centerMode: true,
+                arrows: true,
+                dots: false,
+                speed: 300,
+                centerPadding: '20px',
+            });
+        
+            // Show the first text initially
+            $('#slide1').addClass('active-text');
+        
+            // Change text and apply rotation on slide change
+            $('.image-slider').on('afterChange', function(event, slick, currentSlide){
+                // Hide all text slides
+                $('.slide-text').removeClass('active-text');
+                // Show the text for the current slide
+                $('#slide' + (currentSlide + 1)).addClass('active-text');
+        
+                // Reset rotation for all slides
+                slick.$slides.css({
+                    'transform': 'rotate(0deg)',
+                    'transition': 'transform 0.5s ease'
+                });
+        
+                // Get the indices for the previous and next slides
+                const totalSlides = slick.$slides.length;
+                const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1; // Previous slide
+                const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0; // Next slide
+        
+                // Rotate the previous and next slides
+                $(slick.$slides[prevSlideIndex]).css({
+                    'transform': 'rotate(-17deg)'
+                });
+                $(slick.$slides[nextSlideIndex]).css({
+                    'transform': 'rotate(17deg)'
+                });
+            });
+        
+            // Initial rotation for the center slide (the first active slide)
+            const slickInstance = $('.image-slider').slick('getSlick');
+            $('.image-slider').slick('slickGoTo', 0); // Go to the first slide initially
+        
+            // Apply initial rotation
+            $('.image-slider').on('init', function(event, slick){
+                $(slick.$slides[0]).css('transform', 'rotate(0deg) scale(1.5)'); // Center slide
+                $(slick.$slides[1]).css('transform', 'rotate(-17deg)'); // Previous slide
+                $(slick.$slides[2]).css('transform', 'rotate(17deg)'); // Next slide
+            });
+        
+            // Initialize the text and rotation
+            $('.image-slider').on('init', function(event, slick){
+                $('#slide1').show(); // Show text for first slide
+            });
+        
+            // Force rotate cloned slides on initialization
+            slickInstance.$slides.each(function(index) {
+                if ($(this).hasClass('slick-cloned')) {
+                    const slideIndex = index % slickInstance.slideCount; // Get original index
+                    if (slideIndex === 0) {
+                        $(this).css('transform', 'rotate(-17deg)'); // Rotate first cloned slide
+                    } else if (slideIndex === slickInstance.slideCount - 1) {
+                        $(this).css('transform', 'rotate(17deg)'); // Rotate last cloned slide
+                    }
+                }
+            });
+        });
+        </script>
 
 @endsection
+ <style>
+    .img-mainslider .slick-slide {
+        transition: transform 0.5s ease;
+    }
+    
+    .img-mainslider .slick-center img {
+        transform: scale(1.5); /* Scale the center image */
+        /* position: relative;
+        z-index: 9; */
+    }
+    
+    /* .img-mainslider .slick-slide img{
+        position: relative;
+        z-index:-1;
+    } */
+    .slider-container {
+        position: relative;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .image-slider img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .text-slider .slide-text {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.5em;
+    }
+    
+    .text-slider .active-text {
+        display: block;
+    }
+    
+    .slick-prev, .slick-next {
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    
+    .img-mainslider .slick-slide.slick-active {
+    display: flex !important;
+    align-items: flex-end !important;
+}
+    </style>
