@@ -390,6 +390,7 @@ a.next {
 }
 
 @media screen and (max-width:992px){
+
     .bracket
     {
 
@@ -400,9 +401,9 @@ a.next {
         width: 100% !important;
     }
     .scan{
-        width: 325px !important;
-        top: 210px !important;
-        left: 6% !important;
+        width: 94% !important;
+        top: 430px !important;
+        left: 3% !important;
     }
     .prev{
         top: 447% !important;
@@ -451,9 +452,9 @@ a.next {
     }
 
     .scan{
-        width: 240px !important;
-        top: 140px !important;
-        left: 7% !important;
+        width: 92% !important;
+        top: 340px !important;
+        left: 4% !important;
     }
     a.prev {
       top: 542% !important;
