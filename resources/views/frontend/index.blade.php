@@ -60,9 +60,9 @@
             </div>
 
             <div class="row position-relative share-text pb-md-5 pb-3">
-                <div class="col-12">
+                <div class="col-12 pb-md-5">
 
-                    <div class="get-section align-items-center d-md-flex">
+                    <div class="get-section align-items-center d-md-flex ">
                         <div>
                             <div class="h1 text-white">
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
@@ -101,6 +101,8 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
+                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
+
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
@@ -112,6 +114,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
+                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
@@ -123,6 +126,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
+                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
@@ -134,6 +138,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
+                            
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">

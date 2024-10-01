@@ -755,3 +755,11 @@ margin: 10px auto;
 .main-title{
     font-size: 36px;
 }
+.dot{
+position: absolute;
+top: 110px;
+}
+.share-box{
+    position: relative;
+
+}
