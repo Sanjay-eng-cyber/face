@@ -226,6 +226,30 @@ body {
     justify-content: center; 
     border-radius:15px;
 }
+
+.our-profession-sctn{
+    border-radius:45px;
+    padding:1px;
+    background: linear-gradient(101.22deg, #FFFFFF 38.55%, rgba(13, 11, 12, 0) 100.18%);
+}
+.our-profession-sub{
+    background-color: #040404;
+    border-radius:45px;padding:68px 34px;
+    display: grid;
+    grid-template-columns: 64% 34%;
+    grid-gap: 2%;
+    
+}
+.flowline-img{
+    position: absolute;
+    z-index: 1;
+    right: -30px;
+    top: -65px;
+}
+.mobilesize{
+    position: absolute;
+    bottom:-67px
+}
 /*end hero section*/
 
 .scanning-line {
@@ -348,6 +372,33 @@ padding-left: 0px;
 
 
 @media screen and (max-width:992px){
+    .pfsn-img{
+        padding-top: 20em;
+    }
+    .our-profession-sub{
+        background-color: #040404;
+        border-radius:45px;padding:68px 34px;
+        display: grid;
+        grid-template-columns:100%;
+        grid-gap: 2%;
+        
+    }
+
+    .flowline-img {
+        position: absolute;
+        z-index: 1;
+        right: -32px;
+        top: -65px;
+    }
+
+    .mobilesize {
+        position: absolute;
+        bottom: -55px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+   
     .share-text {
         padding-top: 15px;
         padding-bottom: 49px;
@@ -520,6 +571,9 @@ padding-left: 0px;
     }
 }
 @media screen and (max-width: 480px) {
+    .pfsn-img {
+        padding-top: 15em;
+    }
     .hero-mh {
         min-height: 258px;
     }

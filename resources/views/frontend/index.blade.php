@@ -12,27 +12,31 @@
 
                             <div class=" py-5 position-relative isolation d-flex align-items-center justify-content-center">
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop tape-line">
+                                <div
+                                    class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop tape-line">
                                     Share Party Album With Friends
                                 </div>
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
+                                <div
+                                    class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
                                     Share Memories Of Friends
                                 </div>
 
 
 
-                                <div class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
+                                <div
+                                    class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
                                     We Have Found Common Images With People
                                 </div>
 
-                                <div class="animate__animated animate__fadeInRight delayed-animationrightbottom tape-line-eerht">
+                                <div
+                                    class="animate__animated animate__fadeInRight delayed-animationrightbottom tape-line-eerht">
                                     We Found 6 New Photos!
                                 </div>
 
 
-                                <div class="first-glow-main" >
+                                <div class="first-glow-main">
                                     <img src="{{ asset('frontend/images/index/one.png') }}" alt=""
                                         class="img-fluid first-glow">
                                 </div>
@@ -43,7 +47,7 @@
                                 </div>
 
 
-                                <div class="third-glow-main" >
+                                <div class="third-glow-main">
                                     <img src="{{ asset('frontend/images/index/three.png') }}" alt=""
                                         class="img-fluid third-glow">
                                 </div>
@@ -68,7 +72,7 @@
                             </div>
                         </div>
 
-                     
+
 
 
 
@@ -83,8 +87,8 @@
                 <div class="col-12 col-lg-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
-                       <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt="" srcset=""
-                        class=" scan up-down" ></span>
+                    <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
+                            srcset="" class=" scan up-down"></span>
                     <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0">
                         Facial recognition system that works like a charm, allowing your friends and acquaintances to see
                         every photo that
@@ -92,8 +96,8 @@
                     </h5>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <h1 class="text-white mb-0 kpichead" >How Kwikpic Works?</h1>
-                    <h4 class="text-white mb-0 kpik-subhead" >let your clients discover their images within seconds</h4>
+                    <h1 class="text-white mb-0 kpichead">How Kwikpic Works?</h1>
+                    <h4 class="text-white mb-0 kpik-subhead">let your clients discover their images within seconds</h4>
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
@@ -145,13 +149,13 @@
 
 
         <section class=" mb-5 pb-5">
-     <img src="{{asset('frontend/images/index/kwik-bg.png')}}" alt="" class="kwik-bg">
+            <img src="{{ asset('frontend/images/index/kwik-bg.png') }}" alt="" class="kwik-bg">
         </section>
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
-                    <div class="text-white" style="font-size: 36px"> <span class="granny-lipgloss">Smartly</span> Deliver
+                    <div class="text-white" style="font-size: 36px;padding-bottom:60px"> <span class="granny-lipgloss">Smartly</span> Deliver
                         Photos to your Clients</div>
                 </div>
             </div>
@@ -159,20 +163,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div
-                            style="
-                        border-radius:45px;
-                        padding:1px;
-                        background: linear-gradient(101.22deg, #FFFFFF 38.55%, rgba(13, 11, 12, 0) 100.18%);
-
-                                        ">
-                            <div
-                                style="background-color: #040404;
-                            border-radius:45px;padding:68px 34px;
-                            display: grid;
-                            grid-template-columns: 64% 34%;
-                            grid-gap: 2%;
-                            ">
+                        <div class="our-profession-sctn">
+                            <div class="our-profession-sub">
                                 <div>
                                     <h4 class="text-white mb-0">
                                         Clicking photos is one half of the task. The second half is delivering them to your
@@ -185,15 +177,11 @@
                                         settings and much more!
                                     </h4>
                                 </div>
-                                <div style="position: relative">
+                                <div class="position-relative pfsn-img">
                                     <img src="{{ asset('frontend/images/index/flowline.svg') }}" alt=""
-                                        srcset="" class="img-fluid"
-                                        style="position: absolute;
-                                        z-index: 1;
-                                        right: -30px;
-                                        top: -65px;">
+                                        srcset="" class="img-fluid flowline-img">
                                     <img src="{{ asset('frontend/images/index/mobilesize.png') }}" alt=""
-                                        srcset="" class="img-fluid" style="position: absolute;bottom:-67px">
+                                        srcset="" class="img-fluid mobilesize" >
                                 </div>
                             </div>
 
@@ -247,7 +235,8 @@
 
                                                     <div style="position:relative">
                                                         <img src="{{ asset('frontend/images/index/robothand.svg') }}"
-                                                            alt="" srcset="" class="img-fluid robot accordion-img-robot">
+                                                            alt="" srcset=""
+                                                            class="img-fluid robot accordion-img-robot">
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,79 +338,99 @@
     </section>
 
 
-<div class="slider-outer">
-{{-- <div class=" d-none">
+    <div class="slider-outer">
+        {{-- <div class=" d-none">
     <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 	<a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
 </div> --}}
-<div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
-    <a class="prev-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-	<a class="next-mobile" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-</div>
-	<div class="slider px-1">
-		<div class="slide">
-            <section class="slider-sec">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="bg-slider">
-                            <div class="img-group d-flex position-relative">
-                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
-                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
-                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
-                            </div>
-                            <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
-                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-		</div>
-		<div class="slide">
-            <section class="slider-sec">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="bg-slider">
-                            <div class="img-group d-flex position-relative">
-                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
-                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
-                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
-                            </div>
-                            <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
-                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+        <div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
+            <a class="prev-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
+                    alt=""></a>
+            <a class="next-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
+                    alt=""></a>
+        </div>
+        <div class="slider px-1">
+            <div class="slide">
+                <section class="slider-sec">
+                    <div class="container ">
+                        <div class="row ">
+                            <div class="bg-slider">
+                                <div class="img-group d-flex position-relative">
+                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
+                                        class="f-img">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
+                                        class="s-img">
+                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
+                                        class="t-img">
+                                </div>
+                                <div class="textgroup">
+                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
+                                            class="text-white">At Every Step</span></h4>
+                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
+                                        reach just the right audience at fraction of a price compared to instagram
+                                        marketing.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-		</div>
-		<div class="slide">
-            <section class="slider-sec">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="bg-slider">
-                            <div class="img-group d-flex position-relative">
-                                <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
-                                <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
-                                <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
-                            </div>
-                            <div class="textgroup">
-                                <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
-                            <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
+            </div>
+            <div class="slide">
+                <section class="slider-sec">
+                    <div class="container ">
+                        <div class="row ">
+                            <div class="bg-slider">
+                                <div class="img-group d-flex position-relative">
+                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
+                                        class="f-img">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
+                                        class="s-img">
+                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
+                                        class="t-img">
+                                </div>
+                                <div class="textgroup">
+                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
+                                            class="text-white">At Every Step</span></h4>
+                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
+                                        reach just the right audience at fraction of a price compared to instagram
+                                        marketing.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-		</div>
-	</div>
-</div>
-{{--
+            </div>
+            <div class="slide">
+                <section class="slider-sec">
+                    <div class="container ">
+                        <div class="row ">
+                            <div class="bg-slider">
+                                <div class="img-group d-flex position-relative">
+                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
+                                        class="f-img">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
+                                        class="s-img">
+                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
+                                        class="t-img">
+                                </div>
+                                <div class="textgroup">
+                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
+                                            class="text-white">At Every Step</span></h4>
+                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
+                                        reach just the right audience at fraction of a price compared to instagram
+                                        marketing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    {{--
     <section class="slider-sec">
         <div class="container ">
             <div class="row ">
@@ -546,7 +555,8 @@
 
             <div class="row py-4 d-flex align-items-center">
                 <div class="col-lg-4 ">
-                    <h3 class="section-title text-md-start text-center"><span class="text-white">Included in every</span><br>
+                    <h3 class="section-title text-md-start text-center"><span class="text-white">Included in
+                            every</span><br>
                         <span class="text-pink">algoshare plan</span>
                     </h3>
                 </div>
@@ -619,74 +629,69 @@
 
         var slider = $('.slider');
 
-$('.prev').click(function(){
-    slider.slick('slickPrev');
-    return false;
-});
+        $('.prev').click(function() {
+            slider.slick('slickPrev');
+            return false;
+        });
 
-$('.next').click(function(){
-    slider.slick('slickNext');
-    return false;
-});
+        $('.next').click(function() {
+            slider.slick('slickNext');
+            return false;
+        });
 
-slider.slick({
-  infinite: true,
-	dots: false,
-	arrows: false,
-	fade: true,
-	fadeSpeed: 1000
-});
+        slider.slick({
+            infinite: true,
+            dots: false,
+            arrows: false,
+            fade: true,
+            fadeSpeed: 1000
+        });
     </script>
 
 
 
-<script>
+    <script>
+        var mq = window.matchMedia("(min-width: 1116px)");
+        if (mq.matches) {
+
+            $(function() {
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 400 && $(this).scrollTop() <= 1000) {
+                        $('.scan').css('transition', 'all 1s linear');
+                        $('.scan').css('top', '-200px');
 
 
+                        setInterval(function() {
+                            $('.scan').css('top', '300px');
+                        }, 400);
 
-    var mq = window.matchMedia("(min-width: 1116px)");
-            if (mq.matches) {
+                    }
+                })
+            });
 
-                $(function() {
-                    $(window).scroll(function() {
-                        if ($(this).scrollTop() > 400 && $(this).scrollTop() <= 1000) {
-                            $('.scan').css('transition','all 1s linear');
-    $('.scan').css('top','-200px');
+        }
+    </script>
 
+    <script>
+        var slider = $('.slider');
 
-    setInterval(function () {
-        $('.scan').css('top','300px');
-    }, 400);
+        $('.prev-mobile').click(function() {
+            slider.slick('slickPrev');
+            return false;
+        });
 
-                        }
-                    })});
+        $('.next-mobile').click(function() {
+            slider.slick('slickNext');
+            return false;
+        });
 
-            }
-
-
-</script>
-
-<script>
-
-var slider = $('.slider');
-
-$('.prev-mobile').click(function(){
-    slider.slick('slickPrev');
-    return false;
-});
-
-$('.next-mobile').click(function(){
-    slider.slick('slickNext');
-    return false;
-});
-
-slider.slick({
-  infinite: true,
-	dots: false,
-	arrows: false,
-	fade: true,
-	fadeSpeed: 1000
-});
+        slider.slick({
+            infinite: true,
+            dots: false,
+            arrows: false,
+            fade: true,
+            fadeSpeed: 1000
+        });
     </script>
 
 @endsection
