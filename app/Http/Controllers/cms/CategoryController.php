@@ -195,18 +195,19 @@ class CategoryController extends Controller
                 $face_encoding = $data['face_encoding'] ?? null;
                 $face_locations = $data['face_locations'] ?? null;
 
-                $gallery_images = new GalleryImage();
-                $gallery_images->cms_user_id = auth()->user()->id;
-                $gallery_images->event_id = $event->id;
-                $gallery_images->category_id = $category->id;
-                $gallery_images->image_name = $filename;
-                $gallery_images->image_url = "images/galleries/{$event->slug}/{$category->slug}/{$filename}";
-                $gallery_images->face_encoding = $face_encoding;
-                $gallery_images->face_locations = $face_locations;
-                if ($gallery_images->save()) {
+                $gallery_image = new GalleryImage();
+                $gallery_image->cms_user_id = auth()->user()->id;
+                $gallery_image->event_id = $event->id;
+                $gallery_image->category_id = $category->id;
+                $gallery_image->image_name = $filename;
+                $gallery_image->image_url = "images/galleries/{$event->slug}/{$category->slug}/{$filename}";
+                $gallery_image->face_encoding = $face_encoding;
+                $gallery_image->face_locations = $face_locations;
+                if ($gallery_image->save()) {
                     return response()->json([
                         'status' => true,
                         'fileName' => $filename,
+                        'id' => $gallery_image->id,
                         'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
                     ], 200);
                 }
@@ -218,15 +219,14 @@ class CategoryController extends Controller
         return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
     }
 
-    public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $filename)
+    public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $id)
     {
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
-        $filePath = "images/galleries/{$eventSlug}/{$categorySlug}/{$filename}";
+        $gallery_image = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->findOrFail($id);
+        $filePath = "images/galleries/{$eventSlug}/{$categorySlug}/{$gallery_image->image_name}";
 
-        // Check if the file exists before attempting to delete it
-        if (Storage::disk('public')->exists($filePath)) {
-            // Delete the file
+        if ($gallery_image->delete()) {
             Storage::disk('public')->delete($filePath);
             return response()->json(['success' => true, 'message' => 'File deleted successfully.', 'path' => $filePath]);
         } else {
@@ -245,21 +245,16 @@ class CategoryController extends Controller
 
     public function deleteUploadImage($id)
     {
-        $gallery_images = GalleryImage::findOrFail($id);
-        if ($gallery_images->delete()) {
-            return redirect()->route('backend.category.uploaded-images-index')->with(
-                [
-                    "message" => "gallery Images Deleted Successfully",
-                    "alert-type" => "success"
-                ]
-            );
+        $gallery_image = GalleryImage::findOrFail($id);
+        $event = Event::findOrFail($gallery_image->event_id);
+        $category = Category::where('event_id', $event->id)->findOrFail($gallery_image->category_id);
+        $filePath = "images/galleries/{$event->slug}/{$category->slug}/{$gallery_image->image_name}";
+
+        if ($gallery_image->delete()) {
+            optional(Storage::disk('public')->delete($filePath));
+            return redirect()->route('backend.category.uploaded-images-index')->with(toast('Gallery Image Deleted Successfully', 'success'));
         } else {
-            return redirect()->route('backend.category.uploaded-images-index')->with(
-                [
-                    "message" => "Something Went Wrong",
-                    "alert-type" => "error"
-                ]
-            );
+            return redirect()->route('backend.category.uploaded-images-index')->with(toast('Something Went Wrong', 'error'));
         }
     }
 }

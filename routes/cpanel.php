@@ -80,7 +80,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::post('/upload/{eventSlug}/{categorySlug}', [CategoryController::class, 'uploadImages'])->name('backend.category.image-upload');
 
-        Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{filename}', [CategoryController::class, 'deleteUploadedImage'])->name('backend.category.delete-uploaded-image');
+        Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{id}', [CategoryController::class, 'deleteUploadedImage'])->name('backend.category.delete-uploaded-image');
 
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {
             Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-user.index');

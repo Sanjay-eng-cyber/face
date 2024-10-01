@@ -152,4 +152,11 @@ if (!function_exists('getPythonImageUrl')) {
     }
 }
 
+if (!function_exists('getGalleryImageUrl')) {
+    function getGalleryImageUrl($loc)
+    {
+        return asset('storage') . '/' . $loc;
+    }
+}
+
 
