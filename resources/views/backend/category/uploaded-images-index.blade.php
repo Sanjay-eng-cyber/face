@@ -72,7 +72,7 @@
                                             <td>{{ $image->image_name }}</td>
                                             <td class="text-center">
                                                 <span class="lightgallery1">
-                                                    <a href="{{ getPythonImageUrl($image->image_url) }}">
+                                                    <a href="{{ getGalleryImageUrl($image->image_url) }}">
                                                         {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
                                                             style="height: 100px;width:150px;object-fit:contain;"
                                                             alt=""> --}}

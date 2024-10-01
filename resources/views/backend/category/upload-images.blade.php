@@ -406,6 +406,8 @@
                     file.previewElement.classList.add("dz-success");
                     file.fileName = response
                         .fileName; // Store the file name for potential removal later
+                    file.id = response
+                        .id;
 
                     totalFiles--; // Decrease the count after successful upload
                     checkFileCount(); // Check if the warning can be removed
@@ -451,7 +453,7 @@
                 myDropzone.on("removedfile", function(file) {
                     if (file.fileName) {
                         // Only delete if the file has been uploaded
-                        fetch(`/delete-upload-image/${eventSlug}/${categorySlug}/${file.fileName}`, {
+                        fetch(`/delete-upload-image/${eventSlug}/${categorySlug}/${file.id}`, {
                                 method: 'DELETE',
                                 headers: {
                                     'Content-Type': 'application/json',

@@ -8,7 +8,7 @@
             <div class="row d-flex align-items-center justify-content-center hero-mh">
                 <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
-                        <div class="col-12  py-5">
+                        <div class="col-12  py-2 py-md-4 py-lg-5">
 
                             <div class=" py-5 position-relative isolation d-flex align-items-center justify-content-center">
 
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="row position-relative">
+            <div class="row position-relative share-text">
                 <div class="col-12">
 
                     <div class="get-section align-items-center d-md-flex">
@@ -63,14 +63,12 @@
                             <div class="h1 text-white">
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
                             </div>
-                            <div class="h5 text-white">
+                            <div class="h4 text-white">
                                 wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
                             </div>
                         </div>
 
-                        <button type="button h4 mb-0" class="btn btn-warning get-started" >
-                            Get Started
-                        </button>
+                     
 
 
 
