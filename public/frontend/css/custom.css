@@ -35,7 +35,7 @@ color: #ffffff;
 
 .bottom-footer{
     border-top: 1px solid #9C215F;
-   
+
     color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -238,6 +238,9 @@ height: 800px;
 }
 }
 @media screen and (max-width:767px) {
+    .kwik-bg{
+  display: none;
+    }
     .sub-title{
         font-size: 26px !important;
     }
@@ -670,7 +673,9 @@ padding: 3px 5px;
    width: 60%;
    height: 3500px;
    position: absolute;
-   top: 200px;
+   top: 400px;
+   z-index: -1;
+
 }
 .scan{
     position: absolute;
