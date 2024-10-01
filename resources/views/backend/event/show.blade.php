@@ -40,21 +40,24 @@
                                                 <p class="label-title">{{ $event->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Cover Image</label><br>
-                                                <div id="lightgallery_one">
-                                                    <a
-                                                        href="{{ asset('storage/images/events/' . $event->cover_image) }}" target="blank">View</a>
+                                        @if ($event->cover_image)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Cover
+                                                        Image</label><br>
+                                                    <div id="lightgallery_one">
+                                                        <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
+                                                            target="blank">View</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Start
                                                     Date</label><br>
-                                                <p class="label-title">{{ dd_format($event->start_date, 'd-m-y h:i a') }}
+                                                <p class="label-title">
+                                                    {{ dd_format($event->start_date, 'd-m-y h:i a') }}
                                                 </p>
                                             </div>
                                         </div>
@@ -62,7 +65,8 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">End
                                                     Date</label><br>
-                                                <p class="label-title">{{ dd_format($event->end_date, 'd-m-y h:i a') }}</p>
+                                                <p class="label-title">{{ dd_format($event->end_date, 'd-m-y h:i a') }}
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -104,7 +108,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Single Image
+                                                <label for="degree3" class="cust-title" class="label-title">Single
+                                                    Image
                                                     Download</label><br>
                                                 @if ($event->single_image_download)
                                                     <label class="text-white badge badge-primary">Yes</label>
