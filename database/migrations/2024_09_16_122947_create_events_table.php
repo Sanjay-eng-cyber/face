@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('cms_user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('slug');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->string('cover_image')->nullable();
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
             $table->longText('descriptions')->nullable();
             $table->enum('download_size', ['original', '1600'])->default('original');
             $table->boolean('sharing')->default(0);
