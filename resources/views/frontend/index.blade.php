@@ -80,67 +80,59 @@
 
         <div class="container">
             <div class="row gx-5">
-                <div class="col-12 col-md-6 position-relative anim-bg">
+                <div class="col-12 col-lg-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
                        <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt="" srcset=""
                         class=" scan up-down" ></span>
-                    <h5 class="mb-0 text-white mt-md-1 mt-3">
+                    <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0">
                         Facial recognition system that works like a charm, allowing your friends and acquaintances to see
                         every photo that
                         they've made an appearance in!
                     </h5>
                 </div>
-                <div class="col-12 col-md-6">
-                    <h1 class="text-white" style="font-size: 36px">How Kwikpic Works?</h1>
-                    <h5 class="text-white">let your clients discover their images within seconds</h5>
-                    <div
-                        style="padding-bottom:30px;display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
-                        <div
-                            style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                <div class="col-12 col-lg-6">
+                    <h1 class="text-white mb-0 kpichead" >How Kwikpic Works?</h1>
+                    <h4 class="text-white mb-0 kpik-subhead" >let your clients discover their images within seconds</h4>
+                    <div class="scn-sharemain">
+                        <div class="share-box">
                             <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
                         </div>
 
-                        <h4 class="text-white kanit-thin">
+                        <h4 class="text-white kanit-thin fw-400">
                             Share event link with attendees via email, QR code or WhatsApp
                         </h4>
                     </div>
 
 
-                    <div
-                        style="padding-bottom:30px;    display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
-                        <div
-                            style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                    <div class="scn-sharemain">
+                        <div class="share-box">
                             <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
                         </div>
 
-                        <h4 class="text-white kanit-thin">
+                        <h4 class="text-white kanit-thin fw-400">
                             Attendees go to the link and take a selfie
                         </h4>
                     </div>
 
 
-                    <div
-                        style="padding-bottom:30px; display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
-                        <div
-                            style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                    <div class="scn-sharemain">
+                        <div class="share-box">
                             <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
                         </div>
 
-                        <h4 class="text-white kanit-thin">
+                        <h4 class="text-white kanit-thin fw-400">
                             Our AI recognizes attendees with 99% accuracy and show them all their images
                         </h4>
                     </div>
 
 
-                    <div
-                        style="padding-bottom:30px;display: grid;grid-template-columns: 110px auto; grid-gap: 20px;align-items: center;">
-                        <div
-                            style="    max-width: 110px; height: 110px;border: 1px solid #7C003E;box-shadow: 0px 4px 4px 20px #000000CC;display: flex;  align-items: center;justify-content: center; border-radius:15px;">
+                    <div class="scn-sharemain">
+                        <div class="share-box">
                             <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
                         </div>
 
-                        <h4 class="text-white kanit-thin">
+                        <h4 class="text-white kanit-thin fw-400">
                             Images can be printed or downloaded right from mobile
                         </h4>
                     </div>
