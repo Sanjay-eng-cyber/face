@@ -68,7 +68,7 @@
                             </div>
                         </div>
 
-                     
+
 
 
 
@@ -150,8 +150,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
-                    <div class="text-white" style="font-size: 36px"> <span class="granny-lipgloss">Smartly</span> Deliver
+                    <div class="text-white fw-500 sub-title">For Our Professionals</div>
+                    <div class="text-white main-title" > <span class="granny-lipgloss">Smartly</span> Deliver
                         Photos to your Clients</div>
                 </div>
             </div>
