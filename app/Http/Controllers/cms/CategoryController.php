@@ -173,7 +173,7 @@ class CategoryController extends Controller
             $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
             $destinationPath = public_path("storage/images/galleries/{$event->slug}/{$category->slug}");
             if (!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath);
+                File::makeDirectory($destinationPath, 0755, true);
             }
             $manager = ImageManager::gd();
             $image = $manager->read($fileWithExt->getRealPath());
@@ -185,17 +185,24 @@ class CategoryController extends Controller
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
             )->post(config('app.python_api_url') . '/inputimg/');
-            Log::info('came here');
-            Log::info($res);
+
             if ($res->successful()) {
+                $data = $res->json();
+                $status = $data['status'] ?? null;
+                if ($status !== true) {
+                    return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                }
+                $face_encoding = $data['face_encoding'] ?? null;
+                $face_locations = $data['face_locations'] ?? null;
+
                 $gallery_images = new GalleryImage();
                 $gallery_images->cms_user_id = auth()->user()->id;
                 $gallery_images->event_id = $event->id;
                 $gallery_images->category_id = $category->id;
                 $gallery_images->image_name = $filename;
                 $gallery_images->image_url = "images/galleries/{$event->slug}/{$category->slug}/{$filename}";
-                $gallery_images->face_encoding = '[]';
-                $gallery_images->face_locations = '[]';
+                $gallery_images->face_encoding = $face_encoding;
+                $gallery_images->face_locations = $face_locations;
                 if ($gallery_images->save()) {
                     return response()->json([
                         'status' => true,
@@ -205,11 +212,10 @@ class CategoryController extends Controller
                 }
             }
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            // dd($th->getMessage());
+            Log::info('Catch Err : ' . $th->getMessage());
         }
         return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
-
-
     }
 
     public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $filename)
