@@ -20,6 +20,8 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item navleftp">
                                     <a class="nav-link active" aria-current="page" href="#" style="color: white">Home</a>
+                                    <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                    <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2">
                                 </li>
                                 <li class="nav-item navleftp">
                                     <a class="nav-link" href="#" style="color: white">About us</a>

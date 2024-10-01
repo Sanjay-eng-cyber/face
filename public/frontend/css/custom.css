@@ -313,6 +313,12 @@ padding: 10px 30px;
 }
 
 @media screen and (min-width:1398px) {
+    .bracket
+{
+    position: absolute;
+    top: 80px !important;
+    right: 80px !important;
+}
     .scan{
 
         width: 620px !important;
@@ -785,4 +791,23 @@ top: 110px;
     position: absolute;
     top: 70px;
     right: 55px;
+}
+.moon{
+    width: 50px;
+position: absolute;
+top: 73px;
+z-index: 0;
+filter: blur(20px);
+}
+.navbar-wrapper{
+position: relative;
+z-index: 10;
+}
+
+.moon-2{
+    width: 50px;
+position: absolute;
+top: 78px;
+z-index: -2 !important;
+
 }
