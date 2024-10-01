@@ -220,11 +220,7 @@
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
 
-                                            <div
-                                                style="
-                                        display: grid;
-                                    grid-template-columns: 65% 31%;
-                                    grid-gap: 4%;">
+                                            <div class="grid-acdn-body">
                                                 <div class="text-white">
                                                     Let your clients discover their pictures in a matter of seconds with our
                                                     cutting edge AI. 99.4 % accurate, 100% awesome.

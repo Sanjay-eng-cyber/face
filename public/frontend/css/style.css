@@ -250,6 +250,19 @@ body {
     position: absolute;
     bottom:-67px
 }
+.grid-acdn-body{
+    display: grid;
+    grid-template-columns: 65% 31%;
+    grid-gap: 4%;
+}
+.accordion-img{
+    position: absolute;
+z-index: 99;
+transform: rotate(10deg);
+left: 31px;
+top: -126px;
+border-radius: 24px 0px 0px 15px;
+}
 /*end hero section*/
 
 .scanning-line {
@@ -372,6 +385,19 @@ padding-left: 0px;
 
 
 @media screen and (max-width:992px){
+    .grid-acdn-body {
+        display: flex;
+        flex-direction: column;
+    }
+    .accordion-img {
+        position: relative;
+        z-index: 99;
+        transform: rotate(0deg);
+        left: 50%;
+        top: 21px;
+        transform: translate(-50%);
+        border-radius: 24px 0px 0px 15px;
+    }
     .pfsn-img{
         padding-top: 20em;
     }
