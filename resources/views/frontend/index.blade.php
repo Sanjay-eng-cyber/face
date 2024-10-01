@@ -58,10 +58,7 @@
             <div class="row position-relative">
                 <div class="col-12">
 
-                    <div
-                        style="display: flex;
-                            justify-content: space-between;
-                            align-items: center;">
+                    <div class="get-section align-items-center d-md-flex">
                         <div>
                             <div class="h1 text-white">
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
@@ -71,7 +68,7 @@
                             </div>
                         </div>
 
-                        <button type="button h4 mb-0" class="btn btn-warning" style="padding: 19px 45px">
+                        <button type="button h4 mb-0" class="btn btn-warning get-started" >
                             Get Started
                         </button>
 
@@ -85,18 +82,18 @@
 
         <div class="container">
             <div class="row gx-5">
-                <div class="col-6 position-relative anim-bg">
+                <div class="col-12 col-md-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
                        <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt="" srcset=""
                         class=" scan up-down" ></span>
-                    <h5 class="mb-0 text-white">
+                    <h5 class="mb-0 text-white mt-md-1 mt-3">
                         Facial recognition system that works like a charm, allowing your friends and acquaintances to see
                         every photo that
                         they've made an appearance in!
                     </h5>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <h1 class="text-white" style="font-size: 36px">How Kwikpic Works?</h1>
                     <h5 class="text-white">let your clients discover their images within seconds</h5>
                     <div
@@ -160,7 +157,7 @@
         <section class=" mb-5 pb-5">
      <img src="{{asset('frontend/images/index/kwik-bg.png')}}" alt="" class="kwik-bg">
         </section>
-        <div class="container mt-5 pt-5">
+        <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
