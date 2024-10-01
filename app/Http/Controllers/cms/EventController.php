@@ -95,20 +95,23 @@ class EventController extends Controller
             'bulk_image_download' => 'required|in:1,0',
             'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
-            'cover_image' => 'required|mimes:jpeg,png,jpg|max:512',
+            'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
 
         ]);
 
         // dd($request);
+        $event = new Event();
         $fileWithExt = request()->file('cover_image');
-        $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
-        $destinationPath = public_path("storage/images/events");
-        $manager = ImageManager::gd();
-        $image = $manager->read($fileWithExt->getRealPath());
-        $image->save($destinationPath . '/' . $filename, 90);
+        if ($fileWithExt) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+            $destinationPath = public_path("storage/images/events");
+            $manager = ImageManager::gd();
+            $image = $manager->read($fileWithExt->getRealPath());
+            $image->save($destinationPath . '/' . $filename, 90);
+            $event->cover_image = $filename;
+        }
 
         // Create a new Event instance
-        $event = new Event();
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
         $event->slug = Str::slug($request->name);
@@ -120,7 +123,6 @@ class EventController extends Controller
         $event->visibility = $request->visibility;
         $event->single_image_download = $request->single_image_download;
         $event->bulk_image_download = $request->bulk_image_download;
-        $event->cover_image = $filename;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Added Successfully', 'success'));
         } else {
