@@ -42,6 +42,15 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Cover Image*</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"required
+                                        name="cover_image">
+                                    @if ($errors->has('cover_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="start_date" value="{{ old('start_date') }}">

@@ -42,6 +42,18 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Cover Image*</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                        name="cover_image">
+                                    <div id="lightgallery_one" class="text-end">
+                                        <a href="{{ asset('storage/images/events/' . $event->cover_image) }}">View</a>
+                                    </div>
+                                    @if ($errors->has('cover_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="start_date"
@@ -255,6 +267,9 @@
 @section('js')
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ asset('custom/plugins/lightgallery/css/lightgallery.min.css') }}" />
+    <script src="{{ asset('custom/plugins/lightgallery/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('custom/plugins/lightgallery/js/lg-zoom.js') }}"></script>
     {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
     </script> --}}
     <script>
@@ -315,5 +330,10 @@
         //     tags: true,
         //     placeholder: "Select / Enter Tags",
         // });
+        $(document).ready(function() {
+            lightGallery(document.getElementById('lightgallery_one'), {
+                download: false,
+            });
+        });
     </script>
 @endsection

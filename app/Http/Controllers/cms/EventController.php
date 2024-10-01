@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\cms;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
 use App\Models\Event;
-use Illuminate\Support\Facades\Log; // Import the Log facade
+use Illuminate\Http\File;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log; // Import the Log facade
 
 class EventController extends Controller
 {
@@ -94,9 +95,17 @@ class EventController extends Controller
             'bulk_image_download' => 'required|in:1,0',
             'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
+            'cover_image' => 'required|mimes:jpeg,png,jpg|max:512',
+
         ]);
 
         // dd($request);
+        $fileWithExt = request()->file('cover_image');
+        $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+        $destinationPath = public_path("storage/images/events");
+        $manager = ImageManager::gd();
+        $image = $manager->read($fileWithExt->getRealPath());
+        $image->save($destinationPath . '/' . $filename, 90);
 
         // Create a new Event instance
         $event = new Event();
@@ -111,6 +120,7 @@ class EventController extends Controller
         $event->visibility = $request->visibility;
         $event->single_image_download = $request->single_image_download;
         $event->bulk_image_download = $request->bulk_image_download;
+        $event->cover_image = $filename;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Added Successfully', 'success'));
         } else {
@@ -137,10 +147,23 @@ class EventController extends Controller
             'bulk_image_download' => 'required|in:1,0',
             'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
+            'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
+
         ]);
 
         // Create a new Event instance
         $event = Event::findOrFail($id);
+        $fileWithExt = request()->file('cover_image');
+        if ($fileWithExt) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+            $destinationPath = public_path("storage/images/events");
+            $manager = ImageManager::gd();
+            $image = $manager->read($fileWithExt->getRealPath());
+            optional(Storage::disk('public')->delete('images/events/' . $event->cover_image));
+            $image->save($destinationPath . '/' . $filename, 90);
+            $event->cover_image = $filename;
+        }
+
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
         $event->slug = Str::slug($request->name);
@@ -165,7 +188,7 @@ class EventController extends Controller
         if ($event->categories()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
         };
-        if ($event->delete()) {
+        if ($event->delete() && Storage::disk('public')->delete('images/events/' . $event->cover_image)) {
             return redirect()->route('backend.event.index')->with(
                 [
                     "message" => "Event Deleted Successfully",

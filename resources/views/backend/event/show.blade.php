@@ -42,6 +42,16 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Cover Image</label><br>
+                                                <div id="lightgallery_one">
+                                                    <a
+                                                        href="{{ asset('storage/images/events/' . $event->cover_image) }}" target="blank">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Start
                                                     Date</label><br>
                                                 <p class="label-title">{{ dd_format($event->start_date, 'd-m-y h:i a') }}
@@ -60,7 +70,8 @@
                                                 <label for="degree3" class="cust-title" class="label-title">Download
                                                     Size</label><br>
                                                 {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
-                                                <p class="text-white badge badge-primary">{{ ucfirst($event->download_size) }}</p>
+                                                <p class="text-white badge badge-primary">
+                                                    {{ ucfirst($event->download_size) }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
