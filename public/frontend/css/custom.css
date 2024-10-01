@@ -477,16 +477,18 @@ a.next {
 
 @media screen and (max-width:576px){
     .slide{
-        top: 90px !important;
+        top: 100px !important;
     }
     .prev-mobile {
 
-left: 60px !important;
+left: 50px !important;
+padding: 10px !important;
     }
 
     .next-mobile {
 
-        right: 60px !important;
+        right: 50px !important;
+        padding: 10px !important;
             }
     .recomend{
         left: 31%;
@@ -634,16 +636,16 @@ padding-top: 75px !important;
 
 .next-mobile {
 
-	background-color:transparent;
+	background-color:#1E1D1D;
     transform: rotate(180deg) !important;
     border-radius: 15px;
     position: absolute !important;
     top: 200% !important;
     right:100px;
+    padding: 15px 16px;
+    border-radius: 80% !important;
     &:hover{
         background:#9C215F !important;
-        border-radius: 80% !important;
-
     }
 }
 .index100{
@@ -651,19 +653,21 @@ padding-top: 75px !important;
 }
 .prev-mobile {
 
-	background-color:transparent;
+	background-color:#1E1D1D;
     border-radius: 15px;
     position: absolute !important;
     top: 200% !important;
+    padding: 15px 16px;
     left:100px;
+    border-radius: 80% !important;
     &:hover{
         background:#9C215F !important;
-        border-radius: 80% !important;
+
 
     }
 
 }
-.prev-mobile:hover{
+/* .prev-mobile:hover{
 padding: 3px 5px;
 
 }
@@ -671,7 +675,7 @@ padding: 3px 5px;
 .next-mobile:hover{
     padding: 3px 5px;
 
-    }
+    } */
 .kwik-bg{
    width: 60%;
    height: 3500px;
