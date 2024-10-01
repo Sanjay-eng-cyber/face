@@ -384,7 +384,12 @@ a.next {
 }
 
 @media screen and (max-width:992px){
+    .bracket
+    {
 
+        top: 100px !important;
+        right:100px !important;
+    }
     .navbar-wrapper{
         width: 100% !important;
     }
@@ -432,6 +437,12 @@ a.next {
     }
 }
 @media screen and (max-width:767px){
+    .bracket
+    {
+
+        top: 70px !important;
+        right:60px !important;
+    }
 
     .scan{
         width: 240px !important;
@@ -555,6 +566,12 @@ padding-top: 75px !important;
     }
 
 @media screen and (max-width:440px){
+    .bracket
+    {
+       width: 130px;
+        top: 40px !important;
+        right:50px !important;
+    }
     .slider-outer a.prev {
         top: 577% !important;
       }
@@ -762,4 +779,10 @@ top: 110px;
 .share-box{
     position: relative;
 
+}
+.bracket
+{
+    position: absolute;
+    top: 70px;
+    right: 55px;
 }

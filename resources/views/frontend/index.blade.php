@@ -85,6 +85,7 @@
         <div class="container">
             <div class="row gx-5">
                 <div class="col-12 col-lg-6 position-relative anim-bg">
+                    <img src="{{asset('frontend/images/index/bracket.png')}}" alt="" class="bracket">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
                     <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
@@ -138,7 +139,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
-                            
+
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
