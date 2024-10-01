@@ -1,4 +1,4 @@
-<section class="mt-5 image">
+<section class="mt-md-5 image">
     <footer class="footer">
      <div class="container">
         <div class="row pt-4 pb-3 text-lg-start text-center">
@@ -28,7 +28,7 @@
             </div>
 
         </div>
-        <div class="bottom-footer text-center d-md-flex d-block">
+        <div class="bottom-footer text-center d-md-flex d-block py-md-4 py-2">
             <p class="m-0">Designed & Developed By <a href="https://acetrot.com/" target="_blank">Acetrot</a>.</p>
 
             <p class="m-0"> <a href="https://acetrot.com/" target="_blank">Privacy Policy</a> | <a href="https://acetrot.com/" target="_blank">Terms & Conditions</a> | <a href="https://acetrot.com/" target="_blank">Refund</a></p>
