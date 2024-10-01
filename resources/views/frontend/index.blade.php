@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="row position-relative share-text">
+            <div class="row position-relative share-text pb-md-5 pb-3">
                 <div class="col-12">
 
                     <div class="get-section align-items-center d-md-flex">
@@ -309,7 +309,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
 
                         </div>

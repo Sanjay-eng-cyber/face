@@ -476,6 +476,9 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .slide{
+        top: 90px !important;
+    }
     .prev-mobile {
 
 left: 60px !important;
@@ -489,7 +492,7 @@ left: 60px !important;
         left: 31%;
     }
     .slider-sec {
-padding-top: 170px !important;
+padding-top: 75px !important;
     }
     .scan{
         display: none;
