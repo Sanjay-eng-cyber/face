@@ -726,3 +726,15 @@ z-index: 999;
     border-radius: 5px;
     background:#9C215F;
 }
+.get-started{
+    padding: 19px 45px;
+margin: 10px auto;
+    text-wrap: nowrap;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+.get-section{
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
