@@ -19,23 +19,31 @@
                         <div class="nav-main">
                             <ul class="navbar-nav">
                                 <li class="nav-item navleftp">
-                                    <a class="nav-link active" aria-current="page" href="#" style="color: white">Home</a>
-                                    <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
-                                    <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2">
+                                     <a class="nav-link first active" aria-current="page" href="#" style="color: white">Home</a>
+                                     <span class="active-link1"><img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                    <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
                                 <li class="nav-item navleftp">
-                                    <a class="nav-link" href="#" style="color: white">About us</a>
+                                    <a class="nav-link second" href="#" style="color: white">About us</a>
+                                    <span class="active-link2 d-none">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                        <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
                                 <li class="nav-item navleftp">
-                                    <a class="nav-link" href="#" style="color: white">Contact us</a>
+                                    <a class="nav-link third" href="#" style="color: white">Contact us</a>
+                                    <span class="active-link3 d-none">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                        <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
 
                                 <li class="nav-item navleftp">
-                                    <a class="nav-link" href="#" style="color: white">Pricing</a>
+                                    <a class="nav-link four" href="#" style="color: white">Pricing</a>
+                                    <span class="active-link4  d-none">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                        <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" style="color: white">Blog</a>
+                                    <a class="nav-link five" href="#" style="color: white">Blog</a>
+                                    <span class="active-link5  d-none">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                        <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
 
 
