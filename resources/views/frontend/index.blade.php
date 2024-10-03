@@ -227,7 +227,7 @@
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
 
-                                            <div class="grid-acdn-body">
+                                            <div class="grid-acdn-body d-grid-custom">
                                                 <div class="text-white">
                                                     Let your clients discover their pictures in a matter of seconds with our
                                                     cutting edge AI. 99.4 % accurate, 100% awesome.
@@ -241,6 +241,7 @@
                                                             alt="" srcset=""
                                                             class="img-fluid robot accordion-img-robot">
                                                     </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
