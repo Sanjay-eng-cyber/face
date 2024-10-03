@@ -29,9 +29,9 @@
 
         </div>
         <div class="bottom-footer text-center d-md-flex d-block py-md-4 py-2">
-            <p class="m-0">Designed & Developed By <a href="https://acetrot.com/" target="_blank">Acetrot</a>.</p>
+            <p class="m-0 mt-md-0 mt-2">Designed & Developed By <a href="https://acetrot.com/" target="_blank">Acetrot</a>.</p>
 
-            <p class="m-0"> <a href="https://acetrot.com/" target="_blank">Privacy Policy</a> | <a href="https://acetrot.com/" target="_blank">Terms & Conditions</a> | <a href="https://acetrot.com/" target="_blank">Refund</a></p>
+            <p class="m-0 mt-md-0 mt-2"> <a href="https://acetrot.com/" target="_blank">Privacy Policy</a> | <a href="https://acetrot.com/" target="_blank">Terms & Conditions</a> | <a href="https://acetrot.com/" target="_blank">Refund</a></p>
 
          </div>
      </div>

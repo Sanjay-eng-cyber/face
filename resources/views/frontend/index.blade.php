@@ -68,7 +68,7 @@
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
                             </div>
                             <div class="h4 text-white">
-                                wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
+                                Wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@
                     <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
                     <div class="text-white" style="font-size: 36px;padding-bottom:60px"> <span
                             class="granny-lipgloss">Smartly</span> Deliver
-                        Photos to your Clients</div>
+                        Photos To Your Clients</div>
                 </div>
             </div>
 
