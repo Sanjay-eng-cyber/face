@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="grow-image-main">
-                                    <img src="{{ asset('frontend/images/index/two.png') }}" alt=""
+                                    <img src="{{ asset('frontend/images/index/new-banner-two.png') }}" alt=""
                                         class="img-fluid grow-image-middle">
                                 </div>
 
