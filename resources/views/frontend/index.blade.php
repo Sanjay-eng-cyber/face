@@ -740,9 +740,10 @@
 
         }
 
-        var mq = window.matchMedia("(min-width: 992px)");
-        if (mq.matches) {
+      
 
+        var mq = window.matchMedia("(min-width: 577px)");
+        if (mq.matches) {
             setInterval(function() {
                 $('.scan').css('transition', 'all 1s linear');
                 $('.scan').css('top', '0px');
@@ -754,8 +755,26 @@
                 $('.scan').css('top', '350px');
             }, 3000);
 
+        }
+
+            var mq = window.matchMedia("(max-width: 576px)");
+        if (mq.matches) {
+
+            setInterval(function() {
+                $('.scan').css('transition', 'all 1s linear');
+                $('.scan').css('top', '0px');
+
+            }, 1000);
+
+
+            setInterval(function() {
+
+                $('.scan').css('top', '250px');
+            }, 3000);
+
 
         }
+
     </script>
 
     {{-- <script>

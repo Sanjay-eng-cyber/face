@@ -365,7 +365,7 @@ padding: 10px 30px;
 @media screen and (max-width:1116px){
     .scan{
         width: 450px !important;
-        top: 280px !important;
+        top: 280px ;
     }
     .img-group{
     position: relative;
@@ -419,7 +419,7 @@ a.next {
     }
     .scan{
         width: 94% !important;
-        top: 430px !important;
+        top: 430px;
         left: 3% !important;
     }
     .prev{
@@ -470,7 +470,7 @@ a.next {
 
     .scan{
         width: 92% !important;
-        top: 340px !important;
+        top: 340px ;
         left: 4% !important;
     }
     a.prev {
@@ -531,9 +531,7 @@ padding: 10px !important;
     .slider-sec {
 padding-top: 75px !important;
     }
-    .scan{
-        display: none;
-    }
+   
     .slider-outer a.prev {
       top: 562% !important;
     }
@@ -590,6 +588,10 @@ padding-top: 75px !important;
     }
 
 @media screen and (max-width:440px){
+    .scan{
+        width: 88% !important;
+        left: 6% !important;
+     }
     .bracket
     {
        width: 130px;
