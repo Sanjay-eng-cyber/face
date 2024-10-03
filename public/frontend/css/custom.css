@@ -223,6 +223,9 @@ height: 800px;
     z-index: 10;
 }
 @media screen and (max-width:1116px) {
+    .card-price{
+        width: 250px;
+    }
    .img-group  .t-img{
         right:17%;
     }
@@ -387,6 +390,18 @@ a.next {
   top: 460% !important;
 }
 
+}
+
+
+@media screen and ( min-width:992px) and (max-width:1116px){
+    .recomend {
+        left: 22%;
+    }
+}
+@media screen and ( min-width:767px) and (max-width:992px){
+    .card-price{
+        width: 220px;
+    }
 }
 
 @media screen and (max-width:992px){
