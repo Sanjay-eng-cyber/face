@@ -436,64 +436,54 @@
         </div> --}}
     </div>
 
-    <div class="container" style="padding-top: 200px; padding-bottom: 200px;">
-        <div class="row">
-            <div class="col-12">
-                <div class="img-mainslider" style=" background-color: #070707;">
-                    <div class="slider-container">
-                        <!-- Image slider -->
-                        <div class="image-slider">
-                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"></div>
-                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"></div>
-                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"></div>
-                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"></div>
-                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-10">
+                <div class="row">  
+                    <div class="col-12">
+                        <div class="rev_slider">
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" class="rev_slideimg">
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+
+                                </div>
+                            </div>
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
                         </div>
-                        <!-- Text content for each slide -->
-                        <div class="text-slider"
-                            style="border: 1px solid #FF3895; border-radius: 36px;padding-top: 94px;margin-top: -90px;">
-                            <div class="slide-text text-white" id="slide1">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">1 Market
-                                        smartly</span> at every step</div>
-                                <h4 class="fw-500">
-                                    1 Collect invaluable client data with their consent. Use it to reach just the right
-                                    audience at fraction of a price compared to Instagram marketing.
-                                </h4>
-                            </div>
-                            <div class="slide-text text-white" id="slide2">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">2 Market
-                                        smartly</span> at every step</div>
-                                <h4 class="fw-500">
-                                    2 Collect invaluable client data with their consent. Use it to reach just the right
-                                    audience at fraction of a price compared to Instagram marketing.
-                                </h4>
-                            </div>
-                            <div class="slide-text text-white" id="slide3">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">3 Market
-                                        smartly</span> at every step</div>
-                                <h4 class="fw-500">
-                                    3 Collect invaluable client data with their consent. Use it to reach just the right
-                                    audience at fraction of a price compared to Instagram marketing.
-                                </h4>
-                            </div>
-                            <div class="slide-text text-white" id="slide4">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">4 Market
-                                        smartly</span> at every step</div>
-                                <h4 class="fw-500">
-                                    4 Collect invaluable client data with their consent. Use it to reach just the right
-                                    audience at fraction of a price compared to Instagram marketing.
-                                </h4>
-                            </div>
-                            <div class="slide-text text-white" id="slide5">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">5 Market
-                                        smartly</span> at every step</div>
-                                <h4 class="fw-500">
-                                    5 Collect invaluable client data with their consent. Use it to reach just the right
-                                    audience at fraction of a price compared to Instagram marketing.
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
@@ -915,56 +905,208 @@
         });
     </script>
 
+
+<script>
+    var rev = $('.rev_slider');
+rev.on('init', function(event, slick, currentSlide) {
+var
+cur = $(slick.$slides[slick.currentSlide]),
+next = cur.next(),
+prev = cur.prev();
+prev.addClass('slick-sprev');
+next.addClass('slick-snext');
+cur.removeClass('slick-snext').removeClass('slick-sprev');
+slick.$prev = prev;
+slick.$next = next;
+}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+console.log('beforeChange');
+var
+cur = $(slick.$slides[nextSlide]);
+console.log(slick.$prev, slick.$next);
+slick.$prev.removeClass('slick-sprev');
+slick.$next.removeClass('slick-snext');
+next = cur.next(),
+prev = cur.prev();
+prev.prev();
+prev.next();
+prev.addClass('slick-sprev');
+next.addClass('slick-snext');
+slick.$prev = prev;
+slick.$next = next;
+cur.removeClass('slick-next').removeClass('slick-sprev');
+});
+
+rev.slick({
+speed: 1000,
+arrows: true,
+dots: false,
+focusOnSelect: true,
+prevArrow: '<button> prev</button>',
+nextArrow: '<button> next</button>',
+infinite: true,
+centerMode: true,
+slidesPerRow: 1,
+slidesToShow: 1,
+slidesToScroll: 1,
+centerPadding: '0',
+swipe: true,
+customPaging: function(slider, i) {
+return '';
+},
+/*infinite: false,*/
+});
+
+   // $(document).ready(function() {
+   //     $('.image-slider').slick({
+   //         slidesToShow: 3,
+   //         slidesToScroll: 1,
+   //         centerMode: true,
+   //         arrows: true,
+   //         dots: false,
+   //         speed: 300,
+   //         centerPadding: '20px',
+   //     });
+   
+   //     $('#slide1').addClass('active-text');
+   //     $('.image-slider').on('afterChange', function(event, slick, currentSlide){
+   //         $('.slide-text').removeClass('active-text');
+   //         $('#slide' + (currentSlide + 1)).addClass('active-text');
+   //         slick.$slides.css({
+   //             'transform': 'rotate(0deg)',
+   //             'transition': 'transform 0.5s ease'
+   //         });
+   //         const totalSlides = slick.$slides.length;
+   //         const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1; 
+   //         const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+   
+   //         $(slick.$slides[prevSlideIndex]).css({
+   //             'transform': 'rotate(-17deg)'
+   //         });
+   //         $(slick.$slides[nextSlideIndex]).css({
+   //             'transform': 'rotate(17deg)'
+   //         });
+   //     });
+   
+   //     const slickInstance = $('.image-slider').slick('getSlick');
+   //     $('.image-slider').slick('slickGoTo', 0); 
+   
+   //     $('.image-slider').on('init', function(event, slick){
+   //         $(slick.$slides[0]).css('transform', 'rotate(0deg) scale(1.5)'); 
+   //         $(slick.$slides[1]).css('transform', 'rotate(-17deg)');
+   //         $(slick.$slides[2]).css('transform', 'rotate(17deg)'); 
+   //     });
+   
+   //     $('.image-slider').on('init', function(event, slick){
+   //         $('#slide1').show(); // Show text for first slide
+   //     });
+   
+   //     slickInstance.$slides.each(function(index) {
+   //         if ($(this).hasClass('slick-cloned')) {
+   //             const slideIndex = index % slickInstance.slideCount; 
+   //             if (slideIndex === 0) {
+   //                 $(this).css('transform', 'rotate(-17deg)'); 
+   //             } else if (slideIndex === slickInstance.slideCount - 1) {
+   //                 $(this).css('transform', 'rotate(17deg)'); 
+   //             }
+   //         }
+   //     });
+   // });
+</script>
+
+
 @endsection
 <style>
-    .img-mainslider .slick-slide {
-        transition: transform 0.5s ease;
-    }
+     .slick-list {
+            padding-top: 10%!important;
+            padding-bottom: 10%!important;
+            padding-left: 15%!important;
+            padding-right: 15%!important;
+          }
+          
+          /* .slick-dots {
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          } */
+          
+          .slick-track {
+            max-width: 100%!important;
+            transform: translate3d(0, 0, 0)!important;
+            perspective: 100px;
+          }
+          
+          .slick-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 0;
+            width: 300px !important;
+            transform: translate3d(0, 0, 0);
+            transition: transform 1s, opacity 1s;
+          }
+          
+       
+          
+          .slick-snext {
+            opacity: 1;
+            left: unset;
+            right:0;
+            transform: rotate(17deg) translate3d(20%, 0, 0px);
+            z-index: 1;
+    right: -77px;
+    bottom: -72px;
+          }
+          
+          .slick-sprev {
+            opacity: 1;
+            left: 0;
+            right: unset;
+            /* transform: rotate(-17deg); */
+            bottom: -77px;
+            left: -72px;
+            transform: rotate(-17deg) translate3d(-20%, 0, 0); /* Combine rotate and translate3d */
+          }
+          
+          .slick-slide {
+            display: block;
+            /* background: #c00;
+            box-shadow: inset 0px 0px 0px 3px #000; */
+            width:300px;
+          }
+          .slick-sprev  .rev_slideimg{
+            width:310px;
+          }
+        
+          .slick-slide img{
+            width: 300px
+          }
+          
+         .slick-slide.slick-current img{
+            width:100% !important;
+          }
+          
+          .slick-slide.slick-current {
+            opacity: 1;
+    position: relative;
+    display: block;
+    width: 484px !important; /* Set your desired width */
+    height: 500px;
+    /* background: #c00;
+    box-shadow: inset 0px 0px 0px 3px #000; */
+    margin: 0 auto; /* Center the current slide */
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0) translate3d(0, 0, 20px); /* Combine both translate and translate3d */
+          }
+    
+          .slick-initialized .slick-slide{
+            display: flex !important;
+    align-items: flex-end !important;
+          }
 
-    .img-mainslider .slick-center img {
-        transform: scale(1.5);
-        /* Scale the center image */
-        /* position: relative;
-        z-index: 9; */
-    }
-
-    /* .img-mainslider .slick-slide img{
-        position: relative;
-        z-index:-1;
-    } */
-    .slider-container {
-        position: relative;
-        width: 80%;
-        margin: auto;
-    }
-
-    .image-slider img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .text-slider .slide-text {
-        display: none;
-        text-align: center;
-        margin-top: 20px;
-        font-size: 1.5em;
-    }
-
-    .text-slider .active-text {
-        display: block;
-    }
-
-    .slick-prev,
-    .slick-next {
-        background-color: #333;
-        color: #fff;
-        border-radius: 50%;
-        padding: 10px;
-    }
-
-    .img-mainslider .slick-slide.slick-active {
-        display: flex !important;
-        align-items: flex-end !important;
-    }
-</style>
+   </style>
