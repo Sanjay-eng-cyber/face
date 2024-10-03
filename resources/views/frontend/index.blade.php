@@ -1084,6 +1084,7 @@ return '';
         
           .slick-slide img{
             width: 300px
+            height:298px;
           }
           
          .slick-slide.slick-current img{
