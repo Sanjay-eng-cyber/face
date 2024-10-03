@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ProfileController;
+use App\Models\Upload;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
@@ -19,25 +23,83 @@ Route::domain(config('app.web_domain'))->group(function () {
     })->name('test-progress');
 
     Route::post('/upload/{eventSlug}/{categorySlug}', function () {
-        try {
+        // try {
+        //     $eventSlug = request('eventSlug');
+        //     $categorySlug = request('categorySlug');
+        //     $file = request()->file('file');
+        //     $originalFileName = $file->getClientOriginalName();
+
+        //     $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
+
+        //     // Store the file in the defined path using the original file name
+        //     $file->storeAs($destinationPath, $originalFileName, 'public');
+
+        //     return response()->json([
+        //         'status' => true,
+        //         'fileName' => $originalFileName,
+        //         'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
+        //     ]);
+        // } catch (\Throwable $th) {
+        //     Log::info($th->getMessage());
+        //     return response()->json(['status' => false], 500);
+        // }
+        {
             $eventSlug = request('eventSlug');
             $categorySlug = request('categorySlug');
             $file = request()->file('file');
-            $originalFileName = $file->getClientOriginalName();
 
-            $destinationPath = "images/galleries/{$eventSlug}/{$categorySlug}";
+            $event = App\Models\Event::whereSlug($eventSlug)->firstOrFail();
+            $category = App\Models\Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
 
-            // Store the file in the defined path using the original file name
-            $file->storeAs($destinationPath, $originalFileName, 'public');
+            try {
+                $fileWithExt = request()->file('file');
+                $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+                $destinationPath = public_path("storage/images/uploads/{$event->slug}/{$category->slug}");
+                if (!File::exists($destinationPath)) {
+                    File::makeDirectory($destinationPath, 0755, true);
+                }
+                $manager = ImageManager::gd();
+                $image = $manager->read($fileWithExt->getRealPath());
+                $image->save($destinationPath . '/' . $filename, 90);
 
-            return response()->json([
-                'status' => true,
-                'fileName' => $originalFileName,
-                'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$originalFileName}"
-            ]);
-        } catch (\Throwable $th) {
-            Log::info($th->getMessage());
-            return response()->json(['status' => false], 500);
+                $res = Http::attach(
+                    'image_name', // The name of the file field in the request
+                    file_get_contents($fileWithExt->getRealPath()), // The file's content
+                    $filename, // The file name
+                    ['Content-Type' => 'image/jpeg']
+                )->post(config('app.python_api_url') . '/inputimg/');
+
+                if ($res->successful()) {
+                    $data = $res->json();
+                    $status = $data['status'] ?? null;
+                    if ($status !== true) {
+                        return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                    }
+                    $face_encoding = $data['face_encoding'] ?? null;
+                    $face_locations = $data['face_locations'] ?? null;
+
+                    $gallery_image = new Upload();
+                    $gallery_image->cms_user_id = auth()->user()->id;
+                    $gallery_image->event_id = $event->id;
+                    $gallery_image->category_id = $category->id;
+                    $gallery_image->image_name = $filename;
+                    $gallery_image->image_url = "images/uploads/{$event->slug}/{$category->slug}/{$filename}";
+                    $gallery_image->face_encoding = $face_encoding;
+                    $gallery_image->face_locations = $face_locations;
+                    if ($gallery_image->save()) {
+                        return response()->json([
+                            'status' => true,
+                            'fileName' => $filename,
+                            'id' => $gallery_image->id,
+                            'path' => "/storage/images/uploads/{$eventSlug}/{$categorySlug}/{$filename}"
+                        ], 200);
+                    }
+                }
+            } catch (\Throwable $th) {
+                // dd($th->getMessage());
+                Log::info('Catch Err : ' . $th->getMessage());
+            }
+            return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
         }
     })->name('upload');
 
