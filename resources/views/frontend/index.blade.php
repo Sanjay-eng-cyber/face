@@ -85,7 +85,7 @@
         <div class="container">
             <div class="row gx-5">
                 <div class="col-12 col-lg-6 position-relative anim-bg">
-                    <img src="{{asset('frontend/images/index/bracket.png')}}" alt="" class="bracket">
+                    <img src="{{ asset('frontend/images/index/bracket.png') }}" alt="" class="bracket">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100" style="z-index:0">
                     <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
@@ -102,7 +102,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
-                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
+                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
 
                         </div>
 
@@ -115,7 +115,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
-                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
+                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
@@ -127,7 +127,7 @@
                     <div class="scn-sharemain">
                         <div class="share-box">
                             <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
-                            <img src="{{asset('frontend/images/index/vector.png')}}" alt="" class="dot">
+                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
                         </div>
 
                         <h4 class="text-white kanit-thin fw-400">
@@ -161,7 +161,8 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
-                    <div class="text-white" style="font-size: 36px;padding-bottom:60px"> <span class="granny-lipgloss">Smartly</span> Deliver
+                    <div class="text-white" style="font-size: 36px;padding-bottom:60px"> <span
+                            class="granny-lipgloss">Smartly</span> Deliver
                         Photos to your Clients</div>
                 </div>
             </div>
@@ -187,7 +188,7 @@
                                     <img src="{{ asset('frontend/images/index/flowline.svg') }}" alt=""
                                         srcset="" class="img-fluid flowline-img">
                                     <img src="{{ asset('frontend/images/index/mobilesize.png') }}" alt=""
-                                        srcset="" class="img-fluid mobilesize" >
+                                        srcset="" class="img-fluid mobilesize">
                                 </div>
                             </div>
 
@@ -303,14 +304,25 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
                                         Safe, Secure & Private
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum, esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus sapiente perferendis necessitatibus molestias ab non quisquam placeat consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium itaque recusandae maiores repellat vero? Rerum, magnam maiores?
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at
+                                            fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at
+                                            inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum,
+                                            esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur
+                                            repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure
+                                            magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet
+                                            dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus
+                                            sapiente perferendis necessitatibus molestias ab non quisquam placeat
+                                            consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium
+                                            itaque recusandae maiores repellat vero? Rerum, magnam maiores?
                                         </div>
                                     </div>
                                 </div>
@@ -430,42 +442,53 @@
                     <div class="slider-container">
                         <!-- Image slider -->
                         <div class="image-slider">
-                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1"></div>
-                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 2"></div>
-                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 3"></div>
-                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 4"></div>
-                            <div><img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 5"></div>
+                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"></div>
+                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"></div>
+                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"></div>
+                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"></div>
+                            <div><img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"></div>
                         </div>
                         <!-- Text content for each slide -->
-                        <div class="text-slider" style="border: 1px solid #FF3895; border-radius: 36px;padding-top: 94px;margin-top: -90px;">
+                        <div class="text-slider"
+                            style="border: 1px solid #FF3895; border-radius: 36px;padding-top: 94px;margin-top: -90px;">
                             <div class="slide-text text-white" id="slide1">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">1 Market smartly</span> at every step</div>
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">1 Market
+                                        smartly</span> at every step</div>
                                 <h4 class="fw-500">
-                                    1  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                    1 Collect invaluable client data with their consent. Use it to reach just the right
+                                    audience at fraction of a price compared to Instagram marketing.
                                 </h4>
                             </div>
                             <div class="slide-text text-white" id="slide2">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">2 Market smartly</span> at every step</div>
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">2 Market
+                                        smartly</span> at every step</div>
                                 <h4 class="fw-500">
-                                    2  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                    2 Collect invaluable client data with their consent. Use it to reach just the right
+                                    audience at fraction of a price compared to Instagram marketing.
                                 </h4>
                             </div>
                             <div class="slide-text text-white" id="slide3">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">3 Market smartly</span> at every step</div>
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">3 Market
+                                        smartly</span> at every step</div>
                                 <h4 class="fw-500">
-                                    3  Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                    3 Collect invaluable client data with their consent. Use it to reach just the right
+                                    audience at fraction of a price compared to Instagram marketing.
                                 </h4>
                             </div>
                             <div class="slide-text text-white" id="slide4">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">4 Market smartly</span> at every step</div>
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">4 Market
+                                        smartly</span> at every step</div>
                                 <h4 class="fw-500">
-                                    4 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                    4 Collect invaluable client data with their consent. Use it to reach just the right
+                                    audience at fraction of a price compared to Instagram marketing.
                                 </h4>
                             </div>
                             <div class="slide-text text-white" id="slide5">
-                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">5 Market smartly</span> at every step</div>
+                                <div class="fw-700" style="padding-bottom: 36px"><span style="color:#FF3895;">5 Market
+                                        smartly</span> at every step</div>
                                 <h4 class="fw-500">
-                                    5 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to Instagram marketing.
+                                    5 Collect invaluable client data with their consent. Use it to reach just the right
+                                    audience at fraction of a price compared to Instagram marketing.
                                 </h4>
                             </div>
                         </div>
@@ -699,23 +722,38 @@
 
 
     <script>
-        var mq = window.matchMedia("(min-width: 1116px)");
+        var mq = window.matchMedia("(min-width: 1396px)");
         if (mq.matches) {
 
-            $(function() {
-                $(window).scroll(function() {
-                    if ($(this).scrollTop() > 400 && $(this).scrollTop() <= 1000) {
-                        $('.scan').css('transition', 'all 1s linear');
-                        $('.scan').css('top', '-200px');
+            setInterval(function() {
+                $('.scan').css('transition', 'all 1s linear');
+                $('.scan').css('top', '0px');
+
+            }, 1000);
 
 
-                        setInterval(function() {
-                            $('.scan').css('top', '300px');
-                        }, 400);
+            setInterval(function() {
 
-                    }
-                })
-            });
+                $('.scan').css('top', '400px');
+            }, 3000);
+
+
+        }
+
+        var mq = window.matchMedia("(min-width: 992px)");
+        if (mq.matches) {
+
+            setInterval(function() {
+                $('.scan').css('transition', 'all 1s linear');
+                $('.scan').css('top', '0px');
+
+            }, 1000);
+
+            setInterval(function() {
+
+                $('.scan').css('top', '350px');
+            }, 3000);
+
 
         }
     </script>
@@ -754,28 +792,30 @@
                 speed: 300,
                 centerPadding: '20px',
             });
-        
+
             // Show the first text initially
             $('#slide1').addClass('active-text');
-        
+
             // Change text and apply rotation on slide change
-            $('.image-slider').on('afterChange', function(event, slick, currentSlide){
+            $('.image-slider').on('afterChange', function(event, slick, currentSlide) {
                 // Hide all text slides
                 $('.slide-text').removeClass('active-text');
                 // Show the text for the current slide
                 $('#slide' + (currentSlide + 1)).addClass('active-text');
-        
+
                 // Reset rotation for all slides
                 slick.$slides.css({
                     'transform': 'rotate(0deg)',
                     'transition': 'transform 0.5s ease'
                 });
-        
+
                 // Get the indices for the previous and next slides
                 const totalSlides = slick.$slides.length;
-                const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1; // Previous slide
-                const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0; // Next slide
-        
+                const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides -
+                1; // Previous slide
+                const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 :
+                0; // Next slide
+
                 // Rotate the previous and next slides
                 $(slick.$slides[prevSlideIndex]).css({
                     'transform': 'rotate(-17deg)'
@@ -784,23 +824,23 @@
                     'transform': 'rotate(17deg)'
                 });
             });
-        
+
             // Initial rotation for the center slide (the first active slide)
             const slickInstance = $('.image-slider').slick('getSlick');
             $('.image-slider').slick('slickGoTo', 0); // Go to the first slide initially
-        
+
             // Apply initial rotation
-            $('.image-slider').on('init', function(event, slick){
+            $('.image-slider').on('init', function(event, slick) {
                 $(slick.$slides[0]).css('transform', 'rotate(0deg) scale(1.5)'); // Center slide
                 $(slick.$slides[1]).css('transform', 'rotate(-17deg)'); // Previous slide
                 $(slick.$slides[2]).css('transform', 'rotate(17deg)'); // Next slide
             });
-        
+
             // Initialize the text and rotation
-            $('.image-slider').on('init', function(event, slick){
+            $('.image-slider').on('init', function(event, slick) {
                 $('#slide1').show(); // Show text for first slide
             });
-        
+
             // Force rotate cloned slides on initialization
             slickInstance.$slides.each(function(index) {
                 if ($(this).hasClass('slick-cloned')) {
@@ -813,61 +853,61 @@
                 }
             });
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
+        $('.first').click(function() {
+            $('.active-link1').removeClass('d-none');
+            $('.active-link2').addClass('d-none');
+            $('.active-link3 ').addClass('d-none');
+            $('.active-link4 ').addClass('d-none');
+            $('.active-link5 ').addClass('d-none');
+        });
+        $('.second').click(function() {
+            $('.active-link2').removeClass('d-none');
+            $('.active-link1 ').addClass('d-none');
+            $('.active-link3 ').addClass('d-none');
+            $('.active-link4 ').addClass('d-none');
+            $('.active-link5 ').addClass('d-none');
+        });
+        $('.third').click(function() {
+            $('.active-link3').removeClass('d-none');
+            $('.active-link1 ').addClass('d-none');
+            $('.active-link2 ').addClass('d-none');
+            $('.active-link4 ').addClass('d-none');
+            $('.active-link5 ').addClass('d-none');
+        });
 
-            $('.first').click(function(){
-              $('.active-link1').removeClass('d-none');
-              $('.active-link2').addClass('d-none');
-              $('.active-link3 ').addClass('d-none');
-              $('.active-link4 ').addClass('d-none');
-              $('.active-link5 ').addClass('d-none');
-            });
-            $('.second').click(function(){
-              $('.active-link2').removeClass('d-none');
-              $('.active-link1 ').addClass('d-none');
-              $('.active-link3 ').addClass('d-none');
-              $('.active-link4 ').addClass('d-none');
-              $('.active-link5 ').addClass('d-none');
-            });
-            $('.third').click(function(){
-              $('.active-link3').removeClass('d-none');
-              $('.active-link1 ').addClass('d-none');
-              $('.active-link2 ').addClass('d-none');
-              $('.active-link4 ').addClass('d-none');
-              $('.active-link5 ').addClass('d-none');
-            });
+        $('.four').click(function() {
+            $('.active-link4').removeClass('d-none');
+            $('.active-link1 ').addClass('d-none');
+            $('.active-link2 ').addClass('d-none');
+            $('.active-link3 ').addClass('d-none');
+            $('.active-link5 ').addClass('d-none');
+        });
 
-            $('.four').click(function(){
-              $('.active-link4').removeClass('d-none');
-              $('.active-link1 ').addClass('d-none');
-              $('.active-link2 ').addClass('d-none');
-              $('.active-link3 ').addClass('d-none');
-              $('.active-link5 ').addClass('d-none');
-            });
-
-            $('.five').click(function(){
-              $('.active-link5').removeClass('d-none');
-              $('.active-link1 ').addClass('d-none');
-              $('.active-link2 ').addClass('d-none');
-              $('.active-link3 ').addClass('d-none');
-              $('.active-link4 ').addClass('d-none');
-            });
-        </script>
+        $('.five').click(function() {
+            $('.active-link5').removeClass('d-none');
+            $('.active-link1 ').addClass('d-none');
+            $('.active-link2 ').addClass('d-none');
+            $('.active-link3 ').addClass('d-none');
+            $('.active-link4 ').addClass('d-none');
+        });
+    </script>
 
 @endsection
- <style>
+<style>
     .img-mainslider .slick-slide {
         transition: transform 0.5s ease;
     }
-    
+
     .img-mainslider .slick-center img {
-        transform: scale(1.5); /* Scale the center image */
+        transform: scale(1.5);
+        /* Scale the center image */
         /* position: relative;
         z-index: 9; */
     }
-    
+
     /* .img-mainslider .slick-slide img{
         position: relative;
         z-index:-1;
@@ -877,33 +917,34 @@
         width: 80%;
         margin: auto;
     }
-    
+
     .image-slider img {
         width: 100%;
         height: auto;
         border-radius: 8px;
     }
-    
+
     .text-slider .slide-text {
         display: none;
         text-align: center;
         margin-top: 20px;
         font-size: 1.5em;
     }
-    
+
     .text-slider .active-text {
         display: block;
     }
-    
-    .slick-prev, .slick-next {
+
+    .slick-prev,
+    .slick-next {
         background-color: #333;
         color: #fff;
         border-radius: 50%;
         padding: 10px;
     }
-    
+
     .img-mainslider .slick-slide.slick-active {
-    display: flex !important;
-    align-items: flex-end !important;
-}
-    </style>
+        display: flex !important;
+        align-items: flex-end !important;
+    }
+</style>

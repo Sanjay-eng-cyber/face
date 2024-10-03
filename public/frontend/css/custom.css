@@ -322,10 +322,12 @@ padding: 10px 30px;
     top: 80px !important;
     right: 80px !important;
 }
-    .scan{
-
-        width: 620px !important;
-    }
+.scan{
+    position: absolute;
+    top:50%;
+    left: 25px !important;
+    width: 624px !important;
+}
     .f-img
     {
 
@@ -727,7 +729,7 @@ padding: 3px 5px;
     position: absolute;
     top:50%;
     left: 4%;
-    width: 535px;
+    width: 536px;
 }
 
 
