@@ -251,7 +251,7 @@ height: 800px;
         font-size: 30px !important;
     }
     .recomend{
-        left: 37%;
+        left: 20%;
     }
     .footer-links li{
         padding-bottom: 10px;
@@ -260,7 +260,7 @@ height: 800px;
     margin: 0px 10px;
     }
 .card-price{
-    width: 100%;
+    width: 230px;
     margin: 10px;
 }
 
@@ -540,6 +540,9 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .card-price{
+        width: 100%;
+    }
     .slide{
         top: 100px !important;
     }
