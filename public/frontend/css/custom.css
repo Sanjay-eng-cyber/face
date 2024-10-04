@@ -415,8 +415,9 @@ a.next {
 
     }
     .accordion-img{
-        left: 60%;
-        top: 10px;
+        left: 10%;
+        top: 0px;
+        transform:rotate(10deg);
 
     }
 .d-grid-custom{
@@ -466,6 +467,9 @@ a.next {
 
 
 @media screen and (max-width:650px){
+    .accordion-img{
+        left:0px ;
+    }
 
     .slider-outer a.prev {
       top: 552% !important;
@@ -479,11 +483,11 @@ a.next {
     img.accordion-img-robot {
         top: -130px !important;
         width: 90px;
-     
+
     }
     .accordion-img{
         transform: rotate(10deg);
-        left: 0px;
+        left: 25px;
 
     }
     .bracket
@@ -556,7 +560,7 @@ padding: 10px !important;
     .slider-sec {
 padding-top: 75px !important;
     }
-   
+
     .slider-outer a.prev {
       top: 562% !important;
     }
@@ -613,6 +617,10 @@ padding-top: 75px !important;
     }
 
 @media screen and (max-width:440px){
+    .accordion-img {
+     left: 8px !important;
+     top:14px !important;
+    }
     img.robot.accordion-img-robot{
         right: -33px !important;
         width: 50px;
