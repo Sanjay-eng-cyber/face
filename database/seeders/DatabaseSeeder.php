@@ -15,11 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'user@test.com',
+            "password" => bcrypt('password'),
+        ]);
 
         $this->call(CmsUserSeeder::class);
+        $this->call(EventSeeder::class);
+        $this->call(CategorySeeder::class);
     }
 }
