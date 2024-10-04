@@ -436,7 +436,7 @@
         </div> --}}
     </div>
 
-    <div class="container">
+    <div class="container mt-md-2 mt-5">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-12">
                 <div class="row">
@@ -483,7 +483,7 @@
                             </div>
 
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-12 text-container">
                         <div style="      border: 1px solid #FF3895;
                                 border-radius: 36px;
@@ -495,7 +495,7 @@
                                 align-items: center;
                             ">
                             <div class="row d-flex align-items-center justify-content-center">
-                                <div class="col-9">
+                                <div class="col-9 pb-md-3 pb-5">
                                     <div class="slidetext text-white active text-center">
                                         <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
                                         1 Market smartly at every step
@@ -579,7 +579,7 @@
 
 
 
-        <div class="container">
+        <div class="container pt-5 mt-md-5">
 
             <div class="curve">
                 <div class="text-center mb-4">
@@ -1009,8 +1009,8 @@ rev.slick({
         focusOnSelect: true,
         // prevArrow: '<button> prev</button>',
         // nextArrow: '<button> next</button>',
-        prevArrow: '<a href="#" ><img src="frontend/images/index/left.png"></a> ',
-        nextArrow: '<a href="#" ><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
+        prevArrow: '<a href="#" class="pre-arrow"><img src="frontend/images/index/left.png"></a> ',
+        nextArrow: '<a href="#" class="next-arrow"><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
         infinite: true,
         centerMode: true,
         slidesToShow: 1,
@@ -1030,6 +1030,14 @@ rev.slick({
 
 @endsection
 <style>
+    .next-arrow{
+        position: relative;
+        top: 149px;
+    }
+    .pre-arrow{
+        position: relative;
+        top: 149px;
+    }
      .slick-list {
             padding-top: 10%!important;
             padding-bottom: 10%!important;
@@ -1037,7 +1045,7 @@ rev.slick({
             padding-right: 15%!important; */
 
           }
-          
+
           .slidetext {
         display: none;
     }
@@ -1084,7 +1092,7 @@ rev.slick({
             left: 176px;
             transform: rotate(-25deg) translate3d(-20%, 0, 0);
           }
-          
+
           .slick-slide {
             display: block;
             width:300px;
@@ -1102,7 +1110,7 @@ rev.slick({
          .slick-slide.slick-current img{
             width:100% !important;
           }
-          
+
           .slick-slide.slick-current {
             opacity: 1;
             position: relative;
@@ -1123,8 +1131,9 @@ rev.slick({
 
           .slick-initialized.slick-slider{
             display: flex;
-    align-items: center;
+    align-items:start;
           }
+          
 
 
           @media screen and (max-width:1400px){
@@ -1195,12 +1204,12 @@ rev.slick({
           }
 
           @media screen and (max-width:768px){
-        
-            .slick-sprev { 
+
+            .slick-sprev {
                 opacity: 0 !important;
                 display: none;
             }
-         
+
 
             .slick-snext {
         opacity: 1;
