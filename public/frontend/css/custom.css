@@ -540,6 +540,10 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .r-arrow{
+        position: relative;
+top: 2px;
+    }
     .sub{
         font-size: 24px !important;
     }
@@ -830,6 +834,10 @@ z-index: 999;
 }
 
 @media screen and (min-width:576px ) {
+    .r-arrow{
+        position: relative;
+top: 5px;
+    }
     .prev-mobile {
         left: 20%;
 }
@@ -906,3 +914,8 @@ z-index: -2 !important;
 .nav-link:hover{
     background: unset;
 }
+.r-arrow{
+transform:rotate(180deg);
+
+}
+
