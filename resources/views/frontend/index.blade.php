@@ -1009,8 +1009,8 @@ rev.slick({
         focusOnSelect: true,
         // prevArrow: '<button> prev</button>',
         // nextArrow: '<button> next</button>',
-        prevArrow: '<a href="#" ><img src="frontend/images/index/left.png"></a> ',
-        nextArrow: '<a href="#" ><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
+        prevArrow: '<a href="#" class="pre-arrow"><img src="frontend/images/index/left.png"></a> ',
+        nextArrow: '<a href="#" class="next-arrow"><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
         infinite: true,
         centerMode: true,
         slidesToShow: 1,
@@ -1030,6 +1030,14 @@ rev.slick({
 
 @endsection
 <style>
+    .next-arrow{
+        position: relative;
+        top: 149px;
+    }
+    .pre-arrow{
+        position: relative;
+        top: 149px;
+    }
      .slick-list {
             padding-top: 10%!important;
             padding-bottom: 10%!important;
@@ -1123,8 +1131,9 @@ rev.slick({
 
           .slick-initialized.slick-slider{
             display: flex;
-    align-items: center;
+    align-items:start;
           }
+          
 
 
           @media screen and (max-width:1400px){
