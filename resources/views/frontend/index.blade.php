@@ -444,40 +444,46 @@
                         <div class="rev_slider">
                             <div class="rev_slide active">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" class="rev_slideimg">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
+                                        class="rev_slideimg">
                                 </div>
                             </div>
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 2" lass="rev_slideimg">
-
-                                </div>
-                            </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 3" lass="rev_slideimg">
-
-                                </div>
-                            </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 4" lass="rev_slideimg">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
+                                        lass="rev_slideimg">
 
                                 </div>
                             </div>
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 5" lass="rev_slideimg">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
+                                        lass="rev_slideimg">
 
                                 </div>
                             </div>
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 6" lass="rev_slideimg">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
+                                        lass="rev_slideimg">
 
                                 </div>
                             </div>
@@ -489,51 +495,57 @@
                             <div class="row d-flex align-items-center justify-content-center">
                                 <div class="col-9 pb-md-3 pb-5">
                                     <div class="slidetext text-white active text-center">
-                                        <div class="h2 mb-0 main-topheading" >
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 1 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                        1 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            1 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
-                                    <div class="slidetext text-white text-center " >
-                                        <div class="h2 mb-0 main-topheading" >
+                                    <div class="slidetext text-white text-center ">
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 2 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                            2 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            2 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading" >
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 3 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                            3 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            3 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading" >
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 4 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                            4 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            4 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading" >
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 5 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                            5 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            5 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading" >
+                                        <div class="h2 mb-0 main-topheading">
                                             <span style="color: #FF3895;"> 6 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
-                                            6 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                            6 Collect invaluable client data with their consent. Use it to reach just the
+                                            right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                 </div>
@@ -804,7 +816,7 @@
 
         }
 
-            var mq = window.matchMedia("(max-width: 576px)");
+        var mq = window.matchMedia("(max-width: 576px)");
         if (mq.matches) {
 
             setInterval(function() {
@@ -821,30 +833,9 @@
 
 
         }
-
     </script>
 
-    {{-- <script>
-        var slider = $('.slider');
 
-        $('.prev-mobile').click(function() {
-            slider.slick('slickPrev');
-            return false;
-        });
-
-        $('.next-mobile').click(function() {
-            slider.slick('slickNext');
-            return false;
-        });
-
-        slider.slick({
-            infinite: true,
-            dots: false,
-            arrows: false,
-            fade: true,
-            fadeSpeed: 1000
-        });
-    </script> --}}
 
     <script>
         $(document).ready(function() {
@@ -878,9 +869,9 @@
                 // Get the indices for the previous and next slides
                 const totalSlides = slick.$slides.length;
                 const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides -
-                1; // Previous slide
+                    1; // Previous slide
                 const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 :
-                0; // Next slide
+                    0; // Next slide
 
                 // Rotate the previous and next slides
                 $(slick.$slides[prevSlideIndex]).css({
@@ -962,295 +953,60 @@
     </script>
 
 
-<script>
-    var rev = $('.rev_slider');
-    var texts = $('.slidetext');  // Use slidetext class to update text
+    <script>
+        var rev = $('.rev_slider');
+        var texts = $('.slidetext'); // Use slidetext class to update text
 
-rev.on('init', function(event, slick, currentSlide) {
-var
-cur = $(slick.$slides[slick.currentSlide]),
-next = cur.next(),
-prev = cur.prev();
-prev.addClass('slick-sprev');
-next.addClass('slick-snext');
-cur.removeClass('slick-snext').removeClass('slick-sprev');
-slick.$prev = prev;
-slick.$next = next;
-}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-console.log('beforeChange');
-var
-cur = $(slick.$slides[nextSlide]);
-console.log(slick.$prev, slick.$next);
-slick.$prev.removeClass('slick-sprev');
-slick.$next.removeClass('slick-snext');
-next = cur.next(),
-prev = cur.prev();
-prev.prev();
-prev.next();
-prev.addClass('slick-sprev');
-next.addClass('slick-snext');
-slick.$prev = prev;
-slick.$next = next;
-cur.removeClass('slick-next').removeClass('slick-sprev');
-});
+        rev.on('init', function(event, slick, currentSlide) {
+            var
+                cur = $(slick.$slides[slick.currentSlide]),
+                next = cur.next(),
+                prev = cur.prev();
+            prev.addClass('slick-sprev');
+            next.addClass('slick-snext');
+            cur.removeClass('slick-snext').removeClass('slick-sprev');
+            slick.$prev = prev;
+            slick.$next = next;
+        }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            console.log('beforeChange');
+            var
+                cur = $(slick.$slides[nextSlide]);
+            console.log(slick.$prev, slick.$next);
+            slick.$prev.removeClass('slick-sprev');
+            slick.$next.removeClass('slick-snext');
+            next = cur.next(),
+                prev = cur.prev();
+            prev.prev();
+            prev.next();
+            prev.addClass('slick-sprev');
+            next.addClass('slick-snext');
+            slick.$prev = prev;
+            slick.$next = next;
+            cur.removeClass('slick-next').removeClass('slick-sprev');
+        });
 
-rev.slick({
-        speed: 1000,
-        arrows: true,
-        dots: false,
-        focusOnSelect: true,
-        // prevArrow: '<button> prev</button>',
-        // nextArrow: '<button> next</button>',
-        prevArrow: '<a href="#" class="pre-arrow"><img src="frontend/images/index/left.png"></a> ',
-        nextArrow: '<a href="#" class="next-arrow"><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipe: true,
-    });
+        rev.slick({
+            speed: 1000,
+            arrows: true,
+            dots: false,
+            focusOnSelect: true,
+            // prevArrow: '<button> prev</button>',
+            // nextArrow: '<button> next</button>',
+            prevArrow: '<a href="#" class="pre-arrow"><img src="frontend/images/index/left.png"></a> ',
+            nextArrow: '<a href="#" class="next-arrow"><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            swipe: true,
+        });
 
-     // Handle the beforeChange event to update the text
-     rev.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        // Handle the beforeChange event to update the text
+        rev.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
             // Remove 'active' class from all texts and add it to the new one
             texts.removeClass('active');
             $(texts[nextSlide]).addClass('active');
         });
-
-
-</script>
+    </script>
 
 @endsection
-<style>
-    .next-arrow{
-        position: relative;
-        top: 149px;
-    }
-    .pre-arrow{
-        position: relative;
-        top: 149px;
-    }
-     .slick-list {
-            padding-top: 10%!important;
-            padding-bottom: 10%!important;
-            /* padding-left: 15%!important;
-            padding-right: 15%!important; */
-
-          }
-
-          .slidetext {
-        display: none;
-    }
-    .slidetext.active {
-        display: block;
-    }
-
-          .slick-track {
-            max-width: 100%!important;
-            transform: translate3d(0, 0, 0)!important;
-            perspective: 100px;
-          }
-
-          .slick-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            opacity: 0;
-            width: 300px !important;
-            transform: translate3d(0, 0, 0);
-            transition: transform 1s, opacity 1s;
-          }
-
-
-
-          .slick-snext {
-            opacity: 1;
-            left: unset;
-            right: 0;
-            transform: rotate(25deg) translate3d(20%, 0, 0px);
-            z-index: 1;
-            right: 176px;
-            bottom: -32px;
-          }
-
-          .slick-sprev {
-            opacity: 1;
-            left: 0;
-            right: unset;
-            bottom: -37px;
-            left: 176px;
-            transform: rotate(-25deg) translate3d(-20%, 0, 0);
-          }
-
-          .slick-slide {
-            display: block;
-            width:300px;
-          }
-          .slick-sprev  .rev_slideimg{
-            width:310px;
-          }
-
-          .slick-slide img{
-            width: 300px;
-            height:298px;
-            object-fit: cover;
-          }
-
-         .slick-slide.slick-current img{
-            width:100% !important;
-          }
-
-          .slick-slide.slick-current {
-            opacity: 1;
-            position: relative;
-            display: block;
-            width: 484px !important;
-            height: 387px;
-            margin: 0 auto;
-            z-index: 2;
-            left: 50%;
-            transform: translate(-50%, 0) translate3d(0, 0, 20px);
-          }
-
-          .slick-initialized .slick-slide{
-            display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center;
-          }
-
-          .slick-initialized.slick-slider{
-            display: flex;
-    align-items:start;
-          }
-          
-.main_slide_main{
-    border: 1px solid #FF3895;
-    border-radius: 36px;
-    padding-top: 70px;
-    min-height: 380px;
-    padding-bottom: inherit;
-    margin-top: -167px;
-    display: flex;
-    align-items: center;
-}
-.main-topheading{
-padding-top:32px;
-padding-bottom:32px
-}
-         
-
-          @media screen and (max-width:1400px){
-            .slick-sprev {
-                    opacity: 1;
-                    left: 0;
-                    right: unset;
-                    bottom: -77px;
-                    left: 113px;
-                    transform: rotate(-25deg) translate3d(-20%, 0, 0);
-                }
-
-                .slick-snext {
-                opacity: 1;
-                left: unset;
-                right: 0;
-                transform: rotate(25deg) translate3d(20%, 0, 0px);
-                z-index: 1;
-                right: 97px;
-                bottom: -72px;
-                }
-
-
-          }
-
-          @media screen and (max-width:1200px){
-            .slick-slide.slick-current img{
-                width: 300px !important;
-            }
-            .main-topheading{
-            padding-top:85px;
-            padding-bottom:32px
-            }
-                
-          }
-
-          @media screen and (max-width:992px){
-            .slick-slide.slick-current img{
-                width: 100% !important;
-                object-fit: contain;
-            }
-            .slick-snext {
-                opacity: 1;
-                left: unset;
-                right: 0;
-                transform: rotate(25deg) translate3d(20%, 0, 0px);
-                z-index: 1;
-                right: 56px;
-                bottom: -72px;
-            }
-            .slick-sprev {
-                opacity: 1;
-                left: 0;
-                right: unset;
-                bottom: -77px;
-                left: 54px;
-                transform: rotate(-25deg) translate3d(-20%, 0, 0);
-            }
-
-            .slick-slide.slick-current {
-            opacity: 1;
-            position: relative;
-            display: block;
-            width: 100% !important;
-            height:100%;
-            margin: 0 auto;
-            z-index: 2;
-            left: 50%;
-            transform: translate(-50%, 0) translate3d(0, 0, 20px);
-        }
-
-
-          }
-
-          @media screen and (max-width:768px){
-            .main-topheading {
-        padding-top: 124px;
-        padding-bottom: 32px;
-    }
-            .slick-sprev {
-                opacity: 0 !important;
-                display: none;
-            }
-
-
-            .slick-snext {
-        opacity: 1;
-        left: unset;
-        right: 0;
-        transform: rotate(0deg) translate3d(23%, 0, 0px);
-        z-index: 1;
-        right: 56px;
-        bottom: -19px;
-    }
-
-    .slick-slide img{
-        width: 100%;
-    height: auto;
-    object-fit: cover;
-    }
-
-    .slick-slide {
-    display: none;
-    /* float: left; */
-    width: 100% !important;
-    height: 100%;
-    min-height: 1px;
-}
-
-.slick-list {
-            padding: 0%!important;
-      }
-
-   </style>
