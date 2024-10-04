@@ -540,6 +540,9 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .our-profession-sub {
+        padding: 40px 34px 68px 34px;
+        }
     .r-arrow{
         position: relative;
 top: 2px;
