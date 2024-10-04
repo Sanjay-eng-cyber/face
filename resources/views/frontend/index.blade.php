@@ -483,14 +483,70 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-12 text-container">
-                        <div class="text-white active">Slide one text</div>
-                        <div class="text-white">Slide two text</div>
-                        <div class="text-white">Slide three text</div>
-                        <div class="text-white">Slide four text</div>
-                        <div class="text-white">Slide five text</div>
-                        <div class="text-white">Slide six text</div>
+                        <div style="      border: 1px solid #FF3895;
+                                border-radius: 36px;
+                                padding-top: 70px;
+                                min-height: 380px;
+                                padding-bottom: inherit;
+                                margin-top: -167px;
+                                display: flex;
+                                align-items: center;
+                            ">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-9">
+                                    <div class="slidetext text-white active text-center">
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                        1 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                        1 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                    <div class="slidetext text-white text-center " >
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                            2 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                            2 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                    <div class="slidetext text-white text-center">
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                            3 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                            3 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                    <div class="slidetext text-white text-center">
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                            4 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                            4 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                    <div class="slidetext text-white text-center">
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                            5 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                            5 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                    <div class="slidetext text-white text-center">
+                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
+                                            6 Market smartly at every step
+                                        </div>
+                                        <div class="h4 mb-0 ">
+                                            6 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -916,7 +972,7 @@
 
 <script>
     var rev = $('.rev_slider');
-    var texts = $('.text-container div');
+    var texts = $('.slidetext');  // Use slidetext class to update text
 
 rev.on('init', function(event, slick, currentSlide) {
 var
@@ -962,12 +1018,12 @@ rev.slick({
         swipe: true,
     });
 
-    // Handle the beforeChange event to update the text
-    rev.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        // Remove 'active' class from all text and add it to the new one
-        texts.removeClass('active'); // Sabhi text se 'active' class hata do
-        $(texts[nextSlide]).addClass('active'); // Naye slide ke corresponding text ko 'active' class de do
-    });
+     // Handle the beforeChange event to update the text
+     rev.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            // Remove 'active' class from all texts and add it to the new one
+            texts.removeClass('active');
+            $(texts[nextSlide]).addClass('active');
+        });
 
 
 </script>
@@ -981,14 +1037,13 @@ rev.slick({
             padding-right: 15%!important; */
 
           }
-
-          .text-container div {
-    display: none; /* By default hidden rakhna */
-}
-
-.text-container div.active {
-    display: block; /* Sirf active slide ka text dikhao */
-}
+          
+          .slidetext {
+        display: none;
+    }
+    .slidetext.active {
+        display: block;
+    }
 
           .slick-track {
             max-width: 100%!important;
@@ -1017,19 +1072,19 @@ rev.slick({
             right: 0;
             transform: rotate(25deg) translate3d(20%, 0, 0px);
             z-index: 1;
-            right: 232px;
-            bottom: -72px;
+            right: 176px;
+            bottom: -32px;
           }
 
           .slick-sprev {
             opacity: 1;
             left: 0;
             right: unset;
-            bottom: -77px;
-            left: 273px;
+            bottom: -37px;
+            left: 176px;
             transform: rotate(-25deg) translate3d(-20%, 0, 0);
           }
-
+          
           .slick-slide {
             display: block;
             width:300px;
@@ -1047,7 +1102,7 @@ rev.slick({
          .slick-slide.slick-current img{
             width:100% !important;
           }
-
+          
           .slick-slide.slick-current {
             opacity: 1;
             position: relative;
@@ -1094,4 +1149,85 @@ rev.slick({
 
 
           }
+
+          @media screen and (max-width:1200px){
+            .slick-slide.slick-current img{
+                width: 300px !important;
+            }
+          }
+
+          @media screen and (max-width:992px){
+            .slick-slide.slick-current img{
+                width: 100% !important;
+                object-fit: contain;
+            }
+            .slick-snext {
+                opacity: 1;
+                left: unset;
+                right: 0;
+                transform: rotate(25deg) translate3d(20%, 0, 0px);
+                z-index: 1;
+                right: 56px;
+                bottom: -72px;
+            }
+            .slick-sprev {
+                opacity: 1;
+                left: 0;
+                right: unset;
+                bottom: -77px;
+                left: 54px;
+                transform: rotate(-25deg) translate3d(-20%, 0, 0);
+            }
+
+            .slick-slide.slick-current {
+            opacity: 1;
+            position: relative;
+            display: block;
+            width: 100% !important;
+            height:100%;
+            margin: 0 auto;
+            z-index: 2;
+            left: 50%;
+            transform: translate(-50%, 0) translate3d(0, 0, 20px);
+        }
+
+
+          }
+
+          @media screen and (max-width:768px){
+        
+            .slick-sprev { 
+                opacity: 0 !important;
+                display: none;
+            }
+         
+
+            .slick-snext {
+        opacity: 1;
+        left: unset;
+        right: 0;
+        transform: rotate(0deg) translate3d(23%, 0, 0px);
+        z-index: 1;
+        right: 56px;
+        bottom: -19px;
+    }
+
+    .slick-slide img{
+        width: 100%;
+    height: auto;
+    object-fit: cover;
+    }
+
+    .slick-slide {
+    display: none;
+    /* float: left; */
+    width: 100% !important;
+    height: 100%;
+    min-height: 1px;
+}
+
+.slick-list {
+            padding: 0%!important;
+      }
+
    </style>
