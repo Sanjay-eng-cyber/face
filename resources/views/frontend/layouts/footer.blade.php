@@ -17,7 +17,7 @@
 
             </div>
 
-            <div class="col-lg-4 text-right justify-content-md-end  justify-content-center  d-flex">
+            <div class="col-lg-4 text-right justify-content-lg-end  justify-content-center  d-flex">
                 <div class="social">
                     <a href=""> <img src="{{asset('frontend/images/index/fb.png')}}" alt=""></a>
                     <a href=""> <img src="{{asset('frontend/images/index/wa.png')}}" alt=""></a>
