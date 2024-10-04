@@ -97,7 +97,7 @@
                     </h5>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <h1 class="text-white mb-0 kpichead">How Kwikpic Works?</h1>
+                    <h1 class="text-white mb-0 kpichead title-mob">How Kwikpic Works?</h1>
                     <h4 class="text-white mb-0 kpik-subhead">let your clients discover their images within seconds</h4>
                     <div class="scn-sharemain">
                         <div class="share-box">
@@ -160,8 +160,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <div class="text-white fw-500" style="font-size: 32px">For Our Professionals</div>
-                    <div class="text-white" style="font-size: 36px;padding-bottom:60px"> <span
+                    <div class="text-white fw-500 sub" style="font-size: 32px">For Our Professionals</div>
+                    <div class="text-white title-mobi" style="font-size: 36px;padding-bottom:60px"> <span
                             class="granny-lipgloss">Smartly</span> Deliver
                         Photos To Your Clients</div>
                 </div>
@@ -241,7 +241,7 @@
                                                             alt="" srcset=""
                                                             class="img-fluid robot accordion-img-robot">
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -439,7 +439,7 @@
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-12">
-                <div class="row">  
+                <div class="row">
                     <div class="col-12">
                         <div class="rev_slider">
                             <div class="rev_slide active">
@@ -483,7 +483,7 @@
                             </div>
 
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-12 text-container">
                         <div class="text-white active">Slide one text</div>
                         <div class="text-white">Slide two text</div>
@@ -739,7 +739,7 @@
 
         }
 
-      
+
 
         var mq = window.matchMedia("(min-width: 577px)");
         if (mq.matches) {
@@ -967,19 +967,19 @@ rev.slick({
         $(texts[nextSlide]).addClass('active'); // Naye slide ke corresponding text ko 'active' class de do
     });
 
- 
+
 </script>
 
 @endsection
 <style>
      .slick-list {
             padding-top: 10%!important;
-            padding-bottom: 10%!important; 
+            padding-bottom: 10%!important;
             /* padding-left: 15%!important;
             padding-right: 15%!important; */
-         
+
           }
-          
+
           .text-container div {
     display: none; /* By default hidden rakhna */
 }
@@ -993,7 +993,7 @@ rev.slick({
             transform: translate3d(0, 0, 0)!important;
             perspective: 100px;
           }
-          
+
           .slick-slide {
             position: absolute;
             top: 0;
@@ -1006,9 +1006,9 @@ rev.slick({
             transform: translate3d(0, 0, 0);
             transition: transform 1s, opacity 1s;
           }
-          
-       
-          
+
+
+
           .slick-snext {
             opacity: 1;
             left: unset;
@@ -1018,7 +1018,7 @@ rev.slick({
             right: 232px;
             bottom: -72px;
           }
-          
+
           .slick-sprev {
             opacity: 1;
             left: 0;
@@ -1027,7 +1027,7 @@ rev.slick({
             left: 273px;
             transform: rotate(-25deg) translate3d(-20%, 0, 0);
           }
-          
+
           .slick-slide {
             display: block;
             width:300px;
@@ -1035,29 +1035,29 @@ rev.slick({
           .slick-sprev  .rev_slideimg{
             width:310px;
           }
-        
+
           .slick-slide img{
             width: 300px;
             height:298px;
             object-fit: cover;
           }
-          
+
          .slick-slide.slick-current img{
             width:100% !important;
           }
-          
+
           .slick-slide.slick-current {
             opacity: 1;
             position: relative;
             display: block;
-            width: 484px !important; 
+            width: 484px !important;
             height: 387px;
-            margin: 0 auto; 
+            margin: 0 auto;
             z-index: 2;
             left: 50%;
-            transform: translate(-50%, 0) translate3d(0, 0, 20px); 
+            transform: translate(-50%, 0) translate3d(0, 0, 20px);
           }
-    
+
           .slick-initialized .slick-slide{
             display: flex !important;
     align-items: flex-end !important;

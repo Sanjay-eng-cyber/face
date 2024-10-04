@@ -540,6 +540,18 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .sub{
+        font-size: 24px !important;
+    }
+    .title-mob{
+        font-size: 28px !important;
+
+    }
+
+    .title-mobi{
+        font-size: 28px !important;
+        padding-bottom: 35px !important;
+    }
     .card-price{
         width: 100%;
     }
