@@ -485,60 +485,52 @@
                         </div>
                     </div>
                     <div class="col-12 text-container">
-                        <div style="      border: 1px solid #FF3895;
-                                border-radius: 36px;
-                                padding-top: 70px;
-                                min-height: 380px;
-                                padding-bottom: inherit;
-                                margin-top: -167px;
-                                display: flex;
-                                align-items: center;
-                            ">
+                        <div class="main_slide_main">
                             <div class="row d-flex align-items-center justify-content-center">
                                 <div class="col-9 pb-md-3 pb-5">
                                     <div class="slidetext text-white active text-center">
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                        1 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 1 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                         1 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center " >
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                            2 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 2 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             2 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                            3 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 3 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             3 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                            4 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 4 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             4 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                            5 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 5 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             5 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
                                         </div>
                                     </div>
                                     <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 " style="padding-top:32px;padding-bottom:32px">
-                                            6 Market smartly at every step
+                                        <div class="h2 mb-0 main-topheading" >
+                                            <span style="color: #FF3895;"> 6 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             6 Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.
@@ -1134,7 +1126,21 @@ rev.slick({
     align-items:start;
           }
           
-
+.main_slide_main{
+    border: 1px solid #FF3895;
+    border-radius: 36px;
+    padding-top: 70px;
+    min-height: 380px;
+    padding-bottom: inherit;
+    margin-top: -167px;
+    display: flex;
+    align-items: center;
+}
+.main-topheading{
+padding-top:32px;
+padding-bottom:32px
+}
+         
 
           @media screen and (max-width:1400px){
             .slick-sprev {
@@ -1163,6 +1169,11 @@ rev.slick({
             .slick-slide.slick-current img{
                 width: 300px !important;
             }
+            .main-topheading{
+            padding-top:85px;
+            padding-bottom:32px
+            }
+                
           }
 
           @media screen and (max-width:992px){
@@ -1204,7 +1215,10 @@ rev.slick({
           }
 
           @media screen and (max-width:768px){
-
+            .main-topheading {
+        padding-top: 124px;
+        padding-bottom: 32px;
+    }
             .slick-sprev {
                 opacity: 0 !important;
                 display: none;
