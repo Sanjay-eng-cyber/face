@@ -81,7 +81,10 @@ text-align: left;
     padding: 40px 30px;
     height: 200px;
     align-items: center;
+    &:hover{
+    background: #1E1D1D;
 
+}
 }
 .box .title{
 
