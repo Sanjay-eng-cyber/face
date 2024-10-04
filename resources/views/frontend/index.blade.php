@@ -438,11 +438,11 @@
 
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">  
                     <div class="col-12">
                         <div class="rev_slider">
-                            <div class="rev_slide">
+                            <div class="rev_slide active">
                                 <div class="test">
                                     <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" class="rev_slideimg">
                                 </div>
@@ -450,40 +450,48 @@
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 2" lass="rev_slideimg">
 
                                 </div>
                             </div>
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 3" lass="rev_slideimg">
 
                                 </div>
                             </div>
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 4" lass="rev_slideimg">
 
                                 </div>
                             </div>
 
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 5" lass="rev_slideimg">
 
                                 </div>
                             </div>
                             <div class="rev_slide">
                                 <div class="test">
-                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 1" lass="rev_slideimg">
+                                    <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="Image 6" lass="rev_slideimg">
 
                                 </div>
                             </div>
 
                         </div>
                     </div> 
+                    <div class="col-12 text-container">
+                        <div class="text-white active">Slide one text</div>
+                        <div class="text-white">Slide two text</div>
+                        <div class="text-white">Slide three text</div>
+                        <div class="text-white">Slide four text</div>
+                        <div class="text-white">Slide five text</div>
+                        <div class="text-white">Slide six text</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -908,6 +916,8 @@
 
 <script>
     var rev = $('.rev_slider');
+    var texts = $('.text-container div');
+
 rev.on('init', function(event, slick, currentSlide) {
 var
 cur = $(slick.$slides[slick.currentSlide]),
@@ -937,100 +947,47 @@ cur.removeClass('slick-next').removeClass('slick-sprev');
 });
 
 rev.slick({
-speed: 1000,
-arrows: true,
-dots: false,
-focusOnSelect: true,
-prevArrow: '<button> prev</button>',
-nextArrow: '<button> next</button>',
-infinite: true,
-centerMode: true,
-slidesPerRow: 1,
-slidesToShow: 1,
-slidesToScroll: 1,
-centerPadding: '0',
-swipe: true,
-customPaging: function(slider, i) {
-return '';
-},
-/*infinite: false,*/
-});
+        speed: 1000,
+        arrows: true,
+        dots: false,
+        focusOnSelect: true,
+        prevArrow: '<button> prev</button>',
+        nextArrow: '<button> next</button>',
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        swipe: true,
+    });
 
-   // $(document).ready(function() {
-   //     $('.image-slider').slick({
-   //         slidesToShow: 3,
-   //         slidesToScroll: 1,
-   //         centerMode: true,
-   //         arrows: true,
-   //         dots: false,
-   //         speed: 300,
-   //         centerPadding: '20px',
-   //     });
-   
-   //     $('#slide1').addClass('active-text');
-   //     $('.image-slider').on('afterChange', function(event, slick, currentSlide){
-   //         $('.slide-text').removeClass('active-text');
-   //         $('#slide' + (currentSlide + 1)).addClass('active-text');
-   //         slick.$slides.css({
-   //             'transform': 'rotate(0deg)',
-   //             'transition': 'transform 0.5s ease'
-   //         });
-   //         const totalSlides = slick.$slides.length;
-   //         const prevSlideIndex = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1; 
-   //         const nextSlideIndex = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
-   
-   //         $(slick.$slides[prevSlideIndex]).css({
-   //             'transform': 'rotate(-17deg)'
-   //         });
-   //         $(slick.$slides[nextSlideIndex]).css({
-   //             'transform': 'rotate(17deg)'
-   //         });
-   //     });
-   
-   //     const slickInstance = $('.image-slider').slick('getSlick');
-   //     $('.image-slider').slick('slickGoTo', 0); 
-   
-   //     $('.image-slider').on('init', function(event, slick){
-   //         $(slick.$slides[0]).css('transform', 'rotate(0deg) scale(1.5)'); 
-   //         $(slick.$slides[1]).css('transform', 'rotate(-17deg)');
-   //         $(slick.$slides[2]).css('transform', 'rotate(17deg)'); 
-   //     });
-   
-   //     $('.image-slider').on('init', function(event, slick){
-   //         $('#slide1').show(); // Show text for first slide
-   //     });
-   
-   //     slickInstance.$slides.each(function(index) {
-   //         if ($(this).hasClass('slick-cloned')) {
-   //             const slideIndex = index % slickInstance.slideCount; 
-   //             if (slideIndex === 0) {
-   //                 $(this).css('transform', 'rotate(-17deg)'); 
-   //             } else if (slideIndex === slickInstance.slideCount - 1) {
-   //                 $(this).css('transform', 'rotate(17deg)'); 
-   //             }
-   //         }
-   //     });
-   // });
+    // Handle the beforeChange event to update the text
+    rev.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        // Remove 'active' class from all text and add it to the new one
+        texts.removeClass('active'); // Sabhi text se 'active' class hata do
+        $(texts[nextSlide]).addClass('active'); // Naye slide ke corresponding text ko 'active' class de do
+    });
+
+ 
 </script>
-
 
 @endsection
 <style>
      .slick-list {
             padding-top: 10%!important;
-            padding-bottom: 10%!important;
-            padding-left: 15%!important;
-            padding-right: 15%!important;
+            padding-bottom: 10%!important; 
+            /* padding-left: 15%!important;
+            padding-right: 15%!important; */
+         
           }
           
-          /* .slick-dots {
-            text-align: right;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-          } */
-          
+          .text-container div {
+    display: none; /* By default hidden rakhna */
+}
+
+.text-container div.active {
+    display: block; /* Sirf active slide ka text dikhao */
+}
+
           .slick-track {
             max-width: 100%!important;
             transform: translate3d(0, 0, 0)!important;
@@ -1055,27 +1012,24 @@ return '';
           .slick-snext {
             opacity: 1;
             left: unset;
-            right:0;
-            transform: rotate(17deg) translate3d(20%, 0, 0px);
+            right: 0;
+            transform: rotate(25deg) translate3d(20%, 0, 0px);
             z-index: 1;
-    right: -77px;
-    bottom: -72px;
+            right: 232px;
+            bottom: -72px;
           }
           
           .slick-sprev {
             opacity: 1;
             left: 0;
             right: unset;
-            /* transform: rotate(-17deg); */
             bottom: -77px;
-            left: -72px;
-            transform: rotate(-17deg) translate3d(-20%, 0, 0); /* Combine rotate and translate3d */
+            left: 273px;
+            transform: rotate(-25deg) translate3d(-20%, 0, 0);
           }
           
           .slick-slide {
             display: block;
-            /* background: #c00;
-            box-shadow: inset 0px 0px 0px 3px #000; */
             width:300px;
           }
           .slick-sprev  .rev_slideimg{
@@ -1083,8 +1037,9 @@ return '';
           }
         
           .slick-slide img{
-            width: 300px
+            width: 300px;
             height:298px;
+            object-fit: cover;
           }
           
          .slick-slide.slick-current img{
@@ -1093,21 +1048,48 @@ return '';
           
           .slick-slide.slick-current {
             opacity: 1;
-    position: relative;
-    display: block;
-    width: 484px !important; /* Set your desired width */
-    height: 500px;
-    /* background: #c00;
-    box-shadow: inset 0px 0px 0px 3px #000; */
-    margin: 0 auto; /* Center the current slide */
-    z-index: 2;
-    left: 50%;
-    transform: translate(-50%, 0) translate3d(0, 0, 20px); /* Combine both translate and translate3d */
+            position: relative;
+            display: block;
+            width: 484px !important; 
+            height: 387px;
+            margin: 0 auto; 
+            z-index: 2;
+            left: 50%;
+            transform: translate(-50%, 0) translate3d(0, 0, 20px); 
           }
     
           .slick-initialized .slick-slide{
             display: flex !important;
     align-items: flex-end !important;
+    justify-content: center;
           }
 
+          .slick-initialized.slick-slider{
+            display: flex;
+    align-items: center;
+          }
+
+
+          @media screen and (max-width:1400px){
+            .slick-sprev {
+                    opacity: 1;
+                    left: 0;
+                    right: unset;
+                    bottom: -77px;
+                    left: 113px;
+                    transform: rotate(-25deg) translate3d(-20%, 0, 0);
+                }
+
+                .slick-snext {
+                opacity: 1;
+                left: unset;
+                right: 0;
+                transform: rotate(25deg) translate3d(20%, 0, 0px);
+                z-index: 1;
+                right: 97px;
+                bottom: -72px;
+                }
+
+
+          }
    </style>
