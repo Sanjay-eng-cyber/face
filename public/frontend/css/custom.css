@@ -416,6 +416,9 @@ a.next {
 }
 
 @media screen and (max-width:992px){
+    .nav-item span{
+        display: none;
+    }
     img.accordion-img-robot {
 
 
@@ -955,4 +958,10 @@ background: #D9D9D9;
 -webkit-filter: invert(100%); /* Safari/Chrome */
     filter: invert(100%);
 
+}
+.nav-main{
+    padding: 25px 25px 0px 25px;
+}
+.navbar-expand-lg .navbar-collapse{
+    justify-content: center;
 }
