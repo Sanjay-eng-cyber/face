@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Find anyone online with face recognition search engine. Search for people by photo and verify you are talking to the person they claim to be.">
+
     <link rel="shortcut icon" href="{{ asset('frontend/images/index/mainlogo.png') }}" type="image/x-icon">
     <title>
         @hasSection('title')
