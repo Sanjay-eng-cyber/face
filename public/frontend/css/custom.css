@@ -554,7 +554,7 @@ body {
 
 @media screen and (max-width:767px) {
     img.accordion-img-robot {
-        top: -130px !important;
+        top: -94px !important;
         width: 90px;
 
     }
@@ -622,6 +622,10 @@ body {
 
 
 @media screen and (max-width:576px) {
+    img.robot.accordion-img-robot {
+        right: -40px !important;
+
+    }
     .slidetext .h4 {
         font-size: 18px;
     }
@@ -746,7 +750,7 @@ body {
     img.robot.accordion-img-robot {
         right: -33px !important;
         width: 50px;
-        top: -70px !important;
+        top: -56px !important;
     }
 
     .scan {
@@ -925,7 +929,7 @@ padding: 3px 5px;
 
 @media screen and (max-width:650px) {
     img.robot {
-        right: -33px !important;
+        right: -70px !important;
         width: 80px;
     }
 
@@ -937,7 +941,7 @@ padding: 3px 5px;
     img.robot {
         right: -33px !important;
         width: 50px;
-        top: -90px !important;
+        top: -70px !important;
     }
 
 
@@ -1140,4 +1144,9 @@ padding: 3px 5px;
 
 .card-price.green {
     border: 1px solid #84FF89;
+}
+@media screen and (min-width:767px) and (max-width:769px){
+    img.accordion-img-robot {
+        top: -201px !important;
+    }
 }
