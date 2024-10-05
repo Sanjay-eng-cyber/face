@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Events\UploadedImageFaceMatchingRequestedEvent;
 use App\Models\Event;
 use App\Models\Upload;
 use App\Models\Category;
@@ -88,11 +89,12 @@ class UploadController extends Controller
         $category = Category::where('event_id', $event->id)->findOrFail($upload->category_id);
         // dd($upload, $event, $category);
 
-        $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
         // dd($galllery_images);
-        foreach ($gallery_images as $gallery_image) {
-            CompareUploadedImagesForFaceMatching::dispatch($upload, $gallery_image);
-        }
+        UploadedImageFaceMatchingRequestedEvent::dispatch($upload);
+        // $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
+        // foreach ($gallery_images as $gallery_image) {
+        //     CompareUploadedImagesForFaceMatching::dispatch($upload, $gallery_image);
+        // }
 
     }
 }
