@@ -261,16 +261,8 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nostrum quis
-                                            suscipit cumque non. At facilis dicta rem iste enim pariatur est ratione itaque
-                                            modi consequatur expedita cumque, aperiam repudiandae? Sit, ut amet minima
-                                            tempore sunt fuga ad modi molestias, porro facilis sapiente a, atque minus
-                                            culpa. Eos architecto quas nulla molestiae labore voluptatum quia numquam
-                                            consequuntur eligendi deleniti suscipit assumenda ut excepturi dolores similique
-                                            repellendus sint illum id, odit quis. Quod ullam minima dolore expedita aut
-                                            ducimus similique vel, iusto assumenda nisi corrupti inventore dolorum soluta
-                                            libero a, sapiente beatae velit! Ipsum alias labore dolorum sed doloribus
-                                            delectus necessitatibus.
+                                            Statistical intelligence formulates the analysis model and reveals the system that can be easily visible and understandable to mankind.
+                                            Data intelligence refers to the tools and methods that enterprise-scale organizations use to better understand the information they collect, store, and utilize to improve their products and/or services. Apply AI and machine learning to stored data, and you get data intelligence.
                                         </div>
                                     </div>
                                 </div>
@@ -287,16 +279,7 @@
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque iure ullam
-                                            labore error animi, quasi soluta nulla ipsum, eos dolor obcaecati possimus!
-                                            Voluptatem eligendi, repudiandae accusamus nisi molestias nemo accusantium culpa
-                                            atque dolore alias nihil fuga, vero vitae porro nulla sit. Sunt nesciunt,
-                                            eveniet vel magni id hic illum maxime dolores praesentium harum reprehenderit et
-                                            dignissimos alias dolorum tempore quam placeat aspernatur numquam blanditiis
-                                            corporis! Debitis fugiat laboriosam rerum, veritatis consequuntur voluptas omnis
-                                            asperiores quidem ea deserunt consectetur ratione corrupti exercitationem magni
-                                            aperiam laudantium obcaecati id vel saepe quae? Magnam repellendus reiciendis
-                                            enim aperiam et dignissimos quis quasi labore voluptatum.
+                                            A custom web application is a software built specifically for one company or for a specific purpose. Small businesses can often benefit from custom web applications because they are a cost-effective way to solve a problem.
                                         </div>
                                     </div>
                                 </div>
@@ -314,16 +297,10 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit tenetur at
-                                            fuga rerum? Tenetur iste magnam aliquid enim laborum vero natus reiciendis at
-                                            inventore ducimus corporis quod repudiandae officia vel culpa quis, amet illum,
-                                            esse iure dolorum debitis officiis nulla accusantium! Molestias consequatur
-                                            repudiandae corrupti, nisi asperiores doloremque mollitia corporis modi et iure
-                                            magni aliquam nobis quidem exercitationem, excepturi veritatis velit, eveniet
-                                            dolorem ad non labore obcaecati illum assumenda saepe. Alias voluptas ducimus
-                                            sapiente perferendis necessitatibus molestias ab non quisquam placeat
-                                            consectetur mollitia ut sint veritatis dolor, dolorum fuga aut accusantium
-                                            itaque recusandae maiores repellat vero? Rerum, magnam maiores?
+                                            Be careful when browsing the web, using social media, or reading email. Many scams, known as phishing scams, try to steal your personal information or money.<br>
+                                           <b> Privacy</b> : Refers to personal information and how it is accessed and viewed.<br>
+<b>Security</b> : Refers to the protection of personal information and data.<br>
+<b>Safety</b> : Refers to the protection of someone or something from harm.
                                         </div>
                                     </div>
                                 </div>
