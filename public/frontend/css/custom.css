@@ -966,3 +966,9 @@ background: #D9D9D9;
 .navbar-expand-lg .navbar-collapse{
     justify-content: center;
 }
+.box p{
+    padding-top: 10px;
+}
+.box{
+    padding-bottom: 0px;
+}
