@@ -64,10 +64,10 @@
 
                     <div class="get-section align-items-center d-md-flex ">
                         <div>
-                            <div class="h1 text-white">
+                            <div class="h1 text-white text-lg-start text-center">
                                 Share Images Using <span class="granny-lipgloss">Face Recognition</span>
                             </div>
-                            <div class="h4 text-white">
+                            <div class="h4 text-white text-lg-start text-center">
                                 Wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
                             </div>
                         </div>
@@ -685,7 +685,7 @@
 
             <div class="row py-4 d-flex align-items-center">
                 <div class="col-lg-4 ">
-                    <h3 class="section-title text-md-start text-center"><span class="text-white">Included in
+                    <h3 class="section-title text-lg-start text-center"><span class="text-white">Included in
                             every</span><br>
                         <span class="text-pink">algoshare plan</span>
                     </h3>
