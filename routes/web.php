@@ -24,6 +24,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadIndex')->name('upload-index');
     Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
+    Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
 
     // Route::get('/about-us', function () {
     //     return view('frontend.about-us');

@@ -8,6 +8,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Jobs\CompareUploadedImagesForFaceMatching;
+use App\Models\GalleryImage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
@@ -77,5 +79,20 @@ class UploadController extends Controller
             Log::info('Catch Err : ' . $th->getMessage());
         }
         return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
+    }
+
+    public function compareImg(Request $request, $upload_id)
+    {
+        $upload = Upload::findOrFail($upload_id);
+        $event = Event::findOrFail($upload->event_id);
+        $category = Category::where('event_id', $event->id)->findOrFail($upload->category_id);
+        // dd($upload, $event, $category);
+
+        $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
+        // dd($galllery_images);
+        foreach ($gallery_images as $gallery_image) {
+            CompareUploadedImagesForFaceMatching::dispatch($upload, $gallery_image);
+        }
+
     }
 }

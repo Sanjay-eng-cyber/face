@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,6 +19,7 @@ return new class extends Migration
             $table->string('image_url');
             $table->longText('face_encoding');
             $table->longText('face_locations');
+            $table->dateTime('last_synced')->nullable();
             $table->timestamps();
         });
     }
