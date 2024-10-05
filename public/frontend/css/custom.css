@@ -429,7 +429,7 @@ a.next {
         display: none;
     }
 
- 
+
 .d-grid-custom{
 
     display: grid;
@@ -550,6 +550,9 @@ a.next {
 
 
 @media screen and (max-width:576px){
+    .slidetext .h4{
+        font-size: 18px ;
+    }
     .our-profession-sub {
         padding: 40px 34px 68px 34px;
         }
