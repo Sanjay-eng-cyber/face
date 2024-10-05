@@ -1,10 +1,8 @@
 @extends('frontend.layouts.app')
 @section('title')
-
 @section('content')
-
     <section>
-        <div class="container" style="overflow: hidden">
+        <div class="container overflow-hide">
             <div class="row d-flex align-items-center justify-content-center hero-mh">
                 <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
@@ -17,13 +15,10 @@
                                     Share Party Album With Friends
                                 </div>
 
-
                                 <div
                                     class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
                                     Share Memories Of Friends
                                 </div>
-
-
 
                                 <div
                                     class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
@@ -51,8 +46,6 @@
                                     <img src="{{ asset('frontend/images/index/three.png') }}" alt=""
                                         class="img-fluid third-glow">
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -71,13 +64,7 @@
                                 Wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -87,7 +74,7 @@
                 <div class="col-12 col-lg-6 position-relative anim-bg">
                     <img src="{{ asset('frontend/images/index/bracket.png') }}" alt="" class="bracket">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
-                        class="img-fluid w-100" style="z-index:0">
+                        class="img-fluid w-100 z-index-0">
                     <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
                             srcset="" class=" scan up-down"></span>
                     <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0">
@@ -146,9 +133,6 @@
                             Images can be printed or downloaded right from mobile
                         </h4>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -160,9 +144,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <div class="text-white fw-500 sub" style="font-size: 32px">For Our Professionals</div>
-                    <div class="text-white title-mobi" style="font-size: 36px;padding-bottom:60px"> <span
-                            class="granny-lipgloss">Smartly</span> Deliver
+                    <div class="text-white fw-500 sub">For Our Professionals</div>
+                    <div class="text-white title-mobi"> <span class="granny-lipgloss">Smartly</span> Deliver
                         Photos To Your Clients</div>
                 </div>
             </div>
@@ -191,23 +174,14 @@
                                         srcset="" class="img-fluid mobilesize">
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="position:relative">
-            {{-- <img src="{{asset('frontend/images/index/robothand.svg')}}" alt="" srcset="" class="img-fluid" style="
-                    position: absolute;
-    right: 0px;
-    top: 109px;
-    width: 246px;
-    z-index: 999;
+        <div class="position-relative">
 
-                "> --}}
 
             <div class="container">
                 <div class="row">
@@ -236,7 +210,7 @@
                                                     <img src="{{ asset('frontend/images/index/blazingimg.png') }}"
                                                         alt="" srcset="" class="img-fluid accordion-img">
 
-                                                    <div style="position:relative">
+                                                    <div class="position-relative">
                                                         <img src="{{ asset('frontend/images/index/robothand.svg') }}"
                                                             alt="" srcset=""
                                                             class="img-fluid robot accordion-img-robot">
@@ -261,8 +235,12 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Statistical intelligence formulates the analysis model and reveals the system that can be easily visible and understandable to mankind.
-                                            Data intelligence refers to the tools and methods that enterprise-scale organizations use to better understand the information they collect, store, and utilize to improve their products and/or services. Apply AI and machine learning to stored data, and you get data intelligence.
+                                            Statistical intelligence formulates the analysis model and reveals the system
+                                            that can be easily visible and understandable to mankind.
+                                            Data intelligence refers to the tools and methods that enterprise-scale
+                                            organizations use to better understand the information they collect, store, and
+                                            utilize to improve their products and/or services. Apply AI and machine learning
+                                            to stored data, and you get data intelligence.
                                         </div>
                                     </div>
                                 </div>
@@ -279,7 +257,9 @@
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            A custom web application is a software built specifically for one company or for a specific purpose. Small businesses can often benefit from custom web applications because they are a cost-effective way to solve a problem.
+                                            A custom web application is a software built specifically for one company or for
+                                            a specific purpose. Small businesses can often benefit from custom web
+                                            applications because they are a cost-effective way to solve a problem.
                                         </div>
                                     </div>
                                 </div>
@@ -297,21 +277,19 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="text-white py-2">
-                                            Be careful when browsing the web, using social media, or reading email. Many scams, known as phishing scams, try to steal your personal information or money.<br>
-                                           <b> Privacy</b> : Refers to personal information and how it is accessed and viewed.<br>
-<b>Security</b> : Refers to the protection of personal information and data.<br>
-<b>Safety</b> : Refers to the protection of someone or something from harm.
+                                            Be careful when browsing the web, using social media, or reading email. Many
+                                            scams, known as phishing scams, try to steal your personal information or
+                                            money.<br>
+                                            <b> Privacy</b> : Refers to personal information and how it is accessed and
+                                            viewed.<br>
+                                            <b>Security</b> : Refers to the protection of personal information and data.<br>
+                                            <b>Safety</b> : Refers to the protection of someone or something from harm.
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -473,7 +451,7 @@
                                 <div class="col-9 pb-md-3 pb-5">
                                     <div class="slidetext text-white active text-center">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 1 Market smartly </span> at every step
+                                            <span class="text-prime"> 1 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             1 Collect invaluable client data with their consent. Use it to reach just the
@@ -482,7 +460,7 @@
                                     </div>
                                     <div class="slidetext text-white text-center ">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 2 Market smartly </span> at every step
+                                            <span class="text-prime"> 2 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             2 Collect invaluable client data with their consent. Use it to reach just the
@@ -491,7 +469,7 @@
                                     </div>
                                     <div class="slidetext text-white text-center">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 3 Market smartly </span> at every step
+                                            <span class="text-prime"> 3 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             3 Collect invaluable client data with their consent. Use it to reach just the
@@ -500,7 +478,7 @@
                                     </div>
                                     <div class="slidetext text-white text-center">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 4 Market smartly </span> at every step
+                                            <span class="text-prime"> 4 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             4 Collect invaluable client data with their consent. Use it to reach just the
@@ -509,7 +487,7 @@
                                     </div>
                                     <div class="slidetext text-white text-center">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 5 Market smartly </span> at every step
+                                            <span class="text-prime"> 5 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             5 Collect invaluable client data with their consent. Use it to reach just the
@@ -518,7 +496,7 @@
                                     </div>
                                     <div class="slidetext text-white text-center">
                                         <div class="h2 mb-0 main-topheading">
-                                            <span style="color: #FF3895;"> 6 Market smartly </span> at every step
+                                            <span class="text-prime"> 6 Market smartly </span> at every step
                                         </div>
                                         <div class="h4 mb-0 ">
                                             6 Collect invaluable client data with their consent. Use it to reach just the
@@ -569,7 +547,7 @@
                 </div>
                 <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-2">
 
-                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid White">
+                    <div class="card-price mb-xl-2 mb-md-4 white">
                         <h5>FREE</h5>
                         <p class="data">10GB</p>
                         <span class="duration d-block"> 14 day trial</span>
@@ -582,7 +560,7 @@
                         <p class="points">25 per event</p>
                     </div>
 
-                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid #FD692A">
+                    <div class="card-price mb-xl-2 mb-md-4 orange">
                         <h5>BASIC</h5>
                         <p class="data">100GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
@@ -613,7 +591,7 @@
                         </div>
                     </div>
 
-                    <div class="card-price mb-xl-2 mb-md-4 position-relative" style="border:1px solid #8E00CB">
+                    <div class="card-price mb-xl-2 mb-md-4 position-relative purple">
                         <span class="recomend">Recommended</span>
                         <h5>ADVANCE</h5>
                         <p class="data">1TB</p>
@@ -629,7 +607,7 @@
                         <p class="points">10000</p>
                     </div>
 
-                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid #84FF89">
+                    <div class="card-price mb-xl-2 mb-md-4 green">
                         <h5>PREMIUM</h5>
                         <p class="data">10GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
