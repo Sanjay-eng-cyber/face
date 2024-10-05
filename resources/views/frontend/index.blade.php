@@ -592,7 +592,7 @@
                 </div>
                 <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-2">
 
-                    <div class="card-price" style="border:1px solid White">
+                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid White">
                         <h5>FREE</h5>
                         <p class="data">10GB</p>
                         <span class="duration d-block"> 14 day trial</span>
@@ -605,7 +605,7 @@
                         <p class="points">25 per event</p>
                     </div>
 
-                    <div class="card-price" style="border:1px solid #FD692A">
+                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid #FD692A">
                         <h5>BASIC</h5>
                         <p class="data">100GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
@@ -621,7 +621,7 @@
                     </div>
 
 
-                    <div class="card-price">
+                    <div class="card-price mb-xl-2 mb-md-4">
                         <h5>Pricing plans for algoshare</h5>
 
                         <div class="mt-5  pt-5">
@@ -636,7 +636,7 @@
                         </div>
                     </div>
 
-                    <div class="card-price position-relative" style="border:1px solid #8E00CB">
+                    <div class="card-price mb-xl-2 mb-md-4 position-relative" style="border:1px solid #8E00CB">
                         <span class="recomend">Recommended</span>
                         <h5>ADVANCE</h5>
                         <p class="data">1TB</p>
@@ -652,7 +652,7 @@
                         <p class="points">10000</p>
                     </div>
 
-                    <div class="card-price" style="border:1px solid #84FF89">
+                    <div class="card-price mb-xl-2 mb-md-4" style="border:1px solid #84FF89">
                         <h5>PREMIUM</h5>
                         <p class="data">10GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
