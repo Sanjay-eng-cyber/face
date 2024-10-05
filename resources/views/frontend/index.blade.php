@@ -579,7 +579,7 @@
         </div>
     </section> --}}
 
-    <section class="mb-md-5 position-relative pb-md-5 uppersection">
+    <section class="mb-xl-5 position-relative pb-xl-5 uppersection">
 
 
 
@@ -680,7 +680,7 @@
         </div>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-xl-4">
         <div class="container">
 
             <div class="row py-4 d-flex align-items-center">
