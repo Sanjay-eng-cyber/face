@@ -413,25 +413,23 @@ a.next {
     .card-price{
         width: 220px;
     }
+    img.accordion-img-robot {
+        top: -42px;
+        width: 120px;
+    }
+    .accordion-img {
+        left: 10%;
+        top: -37px;
+        transform: rotate(10deg);
+    }
 }
 
 @media screen and (max-width:992px){
     .nav-item span{
         display: none;
     }
-    img.accordion-img-robot {
 
-
-        top: -165px;
-        width: 120px;
-
-    }
-    .accordion-img{
-        left: 10%;
-        top: 0px;
-        transform:rotate(10deg);
-
-    }
+ 
 .d-grid-custom{
 
     display: grid;
