@@ -1,5 +1,6 @@
 .custome-accordion .accordion-button {
-    font-size: 1.5rem;
+    font-size: 48;
+    font-weight: 600;
 }
 
 html,
@@ -484,6 +485,14 @@ h5.l-h{
 }
 
 @media screen and (max-width:992px) {
+    .accordion-body div.text-white{
+        font-size: 20px !important;
+
+    }
+    .custome-accordion .accordion-button {
+        font-size: 28px;
+
+    }
     .navbar.navbar-expand-lg{
         padding-top: 20px;
     }
@@ -1163,4 +1172,9 @@ padding: 3px 5px;
 }
 .navbar-brand{
     z-index: 20;
+}
+.accordion-body div.text-white{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
 }
