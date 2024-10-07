@@ -39,8 +39,8 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
 
         try {
             $res = Http::post(config('app.python_api_url') . '/api/capture-input-image/', [
-                'image_face_encodings' => $upload->face_encoding,
-                'gallery_face_encodings' => $gallery_image->face_encoding
+                'image_face_encodings' => json_decode($upload->face_encoding),
+                'gallery_face_encodings' => json_decode($gallery_image->face_encoding)
             ]);
             $data = $res->json();
             // dd($data);
@@ -48,10 +48,10 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
                 $status = $data['status'] ?? null;
                 if (!$status) {
                     Log::info('CompareUploadedImagesForFaceMatching Status Err : ' . $data['error'] ?? '');
-                    return false;
+                    return 0;
                 }
 
-                if ($data['matched'] ?? null) {
+                if ($data['matched'] == true) {
                     $matched = new MatchedImage();
                     $matched->upload_id = $upload->id;
                     $matched->gallery_image_id = $gallery_image->id;
@@ -61,7 +61,7 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
             }
         } catch (\Throwable $th) {
             Log::info('CompareUploadedImagesForFaceMatching Catch Err : ' . $th->getMessage());
-            return false;
+            return 0;
         }
     }
 }
