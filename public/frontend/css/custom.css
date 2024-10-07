@@ -1157,3 +1157,6 @@ padding: 3px 5px;
         top: -201px !important;
     }
 }
+.navbar-brand{
+    z-index: 20;
+}
