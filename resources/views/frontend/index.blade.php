@@ -77,7 +77,7 @@
                         class="img-fluid w-100 z-index-0">
                     <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
                             srcset="" class=" scan up-down"></span>
-                    <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0">
+                    <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0 l-h">
                         Facial recognition system that works like a charm, allowing your friends and acquaintances to see
                         every photo that
                         they've made an appearance in!

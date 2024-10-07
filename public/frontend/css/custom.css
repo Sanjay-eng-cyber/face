@@ -110,7 +110,9 @@ body {
     color: #ffffff;
 
 }
-
+h5.l-h{
+    line-height: 26px !important;
+}
 .box-outer .col-md-6 {
     padding: 0px;
 }
