@@ -126,6 +126,10 @@ h5.l-h{
     border: 1px soild #FFFFFF !important;
     width: 200px;
     padding: 40px 0px 30px 0px;
+    &:hover{
+
+        box-shadow: 0 5px 10px 5px #1E1D1D;
+    }
 
 }
 
