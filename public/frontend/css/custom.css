@@ -480,6 +480,9 @@ h5.l-h{
 }
 
 @media screen and (max-width:992px) {
+    .navbar.navbar-expand-lg{
+        padding-top: 20px;
+    }
     .nav-item span {
         display: none;
     }
