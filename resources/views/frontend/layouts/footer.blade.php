@@ -1,4 +1,4 @@
-<section class="mt-md-5 image">
+<section class="mt-lg-5 image">
     <footer class="footer">
      <div class="container">
         <div class="row pt-4 pb-3 text-lg-start text-center">
