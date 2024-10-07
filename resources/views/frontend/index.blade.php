@@ -640,7 +640,7 @@
 
             <div class="row py-4 d-flex align-items-center">
                 <div class="col-lg-4 ">
-                    <h3 class="section-title text-lg-start text-center"><span class="text-white">Included in
+                    <h3 class="section-title text-lg-start text-center mb-lg-0 mb-4"><span class="text-white">Included in
                             every</span><br>
                         <span class="text-pink">algoshare plan</span>
                     </h3>
