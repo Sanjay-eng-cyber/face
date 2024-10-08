@@ -488,6 +488,10 @@ h5.l-h{
 }
 
 @media screen and (max-width:992px) {
+    .navbar-nav .nav-link.active{
+        font-weight:700 !important;
+
+    }
     .accordion-body div.text-white{
         font-size: 20px !important;
 

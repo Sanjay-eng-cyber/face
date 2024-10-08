@@ -788,6 +788,16 @@
 
 
         }
+
+
+        $('.navbar-nav .nav-link').click(function(){
+            $('.navbar-nav .nav-link').removeClass('active');
+            $(this).toggleClass('active');
+
+           });
+
+
+           
     </script>
 
 
