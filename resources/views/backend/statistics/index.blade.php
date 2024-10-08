@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('backend.event.index') }}"
+                                        <a href="{{ route('backend.user.index') }}"
                                             class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
