@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-md-6">
+            <div class="statbox widget box box-shadow col-xl-6 col-md-10">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.category.update', $category->id) }}"
@@ -63,7 +63,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Sharing :</label><br>
                                     @if (old('sharing'))
                                         <input type="radio" id="sharingYes" name="sharing" value="1"
@@ -87,7 +87,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Visibility :</label><br>
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"

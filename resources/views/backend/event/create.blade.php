@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-md-6">
+            <div class="statbox widget box box-shadow col-xl-6 col-md-10">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.store') }}"
@@ -77,7 +77,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Download Size :</label><br>
                                     <input type="radio" id="original" name="download_size" value="original"
                                         @if (old('download_size') == 'original') {{ 'checked' }} @endif required>
@@ -92,7 +92,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Sharing :</label><br>
                                     <input type="radio" id="sharingYes" name="sharing" value="1"
                                         @if (old('sharing')) {{ 'checked' }} @endif required>
@@ -107,7 +107,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Visibility :</label><br>
                                     <input type="radio" id="visibilityYes" name="visibility" value="1"
                                         @if (old('visibility')) {{ 'checked' }} @endif required>
@@ -122,7 +122,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Single Image Download :</label><br>
                                     <input type="radio" id="single_image_downloadYes" name="single_image_download"
                                         value="1" @if (old('single_image_download')) {{ 'checked' }} @endif
@@ -140,7 +140,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-6 col-12 mb-3">
                                     <label for="descriptions">Bulk Image Download :</label><br>
                                     <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
                                         value="1" @if (old('bulk_image_download')) {{ 'checked' }} @endif
