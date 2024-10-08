@@ -63,8 +63,8 @@
     <div class="container ">
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px;">
-            <img class="d-block mx-auto " style="max-width:47%;border-radius:10px" src="{{ asset('backend/images/mainlogo.png') }}"
-                alt="">
+        <a href="{{url('/')}}">    <img class="d-block mx-auto " style="max-width:47%;border-radius:10px" src="{{ asset('backend/images/mainlogo.png') }}"
+            alt=""></a>
             <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl">Login</h1>
             <form method="POST" action="{{ route('cms.login.submit') }}">
                 @csrf
