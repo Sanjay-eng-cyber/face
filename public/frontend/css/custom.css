@@ -1,5 +1,5 @@
 .custome-accordion .accordion-button {
-    font-size: 48;
+    font-size: 40;
     font-weight: 600;
 }
 
@@ -1174,7 +1174,7 @@ padding: 3px 5px;
     z-index: 20;
 }
 .accordion-body div.text-white{
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 500;
     line-height: 30px;
 }
