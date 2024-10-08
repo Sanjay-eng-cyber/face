@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-6 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-7 col-md-10">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.store') }}"
