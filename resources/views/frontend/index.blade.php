@@ -250,7 +250,7 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Custom web App
+                                        Custom Web App
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"

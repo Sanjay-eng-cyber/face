@@ -468,6 +468,9 @@ h5.l-h{
 }
 
 @media screen and (min-width:767px) and (max-width:992px) {
+    .navbar-wrapper{
+        top: 20px;
+    }
     .card-price {
         width: 220px;
     }
