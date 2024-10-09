@@ -52,8 +52,8 @@
                 </div>
             </div>
 
-            <div class="row position-relative share-text pb-md-5 pb-3">
-                <div class="col-12 pb-md-5">
+            <div class="row position-relative share-text pb-lg-5 pb-3 pt-lg-3 pt-0">
+                <div class="col-12 pb-lg-5">
 
                     <div class="get-section align-items-center d-md-flex ">
                         <div>
