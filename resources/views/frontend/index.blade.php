@@ -71,7 +71,7 @@
 
         <div class="container">
             <div class="row gx-5">
-                <div class="col-12 col-lg-6 position-relative anim-bg">
+                <div class="col-12 col-lg-6 position-relative anim-bg mt-3">
                     <img src="{{ asset('frontend/images/index/bracket.png') }}" alt="" class="bracket">
                     <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
                         class="img-fluid w-100 z-index-0">

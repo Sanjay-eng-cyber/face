@@ -458,6 +458,9 @@ h5.l-h{
 }
 
 @media screen and (min-width:1116px) {
+    .kpik-subhead{
+padding-bottom: 20px;
+    }
     .next-arrow {
         position: relative;
         top: 149px;
