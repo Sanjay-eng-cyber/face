@@ -1191,3 +1191,8 @@ padding: 3px 5px;
     font-weight: 500;
     line-height: 30px;
 }
+@media screen and (min-width:991px) and (max-width:1080px){
+    .navbar-expand-lg .navbar-collapse{
+       margin-left: 80px !important;
+    }
+}
