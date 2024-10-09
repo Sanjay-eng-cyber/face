@@ -282,6 +282,9 @@ h5.l-h{
 }
 
 @media screen and (max-width:767px) {
+    .share-text{
+        padding-top: 0px;
+    }
     .kwik-bg {
         display: none;
     }
