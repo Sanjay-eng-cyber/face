@@ -391,7 +391,7 @@
         </div> --}}
     </div>
 
-    <div class="container mt-md-2 mt-5">
+    <div class="container mt-md-2 mt-5 slider-mt">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-12">
                 <div class="row">
@@ -797,7 +797,7 @@
            });
 
 
-           
+
     </script>
 
 
