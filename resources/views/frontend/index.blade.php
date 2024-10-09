@@ -579,7 +579,7 @@
                     <div class="card-price mb-xl-2 mb-md-4">
                         <h5>Pricing plans for algoshare</h5>
 
-                        <div class="mt-5  pt-5">
+                        <div class="mt-sm-5  pt-5">
                             <p class="points">Storage</p>
                             <p class="points">Max Image Size</p>
                             <p class="points">Face Searches</p>
