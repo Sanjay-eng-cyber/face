@@ -152,7 +152,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 px-0">
                         <div class="our-profession-sctn">
                             <div class="our-profession-sub">
                                 <div>
