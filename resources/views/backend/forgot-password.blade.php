@@ -62,6 +62,9 @@
         .text-cl {
             color: #000000;
         }
+        .form-form .form-form-wrap form .field-wrapper svg {
+           top:18px;
+        }
     </style>
 </head>
 
