@@ -111,7 +111,7 @@ body {
 }
 
 .box p {
-  line-height: normal;
+  line-height: 22px;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
@@ -695,6 +695,8 @@ padding-bottom: 20px;
     }
     .slidetext .h4 {
         font-size: 18px;
+        line-height: 24px;
+
     }
 
     .our-profession-sub {
