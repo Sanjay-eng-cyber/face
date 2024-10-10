@@ -277,10 +277,12 @@ h5.l-h{
     .img-group .f-img {
         left: 17%;
     }
-
+.algobottom{
+padding-bottom: 30px;
+}
     .curve {
         height: auto;
-        background: none !important;
+        /* background: none !important; */
     }
 
     .robot {
@@ -289,6 +291,12 @@ h5.l-h{
 }
 
 @media screen and (max-width:767px) {
+    .algobottom{
+        padding-bottom: 10px !important;
+        }
+    .curve{
+           background: none !important;
+    }
     .main-topheading {
 
 padding-bottom: 22px;
