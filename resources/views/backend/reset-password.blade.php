@@ -29,7 +29,9 @@
 
             /* Set the height of the container */
         }
-
+        .text-black {
+            color: #000000 !important;
+        }
         .bg-pink-color {
             background-color: #64002F;
             border-radius: 50px;
@@ -107,10 +109,10 @@
 
             </form>
             <div class="text-center text-muted mt-3">
-                <small>
+                <small class="text-black">
                     &copy;
                     {{ date('Y') }} All Rights Reserved | Powered by
-                    <a href="http://acetrot.com" class="text-muted text-underline" target="_blank">
+                    <a href="http://acetrot.com" class="text-muted text-black text-underline" target="_blank">
                         Acetrot.com
                     </a>
                 </small>

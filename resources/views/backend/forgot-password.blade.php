@@ -27,6 +27,9 @@
         .radius-10{
             border-radius: 10px;
         }
+        .text-black {
+            color: #000000;
+        }
 
         .bg-pink-color {
             background-color: #64002F;
@@ -124,10 +127,10 @@
                         </form>
                         <div class="terms-conditions footer-wrapper justify-content-center">
                             <div class="footer-section f-section-1">
-                                <p>
+                                <p class="text-black">
                                     &copy;
                                     {{ date('Y') }} All Rights Reserved.
-                                    <a href="http://acetrot.com" target="_blank">
+                                    <a href="http://acetrot.com" target="_blank" class="text-black">
                                         Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}" width="24"
                                             alt="">
                                     </a>

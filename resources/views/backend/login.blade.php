@@ -21,6 +21,10 @@
             color: #000000;
         }
 
+        .text-black {
+            color: #000000 !important;
+        }
+
         .body-bg {
             background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%,#0FACB3 100%);
             background-repeat: no-repeat;
@@ -97,7 +101,7 @@
                 <div class="text-center mb-4 mt-4">
 
                     <a href="{{ route('cms.forgotPassword.index') }}" class="text-black text-muted text-underline">
-                        <small>
+                        <small >
                             Forgot your password?
                         </small>
                     </a>
@@ -108,10 +112,10 @@
 
             </form>
             <div class="text-center text-muted mt-3">
-                <small class="p-0">
+                <small class="p-0 text-black">
                     &copy;
                     {{ date('Y') }} All Rights Reserved | Powered by
-                    <a href="http://acetrot.com" class="text-muted text-underline" target="_blank">
+                    <a href="http://acetrot.com" class="text-muted text-black text-underline" target="_blank">
                         Acetrot.com
                     </a>
                 </small>
