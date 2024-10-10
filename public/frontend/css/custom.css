@@ -291,6 +291,16 @@ padding-bottom: 30px;
 }
 
 @media screen and (max-width:767px) {
+   .accordion-item .accordion-body div.text-white{
+        font-size: 16px !important;
+        line-height: 25px ;
+    }
+    .custome-accordion .accordion-button{
+        font-size: 20px !important;
+    }
+    .custome-accordion .accordion-item{
+        padding:30px 0px !important;
+    }
     .algobottom{
         padding-bottom: 10px !important;
         }
