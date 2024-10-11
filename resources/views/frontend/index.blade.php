@@ -576,7 +576,7 @@
                     </div>
 
 
-                    <div class="card-price mb-xl-2 mb-md-4">
+                    <div class="card-price mb-xl-2 mb-md-4 empty">
                         <h5>Pricing plans for algoshare</h5>
 
                         <div class="mt-sm-5  pt-5">

@@ -141,6 +141,18 @@ h5.l-h{
 
 }
 
+.card-price:hover {
+
+        box-shadow: 0 5px 10px 5px #1E1D1D;
+    }
+
+    .card-price.empty:hover {
+
+        box-shadow:none;
+    }
+
+
+
 .card-price h5 {
 
     font-size: 26px;
