@@ -523,10 +523,7 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:992px) {
-    .navbar-nav .nav-link.active{
-        font-weight:700 !important;
 
-    }
     .accordion-body div.text-white{
         font-size: 20px !important;
 
@@ -1237,4 +1234,8 @@ padding: 3px 5px;
     .navbar-expand-lg .navbar-collapse{
        margin-left: 80px !important;
     }
+}
+.navbar-nav .nav-link.active{
+    font-weight:700 !important;
+
 }
