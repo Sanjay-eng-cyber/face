@@ -41,8 +41,8 @@
             color: white;
             border: 1px solid white;
             transition: none;
-            padding: 18px 45px;
-            width: 200px;
+            padding: 12px 35px;
+            width: 180px;
             margin: auto
             /* Remove default transition effect */
 
@@ -100,7 +100,7 @@
 
                 <div class="text-center mb-4 mt-4">
 
-                    <a href="{{ route('cms.forgotPassword.index') }}" class="text-black text-muted text-underline">
+                    <a href="{{ route('cms.forgotPassword.index') }}" class="text-black text-muted ">
                         <small >
                             Forgot your password?
                         </small>

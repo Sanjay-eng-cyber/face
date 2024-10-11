@@ -38,8 +38,8 @@
             color: white;
             border: 1px solid white;
             transition: none;
-            padding: 18px 45px;
-            width: 200px;
+            padding: 12px 35px;
+            width: 180px;
             margin: auto;
             font-weight: 500;
             font-size:18px;
