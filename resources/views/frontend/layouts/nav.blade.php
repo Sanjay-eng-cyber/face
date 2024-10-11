@@ -30,7 +30,7 @@
                                 </li>
                                 <li class="nav-item navleftp">
                                     <a class="nav-link third" href="#" style="color: white">Contact us</a>
-                                    <span class="active-link3 d-none pl-custom-4">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
+                                    <span class="active-link3 d-none pl-custom-5">  <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon">
                                         <img src="{{asset('frontend/images/index/nav-img.png')}}" alt="" class="moon-2"></span>
                                 </li>
 
