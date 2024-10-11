@@ -1108,7 +1108,9 @@ padding: 3px 5px;
     position: relative;
     z-index: 10;
 }
-
+.pl-custom-2 {
+    margin-left: 1px;
+}
 .pl-custom-3 {
     margin-left: 7px;
 }
