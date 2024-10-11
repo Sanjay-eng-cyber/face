@@ -74,7 +74,7 @@
     <div class="form-container justify-content-center">
         <div class="form-form">
             <div class="form-form-wrap">
-                <div class="form-container">
+                <div class="form-container px-3">
                     <div class="form-content">
 
                         <div class="row text-center">
