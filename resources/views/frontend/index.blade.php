@@ -160,7 +160,7 @@
                                         Clicking photos is one half of the task. The second half is delivering them to your
                                         clients.
                                     </h4>
-                                    <h4 class="text-white mb-0 pt-4">
+                                    <h4 class="text-white mb-0 pt-4 pb-xl-4">
                                         Choose the modern way of delivering photos smartly using AI. With our paid plans,
                                         unlock Kwikpic s best features to grow your brand and customer reach, choose from a
                                         range of gallery templates to best represent your style, get different download
