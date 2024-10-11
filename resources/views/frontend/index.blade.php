@@ -395,7 +395,7 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mobile-align">
                         <div class="rev_slider">
                             <div class="rev_slide active">
                                 <div class="test">
@@ -448,7 +448,7 @@
                     <div class="col-12 text-container">
                         <div class="main_slide_main">
                             <div class="row d-flex align-items-center justify-content-center">
-                                <div class="col-9 pb-md-3 pb-5">
+                                <div class="col-9 pb-md-3 pb-sm-5">
                                     <div class="slidetext text-white active text-center">
                                         <div class="h2 mb-0 main-topheading">
                                             <span class="text-prime"> 1 Market smartly </span> at every step
