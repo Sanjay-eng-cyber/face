@@ -699,8 +699,21 @@ padding-bottom: 20px;
     .slider-outer{
         margin-top: 150px;
     }
+    .next-arrow {
+        position: relative;
+        top: 42px;
+        right: -6px;
+    }
+
+    .pre-arrow {
+        position: relative;
+        top: 42px;
+        left: -6px;
+    }
     .main_slide_main{
         padding-top: 0px;
+            min-height: 310px;
+            margin-top: -150px;
     }
     .main-topheading{
         padding-top: 0px;
