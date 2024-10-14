@@ -235,7 +235,7 @@ class EventController extends Controller
         $event->password_protection = $request->password_protection;
         $event->share_image = $request->image_share;
         $event->watermark = $request->watermark;
-        $event->password = Hash::make($request->password) ?? null;
+        $event->password = $request->password ? Hash::make($request->password) : null;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Update Successfully', 'success'));
         } else {
