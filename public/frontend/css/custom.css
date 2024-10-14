@@ -836,6 +836,9 @@ padding-bottom: 20px;
     .bg-slider {
         background-size: cover;
     }
+    .tape-line,.tape-line-owt,.tape-line-eno,.tape-line-eerht {
+  font-size: 7px !important;
+    }
 }
 
 @media screen and (max-width:361px) {
@@ -1297,3 +1300,11 @@ padding: 3px 5px;
     font-weight:700 !important;
 
 }
+
+@media screen and (min-width:767px) and (max-width:991px){
+
+.tape-line,.tape-line-owt,.tape-line-eno,.tape-line-eerht {
+    font-size: 12px !important;
+      }
+
+    }
