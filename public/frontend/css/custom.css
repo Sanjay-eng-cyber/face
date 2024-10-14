@@ -537,7 +537,18 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:992px) {
-
+    .nav-main{
+        padding: 25px 25px 25px 15px !important;
+    }
+    .navbar-nav .nav-link{
+        padding-left: 10px;
+    }
+    .navbar-nav .nav-link.active{
+        background:#9C215F !important;
+    }
+    .navleftp{
+        padding-right: 0px;
+    }
     .accordion-body div.text-white{
         font-size: 20px !important;
 
@@ -1298,7 +1309,6 @@ padding: 3px 5px;
 }
 .navbar-nav .nav-link.active{
     font-weight:700 !important;
-
 }
 
 @media screen and (min-width:767px) and (max-width:991px){
