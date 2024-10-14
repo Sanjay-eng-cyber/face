@@ -157,10 +157,7 @@ padding all page */
         font-size: 15px;
         padding: 10px;
     }
-    .header-container .navbar-nav.theme-brand {
- background: #64002F !important;
- border-color: #64002F !important;
-    }
+
 }
 .navclr {
     background: #64002F !important;
@@ -302,10 +299,9 @@ select.form-control {
     background-color: #64002F !important;
 }
 .header-container .navbar-nav.theme-brand {
-
-    background:#000 ;
-    border-color: #000;
-}
+    background: #64002F !important;
+    border-color: #64002F !important;
+       }
 
 .mce-notification-warning {
     display: none;
