@@ -59,3 +59,11 @@
         @endif
     @endif
 </script>
+
+
+<script>
+    $('.navbar-nav.theme-brand ').click(function(){
+       $(this).toggleClass('navclr');
+    });
+   
+</script>

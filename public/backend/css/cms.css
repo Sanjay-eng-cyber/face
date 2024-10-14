@@ -159,9 +159,12 @@ padding all page */
     }
     .header-container .navbar-nav.theme-brand {
  background: #64002F !important;
+ border-color: #64002F !important;
     }
 }
-
+.navclr {
+    background: #64002F !important;
+       }
 .app_form .app_form_input {
     width: 290px;
     margin-left: 15px;
