@@ -1,6 +1,6 @@
 <section class="mt-lg-5 image">
     <footer class="footer">
-     <div class="container">
+     <div class="container px-0">
         <div class="row pt-4 pb-3 text-lg-start text-center">
 
             <div class="col-lg-8 ">
