@@ -932,7 +932,13 @@ padding-bottom: 20px;
 
 
 
-
+@media screen and (min-width: 768px) and (max-width: 770px) {
+    div.position-relative img.accordion-img-robot {
+        top: -50px !important;
+        width: 90px !important;
+  right: -60px !important;
+    }
+}
 
 .prev,
 .next {
