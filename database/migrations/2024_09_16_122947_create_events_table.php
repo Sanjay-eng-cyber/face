@@ -25,6 +25,16 @@ return new class extends Migration
             $table->boolean('visibility')->default(1);
             $table->boolean('single_image_download')->default(1);
             $table->boolean('bulk_image_download')->default(1);
+            $table->boolean('email_registration')->nullable();
+            $table->boolean('social_sharing_buttons')->nullable();
+            $table->boolean('print_store')->nullable();
+            $table->boolean('mobile_field')->nullable();
+            $table->boolean('guest_upload')->nullable();
+            $table->boolean('password_protection')->nullable();
+            $table->string('password')->nullable();
+            $table->boolean('share_image')->nullable();
+            $table->boolean('watermark')->nullable();
+            $table->string('watermark_image')->nullable();
             $table->timestamps();
         });
     }

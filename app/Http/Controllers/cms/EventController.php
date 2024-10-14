@@ -7,6 +7,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
@@ -96,19 +97,38 @@ class EventController extends Controller
             'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
+            'email_registration' => 'nullable|in:1,0',
+            'social_sharing_buttons' => 'nullable|in:1,0',
+            'print_store' => 'nullable|in:1,0',
+            'mobile_field' => 'nullable|in:1,0',
+            'guest_upload' => 'nullable|in:1,0',
+            'password_protection' => 'nullable|in:1,0',
+            'password' => 'required_with:password_protection',
+            'image_share' => 'nullable|in:1,0',
+            'watermark' => 'nullable|in:1,0',
+            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
 
         ]);
 
         // dd($request);
         $event = new Event();
-        $fileWithExt = request()->file('cover_image');
-        if ($fileWithExt) {
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
+        $cover_image = request()->file('cover_image');
+        $manager = ImageManager::gd();
+        if ($cover_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
             $destinationPath = public_path("storage/images/events");
-            $manager = ImageManager::gd();
-            $image = $manager->read($fileWithExt->getRealPath());
+            $image = $manager->read($cover_image->getRealPath());
             $image->save($destinationPath . '/' . $filename, 90);
             $event->cover_image = $filename;
+        }
+
+        $watermark_image = request()->file('watermark_image');
+        if ($watermark_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $watermark_image->clientExtension();
+            $destinationPath = public_path("storage/images/events/watermark_image");
+            $image = $manager->read($watermark_image->getRealPath());
+            $image->save($destinationPath . '/' . $filename, 90);
+            $event->watermark_image = $filename;
         }
 
         // Create a new Event instance
@@ -123,6 +143,16 @@ class EventController extends Controller
         $event->visibility = $request->visibility;
         $event->single_image_download = $request->single_image_download;
         $event->bulk_image_download = $request->bulk_image_download;
+        $event->email_registration = $request->email_registration;
+        $event->social_sharing_buttons = $request->social_sharing_buttons;
+        $event->print_store = $request->print_store;
+        $event->mobile_field = $request->mobile_field;
+        $event->guest_upload = $request->guest_upload;
+        $event->password_protection = $request->password_protection;
+        $event->share_image = $request->image_share;
+        $event->watermark = $request->watermark;
+        $event->password = $request->password ? Hash::make($request->password) : null;
+
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Added Successfully', 'success'));
         } else {
@@ -150,20 +180,40 @@ class EventController extends Controller
             'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
+            'email_registration' => 'nullable|in:1,0',
+            'social_sharing_buttons' => 'nullable|in:1,0',
+            'print_store' => 'nullable|in:1,0',
+            'mobile_field' => 'nullable|in:1,0',
+            'guest_upload' => 'nullable|in:1,0',
+            'password_protection' => 'nullable|in:1,0',
+            'password' => 'required_with:password_protection',
+            'image_share' => 'nullable|in:1,0',
+            'watermark' => 'nullable|in:1,0',
+            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
 
         ]);
 
         // Create a new Event instance
         $event = Event::findOrFail($id);
-        $fileWithExt = request()->file('cover_image');
-        if ($fileWithExt) {
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $fileWithExt->clientExtension();
-            $destinationPath = public_path("storage/images/events");
+        $cover_image = request()->file('cover_image');
+        if ($cover_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
+            $destinationPath = public_path("storage/images/events/");
             $manager = ImageManager::gd();
-            $image = $manager->read($fileWithExt->getRealPath());
+            $image = $manager->read($cover_image->getRealPath());
             optional(Storage::disk('public')->delete('images/events/' . $event->cover_image));
             $image->save($destinationPath . '/' . $filename, 90);
             $event->cover_image = $filename;
+        }
+
+        $watermark_image = request()->file('watermark_image');
+        if ($watermark_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $watermark_image->clientExtension();
+            $destinationPath = public_path("storage/images/events/watermark_image/");
+            $image = $manager->read($watermark_image->getRealPath());
+            optional(Storage::disk('public')->delete('images/events/watermark_image/' . $event->watermark_image));
+            $image->save($destinationPath . '/' . $filename, 90);
+            $event->watermark_image = $filename;
         }
 
         $event->name = $request->name;
@@ -177,6 +227,15 @@ class EventController extends Controller
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
+        $event->email_registration = $request->email_registration;
+        $event->social_sharing_buttons = $request->social_sharing_buttons;
+        $event->print_store = $request->print_store;
+        $event->mobile_field = $request->mobile_field;
+        $event->guest_upload = $request->guest_upload;
+        $event->password_protection = $request->password_protection;
+        $event->share_image = $request->image_share;
+        $event->watermark = $request->watermark;
+        $event->password = Hash::make($request->password) ?? null;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Update Successfully', 'success'));
         } else {
@@ -190,7 +249,7 @@ class EventController extends Controller
         if ($event->categories()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
         };
-        if ($event->delete() && Storage::disk('public')->delete('images/events/' . $event->cover_image)) {
+        if ($event->delete() && Storage::disk('public')->delete('images/events/' . $event->cover_image) && Storage::disk('public')->delete('images/events/watermark_image/' . $event->watermark_image)) {
             return redirect()->route('backend.event.index')->with(
                 [
                     "message" => "Event Deleted Successfully",

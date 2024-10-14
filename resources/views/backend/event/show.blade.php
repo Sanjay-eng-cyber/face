@@ -52,6 +52,19 @@
                                                 </div>
                                             </div>
                                         @endif
+
+                                        @if ($event->watermark_image)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Watermark
+                                                        Image</label><br>
+                                                    <div id="lightgallery_one">
+                                                        <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
+                                                            target="blank">View</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Start
@@ -123,6 +136,103 @@
                                                 <label for="degree3" class="cust-title" class="label-title">Bulk Image
                                                     Download</label><br>
                                                 @if ($event->bulk_image_download)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Email
+                                                    Registration</label><br>
+                                                @if ($event->email_registration)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Social
+                                                    Sharing
+                                                    Buttons</label><br>
+                                                @if ($event->social_sharing_buttons)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Print Store
+                                                </label><br>
+                                                @if ($event->print_store)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Mobile
+                                                    Field</label><br>
+                                                @if ($event->mobile_field)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Guest
+                                                    Upload</label><br>
+                                                @if ($event->guest_upload)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Password
+                                                    Protection</label><br>
+                                                @if ($event->password_protection)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Image
+                                                    Share</label><br>
+                                                @if ($event->image_share)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Watermark</label><br>
+                                                @if ($event->watermark)
                                                     <label class="text-white badge badge-primary">Yes</label>
                                                 @else
                                                     <label class="text-white badge badge-secondary">No</label>
