@@ -24,14 +24,14 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-md-6">
+            <div class="statbox widget box box-shadow col-md-12">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.cms-user.update', $cmsUser->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="30" required name="name"
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Role</label>
                                     <select name="role" class="form-control" required>
                                         <Option value="">
@@ -56,7 +56,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('role') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Email</label>
                                     <input type="email" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Email" minlength="5" maxlength="40" required name="email"
@@ -65,13 +65,53 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Password</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Password" minlength="8" maxlength="16" required name="password"
                                         value="{{ old('password') }}">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Custom Domain Name</label>
+                                    <input type="custom_domain_name" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Custom Domain Name" minlength="3" maxlength="50"
+                                        name="custom_domain_name"
+                                        value="{{ old('custom_domain_name') ?? $cmsUser->custom_domain_name }}">
+                                    @if ($errors->has('custom_domain_name'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('custom_domain_name') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Phone No.</label>
+                                    <input type="phone" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Phone No" minlength="10" maxlength="10" name="phone"
+                                        value="{{ old('phone') ?? $cmsUser->phone }}">
+                                    @if ($errors->has('phone'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('phone') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Portfolio Website</label>
+                                    <input type="portfolio_website" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Portfolio Website" minlength="3" maxlength="50"
+                                        name="portfolio_website"
+                                        value="{{ old('portfolio_website') ?? $cmsUser->portfolio_website }}">
+                                    @if ($errors->has('portfolio_website'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('portfolio_website') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="descriptions">Bio</label>
+                                    <textarea id="team-about" class="team-about" name="bio" minlength="3" maxlength="20000">{{ old('bio') ?? $cmsUser->bio }}</textarea>
+                                    @if ($errors->has('bio'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('bio') }}
+                                        </div>
                                     @endif
                                 </div>
                             </div>

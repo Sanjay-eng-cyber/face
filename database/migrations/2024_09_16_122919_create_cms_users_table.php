@@ -17,6 +17,10 @@ return new class extends Migration
             $table->enum('role', ['admin', 'super-admin']);
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('custom_domain_name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('portfolio_website')->nullable();
+            $table->longText('bio')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

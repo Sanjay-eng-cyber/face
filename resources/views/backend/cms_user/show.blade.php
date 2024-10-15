@@ -54,6 +54,34 @@
                                                 <p class="label-title">{{ $cmsUser->email }}</p>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Phone No.</label><br>
+                                                <p class="label-title">{{ $cmsUser->phone }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Portfolio Website</label><br>
+                                                <p class="label-title">{{ $cmsUser->portfolio_website }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Custom Domain Name</label><br>
+                                                <p class="label-title">{{ $cmsUser->custom_domain_name }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Bio</label><br>
+                                                <p class="label-title">{!! $cmsUser->bio !!}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
