@@ -353,7 +353,7 @@ padding-bottom: 22px;
     }
 
     .card-price {
-        width: 230px;
+        width: 222px;
         margin: 10px;
     }
 
@@ -792,7 +792,7 @@ padding-bottom: 20px;
     }
 
     .recomend {
-        left: 31%;
+        left: 37%;
     }
 
     .slider-sec {
@@ -868,6 +868,9 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:440px) {
+    .recomend {
+        left: 31% !important;
+    }
     .social a {
     padding: 8px 10px !important;
     }
