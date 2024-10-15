@@ -33,6 +33,11 @@ class CmsUserController extends Controller
             'email' => 'required|string|email:rfc,dns|min:5|max:40',
             'password' => 'required|string|min:8|max:16',
             'role' => 'required|in:admin,super-admin',
+            'custom_domain_name' => 'nullable|string|min:3|max:50',
+            'phone' => 'nullable|digits:10|numeric',
+            'portfolio_website' => 'nullable|string|min:3|max:50',
+            'bio' => 'nullable|string|min:3|max:20000',
+
         ]);
 
         // Create a new Event instance
@@ -41,6 +46,10 @@ class CmsUserController extends Controller
         $cmsUser->email = $request->email;
         $cmsUser->password = Hash::make($request->password);
         $cmsUser->role = $request->role;
+        $cmsUser->custom_domain_name = $request->custom_domain_name;
+        $cmsUser->phone = $request->phone;
+        $cmsUser->portfolio_website = $request->portfolio_website;
+        $cmsUser->bio = $request->bio;
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [
@@ -70,6 +79,10 @@ class CmsUserController extends Controller
             'email' => 'required|string|email:rfc,dns|min:5|max:40',
             'password' => 'required|string|min:8|max:16',
             'role' => 'required|in:admin,super-admin',
+            'custom_domain_name' => 'nullable|string|min:3|max:50',
+            'phone' => 'nullable|digits:10|numeric',
+            'portfolio_website' => 'nullable|string|min:3|max:50',
+            'bio' => 'nullable|string|min:3|max:20000',
         ]);
 
         // Create a new Event instance
@@ -78,6 +91,10 @@ class CmsUserController extends Controller
         $cmsUser->email = $request->email;
         $cmsUser->role = $request->role;
         $cmsUser->password = Hash::make($request->password);
+        $cmsUser->custom_domain_name = $request->custom_domain_name;
+        $cmsUser->phone = $request->phone;
+        $cmsUser->portfolio_website = $request->portfolio_website;
+        $cmsUser->bio = $request->bio;
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [
