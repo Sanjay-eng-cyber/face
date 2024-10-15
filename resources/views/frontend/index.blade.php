@@ -545,7 +545,7 @@
                     <p class="algoshare">Algoshare offers tiered pricing plans with options for free basic access, mid-tier
                         advanced features, and a premium plan with full access to all tools and priority support.</p>
                 </div>
-                <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-2">
+                <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-3">
 
                     <div class="card-price mb-xl-2 mb-md-4 white">
                         <h5>FREE</h5>
@@ -646,7 +646,7 @@
                     </h3>
                 </div>
 
-                <div class="col-lg-8">
+                <div class="col-lg-8 px-md-1 px-3">
                     <div class="row box-outer">
                         <div class="col-md-6">
                             <div class="box">

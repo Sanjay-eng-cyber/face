@@ -290,7 +290,7 @@ h5.l-h{
         left: 17%;
     }
 .algobottom{
-padding-bottom: 30px;
+padding-bottom: 50px;
 }
     .curve {
         height: auto;
@@ -353,7 +353,7 @@ padding-bottom: 22px;
     }
 
     .card-price {
-        width: 230px;
+        width: 222px;
         margin: 10px;
     }
 
@@ -703,6 +703,12 @@ padding-bottom: 20px;
 
 
 @media screen and (max-width:576px) {
+    .card-price h5 {
+   font-size: 22px;
+    }
+    .card-price .data {
+  font-size: 34px;
+    }
     .mobile-align{
         position: relative;
         top: -130px ;
@@ -792,7 +798,7 @@ padding-bottom: 20px;
     }
 
     .recomend {
-        left: 31%;
+        left: 37%;
     }
 
     .slider-sec {
@@ -868,6 +874,9 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:440px) {
+    .recomend {
+        left: 31% !important;
+    }
     .social a {
     padding: 8px 10px !important;
     }
