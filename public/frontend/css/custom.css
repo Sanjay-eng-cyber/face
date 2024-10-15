@@ -703,6 +703,12 @@ padding-bottom: 20px;
 
 
 @media screen and (max-width:576px) {
+    .card-price h5 {
+   font-size: 22px;
+    }
+    .card-price .data {
+  font-size: 34px;
+    }
     .mobile-align{
         position: relative;
         top: -130px ;
