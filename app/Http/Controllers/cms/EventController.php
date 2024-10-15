@@ -102,10 +102,10 @@ class EventController extends Controller
             'print_store' => 'nullable|in:1,0',
             'mobile_field' => 'nullable|in:1,0',
             'guest_upload' => 'nullable|in:1,0',
-            'password_protection' => 'nullable|in:1,0',
-            'password' => 'required_with:password_protection',
+            'password_protection' => 'required_with:password|in:1,0',
+            'password' => 'required_with:password_protection|string',
             'image_share' => 'nullable|in:1,0',
-            'watermark' => 'nullable|in:1,0',
+            'watermark' => 'required_with:watermark_image|in:1,0',
             'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
 
         ]);
@@ -185,10 +185,10 @@ class EventController extends Controller
             'print_store' => 'nullable|in:1,0',
             'mobile_field' => 'nullable|in:1,0',
             'guest_upload' => 'nullable|in:1,0',
-            'password_protection' => 'nullable|in:1,0',
+            'password_protection' => 'required_with:password|in:1,0',
             'password' => 'required_with:password_protection',
             'image_share' => 'nullable|in:1,0',
-            'watermark' => 'nullable|in:1,0',
+            'watermark' => 'required_with:watermark_image|in:1,0',
             'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
 
         ]);
