@@ -646,7 +646,7 @@
                     </h3>
                 </div>
 
-                <div class="col-lg-8">
+                <div class="col-lg-8 px-md-1 px-3">
                     <div class="row box-outer">
                         <div class="col-md-6">
                             <div class="box">
