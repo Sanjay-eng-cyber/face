@@ -540,6 +540,9 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:992px) {
+    .custome-accordion .accordion-button {
+        font-size: 2rem !important;
+    }
     .nav-main{
         padding: 25px 25px 25px 15px !important;
     }
