@@ -21,6 +21,12 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('portfolio_website')->nullable();
             $table->longText('bio')->nullable();
+            $table->string('vimeo_url')->nullable();
+            $table->string('linkedin_url')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->string('youtube_url')->nullable();
+            $table->string('instagram_url')->nullable();
+            $table->string('twitter_url')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
