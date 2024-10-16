@@ -278,6 +278,9 @@ h5.l-h{
 }
 
 @media screen and (max-width:1116px) {
+    .custome-accordion .accordion-button{
+        font-size:2.5rem !important;
+    }
     .card-price {
         width: 250px;
     }
@@ -537,6 +540,9 @@ padding-bottom: 20px;
 }
 
 @media screen and (max-width:992px) {
+    .custome-accordion .accordion-button {
+        font-size: 2rem !important;
+    }
     .nav-main{
         padding: 25px 25px 25px 15px !important;
     }
@@ -714,7 +720,7 @@ padding-bottom: 20px;
         top: -130px ;
     }
     .slider-outer{
-        margin-top: 150px;
+        margin-top: 200px;
     }
     .next-arrow {
         position: relative;
@@ -955,7 +961,7 @@ padding-bottom: 20px;
 
 
 
-@media screen and (min-width: 768px) and (max-width: 770px) {
+@media screen and (min-width: 769px) and (max-width: 770px) {
     div.position-relative img.accordion-img-robot {
         top: -50px !important;
         width: 90px !important;
@@ -1326,4 +1332,10 @@ padding: 3px 5px;
     font-size: 12px !important;
       }
 
+    }
+
+    @media screen and (max-width:350px){
+        .custome-accordion button.accordion-button {
+            font-size: 1.4rem !important;
+        }
     }
