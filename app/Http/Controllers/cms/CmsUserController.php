@@ -36,7 +36,12 @@ class CmsUserController extends Controller
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'nullable|digits:10|numeric',
             'portfolio_website' => 'nullable|string|min:3|max:50',
-            'bio' => 'nullable|string|min:3|max:20000',
+            'vimeo_url' => 'nullable|string|min:3|max:50',
+            'linkedin_url' => 'nullable|string|min:3|max:50',
+            'facebook_url' => 'nullable|string|min:3|max:50',
+            'youtube_url' => 'nullable|string|min:3|max:50',
+            'instagram_url' => 'nullable|string|min:3|max:50',
+            'twitter_url' => 'nullable|string|min:3|max:50',
 
         ]);
 
@@ -50,6 +55,12 @@ class CmsUserController extends Controller
         $cmsUser->phone = $request->phone;
         $cmsUser->portfolio_website = $request->portfolio_website;
         $cmsUser->bio = $request->bio;
+        $cmsUser->vimeo_url = $request->vimeo_url;
+        $cmsUser->linkedin_url = $request->linkedin_url;
+        $cmsUser->facebook_url = $request->facebook_url;
+        $cmsUser->youtube_url = $request->youtube_url;
+        $cmsUser->instagram_url = $request->instagram_url;
+        $cmsUser->twitter_url = $request->twitter_url;
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [
@@ -83,6 +94,12 @@ class CmsUserController extends Controller
             'phone' => 'nullable|digits:10|numeric',
             'portfolio_website' => 'nullable|string|min:3|max:50',
             'bio' => 'nullable|string|min:3|max:20000',
+            'vimeo_url' => 'nullable|string|min:3|max:50',
+            'linkedin_url' => 'nullable|string|min:3|max:50',
+            'facebook_url' => 'nullable|string|min:3|max:50',
+            'youtube_url' => 'nullable|string|min:3|max:50',
+            'instagram_url' => 'nullable|string|min:3|max:50',
+            'twitter_url' => 'nullable|string|min:3|max:50',
         ]);
 
         // Create a new Event instance
@@ -95,6 +112,12 @@ class CmsUserController extends Controller
         $cmsUser->phone = $request->phone;
         $cmsUser->portfolio_website = $request->portfolio_website;
         $cmsUser->bio = $request->bio;
+        $cmsUser->vimeo_url = $request->vimeo_url;
+        $cmsUser->linkedin_url = $request->linkedin_url;
+        $cmsUser->facebook_url = $request->facebook_url;
+        $cmsUser->youtube_url = $request->youtube_url;
+        $cmsUser->instagram_url = $request->instagram_url;
+        $cmsUser->twitter_url = $request->twitter_url;
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [

@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Custom Domain Name</label>
-                                    <input type="custom_domain_name" class="form-control" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Custom Domain Name" minlength="3" maxlength="50"
                                         name="custom_domain_name" value="{{ old('custom_domain_name') }}">
                                     @if ($errors->has('custom_domain_name'))
@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Phone No.</label>
-                                    <input type="phone" class="form-control" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Phone No" minlength="10" maxlength="10" name="phone"
                                         value="{{ old('phone') }}">
                                     @if ($errors->has('phone'))
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Portfolio Website</label>
-                                    <input type="portfolio_website" class="form-control" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Portfolio Website" minlength="3" maxlength="50"
                                         name="portfolio_website" value="{{ old('portfolio_website') }}">
                                     @if ($errors->has('portfolio_website'))
@@ -104,6 +104,73 @@
                                         </div>
                                     @endif
                                 </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Vimeo Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Vimeo Url" minlength="3" maxlength="50" name="vimeo_url"
+                                        value="{{ old('vimeo_url') }}">
+                                    @if ($errors->has('vimeo_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('vimeo_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Linkedin Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Linkedin Url" minlength="3" maxlength="50"
+                                        name="linkedin_url" value="{{ old('linkedin_url') }}">
+                                    @if ($errors->has('linkedin_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('linkedin_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Facebook Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Facebook Url" minlength="3" maxlength="50"
+                                        name="facebook_url" value="{{ old('facebook_url') }}">
+                                    @if ($errors->has('facebook_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('facebook_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Youtube Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Youtube Url" minlength="3" maxlength="50" name="youtube_url"
+                                        value="{{ old('youtube_url') }}">
+                                    @if ($errors->has('youtube_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('youtube_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Instagram Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Instagram Url" minlength="3" maxlength="50"
+                                        name="instagram_url" value="{{ old('instagram_url') }}">
+                                    @if ($errors->has('instagram_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('instagram_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Twitter Url</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Twitter Url" minlength="3" maxlength="50" name="twitter_url"
+                                        value="{{ old('twitter_url') }}">
+                                    @if ($errors->has('twitter_url'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('twitter_url') }}
+                                        </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-12 mb-3">
                                     <label for="descriptions">Bio</label>
                                     <textarea id="team-about" class="team-about" name="bio" minlength="3" maxlength="20000">{{ old('bio') }}</textarea>

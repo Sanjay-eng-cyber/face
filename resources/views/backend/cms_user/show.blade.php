@@ -16,8 +16,8 @@
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Cms User Details</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Cms
+                                            User Details</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -56,30 +56,72 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Phone No.</label><br>
-                                                <p class="label-title">{{ $cmsUser->phone }}</p>
+                                                <label for="degree3" class="cust-title" class="label-title">Phone
+                                                    No.</label><br>
+                                                <p class="label-title">{{ $cmsUser->phone ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Portfolio Website</label><br>
-                                                <p class="label-title">{{ $cmsUser->portfolio_website }}</p>
+                                                <label for="degree3" class="cust-title" class="label-title">Portfolio
+                                                    Website</label><br>
+                                                <p class="label-title">{{ $cmsUser->portfolio_website ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Custom Domain Name</label><br>
-                                                <p class="label-title">{{ $cmsUser->custom_domain_name }}</p>
+                                                <label for="degree3" class="cust-title" class="label-title">Custom Domain
+                                                    Name</label><br>
+                                                <p class="label-title">{{ $cmsUser->custom_domain_name ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Vimeo Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->vimeo_url ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Linkedin Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->linkedin_url ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Facebook Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->facebook_url ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Youtube Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->youtube_url ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Instagram Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->instagram_url ?? '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Twitter Url
+                                                </label><br>
+                                                <p class="label-title">{{ $cmsUser->twitter_url ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Bio</label><br>
-                                                <p class="label-title">{!! $cmsUser->bio !!}</p>
+                                                <p class="label-title">{!! $cmsUser->bio ?? '---' !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +156,8 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
+    </script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
