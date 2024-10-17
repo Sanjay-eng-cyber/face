@@ -35,6 +35,11 @@ return new class extends Migration
             $table->boolean('share_image')->nullable();
             $table->boolean('watermark')->nullable();
             $table->string('watermark_image')->nullable();
+            $table->enum('grid_spacing', ['small', 'regular', 'large'])->nullable();
+            $table->enum('grid_layout', ['vertical', 'horizontal'])->nullable();
+            $table->enum('thumbnails', ['small', 'regular', 'large'])->nullable();
+            $table->enum('preiview_theme_for_viewers', ['light mode', 'dark mode'])->nullable();
+
             $table->timestamps();
         });
     }
