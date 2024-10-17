@@ -388,7 +388,7 @@
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Password :</label><br>
                                     <input type="password" id="password" name="password" class="form-control"
-                                        value="{{ old('password') }}">
+                                        value="{{ old('password') }}" minlength="8" maxlength="16">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">
                                             {{ $errors->first('password') }}

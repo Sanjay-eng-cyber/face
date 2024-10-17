@@ -140,11 +140,11 @@ class EventController extends Controller
             'print_store' => 'nullable|in:1,0',
             'mobile_field' => 'nullable|in:1,0',
             'guest_upload' => 'nullable|in:1,0',
-            'password_protection' => 'required_with:password|in:1,0',
-            'password' => 'required_with:password_protection',
+            'password_protection' => 'nullable|in:1,0',
+            'password' => 'nullable|required_if:password_protection,1|string|min:8|max:16',
             'image_share' => 'nullable|in:1,0',
-            'watermark' => 'required_with:watermark_image|in:1,0',
-            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
+            'watermark' => 'nullable|required_with:watermark_image|in:1,0',
+            'watermark_image' => 'nullable|required_if:watermark,1|mimes:jpeg,png,jpg|max:512',
             'rounded_corner' => 'nullable|in:1,0',
             'grid_spacing' => 'nullable|in:small,regular,large',
             'grid_layout' => 'nullable|in:vertical,horizontal',
@@ -205,6 +205,7 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         // Validate the request data
+        // dd($request->password_protection);
         $request->validate([
             'name' => 'required|string|min:3|max:60',
             'start_date' => 'required|date',
@@ -221,11 +222,11 @@ class EventController extends Controller
             'print_store' => 'nullable|in:1,0',
             'mobile_field' => 'nullable|in:1,0',
             'guest_upload' => 'nullable|in:1,0',
-            'password_protection' => 'required_with:password|in:1,0',
-            'password' => 'required_with:password_protection',
+            'password_protection' => 'nullable|in:1,0',
+            'password' => 'nullable|required_if:password_protection,1|string|min:8|max:16',
             'image_share' => 'nullable|in:1,0',
-            'watermark' => 'required_with:watermark_image|in:1,0',
-            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
+            'watermark' => 'nullable|required_with:watermark_image|in:1,0',
+            'watermark_image' => 'nullable|required_if:watermark,1|mimes:jpeg,png,jpg|max:512',
             'rounded_corner' => 'nullable|in:1,0',
             'grid_spacing' => 'nullable|in:small,regular,large',
             'grid_layout' => 'nullable|in:vertical,horizontal',
