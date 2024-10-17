@@ -77,8 +77,8 @@
 
                                 <div class="col-md-6 col-6 mb-3">
                                     <label for="descriptions">Password :</label><br>
-                                    <input type="password" placeholder="Enter Password" id="password" name="password"
-                                        class="form-control" value="{{ old('password') }}">
+                                    <input type="password" class="form-control" placeholder="Enter Password" id="password"
+                                        name="password" class="form-control" value="{{ old('password') }}">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">
                                             {{ $errors->first('password') }}
@@ -259,6 +259,93 @@
                                     @if ($errors->has('image_share'))
                                         <div class="text-danger" role="alert">
                                             {{ $errors->first('image_share') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6 col-6 mb-3">
+                                    <label for="descriptions">Rounded Corners :</label><br>
+                                    <input type="radio" id="rounded_cornerYes" name="rounded_corner" value="1"
+                                        @if (old('rounded_corner')) {{ 'checked' }} @endif>
+                                    <label for="rounded_cornerYes">Yes</label>
+                                    <input type="radio" id="rounded_cornerNo" name="rounded_corner" value="0"
+                                        @if (old('rounded_corner')) {{ 'checked' }} @endif>
+                                    <label for="rounded_cornerNo">No</label>
+
+                                    @if ($errors->has('rounded_corner'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('rounded_corner') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6 col-6 mb-3">
+                                    <label for="descriptions">Grid Spacing :</label><br>
+                                    <select class="form-control" name="grid_spacing">
+                                        <option value="">Select Any</option>
+                                        <option value="small" {{ old('grid_spacing') == 'small' ? 'selected' : '' }}>
+                                            Small</option>
+                                        <option value="regular" {{ old('grid_spacing') == 'regular' ? 'selected' : '' }}>
+                                            Regular</option>
+                                        <option value="large" {{ old('grid_spacing') == 'large' ? 'selected' : '' }}>
+                                            Large</option>
+                                    </select>
+                                    @if ($errors->has('grid_spacing'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('grid_spacing') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6 col-6 mb-3">
+                                    <label for="descriptions">Grid Layout :</label><br>
+                                    <select class="form-control" name="grid_layout">
+                                        <option value="">Select Any</option>
+                                        <option value="vertical" {{ old('grid_layout') == 'vertical' ? 'selected' : '' }}>
+                                            Vertical</option>
+                                        <option value="horizontal"
+                                            {{ old('grid_layout') == 'horizontal' ? 'selected' : '' }}>
+                                            Horizontal</option>
+                                    </select>
+                                    @if ($errors->has('grid_layout'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('grid_layout') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6 col-6 mb-3">
+                                    <label for="descriptions">Thumbnails :</label><br>
+                                    <select class="form-control" name="thumbnails">
+                                        <option value="">Select Any</option>
+                                        <option value="small" {{ old('thumbnails') == 'small' ? 'selected' : '' }}>
+                                            Small</option>
+                                        <option value="regular" {{ old('thumbnails') == 'regular' ? 'selected' : '' }}>
+                                            Regular</option>
+                                        <option value="large" {{ old('thumbnails') == 'large' ? 'selected' : '' }}>
+                                            Large</option>
+                                    </select>
+                                    @if ($errors->has('thumbnails'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('thumbnails') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6 col-6 mb-3">
+                                    <label for="descriptions">Preiview Theme For Viewers :</label><br>
+                                    <select class="form-control" name="preview_theme_for_viewers">
+                                        <option value="">Select Any</option>
+                                        <option value="light mode"
+                                            {{ old('preview_theme_for_viewers') == 'light mode' ? 'selected' : '' }}>
+                                            Light Mode</option>
+                                        <option value="dark mode"
+                                            {{ old('preview_theme_for_viewers') == 'dark mode' ? 'selected' : '' }}>
+                                            Dark Mode</option>
+                                    </select>
+                                    @if ($errors->has('preview_theme_for_viewers'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('preview_theme_for_viewers') }}
                                         </div>
                                     @endif
                                 </div>

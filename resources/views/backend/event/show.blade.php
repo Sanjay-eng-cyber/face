@@ -239,6 +239,51 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Rounded
+                                                    Corners</label><br>
+                                                @if ($event->rounded_corner)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Grid
+                                                    Spacing</label><br>
+                                                <p class="label-title">
+                                                    {{ $event->grid_spacing ? ucwords($event->grid_spacing) : '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Grid
+                                                    Layout</label><br>
+                                                <p class="label-title">
+                                                    {{ $event->grid_layout ? ucwords($event->grid_layout) : '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Thumbnails</label><br>
+                                                <p class="label-title">
+                                                    {{ $event->thumbnails ? ucwords($event->thumbnails) : '---' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Preiview
+                                                    Theme For Viewers</label><br>
+                                                <p class="label-title">
+                                                    {{ $event->preview_theme_for_viewers ? ucwords($event->preview_theme_for_viewers) : '---' }}
+                                                </p>
+                                            </div>
+                                        </div>
+
                                         {{-- <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree2" class="label-title cust-title">Thumbnail
@@ -338,7 +383,8 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
+    </script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}

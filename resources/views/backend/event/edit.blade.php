@@ -24,14 +24,14 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-7 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-12 col-md-10">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.update', $event->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="250" required name="name"
@@ -41,7 +41,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="cover_image">
@@ -53,7 +53,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="watermark_image">
@@ -67,7 +67,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="start_date"
@@ -77,7 +77,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">End Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="end_date"
@@ -96,7 +96,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Download Size :</label><br>
                                     @if (old('download_size'))
                                         <input type="radio" id="original" name="download_size" value="original"
@@ -120,7 +120,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Sharing :</label><br>
                                     @if (old('sharing'))
                                         <input type="radio" id="sharingYes" name="sharing" value="1"
@@ -144,7 +144,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Visibility :</label><br>
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"
@@ -168,7 +168,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Single Image Download :</label><br>
                                     @if (old('single_image_download'))
                                         <input type="radio" id="single_image_downloadYes" name="single_image_download"
@@ -197,7 +197,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Bulk Image Download :</label><br>
 
                                     @if (old('bulk_image_download'))
@@ -227,7 +227,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Email Registration :</label><br>
 
                                     @if (old('bulk_image_download'))
@@ -253,7 +253,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Social Sharing Buttons :</label><br>
 
                                     @if (old('social_sharing_buttons'))
@@ -281,7 +281,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Print Store :</label><br>
 
                                     @if (old('print_store'))
@@ -307,7 +307,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Mobile Field :</label><br>
 
                                     @if (old('mobile_field'))
@@ -333,7 +333,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Guest Upload :</label><br>
 
                                     @if (old('guest_upload'))
@@ -359,7 +359,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Password Protection :</label><br>
 
                                     @if (old('password_protection'))
@@ -385,7 +385,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Password :</label><br>
                                     <input type="password" id="password" name="password" class="form-control"
                                         value="{{ old('password') }}">
@@ -396,7 +396,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Image Share :</label><br>
 
                                     @if (old('image_share'))
@@ -422,7 +422,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Watermark :</label><br>
 
                                     @if (old('watermark'))
@@ -448,47 +448,145 @@
                                     @endif
                                 </div>
 
-                                {{-- <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
-                                        <label for="degree2">Brand</label>
-                                        <select class="form-control" name="brand_id">
-                                            <option value="">Select Any Brand</option>
-                                            @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}"
-                                                    @if (old('brand_id') == $brand->id) {{ 'selected' }} @endif>
-                                                    {{ $brand->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('brand_id'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('brand_id') }}
-                                            </div>
-                                        @endif
-                                    </div> --}}
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Rounded Corners :</label><br>
+                                    @if (old('rounded_corner'))
+                                        <input type="radio" id="rounded_cornerYes" name="rounded_corner"
+                                            value="1" @if (old('rounded_corner')) {{ 'checked' }} @endif>
+                                        <label for="rounded_cornerYes">Yes</label>
+                                        <input type="radio" id="rounded_cornerNo" name="rounded_corner" value="0"
+                                            @if (old('rounded_corner')) {{ 'checked' }} @endif>
+                                        <label for="rounded_cornerNo">No</label>
+                                    @else
+                                        <input type="radio" id="rounded_cornerYes" name="rounded_corner"
+                                            value="1" @if ($event->rounded_corner == '1') {{ 'checked' }} @endif>
+                                        <label for="rounded_cornerYes">Yes</label>
+                                        <input type="radio" id="rounded_cornerNo" name="rounded_corner" value="0"
+                                            @if ($event->rounded_corner == '0') {{ 'checked' }} @endif>
+                                        <label for="rounded_cornerNo">No</label>
+                                    @endif
 
-                                {{-- <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
-                                        <label for="degree2">Thumbnail Image*</label>
-                                        <input class="form-control" name="thumbnail_image" type="file" id="image"
-                                            required>
-                                        @if ($errors->has('thumbnail_image'))
-                                            <div class="text-danger" role="alert">
-                                                {{ $errors->first('thumbnail_image') }}
-                                            </div>
-                                        @endif
-                                    </div> --}}
+                                    @if ($errors->has('rounded_corner'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('rounded_corner') }}
+                                        </div>
+                                    @endif
+                                </div>
 
-                                {{-- <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
-                                        <label for="degree2">Image*</label>
-                                        <input class="form-control" name="image[]" type="file" id="image" multiple
-                                            required />
-                                        @if ($errors->has('image'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('image') }}
-                                            </div>
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Grid Spacing :</label><br>
+                                    <select class="form-control" name="grid_spacing">
+                                        <option value="">Select Any</option>
+                                        @if (old('grid_spacing'))
+                                            <option value="small" {{ old('grid_spacing') == 'small' ? 'selected' : '' }}>
+                                                Small</option>
+                                            <option value="regular"
+                                                {{ old('grid_spacing') == 'regular' ? 'selected' : '' }}>
+                                                Regular</option>
+                                            <option value="large" {{ old('grid_spacing') == 'large' ? 'selected' : '' }}>
+                                                Large</option>
+                                        @else
+                                            <option value="small"
+                                                {{ $event->grid_spacing == 'small' ? 'selected' : '' }}>
+                                                Small</option>
+                                            <option value="regular"
+                                                {{ $event->grid_spacing == 'regular' ? 'selected' : '' }}>
+                                                Regular</option>
+                                            <option value="large"
+                                                {{ $event->grid_spacing == 'large' ? 'selected' : '' }}>
+                                                Large</option>
                                         @endif
-                                        @if ($errors->has('image.*'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('image.*') }}
-                                            </div>
-                                        @endif
-                                </div> --}}
+                                    </select>
+                                    @if ($errors->has('grid_spacing'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('grid_spacing') }}
+                                        </div>
+                                    @endif
+                                </div>
 
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Grid Layout :</label><br>
+                                    <select class="form-control" name="grid_layout">
+                                        <option value="">Select Any</option>
+                                        @if (old('grid_layout'))
+                                            <option value="vertical"
+                                                {{ old('grid_layout') == 'vertical' ? 'selected' : '' }}>
+                                                Vertical</option>
+                                            <option value="horizontal"
+                                                {{ old('grid_layout') == 'horizontal' ? 'selected' : '' }}>
+                                                Horizontal</option>
+                                        @else
+                                            <option value="vertical"
+                                                {{ $event->grid_layout == 'vertical' ? 'selected' : '' }}>
+                                                Vertical</option>
+                                            <option value="horizontal"
+                                                {{ $event->grid_layout == 'horizontal' ? 'selected' : '' }}>
+                                                Horizontal</option>
+                                        @endif
+                                    </select>
+                                    @if ($errors->has('grid_layout'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('grid_layout') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Thumbnails :</label><br>
+                                    <select class="form-control" name="thumbnails">
+                                        <option value="">Select Any</option>
+                                        @if (old('thumbnails'))
+                                            <option value="small" {{ old('thumbnails') == 'small' ? 'selected' : '' }}>
+                                                Small</option>
+                                            <option value="regular"
+                                                {{ old('thumbnails') == 'regular' ? 'selected' : '' }}>
+                                                Regular</option>
+                                            <option value="large" {{ old('thumbnails') == 'large' ? 'selected' : '' }}>
+                                                Large</option>
+                                        @else
+                                            <option value="small" {{ $event->thumbnails == 'small' ? 'selected' : '' }}>
+                                                Small</option>
+                                            <option value="regular"
+                                                {{ $event->thumbnails == 'regular' ? 'selected' : '' }}>
+                                                Regular</option>
+                                            <option value="large" {{ $event->thumbnails == 'large' ? 'selected' : '' }}>
+                                                Large</option>
+                                        @endif
+                                    </select>
+                                    @if ($errors->has('thumbnails'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('thumbnails') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Preiview Theme For Viewers :</label><br>
+                                    <select class="form-control" name="preview_theme_for_viewers">
+                                        <option value="">Select Any</option>
+                                        @if (old('preview_theme_for_viewers'))
+                                            <option value="light mode"
+                                                {{ old('preview_theme_for_viewers') == 'light mode' ? 'selected' : '' }}>
+                                                Light Mode</option>
+                                            <option value="dark mode"
+                                                {{ old('preview_theme_for_viewers') == 'dark mode' ? 'selected' : '' }}>
+                                                Dark Mode</option>
+                                        @else
+                                            <option value="light mode"
+                                                {{ $event->preview_theme_for_viewers == 'light mode' ? 'selected' : '' }}>
+                                                Light Mode</option>
+                                            <option value="dark mode"
+                                                {{ $event->preview_theme_for_viewers == 'dark mode' ? 'selected' : '' }}>
+                                                Dark Mode</option>
+                                        @endif
+                                    </select>
+                                    @if ($errors->has('preview_theme_for_viewers'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('preview_theme_for_viewers') }}
+                                        </div>
+                                    @endif
+
+                                </div>
                             </div>
                             <input type="submit" class="btn btn-primary">
                         </form>
@@ -502,7 +600,8 @@
 @section('js')
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
-    <link type="text/css" rel="stylesheet" href="{{ asset('custom/plugins/lightgallery/css/lightgallery.min.css') }}" />
+    <link type="text/css" rel="stylesheet"
+        href="{{ asset('custom/plugins/lightgallery/css/lightgallery.min.css') }}" />
     <script src="{{ asset('custom/plugins/lightgallery/js/lightgallery.min.js') }}"></script>
     <script src="{{ asset('custom/plugins/lightgallery/js/lg-zoom.js') }}"></script>
     {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">

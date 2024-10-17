@@ -38,8 +38,8 @@ return new class extends Migration
             $table->enum('grid_spacing', ['small', 'regular', 'large'])->nullable();
             $table->enum('grid_layout', ['vertical', 'horizontal'])->nullable();
             $table->enum('thumbnails', ['small', 'regular', 'large'])->nullable();
-            $table->enum('preiview_theme_for_viewers', ['light mode', 'dark mode'])->nullable();
-
+            $table->enum('preview_theme_for_viewers', ['light mode', 'dark mode'])->nullable();
+            $table->boolean('rounded_corner')->nullable();
             $table->timestamps();
         });
     }

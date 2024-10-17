@@ -141,10 +141,16 @@ class EventController extends Controller
             'mobile_field' => 'nullable|in:1,0',
             'guest_upload' => 'nullable|in:1,0',
             'password_protection' => 'required_with:password|in:1,0',
-            'password' => 'required_with:password_protection|string',
+            'password' => 'required_with:password_protection',
             'image_share' => 'nullable|in:1,0',
             'watermark' => 'required_with:watermark_image|in:1,0',
             'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
+            'rounded_corner' => 'nullable|in:1,0',
+            'grid_spacing' => 'nullable|in:small,regular,large',
+            'grid_layout' => 'nullable|in:vertical,horizontal',
+            'thumbnails' => 'nullable|in:small,regular,large',
+            'preview_theme_for_viewers' => 'nullable|in:light mode,dark mode',
+
 
         ]);
 
@@ -176,6 +182,12 @@ class EventController extends Controller
         $event->share_image = $request->image_share;
         $event->watermark = $request->watermark;
         $event->password = $request->password ? Hash::make($request->password) : null;
+        $event->rounded_corner = $request->rounded_corner;
+        $event->grid_spacing = $request->grid_spacing;
+        $event->grid_layout = $request->grid_layout;
+        $event->thumbnails = $request->thumbnails;
+        $event->preview_theme_for_viewers = $request->preview_theme_for_viewers;
+
 
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Added Successfully', 'success'));
@@ -214,6 +226,11 @@ class EventController extends Controller
             'image_share' => 'nullable|in:1,0',
             'watermark' => 'required_with:watermark_image|in:1,0',
             'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
+            'rounded_corner' => 'nullable|in:1,0',
+            'grid_spacing' => 'nullable|in:small,regular,large',
+            'grid_layout' => 'nullable|in:vertical,horizontal',
+            'thumbnails' => 'nullable|in:small,regular,large',
+            'preview_theme_for_viewers' => 'nullable|in:light mode,dark mode',
 
         ]);
 
@@ -260,6 +277,11 @@ class EventController extends Controller
         $event->share_image = $request->image_share;
         $event->watermark = $request->watermark;
         $event->password = $request->password ? Hash::make($request->password) : null;
+        $event->rounded_corner = $request->rounded_corner;
+        $event->grid_spacing = $request->grid_spacing;
+        $event->grid_layout = $request->grid_layout;
+        $event->thumbnails = $request->thumbnails;
+        $event->preview_theme_for_viewers = $request->preview_theme_for_viewers;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Update Successfully', 'success'));
         } else {
