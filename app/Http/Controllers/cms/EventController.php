@@ -90,23 +90,8 @@ class EventController extends Controller
             'name' => 'required|string|min:3|max:60',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
-            'sharing' => 'required|in:1,0',
-            'visibility' => 'required|in:1,0',
-            'single_image_download' => 'required|in:1,0',
-            'bulk_image_download' => 'required|in:1,0',
-            'download_size' => 'required|in:original,1600',
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
-            'email_registration' => 'nullable|in:1,0',
-            'social_sharing_buttons' => 'nullable|in:1,0',
-            'print_store' => 'nullable|in:1,0',
-            'mobile_field' => 'nullable|in:1,0',
-            'guest_upload' => 'nullable|in:1,0',
-            'password_protection' => 'required_with:password|in:1,0',
-            'password' => 'required_with:password_protection|string',
-            'image_share' => 'nullable|in:1,0',
-            'watermark' => 'required_with:watermark_image|in:1,0',
-            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
 
         ]);
 
@@ -122,15 +107,6 @@ class EventController extends Controller
             $event->cover_image = $filename;
         }
 
-        $watermark_image = request()->file('watermark_image');
-        if ($watermark_image) {
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $watermark_image->clientExtension();
-            $destinationPath = public_path("storage/images/events/watermark_image");
-            $image = $manager->read($watermark_image->getRealPath());
-            $image->save($destinationPath . '/' . $filename, 90);
-            $event->watermark_image = $filename;
-        }
-
         // Create a new Event instance
         $event->name = $request->name;
         $event->cms_user_id = auth()->user()->id;
@@ -138,6 +114,54 @@ class EventController extends Controller
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->descriptions = $request->descriptions;
+
+        if ($event->save()) {
+            return redirect()->route('backend.event.step-one-create', ['event_id' => $event->id])->with(toast('Event Added Successfully', 'success'));
+        } else {
+            return redirect()->back()->with(toast('Something Went Wrong', 'error'));
+        }
+    }
+
+    public function stepOneCreate($event_id)
+    {
+        $event = Event::findOrFail($event_id); // Find the event by ID
+        return view('backend.event.step-one-create', compact('event')); // Pass both event and event_id
+    }
+
+    public function StepOneStore(Request $request, $event_id)
+    {
+        $request->validate([
+            'sharing' => 'required|in:1,0',
+            'visibility' => 'required|in:1,0',
+            'single_image_download' => 'required|in:1,0',
+            'bulk_image_download' => 'required|in:1,0',
+            'email_registration' => 'nullable|in:1,0',
+            'social_sharing_buttons' => 'nullable|in:1,0',
+            'print_store' => 'nullable|in:1,0',
+            'mobile_field' => 'nullable|in:1,0',
+            'guest_upload' => 'nullable|in:1,0',
+            'password_protection' => 'required_with:password|in:1,0',
+            'password' => 'required_with:password_protection|string',
+            'image_share' => 'nullable|in:1,0',
+            'watermark' => 'required_with:watermark_image|in:1,0',
+            'watermark_image' => 'required_with:watermark|mimes:jpeg,png,jpg|max:512',
+
+        ]);
+
+        $event = Event::findOrFail($event_id);
+
+        $watermark_image = request()->file('watermark_image');
+        $manager = ImageManager::gd();
+        if ($watermark_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $watermark_image->clientExtension();
+            $destinationPath = public_path("storage/images/events/watermark_image/");
+            $image = $manager->read($watermark_image->getRealPath());
+            optional(Storage::disk('public')->delete('images/events/watermark_image/' . $event->watermark_image));
+            $image->save($destinationPath . '/' . $filename, 90);
+            $event->watermark_image = $filename;
+        }
+
+        // Create a new Event instance
         $event->download_size = $request->download_size;
         $event->sharing = $request->sharing;
         $event->visibility = $request->visibility;

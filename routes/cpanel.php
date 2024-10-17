@@ -57,6 +57,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
         // Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
 
+        Route::get('/event/step_one/create/{event_id}', [EventController::class, 'stepOneCreate'])->name('backend.event.step-one-create');
+        Route::post('/event/step_one/store/{event_id}', [EventController::class, 'stepOneStore'])->name('backend.event.step-one-store');
         // general setting page
         Route::get('/event/general-setting', [EventController::class, 'gsetting'])->name('backend.event.gsetting');
 
