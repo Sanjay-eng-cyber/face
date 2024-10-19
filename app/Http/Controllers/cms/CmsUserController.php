@@ -35,13 +35,55 @@ class CmsUserController extends Controller
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'nullable|digits:10|numeric',
-            'portfolio_website' => 'nullable|string|min:3|max:50',
-            'vimeo_url' => 'nullable|string|min:3|max:50',
-            'linkedin_url' => 'nullable|string|min:3|max:50',
-            'facebook_url' => 'nullable|string|min:3|max:50',
-            'youtube_url' => 'nullable|string|min:3|max:50',
-            'instagram_url' => 'nullable|string|min:3|max:50',
-            'twitter_url' => 'nullable|string|min:3|max:50',
+            'portfolio_website' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'vimeo_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'linkedin_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'facebook_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'youtube_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'instagram_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'twitter_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
 
         ]);
 
@@ -92,14 +134,56 @@ class CmsUserController extends Controller
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'nullable|digits:10|numeric',
-            'portfolio_website' => 'nullable|string|min:3|max:50',
-            'bio' => 'nullable|string|min:3|max:20000',
-            'vimeo_url' => 'nullable|string|min:3|max:50',
-            'linkedin_url' => 'nullable|string|min:3|max:50',
-            'facebook_url' => 'nullable|string|min:3|max:50',
-            'youtube_url' => 'nullable|string|min:3|max:50',
-            'instagram_url' => 'nullable|string|min:3|max:50',
-            'twitter_url' => 'nullable|string|min:3|max:50',
+            'portfolio_website' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'vimeo_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'linkedin_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'facebook_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'youtube_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'instagram_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+            'twitter_url' => [
+                'nullable',
+                'string',
+                'min:3',
+                'max:50',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+            ],
+
         ]);
 
         // Create a new Event instance

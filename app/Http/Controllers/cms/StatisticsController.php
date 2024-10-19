@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CmsUser;
 
 class StatisticsController extends Controller
 {
@@ -17,6 +18,7 @@ class StatisticsController extends Controller
         $totalUsers = User::count();
         $totalEvents = Event::count();
         $totalCategories = Category::count();
-        return view('backend.statistics.index', compact('totalUsers', 'totalEvents', 'totalCategories'));
+        $totalCmsUsers = CmsUser::count();
+        return view('backend.statistics.index', compact('totalUsers', 'totalEvents', 'totalCategories', 'totalCmsUsers'));
     }
 }

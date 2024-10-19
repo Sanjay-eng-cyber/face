@@ -44,7 +44,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Phone</label><br>
-                                                <p class="label-title">{{ $user->phone }}</p>
+                                                <p class="label-title">{{ $user->phone ? $user->phone : '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
