@@ -1,4 +1,46 @@
-<div class="position-relative isolation">
+<div style="position: relative;">
+    <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" srcset="" style="position: absolute;z-index:-1">
+
+    <div class="container" style="margin-top: 10px">
+        <nav class="navbar navbar-expand-lg text-white">
+            <div class="container-fluid" style="position: relative;">
+            <a class="navbar-brand fs-43px fw-500" href="#">
+                <span class="darkpink">LO</span><span class="text-white">GO</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Pricing</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Contact us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Blog</a>
+                </li>
+
+                </ul>
+            
+            </div>
+            </div>
+        </nav>
+    </div>
+
+</div>
+
+
+{{-- <div class="position-relative isolation">
     <img src="{{ asset('frontend/images/index/heromirro-ptn.svg') }}" alt="" srcset="" class="img-fluid heromirro-ptn">
 
     <div class="container-fluid position-relative" >
@@ -53,4 +95,4 @@
                 </div>
         </nav>
     </div>
-</div>
+</div> --}}
