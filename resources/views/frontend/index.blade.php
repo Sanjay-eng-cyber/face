@@ -3,6 +3,7 @@
 @section('content')
     <section>
         <div style="position: relative">
+                <img src="{{asset('frontend/images/index/index-new/full.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;bottom:0px">
                 <img src="{{asset('frontend/images/index/index-new/blurhero.svg')}}" alt="" class="img-fluid" srcset="" style="
                           position: absolute;
                             z-index: -1;
@@ -20,8 +21,11 @@
             <div class="container overflow-hide">
                 <div class="row d-flex align-items-center justify-content-center hero-mh" style="padding-top: 60px;padding-bottom:60px">
                     <div class="col-8 text-white position-relative">
-                        <img src="{{asset('frontend/images/index/index-new/insidearrow.svg')}}" alt="" srcset="" class="img-fluid">
-                        <div class="display-3 fw-600">Share Images </div>
+                        <div class="display-3 fw-600">
+                            Share Images
+                            <img src="{{asset('frontend/images/index/index-new/insidearrow.svg')}}" alt="" srcset="" class="img-fluid">
+
+                        </div>
                         <div class="display-3 fw-600" style="padding-top:10px">
                             <span>Using</span> <span class="dbcolor">Face</span> <span style="color: #FF3895;">Recognition</span>
                         </div>

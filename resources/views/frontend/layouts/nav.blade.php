@@ -1,5 +1,7 @@
 <div style="position: relative;">
     <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid" srcset="" style="position: absolute;z-index:-2">
+    <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid" srcset="" style="position: absolute;z-index:1;right:0px">
+
     <div class="container" style="position: relative;z-index:999;">
         <nav class="navbar navbar-expand-lg text-white">
             <div class="container-fluid" style="position: relative;">
