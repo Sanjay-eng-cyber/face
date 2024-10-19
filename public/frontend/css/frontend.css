@@ -1,10 +1,21 @@
 
 /* nav */
+:root{
+    --dbcolor:#4AEEFB;
+}
+
+.mnst-db{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .fs-43px{
     font-size: 43px;
 
 }
 
+.dbcolor{
+    color: var(--dbcolor);
+}
 .darkpink{
     color: #FF3895;
 }
