@@ -4,7 +4,18 @@
     <section>
         <div class="container overflow-hide">
             <div class="row d-flex align-items-center justify-content-center hero-mh">
-                <div class="col-12 col-lg-11 col-xxl-10">
+                <div class="col-8 text-white">
+                    <div class="display-3 fw-600">Share Images </div>
+                    <div class="display-3 fw-600">
+                        <span>Using</span><span class="dbcolor">Face</span><span style="color: #FF3895;">Recognition</span>
+                    </div>
+                    <div class="mnst-db" style="padding-top: 29px">Wow Your Clients And Get <span style="color: #FF3895">8X</span> More Visibility </div>
+
+                </div>
+                <div class="col-4">
+                    <img src="{{asset('frontend/images/index/index-new/new-robot-one.png')}}" alt="" srcset="">
+                </div>
+                {{-- <div class="col-12 col-lg-11 col-xxl-10">
                     <div class="row">
                         <div class="col-12  py-2 py-md-4 py-lg-5">
 
@@ -49,9 +60,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-
+{{-- 
             <div class="row position-relative share-text pb-lg-5 pb-3 pt-lg-3 pt-0">
                 <div class="col-12 pb-lg-5">
 
@@ -66,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="container">
