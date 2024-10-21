@@ -16,7 +16,8 @@
                                             ">
             <img src="{{asset('frontend/images/index/index-new/plainplate.svg')}}" alt="" srcset="" class="img-fluid" style="
             position: absolute;z-index:-2;bottom:50px;width:100%" >
-
+            <img src="{{asset('frontend/images/index/index-new/smalllarrow.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;
+            right: 0px;top:62%">
        
             <div class="container overflow-hide">
                 <div class="row d-flex align-items-center justify-content-center hero-mh" style="padding-top: 60px;padding-bottom:60px">
