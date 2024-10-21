@@ -44,7 +44,7 @@
                     <div class="row">
                         
                         <div class="col-12">
-                            <img src="{{asset('frontend/images/index/index-new/robot-withimg.svg')}}" alt="" srcset="" class="img-fluid">
+                            <img src="{{asset('frontend/images/index/index-new/robot-withimg.svg')}}" alt="" srcset="" class="img-fluid" style="margin-bottom:-40px">
 
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <div class="scn-sharemain">
                                 <div class="share-box">
                                     <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
-                                    <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
+
                                 </div>
 
                                 <h4 class="text-white kanit-thin fw-400">
@@ -81,7 +81,7 @@
                             <div class="scn-sharemain">
                                 <div class="share-box">
                                     <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
-                                    <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
+
                                 </div>
         
                                 <h4 class="text-white kanit-thin fw-400">
