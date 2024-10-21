@@ -25,6 +25,10 @@
     font-size: 20px;
 }
 
+.lpinkmc{
+    color:#FD59FF;;
+}
+
 .fw-900{
     font-weight: 900;
 }
@@ -113,7 +117,7 @@
 
 /* hOW kWIKPIC wORKS? */
 .kws-bg{
-    background-image:url('/frontend/images/index/index-new/new-union.png');
+    background-image:url('/frontend/images/index/index-new/nwunionimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
