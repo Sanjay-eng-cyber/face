@@ -2,17 +2,46 @@
 /* nav */
 :root{
     --dbcolor:#4AEEFB;
+   
 }
 
-.mnst-db{
-    font-family: 'Montserrat Alternates', sans-serif;
+.btn-login {
+    --bs-btn-color:#FFFFFF;
+    --bs-btn-bg: #FE3B96;
+    --bs-btn-border-color: #FE3B96;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #FE3B96;
+    --bs-btn-hover-border-color: #FE3B96;
+    --bs-btn-focus-shadow-rgb: 225, 83, 97;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #FE3B96;
+    --bs-btn-active-border-color: #FE3B96;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg:#FE3B96;
+    --bs-btn-disabled-border-color: #FE3B96;
+    width: 107px;
+    border-radius: 26px;
+    font-size: 20px;
 }
+
+.fw-900{
+    font-weight: 900;
+}
+
+
+/* .mnst-db{
+    font-family: 'Montserrat Alternates', sans-serif;
+} */
 
 .fs-43px{
     font-size: 43px;
 
 }
 
+.pt-10{
+    padding-top:10px
+}
 .dbcolor{
     color: var(--dbcolor);
 }
@@ -48,3 +77,52 @@
     font-size: 20px;
 }
 /*end nav */
+
+
+/* hero section */
+.full-img{
+    position: absolute;
+    bottom:0px;
+}
+.blurhero-img{
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 97%;
+    margin-top: -72px;
+}
+
+.plainplate-img{
+    position: absolute;
+    z-index:-2;
+    bottom:30px;
+    width:100%
+}
+.smalllarrow-img{
+    position: absolute;
+    right: 0px;
+    top:62%
+}
+
+.hero-main{
+    padding-top: 60px;
+    padding-bottom:60px;
+}
+
+/* hOW kWIKPIC wORKS? */
+.kws-bg{
+    background-image:url('/frontend/images/index/index-new/new-union.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* end hOW kWIKPIC wORKS? */
+
+@media screen and (max-width:1400px) {
+    
+
+}
+/*end hero section */

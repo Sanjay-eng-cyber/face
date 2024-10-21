@@ -5,8 +5,8 @@
     <div class="container" style="position: relative;z-index:999;">
         <nav class="navbar navbar-expand-lg text-white">
             <div class="container-fluid" style="position: relative;">
-            <a class="navbar-brand fs-43px fw-500" href="#" style="top: 6px">
-                <span class="darkpink">LO</span><span class="text-white">GO</span>
+            <a class="navbar-brand fs-43px fw-900" href="#" style="top: 3px">
+                <span class="text-white">Pic</span><span class=" darkpink">scan</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,17 +19,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Pricing</a>
-                    </li>
+                  
 
                     <li class="nav-item">
                         <a class="nav-link " href="#">Contact us</a>
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link " href="#">Pricing</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link " href="#">Blog</a>
                     </li>
+
+                    <a href="http://" class="btn btn-login  mb-0 fw-500"> 
+                        Log in
+                    </a>
                 </ul>
             
             </div>

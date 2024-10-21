@@ -3,105 +3,112 @@
 @section('content')
     <section>
         <div style="position: relative">
-                <img src="{{asset('frontend/images/index/index-new/full.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;bottom:0px">
-                <img src="{{asset('frontend/images/index/index-new/blurhero.svg')}}" alt="" class="img-fluid" srcset="" style="
-                          position: absolute;
-                            z-index: -1;
-                            backdrop-filter: blur(12px);
-                            left: 50%;
-                            transform: translate(-50%);
-                            width: 97%;
-                            margin-top: -72px;
-                                            
-                                            ">
-            <img src="{{asset('frontend/images/index/index-new/plainplate.svg')}}" alt="" srcset="" class="img-fluid" style="
-            position: absolute;z-index:-2;bottom:50px;width:100%" >
-            <img src="{{asset('frontend/images/index/index-new/smalllarrow.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;
-            right: 0px;top:62%">
-       
+         
+            <img src="{{asset('frontend/images/index/index-new/full.svg')}}" alt="Full hero image of the website's main section" class="img-fluid full-img">
+            <img src="{{asset('frontend/images/index/index-new/blurhero.svg')}}" alt="Blurred background hero image" class="img-fluid blurhero-img">
+            <img src="{{asset('frontend/images/index/index-new/plainplate.svg')}}" alt="Plain plate design element for the hero section" class="img-fluid plainplate-img">
+            <img src="{{asset('frontend/images/index/index-new/smalllarrow.svg')}}" alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
+            
             <div class="container overflow-hide">
-                <div class="row d-flex align-items-center justify-content-center hero-mh" style="padding-top: 60px;padding-bottom:60px">
-                    <div class="col-8 text-white position-relative">
-                        <div class="display-3 fw-600">
+                <div class="row d-flex align-items-center justify-content-center hero-mh hero-main" >
+                    <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative">
+                        <div class="display-4 display-xl-4 display-xxl-3 fw-500 share-img-text">
                             Share Images
-                            <img src="{{asset('frontend/images/index/index-new/insidearrow.svg')}}" alt="" srcset="" class="img-fluid">
+                            <img src="{{asset('frontend/images/index/index-new/rightarrow.svg')}}" alt="" srcset="" class="img-fluid">
 
                         </div>
-                        <div class="display-3 fw-600" style="padding-top:10px">
-                            <span>Using</span> <span class="dbcolor">Face</span> <span style="color: #FF3895;">Recognition</span>
+                        <div class="display-4 display-xl-4 display-xxl-3 fw-500">
+                            <span>Using</span> <span class="dbcolor">Face</span> <span class="darkpink">Recognition</span>
                         </div>
-                        <div class="mnst-db h4 mb-0" style="padding-top: 29px">Wow Your Clients And Get <span style="color: #FF3895">8X</span> More Visibility </div>
+                        <div class=" h4 mb-0" style="padding-top: 29px">Wow Your Clients And Get <span class="darkpink">8X</span> More Visibility </div>
 
                     </div>
-                    <div class="col-4">
-                        <img src="{{asset('frontend/images/index/index-new/new-robot-one.png')}}" alt="" srcset="">
+                    <div class="col-lg-4 col-xl-4 col-xxl-5">
+                        <img src="{{asset('frontend/images/index/index-new/new-robot-one.png')}}" alt="" srcset="" class="img-fluid" style="width: 474px">
                     </div>
-                    {{-- <div class="col-12 col-lg-11 col-xxl-10">
-                        <div class="row">
-                            <div class="col-12  py-2 py-md-4 py-lg-5">
-
-                                <div class=" py-5 position-relative isolation d-flex align-items-center justify-content-center">
-
-                                    <div
-                                        class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animation-lefttop tape-line">
-                                        Share Party Album With Friends
-                                    </div>
-
-                                    <div
-                                        class="fw-14 fw-500 animate__animated animate__fadeInLeft delayed-animationlefttbottom tape-line-eno">
-                                        Share Memories Of Friends
-                                    </div>
-
-                                    <div
-                                        class="fw-14 fw-500 animate__animated animate__fadeInRight delayed-animation-righttop tape-line-owt">
-                                        We Have Found Common Images With People
-                                    </div>
-
-                                    <div
-                                        class="animate__animated animate__fadeInRight delayed-animationrightbottom tape-line-eerht">
-                                        We Found 6 New Photos!
-                                    </div>
-
-
-                                    <div class="first-glow-main">
-                                        <img src="{{ asset('frontend/images/index/one.png') }}" alt=""
-                                            class="img-fluid first-glow">
-                                    </div>
-
-                                    <div class="grow-image-main">
-                                        <img src="{{ asset('frontend/images/index/new-banner-two.png') }}" alt=""
-                                            class="img-fluid grow-image-middle">
-                                    </div>
-
-
-                                    <div class="third-glow-main">
-                                        <img src="{{ asset('frontend/images/index/three.png') }}" alt=""
-                                            class="img-fluid third-glow">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
+                
                 </div>
-                    {{-- 
-                <div class="row position-relative share-text pb-lg-5 pb-3 pt-lg-3 pt-0">
-                    <div class="col-12 pb-lg-5">
-
-                        <div class="get-section align-items-center d-md-flex ">
-                            <div>
-                                <div class="h1 text-white text-lg-start text-center">
-                                    Share Images Using <span class="granny-lipgloss">Face Recognition</span>
-                                </div>
-                                <div class="h4 text-white text-lg-start text-center">
-                                    Wow your clients and get <span class="granny-lipgloss">8X</span> more visibility
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                  
             </div>
         </div>
 
+        <div class="kws-bg" style="">
+           
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div class="text-white" style="font-size: 36px">How Kwikpic <span style="color: #FF0C7D;">Works?</span></div>
+                            <div class="text-white h4">let your clients discover their images within seconds</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-12">
+                            <img src="{{asset('frontend/images/index/index-new/robot-withimg.svg')}}" alt="" srcset="" class="img-fluid">
+
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <div class="scn-sharemain">
+                                <div class="share-box">
+                                    <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
+        
+                                </div>
+        
+                                <h4 class="text-white kanit-thin fw-400">
+                                    Share event link with attendees via email, QR code or WhatsApp
+                                </h4>
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            
+                            <div class="scn-sharemain">
+                                <div class="share-box">
+                                    <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
+                                    <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
+                                </div>
+
+                                <h4 class="text-white kanit-thin fw-400">
+                                    Attendees go to the link and take a selfie
+                                </h4>
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="scn-sharemain">
+                                <div class="share-box">
+                                    <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
+                                    <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
+                                </div>
+        
+                                <h4 class="text-white kanit-thin fw-400">
+                                    Our AI recognizes attendees with 99% accuracy and show them all their images
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="scn-sharemain">
+                                <div class="share-box">
+                                    <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
+        
+                                </div>
+        
+                                <h4 class="text-white kanit-thin fw-400">
+                                    Images can be printed or downloaded right from mobile
+                                </h4>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            
+        </div>
+
+        
+{{-- 
         <div class="container">
             <div class="row gx-5">
                 <div class="col-12 col-lg-6 position-relative anim-bg mt-3">
@@ -168,7 +175,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
 
 
         <section class=" mb-md-4 pb-md-4">

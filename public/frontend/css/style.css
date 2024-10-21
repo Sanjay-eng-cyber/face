@@ -208,19 +208,19 @@ body {
 .kpik-subhead{
     padding-bottom: 36px
 }
-.scn-sharemain{
+/* .scn-sharemain{
     padding-bottom:30px;
     display: grid;
     grid-template-columns: 110px auto; 
     grid-gap: 20px;
     align-items: center;
-}
+} */
 
 .share-box{
-    max-width: 110px; 
+    width: 110px; 
     height: 110px;
     border: 1px solid #7C003E;
-    box-shadow: 0px 4px 4px 20px #000000CC;
+    /* box-shadow: 0px 4px 4px 20px #000000CC; */
     display: flex;  
     align-items: center;
     justify-content: center; 
