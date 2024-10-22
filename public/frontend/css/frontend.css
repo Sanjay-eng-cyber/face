@@ -217,6 +217,36 @@
     background-color: black;
     border-radius:32px
 }
+
+.accordion-body-mi{
+    position: absolute;
+    /* right: 0px; */
+    border-radius: 32px;
+    top: 50%;
+    right: 3%;
+    transform: translate(6%, -50%);
+    
+    background-image: url(/frontend/images/index/index-new/dropcardbg.svg);
+    background-repeat: no-repeat;
+    padding: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 692px;
+                                                                                
+}
+
+.accordion-body-mi::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    right: 6%;
+    transform: translate(6%, -50%);
+    background: radial-gradient(123.22% 190.53% at 6.81% -90.53%, rgba(74, 221, 253, 0.14) 0%, rgba(0, 0, 0, 0.14) 73.27%, rgba(70, 144, 213, 0.0756) 100%);
+    border-radius: 32px;
+}
 /* end hOW kWIKPIC wORKS? */
 
 @media screen and (max-width:1400px) {

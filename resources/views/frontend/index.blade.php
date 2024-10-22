@@ -280,25 +280,24 @@
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body" style="position: relative">
-
+                                        <div class="accordion-body " style="position: relative">
+                                           
                                             <img src="{{asset('frontend/images/index/index-new/dwimg.png')}}" alt="" srcset="" class="img-fluid" style="
                                                 width:59%;
                                                 height: 290px;
                                                 object-fit: cover;
                                                 border-radius: 112px;
                                                 ">
-                                        <img src="{{asset('frontend/images/index/index-new/dropcardbg.svg')}}" alt="" srcset="" class="img-fluid"
-                                        style="
-                                       position: absolute;
-                                        right: 0px;
-                                        border-radius: 32px;
-                                        top: 50%;
-                                        left: 71%;
-                                        transform: translate(-50%, -50%);
-                                        backdrop-filter: blur(26px);
-                                        "
-                                      >
+                                           
+                                                <div class="accordion-body-mi">
+                                                    <div class="h5 fw-500 text-white" style="position: relative;z-index:99">
+                                                        Let your clients discover their pictures 
+                                                        in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+                                                    </div>
+                                                </div>
+                                           
+                                        
+                                       
                                       
                                         </div>
 
