@@ -390,218 +390,134 @@
     </section>
 
 
-    <div class="slider-outer">
-        {{-- <div class=" d-none">
-                <a class="prev" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-                <a class="next" href="#"><img src="{{asset('frontend/images/index/left.png')}}" alt=""></a>
-            </div> --}}
-        {{-- <div class=" d-bock position-relative justify-content-space-between pt-5 index100 ">
-            <a class="prev-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
-                    alt=""></a>
-            <a class="next-mobile" href="#"><img src="{{ asset('frontend/images/index/left.png') }}"
-                    alt=""></a>
-        </div>
-        <div class="slider px-1">
-            <div class="slide">
-                <section class="slider-sec">
-                    <div class="container ">
-                        <div class="row ">
-                            <div class="bg-slider">
-                                <div class="img-group d-flex position-relative">
-                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
-                                        class="f-img">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
-                                        class="s-img">
-                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
-                                        class="t-img">
+ 
+    <div class="container">
+       
+            <div class="main_slide_main">
+                <div style="background: #040404;border-radius:60px;    min-height: 439px;padding-top:65px">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-9 ">
+                            <div class="slidetext text-white active text-center">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 1 Market smartly </span> at every step
                                 </div>
-                                <div class="textgroup">
-                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
-                                            class="text-white">At Every Step</span></h4>
-                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
-                                        reach just the right audience at fraction of a price compared to instagram
-                                        marketing.</p>
+                                <div class="h4 mb-0 ">
+                                    1 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-            <div class="slide">
-                <section class="slider-sec">
-                    <div class="container ">
-                        <div class="row ">
-                            <div class="bg-slider">
-                                <div class="img-group d-flex position-relative">
-                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
-                                        class="f-img">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
-                                        class="s-img">
-                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
-                                        class="t-img">
+                            <div class="slidetext text-white text-center ">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 2 Market smartly </span> at every step
                                 </div>
-                                <div class="textgroup">
-                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
-                                            class="text-white">At Every Step</span></h4>
-                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
-                                        reach just the right audience at fraction of a price compared to instagram
-                                        marketing.</p>
+                                <div class="h4 mb-0 ">
+                                    2 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-            <div class="slide">
-                <section class="slider-sec">
-                    <div class="container ">
-                        <div class="row ">
-                            <div class="bg-slider">
-                                <div class="img-group d-flex position-relative">
-                                    <img src="{{ asset('frontend/images/index/sl-3.png') }}" alt=""
-                                        class="f-img">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt=""
-                                        class="s-img">
-                                    <img src="{{ asset('frontend/images/index/sl-2.png') }}" alt=""
-                                        class="t-img">
+                            <div class="slidetext text-white text-center">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 3 Market smartly </span> at every step
                                 </div>
-                                <div class="textgroup">
-                                    <h4 class="text-pink text-center slider-title">Market Smartly <span
-                                            class="text-white">At Every Step</span></h4>
-                                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to
-                                        reach just the right audience at fraction of a price compared to instagram
-                                        marketing.</p>
+                                <div class="h4 mb-0 ">
+                                    3 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-        </div> --}}
-    </div>
-
-    <div class="container mt-md-2 mt-5 slider-mt">
-        <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12 mobile-align">
-                        <div class="rev_slider">
-                            <div class="rev_slide active">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
-                                        class="rev_slideimg">
+                            <div class="slidetext text-white text-center">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 4 Market smartly </span> at every step
+                                </div>
+                                <div class="h4 mb-0 ">
+                                    4 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
-                                        lass="rev_slideimg">
-
+                            <div class="slidetext text-white text-center">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 5 Market smartly </span> at every step
+                                </div>
+                                <div class="h4 mb-0 ">
+                                    5 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
-                                        lass="rev_slideimg">
-
+                            <div class="slidetext text-white text-center">
+                                <div class="h2 mb-0 main-topheading">
+                                    <span class="text-prime"> 6 Market smartly </span> at every step
                                 </div>
-                            </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
-                                        lass="rev_slideimg">
-
-                                </div>
-                            </div>
-
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
-                                        lass="rev_slideimg">
-
-                                </div>
-                            </div>
-                            <div class="rev_slide">
-                                <div class="test">
-                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
-                                        lass="rev_slideimg">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-12 text-container">
-                        <div class="main_slide_main">
-                            <div class="row d-flex align-items-center justify-content-center">
-                                <div class="col-9 pb-md-3 pb-sm-5">
-                                    <div class="slidetext text-white active text-center">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 1 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            1 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
-                                    <div class="slidetext text-white text-center ">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 2 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            2 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
-                                    <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 3 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            3 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
-                                    <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 4 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            4 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
-                                    <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 5 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            5 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
-                                    <div class="slidetext text-white text-center">
-                                        <div class="h2 mb-0 main-topheading">
-                                            <span class="text-prime"> 6 Market smartly </span> at every step
-                                        </div>
-                                        <div class="h4 mb-0 ">
-                                            6 Collect invaluable client data with their consent. Use it to reach just the
-                                            right audience at fraction of a price compared to instagram marketing.
-                                        </div>
-                                    </div>
+                                <div class="h4 mb-0 ">
+                                    6 Collect invaluable client data with their consent. Use it to reach just the
+                                    right audience at fraction of a price compared to instagram marketing.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+       
+
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="row">
+                        
+                    
+
+                        <div class="col-12 mobile-align">
+                            <div class="rev_slider">
+                                <div class="rev_slide active">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
+                                            class="rev_slideimg">
+                                    </div>
+                                </div>
+
+                                <div class="rev_slide">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
+                                            lass="rev_slideimg">
+
+                                    </div>
+                                </div>
+
+                                <div class="rev_slide">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
+                                            lass="rev_slideimg">
+
+                                    </div>
+                                </div>
+
+                                <div class="rev_slide">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
+                                            lass="rev_slideimg">
+
+                                    </div>
+                                </div>
+
+                                <div class="rev_slide">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
+                                            lass="rev_slideimg">
+
+                                    </div>
+                                </div>
+                                <div class="rev_slide">
+                                    <div class="test">
+                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
+                                            lass="rev_slideimg">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+       
     </div>
 
 
