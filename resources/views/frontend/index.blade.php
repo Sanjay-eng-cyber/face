@@ -216,7 +216,7 @@
         {{-- <section class=" mb-md-4 pb-md-4">
             <img src="{{ asset('frontend/images/index/kwik-bg.png') }}" alt="" class="kwik-bg">
         </section> --}}
-        <div class="container">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="text-white fw-500 sub">For Our Professionals</div>
@@ -253,7 +253,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="position-relative">
 
@@ -261,45 +261,52 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="fw-500 mb-0 text-center text-white py-5">Features you don’t want to miss</h2>
+                        <h2 class="fw-500 mb-0 text-white py-5"><span class="lpinkmc">Features</span> you don’t want to miss</h2>
                         <div class="custome-accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header " id="headingOne">
-                                        <button class="accordion-button display-4" type="button"
+                                        <button class="accordion-button h2 fw-600 d-flex justify-content-between" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
-                                            Blazing Fast AI Recognition
+                                            Intelligent Statistics
+
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                                
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
+                                        <div class="accordion-body" style="position: relative">
 
-                                            <div class="grid-acdn-body d-grid-custom">
-                                                <div class="text-white">
-                                                    Let your clients discover their pictures in a matter of seconds with our
-                                                    cutting edge AI. 99.4 % accurate, 100% awesome.
-                                                </div>
-                                                <div class="position-relative">
-                                                    <img src="{{ asset('frontend/images/index/blazingimg.png') }}"
-                                                        alt="" srcset="" class="img-fluid accordion-img">
-
-                                                    <div class="position-relative">
-                                                        <img src="{{ asset('frontend/images/index/robothand.svg') }}"
-                                                            alt="" srcset=""
-                                                            class="img-fluid robot accordion-img-robot">
-                                                    </div>
-
-                                                </div>
-                                            </div>
+                                            <img src="{{asset('frontend/images/index/index-new/dwimg.png')}}" alt="" srcset="" class="img-fluid" style="
+                                                width:59%;
+                                                height: 290px;
+                                                object-fit: cover;
+                                                border-radius: 112px;
+                                                ">
+                                        <img src="{{asset('frontend/images/index/index-new/dropcardbg.svg')}}" alt="" srcset="" class="img-fluid"
+                                        style="
+                                       position: absolute;
+                                        right: 0px;
+                                        border-radius: 32px;
+                                        top: 50%;
+                                        left: 71%;
+                                        transform: translate(-50%, -50%);
+                                        backdrop-filter: blur(26px);
+                                        "
+                                      >
+                                      
                                         </div>
 
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="accordion-item">
+                            {{-- <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -319,10 +326,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
                                         Custom Web App
@@ -709,7 +716,7 @@
             </div>
         </div>
     </section>
-
+{{-- 
     <section >
         <div class="container">
 
@@ -756,7 +763,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
