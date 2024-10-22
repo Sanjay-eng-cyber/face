@@ -108,21 +108,35 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <img src="{{asset('frontend/images/index/index-new/prsnimg.png')}}" alt="" srcset="" class="img-fluid">
-                </div>
-                <div class="col-6">
-                    <div class="text-white h2 fw-600">For Our <span class="lpinkmc">Professionals ?</span></div>
-                    <div class="text-white" style="font-size:36px;padding-top:50px;padding-bottom:50px">
-                        <span class="lpinkmc">Smartly</span> Deliver Photos to your Clients
-                    </div>
-                    <div class="text-white" style="font-size: 20px;padding-bottom:20px">
-                        Clicking photos is one half of the task. The second half is delivering them to your clients. 
-                    </div>
+            <div class="row" style="position: relative">
+                <img src="{{asset('frontend/images/index/index-new/lptbg.png')}}" alt="" srcset="" class="img-fluid lptbg-img">
+                <img src="{{asset('frontend/images/index/index-new/tg-one.png')}}" alt="" srcset="" class="img-fluid tg-one-img">
+                <img src="{{asset('frontend/images/index/index-new/tg-two.png')}}" alt="" srcset="" class="img-fluid tg-two-img">
+                <img src="{{asset('frontend/images/index/index-new/tg-three.png')}}" alt="" srcset="" class="img-fluid tg-three-img"> 
 
-                    <div class="text-white" style="font-size: 20px">                        
-                        Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock Kwikpic s best features to grow your brand and customer reach, choose from a range of gallery templates to best represent your style, get different download settings and much more!
+                <div class="col-4">
+                </div>
+                <div class="col-8 position-relative">
+                    <img src="{{asset('frontend/images/index/index-new/thanoshand.svg')}}" alt="" srcset="" class="img-fluid thanoshand-img" >
+
+                    <img src="{{asset('frontend/images/index/index-new/arrowtype.svg')}}" alt="" srcset="" class="img-fluid arrowtype-img">
+                    <div class="outer-tgbg" >
+                        <div class="outer-tgbg-black" >
+                            <div class="ofmainbg" >
+                                <div class="text-white h2 fw-600">For Our <span class="lpinkmc">Professionals ?</span></div>
+                                <div class="text-white smty-text" >
+                                    <span class="lpinkmc">Smartly</span> Deliver Photos to your Clients
+                                </div>
+                                <div class="text-white clcphotot" >
+                                    Clicking photos is one half of the task. The second half is delivering them to your clients. 
+                                </div>
+            
+                                <div class="text-white cmw-text" >                        
+                                    Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock Kwikpic s best features to grow your brand and customer reach, choose from a range of gallery templates to best represent your style, get different download settings and much more!
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,9 +213,9 @@
         </div>  --}}
 
 
-        <section class=" mb-md-4 pb-md-4">
+        {{-- <section class=" mb-md-4 pb-md-4">
             <img src="{{ asset('frontend/images/index/kwik-bg.png') }}" alt="" class="kwik-bg">
-        </section>
+        </section> --}}
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">

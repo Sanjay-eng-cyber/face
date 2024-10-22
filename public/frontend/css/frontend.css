@@ -147,6 +147,76 @@
 
 }
 
+.ofmainbg{
+    background-image:url('/frontend/images/index/index-new/ourf.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(35px);
+    border-radius:32px;
+    padding:63px 84px;
+}
+.smty-text{
+    font-size:36px;
+    padding-top:50px;
+    padding-bottom:50px
+}
+.cmw-text{
+    font-size: 20px
+}
+.clcphotot{
+    font-size: 20px;
+    padding-bottom:20px;
+}
+.lptbg-img{
+    position: absolute;
+    width: 389px;
+    z-index: 1;
+    bottom: 0px; 
+}
+.tg-one-img{
+    position: absolute;
+    width: 108px;
+    z-index: 1;
+    top: -25px;
+    left: 27px;
+}
+.tg-two-img{
+    position: absolute;
+    width: 177px;
+    z-index: 1;
+    top: 35px;
+    left: 79px;
+}
+.tg-three-img{
+    position: absolute;
+    width: 165px;
+    z-index: 1;
+    top: 21px;
+    left: 13rem;
+}
+.thanoshand-img{
+    position: absolute;
+    bottom: -7rem;
+    left: -19rem;
+    max-width: 440px;
+    
+}
+.arrowtype-img{
+    position: absolute;
+    z-index: 0;
+    right: -10px;
+    top: -6px;
+}
+.outer-tgbg{
+   background: linear-gradient(54.34deg, rgba(0, 0, 0, 0) 30.46%, #4AFFC8 95.28%);
+   padding:1.32px;
+   border-radius:32px 
+}
+.outer-tgbg-black{
+    background-color: black;
+    border-radius:32px
+}
 /* end hOW kWIKPIC wORKS? */
 
 @media screen and (max-width:1400px) {
