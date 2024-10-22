@@ -247,6 +247,15 @@
     background: radial-gradient(123.22% 190.53% at 6.81% -90.53%, rgba(74, 221, 253, 0.14) 0%, rgba(0, 0, 0, 0.14) 73.27%, rgba(70, 144, 213, 0.0756) 100%);
     border-radius: 32px;
 }
+
+.accordion-button{
+ padding-bottom: 50px !important;   
+}
+.accordion-body{
+    border-top: 1px solid #FD59FF;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 /* end hOW kWIKPIC wORKS? */
 
 @media screen and (max-width:1400px) {
