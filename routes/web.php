@@ -18,7 +18,11 @@ Route::domain(config('app.web_domain'))->group(function () {
     
     Route::get('/login', function () {
         return view('frontend.login');
-    })->name('index');
+    })->name('login');
+    
+    Route::get('/event-details', function () {
+        return view('frontend.event-details');
+    })->name('event-details');
 
     Route::get('/test-progress', function () {
         $event = (object) ['slug' => 'Test Event Slug'];
