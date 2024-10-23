@@ -340,6 +340,52 @@
 }
 /* end hOW kWIKPIC wORKS? */
 
+/* gallery */
+.dropzone{
+    background-color: transparent;
+    min-height: unset;
+    padding: 0px;
+}
+.upload-section {
+    background: linear-gradient(to bottom right, #0d1117, #1b1f24);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    border: 1.32px solid #3AB4B4;
+    padding: 64px 35px 35px 35px;
+    height:100%
+}
+.dropzone .dz-message{
+    margin: 0px;
+}
+.upload-section button {
+    color:#737678;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 22px;
+    border: 1px solid #B0ABAB;
+    width: 140px;
+    font-size: 14px;
+}
+.upload-section p {
+    margin: 15px 0 0;
+}
+#file-input {
+    display: none;
+}
+.dz-message {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+/* end gallery */
+
 @media screen and (max-width:1400px) {
     
 
