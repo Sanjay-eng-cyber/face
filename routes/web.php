@@ -15,6 +15,11 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
+    
+    Route::get('/login', function () {
+        return view('frontend.login');
+    })->name('index');
+
     Route::get('/test-progress', function () {
         $event = (object) ['slug' => 'Test Event Slug'];
         $category = (object) ['slug' => 'Test Category Slug'];

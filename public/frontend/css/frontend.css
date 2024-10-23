@@ -2,6 +2,11 @@
 /* nav */
 :root{
     --dbcolor:#4AEEFB;
+    --lightcolor:#D8DFDD;
+    --dblwhitecolor:#C6C8C3;
+    --tplwhitecolor:#AEADAC;
+    --ltdrkblue:#079B9C;
+    --frtwhitcolor:#74736E;
    
 }
 
@@ -24,7 +29,27 @@
     border-radius: 26px;
     font-size: 20px;
 }
+.withsignin{
+    width: 151px;
+    border-radius: 8px;
+}
 
+.frtwhitcolor{
+    color: var(--frtwhitcolor);
+}
+.ltdrkblue{
+    color: var(--ltdrkblue);
+}
+.lightcolor{
+    color: var(--lightcolor);
+}
+
+.tplwhitecolor{
+    color: var(--tplwhitecolor);
+}
+.dblwhitecolor{
+    color: var(--dblwhitecolor);
+}
 .lpinkmc{
     color:#FD59FF;;
 }
@@ -98,18 +123,52 @@
     margin-top: -72px;
 }
 
+.blurhero-img-login{
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 97%;
+    margin-top: -72px;
+    /* padding-bottom: 84px; */
+    min-height: 672px;
+}
+
+
 .plainplate-img{
     position: absolute;
     z-index:-2;
     bottom:30px;
     width:100%
 }
+.plainplate-img2{
+    position: absolute;
+    z-index:-2;
+    bottom:-40px;
+    width:100%
+}
+.login-form .form-control.sin-input{
+    background-color: #1A1A1A;
+    border: 0px;
+    color:#C6C8C3;
+
+}
+.login-form .form-control.sin-input:focus {
+    outline: none; /* This removes the focus outline */
+    box-shadow: none; /* This removes any shadow effect */
+}
 .smalllarrow-img{
     position: absolute;
     right: 0px;
     top:62%
 }
-
+.smalllarrow-img2{
+    position: absolute;
+    right: 13em;
+  
+    bottom: -2rem;
+}
 .hero-main{
     padding-top: 60px;
     padding-bottom:60px;
