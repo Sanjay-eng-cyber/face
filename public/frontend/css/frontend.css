@@ -30,6 +30,13 @@
     border-radius: 26px;
     font-size: 20px;
 }
+
+.btn.btn-login.btn-event{
+    font-size: 14px;
+    width:131px;
+    font-weight:500;
+}
+
 .withsignin{
     width: 151px;
     border-radius: 8px;
@@ -100,10 +107,26 @@
 }
 .navbar-brand{
     position: absolute;
+   
 }
 
 .navbar{
+    
     /* background-color: red; */
+}
+
+.custom-ctnrfluid{
+    background-image:url('/frontend/images/index/navbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(29px);
+    display: flex;
+    align-items: center;
+    min-height: 106px;
+    margin-top: 14px;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
 }
 
 .nav-item .nav-link{
@@ -194,6 +217,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.event-detailsbg-fouter{
+    background:linear-gradient(148.82deg, #045959 9.59%, rgba(123, 69, 139, 0) 59.44%);
+    padding:1px;
+    border-radius:45px;
+}
+.event-detailsbg-souter{
+    background: #040404;
+    border-radius:45px;
 }
 
 .event-detailsbg{
@@ -381,8 +414,27 @@
 }
 
 
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /* background: #ccc;
+    outline: 3px solid #000; */
+  }
 
+  .tpzigzag-img{
+    position: absolute;
+    z-index:-2;
+    top: -16px;
 
+  }
+
+  .halfarrowt-img{
+    position: absolute;
+    z-index:1;
+    right:0px;
+    top: -13px;
+  }
 
 /* end gallery */
 

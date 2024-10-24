@@ -1,46 +1,50 @@
 <div style="position: relative;">
-    <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid" srcset="" style="position: absolute;z-index:-2">
-    <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid" srcset="" style="position: absolute;z-index:1;right:0px">
+    <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" srcset="" >
+    <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
 
-    <div class="container" style="position: relative;z-index:999;">
-        <nav class="navbar navbar-expand-lg text-white">
-            <div class="container-fluid" style="position: relative;">
-            <a class="navbar-brand fs-43px fw-900" href="#" style="top: 3px">
-                <span class="text-white">Pic</span><span class=" darkpink">scan</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-top:20px">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                  
+    <div class="container-fluid" style="">
+        <div class="custom-ctnrfluid">
+            <div class="container" style="position: relative;z-index:999;">
+            <nav class="navbar navbar-expand-lg text-white" style="">
+                <div class="container-fluid" style="position: relative;">
+                <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
+                    <span class="text-white">Pic</span><span class=" darkpink">scan</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
+                    
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Contact us</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Contact us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Pricing</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Pricing</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Blog</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Blog</a>
+                        </li>
 
-                    <a href="http://" class="btn btn-login  mb-0 fw-500"> 
-                        Log in
-                    </a>
-                </ul>
-            
+                        <a href="http://" class="btn btn-login  mb-0 fw-500"> 
+                            Log in
+                        </a>
+                    </ul>
+                
+                </div>
+                </div>
+            </nav>
             </div>
-            </div>
-        </nav>
+        </div>
     </div>
 
 </div>
