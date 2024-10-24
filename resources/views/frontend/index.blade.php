@@ -3,136 +3,157 @@
 @section('content')
     <section>
         <div style="position: relative">
-         
-            <img src="{{asset('frontend/images/index/index-new/full.svg')}}" alt="Full hero image of the website's main section" class="img-fluid full-img">
-            <img src="{{asset('frontend/images/index/index-new/blurhero.svg')}}" alt="Blurred background hero image" class="img-fluid blurhero-img">
-            <img src="{{asset('frontend/images/index/index-new/plainplate.svg')}}" alt="Plain plate design element for the hero section" class="img-fluid plainplate-img">
-            <img src="{{asset('frontend/images/index/index-new/smalllarrow.svg')}}" alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
-            
+
+            <img src="{{ asset('frontend/images/index/index-new/full.svg') }}"
+                alt="Full hero image of the website's main section" class="img-fluid full-img">
+            <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
+                class="img-fluid blurhero-img">
+            <img src="{{ asset('frontend/images/index/index-new/plainplate.svg') }}"
+                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img">
+            <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
+                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
+
             <div class="container overflow-hide">
-                <div class="row d-flex align-items-center justify-content-center hero-mh hero-main" >
+                <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
                     <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative">
                         <div class="display-4 display-xl-4 display-xxl-3 fw-500 share-img-text">
                             Share Images
-                            <img src="{{asset('frontend/images/index/index-new/rightarrow.svg')}}" alt="" srcset="" class="img-fluid">
+                            <img src="{{ asset('frontend/images/index/index-new/rightarrow.svg') }}" alt=""
+                                srcset="" class="img-fluid">
 
                         </div>
                         <div class="display-4 display-xl-4 display-xxl-3 fw-500">
                             <span>Using</span> <span class="dbcolor">Face</span> <span class="darkpink">Recognition</span>
                         </div>
-                        <div class=" h4 mb-0" style="padding-top: 29px">Wow Your Clients And Get <span class="darkpink">8X</span> More Visibility </div>
+                        <div class=" h4 mb-0" style="padding-top: 29px">Wow Your Clients And Get <span
+                                class="darkpink">8X</span> More Visibility </div>
 
                     </div>
                     <div class="col-lg-4 col-xl-4 col-xxl-5">
-                        <img src="{{asset('frontend/images/index/index-new/new-robot-one.png')}}" alt="" srcset="" class="img-fluid" style="width: 474px">
+                        <img src="{{ asset('frontend/images/index/index-new/new-robot-one.png') }}" alt=""
+                            srcset="" class="img-fluid" style="width: 474px">
                     </div>
-                
+
                 </div>
-                  
+
             </div>
         </div>
 
         <div class="kws-bg" style="">
-           
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <div class="text-white" style="font-size: 36px">How Kwikpic <span style="color: #FF0C7D;">Works?</span></div>
-                            <div class="text-white h4">let your clients discover their images within seconds</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        
-                        <div class="col-12">
-                            <img src="{{asset('frontend/images/index/index-new/robot-withimg.svg')}}" alt="" srcset="" class="img-fluid" style="margin-bottom:-40px">
 
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-4">
-                        <div class="col">
-                            <div class="scn-sharemain">
-                                <div class="share-box">
-                                    <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
-        
-                                </div>
-        
-                                <h4 class="text-white kanit-thin fw-400">
-                                    Share event link with attendees via email, QR code or WhatsApp
-                                </h4>
-                            </div>
-
-                        </div>
-                        <div class="col">
-                            
-                            <div class="scn-sharemain">
-                                <div class="share-box">
-                                    <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
-
-                                </div>
-
-                                <h4 class="text-white kanit-thin fw-400">
-                                    Attendees go to the link and take a selfie
-                                </h4>
-                            </div>
-
-                        </div>
-                        <div class="col">
-                            <div class="scn-sharemain">
-                                <div class="share-box">
-                                    <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
-
-                                </div>
-        
-                                <h4 class="text-white kanit-thin fw-400">
-                                    Our AI recognizes attendees with 99% accuracy and show them all their images
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="scn-sharemain">
-                                <div class="share-box">
-                                    <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
-        
-                                </div>
-        
-                                <h4 class="text-white kanit-thin fw-400">
-                                    Images can be printed or downloaded right from mobile
-                                </h4>
-                            </div>
-                        </div>
-    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="text-white" style="font-size: 36px">How Kwikpic <span
+                                style="color: #FF0C7D;">Works?</span></div>
+                        <div class="text-white h4">let your clients discover their images within seconds</div>
                     </div>
                 </div>
-            
+                <div class="row">
+
+                    <div class="col-12">
+                        <img src="{{ asset('frontend/images/index/index-new/robot-withimg.svg') }}" alt=""
+                            srcset="" class="img-fluid" style="margin-bottom:-40px">
+
+                    </div>
+                </div>
+
+                <div class="row row-cols-4">
+                    <div class="col">
+                        <div class="scn-sharemain">
+                            <div class="share-box">
+                                <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
+
+                            </div>
+
+                            <h4 class="text-white kanit-thin fw-400">
+                                Share event link with attendees via email, QR code or WhatsApp
+                            </h4>
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="scn-sharemain">
+                            <div class="share-box">
+                                <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
+
+                            </div>
+
+                            <h4 class="text-white kanit-thin fw-400">
+                                Attendees go to the link and take a selfie
+                            </h4>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="scn-sharemain">
+                            <div class="share-box">
+                                <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
+
+                            </div>
+
+                            <h4 class="text-white kanit-thin fw-400">
+                                Our AI recognizes attendees with 99% accuracy and show them all their images
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="scn-sharemain">
+                            <div class="share-box">
+                                <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt=""
+                                    class="img-fluid">
+
+                            </div>
+
+                            <h4 class="text-white kanit-thin fw-400">
+                                Images can be printed or downloaded right from mobile
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
         <div class="container">
             <div class="row" style="position: relative">
-                <img src="{{asset('frontend/images/index/index-new/lptbg.png')}}" alt="" srcset="" class="img-fluid lptbg-img">
-                <img src="{{asset('frontend/images/index/index-new/tg-one.png')}}" alt="" srcset="" class="img-fluid tg-one-img">
-                <img src="{{asset('frontend/images/index/index-new/tg-two.png')}}" alt="" srcset="" class="img-fluid tg-two-img">
-                <img src="{{asset('frontend/images/index/index-new/tg-three.png')}}" alt="" srcset="" class="img-fluid tg-three-img"> 
+                <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
+                    class="img-fluid lptbg-img">
+                <img src="{{ asset('frontend/images/index/index-new/tg-one.png') }}" alt="" srcset=""
+                    class="img-fluid tg-one-img">
+                <img src="{{ asset('frontend/images/index/index-new/tg-two.png') }}" alt="" srcset=""
+                    class="img-fluid tg-two-img">
+                <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
+                    class="img-fluid tg-three-img">
 
                 <div class="col-4">
                 </div>
                 <div class="col-8 position-relative">
-                    <img src="{{asset('frontend/images/index/index-new/thanoshand.svg')}}" alt="" srcset="" class="img-fluid thanoshand-img" >
+                    <img src="{{ asset('frontend/images/index/index-new/thanoshand.svg') }}" alt=""
+                        srcset="" class="img-fluid thanoshand-img">
 
-                    <img src="{{asset('frontend/images/index/index-new/arrowtype.svg')}}" alt="" srcset="" class="img-fluid arrowtype-img">
-                    <div class="outer-tgbg" >
-                        <div class="outer-tgbg-black" >
-                            <div class="ofmainbg" >
-                                <div class="text-white h2 fw-600">For Our <span class="lpinkmc">Professionals ?</span></div>
-                                <div class="text-white smty-text" >
+                    <img src="{{ asset('frontend/images/index/index-new/arrowtype.svg') }}" alt=""
+                        srcset="" class="img-fluid arrowtype-img">
+                    <div class="outer-tgbg">
+                        <div class="outer-tgbg-black">
+                            <div class="ofmainbg">
+                                <div class="text-white h2 fw-600">For Our <span class="lpinkmc">Professionals ?</span>
+                                </div>
+                                <div class="text-white smty-text">
                                     <span class="lpinkmc">Smartly</span> Deliver Photos to your Clients
                                 </div>
-                                <div class="text-white clcphotot" >
-                                    Clicking photos is one half of the task. The second half is delivering them to your clients. 
+                                <div class="text-white clcphotot">
+                                    Clicking photos is one half of the task. The second half is delivering them to your
+                                    clients.
                                 </div>
-            
-                                <div class="text-white cmw-text" >                        
-                                    Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock Kwikpic s best features to grow your brand and customer reach, choose from a range of gallery templates to best represent your style, get different download settings and much more!
+
+                                <div class="text-white cmw-text">
+                                    Choose the modern way of delivering photos smartly using AI. With our paid plans, unlock
+                                    Kwikpic s best features to grow your brand and customer reach, choose from a range of
+                                    gallery templates to best represent your style, get different download settings and much
+                                    more!
                                 </div>
 
                             </div>
@@ -142,8 +163,8 @@
             </div>
         </div>
 
-        
-{{-- 
+
+        {{-- 
         <div class="container">
             <div class="row gx-5">
                 <div class="col-12 col-lg-6 position-relative anim-bg mt-3">
@@ -261,44 +282,51 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="fw-500 mb-0 text-white py-5"><span class="lpinkmc">Features</span> you don’t want to miss</h2>
+                        <h2 class="fw-500 mb-0 text-white py-5"><span class="lpinkmc">Features</span> you don’t want to
+                            miss</h2>
                         <div class="custome-accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header " id="headingOne">
-                                        <button class="accordion-button h2 fw-600 d-flex justify-content-between" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
+                                        <button class="accordion-button h2 fw-600 d-flex justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
                                             Intelligent Statistics
 
-                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
-                                                
+
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body " style="position: relative">
-                                           
-                                            <img src="{{asset('frontend/images/index/index-new/dwimg.png')}}" alt="" srcset="" class="img-fluid" style="
+
+                                            <img src="{{ asset('frontend/images/index/index-new/dwimg.png') }}"
+                                                alt="" srcset="" class="img-fluid"
+                                                style="
                                                 width:59%;
                                                 height: 290px;
                                                 object-fit: cover;
                                                 border-radius:70px;
                                                 ">
-                                           
-                                                <div class="accordion-body-mi">
-                                                    <div class="h5 fw-500 text-white" style="position: relative;z-index:99">
-                                                        Let your clients discover their pictures 
-                                                        in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
-                                                    </div>
+
+                                            <div class="accordion-body-mi">
+                                                <div class="h5 fw-500 text-white" style="position: relative;z-index:99">
+                                                    Let your clients discover their pictures
+                                                    in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100%
+                                                    awesome.
                                                 </div>
-                                           
-                                        
-                                       
-                                      
+                                            </div>
+
+
+
+
                                         </div>
 
                                     </div>
@@ -328,15 +356,18 @@
                             </div> --}}
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
+                                    <button class="accordion-button collapsed d-flex justify-content-between"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
                                         Custom Web App
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                            
+
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"
@@ -353,16 +384,19 @@
 
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed d-flex justify-content-between " type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
+                                    <button class="accordion-button collapsed d-flex justify-content-between "
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseFour">
                                         Safe, Secure & Private
 
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 24H41" stroke="white" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M28 38L42 24L28 10" stroke="white" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                            
+
                                     </button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
@@ -390,134 +424,134 @@
     </section>
 
 
- 
+
     <div class="container">
-       
-            <div class="main_slide_main">
-                <div style="background: #040404;border-radius:60px;    min-height: 439px;padding-top:65px">
-                    <div class="row d-flex align-items-center justify-content-center">
-                        <div class="col-9 ">
-                            <div class="slidetext text-white active text-center">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 1 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    1 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+
+        <div class="main_slide_main">
+            <div style="background: #040404;border-radius:60px;    min-height: 439px;padding-top:65px">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-9 ">
+                        <div class="slidetext text-white active text-center">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 1 Market smartly </span> at every step
                             </div>
-                            <div class="slidetext text-white text-center ">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 2 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    2 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+                            <div class="h4 mb-0 ">
+                                1 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
                             </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 3 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    3 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+                        </div>
+                        <div class="slidetext text-white text-center ">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 2 Market smartly </span> at every step
                             </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 4 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    4 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+                            <div class="h4 mb-0 ">
+                                2 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
                             </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 5 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    5 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+                        </div>
+                        <div class="slidetext text-white text-center">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 3 Market smartly </span> at every step
                             </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h2 mb-0 main-topheading">
-                                    <span class="text-prime"> 6 Market smartly </span> at every step
-                                </div>
-                                <div class="h4 mb-0 ">
-                                    6 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
+                            <div class="h4 mb-0 ">
+                                3 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
+                            </div>
+                        </div>
+                        <div class="slidetext text-white text-center">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 4 Market smartly </span> at every step
+                            </div>
+                            <div class="h4 mb-0 ">
+                                4 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
+                            </div>
+                        </div>
+                        <div class="slidetext text-white text-center">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 5 Market smartly </span> at every step
+                            </div>
+                            <div class="h4 mb-0 ">
+                                5 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
+                            </div>
+                        </div>
+                        <div class="slidetext text-white text-center">
+                            <div class="h2 mb-0 main-topheading">
+                                <span class="text-prime"> 6 Market smartly </span> at every step
+                            </div>
+                            <div class="h4 mb-0 ">
+                                6 Collect invaluable client data with their consent. Use it to reach just the
+                                right audience at fraction of a price compared to instagram marketing.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-       
+        </div>
 
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-12">
-                    <div class="row">
-                        
-                    
 
-                        <div class="col-12 mobile-align">
-                            <div class="rev_slider">
-                                <div class="rev_slide active">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
-                                            class="rev_slideimg">
-                                    </div>
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-12">
+                <div class="row">
+
+
+
+                    <div class="col-12 mobile-align">
+                        <div class="rev_slider">
+                            <div class="rev_slide active">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
+                                        class="rev_slideimg">
                                 </div>
-
-                                <div class="rev_slide">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
-                                            lass="rev_slideimg">
-
-                                    </div>
-                                </div>
-
-                                <div class="rev_slide">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
-                                            lass="rev_slideimg">
-
-                                    </div>
-                                </div>
-
-                                <div class="rev_slide">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
-                                            lass="rev_slideimg">
-
-                                    </div>
-                                </div>
-
-                                <div class="rev_slide">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
-                                            lass="rev_slideimg">
-
-                                    </div>
-                                </div>
-                                <div class="rev_slide">
-                                    <div class="test">
-                                        <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
-                                            lass="rev_slideimg">
-
-                                    </div>
-                                </div>
-
                             </div>
-                        </div>
 
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+                            <div class="rev_slide">
+                                <div class="test">
+                                    <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
+                                        lass="rev_slideimg">
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
-       
+        </div>
+
     </div>
 
 
@@ -642,7 +676,7 @@
             </div>
         </div>
     </section>
-{{-- 
+    {{-- 
     <section >
         <div class="container">
 
@@ -798,14 +832,11 @@
         }
 
 
-        $('.navbar-nav .nav-link').click(function(){
+        $('.navbar-nav .nav-link').click(function() {
             $('.navbar-nav .nav-link').removeClass('active');
             $(this).toggleClass('active');
 
-           });
-
-
-
+        });
     </script>
 
 
