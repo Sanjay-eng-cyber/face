@@ -33,6 +33,13 @@
     font-size: 20px;
 }
 
+.fs-30{
+    font-size: 30px;
+}
+.p-35{
+    padding: 35px;
+}
+
 .btn.btn-login.btn-event{
     font-size: 14px;
     width:131px;
@@ -150,6 +157,11 @@
     position: absolute;
     bottom:0px;
 }
+.loginfullimg{
+    position: absolute;
+    top:0px;
+    z-index:-1
+}
 .full-img3{
     position: absolute;
     top: 12em;
@@ -195,6 +207,9 @@
     z-index:-2;
     top: 34%;
     width:100%
+}
+.w-blg-100{
+    width:100%;
 }
 .login-form .form-control.sin-input{
     background-color: #1A1A1A;
@@ -548,6 +563,10 @@
 @media screen and (max-width:576px) {
     .w-sm-100{
         width:100%
+    }
+
+    .fs-20{
+        font-size: 20px;
     }
 }
 /*end hero section */
