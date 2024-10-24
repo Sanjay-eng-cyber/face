@@ -153,6 +153,7 @@
 .full-img3{
     position: absolute;
     top: 12em;
+    z-index:-1;
 }
 .blurhero-img{
     position: absolute;
@@ -192,7 +193,7 @@
 .plainplate-img3{
     position: absolute;
     z-index:-2;
-    top: 5em;
+    top: 34%;
     width:100%
 }
 .login-form .form-control.sin-input{
@@ -250,12 +251,18 @@
 
 .scan-face-box{
     border-radius:10px;
-    border: 1.9px dashed #3AB4B4;
+    border: 2px dashed #3AB4B4;
+    background-image:url('/frontend/images/gallery/scanneerbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     height:100%; 
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 30px;
 }
 
 .scan-face-box-insider{
@@ -282,14 +289,35 @@
 }
 
 .event-detailsbg{
-    background-image:url('/frontend/images/index/index-new/edbg.svg');
+    background-image:url('/frontend/images/gallery/gallerybg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     /* border: 1px solid red; */
-    padding: 23px 18px;
+    position: relative;
+    backdrop-filter: blur(53px);
+    padding: 61px 22px;
     border-radius: 45px;
 }
+
+.event-gallerybg{
+    background-image:url('/frontend/images/gallery/gallerybg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* border: 1px solid red; */
+    position: relative;
+    backdrop-filter: blur(53px);
+    padding: 61px 22px;
+    border-radius: 45px;
+}
+
+.bigarrow-img{
+    position: absolute;
+    right: 9em;
+    top: -4rem;
+}
+
 .scn-sharemain{
     background-image:url('/frontend/images/index/index-new/smallbox.svg');
     background-repeat: no-repeat;
@@ -396,7 +424,6 @@
     background-image: url(/frontend/images/index/index-new/dropcardbg.svg);
     background-repeat: no-repeat;
     padding: 60px;
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 692px;
@@ -432,7 +459,14 @@
     padding: 0px;
 }
 .upload-section {
-    background: linear-gradient(to bottom right, #0d1117, #1b1f24);
+    /* background: linear-gradient(to bottom right, #0d1117, #1b1f24); */
+
+    background-image: url(/frontend/images/gallery/brbg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -440,6 +474,8 @@
     padding: 64px 35px 35px 35px;
     height:100%
 }
+
+
 .dropzone .dz-message{
     margin: 0px;
 }
@@ -496,10 +532,22 @@
     padding:21px
   }
 
+  .smallarrow{
+    position: absolute;
+    right: 0px;
+    top: -3em;
+  }
+
 /* end gallery */
 
 @media screen and (max-width:1400px) {
     
 
+}
+
+@media screen and (max-width:576px) {
+    .w-sm-100{
+        width:100%
+    }
 }
 /*end hero section */

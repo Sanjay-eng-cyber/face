@@ -13,6 +13,7 @@
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main" >               
                     <div class="event-detailsbg-fouter">                        
                         <div class="event-detailsbg-souter">
+
                             <div class="event-detailsbg">
                                 <div class="row pb-5">
                                     <div class="col-4">
