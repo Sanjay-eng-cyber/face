@@ -8,6 +8,8 @@
     --ltdrkblue:#079B9C;
     --frtwhitcolor:#74736E;
     --dppink:#FE3B96;
+    --lwccolor:#D0D0D0;
+    --newwcolor:#B4B4B5;
    
 }
 
@@ -41,7 +43,12 @@
     width: 151px;
     border-radius: 8px;
 }
-
+.lwccolor{
+    color: var( --lwccolor);
+}
+.newwcolor{
+    color: var(--newwcolor);
+}
 .dppink{
     color:var(--dppink);
 }
@@ -79,6 +86,9 @@
 
 }
 
+.fs-10{
+    font-size: 10px;
+}
 .pt-10{
     padding-top:10px
 }
@@ -224,9 +234,51 @@
     padding:1px;
     border-radius:45px;
 }
+.gallery-outer{
+    background:linear-gradient(148.82deg, #045959 9.59%, rgba(123, 69, 139, 0) 59.44%);
+    padding:1px;
+    border-radius:45px;
+}
+.gallery-souter{
+    background: #040404;
+    border-radius:45px;
+}
 .event-detailsbg-souter{
     background: #040404;
     border-radius:45px;
+}
+
+.scan-face-box{
+    border-radius:10px;
+    border: 1.9px dashed #3AB4B4;
+    height:100%; 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scan-face-box-insider{
+    width:140px;
+    height:140px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color:#222E4B;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+                                                    
+}
+
+.scan-textbox{
+    margin-top:17px;
+    width: 140px;
+    background-color:white;
+    color:#434445;
+    padding:10px 15px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:22px
 }
 
 .event-detailsbg{
@@ -434,6 +486,14 @@
     z-index:1;
     right:0px;
     top: -13px;
+  }
+
+  .yr-phototext{
+    border: 1px solid #3AB4B4;
+    background-color:#0E0D0D;
+    border: 1px solid #3AB4B4;
+    color:white;
+    padding:21px
   }
 
 /* end gallery */

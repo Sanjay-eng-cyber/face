@@ -12,24 +12,20 @@
             <div class="container overflow-hide">
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main" >
                
-                    <div style="background:linear-gradient(148.82deg, #045959 9.59%, rgba(123, 69, 139, 0) 59.44%);padding:1px;border-radius:45px">
+                    <div class="gallery-outer" >
                         
-                        <div style="background: #040404;border-radius:45px">
+                        <div class="gallery-souter" >
                             <div class="event-detailsbg">
                                 <div class="row pb-5 d-flex justify-content-center">
                                      <div class="col-10">
                                         <div class="row">
                                             <div class="col-4">
                                                
-                                                <div style="border-radius:10px;border: 1.9px dashed #3AB4B4;height:100%; display:flex;flex-direction: column;align-items: center;justify-content: center;">
-                                                    <div style="width:140px;height:140px;box-shadow: 0px 4px 4px 0px #00000040;background-color:#222E4B;border-radius:50%;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    ">
+                                                <div class="scan-face-box">
+                                                    <div class="scan-face-box-insider" >
                                                         <img src="{{asset('frontend/images/gallery/faceimg.png')}}" alt="" srcset="">
                                                     </div>
-                                                    <div style="margin-top:17px;width: 140px;background-color:white;color:#434445;padding:10px 15px;font-size:14px;font-weight:600;border-radius:22px">
+                                                    <div class="scan-textbox" >
                                                         Scan Your Face
                                                     </div>
                                                 </div>
@@ -44,8 +40,8 @@
                                                         <div class="dz-message">
                                                             <button type="button" class="mb-3">Browse File</button>
                                                             <div>
-                                                               <div class="h5 mb-0" style="color:#D0D0D0;"> Choose a file or drag & drop it here.</div>
-                                                               <div style="font-size:10px;font-weight:600;color: #B4B4B5;">JPEG, PNG, PDF, and MP4 formats, up to 50 MB.</div>
+                                                               <div class="h5 mb-0 lwccolor"> Choose a file or drag & drop it here.</div>
+                                                               <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to 50 MB.</div>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -59,13 +55,13 @@
                                 
                                 <div class="row pt-3 pb-4">
                                     <div class="col-12">
-                                        <div style="border-radius:15px;font-size:24px;font-weight:600;text-align:center;border: 1px solid #3AB4B4;background-color:#0E0D0D;border: 1px solid #3AB4B4;color:white;padding:21px">
+                                        <div class="fw-600 h4 mb-0 rounded-4 text-center yr-phototext" >
                                             Your photos
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row row-cols-4">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                                     <div class="col pb-4">
                                         <div>
                                             <img src="{{asset('frontend/images/eventdetails/1.png')}}" alt="" srcset="" class="img-fluid rounded-3">
