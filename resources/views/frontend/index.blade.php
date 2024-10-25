@@ -1,9 +1,20 @@
 @extends('frontend.layouts.app')
 @section('title')
+@section('cdn')
+<style>
+    .halfarrowt-img{
+        display: none
+    }
+    .custom-ctnrfluid{
+        background:none;
+        backdrop-filter: blur(0px);
+    }
+</style>
+@endsection
 @section('content')
     <section>
         <div style="position: relative">
-
+            <img src="{{asset('frontend/images/index/index-new/hometarrow.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/full.svg') }}"
                 alt="Full hero image of the website's main section" class="img-fluid full-img">
             <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
