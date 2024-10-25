@@ -9,6 +9,7 @@
         background:none;
         backdrop-filter: blur(0px);
     }
+ 
 </style>
 @endsection
 @section('content')
@@ -17,8 +18,8 @@
             <img src="{{asset('frontend/images/index/index-new/hometarrow.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/full.svg') }}"
                 alt="Full hero image of the website's main section" class="img-fluid full-img">
-            <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-img">
+            {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
+                class="img-fluid blurhero-img"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"

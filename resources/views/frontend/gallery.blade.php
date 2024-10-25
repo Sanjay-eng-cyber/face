@@ -5,6 +5,9 @@
     .halfarrowt-img{
         display: none;
     }
+    .blurhero-img{
+        display: none;
+    }
 </style>
 @endsection
 @section('content')

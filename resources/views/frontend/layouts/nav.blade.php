@@ -1,7 +1,8 @@
 <div style="position: relative;">
     <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" srcset="" >
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
-
+    <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
+    class="img-fluid blurhero-img">
     <div class="container-fluid" style="z-index:99;position: relative;">
         <div class="custom-ctnrfluid">
             <div class="container" style="position: relative;z-index:999;">
