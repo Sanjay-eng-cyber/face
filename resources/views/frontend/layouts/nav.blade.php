@@ -22,7 +22,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About us</a>
                         </li>
-                    
+
 
                         <li class="nav-item">
                             <a class="nav-link " href="#">Contact us</a>
@@ -36,11 +36,11 @@
                             <a class="nav-link " href="#">Blog</a>
                         </li>
 
-                        <a href="http://" class="btn btn-login  mb-0 fw-500"> 
+                        <a href="{{route('frontend.login')}}" class="btn btn-login  mb-0 fw-500">
                             Log in
                         </a>
                     </ul>
-                
+
                 </div>
                 </div>
             </nav>
