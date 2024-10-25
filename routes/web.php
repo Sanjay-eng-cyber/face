@@ -40,7 +40,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
         Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
 
-        Route::get('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name("frotend.logout");
+        Route::get('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name("frontend.logout");
         // Route::get('/about-us', function () {
         //     return view('frontend.about-us');
         // })->name('about-us');

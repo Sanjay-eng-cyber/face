@@ -35,10 +35,17 @@
                         <li class="nav-item">
                             <a class="nav-link " href="#">Blog</a>
                         </li>
-
+                        @guest
                         <a href="{{route('frontend.login')}}" class="btn btn-login  mb-0 fw-500">
                             Log in
                         </a>
+                        @endguest
+
+                        @auth
+                        <a href="{{route('frontend.logout')}}" class="btn btn-login  mb-0 fw-500">
+                            LogOut
+                        </a>
+                        @endauth
                     </ul>
 
                 </div>
