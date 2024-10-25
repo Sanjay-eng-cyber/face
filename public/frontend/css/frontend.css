@@ -159,6 +159,10 @@
     right: 0px;
     top: -7em;
 }
+
+.hkmt-text{
+    font-size: 36px
+}
 /*end nav */
 
 
@@ -257,12 +261,12 @@
 }
 
 /* hOW kWIKPIC wORKS? */
-.kws-bg{
+/* .kws-bg{
     background-image:url('/frontend/images/index/index-new/nwunionimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+} */
 
 .event-detailsbg-fouter{
     background:linear-gradient(148.82deg, #045959 9.59%, rgba(123, 69, 139, 0) 59.44%);
@@ -484,6 +488,10 @@
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.custopmainpad{
+    padding-top:55px;    
+    padding-bottom: 90px;
+}
 /* end hOW kWIKPIC wORKS? */
 
 /* gallery */
@@ -588,12 +596,24 @@
 
 }
 @media screen and (max-width:1200px) {
+    .custopmainpad {
+        padding-top: 44px;
+    }
+    
+    
     .navbar-nav {
         gap: 24px;
     }
    
 }
 @media screen and (max-width:992px) {
+    .custopmainpad {
+        padding-top:34px;
+    }
+    
+    .hkmt-text{
+        font-size: 30px
+    }
     .pall0{
         padding: 0px;
     }
@@ -635,6 +655,9 @@
     }
 }
 @media screen and (max-width:768px) {
+    .hkmt-text {
+        font-size: 24px;
+    }
     .nav-item .nav-link{
         font-size:16px;
     }
