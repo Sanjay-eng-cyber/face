@@ -140,9 +140,9 @@
                 <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
                     class="img-fluid tg-three-img">
 
-                <div class="col-4">
+                <div class="col-5 col-xxl-4">
                 </div>
-                <div class="col-8 position-relative">
+                <div class="col-7 col-xxl-7 position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/thanoshand.svg') }}" alt=""
                         srcset="" class="img-fluid thanoshand-img">
 

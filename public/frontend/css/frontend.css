@@ -404,7 +404,7 @@
 .lptbg-img{
     position: absolute;
     width: 389px;
-    z-index: 1;
+    z-index: 0;
     bottom: 0px; 
 }
 .tg-one-img{
@@ -430,10 +430,10 @@
 }
 .thanoshand-img{
     position: absolute;
-    bottom: -7rem;
-    left: -19rem;
+    bottom: -2rem;
+    left: -17rem;
     max-width: 440px;
-    
+   
 }
 .arrowtype-img{
     position: absolute;
@@ -583,6 +583,13 @@
 /* end gallery */
 
 @media screen and (max-width:1400px) {
+    .thanoshand-img{
+        left: -19rem;
+    }
+    .smty-text{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
     .navbar-nav-blw1400{
         display: flex;
     justify-content: flex-end;
