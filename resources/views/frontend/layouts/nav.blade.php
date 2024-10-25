@@ -3,11 +3,11 @@
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
     <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
     class="img-fluid blurhero-img">
-    <div class="container-fluid" style="z-index:99;position: relative;">
+    <div class="container-fluid " style="z-index:99;position: relative;">
         <div class="custom-ctnrfluid">
-            <div class="container" style="position: relative;z-index:999;">
+            <div class="container pall0" style="position: relative;z-index:999;">
             <nav class="navbar navbar-expand-lg text-white" style="">
-                <div class="container-fluid insidenavcont" style="position: relative;">
+                <div class="container-fluid insidenavcont pall0" style="position: relative;">
                 <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
                     <span class="text-white">Pic</span><span class=" darkpink">scan</span>
                 </a>
@@ -15,7 +15,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0" >
+                    <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0 pt-20px" >
                         <li class="nav-item home-left">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
