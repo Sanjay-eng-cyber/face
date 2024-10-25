@@ -51,14 +51,14 @@
             </div>
         </div>
 
-        <div class="kws-bg" style="">
-
-            <div class="container">
+        <div class="kws-bg" style="position: relative">
+            <img src="{{asset('frontend/images/index/index-new/nwunionimg.png')}}" alt="" srcset="" class="img-fluid w-100" style="position: absolute;z-index: -1;">
+            <div class="container custopmainpad">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <div class="text-white" style="font-size: 36px">How Kwikpic <span
+                        <div class="text-white hkmt-text" >How Kwikpic <span
                                 style="color: #FF0C7D;">Works?</span></div>
-                        <div class="text-white h4">let your clients discover their images within seconds</div>
+                        <div class="text-white h4 fw-400 pt-4">let your clients discover their images within seconds</div>
                     </div>
                 </div>
                 <div class="row">
@@ -129,7 +129,7 @@
 
         </div>
 
-        <div class="container">
+        <div class="container" style="padding-bottom:80px">
             <div class="row" style="position: relative">
                 <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
                     class="img-fluid lptbg-img">
