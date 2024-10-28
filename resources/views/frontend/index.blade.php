@@ -599,9 +599,9 @@
         </div>
     </section> --}}
 
-    <section class="mb-xl-5 position-relative pb-xl-5 uppersection">
+    <div class="position-relative " style="isolation: isolate;overflow:hidden">
 
-
+        <img src="{{asset('frontend/images/index/index-new/pricebgimg.png')}}" alt="" srcset="" class="img-fluid w-100" style="position: absolute;z-index: -1;">
 
         <div class="container pt-5 mt-xl-5">
 
@@ -698,7 +698,7 @@
 
             </div>
         </div>
-    </section>
+    </div>
     {{-- 
     <section >
         <div class="container">
