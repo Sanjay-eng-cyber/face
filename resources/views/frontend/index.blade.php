@@ -448,55 +448,55 @@
                             <div class="row d-flex align-items-center justify-content-center">
                                 <div class="col-9 ">
                                         <div class="slidetext text-white active text-center">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 1 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300" >
+                                                <span class="text-prime fw-600"> 1 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500">
                                                 1 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
                                         </div>
                                         <div class="slidetext text-white text-center ">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 2 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300">
+                                                <span class="text-prime fw-600"> 2 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500 ">
                                                 2 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
                                         </div>
                                         <div class="slidetext text-white text-center">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 3 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300">
+                                                <span class="text-prime fw-600"> 3 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500">
                                                 3 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
                                         </div>
                                         <div class="slidetext text-white text-center">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 4 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300">
+                                                <span class="text-prime fw-600"> 4 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500">
                                                 4 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
                                         </div>
                                         <div class="slidetext text-white text-center">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 5 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300">
+                                                <span class="text-prime fw-600"> 5 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500">
                                                 5 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
                                         </div>
                                         <div class="slidetext text-white text-center">
-                                            <div class="h2 mb-0 main-topheading">
-                                                <span class="text-prime"> 6 Market smartly </span> at every step
+                                            <div class="h1 mb-0 main-topheading fw-300">
+                                                <span class="text-prime fw-600"> 6 Market smartly </span> at every step
                                             </div>
-                                            <div class="h4 mb-0 ">
+                                            <div class="h5 mb-0 fw-500">
                                                 6 Collect invaluable client data with their consent. Use it to reach just the
                                                 right audience at fraction of a price compared to instagram marketing.
                                             </div>
@@ -1019,8 +1019,8 @@
             focusOnSelect: true,
             // prevArrow: '<button> prev</button>',
             // nextArrow: '<button> next</button>',
-            prevArrow: '<a href="#" class="pre-arrow"><img src="frontend/images/index/left.png"></a> ',
-            nextArrow: '<a href="#" class="next-arrow"><img src="frontend/images/index/left.png" class="r-arrow"> </a> ',
+            prevArrow: '<a href="#" class="pre-arrow"><div class="pre-arrow-insider"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.95406 12.7959L9.70406 19.5459C9.91541 19.7572 10.2021 19.8759 10.5009 19.8759C10.7998 19.8759 11.0865 19.7572 11.2978 19.5459C11.5092 19.3345 11.6279 19.0479 11.6279 18.749C11.6279 18.4501 11.5092 18.1635 11.2978 17.9521L6.46875 13.1249H20.25C20.5484 13.1249 20.8345 13.0064 21.0455 12.7954C21.2565 12.5844 21.375 12.2983 21.375 11.9999C21.375 11.7016 21.2565 11.4154 21.0455 11.2044C20.8345 10.9934 20.5484 10.8749 20.25 10.8749H6.46875L11.2959 6.04492C11.5073 5.83358 11.626 5.54693 11.626 5.24804C11.626 4.94916 11.5073 4.66251 11.2959 4.45117C11.0846 4.23983 10.7979 4.12109 10.4991 4.12109C10.2002 4.12109 9.91353 4.23983 9.70219 4.45117L2.95219 11.2012C2.84729 11.3058 2.7641 11.4302 2.7074 11.5671C2.65069 11.704 2.62159 11.8507 2.62177 11.9989C2.62194 12.1471 2.65139 12.2938 2.70841 12.4305C2.76544 12.5673 2.84892 12.6914 2.95406 12.7959Z" fill=""/></svg></div></a> ',
+            nextArrow: '<a href="#" class="next-arrow"><div class="next-arrow-insider"><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.0459 8.79586L12.2959 15.5459C12.0846 15.7572 11.7979 15.8759 11.4991 15.8759C11.2002 15.8759 10.9135 15.7572 10.7022 15.5459C10.4908 15.3345 10.3721 15.0479 10.3721 14.749C10.3721 14.4501 10.4908 14.1635 10.7022 13.9521L15.5312 9.12492H1.75C1.45163 9.12492 1.16548 9.00639 0.954505 8.79541C0.743526 8.58444 0.625 8.29829 0.625 7.99992C0.625 7.70155 0.743526 7.4154 0.954505 7.20442C1.16548 6.99345 1.45163 6.87492 1.75 6.87492H15.5312L10.7041 2.04492C10.4927 1.83358 10.374 1.54693 10.374 1.24804C10.374 0.949159 10.4927 0.662514 10.7041 0.45117C10.9154 0.239826 11.2021 0.121094 11.5009 0.121094C11.7998 0.121094 12.0865 0.239826 12.2978 0.45117L19.0478 7.20117C19.1527 7.30583 19.2359 7.43018 19.2926 7.56707C19.3493 7.70397 19.3784 7.85073 19.3782 7.9989C19.3781 8.14708 19.3486 8.29377 19.2916 8.43053C19.2346 8.5673 19.1511 8.69145 19.0459 8.79586Z" fill=""/></svg></div> </a> ',
             infinite: true,
             centerMode: true,
             slidesToShow: 1,
