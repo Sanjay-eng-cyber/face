@@ -673,6 +673,17 @@
   } */
 /* end gallery */
 
+.footer-insider{
+    background-image: url(/frontend/images/index/index-new/fbgimg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 60px;
+    position: relative;
+    backdrop-filter: blur(38px);
+    padding: 39px;
+}
+
 @media screen and (max-width:1400px) {
     .thanoshand-img{
         left: -19rem;
