@@ -23,6 +23,12 @@ class NewPasswordController extends Controller
         return view('backend.reset-password', ['request' => $request]);
     }
 
+    public function frontendCreate(Request $request): View
+    {
+        // return view('auth.reset-password', ['request' => $request]);
+        return view('frontend.reset-password', ['request' => $request]);
+    }
+
     /**
      * Handle an incoming new password request.
      *
@@ -50,12 +56,12 @@ class NewPasswordController extends Controller
                 event(new PasswordReset($user));
             }
         );
-
         // If the password was successfully reset, we will redirect the user back to
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
+        $redirectRoute = auth()->guard('admin')->check() ? 'cms.login' : 'frontend.login';
         return $status == $this->broker()::PASSWORD_RESET
-            ? redirect()->route('cms.login')->with('status', __($status))
+            ? redirect()->route($redirectRoute)->with('status', __($status))
             : back()->withInput($request->only('email'))
                 ->withErrors(['email' => __($status)]);
     }

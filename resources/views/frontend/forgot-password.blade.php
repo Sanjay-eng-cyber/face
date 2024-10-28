@@ -24,28 +24,36 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div>
-                            <form action="{{ route('frontend.login.submit') }}" method="post" class="login-form">
+                            <form action="{{ route('frontend.password.email') }}" method="post" class="login-form">
                                 @csrf
-                                <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Sign In</div>
-                                <div class="d-flex  align-items-center gap-2 pb-4">
+                                <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Reset Password</div>
+                                {{-- <div class="d-flex  align-items-center gap-2 pb-4">
                                     <div class="tplwhitecolor fw-600">New here?</div>
                                     <a href="#" class="ltdrkblue fw-600 text-decoration-none">Create An Account</a>
-                                </div>
+                                </div> --}}
                                 <div class="pb-3">
                                     <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
                                     <input type="email" name="email" minlength="8" maxlength="30" required
                                         class="form-control sin-input">
                                 </div>
+                                @if ($errors->has('email'))
+                                    <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
+                                @endif
+                                @if (session('status'))
+                                    <div class="text-success">
+                                        <li> {{ session('status') }} </li>
+                                    </div>
+                                @endif
                                 {{-- @if ($errors->has('email'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
                                     </div>
                                 @endif --}}
-                                <div class="pb-2">
+                                {{-- <div class="pb-2">
                                     <label for="password" class="fw-600 frtwhitcolor pb-2">Password*</label>
                                     <input type="password" name="password" minlength="8" maxlength="16" required
                                         class="form-control sin-input">
 
-                                </div>
+                                </div> --}}
                                 {{-- @if ($errors->has('password'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('password') }}
                                     </div>
@@ -60,20 +68,19 @@
                                         <li> {{ session('status') }} </li>
                                     </div>
                                 @endif --}}
-                                <div class="d-flex  justify-content-end">
-                                    <a href="{{ route('frontend.forgotPassword.index') }}"
-                                        class="text-white fw-600 text-decoration-none">Forgot Password</a>
-                                </div>
+                                {{-- <div class="d-flex  justify-content-end">
+                                    <a href="#" class="text-white fw-600 text-decoration-none">Forgot Password</a>
+                                </div> --}}
                                 <div>
                                     {{-- <a href="http://" class="btn btn-login withsignin" style="font-size: 20px">
                                         Sign In
                                     </a> --}}
                                     <button type="submit" class="btn btn-login withsignin" style="font-size: 20px">
-                                        Sign In
+                                        Submit
                                     </button>
                                 </div>
 
-                                <a href="#" class="d-flex align-items-center text-decoration-none"
+                                {{-- <a href="#" class="d-flex align-items-center text-decoration-none"
                                     style="gap: 13px;padding-top:12px">
                                     <img src="{{ asset('frontend/images/index/index-new/swg.svg') }}" alt=""
                                         srcset="">
@@ -81,7 +88,7 @@
                                     <div class="text-white" style="font-size: 12px">
                                         Sign up with Google
                                     </div>
-                                </a>
+                                </a> --}}
 
 
                             </form>
