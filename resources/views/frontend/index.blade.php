@@ -16,8 +16,8 @@
     <section>
         <div style="position: relative">
             <img src="{{asset('frontend/images/index/index-new/hometarrow.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
-            <img src="{{ asset('frontend/images/index/index-new/full.svg') }}"
-                alt="Full hero image of the website's main section" class="img-fluid full-img">
+            <img src="{{ asset('frontend/images/index/index-new/bafullimg.svg') }}"
+                alt="Full hero image of the website's main section" class="img-fluid full-img" style="left: 40px">
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate.svg') }}"
@@ -58,7 +58,7 @@
                     <div class="col-12 text-center">
                         <div class="text-white hkmt-text" >How Kwikpic <span
                                 style="color: #FF0C7D;">Works?</span></div>
-                        <div class="text-white h4 fw-400 pt-4">let your clients discover their images within seconds</div>
+                        <div class="text-white h4 fw-400 pt-4 mb-0 let-sm-text" >let your clients discover their images within seconds</div>
                     </div>
                 </div>
                 <div class="row">
@@ -78,9 +78,9 @@
 
                             </div>
 
-                            <h4 class="text-white kanit-thin fw-400">
+                            <h5 class="text-white kanit-thin fw-400">
                                 Share event link with attendees via email, QR code or WhatsApp
-                            </h4>
+                            </h5>
                         </div>
 
                     </div>
@@ -92,9 +92,9 @@
 
                             </div>
 
-                            <h4 class="text-white kanit-thin fw-400">
+                            <h5 class="text-white kanit-thin fw-400">
                                 Attendees go to the link and take a selfie
-                            </h4>
+                            </h5>
                         </div>
 
                     </div>
@@ -105,9 +105,9 @@
 
                             </div>
 
-                            <h4 class="text-white kanit-thin fw-400">
+                            <h5 class="text-white kanit-thin fw-400">
                                 Our AI recognizes attendees with 99% accuracy and show them all their images
-                            </h4>
+                            </h5>
                         </div>
                     </div>
                     <div class="col">
@@ -118,9 +118,9 @@
 
                             </div>
 
-                            <h4 class="text-white kanit-thin fw-400">
+                            <h5 class="text-white kanit-thin fw-400">
                                 Images can be printed or downloaded right from mobile
-                            </h4>
+                            </h5>
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@
 
                 <div class="col-5 col-xxl-4">
                 </div>
-                <div class="col-7 col-xxl-7 position-relative">
+                <div class="col-7 col-xxl-8 position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/thanoshand.svg') }}" alt=""
                         srcset="" class="img-fluid thanoshand-img">
 
@@ -329,7 +329,7 @@
                                                 ">
 
                                             <div class="accordion-body-mi">
-                                                <div class="h5 fw-500 text-white" style="position: relative;z-index:99">
+                                                <div class="h5 fw-500 text-white mb-0 text-center" style="position: relative;z-index:99">
                                                     Let your clients discover their pictures
                                                     in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100%
                                                     awesome.
@@ -440,65 +440,76 @@
     <div class="container">
 
         <div class="main_slide_main">
-            <div style="background: #040404;border-radius:60px;    min-height: 439px;padding-top:65px">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-9 ">
-                        <div class="slidetext text-white active text-center">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 1 Market smartly </span> at every step
+            <div class="outer-smarty-bg position-relative">
+               
+                        <img src="{{asset('frontend/images/index/index-new/crossline.svg')}}" alt="" srcset="" class="img-fluid crossline-img" >
+                        <div class="smarty-bg">
+                             
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-9 ">
+                                        <div class="slidetext text-white active text-center">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 1 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                1 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                        <div class="slidetext text-white text-center ">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 2 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                2 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                        <div class="slidetext text-white text-center">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 3 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                3 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                        <div class="slidetext text-white text-center">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 4 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                4 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                        <div class="slidetext text-white text-center">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 5 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                5 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                        <div class="slidetext text-white text-center">
+                                            <div class="h2 mb-0 main-topheading">
+                                                <span class="text-prime"> 6 Market smartly </span> at every step
+                                            </div>
+                                            <div class="h4 mb-0 ">
+                                                6 Collect invaluable client data with their consent. Use it to reach just the
+                                                right audience at fraction of a price compared to instagram marketing.
+                                            </div>
+                                        </div>
+                                    
+                                </div>
                             </div>
-                            <div class="h4 mb-0 ">
-                                1 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
+
+
                         </div>
-                        <div class="slidetext text-white text-center ">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 2 Market smartly </span> at every step
-                            </div>
-                            <div class="h4 mb-0 ">
-                                2 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
-                        </div>
-                        <div class="slidetext text-white text-center">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 3 Market smartly </span> at every step
-                            </div>
-                            <div class="h4 mb-0 ">
-                                3 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
-                        </div>
-                        <div class="slidetext text-white text-center">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 4 Market smartly </span> at every step
-                            </div>
-                            <div class="h4 mb-0 ">
-                                4 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
-                        </div>
-                        <div class="slidetext text-white text-center">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 5 Market smartly </span> at every step
-                            </div>
-                            <div class="h4 mb-0 ">
-                                5 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
-                        </div>
-                        <div class="slidetext text-white text-center">
-                            <div class="h2 mb-0 main-topheading">
-                                <span class="text-prime"> 6 Market smartly </span> at every step
-                            </div>
-                            <div class="h4 mb-0 ">
-                                6 Collect invaluable client data with their consent. Use it to reach just the
-                                right audience at fraction of a price compared to instagram marketing.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                
+                   
             </div>
         </div>
 

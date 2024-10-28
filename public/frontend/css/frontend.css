@@ -465,6 +465,7 @@
     background-size: cover;
     background-position: center;
     width: 692px;
+    backdrop-filter: blur(30px);
                                                                                 
 }
 
@@ -580,6 +581,36 @@
     top: -3em;
   }
 
+  .let-sm-text{
+    padding-bottom:65px;
+  }
+  .smarty-bg{
+    background-image: url(/frontend/images/index/index-new/shbgimg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 65px;
+    min-height: 439px;
+    backdrop-filter: blur(29px);
+  }
+  .outer-smarty-bg{
+    background: #040404;
+    border-radius:60px;    
+    min-height: 439px;
+  }
+  
+  .slidetext{
+    padding-top: 65px;
+    padding-bottom: 231px;
+  }
+
+  .crossline-img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 25px;
+    z-index: 0;
+  }
 /* end gallery */
 
 @media screen and (max-width:1400px) {
