@@ -88,6 +88,16 @@
     font-family: 'Montserrat Alternates', sans-serif;
 } */
 
+.pre-arrow{
+    top: -50px;
+}
+.next-arrow{
+    top: -50px;
+}
+
+.fw-300{
+    font-weight: 300;
+}
 .fs-43px{
     font-size: 43px;
 
