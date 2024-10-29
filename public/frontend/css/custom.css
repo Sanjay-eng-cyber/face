@@ -157,7 +157,7 @@ h5.l-h{
 
     font-size: 26px;
     font-weight: 500;
-    color: #D1DEDE;
+    /* color: #D1DEDE; */
     text-align: center;
 
 }
@@ -180,7 +180,7 @@ h5.l-h{
 }
 
 .card-price .btn-round {
-    border: 2px solid #427096;
+    border: 2px solid #94FEFE;
     width: 125px;
     margin: auto;
     background: transparent;
@@ -1283,19 +1283,19 @@ padding: 3px 5px;
 }
 
 .card-price.white {
-    border: 1px solid White;
+    /* border: 1px solid White; */
 }
 
 .card-price.orange {
-    border: 1px solid #FD692A
+    /* border: 1px solid #FD692A */
 }
 
 .card-price.purple {
-    border: 1px solid #8E00CB;
+    /* border: 1px solid #8E00CB; */
 }
 
 .card-price.green {
-    border: 1px solid #84FF89;
+    /* border: 1px solid #84FF89; */
 }
 @media screen and (min-width:767px) and (max-width:769px){
     .slider-mt{
