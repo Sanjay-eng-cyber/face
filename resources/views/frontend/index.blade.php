@@ -604,12 +604,27 @@
         <img src="{{asset('frontend/images/index/index-new/pricebgimg.png')}}" alt="" srcset="" class="img-fluid w-100" style="position: absolute;z-index: -1;">
 
         <div class="container pt-5 mt-xl-5">
+            
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-center mb-4">
+                                <p class="algoshare">
+                                    Picscan offers tiered pricing plans  <br/>
+                                    with options for free basic access, mid-tier advanced features,  <br/>
+                                    and a premium plan with full access to all tools and priority support.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="curve">
-                <div class="text-center mb-4">
-                    <p class="algoshare">Algoshare offers tiered pricing plans with options for free basic access, mid-tier
-                        advanced features, and a premium plan with full access to all tools and priority support.</p>
-                </div>
+                
                 <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-3">
 
                     <div class="card-price mb-xl-2 mb-md-4 white">

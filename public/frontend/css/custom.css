@@ -264,14 +264,14 @@ h5.l-h{
     color: #ffffff;
 }
 
-.curve {
+/* .curve {
     background: url('../images/index/curve.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% -100% !important;
     z-index: 0;
     height: 800px;
-}
+} */
 
 .uppersection {
     z-index: 10;
@@ -1122,7 +1122,7 @@ padding: 3px 5px;
 
 .social a:hover {
 
-    border-radius: 5px;
+    /* border-radius: 5px; */
     background: #FF3895;
 }
 
