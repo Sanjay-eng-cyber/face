@@ -73,7 +73,7 @@
                                     </button>
                                 </div>
 
-                                <a href="#" class="d-flex align-items-center text-decoration-none"
+                                <a href="{{ url('login/google') }}" class="d-flex align-items-center text-decoration-none"
                                     style="gap: 13px;padding-top:12px">
                                     <img src="{{ asset('frontend/images/index/index-new/swg.svg') }}" alt=""
                                         srcset="">

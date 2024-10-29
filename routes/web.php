@@ -8,6 +8,7 @@ use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\frontend\SocialAuthController;
 
 Route::domain(config('app.web_domain'))->group(function () {
     // Route::get('/login', function () {
@@ -15,12 +16,19 @@ Route::domain(config('app.web_domain'))->group(function () {
     // })->name('login');
     Route::get("/login", 'App\Http\Controllers\frontend\LoginController@loginShow')->name('frontend.login');
     Route::post("/login/submit", 'App\Http\Controllers\frontend\LoginController@login')->name('frontend.login.submit');
+
     Route::get('/forgot-password', 'App\Http\Controllers\frontend\ForgotPasswordController@index')->name('frontend.forgotPassword.index');
     Route::post('forgot-password', 'App\Http\Controllers\Auth\PasswordResetLinkController@store')
         ->name('frontend.password.email');
+
     Route::get('reset-password/{token}', 'App\Http\Controllers\Auth\NewPasswordController@frontendCreate')
         ->name('frontend.password.reset');
     Route::post('reset-password', 'App\Http\Controllers\Auth\NewPasswordController@store')->name('frontend.password.update');
+
+    // Login By Google Route
+    Route::get('login/{provider}', 'App\Http\Controllers\frontend\SocialAuthController@redirectToProvider');
+    Route::get('login/{provider}/callback', 'App\Http\Controllers\frontend\SocialAuthController@handleProviderCallback');
+
 
     Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', function () {
