@@ -64,6 +64,7 @@ body {
     border: 1px solid #FF3895;
     padding: 8px 10px ;
     margin: 0px 15px;
+    background: #0E0B0B;
 }
 
 .social a:hover img {
@@ -1123,7 +1124,8 @@ padding: 3px 5px;
 .social a:hover {
 
     /* border-radius: 5px; */
-    background: #FF3895;
+    background: #0E0B0B;
+
 }
 
 .get-started {

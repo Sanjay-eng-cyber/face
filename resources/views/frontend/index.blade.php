@@ -41,9 +41,44 @@
                                 class="darkpink">8X</span> More Visibility </div>
 
                     </div>
-                    <div class="col-lg-4 col-xl-4 col-xxl-5">
+                    <div class="col-lg-4 col-xl-4 col-xxl-5" style="position: relative">
+                        {{-- <div style="    position: relative;
+                        ;">
+                            <div class="sm-one" style="position: relative;top: 44px;left: -20px;">
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid" style="">
+                            </div>
+
+                            <div>
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid">
+                            </div>
+
+
+                            <div>
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid">
+                            </div>
+
+
+                            <div>
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid">
+                            </div>
+
+                            <div>
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid">
+                            </div>
+
+                            <div>
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid">
+                            </div> 
+
+
+                        </div> --}}
                         <img src="{{ asset('frontend/images/index/index-new/new-robot-one.png') }}" alt=""
                             srcset="" class="img-fluid" style="width: 474px">
+                        <img src="{{asset('frontend/images/index/index-new/rs.svg')}}" alt="" srcset="" class="img-fluid" style="    position: absolute;
+    bottom: -100px;
+    left: 0px;
+        z-index: -1;
+    ">
                     </div>
 
                 </div>

@@ -799,7 +799,13 @@
     padding-top: 55px;
 }
 
-
+.sm-one{
+    border: 1.8px solid transparent;
+ 
+}
+.sm-one:hover{
+    border: 1.8px solid #1CE8FF
+}
 @media screen and (max-width:1400px) {
     .thanoshand-img{
         left: -19rem;
