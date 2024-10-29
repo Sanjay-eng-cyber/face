@@ -704,9 +704,12 @@
     border-radius:10px;
     position: relative;
     backdrop-filter: blur(15px);
+    padding-top: 57px;
 }
 .card-price-tentb{
     background: linear-gradient(36.08deg, #73FDFD 15.4%, rgba(69, 151, 151, 0) 79.53%);
+    padding:1px;
+
 }
 .card-price-hundredtb{
     background: linear-gradient(187.76deg, #F8682A 16.16%, rgba(146, 61, 25, 0) 52.47%);
@@ -727,6 +730,7 @@
     border-radius:10px;
     position: relative;
     backdrop-filter: blur(15px);
+    padding-top: 65px;
 }
 .hundred-element-img{
     position: absolute;
@@ -734,6 +738,68 @@
     top: 2em;
     right: -17px;
 }
+
+.card-price-onetb{
+    background:linear-gradient(343.79deg, #D57AF1 -7.86%, rgba(123, 71, 139, 0) 84.34%);
+    padding:1px;
+}
+
+
+
+.onetb-bgblck{
+    background-color:#040404;
+    height:100%;
+    border-radius:10px;
+    position: relative;   
+}
+
+.main-onetb{
+    background-image:url('/frontend/images/priceimg/onetbbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+    backdrop-filter: blur(15px);
+    padding-top: 55px;
+}
+.one-element-img{
+    position: absolute;
+    z-index: 0;
+    bottom: 2em;
+    right: -17px;  
+}
+
+.card-price-fivetb{
+    background:linear-gradient(129.85deg, #84FF89 -1.44%, rgba(87, 164, 90, 0) 76.49%);
+    padding:1px;
+}
+.fivetb-bgblck{
+    background-color:#040404;
+    height:100%;
+    border-radius:10px;
+    position: relative;   
+}
+.five-element-img{
+    position: absolute;
+    z-index: 0;
+    top: 2em;
+    left: -8px;  
+}
+.main-fivetb{
+    background-image:url('/frontend/images/priceimg/fivetbbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+    backdrop-filter: blur(15px);
+    padding-top: 55px;
+}
+
+
 @media screen and (max-width:1400px) {
     .thanoshand-img{
         left: -19rem;

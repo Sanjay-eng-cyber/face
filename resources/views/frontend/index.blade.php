@@ -686,35 +686,50 @@
                         </div>
                     </div>
 
-                    <div class="card-price mb-xl-2 mb-md-4 position-relative purple">
-                        <span class="recomend">Recommended</span>
-                        <h5 style="color: #C505FF;">ADVANCE</h5>
-                        <p class="data">1TB</p>
-                        <span class="duration d-block"> Contact Sales For Pricing</span>
-                        <div class="text-center my-4">
-                            <button class="btn-round third"> CONTACT SALES</button>
+                    <div class="card-price mb-xl-2 mb-md-4 position-relative purple card-price-onetb">
+                        <div class="onetb-bgblck">
+                            <img src="{{asset('frontend/images/priceimg/onetbelement.svg')}}" alt="" srcset="" class="img-fluid one-element-img" >
+
+                            <div class="main-onetb">
+                                <span class="recomend">Recommended</span>
+                                <h5 style="color: #C505FF;">ADVANCE</h5>
+                                <p class="data">1TB</p>
+                                <span class="duration d-block"> Contact Sales For Pricing</span>
+                                <div class="text-center my-4">
+                                    <button class="btn-round third"> CONTACT SALES</button>
+                                </div>
+                                <p class="points">1TB</p>
+                                <p class="points">15MB</p>
+                                <p class="points">2000 per event</p>
+                                <p class="points">2000 per event</p>
+                                <p class="points">200</p>
+                                <p class="points">10000</p>
+                            </div>
+
                         </div>
-                        <p class="points">1TB</p>
-                        <p class="points">15MB</p>
-                        <p class="points">2000 per event</p>
-                        <p class="points">2000 per event</p>
-                        <p class="points">200</p>
-                        <p class="points">10000</p>
+
                     </div>
 
-                    <div class="card-price mb-xl-2 mb-md-4 green">
-                        <h5 style="color: #88ED11;">PREMIUM</h5>
-                        <p class="data">10GB</p>
-                        <span class="duration d-block"> Contact Sales For Pricing</span>
-                        <div class="text-center my-4">
-                            <button class="btn-round fifth"> CONTACT SALES</button>
+                    <div class="card-price mb-xl-2 mb-md-4 green card-price-fivetb">
+                        <div class="fivetb-bgblck">
+                            <img src="{{asset('frontend/images/priceimg/fivetbelement.svg')}}" alt="" srcset="" class="img-fluid five-element-img" >
+
+                            <div class="main-fivetb">
+                                <h5 style="color: #88ED11;">PREMIUM</h5>
+                                <p class="data">10GB</p>
+                                <span class="duration d-block"> Contact Sales For Pricing</span>
+                                <div class="text-center my-4">
+                                    <button class="btn-round fifth"> CONTACT SALES</button>
+                                </div>
+                                <p class="points">5TB</p>
+                                <p class="points">25MB</p>
+                                <p class="points">Unlimited</p>
+                                <p class="points">Unlimited</p>
+                                <p class="points">Unlimited</p>
+                                <p class="points">20000</p>
+                            </div>
+
                         </div>
-                        <p class="points">5TB</p>
-                        <p class="points">25MB</p>
-                        <p class="points">Unlimited</p>
-                        <p class="points">Unlimited</p>
-                        <p class="points">Unlimited</p>
-                        <p class="points">20000</p>
                     </div>
 
 
