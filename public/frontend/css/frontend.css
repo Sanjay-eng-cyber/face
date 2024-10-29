@@ -683,7 +683,57 @@
     backdrop-filter: blur(38px);
     padding: 39px;
 }
-
+.tentb-bgblck{
+    background-color:#040404;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+}
+.tenelement-img{
+    position: absolute;
+    z-index: 0;
+    bottom: 2em;
+    left: -17px;
+}
+.main-tentb{
+    background-image:url('/frontend/images/priceimg/tengbbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+    backdrop-filter: blur(15px);
+}
+.card-price-tentb{
+    background: linear-gradient(36.08deg, #73FDFD 15.4%, rgba(69, 151, 151, 0) 79.53%);
+}
+.card-price-hundredtb{
+    background: linear-gradient(187.76deg, #F8682A 16.16%, rgba(146, 61, 25, 0) 52.47%);
+    padding:1px;
+}
+.hundredtb-bgblck{
+    background-color:#040404;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+}
+.main-hundredtb{
+    background-image:url('/frontend/images/priceimg/hundredbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100%;
+    border-radius:10px;
+    position: relative;
+    backdrop-filter: blur(15px);
+}
+.hundred-element-img{
+    position: absolute;
+    z-index: 0;
+    top: 2em;
+    right: -17px;
+}
 @media screen and (max-width:1400px) {
     .thanoshand-img{
         left: -19rem;

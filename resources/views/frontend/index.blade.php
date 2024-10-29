@@ -627,37 +627,52 @@
                 
                 <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-3">
 
-                    <div class="card-price mb-xl-2 mb-md-4 white">
-                        <h5>FREE</h5>
-                        <p class="data">10GB</p>
-                        <span class="duration d-block"> 14 day trial</span>
-                        <div class="text-center my-4">
-                            <button class="btn-round first"> TRY NOW</button>
-                        </div>
-                        <p class="points">10GB</p>
-                        <p class="points">5MB</p>
-                        <p class="points">25 per event</p>
-                        <p class="points">25 per event</p>
-                    </div>
+                    
+                            <div class="card-price mb-xl-2 mb-md-4 white card-price-tentb" >
+                               
+                                    <div class="tentb-bgblck">
+                                        <img src="{{asset('frontend/images/priceimg/tenelement.svg')}}" alt="" srcset="" class="img-fluid tenelement-img" >
+                                        <div class="main-tentb">
+                                            <h5 class="text-prime">FREE</h5>
+                                            <p class="data">10GB</p>
+                                            <span class="duration d-block"> 14 day trial</span>
+                                            <div class="text-center my-4">
+                                                <button class="btn-round first"> TRY NOW</button>
+                                            </div>
+                                            <p class="points">10GB</p>
+                                            <p class="points">5MB</p>
+                                            <p class="points">25 per event</p>
+                                            <p class="points">25 per event</p>
+                                            <p class="points">1</p>
+                                            <p class="points" style="margin-bottom: 0px;padding-bottom:1rem">10</p>
+                                        </div>
+                                    </div>
+                            </div>
+                     
 
-                    <div class="card-price mb-xl-2 mb-md-4 orange">
-                        <h5>BASIC</h5>
-                        <p class="data">100GB</p>
-                        <span class="duration d-block"> Contact Sales For Pricing</span>
-                        <div class="text-center my-4">
-                            <button class="btn-round second"> CONTACT SALES</button>
+                    <div class="card-price mb-xl-2 mb-md-4 orange card-price-hundredtb">
+                        <div class="hundredtb-bgblck">
+                            <img src="{{asset('frontend/images/priceimg/hundredelement.svg')}}" alt="" srcset="" class="img-fluid hundred-element-img" >
+                            <div class="main-hundredtb">
+                                <h5 style="color:#FD692A;">BASIC</h5>
+                                <p class="data">100GB</p>
+                                <span class="duration d-block"> Contact Sales For Pricing</span>
+                                <div class="text-center my-4">
+                                    <button class="btn-round second"> CONTACT SALES</button>
+                                </div>
+                                <p class="points">100GB</p>
+                                <p class="points">5MB</p>
+                                <p class="points">15 per event</p>
+                                <p class="points">15 per event</p>
+                                <p class="points">100</p>
+                                <p class="points">6000</p>
+                            </div>
                         </div>
-                        <p class="points">100GB</p>
-                        <p class="points">5MB</p>
-                        <p class="points">15 per event</p>
-                        <p class="points">15 per event</p>
-                        <p class="points">100</p>
-                        <p class="points">6000</p>
                     </div>
 
 
                     <div class="card-price mb-xl-2 mb-md-4 empty">
-                        <h5>Pricing plans for algoshare</h5>
+                        <h5 class="text-white">Pricing plans for algoshare</h5>
 
                         <div class="mt-sm-5  pt-5">
                             <p class="points">Storage</p>
@@ -673,7 +688,7 @@
 
                     <div class="card-price mb-xl-2 mb-md-4 position-relative purple">
                         <span class="recomend">Recommended</span>
-                        <h5>ADVANCE</h5>
+                        <h5 style="color: #C505FF;">ADVANCE</h5>
                         <p class="data">1TB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
                         <div class="text-center my-4">
@@ -688,7 +703,7 @@
                     </div>
 
                     <div class="card-price mb-xl-2 mb-md-4 green">
-                        <h5>PREMIUM</h5>
+                        <h5 style="color: #88ED11;">PREMIUM</h5>
                         <p class="data">10GB</p>
                         <span class="duration d-block"> Contact Sales For Pricing</span>
                         <div class="text-center my-4">
@@ -706,7 +721,7 @@
 
                 </div>
 
-                <div class="text-center mt-5">
+                <div class="text-center mt-5 pb-5 mb-2">
                     <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing
                         your data securely.</p>
                 </div>
