@@ -1,5 +1,21 @@
 @extends('frontend.layouts.app')
 @section('title')
+@section('cdn')
+<style>
+    .custom-ctnrfluid {
+    background-image: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: unset;
+    display: flex;
+    align-items: center;
+    min-height: 106px;
+    margin-top: 14px;
+}
+
+</style>
+@endsection
 @section('content')
     <section>
         <div style="position: relative">
