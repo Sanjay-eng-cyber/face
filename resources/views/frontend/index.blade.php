@@ -42,11 +42,15 @@
 
                     </div>
                     <div class="col-lg-4 col-xl-4 col-xxl-5" style="position: relative">
-                        <img src="{{ asset('frontend/images/index/index-new/newrobot.png') }}" alt=""
-                        srcset="" class="img-fluid" style="width: 474px">
-
-                        <img src="{{asset('frontend/images/index/index-new/rs.svg')}}" alt="" srcset="" class="img-fluid" style="position: absolute;bottom: -60px;left: 0px;z-index: -1;">
-
+                        <div class="position-relative">
+                            <div class="sm-middle">
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid rounded-3" style="width:50px;height:50px">
+                            </div>                                  
+                        </div> 
+                        <img src="{{ asset('frontend/images/index/index-new/dba.png') }}" alt="" srcset="" class="img-fluid" style="width: 474px">
+                        
+                        <img src="{{asset('frontend/images/index/index-new/rs.svg')}}" alt="" srcset="" class="img-fluid rs-img">
+                       
                     </div>
 
                 </div>
