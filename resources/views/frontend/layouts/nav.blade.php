@@ -3,6 +3,9 @@
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
     <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
     class="img-fluid blurhero-img">
+
+    <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
+    
     <div class="container-fluid " style="z-index:99;position: relative;">
         <div class="custom-ctnrfluid">
             <div class="container pall0" style="position: relative;z-index:999;">
