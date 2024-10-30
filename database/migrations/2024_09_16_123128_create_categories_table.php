@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('event_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('slug');
+            $table->string('thumbnail_image')->nullable();
             $table->boolean('sharing')->default(0);
             $table->boolean('visibility')->default(0);
             $table->timestamps();

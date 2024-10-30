@@ -47,6 +47,18 @@
                                                 <p class="label-title">{{ $category->event->name }}</p>
                                             </div>
                                         </div>
+                                        @if ($category->thumbnail_image)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Thumbnail
+                                                        Image</label><br>
+                                                    <div id="lightgallery">
+                                                        <a href="{{ asset('storage/images/categories/' . $category->thumbnail_image) }}"
+                                                            target="_blank">View</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
@@ -145,11 +157,11 @@
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
-            // lightGallery(document.getElementById('lightgallery1'), {
-            //     speed: 500,
-            //     download: false,
-            //     thumbnail: true,
-            // });
+            lightGallery(document.getElementById('lightgallery'), {
+                speed: 500,
+                download: false,
+                thumbnail: true,
+            });
             // lightGallery(document.getElementById('lightgallery2'), {
             //     speed: 500,
             //     download: false,

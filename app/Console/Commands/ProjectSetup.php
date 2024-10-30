@@ -39,6 +39,8 @@ class ProjectSetup extends Command
         Storage::disk('public')->makeDirectory('images/events');
         $this->line('-----');
         Storage::disk('public')->makeDirectory('images/events/watermark_image');
+        $this->line('-----');
+        Storage::disk('public')->makeDirectory('images/categories');
         $this->info('Command Ran Successfully.');
     }
 }

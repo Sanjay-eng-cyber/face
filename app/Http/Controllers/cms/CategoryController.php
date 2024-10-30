@@ -65,17 +65,27 @@ class CategoryController extends Controller
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
+            'thumbnail_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
         ]);
 
         // Create a new Event instance
-        $event = new Category();
-        $event->name = $request->name;
-        $event->cms_user_id = auth()->user()->id;
-        $event->slug = Str::slug($request->name);
-        $event->visibility = $request->visibility;
-        $event->event_id = $request->event_id;
-        $event->sharing = $request->sharing;
-        if ($event->save()) {
+        $category = new Category();
+        $thumbnail_image = request()->file('thumbnail_image');
+        $manager = ImageManager::gd();
+        if ($thumbnail_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $thumbnail_image->clientExtension();
+            $destinationPath = public_path("storage/images/categories");
+            $image = $manager->read($thumbnail_image->getRealPath());
+            $image->save($destinationPath . '/' . $filename, 90);
+            $category->thumbnail_image = $filename;
+        }
+        $category->name = $request->name;
+        $category->cms_user_id = auth()->user()->id;
+        $category->slug = Str::slug($request->name);
+        $category->visibility = $request->visibility;
+        $category->event_id = $request->event_id;
+        $category->sharing = $request->sharing;
+        if ($category->save()) {
             return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Added Successfully",
@@ -106,17 +116,28 @@ class CategoryController extends Controller
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
+            'thumbnail_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
         ]);
 
-        // Create a new Event instance
-        $event = Category::findOrFail($id);
-        $event->name = $request->name;
-        $event->event_id = $request->event_id;
-        $event->cms_user_id = auth()->user()->id;
-        $event->slug = Str::slug($request->name);
-        $event->visibility = $request->visibility;
-        $event->sharing = $request->sharing;
-        if ($event->save()) {
+        // Create a new Category instance
+        $category = Category::findOrFail($id);
+        $thumbnail_image = request()->file('thumbnail_image');
+        if ($thumbnail_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $thumbnail_image->clientExtension();
+            $destinationPath = public_path("storage/images/categories/");
+            $manager = ImageManager::gd();
+            $image = $manager->read($thumbnail_image->getRealPath());
+            optional(Storage::disk('public')->delete('images/categories/' . $category->thumbnail_image));
+            $image->save($destinationPath . '/' . $filename, 90);
+            $category->thumbnail_image = $filename;
+        }
+        $category->name = $request->name;
+        $category->event_id = $request->event_id;
+        $category->cms_user_id = auth()->user()->id;
+        $category->slug = Str::slug($request->name);
+        $category->visibility = $request->visibility;
+        $category->sharing = $request->sharing;
+        if ($category->save()) {
             return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Update Successfully",
@@ -137,7 +158,7 @@ class CategoryController extends Controller
         if ($category->gallery_images()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Gallery Images is present']);
         }
-        if ($category->delete()) {
+        if ($category->delete() && Storage::disk('public')->delete('images/categories/' . $category->thumbnail_image)) {
             return redirect()->route('backend.category.index')->with(
                 [
                     "message" => "Category Deleted Successfully",
