@@ -50,6 +50,9 @@ Route::domain(config('app.web_domain'))->group(function () {
             return view('frontend.test', compact('event', 'category'));
         })->name('test-progress');
 
+        Route::get('/event/{slug}', 'App\Http\controllers\frontend\EventController@show')->name('frontend.event.show');
+        Route::get('/gallery/{event_id}/{category_id}', 'App\Http\controllers\frontend\GalleryController@index')->name('frontend.gallery.index');
+
         Route::get('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadIndex')->name('upload-index');
         Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
         Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');

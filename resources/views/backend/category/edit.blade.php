@@ -63,6 +63,20 @@
                                     @endif
                                 </div>
 
+                                <div class="col-xl-12 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Thumbnail Image*</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                        name="thumbnail_image">
+                                    <div id="lightgallery" class="text-end">
+                                        <a
+                                            href="{{ asset('storage/images/categories/' . $category->thumbnail_image) }}" target="_blank">View</a>
+                                    </div>
+                                    @if ($errors->has('thumbnail_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
+                                        </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-6  mb-3">
                                     <label for="descriptions">Sharing :</label><br>
                                     @if (old('sharing'))
@@ -123,6 +137,9 @@
 @section('js')
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ asset('custom/plugins/lightgallery/css/lightgallery.min.css') }}" />
+    <script src="{{ asset('custom/plugins/lightgallery/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('custom/plugins/lightgallery/js/lg-zoom.js') }}"></script>
     {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
     </script> --}}
     <script>
@@ -149,6 +166,13 @@
 
             // ]
         });
+
+        $(document).ready(function() {
+            lightGallery(document.getElementById('lightgallery'), {
+                download: false,
+            });
+        });
+
 
         // function getValues() {
         //     $('#sub').html('')
