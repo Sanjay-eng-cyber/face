@@ -573,7 +573,14 @@
     position: absolute;
     z-index:-2;
     top: -16px;
+    right:0px
+  }
 
+  .navcircle-img{
+    position: absolute;
+    left: 28%;
+    z-index: -2;
+    top: 0px;
   }
 
   .halfarrowt-img{
