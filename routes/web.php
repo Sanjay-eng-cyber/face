@@ -25,7 +25,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         ->name('frontend.password.reset');
     Route::post('reset-password', 'App\Http\Controllers\Auth\NewPasswordController@store')->name('frontend.password.update');
 
-    // Login By Google Route
+    // route for google login
     Route::get('login/{provider}', 'App\Http\Controllers\frontend\SocialAuthController@redirectToProvider');
     Route::get('login/{provider}/callback', 'App\Http\Controllers\frontend\SocialAuthController@handleProviderCallback');
 
