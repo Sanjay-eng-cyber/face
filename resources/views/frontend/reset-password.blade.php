@@ -53,53 +53,11 @@
                                 @if ($errors->has('password'))
                                     <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                                 @endif
-                                {{-- @if ($errors->has('email'))
-                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
-                                    </div>
-                                @endif --}}
-                                {{-- <div class="pb-2">
-                                    <label for="password" class="fw-600 frtwhitcolor pb-2">Password*</label>
-                                    <input type="password" name="password" minlength="8" maxlength="16" required
-                                        class="form-control sin-input">
-
-                                </div> --}}
-                                {{-- @if ($errors->has('password'))
-                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('password') }}
-                                    </div>
-                                @endif --}}
-
-                                {{-- @if ($errors->has('credentials'))
-                                    <div class="text-danger text-left mx-3" role="alert">
-                                        {{ $errors->first('credentials') }}</div>
-                                @endif
-                                @if (session('status'))
-                                    <div class="text-success">
-                                        <li> {{ session('status') }} </li>
-                                    </div>
-                                @endif --}}
-                                {{-- <div class="d-flex  justify-content-end">
-                                    <a href="#" class="text-white fw-600 text-decoration-none">Forgot Password</a>
-                                </div> --}}
                                 <div>
-                                    {{-- <a href="http://" class="btn btn-login withsignin" style="font-size: 20px">
-                                        Sign In
-                                    </a> --}}
                                     <button type="submit" class="btn btn-login withsignin" style="font-size: 20px">
                                         Submit
                                     </button>
                                 </div>
-
-                                {{-- <a href="#" class="d-flex align-items-center text-decoration-none"
-                                    style="gap: 13px;padding-top:12px">
-                                    <img src="{{ asset('frontend/images/index/index-new/swg.svg') }}" alt=""
-                                        srcset="">
-
-                                    <div class="text-white" style="font-size: 12px">
-                                        Sign up with Google
-                                    </div>
-                                </a> --}}
-
-
                             </form>
                         </div>
                     </div>
