@@ -179,6 +179,7 @@
     position: absolute;
     right: 0px;
     top: -7em;
+    
 }
 
 .hkmt-text{
@@ -867,10 +868,11 @@
 .sticky-nav {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 97%;
     z-index: 1000;
-    background-color: #333; /* Customize as per your design */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    left: 50%;
+    transform: translate(-50%);
+  
 }
 
 @media screen and (max-width:1400px) {

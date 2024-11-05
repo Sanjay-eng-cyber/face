@@ -9,7 +9,7 @@
         background:none;
         backdrop-filter:unset;
     }
-    .sticky-nav .custom-ctnrfluid{
+    .custom-ctnrfluid.sticky-nav {
         background:url(/frontend/images/index/navbg.svg);
         backdrop-filter: blur(29px);
     }
