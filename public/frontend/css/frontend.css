@@ -149,6 +149,7 @@
     /* background-color: red; */
 }
 
+.custm-outer{}
 .custom-ctnrfluid{
     background-image:url('/frontend/images/index/navbg.svg');
     background-repeat: no-repeat;
@@ -159,6 +160,10 @@
     align-items: center;
     min-height: 106px;
     margin-top: 14px;
+    /* position: fixed;
+    width: 98%;
+    left: 50%;
+    transform: translate(-50%); */
     /* padding-top: 40px;
     padding-bottom: 40px; */
 }
@@ -570,7 +575,7 @@
   }
 
   .tpzigzag-img{
-    position: absolute;
+    position: fixed;
     z-index:-2;
     top: -16px;
     right:0px
@@ -844,6 +849,7 @@
     z-index: -1;                        
 }
 
+
 /* .sm-one{
     border: 1.8px solid transparent;
  
@@ -851,6 +857,22 @@
 .sm-one:hover{
     border: 1.8px solid #1CE8FF
 } */
+
+/* Initial navbar styling */
+#mainNavbar {
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Sticky navbar styling */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333; /* Customize as per your design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
 @media screen and (max-width:1400px) {
     .rs-img {
         position: absolute;

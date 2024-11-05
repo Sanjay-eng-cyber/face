@@ -7,7 +7,11 @@
     }
     .custom-ctnrfluid{
         background:none;
-        backdrop-filter: blur(0px);
+        backdrop-filter:unset;
+    }
+    .sticky-nav .custom-ctnrfluid{
+        background:url(/frontend/images/index/navbg.svg);
+        backdrop-filter: blur(29px);
     }
  
 </style>
@@ -26,6 +30,8 @@
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
 
             <div class="container overflow-hide">
+                <div style="height:100px;">
+                </div>
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
                     <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative">
                         <div class="display-4 display-xl-4 display-xxl-3 fw-500 share-img-text">

@@ -40,6 +40,21 @@
 
     @yield('js')
 
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            var sticky = navbar.offsetTop;
+    
+            if (window.pageYOffset > sticky && !navbar.classList.contains('sticky-nav')) {
+                navbar.classList.add('sticky-nav');
+            } else if (window.pageYOffset <= sticky && navbar.classList.contains('sticky-nav')) {
+                navbar.classList.remove('sticky-nav');
+            }
+        });
+    </script>
+    
+
+
 </body>
 
 </html>

@@ -12,6 +12,10 @@
     align-items: center;
     min-height: 106px;
     margin-top: 14px;
+    /* position: fixed;
+    width: 98%;
+    left: 50%;
+    transform: translate(-50%); */
 }
 
 </style>

@@ -1,5 +1,5 @@
 <div style="position: relative;">
-    <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" srcset="" >
+   
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
     <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
     class="img-fluid blurhero-img">
@@ -7,58 +7,63 @@
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
     
     <div class="container-fluid " style="z-index:99;position: relative;">
-        <div class="custom-ctnrfluid">
-            <div class="container pall0" style="position: relative;z-index:999;">
-            <nav class="navbar navbar-expand-lg text-white" style="">
-                <div class="container-fluid insidenavcont pall0" style="position: relative;">
-                <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
-                    <span class="text-white">Pic</span><span class=" darkpink">scan</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0 pt-20px" >
-                        <li class="nav-item home-left">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Contact us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Blog</a>
-                        </li>
-                        @guest
-                        <a href="{{route('frontend.login')}}" class="btn btn-login  mb-0 fw-500">
-                            Log in
+        <div id="mainNavbar">
+            <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" id="" srcset="" >  
+            <div class="custom-ctnrfluid "  >
+                <div class="container pall0" style="position: relative;z-index:999;">
+                    <nav class="navbar navbar-expand-lg text-white  " style="">
+                        <div class="container-fluid insidenavcont pall0" style="position: relative;">
+                        <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
+                            <span class="text-white">Pic</span><span class=" darkpink">scan</span>
                         </a>
-                        @endguest
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0 pt-20px" >
+                                <li class="nav-item home-left">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About us</a>
+                                </li>
 
-                        @auth
-                        <a href="{{route('frontend.logout')}}" class="btn btn-login  mb-0 fw-500">
-                            LogOut
-                        </a>
-                        @endauth
-                    </ul>
 
+                                <li class="nav-item">
+                                    <a class="nav-link " href="#">Contact us</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link " href="#">Pricing</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link " href="#">Blog</a>
+                                </li>
+                                @guest
+                                <a href="{{route('frontend.login')}}" class="btn btn-login  mb-0 fw-500">
+                                    Log in
+                                </a>
+                                @endguest
+
+                                @auth
+                                <a href="{{route('frontend.logout')}}" class="btn btn-login  mb-0 fw-500">
+                                    LogOut
+                                </a>
+                                @endauth
+                            </ul>
+
+                        </div>
+                        </div>
+                    </nav>
                 </div>
-                </div>
-            </nav>
             </div>
         </div>
     </div>
 
 </div>
+
+
 
 
 {{-- <div class="position-relative isolation">
