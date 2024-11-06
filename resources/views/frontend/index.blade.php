@@ -19,7 +19,7 @@
 @section('content')
     <section>
         <div style="position: relative">
-            <img src="{{asset('frontend/images/index/index-new/hometarrow.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
+            <img src="{{asset('frontend/images/index/index-new/leftarrowfix.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/bafullimg.svg') }}"
                 alt="Full hero image of the website's main section" class="img-fluid full-img" style="left: 40px">
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
@@ -30,8 +30,8 @@
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
 
             <div class="container overflow-hide">
-                <div style="height:100px;">
-                </div>
+                {{-- <div style="height:100px;">
+                </div> --}}
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
                     <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative">
                         <div class="display-4 display-xl-4 display-xxl-3 fw-500 share-img-text">
