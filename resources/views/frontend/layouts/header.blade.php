@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}" />
 <link rel="stylesheet" href="{{ asset('frontend/css/slick-theme.css') }}" />
 <link rel="stylesheet" href="{{ asset('frontend/css/animated-min.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" /> --}}
+{{-- <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}"> --}}
 <link rel="stylesheet" href="{{ asset('frontend/css/frontend.css') }}">
 <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
 
