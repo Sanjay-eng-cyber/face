@@ -14,6 +14,11 @@ Route::domain(config('app.web_domain'))->group(function () {
     // Route::get('/login', function () {
     //     return view('frontend.login');
     // })->name('login');
+  
+    Route::get('/basic-details-one', function () {
+        return view('frontend.basic-details-one');
+    })->name('basic-details-one');
+
     Route::get("/login", 'App\Http\Controllers\frontend\LoginController@loginShow')->name('frontend.login');
     Route::post("/login/submit", 'App\Http\Controllers\frontend\LoginController@login')->name('frontend.login.submit');
 
