@@ -24,14 +24,14 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-7 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-12 col-md-10">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="250" required name="name"
@@ -41,7 +41,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="cover_image">
@@ -50,7 +50,17 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                        name="watermark_image">
+                                    @if ($errors->has('watermark_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="start_date" value="{{ old('start_date') }}">
@@ -59,7 +69,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">End Date*</label>
                                     <input type="date" class="form-control" id="formGroupExampleInput" required
                                         name="end_date" value="{{ old('end_date') }}">
@@ -68,11 +78,154 @@
                                     @endif
                                 </div>
 
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Link Start Date*</label>
+                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                        name="link_start_date" value="{{ old('link_start_date') }}">
+                                    @if ($errors->has('link_start_date'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('link_start_date') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Link End Date*</label>
+                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                        name="link_end_date" value="{{ old('link_end_date') }}">
+                                    @if ($errors->has('link_end_date'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('link_end_date') }}
+                                        </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-12 mb-3">
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') }}</textarea>
                                     @if ($errors->has('descriptions'))
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Upload Image Quality :</label><br>
+                                    <input type="radio" id="original" name="upload_image_quality" value="original"
+                                        @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
+                                    <label for="original">Original</label>
+                                    <input type="radio" id="compressed" name="upload_image_quality" value="compressed"
+                                        @if (old('upload_image_quality') == 'compressed') {{ 'checked' }} @endif>
+                                    <label for="compressed">compressed</label>
+
+                                    @if ($errors->has('upload_image_quality'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('upload_image_quality') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Link Sharing :</label><br>
+                                    <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
+                                        @if (old('link_sharing') == '1') {{ 'checked' }} @endif>
+                                    <label for="link_sharingYes">Yes</label>
+                                    <input type="radio" id="link_sharingNo" name="link_sharing" value="0"
+                                        @if (old('link_sharing') == '0') {{ 'checked' }} @endif>
+                                    <label for="link_sharingNo">No</label>
+
+                                    @if ($errors->has('link_sharing'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('link_sharing') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Is Pin Protection Required :</label><br>
+                                    <input type="radio" id="is_pin_protection_requiredYes"
+                                        name="is_pin_protection_required" value="1"
+                                        @if (old('is_pin_protection_required') == '1') {{ 'checked' }} @endif>
+                                    <label for="is_pin_protection_requiredYes">Yes</label>
+                                    <input type="radio" id="is_pin_protection_requiredNo"
+                                        name="is_pin_protection_required" value="0"
+                                        @if (old('is_pin_protection_required') == '0') {{ 'checked' }} @endif>
+                                    <label for="is_pin_protection_requiredNo">No</label>
+
+                                    @if ($errors->has('is_pin_protection_required'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('is_pin_protection_required') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Pin</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
+                                        value="{{ old('pin') }}">
+                                    @if ($errors->has('pin'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('pin') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Single Image Download :</label><br>
+                                    <input type="radio" id="single_image_downloadYes" name="single_image_download"
+                                        value="1" @if (old('single_image_download') == '1') {{ 'checked' }} @endif>
+                                    <label for="single_image_downloadYes">Yes</label>
+                                    <input type="radio" id="single_image_downloadNo" name="single_image_download"
+                                        value="0" @if (old('single_image_download') == '0') {{ 'checked' }} @endif>
+                                    <label for="single_image_downloadNo">No</label>
+
+                                    @if ($errors->has('single_image_download'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('single_image_download') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Bulk Image Download :</label><br>
+                                    <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
+                                        value="1" @if (old('bulk_image_download') == '1') {{ 'checked' }} @endif>
+                                    <label for="bulk_image_downloadYes">Yes</label>
+                                    <input type="radio" id="bulk_image_downloadNo" name="bulk_image_download"
+                                        value="0" @if (old('bulk_image_download') == '0') {{ 'checked' }} @endif>
+                                    <label for="bulk_image_downloadNo">No</label>
+
+                                    @if ($errors->has('bulk_image_download'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('bulk_image_download') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Guest Images Upload :</label><br>
+                                    <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
+                                        value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
+                                    <label for="guest_images_uploadYes">Yes</label>
+                                    <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
+                                        value="0" @if (old('guest_images_upload') == '0') {{ 'checked' }} @endif>
+                                    <label for="guest_images_uploadNo">No</label>
+
+                                    @if ($errors->has('guest_images_upload'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('guest_images_upload') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Is Watermark Required :</label><br>
+                                    <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
+                                        value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
+                                    <label for="is_watermark_requiredYes">Yes</label>
+                                    <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
+                                        value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
+                                    <label for="is_watermark_requiredNo">No</label>
+
+                                    @if ($errors->has('is_watermark_required'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('is_watermark_required') }}
                                         </div>
                                     @endif
                                 </div>

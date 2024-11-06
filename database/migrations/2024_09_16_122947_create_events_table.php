@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('link_sharing')->default(0)->nullable();
             $table->boolean('is_pin_protection_required')->default(1)->nullable();
             $table->string('pin')->nullable();
-            $table->enum('upload_image_quality', ['original', 'Compressed'])->default('original')->nullable();
+            $table->enum('upload_image_quality', ['original', 'compressed'])->default('original')->nullable();
             $table->boolean('guest_images_upload')->default(0)->nullable();
             $table->boolean('single_image_download')->default(0)->nullable();
             $table->boolean('bulk_image_download')->default(0)->nullable();
