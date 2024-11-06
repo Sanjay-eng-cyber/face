@@ -1,22 +1,9 @@
 <section class="">
     <footer class="footer px-3" style="margin-bottom: 58px">
-        <div
-            style="
-            background: linear-gradient(146.76deg, #045959 10.04%, rgba(123, 69, 139, 0) 62.25%);
-            padding:1px;
-            border-radius:60px;
-            ">
-            <div style="background: #040404;border-radius:60px;position:relative">
-                <img src="{{ asset('frontend/images/index/index-new/fheartone.svg') }}" alt="" srcset=""
-                    class="img-fluid" style="position: absolute;z-index: 0;bottom: 0px;">
-                <img src="{{ asset('frontend/images/index/index-new/fheattwo.svg') }}" alt="" srcset=""
-                    class="img-fluid"
-                    style="
-                position: absolute;
-                z-index: 0;
-                top: 2em;
-                right: 21em;
-                ">
+        <div class="footer-outer">
+            <div class="footer-loop" >
+                <img src="{{ asset('frontend/images/index/index-new/fheartone.svg') }}" alt="" srcset="" class="img-fluid fheartone" >
+                <img src="{{ asset('frontend/images/index/index-new/fheattwo.svg') }}" alt="" srcset="" class="img-fluid fheattwo">
                 <div class="footer-insider">
                     <div class="container px-0">
                         <div class="row  pb-3 text-lg-start text-center">
@@ -30,9 +17,6 @@
                                     <li><a href="">Blog</a></li>
 
                                 </ul>
-
-
-
                             </div>
 
                             <div class="col-lg-4 text-right justify-content-lg-end  justify-content-center  d-flex">
