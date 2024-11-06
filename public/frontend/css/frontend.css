@@ -1126,9 +1126,18 @@
 
     font-size: 10px;
     font-weight: 600;
+}
 
+.card-price .btn-round.basic-btn{
+    border: 2px solid #E24E0F
+}
 
+.card-price .btn-round.advance-btn{
+    border: 2px solid #8E00CB
+}
 
+.card-price .btn-round.premium-btn{
+    border: 2px solid #84FF89
 }
 
 .card-price .points {

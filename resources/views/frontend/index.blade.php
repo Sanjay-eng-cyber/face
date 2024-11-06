@@ -517,7 +517,7 @@
                                 <p class="data">100GB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
-                                    <button class="btn-round second"> CONTACT SALES</button>
+                                    <button class="btn-round basic-btn second"> CONTACT SALES</button>
                                 </div>
                                 <p class="points">100GB</p>
                                 <p class="points">5MB</p>
@@ -555,7 +555,7 @@
                                 <p class="data">1TB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
-                                    <button class="btn-round third"> CONTACT SALES</button>
+                                    <button class="btn-round advance-btn third"> CONTACT SALES</button>
                                 </div>
                                 <p class="points">1TB</p>
                                 <p class="points">15MB</p>
@@ -578,7 +578,7 @@
                                 <p class="data">10GB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
-                                    <button class="btn-round fifth"> CONTACT SALES</button>
+                                    <button class="btn-round premium-btn fifth"> CONTACT SALES</button>
                                 </div>
                                 <p class="points">5TB</p>
                                 <p class="points">25MB</p>
