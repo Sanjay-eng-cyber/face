@@ -18,10 +18,10 @@
 @endsection
 @section('content')
     <section>
-        <div style="position: relative">
+        <div class="position-relative">
             <img src="{{asset('frontend/images/index/index-new/leftarrowfix.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/bafullimg.svg') }}"
-                alt="Full hero image of the website's main section" class="img-fluid full-img" style="left: 40px">
+                alt="Full hero image of the website's main section" class="img-fluid full-img bafullimg">
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate.svg') }}"
@@ -43,17 +43,17 @@
                         <div class="display-4 display-xl-4 display-xxl-3 fw-500">
                             <span>Using</span> <span class="dbcolor">Face</span> <span class="darkpink">Recognition</span>
                         </div>
-                        <div class=" h4 mb-0" style="padding-top: 29px">Wow Your Clients And Get <span
+                        <div class="h4 mb-0 pt-30">Wow Your Clients And Get <span
                                 class="darkpink">8X</span> More Visibility </div>
 
                     </div>
-                    <div class="col-lg-4 col-xl-4 col-xxl-5" style="position: relative">
+                    <div class="col-lg-4 col-xl-4 col-xxl-5 position-relative">
                         <div class="position-relative">
                             <div class="sm-middle">
-                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid rounded-3" style="width:50px;height:50px">
+                                <img src="{{asset('frontend/images/small/mdl.png')}}" alt="" srcset="" class="img-fluid rounded-3 mdl-img" >
                             </div>                                  
                         </div> 
-                        <img src="{{ asset('frontend/images/index/index-new/dba.png') }}" alt="" srcset="" class="img-fluid" style="width: 474px">
+                        <img src="{{ asset('frontend/images/index/index-new/dba.png') }}" alt="" srcset="" class="img-fluid dba-img" >
                         
                         <img src="{{asset('frontend/images/index/index-new/rs.svg')}}" alt="" srcset="" class="img-fluid rs-img">
                        
@@ -64,13 +64,12 @@
             </div>
         </div>
 
-        <div class="kws-bg" style="position: relative">
-            <img src="{{asset('frontend/images/index/index-new/nwunionimg.png')}}" alt="" srcset="" class="img-fluid w-100" style="position: absolute;z-index: -1;">
+        <div class="kws-bg position-relative">
+            <img src="{{asset('frontend/images/index/index-new/nwunionimg.png')}}" alt="" srcset="" class="img-fluid w-100  position-absolute nwunionimg" >
             <div class="container custopmainpad">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <div class="text-white hkmt-text" >How Kwikpic <span
-                                style="color: #FF0C7D;">Works?</span></div>
+                        <div class="text-white hkmt-text nedpcolor" >How Kwikpic <span>Works?</span></div>
                         <div class="text-white h4 fw-400 pt-4 mb-0 let-sm-text" >let your clients discover their images within seconds</div>
                     </div>
                 </div>
@@ -78,7 +77,7 @@
 
                     <div class="col-12">
                         <img src="{{ asset('frontend/images/index/index-new/robot-withimg.svg') }}" alt=""
-                            srcset="" class="img-fluid" style="margin-bottom:-40px">
+                            srcset="" class="img-fluid robot-withimg">
 
                     </div>
                 </div>
@@ -143,7 +142,7 @@
         </div>
 
         <div class="container" style="padding-bottom:80px">
-            <div class="row" style="position: relative">
+            <div class="row position-relative">
                 <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
                     class="img-fluid lptbg-img">
                 <img src="{{ asset('frontend/images/index/index-new/tg-one.png') }}" alt="" srcset=""
@@ -189,117 +188,7 @@
         </div>
 
 
-        {{-- 
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-12 col-lg-6 position-relative anim-bg mt-3">
-                    <img src="{{ asset('frontend/images/index/bracket.png') }}" alt="" class="bracket">
-                    <img src="{{ asset('frontend/images/index/clientmain.png') }}" alt="" srcset=""
-                        class="img-fluid w-100 z-index-0">
-                    <span class="px-2 "> <img src="{{ asset('frontend/images/index/scan.png') }}" alt=""
-                            srcset="" class=" scan up-down"></span>
-                    <h5 class="mb-0 text-white mt-lg-1 mt-0 pt-4 pb-4 pt-lg-0 pb-lg-0 l-h">
-                        Facial recognition system that works like a charm, allowing your friends and acquaintances to see
-                        every photo that
-                        they've made an appearance in!
-                    </h5>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <h1 class="text-white mb-0 kpichead title-mob">How Kwikpic Works?</h1>
-                    <h4 class="text-white mb-0 kpik-subhead">let your clients discover their images within seconds</h4>
-                    <div class="scn-sharemain">
-                        <div class="share-box">
-                            <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
-                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
-
-                        </div>
-
-                        <h4 class="text-white kanit-thin fw-400">
-                            Share event link with attendees via email, QR code or WhatsApp
-                        </h4>
-                    </div>
-
-
-                    <div class="scn-sharemain">
-                        <div class="share-box">
-                            <img src="{{ asset('frontend/images/index/camera.svg') }}" alt="" class="img-fluid">
-                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
-                        </div>
-
-                        <h4 class="text-white kanit-thin fw-400">
-                            Attendees go to the link and take a selfie
-                        </h4>
-                    </div>
-
-
-                    <div class="scn-sharemain">
-                        <div class="share-box">
-                            <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt="" class="img-fluid">
-                            <img src="{{ asset('frontend/images/index/vector.png') }}" alt="" class="dot">
-                        </div>
-
-                        <h4 class="text-white kanit-thin fw-400">
-                            Our AI recognizes attendees with 99% accuracy and show them all their images
-                        </h4>
-                    </div>
-
-
-                    <div class="scn-sharemain">
-                        <div class="share-box">
-                            <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt="" class="img-fluid">
-
-                        </div>
-
-                        <h4 class="text-white kanit-thin fw-400">
-                            Images can be printed or downloaded right from mobile
-                        </h4>
-                    </div>
-                </div>
-            </div>
-        </div>  --}}
-
-
-        {{-- <section class=" mb-md-4 pb-md-4">
-            <img src="{{ asset('frontend/images/index/kwik-bg.png') }}" alt="" class="kwik-bg">
-        </section> --}}
-        {{-- <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="text-white fw-500 sub">For Our Professionals</div>
-                    <div class="text-white title-mobi"> <span class="granny-lipgloss">Smartly</span> Deliver
-                        Photos To Your Clients</div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 px-0">
-                        <div class="our-profession-sctn">
-                            <div class="our-profession-sub">
-                                <div>
-                                    <h4 class="text-white mb-0">
-                                        Clicking photos is one half of the task. The second half is delivering them to your
-                                        clients.
-                                    </h4>
-                                    <h4 class="text-white mb-0 pt-4 pb-xl-4">
-                                        Choose the modern way of delivering photos smartly using AI. With our paid plans,
-                                        unlock Kwikpic s best features to grow your brand and customer reach, choose from a
-                                        range of gallery templates to best represent your style, get different download
-                                        settings and much more!
-                                    </h4>
-                                </div>
-                                <div class="position-relative pfsn-img">
-                                    <img src="{{ asset('frontend/images/index/flowline.svg') }}" alt=""
-                                        srcset="" class="img-fluid flowline-img">
-                                    <img src="{{ asset('frontend/images/index/mobilesize.png') }}" alt=""
-                                        srcset="" class="img-fluid mobilesize">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+    
 
         <div class="position-relative">
 
@@ -330,19 +219,13 @@
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body " style="position: relative">
+                                        <div class="accordion-body position-relative">
 
                                             <img src="{{ asset('frontend/images/index/index-new/dwimg.png') }}"
-                                                alt="" srcset="" class="img-fluid"
-                                                style="
-                                                width:59%;
-                                                height: 290px;
-                                                object-fit: cover;
-                                                border-radius:70px;
-                                                ">
+                                                alt="" srcset="" class="img-fluid dwimg">
 
                                             <div class="accordion-body-mi">
-                                                <div class="h5 fw-500 text-white mb-0 text-center" style="position: relative;z-index:99">
+                                                <div class="h5 fw-500 text-white mb-0 text-center position-relative" style="z-index:99">
                                                     Let your clients discover their pictures
                                                     in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100%
                                                     awesome.
@@ -358,27 +241,7 @@
 
                                 </div>
                             </div>
-                            {{-- <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Intelligent Statistics
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div class="text-white py-2">
-                                            Statistical intelligence formulates the analysis model and reveals the system
-                                            that can be easily visible and understandable to mankind.
-                                            Data intelligence refers to the tools and methods that enterprise-scale
-                                            organizations use to better understand the information they collect, store, and
-                                            utilize to improve their products and/or services. Apply AI and machine learning
-                                            to stored data, and you get data intelligence.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
+                           
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed d-flex justify-content-between"
@@ -593,28 +456,11 @@
 
 
 
-    {{--
-    <section class="slider-sec">
-        <div class="container ">
-            <div class="row ">
-                <div class="bg-slider">
-                    <div class="img-group d-flex position-relative">
-                        <img src="{{asset('frontend/images/index/sl-3.png')}}" alt="" class="f-img">
-                        <img src="{{asset('frontend/images/index/sl-1.png')}}" alt="" class="s-img">
-                        <img src="{{asset('frontend/images/index/sl-2.png')}}" alt="" class="t-img">
-                    </div>
-                    <div class="textgroup">
-                        <h4 class="text-pink text-center slider-title">Market Smartly <span class="text-white">At Every Step</span></h4>
-                    <p class="slider-txt">Collect invaluable client data with their consent. Use it to reach just the right audience at fraction of a price compared to instagram marketing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
-    <div class="position-relative " style="isolation: isolate;overflow:hidden">
 
-        <img src="{{asset('frontend/images/index/index-new/pricebgimg.png')}}" alt="" srcset="" class="img-fluid w-100" style="position: absolute;z-index: -1;">
+    <div class="position-relative isolation overflow-hidden">
+
+        <img src="{{asset('frontend/images/index/index-new/pricebgimg.png')}}" alt="" srcset="" class="img-fluid w-100 position-absolute" style="z-index: -1;">
 
         <div class="container pt-5 mt-xl-5">
             
@@ -667,7 +513,7 @@
                         <div class="hundredtb-bgblck">
                             <img src="{{asset('frontend/images/priceimg/hundredelement.svg')}}" alt="" srcset="" class="img-fluid hundred-element-img" >
                             <div class="main-hundredtb">
-                                <h5 style="color:#FD692A;">BASIC</h5>
+                                <h5 class="yclr">BASIC</h5>
                                 <p class="data">100GB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
@@ -705,7 +551,7 @@
 
                             <div class="main-onetb">
                                 <span class="recomend">Recommended</span>
-                                <h5 style="color: #C505FF;">ADVANCE</h5>
+                                <h5 class="narangicolor">ADVANCE</h5>
                                 <p class="data">1TB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
@@ -728,7 +574,7 @@
                             <img src="{{asset('frontend/images/priceimg/fivetbelement.svg')}}" alt="" srcset="" class="img-fluid five-element-img" >
 
                             <div class="main-fivetb">
-                                <h5 style="color: #88ED11;">PREMIUM</h5>
+                                <h5 class="greencolor" >PREMIUM</h5>
                                 <p class="data">10GB</p>
                                 <span class="duration d-block"> Contact Sales For Pricing</span>
                                 <div class="text-center my-4">
@@ -757,60 +603,13 @@
             </div>
         </div>
     </div>
-    {{-- 
-    <section >
-        <div class="container">
-
-            <div class="row py-2 d-flex align-items-center">
-                <div class="col-lg-4 ">
-                    <h3 class="section-title text-lg-start text-center mb-lg-0 mb-4"><span class="text-white">Included in
-                            every</span><br>
-                        <span class="text-pink">algoshare plan</span>
-                    </h3>
-                </div>
-
-                <div class="col-lg-8 px-md-1 px-3">
-                    <div class="row box-outer">
-                        <div class="col-md-6">
-                            <div class="box">
-                                <h4 class="title">Analytics</h4>
-                                <p>See user trends, download the list of all users who accessed the event.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="box">
-                                <h4 class="title">Face Searches</h4>
-                                <p>Allow users to find their own photos, just by clicking a selfie</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="box">
-                                <h4 class="title">Pre Registrations</h4>
-                                <p>Allow guests to pre register to get their photos directly in their email when you upload.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="box">
-                                <h4 class="title">Print Store</h4>
-                                <p>Users can order prints directly from the gallery. You get comission on every sale.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> --}}
+    
 
 
 
 @endsection
 @section('js')
-    <script>
+    {{-- <script>
         $('.heroslider').slick({
             centerMode: true,
             centerPadding: '0px',
@@ -854,11 +653,11 @@
             fade: true,
             fadeSpeed: 1000
         });
-    </script>
+    </script> --}}
 
 
 
-    <script>
+    {{-- <script>
         var mq = window.matchMedia("(min-width: 1396px)");
         if (mq.matches) {
 
@@ -918,13 +717,12 @@
             $(this).toggleClass('active');
 
         });
-    </script>
+    </script> --}}
 
 
 
     <script>
         $(document).ready(function() {
-            // Initialize the slick slider
             $('.image-slider').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -935,12 +733,9 @@
                 centerPadding: '20px',
             });
 
-            // Show the first text initially
             $('#slide1').addClass('active-text');
 
-            // Change text and apply rotation on slide change
             $('.image-slider').on('afterChange', function(event, slick, currentSlide) {
-                // Hide all text slides
                 $('.slide-text').removeClass('active-text');
                 // Show the text for the current slide
                 $('#slide' + (currentSlide + 1)).addClass('active-text');
