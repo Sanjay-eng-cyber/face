@@ -87,7 +87,7 @@
                                         @forelse ($gallery_images as  $gallery)
                                             <div class="col pb-4">
                                                 <div>
-                                                    <img src="{{ asset('storage/images/galleries/' . $gallery->event->slug . '/' . $gallery->category->slug . '/20241030-123137.6722272907c3c.jpg') }}"
+                                                    <img src="{{ asset('storage/' . $gallery->image_url) }}"
                                                         alt="Gallery Images" srcset=""
                                                         class="img-fluid rounded-3 w-sm-100">
 
