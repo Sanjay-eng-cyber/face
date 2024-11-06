@@ -135,7 +135,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 63px;
+    gap: 56px;
     width: 100%;
 }
 .navbar-brand{
@@ -172,9 +172,9 @@
     font-size: 20px;
 }
 
-.home-left{
+/* .home-left{
     padding-left: 40px;
-}
+} */
 .hometarrow-img{
     position: absolute;
     right: 0px;

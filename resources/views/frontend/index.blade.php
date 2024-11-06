@@ -19,7 +19,7 @@
 @section('content')
     <section>
         <div style="position: relative">
-            <img src="{{asset('frontend/images/index/index-new/hometarrow.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
+            <img src="{{asset('frontend/images/index/index-new/leftarrowfix.svg')}}" alt="" srcset="" class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/bafullimg.svg') }}"
                 alt="Full hero image of the website's main section" class="img-fluid full-img" style="left: 40px">
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
