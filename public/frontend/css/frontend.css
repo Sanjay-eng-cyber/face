@@ -10,6 +10,10 @@
     --dppink:#FE3B96;
     --lwccolor:#D0D0D0;
     --newwcolor:#B4B4B5;
+    --nedpcolor:#FF0C7D;
+    --greencolor:#88ED11;
+    --narangicolor:#C505FF;
+    --yclr:#FD692A;
    
 }
 
@@ -33,11 +37,33 @@
     font-size: 20px;
 }
 
+.yclr{
+    color: var(--yclr);
+}
+.greencolor{
+    color:var(--greencolor)
+}
+.narangicolor{
+    color:var(--narangicolor)
+}
+.nedpcolor{
+    color: var(--nedpcolor);
+}
+.robot-withimg{
+    margin-bottom:-40px
+}
+.pt-30{
+    padding-top: 30px;
+}
 .fs-30{
     font-size: 30px;
 }
 .p-35{
     padding: 35px;
+}
+
+.isolation{
+    isolation: isolate;
 }
 
 .btn.btn-login.btn-event{
@@ -189,6 +215,9 @@
 
 
 /* hero section */
+.full-img.bafullimg{
+    left: 40px
+}
 .full-img{
     position: absolute;
     bottom:0px;
@@ -512,7 +541,7 @@
     padding-bottom: 0px;
 }
 .custopmainpad{
-    padding-top:55px;    
+    padding-top:26px;    
     padding-bottom: 90px;
 }
 /* end hOW kWIKPIC wORKS? */
@@ -876,6 +905,24 @@
   
 }
 
+.mdl-img{
+  width:50px;
+  height:50px;
+}
+.dba-img{
+    width: 474px
+}
+.nwunionimg{
+   position: absolute;
+   z-index: -1;
+   top: -31px;
+}
+.dwimg{
+    width:59%;
+    height: 290px;
+    object-fit: cover;
+    border-radius:70px;
+}
 @media screen and (max-width:1400px) {
     .rs-img {
         position: absolute;
