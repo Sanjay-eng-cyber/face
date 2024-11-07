@@ -14,7 +14,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     // Route::get('/login', function () {
     //     return view('frontend.login');
     // })->name('login');
-    
+
     Route::get('/basic-details-one', function () {
         return view('frontend.basic-details-one');
     })->name('basic-details-one');
@@ -109,5 +109,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         // });
+    });
+
+    Route::prefix('dynamic')->group(function () {
+        Route::get('event/share', 'App\Http\Controllers\frontend\EventShareController@index');
     });
 });
