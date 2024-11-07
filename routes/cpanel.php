@@ -55,6 +55,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');
         Route::post('/event/update/{id}', [EventController::class, 'update'])->name('backend.event.update');
         Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
+        Route::post('/generate/event-url/{id}', [EventController::class, 'eventUrl'])->name('backend.event.url');
         // Route::get('/event/gallery/{id}', [EventController::class, 'gallery'])->name('backend.event.gallery');
 
         // general setting page

@@ -6,6 +6,7 @@ use App\Models\Event;
 use Illuminate\Http\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
@@ -249,6 +250,13 @@ class EventController extends Controller
                 ]
             );
         }
+    }
+
+    public function eventUrl($id)
+    {
+        $event = Event::findOrFail($id);
+        $url = URL::temporarySignedRoute('frontend.event.share.index', now()->addDays(3), ['eventSlug' => $event->slug]);
+        return redirect()->route('backend.event.show', $id)->with('url', (string) $url);
     }
 
     // public function gallery($id)
