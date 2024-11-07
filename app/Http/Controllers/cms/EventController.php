@@ -256,7 +256,7 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
         $url = URL::temporarySignedRoute('frontend.event.share.index', now()->addDays(3), ['eventSlug' => $event->slug]);
-        return redirect()->route('backend.event.show', $id)->with('url', $url);
+        return redirect()->route('backend.event.show', $id)->with('shared_url', $url);
     }
 
     // public function gallery($id)

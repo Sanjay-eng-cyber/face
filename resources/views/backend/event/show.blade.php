@@ -198,14 +198,13 @@
                                                 </form>
                                             </div>
                                         </div>
-                                        {{-- @dd(session('url')) --}}
-                                        @if (session('url'))
+                                        @if (session('shared_url'))
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Event
                                                         Url</label><br>
-                                                    <div class="alert alert-success">
-                                                        {{ (string) session('url') }}
+                                                    <div class="">
+                                                        {{ session('shared_url') }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,8 +216,12 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">Description</label><br>
-                                                <p class="label-title">{!! $event->descriptions !!}</p>
+                                                    class="label-title">Descriptions</label><br>
+                                                @if ($event->descriptions)
+                                                    <p class="label-title">{!! $event->descriptions !!}</p>
+                                                @else
+                                                    <p class="label-title">---</p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
