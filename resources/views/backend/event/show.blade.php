@@ -193,7 +193,8 @@
                                                 <form method="Post"
                                                     action="{{ route('backend.event.url', $event->id) }}">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">Generate Event Url</button>
+                                                    <button type="submit" class="btn btn-primary">Generate Event
+                                                        Url</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -204,8 +205,7 @@
                                                     <label for="degree3" class="cust-title" class="label-title">Event
                                                         Url</label><br>
                                                     <div class="alert alert-success">
-                                                        {{ session('url') }}
-                                                        {{-- {{$url}} --}}
+                                                        {{ (string) session('url') }}
                                                     </div>
                                                 </div>
                                             </div>
