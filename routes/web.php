@@ -29,6 +29,9 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('login/{provider}', 'App\Http\Controllers\frontend\SocialAuthController@redirectToProvider');
     Route::get('login/{provider}/callback', 'App\Http\Controllers\frontend\SocialAuthController@handleProviderCallback');
 
+    Route::get('/e/share/{eventSlug}', function () {
+        return 'True';
+    })->name('frontend.event.share.index');
 
     Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', function () {
