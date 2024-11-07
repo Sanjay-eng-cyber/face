@@ -43,6 +43,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return 'True';
     })->name('frontend.event.share.index');
 
+    Route::get('/c/share/{categorySlug}', function () {
+        return 'True';
+    })->name('frontend.category.share.index');
+
     Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', function () {
             return view('frontend.index');

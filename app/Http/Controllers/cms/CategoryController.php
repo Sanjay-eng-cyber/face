@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Image;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
@@ -277,5 +278,12 @@ class CategoryController extends Controller
         } else {
             return redirect()->route('backend.category.uploaded-images-index')->with(toast('Something Went Wrong', 'error'));
         }
+    }
+
+    public function categoryUrl($id)
+    {
+        $category = Category::findOrFail($id);
+        $url = URL::temporarySignedRoute('frontend.category.share.index', now()->addDays(3), ['categorySlug' => $category->slug]);
+        return redirect()->route('backend.category.show', $id)->with('shared_url', $url);
     }
 }

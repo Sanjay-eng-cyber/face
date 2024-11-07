@@ -87,6 +87,30 @@
                                                 @endif
                                             </div>
                                         </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                {{-- <label for="degree3" class="cust-title" class="label-title">Share
+                                                    Event Url</label><br> --}}
+                                                <form method="Post"
+                                                    action="{{ route('backend.category.url', $category->id) }}">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-primary">Generate Category
+                                                        Url</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        @if (session('shared_url'))
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Category
+                                                        Url</label><br>
+                                                    <div class="">
+                                                        {{ session('shared_url') }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         {{-- <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree2" class="label-title cust-title">Thumbnail
