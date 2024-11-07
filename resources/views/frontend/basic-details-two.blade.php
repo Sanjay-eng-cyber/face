@@ -27,9 +27,67 @@
 </style>
 @endsection
 @section('content')
+    <section>
+        <div style="position: relative">
 
+           
+            <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
+                class="img-fluid blurhero-img-login">
+            <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
+                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
+            <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
+                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
+
+            <div class="container overflow-hide">
+                <div class="row  pt-35px">
+                  <div class="col-6 col-xl-6 col-xxl-5">
+                    
+                            
+                          <div class="basic-event-one-main" >
+                            <div class="basic-event-one-main-insider" >
+                                <div>
+                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                </div>
+                                <div>
+                                    <div class="eventanddatespit ">
+                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
+                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                                    </div>
+                                    <div class="text-white pt-3 fs-14" >
+                                        Picscan is the world's only end-to-end AI-powered image post-production solution.
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        
+                      
+
+                  </div>
+                </div>
+
+          
+
+            </div>
+        </div>
+    </section>
 @endsection
 @section('js')
+<script>
+  const pinInputs = document.querySelectorAll('.pin-input');
 
+  pinInputs.forEach((input, index) => {
+    input.addEventListener('input', (e) => {
+      if (e.target.value.length === 1 && index < pinInputs.length - 1) {
+        pinInputs[index + 1].focus();
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+        pinInputs[index - 1].focus();
+      }
+    });
+  });
+</script>
 
 @endsection
