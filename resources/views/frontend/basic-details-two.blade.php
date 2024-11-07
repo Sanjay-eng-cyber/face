@@ -6,7 +6,7 @@
       margin-top: 80px
     }
     .custom-ctnrfluid {
-      background-image: unset;
+      /* background-image: unset;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -14,7 +14,7 @@
       display: flex;
       align-items: center;
       min-height: 106px;
-      margin-top: 14px;
+      margin-top: 14px; */
       /* position: fixed;
       width: 98%;
       left: 50%;
@@ -22,22 +22,25 @@
     }
     .halfarrowt-img{
       display: none;
-    }
-
+    } 
+    .blurhero-img {
+            display: none;
+        }
 </style>
 @endsection
 @section('content')
     <section>
-        <div style="position: relative">
+        <div class="position-relative">
 
            
             <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-img-login">
+                class="img-fluid blurhero-bdptwo" style="backdrop-filter: blur(60px);">
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-
+            <img src="{{asset('frontend/images/gallery/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img" style="z-index: -99">
+           
             <div class="container overflow-hide">
                 <div class="row  pt-35px">
                   <div class="col-6 col-xl-6 col-xxl-5">

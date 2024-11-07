@@ -328,6 +328,17 @@ body {
     min-height: 672px;
 }
 
+.blurhero-bdptwo{
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 97%;
+    margin-top: 10px;
+    /* padding-bottom: 84px; */
+    min-height: 672px;
+}
 
 .plainplate-img{
     position: absolute;
