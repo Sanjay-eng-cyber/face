@@ -1428,6 +1428,19 @@ body {
     border: none;
     padding: 10px;
     }
+
+    .submit-btn-bept {
+       
+         width: 157px;
+         border-radius: 26px;
+         background-color:  #FE3B96;
+         color: #fff;
+         font-weight: 500;
+         border: none;
+         padding: 10px;
+         }
+
+
     .basic-event-one-main{
         background-color: #000000; 
         border-radius: 12px; 

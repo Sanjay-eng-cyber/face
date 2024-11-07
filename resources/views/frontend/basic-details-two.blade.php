@@ -65,6 +65,87 @@
                   </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-6 col-xl-6 col-xxl-5">
+                        <form action="{{ route('frontend.login.submit') }}" method="post" class="login-form pt-4">
+                            @csrf
+                            <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Details</div>
+                            
+                            <div class="pb-3">
+                                <label for="name" class="fw-600 frtwhitcolor pb-2">Name</label>
+                                <input type="text" name="name" minlength="8" maxlength="30" required
+                                    class="form-control sin-input">
+                            </div>
+                            {{-- @if ($errors->has('name'))
+                                <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('name') }}
+                                </div>
+                            @endif --}}
+
+                            <div class="pb-3">
+                                <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
+                                <input type="email" name="email" minlength="8" maxlength="30" required
+                                    class="form-control sin-input">
+                            </div>
+                            {{-- @if ($errors->has('email'))
+                                <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
+                                </div>
+                            @endif --}}
+                            <div class="pb-3">
+                                <label for="num" class="fw-600 frtwhitcolor pb-2">Number</label>
+                                <input type="text" id="num" name="num" minlength="6" maxlength="6" required class="form-control sin-input">
+                                {{--                                 
+                                @if ($errors->has('num'))
+                                    <div class="text-danger text-left mt-2" role="alert">{{ $errors->first('num') }}</div>
+                                @endif --}}
+                            </div>
+                            
+                          
+                            <div>
+                                {{-- <a href="http://" class="btn btn-login withsignin" style="font-size: 20px">
+                                    Sign In
+                                </a> --}}
+                             
+
+                                <button type="submit" class="submit-btn-bept">Submit</button>
+
+                            </div>
+
+                          
+
+
+                        </form>
+
+                    </div>
+                    <div class="col-6 col-xl-6 col-xxl-7">
+                        <div style="    display: grid;grid-template-columns: 48.5% 48.5%;grid-gap: 22px;">
+                            <div class="scan-face-box">
+                                <div class="scan-face-box-insider" >
+                                    <img src="{{asset('frontend/images/gallery/faceimg.png')}}" alt="" srcset="">
+                                </div>
+                                <div class="scan-textbox" >
+                                    Scan Your Face
+                                </div>
+                            </div>
+
+                            <div class="upload-section ">
+                                <div class="icon pb-4">
+                                <img src="{{asset('frontend/images/gallery/uploadicon.svg')}}" alt="" srcset="" class="img-fluid">
+                                </div>
+                                <!-- Dropzone Form -->
+                                <form action="/file-upload" class="dropzone" id="my-dropzone">
+                                    <div class="dz-message">
+                                        <button type="button" class="mb-3">Browse File</button>
+                                        <div>
+                                        <div class="h5 mb-0 lwccolor"> Choose a file or drag & drop it here.</div>
+                                        <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to 50 MB.</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
           
 
             </div>
