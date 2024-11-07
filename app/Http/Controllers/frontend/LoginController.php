@@ -41,6 +41,6 @@ class LoginController extends Controller
         if (Auth::guard('web')) {
             Auth::guard('web')->logout();
         }
-        return redirect()->route('frontend.login');
+        return redirect()->route('frontend.login')->with(['alert-type' => 'success', 'message' => 'Log Out Successfully.']);;
     }
 }

@@ -7,9 +7,9 @@
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
     
     <div class="container-fluid " style="z-index:99;position: relative;">
-        <div class="custom-ctnrfluid">
+        <div class="custom-ctnrfluid " id="mainNavbar" >
             <div class="container pall0" style="position: relative;z-index:999;">
-            <nav class="navbar navbar-expand-lg text-white" style="">
+            <nav class="navbar navbar-expand-lg text-white  " style="">
                 <div class="container-fluid insidenavcont pall0" style="position: relative;">
                 <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
                     <span class="text-white">Pic</span><span class=" darkpink">scan</span>
@@ -59,6 +59,8 @@
     </div>
 
 </div>
+
+
 
 
 {{-- <div class="position-relative isolation">

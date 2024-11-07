@@ -26,7 +26,6 @@ class SocialAuthController extends Controller
         );
 
         Auth::login($user);
-
-        return redirect()->route('index');
+        return redirect()->route('index')->with(['alert-type' => 'success', 'message' => 'Login Successfully.']);
     }
 }

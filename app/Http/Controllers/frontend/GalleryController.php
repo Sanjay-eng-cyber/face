@@ -10,8 +10,7 @@ class GalleryController extends Controller
 {
     public function index($event_id, $category_id)
     {
-        $gallery_images = GalleryImage::with(['event', 'category'])
-            ->where('category_id', $category_id)
+        $gallery_images = GalleryImage::where('category_id', $category_id)
             ->where('event_id', $event_id)
             ->latest()
             ->paginate(10);
