@@ -65,8 +65,8 @@
                   </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-6 col-xl-6 col-xxl-5">
+                <div class="row gx-5">
+                    <div class="col-5 col-xl-6 col-xxl-5">
                         <form action="{{ route('frontend.login.submit') }}" method="post" class="login-form pt-4">
                             @csrf
                             <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Details</div>
@@ -116,27 +116,43 @@
                         </form>
 
                     </div>
-                    <div class="col-6 col-xl-6 col-xxl-7">
-                        <div style="    display: grid;grid-template-columns: 48.5% 48.5%;grid-gap: 22px;">
-                            <div class="scan-face-box">
-                                <div class="scan-face-box-insider" >
-                                    <img src="{{asset('frontend/images/gallery/faceimg.png')}}" alt="" srcset="">
+                    <div class="col-7 col-xl-6 col-xxl-7">
+                        <div class="two-container-grp">
+                            <div class="basic-face-box">
+                                <div class="scan-face-box-insider-twopage" >
+                                    <img src="{{asset('frontend/images/gallery/faceimg.png')}}" alt="" srcset="" class="faceimg-img">
                                 </div>
-                                <div class="scan-textbox" >
-                                    Scan Your Face
+                                
+                                <div class="d-flex flex-column align-items-center gap-2">
+                                    <div class="scan-facebtn">
+                                        Scan Your Face
+                                    </div>
+                                    <div class="ortext" >
+                                        Or
+                                    </div>
+                                    <form action="/file-upload" class="dropzone " id="myDropzone">
+                                        <div class="dz-message scan-textboxbdpt-btn" >
+                                            Upload File
+                                        </div>
+                                    </form>
+                                    
+                                    
                                 </div>
                             </div>
-
                             <div class="upload-section ">
-                                <div class="icon pb-4">
-                                <img src="{{asset('frontend/images/gallery/uploadicon.svg')}}" alt="" srcset="" class="img-fluid">
+                                <div class="pb-4 browsertext" >
+                                    Browse Files
+                                </div>
+                                <div class="d-flex justify-content-center pb-3">
+                                    <div class="uploder-up">
+                                    <img src="{{asset('frontend/images/gallery/uploadicon.svg')}}" alt="" srcset="" class="img-fluid">
+                                    </div>
                                 </div>
                                 <!-- Dropzone Form -->
                                 <form action="/file-upload" class="dropzone" id="my-dropzone">
                                     <div class="dz-message">
                                         <button type="button" class="mb-3">Browse File</button>
                                         <div>
-                                        <div class="h5 mb-0 lwccolor"> Choose a file or drag & drop it here.</div>
                                         <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to 50 MB.</div>
                                         </div>
                                     </div>
@@ -153,22 +169,4 @@
     </section>
 @endsection
 @section('js')
-<script>
-  const pinInputs = document.querySelectorAll('.pin-input');
-
-  pinInputs.forEach((input, index) => {
-    input.addEventListener('input', (e) => {
-      if (e.target.value.length === 1 && index < pinInputs.length - 1) {
-        pinInputs[index + 1].focus();
-      }
-    });
-
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
-        pinInputs[index - 1].focus();
-      }
-    });
-  });
-</script>
-
 @endsection
