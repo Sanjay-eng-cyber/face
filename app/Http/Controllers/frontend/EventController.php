@@ -16,4 +16,42 @@ class EventController extends Controller
         // dd($categories);
         return view('frontend.events.event-details', compact('event', 'categories'));
     }
+
+    public function stepOneForm($eventSlug)
+    {
+        $event = Event::where('slug', $eventSlug)->firstOrFail();
+        // dd($event);
+        return view('frontend.events.step-forms.step-form-one', compact('event'));
+    }
+
+    public function verifyPin(Request $request)
+    {
+        $request->validate([
+            'pin1' => 'required|digits:1',
+            'pin2' => 'required|digits:1',
+            'pin3' => 'required|digits:1',
+            'pin4' => 'required|digits:1',
+            'pin5' => 'required|digits:1',
+            'pin6' => 'required|digits:1',
+        ]);
+        
+        // Retrieve and concatenate PIN input fields
+        $enteredPin = $request->input('pin1') . $request->input('pin2') . $request->input('pin3') .
+            $request->input('pin4') . $request->input('pin5') . $request->input('pin6');
+
+        // Query the event table to find a match
+        $event = Event::where('pin', $enteredPin)->first();
+
+        if ($event) {
+            return redirect()->route('frontend.event.step-two-form')->with(toast('Pin Verified Successfully', 'success'));
+        } else {
+            return redirect()->back()->with(toast('Pin Not Correct', 'info'));
+        }
+    }
+
+    public function stepTwoForm()
+    {
+        // dd('jfddjf');
+        return view('frontend.events.step-forms.step-form-two');
+    }
 }
