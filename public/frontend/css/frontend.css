@@ -241,6 +241,14 @@ body {
 }
 
 .custm-outer{}
+.basic-details-trbg{
+    background-image:url('/frontend/images/index/index-new/blurhero.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(23px);
+}
+
 .custom-ctnrfluid{
     background-image:url('/frontend/images/index/navbg.svg');
     background-repeat: no-repeat;
@@ -352,6 +360,14 @@ body {
     bottom:-63px;
     width:100%
 }
+
+.plainplate-img-new{
+    position: absolute;
+    z-index:-2;
+    top:10em;
+    width:100%
+}
+
 .plainplate-img3{
     position: absolute;
     z-index:-2;
@@ -382,6 +398,12 @@ body {
   
     bottom: -2rem;
 }
+.smalllarrow-img2-new{
+    position: absolute;
+    right: 13em;  
+    top: 6rem;
+}
+
 .hero-main{
     padding-top: 35px;
     padding-bottom:60px;
