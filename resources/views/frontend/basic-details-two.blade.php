@@ -143,8 +143,8 @@
                                 </div>
                             </div>
                             <div class="upload-section ">
-                                <div class="pb-4 browsertext" >
-                                    Browse Files
+                                <div class="pb-4 browsertext"  >
+                                    Browse File
                                 </div>
                                 <div class="d-flex justify-content-center pb-3">
                                     <div class="uploder-up">
@@ -154,7 +154,7 @@
                                 <!-- Dropzone Form -->
                                 <form action="/file-upload" class="dropzone" id="my-dropzone">
                                     <div class="dz-message">
-                                        <button type="button" class="mb-3">Browse File</button>
+                                        <button type="button " class="mb-3 guest-uploader"> as Guest Upload</button>
                                         <div>
                                         <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to 50 MB.</div>
                                         </div>

@@ -679,6 +679,8 @@ body {
 }
 
 
+
+
 .dropzone .dz-message{
     margin: 0px;
 }
@@ -692,6 +694,19 @@ body {
     width: 140px;
     font-size: 14px;
 }
+
+
+.upload-section button.guest-uploader {
+    font-weight: bold;
+    padding: 10px 9px;
+    border: none;
+    border-radius: 22px;
+    border: 1px solid #B0ABAB;
+    width: 150px;
+    font-size: 14px;
+    color:#FE3B96;
+}
+
 .upload-section p {
     margin: 15px 0 0;
 }
