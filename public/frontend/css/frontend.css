@@ -1582,6 +1582,12 @@ body {
     grid-template-columns: 48.5% 48.5%;
     grid-gap: 22px;
 }
+
+.gallery-img{
+    height: 221px;
+    object-fit: cover;
+    width: 100%;
+}
 @media screen and (max-width:1116px) {
     .card-price {
         width: 250px;
