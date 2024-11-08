@@ -17,9 +17,9 @@
             min-height: 106px;
             margin-top: 14px;
             /* position: fixed;
-                          width: 98%;
-                          left: 50%;
-                          transform: translate(-50%); */
+                              width: 98%;
+                              left: 50%;
+                              transform: translate(-50%); */
         }
 
         .halfarrowt-img {
@@ -48,7 +48,7 @@
                                 <div class="basic-event-one-main">
                                     <div class="basic-event-one-main-insider">
                                         <div>
-                                            <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
+                                            <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                                 alt="" class="img-fluid ex-one-img">
                                         </div>
                                         <div>
