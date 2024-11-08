@@ -1610,6 +1610,17 @@ body {
     object-fit: cover;
     width: 100%;
 }
+
+.grid-outer{
+    background-color: #000000;
+    border: 1px solid #FE3B96;
+    padding: 13px 8px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 49.4% 1% 49.4%;
+    grid-gap: 1px;
+}
+
 @media screen and (max-width:1116px) {
     .card-price {
         width: 250px;
@@ -1717,6 +1728,17 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    
+.grid-outer{
+    background-color: #000000;
+    border: 1px solid #FE3B96;
+    padding: 13px 8px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns:100%;
+    grid-gap: 1px;
+}
+
     .slick-slide.slick-current img {
         width: 100% !important;
         object-fit: contain;

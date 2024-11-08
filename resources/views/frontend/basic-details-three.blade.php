@@ -69,15 +69,7 @@
 
                     </div> --}}
                     <div class="col-12">
-                            <div class="" style="
-                               background-color: #000000;
-                               border: 1px solid #FE3B96;
-                               padding: 13px 8px;
-                               border-radius: 12px;
-                               display: grid;
-                               grid-template-columns: 49.4% 1% 49.4%;
-                               grid-gap: 1px;
-                                ">
+                            <div class="grid-outer">
                                 <div class="basic-event-one-main" style="height:100%;">
                                     <div class="basic-event-one-main-insider" >
                                         <div>
@@ -95,7 +87,7 @@
                                     </div>
                                 </div>
                                 
-                                <div style="width: 1px; background-color:#FF3895; height: auto; align-self: stretch;"></div>
+                                <div class="d-none d-lg-block" style="width: 1px; background-color:#FF3895; height: auto; align-self: stretch;"></div>
                             
                                 <div class="basic-event-one-main" style="height:100%;">
                                     <div class="basic-event-one-main-insider" >
@@ -124,7 +116,7 @@
 
                     </div>
 
-                    <div class="row row-cols-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
                         <div class="col pb-4">
                             <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
                         </div>
