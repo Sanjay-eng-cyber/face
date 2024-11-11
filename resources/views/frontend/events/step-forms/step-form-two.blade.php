@@ -87,7 +87,7 @@
                             <div class="pb-3">
                                 <label for="name" class="fw-600 frtwhitcolor pb-2">Name</label>
                                 <input type="text" name="name" minlength="3" maxlength="30" required
-                                    class="form-control sin-input">
+                                    class="form-control sin-input" value="{{old('name')}}">
                                 @if ($errors->has('name'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('name') }}
                                     </div>
@@ -97,7 +97,7 @@
                             <div class="pb-3">
                                 <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
                                 <input type="email" name="email" minlength="8" maxlength="30" required
-                                    class="form-control sin-input">
+                                    class="form-control sin-input" value="{{old('email')}}">
                                 @if ($errors->has('email'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
                                     </div>
@@ -106,7 +106,7 @@
                             <div class="pb-3">
                                 <label for="num" class="fw-600 frtwhitcolor pb-2">Number</label>
                                 <input type="text" id="phone" name="phone" minlength="10" maxlength="10" required
-                                    class="form-control sin-input">
+                                    class="form-control sin-input" value="{{old('phone')}}">
 
                                 @if ($errors->has('phone'))
                                     <div class="text-danger text-left mt-2" role="alert">{{ $errors->first('phone') }}
