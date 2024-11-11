@@ -258,11 +258,15 @@ body {
 .navbar-brand{
     position: absolute;
     left: 0px;
+    top: -17px
    
 }
-
+.navbar-toggler{
+    background-color: transparent;
+}
 .navbar{
-    
+    background-color: transparent;
+    --bs-navbar-toggler-icon-bg: url(/frontend/images/index/humbuger.svg);
     /* background-color: red; */
 }
 
@@ -348,6 +352,8 @@ body {
     width: 97%;
     margin-top:0px;
     min-height: 697px;
+    object-fit:cover;
+
 }
 
 .blurhero-img-login{
@@ -1170,6 +1176,7 @@ body {
 .mdl-img{
   width:50px;
   height:50px;
+  object-fit: cover;
 }
 .dba-img{
     width: 474px
@@ -1647,6 +1654,11 @@ body {
     grid-gap: 1px;
 }
 
+.small-pra-text{
+    font-size: 24px;
+    font-weight: 500;
+}
+
 @media screen and (max-width:1116px) {
     .card-price {
         width: 250px;
@@ -1717,6 +1729,20 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .navbar-brand{
+        top: -8px;
+    }
+    .robot-withimg {
+        margin-bottom: 0px;
+    }
+    .scn-sharemain{
+        background-color: red;
+        padding: 10px;
+        gap: 0.6rem;
+    }
+    .let-sm-text{
+        padding-bottom:40px;
+      }
     .slick-slide.slick-current img {
         width: 300px !important;
     }
@@ -1754,16 +1780,47 @@ body {
    
 }
 @media screen and (max-width:992px) {
-    
-.grid-outer{
-    background-color: #000000;
-    border: 1px solid #FE3B96;
-    padding: 13px 8px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns:100%;
-    grid-gap: 1px;
+    .dba-img {
+    width: 345px;
 }
+.sm-middle{
+    width: 40px;
+    height: unset;
+    
+    top: -5px;
+    left: 50%;
+        transform: translate(-50%);
+}
+    .small-pra-text{
+        font-size: 20px;
+        padding-top: 18px;
+        padding-bottom: 22px;
+    }
+    .rightarrow-img{
+        width: 40px;
+    }
+    .fs-30px{
+        font-size:30px;
+    }
+    .let-sm-text {
+        padding-bottom: 17px;
+    }
+    .robot-withimg {
+        margin-bottom: 25px;
+    }
+    .pb78px{
+        padding-bottom: 78px;
+    }
+    
+    .grid-outer{
+        background-color: #000000;
+        border: 1px solid #FE3B96;
+        padding: 13px 8px;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns:100%;
+        grid-gap: 1px;
+    }
 
     .slick-slide.slick-current img {
         width: 100% !important;
@@ -1847,8 +1904,8 @@ body {
         align-items:unset;
         min-height: unset;
         margin-top: 14px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 0px;
+        padding-bottom: 0px;
        
     }
 }
@@ -1915,6 +1972,16 @@ body {
 }
 
 @media screen and (max-width:576px) {
+   
+    .fs-sm-16px{
+
+    }
+    .navbar-brand{
+        top: 0px 
+    }
+    .fs-20px{
+        font-size: 20px;
+    }
     .pre-arrow {
         position: relative;
         top: 42px;
@@ -1938,11 +2005,93 @@ body {
     .fs-20{
         font-size: 20px;
     }
+
+    .dba-img {
+        width: 310px;
+    }
+
+    .share-img-text{
+        font-size: 24px;
+    }
+
+    .using-herotext{
+        font-size:24px;
+    }
+    .small-pra-text{
+        font-size:16px;
+        padding-top: 15px;
+    }
+    .rightarrow-img {
+        width: 26px;
+    }
+
+    .mdl-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    @keyframes borderPulse {
+        0%, 100% {
+            width: 30px;
+            height: 30px;
+        }
+        50% {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+
+
+}
+@media screen and (max-width:480px) {
+    .hero-mh{
+        min-height: 448px;
+    }
+    .hero-main {
+        padding-top: 13px;
+        padding-bottom: 60px;
+    }
+    .share-img-text{
+        font-size: 20px;
+    }
+
+    .using-herotext{
+        font-size:20px;
+    }
+    .small-pra-text{
+        font-size:14px;
+    }
+    .rightarrow-img {
+        width: 24px;
+    }
+
+    .dba-img {
+        width: 218px;
+    }
+    .mdl-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    @keyframes borderPulse {
+        0%, 100% {
+            width: 30px;
+            height: 30px;
+        }
+        50% {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
 }
 @media screen and (max-width:440px) {
    
     .social a {
     padding: 8px 10px !important;
     }
+
+  
 }
 /*end hero section */

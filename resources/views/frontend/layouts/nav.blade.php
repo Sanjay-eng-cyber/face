@@ -6,12 +6,12 @@
 
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
     
-    <div class="container-fluid " style="z-index:99;position: relative;">
+    <div class="container-fluid position-relative" style="z-index:99;;">
         <div class="custom-ctnrfluid " id="mainNavbar" >
-            <div class="container pall0" style="position: relative;z-index:999;">
+            <div class="container pall0 position-relative" style="z-index:999;">
             <nav class="navbar navbar-expand-lg text-white  " style="">
-                <div class="container-fluid insidenavcont pall0" style="position: relative;">
-                <a class="navbar-brand fs-43px fw-900" href="#" style=" top: -17px;">
+                <div class="container-fluid insidenavcont position-relative pall0">
+                <a class="navbar-brand fs-43px fs-30px fw-900 fs-20px" href="#" >
                     <span class="text-white">Pic</span><span class=" darkpink">scan</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
