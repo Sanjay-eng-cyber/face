@@ -42,149 +42,159 @@
             <img src="{{asset('frontend/images/gallery/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img" style="z-index: -99">
             
             <div class="container-fluid ">
+
                 <div class="basic-details-trbg">
+
                     <div class="container overflow-hide" style="">
-                    <div class="row  pt-35px">
-                    {{-- <div class="col-6 col-xl-6 col-xxl-6">
+                        <div class="row  pt-35px">
                         
-                                
-                            <div class="basic-event-one-main" >
-                                <div class="basic-event-one-main-insider" >
-                                    <div>
-                                        <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
-                                    </div>
-                                    <div>
-                                        <div class="eventanddatespit ">
-                                            <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                            <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                            <div class="col-12">
+                                    <div class="grid-outer">
+                                        <div class="basic-event-one-main" style="height:100%;">
+                                            <div class="basic-event-one-main-insider" >
+                                                <div>
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                                </div>
+                                                <div>
+                                                    <div class="eventanddatespit ">
+                                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
+                                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                                                    </div>
+                                                    <div class="text-white pt-3 fs-14" >
+                                                        Picscan is the world's only end-to-end AI-powered image post-production solution.
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-white pt-3 fs-14" >
-                                            Picscan is the world's only end-to-end AI-powered image post-production solution.
+                                        
+                                        <div class="d-none d-lg-block" style="width: 1px; background-color:#FF3895; height: auto; align-self: stretch;"></div>
+                                    
+                                        <div class="basic-event-one-main" style="height:100%;">
+                                            <div class="basic-event-one-main-insider" >
+                                                <div>
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                                </div>
+                                                <div>
+                                                    <div class="eventanddatespit ">
+                                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
+                                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                                                    </div>
+                                                    <div class="text-white pt-3 fs-14" >
+                                                        Picscan is the world's only end-to-end AI-powered image post-production solution.
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                        
 
-                    </div> --}}
-                    <div class="col-12">
-                            <div class="grid-outer">
-                                <div class="basic-event-one-main" style="height:100%;">
-                                    <div class="basic-event-one-main-insider" >
-                                        <div>
-                                            <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
-                                        </div>
-                                        <div>
-                                            <div class="eventanddatespit ">
-                                                <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                                <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
-                                            </div>
-                                            <div class="text-white pt-3 fs-14" >
-                                                Picscan is the world's only end-to-end AI-powered image post-production solution.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-none d-lg-block" style="width: 1px; background-color:#FF3895; height: auto; align-self: stretch;"></div>
-                            
-                                <div class="basic-event-one-main" style="height:100%;">
-                                    <div class="basic-event-one-main-insider" >
-                                        <div>
-                                            <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
-                                        </div>
-                                        <div>
-                                            <div class="eventanddatespit ">
-                                                <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                                <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
-                                            </div>
-                                            <div class="text-white pt-3 fs-14" >
-                                                Picscan is the world's only end-to-end AI-powered image post-production solution.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="row pt-5 pb-4">
+                            <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
+                        </div>
+
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery">
+                            <div class="col pb-4" data-index="1">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
                             </div>
 
+                            <div class="col pb-4" data-index="2">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="3">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="4">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+
+                            <div class="col pb-4" data-index="5">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="6">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+                            <div class="col pb-4" data-index="7">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+                            <div class="col pb-4" data-index="8">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="9">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="10">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+
+                            <div class="col pb-4" data-index="11">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="12">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="13">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="14">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+                            <div class="col pb-4" data-index="15">
+                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button id="toggleButton" class="btn pink-btn showmshol mt-3">Show More</button>
+                        </div>
+    
                     </div>
-                    
-                    </div>
 
-                    <div class="row pt-5 pb-4">
-                        <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
-
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                        <div class="col pb-4">
-                            <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                        </div>
-
-                    </div>
-            
-
-                    </div>
                 </div>
+
             </div>
+            
         </div>
     </section>
 @endsection
 @section('js')
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const galleryItems = document.querySelectorAll("#gallery .col");
+        const toggleButton = document.getElementById("toggleButton");
+        const maxVisible = 12; // Number of items to display initially
+
+        // Initially hide items beyond the first 12
+        galleryItems.forEach((item, index) => {
+            if (index >= maxVisible) item.style.display = "none";
+        });
+
+        // Toggle visibility on button click
+        toggleButton.addEventListener("click", function() {
+            const isExpanded = toggleButton.innerText === "Show Less";
+            galleryItems.forEach((item, index) => {
+                item.style.display = isExpanded || index < maxVisible ? "block" : "none";
+            });
+            toggleButton.innerText = isExpanded ? "Show More" : "Show Less";
+        });
+    });
+</script>
+
 @endsection
