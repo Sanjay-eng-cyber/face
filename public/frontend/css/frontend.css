@@ -1972,6 +1972,14 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .smindexa{
+        position: absolute;
+        right: 0px;
+        bottom: 8em;
+    }
+    .full-img.bafullimg {
+        display: none;
+    }
    
     .fs-sm-16px{
 
@@ -2045,12 +2053,18 @@ body {
 
 }
 @media screen and (max-width:480px) {
+    .plainplate-img{
+        position: absolute;
+        z-index:-2;
+        bottom: 102px;
+        width:100%
+    }
     .hero-mh{
         min-height: 448px;
     }
     .hero-main {
         padding-top: 13px;
-        padding-bottom: 60px;
+        padding-bottom: 70px;
     }
     .share-img-text{
         font-size: 20px;

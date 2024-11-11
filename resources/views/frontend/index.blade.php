@@ -28,6 +28,7 @@
                 class="img-fluid hometarrow-img">
             <img src="{{ asset('frontend/images/index/index-new/bafullimg.svg') }}"
                 alt="Full hero image of the website's main section" class="img-fluid full-img bafullimg">
+            <img src="{{ asset('frontend/images/index/smindexa.svg') }}" alt="" srcset="" class="img-fluid smindexa d-block d-sm-none">
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate.svg') }}"
