@@ -13,6 +13,9 @@
         background:url(/frontend/images/index/navbg.svg);
         backdrop-filter: blur(29px);
     }
+    .smalllarrow-img{
+        display:none;
+    }
  
 </style>
 @endsection

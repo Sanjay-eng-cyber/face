@@ -1845,8 +1845,11 @@ body {
         backdrop-filter: blur(29px);
         display: flex;
         align-items:unset;
-        min-height: 80px;
+        min-height: unset;
         margin-top: 14px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+       
     }
 }
 
