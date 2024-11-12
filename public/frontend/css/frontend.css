@@ -258,11 +258,15 @@ body {
 .navbar-brand{
     position: absolute;
     left: 0px;
+    top: -17px
    
 }
-
+.navbar-toggler{
+    background-color: transparent;
+}
 .navbar{
-    
+    background-color: transparent;
+    --bs-navbar-toggler-icon-bg: url(/frontend/images/index/humbuger.svg);
     /* background-color: red; */
 }
 
@@ -348,6 +352,8 @@ body {
     width: 97%;
     margin-top:0px;
     min-height: 697px;
+    object-fit:cover;
+
 }
 
 .blurhero-img-login{
@@ -1170,6 +1176,7 @@ body {
 .mdl-img{
   width:50px;
   height:50px;
+  object-fit: cover;
 }
 .dba-img{
     width: 474px
@@ -1647,6 +1654,12 @@ body {
     grid-gap: 1px;
 }
 
+.small-pra-text{
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 22px;
+}
+
 @media screen and (max-width:1116px) {
     .card-price {
         width: 250px;
@@ -1660,6 +1673,12 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .ofmainbg{
+        padding: 63px 45px;
+    }
+    .scn-sharemain{
+        padding: 36px;
+    }
     .slick-sprev {
         opacity: 1;
         left: 0;
@@ -1717,6 +1736,43 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .ofmainbg {
+        padding: 40px 40px;
+    }
+    .smty-text {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .chain-img{
+        width:36px;
+    }
+    .camera-img{
+        width: 40px;
+    }
+    .faceai-img{
+        width: 40px;;
+    }
+    .ciframe-img{
+        width: 40px;
+    }
+    .share-box{
+    width: 90px;
+    height: 90px;
+    }
+    .navbar-brand{
+        top: -8px;
+    }
+    .robot-withimg {
+        margin-bottom: 0px;
+    }
+    .scn-sharemain{
+        /* background-color: red; */
+        padding: 10px;
+        gap: 0.6rem;
+    }
+    .let-sm-text{
+        padding-bottom:40px;
+      }
     .slick-slide.slick-current img {
         width: 300px !important;
     }
@@ -1754,16 +1810,106 @@ body {
    
 }
 @media screen and (max-width:992px) {
-    
-.grid-outer{
-    background-color: #000000;
-    border: 1px solid #FE3B96;
-    padding: 13px 8px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns:100%;
-    grid-gap: 1px;
+    .our-prfsn{
+        font-size: 24px;
+    }
+
+    .arrowtype-img{
+        width: 103px;
+    }
+
+    .smty-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .clcphotot{
+        font-size: 16px;
+    }
+    .cmw-text{
+        font-size: 16px;
+    }
+    .smty-text{
+        font-size: 24px;
+    }
+    .ofmainbg{
+        padding: 15px 15px;
+    }
+    .lptbg-img {
+        position: absolute;
+        width: 220px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .tg-one-img {
+        position: absolute;
+        width: 78px;
+        z-index: 1;
+        top: 55px;
+        left: 96px;
+    }
+
+    .tg-two-img {
+        position: absolute;
+        width: 142px;
+        z-index: 1;
+        top: 81px;
+        left: 102px;
+    }
+
+    .tg-three-img {
+        position: absolute;
+        width: 116px;
+        z-index: 1;
+        top: 78px;
+        left: 13rem;
+    }
+
+    .thanoshand-img{
+        display:none;
+    }
+    .dba-img {
+    width: 345px;
 }
+.sm-middle{
+    width: 40px;
+    height: unset;
+    
+    top: -5px;
+    left: 50%;
+        transform: translate(-50%);
+}
+    .small-pra-text{
+        font-size: 20px;
+        padding-top: 18px;
+        padding-bottom: 22px;
+    }
+    .rightarrow-img{
+        width: 40px;
+    }
+    .fs-30px{
+        font-size:30px;
+    }
+    .let-sm-text {
+        padding-bottom: 17px;
+    }
+    .robot-withimg {
+        margin-bottom: 25px;
+    }
+    .pb78px{
+        padding-bottom: 78px;
+    }
+    
+    .grid-outer{
+        background-color: #000000;
+        border: 1px solid #FE3B96;
+        padding: 13px 8px;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns:100%;
+        grid-gap: 1px;
+    }
 
     .slick-slide.slick-current img {
         width: 100% !important;
@@ -1845,13 +1991,23 @@ body {
         backdrop-filter: blur(29px);
         display: flex;
         align-items:unset;
-        min-height: 80px;
+        min-height: unset;
         margin-top: 14px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+       
     }
 }
 
 
 @media screen and (max-width:768px) {
+    .ofmainbg {
+        padding: 25px 30px;
+    }
+    .share-box {
+        width: 80px;
+        height: 80px;
+    }
     .main-topheading {
         padding-top: 124px;
         padding-bottom: 32px;
@@ -1912,6 +2068,37 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .arrowtype-img {
+        width:85px;
+        right: 0px;
+    }
+    .our-prfsn {
+        font-size: 16px;
+    }
+    .smty-text {
+        font-size: 14px;
+    }
+    .cmw-text {
+        font-size: 14px;
+    }
+    .smindexa{
+        position: absolute;
+        right: 0px;
+        bottom: 8em;
+    }
+    .full-img.bafullimg {
+        display: none;
+    }
+   
+    .fs-sm-16px{
+
+    }
+    .navbar-brand{
+        top: 0px 
+    }
+    .fs-20px{
+        font-size: 20px;
+    }
     .pre-arrow {
         position: relative;
         top: 42px;
@@ -1935,11 +2122,183 @@ body {
     .fs-20{
         font-size: 20px;
     }
+
+    .dba-img {
+        width: 310px;
+    }
+
+    .share-img-text{
+        font-size: 24px;
+    }
+
+    .using-herotext{
+        font-size:24px;
+    }
+    .small-pra-text{
+        font-size:16px;
+        padding-top: 15px;
+    }
+    .rightarrow-img {
+        width: 26px;
+    }
+
+    .mdl-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    @keyframes borderPulse {
+        0%, 100% {
+            width: 30px;
+            height: 30px;
+        }
+        50% {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    .custopmainpad {
+        padding-top: 0px;
+    }
+    .hkmt-text {
+        font-size: 18px;
+    }
+    .let-sm-text{
+        font-size:16px;
+    }
+    .fs-sm14px{
+        font-size: 14px;
+    }
+    .robot-withimg {
+        margin-bottom: 18px;
+    }
+    .share-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chain-img{
+        width:25px;
+    }
+    .camera-img{
+        width: 25px;
+    }
+    .faceai-img{
+        width: 25px;;
+    }
+    .ciframe-img{
+        width: 25px;
+    }
+
+    .scn-sharemain {
+        padding: 39px 10px 10px 10px;
+        gap: 0.4rem;
+    }
+
+    .pb78px {
+        padding-bottom: 50px;
+    }
+
+}
+@media screen and (max-width:480px) {
+    .let-sm-text{
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .nwunionimg{
+        top: -27px;
+    }
+    .custopmainpad{
+        padding-top: 0px;
+    }
+    .hkmt-text{
+        font-size:1rem;
+    }
+    .robot-withimg {
+        margin-bottom: 1px;
+    }
+    .pb78px {
+        padding-bottom: 40px;
+    }
+    .scn-sharemain{
+        padding: 50px 10px 10px 10px;
+        gap: 0.2rem;
+        border-radius: 8px;
+    }
+    .chain-img{
+        width:19px;
+    }
+    .camera-img{
+        width: 19px;
+    }
+    .faceai-img{
+        width: 19px;;
+    }
+    .ciframe-img{
+        width: 19px;
+    }
+    .share-box{
+        width: 43px;
+        height: 43px;
+        border-radius: 6px;
+    }
+    .fs-es-12px{
+        font-size: 12px;
+    }
+    .plainplate-img{
+        position: absolute;
+        z-index:-2;
+        bottom: 102px;
+        width:100%
+    }
+    .hero-mh{
+        min-height: 448px;
+    }
+    .hero-main {
+        padding-top: 13px;
+        padding-bottom: 70px;
+    }
+    .share-img-text{
+        font-size: 20px;
+    }
+
+    .using-herotext{
+        font-size:20px;
+    }
+    .small-pra-text{
+        font-size:14px;
+    }
+    .rightarrow-img {
+        width: 24px;
+    }
+
+    .dba-img {
+        width: 218px;
+    }
+    .mdl-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    @keyframes borderPulse {
+        0%, 100% {
+            width: 30px;
+            height: 30px;
+        }
+        50% {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
 }
 @media screen and (max-width:440px) {
    
     .social a {
     padding: 8px 10px !important;
     }
+
+  
 }
 /*end hero section */
