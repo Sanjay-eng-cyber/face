@@ -36,7 +36,7 @@
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
 
-            <div class="container overflow-hide">
+            <div class="container overflow-hide ">
                 {{-- <div style="height:100px;">
                 </div> --}}
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
@@ -157,20 +157,30 @@
 
         </div>
 
-        {{-- <div class="container" style="padding-bottom:80px">
+        <div class="container" style="padding-bottom:80px">
             <div class="row position-relative">
-                <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
-                    class="img-fluid lptbg-img">
-                <img src="{{ asset('frontend/images/index/index-new/tg-one.png') }}" alt="" srcset=""
-                    class="img-fluid tg-one-img">
-                <img src="{{ asset('frontend/images/index/index-new/tg-two.png') }}" alt="" srcset=""
-                    class="img-fluid tg-two-img">
-                <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
-                    class="img-fluid tg-three-img">
+                    <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
+                    class="img-fluid lptbg-img d-none d-lg-block">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-one.png') }}" alt="" srcset=""
+                        class="img-fluid tg-one-img d-none d-lg-block">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-two.png') }}" alt="" srcset=""
+                        class="img-fluid tg-two-img d-none d-lg-block">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
+                        class="img-fluid tg-three-img d-none d-lg-block">
 
-                <div class="col-5 col-xxl-4">
+                <div class="col-12 col-md-6 col-lg-5 col-xxl-4 position-relative text-center text-md-start d-flex align-items-center justify-content-center">
+                    <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
+                    class="img-fluid lptbg-img d-none d-md-block d-lg-none">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-one.png') }}" alt="" srcset=""
+                        class="img-fluid tg-one-img d-none d-md-block d-lg-none">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-two.png') }}" alt="" srcset=""
+                        class="img-fluid tg-two-img d-none d-md-block d-lg-none">
+                    <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
+                        class="img-fluid tg-three-img d-none d-md-block d-lg-none">
+
+                    <img src="{{asset('frontend/images/index/sm-laptop.png')}}" alt="" srcset="" class="img-fluid d-block d-md-none">
                 </div>
-                <div class="col-7 col-xxl-8 position-relative">
+                <div class="col-12 col-md-6 col-lg-7 col-xxl-8 position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/thanoshand.svg') }}" alt=""
                         srcset="" class="img-fluid thanoshand-img">
 
@@ -179,7 +189,7 @@
                     <div class="outer-tgbg">
                         <div class="outer-tgbg-black">
                             <div class="ofmainbg">
-                                <div class="text-white h2 fw-600">For Our <span class="lpinkmc">Professionals ?</span>
+                                <div class="text-white h2 fw-600 our-prfsn">For Our <span class="lpinkmc">Professionals ?</span>
                                 </div>
                                 <div class="text-white smty-text">
                                     <span class="lpinkmc">Smartly</span> Deliver Photos to your Clients
@@ -201,7 +211,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
 
 

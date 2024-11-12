@@ -1673,6 +1673,9 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .ofmainbg{
+        padding: 63px 45px;
+    }
     .scn-sharemain{
         padding: 36px;
     }
@@ -1733,6 +1736,13 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .ofmainbg {
+        padding: 40px 40px;
+    }
+    .smty-text {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
     .chain-img{
         width:36px;
     }
@@ -1800,6 +1810,65 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .our-prfsn{
+        font-size: 24px;
+    }
+
+    .arrowtype-img{
+        width: 103px;
+    }
+
+    .smty-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .clcphotot{
+        font-size: 16px;
+    }
+    .cmw-text{
+        font-size: 16px;
+    }
+    .smty-text{
+        font-size: 24px;
+    }
+    .ofmainbg{
+        padding: 15px 15px;
+    }
+    .lptbg-img {
+        position: absolute;
+        width: 220px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .tg-one-img {
+        position: absolute;
+        width: 78px;
+        z-index: 1;
+        top: 55px;
+        left: 96px;
+    }
+
+    .tg-two-img {
+        position: absolute;
+        width: 142px;
+        z-index: 1;
+        top: 81px;
+        left: 102px;
+    }
+
+    .tg-three-img {
+        position: absolute;
+        width: 116px;
+        z-index: 1;
+        top: 78px;
+        left: 13rem;
+    }
+
+    .thanoshand-img{
+        display:none;
+    }
     .dba-img {
     width: 345px;
 }
@@ -1932,6 +2001,9 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .ofmainbg {
+        padding: 25px 30px;
+    }
     .share-box {
         width: 80px;
         height: 80px;
@@ -1996,6 +2068,19 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .arrowtype-img {
+        width:85px;
+        right: 0px;
+    }
+    .our-prfsn {
+        font-size: 16px;
+    }
+    .smty-text {
+        font-size: 14px;
+    }
+    .cmw-text {
+        font-size: 14px;
+    }
     .smindexa{
         position: absolute;
         right: 0px;
