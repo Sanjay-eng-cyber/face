@@ -40,6 +40,8 @@ class ProjectSetup extends Command
         $this->line('-----');
         Storage::disk('public')->makeDirectory('images/events/watermark_image');
         $this->line('-----');
+        Storage::disk('public')->makeDirectory('images/events/frontend_users');
+        $this->line('-----');
         Storage::disk('public')->makeDirectory('images/categories');
         $this->info('Command Ran Successfully.');
     }

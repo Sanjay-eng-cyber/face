@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Event;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\FrontendUser;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManager;
 
 class EventController extends Controller
 {
@@ -52,19 +53,35 @@ class EventController extends Controller
 
     public function stepTwoForm($eventSlug)
     {
+        // dd('jdfhsdugf');
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         return view('frontend.events.step-forms.step-form-two', compact('event'));
     }
 
     public function stepTwoFormSubmit(Request $request, $eventSlug)
     {
+        // dd($request);
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         // dd($event);
         $request->validate([
-            'name' => 'required|min:3|max:30',
-            'phone' => 'required|digits:10',
-            'email' => 'required|min:8|max:30|email:rfc,dns',
+            'name' => 'nullable|min:3|max:30',
+            'phone' => 'nullable|digits:10',
+            'email' => 'nullable|min:8|max:30|email:rfc,dns',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $manager = ImageManager::gd();
+
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $image->clientExtension();
+            $destinationPath = public_path("storage/images/events/frontend_users/");
+
+            $imageInstance = $manager->read($image->getRealPath());
+            $imageInstance->save($destinationPath . '/' . $filename, 90);
+
+            $event->image = $filename;
+        }
 
         $frontendUser = new FrontendUser;
         $frontendUser->event_id = $event->id;
