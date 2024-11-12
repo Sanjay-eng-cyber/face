@@ -1657,6 +1657,7 @@ body {
 .small-pra-text{
     font-size: 24px;
     font-weight: 500;
+    padding-top: 22px;
 }
 
 @media screen and (max-width:1116px) {
@@ -1672,6 +1673,9 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .scn-sharemain{
+        padding: 36px;
+    }
     .slick-sprev {
         opacity: 1;
         left: 0;
@@ -1729,6 +1733,22 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .chain-img{
+        width:36px;
+    }
+    .camera-img{
+        width: 40px;
+    }
+    .faceai-img{
+        width: 40px;;
+    }
+    .ciframe-img{
+        width: 40px;
+    }
+    .share-box{
+    width: 90px;
+    height: 90px;
+    }
     .navbar-brand{
         top: -8px;
     }
@@ -1736,7 +1756,7 @@ body {
         margin-bottom: 0px;
     }
     .scn-sharemain{
-        background-color: red;
+        /* background-color: red; */
         padding: 10px;
         gap: 0.6rem;
     }
@@ -1912,6 +1932,10 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .share-box {
+        width: 80px;
+        height: 80px;
+    }
     .main-topheading {
         padding-top: 124px;
         padding-bottom: 32px;
@@ -2049,10 +2073,94 @@ body {
         }
     }
 
+    .custopmainpad {
+        padding-top: 0px;
+    }
+    .hkmt-text {
+        font-size: 18px;
+    }
+    .let-sm-text{
+        font-size:16px;
+    }
+    .fs-sm14px{
+        font-size: 14px;
+    }
+    .robot-withimg {
+        margin-bottom: 18px;
+    }
+    .share-box {
+        width: 60px;
+        height: 60px;
+    }
 
+    .chain-img{
+        width:25px;
+    }
+    .camera-img{
+        width: 25px;
+    }
+    .faceai-img{
+        width: 25px;;
+    }
+    .ciframe-img{
+        width: 25px;
+    }
+
+    .scn-sharemain {
+        padding: 39px 10px 10px 10px;
+        gap: 0.4rem;
+    }
+
+    .pb78px {
+        padding-bottom: 50px;
+    }
 
 }
 @media screen and (max-width:480px) {
+    .let-sm-text{
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .nwunionimg{
+        top: -27px;
+    }
+    .custopmainpad{
+        padding-top: 0px;
+    }
+    .hkmt-text{
+        font-size:1rem;
+    }
+    .robot-withimg {
+        margin-bottom: 1px;
+    }
+    .pb78px {
+        padding-bottom: 40px;
+    }
+    .scn-sharemain{
+        padding: 50px 10px 10px 10px;
+        gap: 0.2rem;
+        border-radius: 8px;
+    }
+    .chain-img{
+        width:19px;
+    }
+    .camera-img{
+        width: 19px;
+    }
+    .faceai-img{
+        width: 19px;;
+    }
+    .ciframe-img{
+        width: 19px;
+    }
+    .share-box{
+        width: 43px;
+        height: 43px;
+        border-radius: 6px;
+    }
+    .fs-es-12px{
+        font-size: 12px;
+    }
     .plainplate-img{
         position: absolute;
         z-index:-2;

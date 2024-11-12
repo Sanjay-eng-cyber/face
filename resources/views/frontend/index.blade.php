@@ -76,12 +76,14 @@
 
         <div class="kws-bg position-relative">
             <img src="{{ asset('frontend/images/index/index-new/nwunionimg.png') }}" alt="" srcset=""
-                class="img-fluid w-100  position-absolute nwunionimg">
+                class="img-fluid w-100  position-absolute nwunionimg d-none d-sm-block">
+
+            <img src="{{asset('frontend/images/index/sm-workbg.png')}}" alt="" srcset=""  class="img-fluid w-100  position-absolute nwunionimg d-block d-sm-none">
             <div class="container custopmainpad">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <div class="text-white hkmt-text nedpcolor">How Kwikpic <span>Works?</span></div>
-                        <div class="text-white h4 fw-400 pt-4 mb-0 let-sm-text">let your clients discover their images
+                        <div class="text-white hkmt-text nedpcolor">How Pic<span class="darkpink">scan Works?</span></div>
+                        <div class="text-white h4 fw-400 pt-2 pt-sm-4 mb-0 let-sm-text">let your clients discover their images
                             within seconds</div>
                     </div>
                 </div>
@@ -98,11 +100,11 @@
                     <div class="col pb78px">
                         <div class="scn-sharemain">
                             <div class="share-box">
-                                <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('frontend/images/index/chain.svg') }}" alt="" class="img-fluid chain-img">
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
                                 Share event link with attendees via email, QR code or WhatsApp
                             </h5>
                         </div>
@@ -113,38 +115,38 @@
                         <div class="scn-sharemain">
                             <div class="share-box">
                                 <img src="{{ asset('frontend/images/index/camera.svg') }}" alt=""
-                                    class="img-fluid">
+                                    class="img-fluid camera-img">
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
                                 Attendees go to the link and take a selfie
                             </h5>
                         </div>
 
                     </div>
-                    <div class="col pb78px">
+                    <div class="col">
                         <div class="scn-sharemain">
                             <div class="share-box">
                                 <img src="{{ asset('frontend/images/index/faceai.svg') }}" alt=""
-                                    class="img-fluid">
+                                    class="img-fluid faceai-img">
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
                                 Our AI recognizes attendees with 99% accuracy and show them all their images
                             </h5>
                         </div>
                     </div>
-                    <div class="col pb78px">
+                    <div class="col">
                         <div class="scn-sharemain">
                             <div class="share-box">
                                 <img src="{{ asset('frontend/images/index/ciframe.svg') }}" alt=""
-                                    class="img-fluid">
+                                    class="img-fluid ciframe-img">
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
                                 Images can be printed or downloaded right from mobile
                             </h5>
                         </div>
