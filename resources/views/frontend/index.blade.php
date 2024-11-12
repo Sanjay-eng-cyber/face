@@ -215,14 +215,14 @@
 
 
 
-{{-- 
-        <div class="position-relative">
+ 
+        <div class="position-relative d-none d-sm-block">
 
 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="fw-500 mb-0 text-white py-5"><span class="lpinkmc">Features</span> you don’t want to
+                        <h2 class="fw-500 mb-0 text-white py-5 fydwtm-text"><span class="lpinkmc">Features</span> you don’t want to
                             miss</h2>
                         <div class="custome-accordion">
                             <div class="accordion" id="accordionExample">
@@ -251,7 +251,7 @@
                                                 alt="" srcset="" class="img-fluid dwimg">
 
                                             <div class="accordion-body-mi">
-                                                <div class="h5 fw-500 text-white mb-0 text-center position-relative"
+                                                <div class="h5 fw-500 text-white mb-0 text-center position-relative lycd-text"
                                                     style="z-index:99">
                                                     Let your clients discover their pictures
                                                     in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100%
@@ -329,12 +329,141 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
-        </div> --}}
+
+        <div class="d-block d-sm-none">
+            <div class="fw-500 text-white text-center">
+               <span class="darkpink">Features</span> you 
+            </div>
+            <div class="fw-500 text-white text-center">
+                don’t want to miss
+            </div>
+
+            <hr class="fhrtag">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">                      
+                        <div class="fw-600 text-white text-center textof-mainfeatures" >Intelligent Statistics</div>
+                        <div class="plpr-13px">
+                            <img src="{{asset('frontend/images/index/istic.svg')}}" alt="" srcset="" class="img-fluid w-100 rounded-3">
+                        </div>    
+                    </div>
+                    <div class="col-12">                                             
+                        <div class="fw-500 text-white crner-mainangle" >
+                                <div class="crner-mainangle-insider">
+                                    <div class="crner-angle">
+                                        <div class="crner-angle-text" >
+                                            Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <hr class="fhrtag">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12">                      
+                        <div class="fw-600 text-white text-center textof-mainfeatures" >Blazing Fast AI Recognition</div>
+                        <div class="plpr-13px">
+                            <img src="{{asset('frontend/images/index/blazingimg.png')}}" alt="" srcset="" class="img-fluid w-100 rounded-3">
+                        </div>
+                    </div>
+                    <div class="col-12">                                             
+                        <div class="fw-500 text-white crner-mainangle-bfar" >
+                                <div class="crner-mainangle-insider-bfar">
+                                    <div class="main-crner-angle-text-bfar" >
+                                        <div class="crner-angle-bfar">
+                                            <div class="crner-angle-text" >
+                                                Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="fhrtag">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12">                      
+                        <div class="fw-600 text-white text-center textof-mainfeatures" >Custom web App</div>
+                        <div class="plpr-13px">
+                            <img src="{{asset('frontend/images/index/sm-custome-app.png')}}" alt="" srcset="" class="img-fluid w-100 rounded-3">
+                        </div>
+                    </div>
+                    <div class="col-12">                                             
+                        <div class="fw-500 text-white crner-mainangle-bfar" >
+                                <div class="crner-mainangle-insider-bfar">
+                                    <div class="main-crner-angle-text-bfar" >
+                                        <div class="crner-angle-bfar">
+                                            <div class="crner-angle-text" >
+                                                Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="fhrtag">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12">                      
+                        <div class="fw-600 text-white text-center textof-mainfeatures" >Safe, Secure & Private</div>
+                        <div class="plpr-13px">
+                            <img src="{{asset('frontend/images/index/safe-secure-private.png')}}" alt="" srcset="" class="img-fluid w-100 rounded-3">
+                        </div>
+                    </div>
+                    <div class="col-12">                                             
+                        <div class="fw-500 text-white crner-mainangle-bfar" >
+                                <div class="crner-mainangle-insider-bfar">
+                                    <div class="main-crner-angle-text-bfar" >
+                                        <div class="crner-angle-bfar">
+                                            <div class="crner-angle-text" >
+                                                Let your clients discover their pictures in a matter of seconds with our cutting edge AI. 99.4 % accurate, 100% awesome.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+      
 
     </section>
 
