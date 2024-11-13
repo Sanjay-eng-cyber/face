@@ -60,16 +60,39 @@ class EventController extends Controller
 
     public function stepTwoFormSubmit(Request $request, $eventSlug)
     {
-        // dd($request);
+        // dd($request->all());
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         // dd($event);
         $request->validate([
             'name' => 'nullable|min:3|max:30',
             'phone' => 'nullable|digits:10',
-            'email' => 'nullable|min:8|max:30|email:rfc,dns',
+            'email' => 'nullable|min:8|max:30|email:rfc,dns|unique:frontend_users,email',
+        ]);
+
+        $frontendUser = new FrontendUser;
+        $frontendUser->event_id = $event->id;
+        $frontendUser->category_id = 1;
+        $frontendUser->name = $request->name;
+        $frontendUser->phone = $request->phone;
+        $frontendUser->email = $request->email;
+        if ($frontendUser->save()) {
+            return redirect()->route('frontend.event.step-two-form', ['eventSlug' => $event->slug, 'frontendUserName' => $frontendUser->name])->with(toast('User Deatils Uploaded Successfully', 'success'));
+        } else {
+            return redirect()->back()->with(toast('Something Went Wrong', 'error'));
+        }
+    }
+
+    public function frontendUserImageSubmit(Request $request, $eventSlug)
+    {
+
+        // dd($request->all());
+        $event = Event::where('slug', $eventSlug)->firstOrFail();
+        // dd($event);
+        $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
+        $frontendUser = FrontendUser::where('name', $request->frontend_user_name)->firstOrfail();
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $manager = ImageManager::gd();
@@ -80,17 +103,10 @@ class EventController extends Controller
             $imageInstance = $manager->read($image->getRealPath());
             $imageInstance->save($destinationPath . '/' . $filename, 90);
 
-            $event->image = $filename;
+            $frontendUser->image = $filename;
         }
-
-        $frontendUser = new FrontendUser;
-        $frontendUser->event_id = $event->id;
-        $frontendUser->category_id = 1;
-        $frontendUser->name = $request->name;
-        $frontendUser->phone = $request->phone;
-        $frontendUser->email = $request->email;
         if ($frontendUser->save()) {
-            return redirect()->route('frontend.event.step-two-form', $event->slug)->with(toast('User Deatils Uploaded Successfully', 'success'));
+            return redirect()->route('frontend.event.step-two-form', $event->slug)->with(toast('Image Uploaded Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }

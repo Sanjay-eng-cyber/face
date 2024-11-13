@@ -8,18 +8,18 @@
 
         .custom-ctnrfluid {
             /* background-image: unset;
-                                      background-repeat: no-repeat;
-                                      background-size: cover;
-                                      background-position: center;
-                                      backdrop-filter: unset;
-                                      display: flex;
-                                      align-items: center;
-                                      min-height: 106px;
-                                      margin-top: 14px; */
+                                                                                                                                      background-repeat: no-repeat;
+                                                                                                                                      background-size: cover;
+                                                                                                                                      background-position: center;
+                                                                                                                                      backdrop-filter: unset;
+                                                                                                                                      display: flex;
+                                                                                                                                      align-items: center;
+                                                                                                                                      min-height: 106px;
+                                                                                                                                      margin-top: 14px; */
             /* position: fixed;
-                                      width: 98%;
-                                      left: 50%;
-                                      transform: translate(-50%); */
+                                                                                                                                      width: 98%;
+                                                                                                                                      left: 50%;
+                                                                                                                                      transform: translate(-50%); */
         }
 
         .halfarrowt-img {
@@ -87,7 +87,7 @@
                             <div class="pb-3">
                                 <label for="name" class="fw-600 frtwhitcolor pb-2">Name</label>
                                 <input type="text" name="name" minlength="3" maxlength="30" required
-                                    class="form-control sin-input" value="{{old('name')}}">
+                                    class="form-control sin-input" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('name') }}
                                     </div>
@@ -97,7 +97,7 @@
                             <div class="pb-3">
                                 <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
                                 <input type="email" name="email" minlength="8" maxlength="30" required
-                                    class="form-control sin-input" value="{{old('email')}}">
+                                    class="form-control sin-input" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                     <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
                                     </div>
@@ -106,7 +106,7 @@
                             <div class="pb-3">
                                 <label for="num" class="fw-600 frtwhitcolor pb-2">Number</label>
                                 <input type="text" id="phone" name="phone" minlength="10" maxlength="10" required
-                                    class="form-control sin-input" value="{{old('phone')}}">
+                                    class="form-control sin-input" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <div class="text-danger text-left mt-2" role="alert">{{ $errors->first('phone') }}
@@ -146,10 +146,24 @@
                                     <div class="ortext">
                                         Or
                                     </div>
-                                    <form action="/file-upload" class="dropzone " id="myDropzone">
-                                        <div class="dz-message scan-textboxbdpt-btn">
+                                    <form action="{{ route('frontend.event.frontend-user-image.submit', $event->slug) }}"
+                                        class="dropzone" id="myDropzone" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="image" id="fileInput" style="display: none;">
+
+                                        <input type="text" name="frontend_user_name"
+                                            value="{{ request('frontendUserName') }}" style="display: none">
+
+                                        <!-- Custom upload button -->
+                                        <div onclick="document.getElementById('fileInput').click()"
+                                            class="dz-message scan-textboxbdpt-btn">
                                             Upload File
                                         </div>
+                                        @if ($errors->has('image'))
+                                            <div class="text-danger text-left mt-2" role="alert">
+                                                {{ $errors->first('image') }}
+                                            </div>
+                                        @endif
                                     </form>
 
 
@@ -187,4 +201,16 @@
     </section>
 @endsection
 @section('js')
+    <script>
+        Dropzone.options.myDropzone = {
+            clickable: false, // Disable default Dropzone clickable behavior
+            // Add any other Dropzone options here as needed
+        };
+
+        document.getElementById('fileInput').addEventListener('change', function() {
+            if (this.files.length > 0) {
+                document.getElementById('myDropzone').submit();
+            }
+        });
+    </script>
 @endsection
