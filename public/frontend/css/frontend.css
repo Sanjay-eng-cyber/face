@@ -1810,6 +1810,15 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .lycd-text{
+        font-size: 1rem;
+    }
+    .fydwtm-text{
+        font-size: 24px;
+    }
+    .custome-accordion .accordion-button{
+        font-size: 30px;
+    }
     .our-prfsn{
         font-size: 24px;
     }
@@ -2001,6 +2010,41 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .accordion-body-mi {
+        position: absolute;
+        /* right: 0px; */
+        border-radius: 32px;
+        top: 50%;
+        right: 3%;
+        transform: translate(6%, -50%);
+        background-image: url(/frontend/images/index/index-new/dropcardbg.svg);
+        background-repeat: no-repeat;
+        padding: 33px;
+        background-size: cover;
+        background-position: center;
+        width: 65%;
+        backdrop-filter: blur(30px);
+    }
+
+    .accordion-body-mi::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        right: 0%;
+        transform: translate(0%, -50%);
+        background: radial-gradient(123.22% 190.53% at 6.81% -90.53%, rgba(74, 221, 253, 0.14) 0%, rgba(0, 0, 0, 0.14) 73.27%, rgba(70, 144, 213, 0.0756) 100%);
+        border-radius: 32px;
+        z-index: -999;
+    }
+
+    .custome-accordion .accordion-button {
+        font-size: 24px;
+    }
+    .fydwtm-text{
+        font-size: 20px;
+    }
     .ofmainbg {
         padding: 25px 30px;
     }
@@ -2068,6 +2112,89 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .plpr-13px{
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    .fhrtag{
+        color:#670068;    
+        opacity: 1;
+        margin: 24px 0;
+    }
+   
+    .crner-mainangle{  
+        font-size:14px;
+        background:linear-gradient(142.9deg, rgba(0, 0, 0, 0) 44.6%, #0066AB 94.99%);
+        padding:1px;
+        border-radius:8px;         
+        margin-top: -20px;     
+    }
+   .crner-mainangle-bfar{
+    /* font-size:14px;
+    background:linear-gradient(86.62deg, rgba(0, 0, 0, 0) 63.25%, #0066AB 86.92%);
+    padding:1px;
+    border-radius:8px;          */
+    margin-top: -20px;     
+   }
+  
+    .crner-mainangle-insider{
+        background-color:#040404;  
+        border-radius:8px;
+    }
+    .crner-mainangle-insider-bfar{
+        /* background-color:#040404;   */
+        border-radius:8px;
+        position:relative;
+    }
+    .crner-mainangle-insider-bfar::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+     
+
+
+        background:linear-gradient(142.9deg, rgba(0, 0, 0, 0) 44.6%, #0066AB 94.99%);
+        z-index: -2;
+        padding: 1px;
+        border-radius:8px;
+    }
+    .main-crner-angle-text-bfar{
+        padding: 1px;
+        border-radius:8px;
+    }
+    .crner-mainangle-insider-bfar::after{
+        content: "";
+        position: absolute;
+        width: calc(100% - 1px);
+        height: calc(100% - 1px);
+        background: #040404;
+        z-index: -1;
+       top:0px;
+       border-radius: 8px;
+    }
+    .crner-angle-text{
+        padding: 45px 18px;
+    }
+    .textof-mainfeatures{
+        font-size:14px;
+        padding-bottom:11px
+    }
+    .crner-angle{
+        background-image:url('/frontend/images/index/indexbluer.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .crner-angle-bfar {
+        background-image: url(/frontend/images/index/indexbluer.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(32px);
+        border-radius: 8px;
+    }
     .arrowtype-img {
         width:85px;
         right: 0px;
@@ -2202,6 +2329,9 @@ body {
 
 }
 @media screen and (max-width:480px) {
+    .crner-angle-text{
+        padding: 27px 18px;
+    }
     .let-sm-text{
         font-size: 14px;
         padding-bottom: 10px;
