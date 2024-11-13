@@ -31,7 +31,8 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post("/e/verify-pin", 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
     Route::get("/e/step-two-form/{eventSlug}", 'App\Http\Controllers\frontend\EventController@stepTwoForm')->name('frontend.event.step-two-form');
     Route::post("/e/step-two-form/submit/{eventSlug}", 'App\Http\Controllers\frontend\EventController@stepTwoFormSubmit')->name('frontend.event.step-two-form.submit');
-    Route::post("/e/step-two-form/frontend-user/{userName}", 'App\Http\Controllers\frontend\EventController@frontendUserImageSubmit')->name('frontend.event.frontend-user-image.submit');
+    Route::post("/e/step-two-form/frontend-user-image/{userName}", 'App\Http\Controllers\frontend\EventController@frontendUserImageSubmit')->name('frontend.event.frontend-user-image.submit');
+    Route::post("/e/step-two-form/guest-image/{eventSlug}", 'App\Http\Controllers\frontend\EventController@guestImage')->name('frontend.event.guest-image');
 
 
     Route::get("/login", 'App\Http\Controllers\frontend\LoginController@loginShow')->name('frontend.login');

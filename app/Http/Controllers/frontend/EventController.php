@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\FrontendUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\GuestUpload;
 use Intervention\Image\ImageManager;
 
 class EventController extends Controller
@@ -76,7 +77,7 @@ class EventController extends Controller
         $frontendUser->phone = $request->phone;
         $frontendUser->email = $request->email;
         if ($frontendUser->save()) {
-            return redirect()->route('frontend.event.step-two-form', ['eventSlug' => $event->slug, 'frontendUserName' => $frontendUser->name])->with(toast('User Deatils Uploaded Successfully', 'success'));
+            return redirect()->route('frontend.event.step-two-form', ['eventSlug' => $event->slug, session(['frontendUserName' => $frontendUser->name])])->with(toast('User Deatils Uploaded Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }
@@ -107,6 +108,44 @@ class EventController extends Controller
         }
         if ($frontendUser->save()) {
             return redirect()->route('frontend.event.step-two-form', $event->slug)->with(toast('Image Uploaded Successfully', 'success'));
+        } else {
+            return redirect()->back()->with(toast('Something Went Wrong', 'error'));
+        }
+    }
+
+    public function guestImage(Request $request, $eventSlug)
+    {
+
+        // dd($request->all());
+        $event = Event::where('slug', $eventSlug)->firstOrFail();
+        $frontendUser = FrontendUser::where('name', $request->frontend_user_name)->firstOrfail();
+        // dd($event);
+        $request->validate([
+            'guest_image.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $guest_images = $request->file('guest_image');
+        $manager = ImageManager::gd();
+        if ($guest_images) {
+            foreach ($guest_images as $guest_image) {
+                $guestImage = new GuestUpload();
+                $filename = date('Ymd-his') . "." . uniqid() . "." . $guest_image->clientExtension();
+                $destinationPath = public_path("storage/images/events/guest_images/");
+
+                $imageInstance = $manager->read($guest_image->getRealPath());
+                $imageInstance->save($destinationPath . '/' . $filename, 90);
+
+                $guestImage->image_name = $filename;
+                $guestImage->frontend_user_id = $frontendUser->id;
+                $guestImage->event_id = $event->id;
+                $guestImage->category_id = 1;
+                $guestImage->image_url = asset("storage/images/events/guest_images/" . $filename);
+                $guestImage->save();
+            }
+        }
+
+        if ($guestImage) {
+            return redirect()->route('frontend.event.step-two-form', $event->slug)->with(toast('Guest Image Uploaded Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }

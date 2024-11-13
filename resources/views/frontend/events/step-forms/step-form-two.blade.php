@@ -8,18 +8,18 @@
 
         .custom-ctnrfluid {
             /* background-image: unset;
-                                                                                                                                      background-repeat: no-repeat;
-                                                                                                                                      background-size: cover;
-                                                                                                                                      background-position: center;
-                                                                                                                                      backdrop-filter: unset;
-                                                                                                                                      display: flex;
-                                                                                                                                      align-items: center;
-                                                                                                                                      min-height: 106px;
-                                                                                                                                      margin-top: 14px; */
+                                                                                                                                                                                      background-repeat: no-repeat;
+                                                                                                                                                                                      background-size: cover;
+                                                                                                                                                                                      background-position: center;
+                                                                                                                                                                                      backdrop-filter: unset;
+                                                                                                                                                                                      display: flex;
+                                                                                                                                                                                      align-items: center;
+                                                                                                                                                                                      min-height: 106px;
+                                                                                                                                                                                      margin-top: 14px; */
             /* position: fixed;
-                                                                                                                                      width: 98%;
-                                                                                                                                      left: 50%;
-                                                                                                                                      transform: translate(-50%); */
+                                                                                                                                                                                      width: 98%;
+                                                                                                                                                                                      left: 50%;
+                                                                                                                                                                                      transform: translate(-50%); */
         }
 
         .halfarrowt-img {
@@ -147,12 +147,12 @@
                                         Or
                                     </div>
                                     <form action="{{ route('frontend.event.frontend-user-image.submit', $event->slug) }}"
-                                        class="dropzone" id="myDropzone" method="POST" enctype="multipart/form-data">
+                                        class="dropzone2" id="myDropzone" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <input type="file" name="image" id="fileInput" style="display: none;">
 
                                         <input type="text" name="frontend_user_name"
-                                            value="{{ request('frontendUserName') }}" style="display: none">
+                                            value="{{ session('frontendUserName') }}" style="display: none">
 
                                         <!-- Custom upload button -->
                                         <div onclick="document.getElementById('fileInput').click()"
@@ -180,9 +180,16 @@
                                     </div>
                                 </div>
                                 <!-- Dropzone Form -->
-                                <form action="/file-upload" class="dropzone" id="my-dropzone">
+                                <form action="{{ route('frontend.event.guest-image', $event->slug) }}" class="dropzone2"
+                                    id="guest_image_form" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="file" name="guest_image[]" id="guest_image" style="display: none;"
+                                        multiple>
+                                    <input type="text" name="frontend_user_name"
+                                        value="{{ session('frontendUserName') }}" style="display: none">
                                     <div class="dz-message">
-                                        <button type="button " class="mb-3 guest-uploader"> as Guest Upload</button>
+                                        <button type="button" onclick="document.getElementById('guest_image').click()"
+                                            class="mb-3 guest-uploader"> as Guest Upload</button>
                                         <div>
                                             <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to 50
                                                 MB.</div>
@@ -202,14 +209,14 @@
 @endsection
 @section('js')
     <script>
-        Dropzone.options.myDropzone = {
-            clickable: false, // Disable default Dropzone clickable behavior
-            // Add any other Dropzone options here as needed
-        };
-
         document.getElementById('fileInput').addEventListener('change', function() {
             if (this.files.length > 0) {
                 document.getElementById('myDropzone').submit();
+            }
+        });
+        document.getElementById('guest_image').addEventListener('change', function() {
+            if (this.files.length > 0) {
+                document.getElementById('guest_image_form').submit();
             }
         });
     </script>
