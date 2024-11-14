@@ -50,80 +50,15 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('login/{provider}', 'App\Http\Controllers\frontend\SocialAuthController@redirectToProvider');
     Route::get('login/{provider}/callback', 'App\Http\Controllers\frontend\SocialAuthController@handleProviderCallback');
 
-    Route::get('/e/share/{eventSlug}', function () {
-        return 'True';
-    })->name('frontend.event.share.index');
+    Route::get('/e/share/{eventSlug}', 'App\Http\Controllers\frontend\EventController@show')->name('frontend.event.share.index');
+
 
     Route::get('/c/share/{categorySlug}', function () {
         return 'True';
     })->name('frontend.category.share.index');
 
-    Route::group(['middleware' => 'auth:web'], function () {
-        Route::get('/', function () {
-            return view('frontend.index');
-        })->name('index');
-
-        Route::get('/event-details', function () {
-            return view('frontend.event-details');
-        })->name('event-details');
-
-        Route::get('/gallery', function () {
-            return view('frontend.gallery');
-        })->name('gallery');
-
-        Route::get('/test-progress', function () {
-            $event = (object) ['slug' => 'Test Event Slug'];
-            $category = (object) ['slug' => 'Test Category Slug'];
-
-            return view('frontend.test', compact('event', 'category'));
-        })->name('test-progress');
-
-        Route::get('/event/{slug}', 'App\Http\controllers\frontend\EventController@show')->name('frontend.event.show');
-        Route::get('/gallery/{event_id}/{category_id}', 'App\Http\controllers\frontend\GalleryController@index')->name('frontend.gallery.index');
-
-        Route::get('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadIndex')->name('upload-index');
-        Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
-        Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
-
-        Route::get('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name("frontend.logout");
-        // Route::get('/about-us', function () {
-        //     return view('frontend.about-us');
-        // })->name('about-us');
-
-
-        // Route::get('/industries', function () {
-        //     return view('frontend.industries.index');
-        // })->name('industries');
-
-        // Route::get('/contact-us', function () {
-        //     return view('frontend.contact');
-        // })->name('contact-us');
-
-        // Route::get('/career', function () {
-        //     return view('frontend.career');
-        // })->name('career');
-
-
-
-
-
-        // Route::post('/career/submit/', [CareerController::class, 'career'])->name('career-submit');
-        // Route::post('/contact-us/submit/', [ContactFormSubmissionController::class, 'contact'])->name('contact-submit');
-
-
-        // Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-        // Route::get('/product/{category}', [ProductController::class, 'category'])->name('product.category');
-        // Route::get('/product/c/{type}', [ProductController::class, 'type'])->name('product.type');
-        // Route::get('/products/c/{category}', [ProductController::class, 'allProducts'])->name('product.all-product');
-        // Route::get('/product/t/{product}', [ProductController::class, 'show'])->name('product.show');
-
-
-
-        // Route::middleware('auth')->group(function () {
-        //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        // });
+    Route::prefix('api')->group(function () {
+        Route::post('event/verify-pin', 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
     });
 
     Route::prefix('dynamic')->group(function () {

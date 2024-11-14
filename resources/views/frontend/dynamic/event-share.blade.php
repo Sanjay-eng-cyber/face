@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
 @section('title')
+@section('cdn')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 @section('content')
     <div id="mainDiv">
         <section>
@@ -12,11 +15,12 @@
                     alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
 
                 <div class="container overflow-hide">
+
+
                     <div class="row d-flex justify-content-center pt-35px">
                         <div class="col-5 col-xl-6 col-xxl-5">
                             <div class="row">
                                 <div class="col-12">
-
                                     <div class="basic-event-one-main">
                                         <div class="basic-event-one-main-insider">
                                             <div>
@@ -25,13 +29,24 @@
                                             </div>
                                             <div>
                                                 <div class="eventanddatespit ">
-                                                    <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                                    <div class="text-white fw-300 fs-14">10/09/2024 to 14/09/2024</div>
+                                                    <div class="h5 fw-600 mb-0 text-white">{{ $event->name }}</div>
+                                                    @if ($event->start_date && $event->end_date)
+                                                        @if ($event->start_date == $event->end_date)
+                                                            <div class="text-white fw-300 fs-14">{{ $event->start_date }}
+                                                            </div>
+                                                        @else
+                                                            <div class="text-white fw-300 fs-14">
+                                                                {{ dd_format($event->start_date, 'd/m/Y') }} to
+                                                                {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                            </div>
+                                                        @endif
+                                                    @endif
                                                 </div>
-                                                <div class="text-white pt-3 fs-14">
-                                                    Picscan is the world's only end-to-end AI-powered image post-production
-                                                    solution.
-                                                </div>
+                                                @if ($event->descriptions)
+                                                    <div class="text-white pt-3 fs-14">
+                                                        {{ $event->descriptions }}
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="row ptpb-55px">
+                    <div class="row ptpb-55px" id="enterPinDiv" v-if="step == 1">
                         <div class="col-12">
                             <div class="pin-container">
                                 <div class="pin-title">Enter Your Pin Number</div>
@@ -57,6 +72,108 @@
                         </div>
                     </div>
 
+                    <div class="row gx-5" v-if="step == 2">
+                        <div class="col-5 col-xl-6 col-xxl-5">
+                            <form action="{{ route('frontend.login.submit') }}" method="post" class="login-form pt-4">
+                                @csrf
+                                <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Details</div>
+
+                                <div class="pb-3">
+                                    <label for="name" class="fw-600 frtwhitcolor pb-2">Name</label>
+                                    <input type="text" name="name" minlength="8" maxlength="30" required
+                                        class="form-control sin-input">
+                                </div>
+                                {{-- @if ($errors->has('name'))
+                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('name') }}
+                                    </div>
+                                @endif --}}
+
+                                <div class="pb-3">
+                                    <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
+                                    <input type="email" name="email" minlength="8" maxlength="30" required
+                                        class="form-control sin-input">
+                                </div>
+                                {{-- @if ($errors->has('email'))
+                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
+                                    </div>
+                                @endif --}}
+                                <div class="pb-3">
+                                    <label for="num" class="fw-600 frtwhitcolor pb-2">Number</label>
+                                    <input type="text" id="num" name="num" minlength="6" maxlength="6"
+                                        required class="form-control sin-input">
+                                    {{--                                 
+                                    @if ($errors->has('num'))
+                                        <div class="text-danger text-left mt-2" role="alert">{{ $errors->first('num') }}</div>
+                                    @endif --}}
+                                </div>
+
+
+                                <div>
+                                    {{-- <a href="http://" class="btn btn-login withsignin" style="font-size: 20px">
+                                        Sign In
+                                    </a> --}}
+
+
+                                    <button type="submit" class="submit-btn-bept">Submit</button>
+
+                                </div>
+
+
+
+
+                            </form>
+
+                        </div>
+                        <div class="col-7 col-xl-6 col-xxl-7">
+                            <div class="two-container-grp">
+                                <div class="basic-face-box">
+                                    <div class="scan-face-box-insider-twopage">
+                                        <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
+                                            srcset="" class="faceimg-img">
+                                    </div>
+
+                                    <div class="d-flex flex-column align-items-center gap-2">
+                                        <div class="scan-facebtn">
+                                            Scan Your Face
+                                        </div>
+                                        <div class="ortext">
+                                            Or
+                                        </div>
+                                        <form action="/file-upload" class="dropzone " id="myDropzone">
+                                            <div class="dz-message scan-textboxbdpt-btn">
+                                                Upload File
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                                <div class="upload-section ">
+                                    <div class="pb-4 browsertext">
+                                        Browse File
+                                    </div>
+                                    <div class="d-flex justify-content-center pb-3">
+                                        <div class="uploder-up">
+                                            <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
+                                                alt="" srcset="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <!-- Dropzone Form -->
+                                    <form action="/file-upload" class="dropzone" id="my-dropzone">
+                                        <div class="dz-message">
+                                            <button type="button " class="mb-3 guest-uploader"> as Guest Upload</button>
+                                            <div>
+                                                <div class="fs-10 fw-600 newwcolor">JPEG, PNG, PDF, and MP4 formats, up to
+                                                    50 MB.</div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -66,7 +183,10 @@
 @section('js')
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+
+    <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
 
     <script>
         const {
@@ -77,7 +197,8 @@
         createApp({
             data() {
                 return {
-                    pinValues: ref(Array(4).fill(''))
+                    pinValues: ref(Array(4).fill('')),
+                    step: 1,
                 }
             },
             methods: {
@@ -97,6 +218,37 @@
                 handleStepOneSubmit() {
                     const fullPin = this.pinValues.join('');
                     alert(`Full PIN: ${fullPin}`);
+                    axios.post('{{ route('frontend.event.verify-pin') }}', {
+                            eventSlug: '{{ $event->slug }}',
+                            pin: fullPin
+                        })
+                        .then((res) => {
+                            if (res.data.status) {
+                                Snackbar.show({
+                                    text: 'Pin Verified Successfully',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#1abc9c'
+                                });
+                                this.step = 2;
+                            } else {
+                                Snackbar.show({
+                                    text: 'Incorrect Pin',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            Snackbar.show({
+                                text: "Something Went Wrong",
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                        });
+
                 }
             },
         }).mount('#mainDiv')
