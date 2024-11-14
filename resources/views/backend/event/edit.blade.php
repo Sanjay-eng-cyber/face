@@ -69,9 +69,9 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="start_date"
-                                        value="{{ old('start_date') ?? dd_format($event->start_date, 'Y-m-d') }}">
+                                        value="{{ old('start_date') ?? dd_format($event->start_date, 'Y-m-d\TH:i') }}">
                                     @if ($errors->has('start_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('start_date') }}</div>
                                     @endif
@@ -79,9 +79,9 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">End Date*</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="end_date"
-                                        value="{{ old('end_date') ?? dd_format($event->end_date, 'Y-m-d') }}">
+                                        value="{{ old('end_date') ?? dd_format($event->end_date, 'Y-m-d\TH:i') }}">
                                     @if ($errors->has('end_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('end_date') }}</div>
                                     @endif
@@ -89,9 +89,9 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Link Start Date*</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="link_start_date"
-                                        value="{{ old('link_start_date') ?? dd_format($event->link_start_date, 'Y-m-d') }}">
+                                        value="{{ old('link_start_date') ?? dd_format($event->link_start_date, 'Y-m-d\TH:i') }}">
                                     @if ($errors->has('link_start_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link_start_date') }}
                                         </div>
@@ -100,9 +100,9 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Link End Date*</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput" required
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="link_end_date"
-                                        value="{{ old('link_end_date') ?? dd_format($event->link_end_date, 'Y-m-d') }}">
+                                        value="{{ old('link_end_date') ?? dd_format($event->link_end_date, 'Y-m-d\TH:i') }}">
                                     @if ($errors->has('link_end_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link_end_date') }}
                                         </div>
