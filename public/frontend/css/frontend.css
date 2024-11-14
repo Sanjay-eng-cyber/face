@@ -836,8 +836,8 @@ body {
   }
   
   .slidetext{
-    padding-top: 65px;
-    padding-bottom: 231px;
+    padding-top: 34px;
+    padding-bottom: 259px;
   }
 
   .crossline-img{
@@ -1736,6 +1736,16 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .main-topheading{
+        padding-bottom: 24px;
+    }
+    .slick-slide.slick-current{
+        height: auto;
+    }
+    .sm-sltext{
+        font-size: 1rem;
+        padding-bottom: 15px;
+    }
     .ofmainbg {
         padding: 40px 40px;
     }
@@ -1778,7 +1788,7 @@ body {
     }
 
     .main-topheading {
-        padding-top: 85px;
+        padding-top: 0px;
         padding-bottom: 32px
     }
 
@@ -1810,6 +1820,26 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .pre-arrow{
+        width: 55px;
+    height: 55px;
+    }
+    .pre-arrow-insider {
+        width: 30px;
+        height: 30px;
+    }
+    .next-arrow{
+        width: 55px;
+        height: 55px;
+    }
+    .next-arrow-insider{
+        width: 30px;
+        height: 30px;
+    }
+    .main-topheading {
+        font-size:30px;
+    }
+   
     .lycd-text{
         font-size: 1rem;
     }

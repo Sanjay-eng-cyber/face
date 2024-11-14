@@ -484,7 +484,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 1 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     1 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -493,7 +493,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 2 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500 ">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     2 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -502,7 +502,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 3 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     3 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -511,7 +511,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 4 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     4 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -520,7 +520,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 5 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     5 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -529,7 +529,7 @@
                                 <div class="h1 mb-0 main-topheading fw-300">
                                     <span class="text-prime fw-600"> 6 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500">
+                                <div class="h5 mb-0 fw-500 sm-sltext">
                                     6 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
