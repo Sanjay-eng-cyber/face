@@ -64,15 +64,15 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Thumbnail Image*</label>
+                                    <label for="formGroupExampleInput" class="">Cover Image*</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
-                                        name="thumbnail_image">
+                                        name="cover_image">
                                     <div id="lightgallery" class="text-end">
-                                        <a
-                                            href="{{ asset('storage/images/categories/' . $category->thumbnail_image) }}" target="_blank">View</a>
+                                        <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
+                                            target="_blank">View</a>
                                     </div>
-                                    @if ($errors->has('thumbnail_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
+                                    @if ($errors->has('cover_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
                                         </div>
                                     @endif
                                 </div>
