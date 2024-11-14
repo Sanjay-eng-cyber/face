@@ -58,11 +58,11 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Thumbnail Image*</label>
+                                    <label for="formGroupExampleInput" class="">Cover Image*</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
-                                        name="thumbnail_image" value="{{ old('thumbnail_image') }}">
-                                    @if ($errors->has('thumbnail_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
+                                        name="cover_image" value="{{ old('cover_image') }}">
+                                    @if ($errors->has('cover_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
                                         </div>
                                     @endif
                                 </div>

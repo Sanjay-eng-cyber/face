@@ -47,13 +47,13 @@
                                                 <p class="label-title">{{ $category->event->name }}</p>
                                             </div>
                                         </div>
-                                        @if ($category->thumbnail_image)
+                                        @if ($category->cover_image)
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Thumbnail
+                                                    <label for="degree3" class="cust-title" class="label-title">Cover
                                                         Image</label><br>
                                                     <div id="lightgallery">
-                                                        <a href="{{ asset('storage/images/categories/' . $category->thumbnail_image) }}"
+                                                        <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
                                                             target="_blank">View</a>
                                                     </div>
                                                 </div>

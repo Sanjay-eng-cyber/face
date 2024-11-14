@@ -66,19 +66,19 @@ class CategoryController extends Controller
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
-            'thumbnail_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
+            'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
         ]);
 
         // Create a new Event instance
         $category = new Category();
-        $thumbnail_image = request()->file('thumbnail_image');
+        $cover_image = request()->file('cover_image');
         $manager = ImageManager::gd();
-        if ($thumbnail_image) {
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $thumbnail_image->clientExtension();
+        if ($cover_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
             $destinationPath = public_path("storage/images/categories");
-            $image = $manager->read($thumbnail_image->getRealPath());
+            $image = $manager->read($cover_image->getRealPath());
             $image->save($destinationPath . '/' . $filename, 90);
-            $category->thumbnail_image = $filename;
+            $category->cover_image = $filename;
         }
         $category->name = $request->name;
         $category->cms_user_id = auth()->user()->id;
@@ -117,20 +117,20 @@ class CategoryController extends Controller
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
-            'thumbnail_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
+            'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
         ]);
 
         // Create a new Category instance
         $category = Category::findOrFail($id);
-        $thumbnail_image = request()->file('thumbnail_image');
-        if ($thumbnail_image) {
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $thumbnail_image->clientExtension();
+        $cover_image = request()->file('cover_image');
+        if ($cover_image) {
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
             $destinationPath = public_path("storage/images/categories/");
             $manager = ImageManager::gd();
-            $image = $manager->read($thumbnail_image->getRealPath());
-            optional(Storage::disk('public')->delete('images/categories/' . $category->thumbnail_image));
+            $image = $manager->read($cover_image->getRealPath());
+            optional(Storage::disk('public')->delete('images/categories/' . $category->cover_image));
             $image->save($destinationPath . '/' . $filename, 90);
-            $category->thumbnail_image = $filename;
+            $category->cover_image = $filename;
         }
         $category->name = $request->name;
         $category->event_id = $request->event_id;

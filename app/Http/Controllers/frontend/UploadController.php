@@ -59,7 +59,7 @@ class UploadController extends Controller
                 $face_locations = $data['face_locations'] ?? null;
 
                 $upload = new Upload();
-                $upload->user_id = 1;
+                $upload->frontend_user_id = 1;
                 $upload->event_id = $event->id;
                 $upload->category_id = $category->id;
                 $upload->image_name = $filename;
