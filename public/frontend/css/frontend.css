@@ -1558,15 +1558,17 @@ body {
     .basic-event-one-main{
         background-color: #000000; 
         border-radius: 12px; 
-        padding: 12px 17px;
+        padding: 10px 10px;
     }
     .basic-event-one-main-insider{
         align-items: center;
         display: grid;
         grid-template-columns: 20% 77%;
-        gap: 15px;
+        gap: 19px;
     }
-
+    .basic-event-one-main-insider.user-detailsinfo{
+        gap: 35px;
+    }
     .ex-one-img{
         width: 95px;
     }
@@ -1647,7 +1649,7 @@ body {
 .grid-outer{
     background-color: #000000;
     border: 1px solid #FE3B96;
-    padding: 13px 8px;
+    padding: 12px 12px 12px 12px;
     border-radius: 12px;
     display: grid;
     grid-template-columns: 49.4% 1% 49.4%;
@@ -1673,6 +1675,12 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .basic-event-one-main-insider {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 23% 77%;
+        gap: 19px;
+    }
     .ofmainbg{
         padding: 63px 45px;
     }

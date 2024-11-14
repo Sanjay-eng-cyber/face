@@ -51,18 +51,32 @@
                             <div class="col-12">
                                     <div class="grid-outer">
                                         <div class="basic-event-one-main" style="height:100%;">
-                                            <div class="basic-event-one-main-insider" >
+                                            <div class="basic-event-one-main-insider user-detailsinfo" >
                                                 <div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                                    <div class="fw-600 text-white pb-2" style="font-size: 14px">Uploaded Photo</div>
+                                                    <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3">
                                                 </div>
                                                 <div>
-                                                    <div class="eventanddatespit ">
-                                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
-                                                    </div>
-                                                    <div class="text-white pt-3 fs-14" >
-                                                        Picscan is the world's only end-to-end AI-powered image post-production solution.
-                                                    </div>
+                                                   
+                                                       
+                                                            <div class="d-flex gap-1">
+                                                                <div class="text-white fw-600 h5 mb-0">Name:</div>
+                                                                <div class="text-white fw-600 h5 mb-0">joe alberto</div>
+                                                            </div>
+                                                        
+                                                        
+                                                            <div class="d-flex gap-1" style="padding-top: 20px;padding-bottom: 20px;">
+                                                                <div class="text-white fw-600 h5 mb-0">Number:</div>
+                                                                <div class="text-white fw-600 h5 mb-0">12312312312</div>
+                                                            </div>
+                                                           
+                                                            <div class="d-flex gap-1">
+                                                                <div class="text-white fw-600 h5 mb-0"> Email ID: </div>
+                                                                <div class="text-white fw-600 h5 mb-0">joe@gmail.com</div>
+                                                            </div>
+                                                        
+                                                   
+                                                   
                                                 </div>
                                             </div>
                                         </div>
@@ -72,7 +86,7 @@
                                         <div class="basic-event-one-main" style="height:100%;">
                                             <div class="basic-event-one-main-insider" >
                                                 <div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3" >
                                                 </div>
                                                 <div>
                                                     <div class="eventanddatespit ">
