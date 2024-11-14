@@ -50,6 +50,32 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('login/{provider}', 'App\Http\Controllers\frontend\SocialAuthController@redirectToProvider');
     Route::get('login/{provider}/callback', 'App\Http\Controllers\frontend\SocialAuthController@handleProviderCallback');
 
+    Route::get('/', function () {
+        return view('frontend.index');
+    })->name('index');
+
+    Route::get('/event-details', function () {
+        return view('frontend.event-details');
+    })->name('event-details');
+
+    Route::get('/gallery', function () {
+        return view('frontend.gallery');
+    })->name('gallery');
+
+    Route::get('/test-progress', function () {
+        $event = (object) ['slug' => 'Test Event Slug'];
+        $category = (object) ['slug' => 'Test Category Slug'];
+
+        return view('frontend.test', compact('event', 'category'));
+    })->name('test-progress');
+
+    Route::get('/event/{slug}', 'App\Http\controllers\frontend\EventController@show')->name('frontend.event.show');
+    Route::get('/gallery/{event_id}/{category_id}', 'App\Http\controllers\frontend\GalleryController@index')->name('frontend.gallery.index');
+
+    Route::get('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadIndex')->name('upload-index');
+    Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
+    Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
+
     Route::get('/e/share/{eventSlug}', 'App\Http\Controllers\frontend\EventController@show')->name('frontend.event.share.index');
 
 
