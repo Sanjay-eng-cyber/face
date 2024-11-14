@@ -469,7 +469,7 @@
 
 
 
-    {{-- <div class="container">
+    <div class="container">
 
         <div class="main_slide_main">
             <div class="outer-smarty-bg position-relative">
@@ -608,7 +608,7 @@
             </div>
         </div>
 
-    </div> --}}
+    </div> 
 
 
 
