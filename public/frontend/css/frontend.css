@@ -1744,6 +1744,17 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .basic-event-one-main-insider.user-detailsinfo {
+        gap: 21px;
+    }
+    
+    .basic-event-one-main-insider {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 28% 67%;
+        gap: 19px;
+    }
+
     .main-topheading{
         padding-bottom: 24px;
     }
