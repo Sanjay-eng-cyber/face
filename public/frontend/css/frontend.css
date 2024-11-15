@@ -84,6 +84,9 @@ body {
     border-radius:15px;
 }
 
+.pb-30{
+    padding-bottom: 30px;
+}
 .fs-14{
     font-size: 14px;
 }
@@ -1560,11 +1563,22 @@ body {
         border-radius: 12px; 
         padding: 10px 10px;
     }
+    .basic-event-one-main-bdt{
+        background-color: #c71e1e; 
+        border-radius: 12px; 
+        padding: 10px 10px;
+    }
     .basic-event-one-main-insider{
         align-items: center;
         display: grid;
         grid-template-columns: 20% 77%;
         gap: 19px;
+    }
+    .basic-event-one-main-insider-bdt{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 12% 85%;
+        gap: 15px;
     }
     .basic-event-one-main-insider.user-detailsinfo{
         gap: 35px;
@@ -1577,6 +1591,13 @@ body {
         grid-template-columns: 49% 47%;
         grid-gap: 15px;
         align-items: center;
+    }
+
+    .eventanddatespit-bdt{
+        display: grid;
+    grid-template-columns: 73% 25%;
+    grid-gap: 15px;
+    align-items: center;
     }
 
 .scan-facebtn{
@@ -1759,6 +1780,25 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .two-container-grp {
+        display: grid;
+        grid-template-columns: 48.5% 48.5%;
+        grid-gap: 14px;
+    }
+    
+    .basic-event-one-main-insider-bdt {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 13% 85%;
+        gap: 15px;
+    }
+    .eventanddatespit-bdt{
+        display: grid;
+        grid-template-columns: 70% 27%;
+        grid-gap: 15px;
+        align-items: center;
+    }
+
     .details-box-one .name-head,
     .details-box-one .name-title,
     .details-box-one .number-head,
@@ -1876,6 +1916,18 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .order-bl{
+        order: 1;
+    }
+    .order-br{
+        order: 2;
+    }
+    .eventanddatespit-bdt {
+        display: grid;
+        grid-template-columns: 67% 30%;
+        grid-gap: 15px;
+        align-items: center;
+    }
     .sgl-divider{
         width: 100%; 
         background-color:#343434; 
@@ -2103,6 +2155,18 @@ body {
 
 
 @media screen and (max-width:768px) {
+ 
+    .eventanddatespit-bdt{
+        grid-template-columns:100%;
+        grid-gap: 5px;
+    }
+    .basic-event-one-main-insider-bdt {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 20% 77%;
+        gap: 10px;
+    }
+
     .accordion-body-mi {
         position: absolute;
         /* right: 0px; */
@@ -2208,6 +2272,75 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .form-details{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .name-form{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .email-form{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .num-form{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .submit-btn-bept {
+        width: 99px;
+        border-radius: 15px;
+        background-color: #FE3B96;
+        color: #fff;
+        font-weight: 500;
+        border: none;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .login-form .form-control{
+        padding: .098rem .75rem;
+    }
+    .brsr-14pxtx{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .basic-face-box{
+        padding: 18px 18px 23px 18px;
+    }
+    .scan-facebtn{
+        font-weight: 400;
+    }
+    .dz-message.scan-textboxbdpt-btn{
+        font-weight: 400;
+    }
+    .upload-section{
+        padding: 24px 24px 34px 24px;
+    }
+    .two-container-grp{
+        grid-template-columns: 100%;
+    }
+    .bdt-eventname{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .bdt-date{
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .bdt-date-longpara{
+        font-size: 12px;
+        font-weight: 400;
+
+    }
+    .basic-event-one-main-insider-bdt {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 29% 68%;
+        gap: 10px;
+    }
+
     .gallery-img {
         height: 150px;
         object-fit: cover;
