@@ -33,7 +33,8 @@
 @section('content')
     <section>
         <div style="position: relative">
-
+          <div style="height:100px;">
+          </div>
            
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img-login"> --}}
