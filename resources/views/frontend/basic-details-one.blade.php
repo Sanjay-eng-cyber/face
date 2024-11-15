@@ -40,28 +40,35 @@
 
             <div class="container overflow-hide">
                 <div class="row d-flex justify-content-center pt-35px">
-                  <div class="col-5 col-xl-6 col-xxl-5">
+                  <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
                     <div class="row">
-                        <div class="col-12">
-                            
-                          <div class="basic-event-one-main" >
-                            <div class="basic-event-one-main-insider" >
+
+
+                        <div class="col-12 ">
+                    
+                       
+                          <div class="basic-event-one-main-bdt" >
+                            <div class="basic-event-one-main-insider-bdt" >
                                 <div>
-                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img" >
+                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img w-100" >
                                 </div>
                                 <div>
-                                    <div class="eventanddatespit ">
-                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                                    <div class="eventanddatespit-bdt ">
+                                        <div class="h5 fw-600 mb-0 text-white bdt-eventname">Business event</div>
+                                        <div class="text-white fw-300 fs-14 bdt-date" >10/09/2024 to 14/09/2024</div>
                                     </div>
-                                    <div class="text-white pt-3 fs-14" >
+                                    <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara" >
                                         Picscan is the world's only end-to-end AI-powered image post-production solution.
                                     </div>
                                 </div>
                             </div>
                           </div>
-                        
+                   
+                      
+
                         </div>
+
+
                     </div>
                   </div>
                 </div>

@@ -1564,7 +1564,7 @@ body {
         padding: 10px 10px;
     }
     .basic-event-one-main-bdt{
-        background-color: #c71e1e; 
+        background-color: #000000; 
         border-radius: 12px; 
         padding: 10px 10px;
     }
@@ -2155,6 +2155,39 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .submit-btn {
+        margin-top: 24px;
+        width: 106px;
+        border-radius: 18px;
+        background-color: #FE3B96;
+        color: #fff;
+        font-weight: 500;
+        border: none;
+        padding: 6px;
+    }
+    .ptpb-55px {
+        padding-top: 43px;
+        padding-bottom: 43px;
+    }
+    .pin-title {
+        font-size: 20px;
+        font-weight: 500;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        color: #fff;
+        padding-bottom: 16px;
+    }
+    .pin-input {
+        width: 40px;
+        height: 50px;
+        font-size: 24px;
+        text-align: center;
+        margin: 5px 10px;
+        border: none;
+        border-radius: 8px;
+        background-color: #E11373;
+        color: #fff;
+        text-shadow: 0px 6.2px 6.2px #00000040;
+    }
  
     .eventanddatespit-bdt{
         grid-template-columns:100%;
@@ -2272,6 +2305,37 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .pin-input {
+        width: 33px;
+        height: 42px;
+        font-size: 20px;
+        text-align: center;
+        margin: 5px 6px;
+        border: none;
+        border-radius: 8px;
+        background-color: #E11373;
+        color: #fff;
+        text-shadow: 0px 6.2px 6.2px #00000040;
+    }
+    .pin-title {
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        color: #fff;
+        padding-bottom: 16px;
+    }
+
+    .submit-btn {
+        margin-top: 17px;
+        width: 90px;
+        border-radius: 26px;
+        background-color: #FE3B96;
+        color: #fff;
+        font-weight: 500;
+        border: none;
+        padding: 4px;
+        font-size: 14px;
+    }
     .upload-section {
         /* background: linear-gradient(to bottom right, #0d1117, #1b1f24); */
     
@@ -2678,6 +2742,13 @@ font-weight: 300;
 
 }
 @media screen and (max-width:480px) {
+    .basic-event-one-main-insider-bdt {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 34% 64%;
+        gap: 7px;
+    }
+
     .gallery-img {
         height: 122px;
     }
