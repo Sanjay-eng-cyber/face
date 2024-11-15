@@ -85,6 +85,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::prefix('api')->group(function () {
         Route::post('event/verify-pin', 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
+        Route::post('event/user-submit', 'App\Http\Controllers\frontend\EventController@userFormSubmit')->name('frontend.event.user-submit');
     });
 
     Route::prefix('dynamic')->group(function () {

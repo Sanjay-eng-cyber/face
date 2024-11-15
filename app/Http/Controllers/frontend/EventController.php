@@ -41,6 +41,29 @@ class EventController extends Controller
         }
     }
 
+    public function userFormSubmit(Request $request)
+    {
+        $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+        // dd($request->pin);
+        if (!$request->pin || ($event->pin != $request->pin)) {
+            return response()->json(['status' => false, 'message' => 'Incorrect Pin']);
+        }
+
+        $request->validate([
+            'name' => 'required|string|min:30|max:40',
+            'email' => 'required|email|min:8|max:40',
+            'mobile' => 'required|numeric|digits:10',
+        ]);
+
+        $frontendUser = new FrontendUser();
+        $frontendUser->name = $request->name;
+        $frontendUser->email = $request->email;
+        $frontendUser->phone = $request->mobile;
+        if ($frontendUser->save()) {
+            return response()->json(['status' => true, 'message' => 'User Registered Successfully.']);
+        }
+    }
+
     public function stepTwoForm($eventSlug)
     {
         // dd('jdfhsdugf');

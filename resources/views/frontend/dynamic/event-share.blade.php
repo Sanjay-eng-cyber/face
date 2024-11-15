@@ -60,7 +60,7 @@
                         <div class="col-12">
                             <div class="pin-container">
                                 <div class="pin-title">Enter Your Pin Number</div>
-                                <form action="" method="post" @submit.prevent="handleStepOneSubmit">
+                                <form action="" method="post" @submit.prevent="handleStepOneFormSubmit">
                                     <div class="d-flex justify-content-center basic-input-main">
                                         <input v-for="(value, index) in pinValues" :key="index" type="text"
                                             maxlength="1" class="pin-input" placeholder="0" v-model="pinValues[index]"
@@ -74,52 +74,34 @@
 
                     <div class="row gx-5" v-if="step == 2">
                         <div class="col-5 col-xl-6 col-xxl-5">
-                            <form action="{{ route('frontend.login.submit') }}" method="post" class="login-form pt-4">
-                                @csrf
+                            <form method="post" class="login-form pt-4" @submit.prevent="handleStepTwoFormSubmit">
                                 <div class="dblwhitecolor h4 mb-0 fw-600 pb-2">Details</div>
-
                                 <div class="pb-3">
                                     <label for="name" class="fw-600 frtwhitcolor pb-2">Name</label>
                                     <input type="text" name="name" minlength="8" maxlength="30" required
-                                        class="form-control sin-input">
+                                        class="form-control sin-input" placeholder="Enter Your Name" v-model="name">
+                                    {{-- <div class="text-danger text-left" role="alert">Error</div> --}}
                                 </div>
-                                {{-- @if ($errors->has('name'))
-                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('name') }}
-                                    </div>
-                                @endif --}}
 
                                 <div class="pb-3">
                                     <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
-                                    <input type="email" name="email" minlength="8" maxlength="30" required
-                                        class="form-control sin-input">
+                                    <input type="email" name="email" minlength="8" maxlength="40" required
+                                        class="form-control sin-input" placeholder="Enter Your Email ID" v-model="email">
+                                    {{-- <div class="text-danger text-left" role="alert">The given email is invalid</div> --}}
                                 </div>
-                                {{-- @if ($errors->has('email'))
-                                    <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}
-                                    </div>
-                                @endif --}}
                                 <div class="pb-3">
-                                    <label for="num" class="fw-600 frtwhitcolor pb-2">Number</label>
-                                    <input type="text" id="num" name="num" minlength="6" maxlength="6"
-                                        required class="form-control sin-input">
-                                    {{--                                 
-                                    @if ($errors->has('num'))
-                                        <div class="text-danger text-left mt-2" role="alert">{{ $errors->first('num') }}</div>
-                                    @endif --}}
+                                    <label for="mobile_number" class="fw-600 frtwhitcolor pb-2">Mobile Number*</label>
+                                    <input type="text" id="mobile_number" name="mobile_number" minlength="10"
+                                        maxlength="10" required class="form-control sin-input"
+                                        placeholder="Enter Your Mobile Number" required v-model="mobile">
+                                    {{-- <div class="text-danger text-left" role="alert">The mobile number has to be 10
+                                        digits.
+                                    </div> --}}
                                 </div>
-
 
                                 <div>
-                                    {{-- <a href="http://" class="btn btn-login withsignin" style="font-size: 20px">
-                                        Sign In
-                                    </a> --}}
-
-
                                     <button type="submit" class="submit-btn-bept">Submit</button>
-
                                 </div>
-
-
-
 
                             </form>
 
@@ -199,6 +181,9 @@
                 return {
                     pinValues: ref(Array(4).fill('')),
                     step: 1,
+                    name: '',
+                    email: '',
+                    mobile: '',
                 }
             },
             methods: {
@@ -215,9 +200,9 @@
                 focusInput(index) {
                     document.querySelectorAll('.pin-input')[index].focus();
                 },
-                handleStepOneSubmit() {
+                handleStepOneFormSubmit() {
                     const fullPin = this.pinValues.join('');
-                    alert(`Full PIN: ${fullPin}`);
+                    // alert(`Full PIN: ${fullPin}`);
                     axios.post('{{ route('frontend.event.verify-pin') }}', {
                             eventSlug: '{{ $event->slug }}',
                             pin: fullPin
@@ -247,6 +232,53 @@
                                 actionTextColor: '#fff',
                                 backgroundColor: '#e7515a'
                             });
+                        });
+
+                },
+                handleStepTwoFormSubmit() {
+                    const fullPin = this.pinValues.join('');
+                    // alert(`Full PIN: ${fullPin}`);
+                    axios.post('{{ route('frontend.event.user-submit') }}', {
+                            eventSlug: '{{ $event->slug }}',
+                            pin: fullPin,
+                            name: this.name,
+                            email: this.email,
+                            mobile: this.mobile,
+                        })
+                        .then((res) => {
+                            if (res.data.status) {
+                                Snackbar.show({
+                                    text: 'User Created Successfully',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#1abc9c'
+                                });
+                                this.step = 2;
+                            } else {
+                                Snackbar.show({
+                                    text: 'Something Went Wrong',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            // console.log(error);
+                            if (error.status == 422) {
+                                $.each(error.response.data.errors, function(i, error) {
+                                    var el = $(document).find('[name="' + i + '"]');
+                                    el.after($('<div class="text-danger text-left" role="alert">' +
+                                        error[0] + '</div>'));
+                                });
+                            } else {
+                                Snackbar.show({
+                                    text: "Something Went Wrong",
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
                         });
 
                 }
