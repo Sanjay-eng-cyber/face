@@ -1661,6 +1661,20 @@ body {
     font-weight: 500;
     padding-top: 22px;
 }
+.sgl-divider{
+   width: 1px; 
+   background-color:#FF3895; 
+   height: auto; 
+   align-self: stretch;
+}
+
+.box-one-nummain{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.uptoptext{
+    font-size: 14px
+}
 
 @media screen and (max-width:1116px) {
     .card-price {
@@ -1675,10 +1689,11 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    
     .basic-event-one-main-insider {
         align-items: center;
         display: grid;
-        grid-template-columns: 23% 77%;
+        grid-template-columns: 23% 73%;
         gap: 19px;
     }
     .ofmainbg{
@@ -1744,6 +1759,28 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .details-box-one .name-head,
+    .details-box-one .name-title,
+    .details-box-one .number-head,
+    .details-box-one .number-title,
+    .details-box-one .email-head,
+    .details-box-one .email-title {
+        font-size: 1rem;
+
+    }
+
+    .eventanddatespit{
+        grid-template-columns:100%;
+        grid-gap: 8px;
+    }
+    .bx-twoeventname{
+        font-size: 1em;
+    }
+    .box-one-nummain{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
     .basic-event-one-main-insider.user-detailsinfo {
         gap: 21px;
     }
@@ -1839,6 +1876,13 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .sgl-divider{
+        width: 100%; 
+        background-color:#343434; 
+        height: auto; 
+        height: 1px;
+        align-self: stretch;
+     }
     .pre-arrow{
         width: 55px;
     height: 55px;
@@ -2164,6 +2208,60 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .gallery-img {
+        height: 150px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .grid-outer{
+        padding: 7px 7px;
+    }
+    .basic-event-one-main{
+        padding: 6px 6px;
+    }
+    .basic-event-one-main-insider.user-detailsinfo {
+        gap: 9px;
+    }
+    .basic-event-one-main-insider {
+        gap: 9px;
+    }
+    .box-one-nummain{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .uptoptext{
+        font-size: 9px;
+        text-align: center;
+        font-weight: 300;
+    }
+    .details-box-one .name-head, 
+    .details-box-one .number-head, 
+    .details-box-one .email-head {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+   
+    .details-box-one .name-title,
+    .details-box-one .number-title,
+    .details-box-one .email-title {
+        font-size: 12px;
+        font-weight: 400;
+
+    }
+.fssm-8px{
+    font-size: 10px;
+    font-weight: 300;
+}
+.box-twobtpra{
+font-size: 10px;
+font-weight: 300;
+}
+    .bx-twoeventname{
+        font-size: 12px;
+        font-weight: 400;
+    }
+
     .next-arrow{
         top: unset;
         right: 0px;
@@ -2429,6 +2527,9 @@ body {
 
 }
 @media screen and (max-width:480px) {
+    .gallery-img {
+        height: 122px;
+    }
     .crner-angle-text{
         padding: 27px 18px;
     }

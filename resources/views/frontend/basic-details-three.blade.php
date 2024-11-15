@@ -53,35 +53,31 @@
                                         <div class="basic-event-one-main" style="height:100%;">
                                             <div class="basic-event-one-main-insider user-detailsinfo" >
                                                 <div>
-                                                    <div class="fw-600 text-white pb-2" style="font-size: 14px">Uploaded Photo</div>
+                                                    <div class="fw-600 text-white pb-2 uptoptext" >Uploaded Photo</div>
                                                     <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3">
                                                 </div>
-                                                <div>
+                                                <div class="details-box-one">
                                                    
-                                                       
-                                                            <div class="d-flex gap-1">
-                                                                <div class="text-white fw-600 h5 mb-0">Name:</div>
-                                                                <div class="text-white fw-600 h5 mb-0">joe alberto</div>
-                                                            </div>
-                                                        
-                                                        
-                                                            <div class="d-flex gap-1" style="padding-top: 20px;padding-bottom: 20px;">
-                                                                <div class="text-white fw-600 h5 mb-0">Number:</div>
-                                                                <div class="text-white fw-600 h5 mb-0">12312312312</div>
-                                                            </div>
-                                                           
-                                                            <div class="d-flex gap-1">
-                                                                <div class="text-white fw-600 h5 mb-0"> Email ID: </div>
-                                                                <div class="text-white fw-600 h5 mb-0">joe@gmail.com</div>
-                                                            </div>
-                                                        
-                                                   
-                                                   
+                                                        <div class="d-flex gap-1">
+                                                            <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
+                                                            <div class="text-white fw-600 h5 mb-0 name-title">joe alberto</div>
+                                                        </div>
+
+                                                        <div class="d-flex gap-1 box-one-nummain" >
+                                                            <div class="text-white fw-600 h5 mb-0 number-head">Number:</div>
+                                                            <div class="text-white fw-600 h5 mb-0 number-title">12312312312</div>
+                                                        </div>
+
+                                                        <div class="d-flex gap-1">
+                                                            <div class="text-white fw-600 h5 mb-0 email-head"> Email ID: </div>
+                                                            <div class="text-white fw-600 h5 mb-0 email-title">joe@gmail.com</div>
+                                                        </div>
+                                                                                                                                                        
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="d-none d-lg-block" style="width: 1px; background-color:#FF3895; height: auto; align-self: stretch;"></div>
+                                        <div class="sgl-divider d-lg-block"></div>
                                     
                                         <div class="basic-event-one-main" style="height:100%;">
                                             <div class="basic-event-one-main-insider" >
@@ -90,10 +86,10 @@
                                                 </div>
                                                 <div>
                                                     <div class="eventanddatespit ">
-                                                        <div class="h5 fw-600 mb-0 text-white">Business event</div>
-                                                        <div class="text-white fw-300 fs-14" >10/09/2024 to 14/09/2024</div>
+                                                        <div class="h5 fw-600 mb-0 text-white bx-twoeventname">Business event</div>
+                                                        <div class="text-white fw-300 fs-14 fssm-8px" >10/09/2024 to 14/09/2024</div>
                                                     </div>
-                                                    <div class="text-white pt-3 fs-14" >
+                                                    <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
                                                         Picscan is the world's only end-to-end AI-powered image post-production solution.
                                                     </div>
                                                 </div>
@@ -105,12 +101,12 @@
                         
                         </div>
 
-                        <div class="row pt-5 pb-4">
+                        <div class="row pt-3 pb-3 pt-sm-5 pb-sm-4">
                             <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
                         </div>
 
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery">
-                            <div class="col pb-4" data-index="1">
+                        <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery">
+                            <div class="col pb-4 pb-sm-4" data-index="1">
                                 <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
                             </div>
 
