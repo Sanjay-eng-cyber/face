@@ -29,6 +29,9 @@
         .smalllarrow-img2{
             display: none;
         }
+        .blurhero-img{
+            display: none;
+        }
 </style>
 @endsection
 @section('content')
@@ -37,7 +40,7 @@
 
            
             <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-bdptwo" style="backdrop-filter: blur(60px);">
+                class="img-fluid blurhero-bdptwo" >
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
