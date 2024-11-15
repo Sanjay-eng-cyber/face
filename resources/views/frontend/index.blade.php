@@ -6,14 +6,29 @@
             display: none
         }
 
-        .custom-ctnrfluid {
+        /* .custom-ctnrfluid {
             background: none;
             backdrop-filter: unset;
+        } */
+        .custom-ctnrfluid{
+            background-image: unset;
+            backdrop-filter: unset;
         }
-
         .custom-ctnrfluid.sticky-nav {
-            background: url(/frontend/images/index/navbg.svg);
-            backdrop-filter: blur(29px);
+            background-image: url(/frontend/images/index/navbg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(29px);
+    display: flex;
+    align-items: center;
+    min-height: 106px;
+    margin-top: 14px;
+    position: fixed;
+    width: 98%;
+    left: 50%;
+    border-radius: 34px;
+    transform: translate(-50%);
         }
 
         .smalllarrow-img {
@@ -37,8 +52,8 @@
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
 
             <div class="container overflow-hide ">
-                {{-- <div style="height:100px;">
-                </div> --}}
+                <div style="height:100px;">
+                </div>
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
                     <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative text-center text-lg-start">
                         <div class="display-6 display-lg-4  display-xl-4 display-xxl-3 fw-500 share-img-text">
@@ -610,135 +625,7 @@
 
     </div> 
 
-    <div class="container d-block d-sm-none">
-        <div class="smarty-bg-mobile">
-            <div class="main_slide_main-mobile">  
-                <div class="outer-smarty-bg-mobile">
 
-                    <div class="row d-flex align-items-center justify-content-center">
-                        <div class="col-11 col-md-9">
-                            <div class="slidetext text-white active text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 1 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    1 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-                            <div class="slidetext text-white text-center ">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 2 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    2 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 3 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    3 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 4 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    4 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 5 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    5 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-                            <div class="slidetext text-white text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
-                                    <span class="text-prime fw-600"> 6 Market smartly </span> at every step
-                                </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
-                                    6 Collect invaluable client data with their consent. Use it to reach just the
-                                    right audience at fraction of a price compared to instagram marketing.
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row d-flex align-items-center justify-content-center">
-                       
-
-
-
-                                <div class="col-12 mobile-align">
-                                    <div class="rev_slider">
-                                        <div class="rev_slide active">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 1"
-                                                    class="rev_slideimg">
-                                            </div>
-                                        </div>
-
-                                        <div class="rev_slide">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 2"
-                                                    lass="rev_slideimg">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="rev_slide">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 3"
-                                                    lass="rev_slideimg">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="rev_slide">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 4"
-                                                    lass="rev_slideimg">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="rev_slide">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 5"
-                                                    lass="rev_slideimg">
-
-                                            </div>
-                                        </div>
-                                        <div class="rev_slide">
-                                            <div class="test">
-                                                <img src="{{ asset('frontend/images/index/sl-1.png') }}" alt="Image 6"
-                                                    lass="rev_slideimg">
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     {{-- <div class="container">
         <div class="smarty-bg-mobile">
@@ -895,7 +782,7 @@
 
 
 
-    {{-- <div class="position-relative isolation overflow-hidden">
+    <div class="position-relative isolation overflow-hidden">
 
         <img src="{{ asset('frontend/images/index/index-new/pricebgimg.png') }}" alt="" srcset=""
             class="img-fluid w-100 position-absolute" style="z-index: -1;">
@@ -1044,7 +931,7 @@
 
             </div>
         </div>
-    </div> --}}
+    </div> 
 
 
 
