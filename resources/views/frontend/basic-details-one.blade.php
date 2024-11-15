@@ -23,7 +23,11 @@
     .halfarrowt-img{
       display: none;
     }
-
+   @media screen and (max-width: 768px) {
+    .smalllarrow-img2{
+      display: none;
+    }
+   }
 </style>
 @endsection
 @section('content')
@@ -31,8 +35,8 @@
         <div style="position: relative">
 
            
-            <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-img-login">
+            {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
+                class="img-fluid blurhero-img-login"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"

@@ -1916,6 +1916,12 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .fheattwo {
+        position: absolute;
+        z-index: 0;
+        top: 4em;
+        right: 5em;
+    }
     .order-bl{
         order: 1;
     }
