@@ -5,21 +5,6 @@
     footer{
       margin-top: 80px
     }
-    .custom-ctnrfluid {
-      /* background-image: unset;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: unset;
-      display: flex;
-      align-items: center;
-      min-height: 106px;
-      margin-top: 14px; */
-      /* position: fixed;
-      width: 98%;
-      left: 50%;
-      transform: translate(-50%); */
-    }
     .halfarrowt-img{
       display: none;
     } 
@@ -31,6 +16,13 @@
         }
         .blurhero-img{
             display: none;
+        }
+
+        @media (max-width: 992px) {
+            
+    .custom-ctnrfluid {
+     margin-top: 0
+    }
         }
       
 </style>

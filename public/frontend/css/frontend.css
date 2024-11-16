@@ -1900,7 +1900,7 @@ body {
     height: 90px;
     }
     .navbar-brand{
-        top: -8px;
+        top: -12px;
     }
     .robot-withimg {
         margin-bottom: 0px;
@@ -1950,6 +1950,40 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .navbar-brand {
+        top: 0px;
+    }
+    .custom-ctnrfluid {
+        background-image: unset;
+        backdrop-filter:unset;
+        min-height: unset;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .custom-ctnrfluid.sticky-nav{
+        background-image: url(/frontend/images/index/index-new/blurhero.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        backdrop-filter: blur(23px);
+         backdrop-filter: blur(29px);
+    }
+
+    .custom-ctnrfluid .navbar-collapse.collapse.show{
+        background-image: url(/frontend/images/index/index-new/blurhero.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        backdrop-filter: blur(23px);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .custom-ctnrfluid.sticky-nav .navbar-collapse.collapse.show{
+        background-image: unset;
+        background-repeat: no-repeat;
+        background-size: unset;
+        backdrop-filter:unset;
+    }
+
     .basic-details-trbg-main {
         background-image: url(/frontend/images/index/index-new/blurhero.svg);
         background-repeat: no-repeat;
@@ -1977,6 +2011,8 @@ body {
         background-color:#000000;
         border: none;
         border-radius: 4px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
     .fheattwo {
         position: absolute;
@@ -2205,7 +2241,7 @@ body {
     .hometarrow-img{
         display: none;
     }
-    .custom-ctnrfluid{
+    /* .custom-ctnrfluid{
         background-image: url(/frontend/images/index/navbg.svg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -2220,7 +2256,7 @@ body {
         padding-left: 12px;
         padding-right: 12px;
        
-    }
+    } */
 }
 
 
@@ -2375,6 +2411,9 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .navcircle-img {
+        display: none;
+    }
     .basic-details-trbg-main{
         margin-top: 7px;
     }
@@ -2718,7 +2757,8 @@ font-weight: 300;
 
     }
     .navbar-brand{
-        top: 0px 
+        top: 9px;
+       
     }
     .fs-20px{
         font-size: 20px;

@@ -5,7 +5,9 @@
     footer{
       margin-top: 80px
     }
-    
+    .custom-ctnrfluid.sticky-nav{
+        margin-top: 0px
+    }
     .custom-ctnrfluid {
         margin-top: 8px;
     }
@@ -15,10 +17,17 @@
     .blurhero-img {
             display: none;
         }
+
+        @media (max-width: 992px) {
+          
+        }
         @media (max-width: 576px) {
             .custom-ctnrfluid {
                 margin-top: 0px;
+               
             }
+          
+          
         }
 </style>
 @endsection

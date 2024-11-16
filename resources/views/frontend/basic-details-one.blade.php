@@ -6,7 +6,7 @@
       margin-top: 80px
     }
 
-    .custom-ctnrfluid{
+    /* .custom-ctnrfluid{
       background-image: url(/frontend/images/index/navbg.svg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -23,16 +23,13 @@
       transform: translate(-50%);
       padding-left: 12px;
       padding-right: 12px;
-        }
+        } */
 
     .halfarrowt-img{
       display: none;
     }
     @media screen and (max-width: 992px) {
-      .custom-ctnrfluid{
-        min-height: unset;
-
-      }
+   
 
     }
     
