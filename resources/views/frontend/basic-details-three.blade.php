@@ -5,20 +5,9 @@
     footer{
       margin-top: 80px
     }
+    
     .custom-ctnrfluid {
-      /* background-image: unset;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: unset;
-      display: flex;
-      align-items: center;
-      min-height: 106px;
-      margin-top: 14px; */
-      /* position: fixed;
-      width: 98%;
-      left: 50%;
-      transform: translate(-50%); */
+        margin-top: 8px;
     }
     .halfarrowt-img{
       display: none;
@@ -26,11 +15,17 @@
     .blurhero-img {
             display: none;
         }
+        @media (max-width: 576px) {
+            .custom-ctnrfluid {
+                margin-top: 0px;
+            }
+        }
 </style>
 @endsection
 @section('content')
     <section>
         <div class="position-relative">
+            {{-- <div class="demo-height-bdpt"></div> --}}
 
            
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
@@ -39,7 +34,7 @@
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img-new">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2-new">
-            <img src="{{asset('frontend/images/gallery/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img" style="z-index: -99">
+            <img src="{{asset('frontend/images/gallery/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img-bdpt d-none d-sm-block" style="z-index: -99">
             
             <div class="container-fluid ">
 
