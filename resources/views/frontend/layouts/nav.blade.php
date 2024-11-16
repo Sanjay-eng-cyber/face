@@ -14,9 +14,11 @@
                 <a class="navbar-brand fs-43px fs-30px fw-900 fs-20px" href="#" >
                     <span class="text-white">Pic</span><span class=" darkpink">scan</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="navbar-toggler-parent">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0 pt-20px" >
                         <li class="nav-item home-left">
