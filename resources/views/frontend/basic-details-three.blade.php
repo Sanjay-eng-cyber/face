@@ -55,10 +55,10 @@
                             <div class="col-12">
                                     <div class="grid-outer">
                                         <div class="basic-event-one-main h-100">
-                                            <div class="basic-event-one-main-insider user-detailsinfo" >
+                                            <div class="basic-event-one-main-insider-half user-detailsinfo" >
                                                 <div>
                                                     <div class="fw-600 text-white pb-2 uptoptext" >Uploaded Photo</div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3">
+                                                    <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid w-100 rounded-3">
                                                 </div>
                                                 <div class="details-box-one">
                                                    
@@ -84,9 +84,9 @@
                                         <div class="sgl-divider d-lg-block"></div>
                                     
                                         <div class="basic-event-one-main h-100" >
-                                            <div class="basic-event-one-main-insider" >
+                                            <div class="basic-event-one-main-insider-full" >
                                                 <div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3" >
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img-new w-100 rounded-3" >
                                                 </div>
                                                 <div>
                                                     <div class="eventanddatespit ">
