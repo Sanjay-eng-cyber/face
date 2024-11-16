@@ -127,6 +127,11 @@ body {
     padding-top: 35px;;
 }
 
+.pt-17px{
+    padding-top: 17px;
+}
+
+
 .yclr{
     color: var(--yclr);
 }
@@ -156,6 +161,9 @@ body {
     isolation: isolate;
 }
 
+.demo-height-bdpt{
+    height:110px;
+}
 .btn.btn-login.btn-event{
     font-size: 14px;
     width:131px;
@@ -273,13 +281,27 @@ body {
     /* background-color: red; */
 }
 
-.custm-outer{}
 .basic-details-trbg{
-    background-image:url('/frontend/images/index/index-new/blurhero.svg');
+    background-image: url(/frontend/images/index/index-new/blurhero.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(23px);
+    padding-bottom: 50px;
+    padding-top: 111px;
+    margin-top: 13px;
+    border-radius: 25px;
+}
+.basic-details-trbg-main{
+    background-image: url(/frontend/images/index/index-new/blurhero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(23px);
+    padding-bottom: 50px;
+    padding-top: 0px;
+    margin-top: 20px;
+    border-radius: 25px;
 }
 
 .custom-ctnrfluid{
@@ -402,10 +424,17 @@ body {
     width:100%
 }
 
+.plainplate-img2new{
+    position: absolute;
+    z-index:-2;
+    bottom: 36px;
+    width:100%
+}
+
 .plainplate-img-new{
     position: absolute;
     z-index:-2;
-    top:10em;
+    top:21em;
     width:100%
 }
 
@@ -577,6 +606,18 @@ body {
     position: absolute;
     right: 11em;
     top: -3rem;
+}
+
+.bigarrow-img-bdptnew{
+    position: absolute;
+    right: 11em;
+    top: 5px;
+}
+
+.bigarrow-img-bdpt{
+    position: absolute;
+    right: 11em;
+    top:2.5rem;
 }
 
 .scn-sharemain{
@@ -1909,6 +1950,34 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    .basic-details-trbg-main {
+        background-image: url(/frontend/images/index/index-new/blurhero.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(23px);
+        padding-bottom: 50px;
+        padding-top: 53px;
+        margin-top: 20px;
+        border-radius: 25px;
+    }
+
+    .basic-details-trbg{
+        padding-top: 53px;
+    }
+    .demo-height-bdpt{
+        height:unset;
+    }
+    .navbar-toggler-parent{
+        padding: 1.5px;
+        border-radius: 4px;
+        background: linear-gradient(118.83deg, rgba(254, 59, 150, 0) 32.25%, #98235A 197.6%);;
+    }
+    .navbar-toggler{
+        background-color:#000000;
+        border: none;
+        border-radius: 4px;
+    }
     .fheattwo {
         position: absolute;
         z-index: 0;
@@ -2145,9 +2214,11 @@ body {
         display: flex;
         align-items:unset;
         min-height: unset;
-        margin-top: 14px;
+        margin-top: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
        
     }
 }
@@ -2304,6 +2375,20 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .basic-details-trbg-main{
+        margin-top: 7px;
+    }
+    .plainplate-img2new{
+        bottom: 22em;
+    }
+    .basic-details-trbg {
+        padding-top: 43px;
+        margin-top: 7px;
+    }
+    .custom-ctnrfluid{
+        width: 96%;
+        border-radius: 15px;
+    }
     .pin-input {
         width: 33px;
         height: 42px;
