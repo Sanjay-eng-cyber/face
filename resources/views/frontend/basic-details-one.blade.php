@@ -5,34 +5,10 @@
     footer{
       margin-top: 80px
     }
-
-    /* .custom-ctnrfluid{
-      background-image: url(/frontend/images/index/navbg.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(29px);
-      display: flex;
-      align-items: center;
-      min-height: 106px;
-      margin-top: 14px;
-      position: fixed;
-      width: 98%;
-      left: 50%;
-      border-radius: 34px;
-      transform: translate(-50%);
-      padding-left: 12px;
-      padding-right: 12px;
-        } */
-
     .halfarrowt-img{
       display: none;
     }
-    @media screen and (max-width: 992px) {
-   
-
-    }
-    
+ 
    .blurhero-img{
             border-radius: 34px;
         }
@@ -57,8 +33,8 @@
 @endsection
 @section('content')
     <section>
-        <div style="position: relative">
-          <div style="height:110px;"></div>
+        <div class="position-relative">
+          <div class="pobdh"></div>
            
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img-login"> --}}

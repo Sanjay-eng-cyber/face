@@ -49,12 +49,12 @@
 
                 <div class="basic-details-trbg">
 
-                    <div class="container overflow-hide" style="">
+                    <div class="container overflow-hide">
                         <div class="row  pt-35px">
                         
                             <div class="col-12">
                                     <div class="grid-outer">
-                                        <div class="basic-event-one-main" style="height:100%;">
+                                        <div class="basic-event-one-main h-100">
                                             <div class="basic-event-one-main-insider user-detailsinfo" >
                                                 <div>
                                                     <div class="fw-600 text-white pb-2 uptoptext" >Uploaded Photo</div>
@@ -83,7 +83,7 @@
                                         
                                         <div class="sgl-divider d-lg-block"></div>
                                     
-                                        <div class="basic-event-one-main" style="height:100%;">
+                                        <div class="basic-event-one-main h-100" >
                                             <div class="basic-event-one-main-insider" >
                                                 <div>
                                                     <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img w-100 rounded-3" >
@@ -193,14 +193,11 @@
     document.addEventListener("DOMContentLoaded", function() {
         const galleryItems = document.querySelectorAll("#gallery .col");
         const toggleButton = document.getElementById("toggleButton");
-        const maxVisible = 12; // Number of items to display initially
-
-        // Initially hide items beyond the first 12
+        const maxVisible = 12; 
         galleryItems.forEach((item, index) => {
             if (index >= maxVisible) item.style.display = "none";
         });
 
-        // Toggle visibility on button click
         toggleButton.addEventListener("click", function() {
             const isExpanded = toggleButton.innerText === "Show Less";
             galleryItems.forEach((item, index) => {

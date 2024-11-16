@@ -18,11 +18,10 @@
             display: none;
         }
 
-        @media (max-width: 992px) {
-            
-    .custom-ctnrfluid {
-     margin-top: 0
-    }
+        @media (max-width: 992px) {    
+            .custom-ctnrfluid {
+            margin-top: 0
+            }
         }
       
 </style>
@@ -30,7 +29,7 @@
 @section('content')
     <section>
         <div class="position-relative">
-            <div style="height:110px;" class="d-none d-lg-block"></div>
+            <div class="ptbtp d-none d-lg-block"></div>
 
            
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"

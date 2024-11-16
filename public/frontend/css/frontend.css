@@ -65,6 +65,13 @@
 .hero-mh{
     min-height: 481px;
 }
+
+.pobdh{
+    height:110px;
+}
+.ptbtp{
+    height:110px;
+}
 body {
     font-family: "Montserrat", sans-serif;
     /* overflow: hidden; */
