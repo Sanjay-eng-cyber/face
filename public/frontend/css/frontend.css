@@ -14,11 +14,15 @@
     --greencolor:#88ED11;
     --narangicolor:#C505FF;
     --yclr:#FD692A;
+    --drgreen:#84FF89;
    
 }
 
 .z-99{
     z-index: 99;
+}
+.drgreen{
+    color: var(--drgreen);
 }
 
 .btn-login {
@@ -462,6 +466,11 @@ body {
     background-color: #1A1A1A;
     border: 0px;
     color:#C6C8C3;
+
+}
+
+.login-form input::placeholder{
+    color: var(--frtwhitcolor);
 
 }
 .login-form .form-control.sin-input:focus {
@@ -2481,6 +2490,18 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .upload-section button.guest-uploader{
+        padding: 8px 9px;
+    }
+    .two-container-grp{
+        grid-gap: 7px;
+    }
+    .fs-12pxnew{
+        font-size: 12px;
+    }
+    .basic-details-trbg-main{
+        background-image: url(/frontend/images/basic-event-one/navsmimg.svg);
+    }
     .basic-event-one-main-bdt{
         padding: 9px 9px;
     }
@@ -2612,10 +2633,10 @@ body {
         padding: 18px 18px 23px 18px;
     }
     .scan-facebtn{
-        font-weight: 400;
+        font-weight: 500;
     }
     .dz-message.scan-textboxbdpt-btn{
-        font-weight: 400;
+        font-weight: 500;
     }
     .upload-section{
         padding: 24px 24px 34px 24px;
