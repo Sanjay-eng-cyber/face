@@ -5,10 +5,7 @@
         .halfarrowt-img {
             display: none
         }
-        .navsmimg{
-            display: none;
-        }
-
+      
         /* .custom-ctnrfluid {
             background: none;
             backdrop-filter: unset;
@@ -17,7 +14,7 @@
             background-image: unset;
             backdrop-filter: unset;
         }
-        .custom-ctnrfluid.sticky-nav {
+        /* .custom-ctnrfluid.sticky-nav {
             background-image: url(/frontend/images/index/navbg.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,10 +29,27 @@
     left: 50%;
     border-radius: 34px;
     transform: translate(-50%);
-        }
+        } */
 
         .smalllarrow-img {
             display: none;
+        }
+
+        @media (max-width: 576px) {
+            .navsmimg{
+            display: block;
+        }
+        .navsmimg{
+            top:7px;
+        }
+        .custom-ctnrfluid{
+            margin-top: 14px;
+        }
+
+        .custom-ctnrfluid.sticky-nav{
+            margin-top: 7px;
+        }
+
         }
     </style>
 @endsection
@@ -55,24 +69,24 @@
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img">
 
             <div class="container overflow-hide ">
-                <div style="height:100px;">
+                <div class="ip-fheight">
                 </div>
                 <div class="row d-flex align-items-center justify-content-center hero-mh hero-main">
-                    <div class="col-lg-8 col-xl-8 col-xxl-7 text-white position-relative text-center text-lg-start">
-                        <div class="display-6 display-lg-4  display-xl-4 display-xxl-3 fw-500 share-img-text">
+                    <div class="col-lg-8 col-xl-8 col-xxl-8 text-white position-relative text-center text-lg-start">
+                        <div class="fw-500 share-img-text">
                             Share Images
                             <img src="{{ asset('frontend/images/index/index-new/rightarrow.svg') }}" alt=""
                                 srcset="" class="img-fluid rightarrow-img">
 
                         </div>
-                        <div class="display-6 display-lg-4 display-xl-4 display-xxl-3 fw-500 using-herotext">
+                        <div class="fw-500 using-herotext">
                             <span>Using</span> <span class="dbcolor">Face</span> <span class="darkpink">Recognition</span>
                         </div>
                         <div class="small-pra-text">Wow Your Clients And Get <span class="darkpink">8X</span> More Visibility
                         </div>
 
                     </div>
-                    <div class="col-lg-4 col-xl-4 col-xxl-5 position-relative text-center text-lg-start">
+                    <div class="col-lg-4 col-xl-4 col-xxl-4 position-relative text-center text-lg-start">
                         <div class="position-relative">
                             <div class="sm-middle">
                                 <img src="{{ asset('frontend/images/small/mdl.png') }}" alt="" srcset=""
