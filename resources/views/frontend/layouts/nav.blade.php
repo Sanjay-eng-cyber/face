@@ -5,7 +5,7 @@
     class="img-fluid blurhero-img d-none d-sm-block">
 
     <img src="{{ asset('frontend/images/basic-event-one/navsmimg.svg') }}" alt="Blurred background hero image"
-    class="img-fluid blurhero-img d-block d-sm-none">
+    class="img-fluid navsmimg">
 
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
     

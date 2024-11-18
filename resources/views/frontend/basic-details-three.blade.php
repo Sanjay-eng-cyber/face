@@ -3,7 +3,10 @@
 @section('cdn')
 <style>
     footer{
-      margin-top: 80px
+      margin-top: 25px
+    }
+    .navsmimg{
+        display: none
     }
     .custom-ctnrfluid.sticky-nav{
         margin-top: 0px
@@ -34,11 +37,6 @@
 @section('content')
     <section>
         <div class="position-relative">
-            {{-- <div class="demo-height-bdpt"></div> --}}
-
-           
-            {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-bdptwo" style="backdrop-filter: blur(30px);"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img-new">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
@@ -190,22 +188,40 @@
 @section('js')
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const galleryItems = document.querySelectorAll("#gallery .col");
-        const toggleButton = document.getElementById("toggleButton");
-        const maxVisible = 12; 
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = document.querySelectorAll("#gallery .col");
+    const toggleButton = document.getElementById("toggleButton");
+    let maxVisible = 12; // Default max visible items
+
+    function updateVisibility() {
+        const isSmallScreen = window.innerWidth <= 576;
+        maxVisible = isSmallScreen ? 4 : 12; // Show 4 items on small screens
+        const isExpanded = toggleButton.getAttribute("data-expanded") === "true";
+
         galleryItems.forEach((item, index) => {
-            if (index >= maxVisible) item.style.display = "none";
+            item.style.display = isExpanded || index < maxVisible ? "block" : "none";
         });
 
-        toggleButton.addEventListener("click", function() {
-            const isExpanded = toggleButton.innerText === "Show Less";
-            galleryItems.forEach((item, index) => {
-                item.style.display = isExpanded || index < maxVisible ? "block" : "none";
-            });
-            toggleButton.innerText = isExpanded ? "Show More" : "Show Less";
+        toggleButton.style.display = galleryItems.length > maxVisible ? "inline-block" : "none";
+        toggleButton.innerText = isExpanded ? "Show Less" : "Show More";
+    }
+
+    toggleButton.addEventListener("click", function () {
+        const isExpanded = toggleButton.getAttribute("data-expanded") === "true";
+        toggleButton.setAttribute("data-expanded", !isExpanded);
+
+        galleryItems.forEach((item, index) => {
+            item.style.display = !isExpanded || index < maxVisible ? "block" : "none";
         });
+
+        toggleButton.innerText = !isExpanded ? "Show Less" : "Show More";
     });
+
+    window.addEventListener("resize", updateVisibility);
+    updateVisibility(); // Initial check
+});
+
+
 </script>
 
 @endsection

@@ -5,6 +5,9 @@
     footer{
       margin-top: 80px
     }
+    .navsmimg{
+        display: none;
+    }
     .halfarrowt-img{
       display: none;
     } 
@@ -31,10 +34,6 @@
         
         <div class="position-relative">
             <div class="ptbtp d-none d-lg-block"></div>
-
-           
-            {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-                class="img-fluid blurhero-bdptwo" > --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2new">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"

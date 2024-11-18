@@ -5,6 +5,9 @@
         .halfarrowt-img {
             display: none
         }
+        .navsmimg{
+            display: none;
+        }
 
         /* .custom-ctnrfluid {
             background: none;
