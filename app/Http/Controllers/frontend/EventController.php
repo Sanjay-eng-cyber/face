@@ -50,9 +50,9 @@ class EventController extends Controller
         }
 
         $request->validate([
-            'name' => 'required|string|min:30|max:40',
+            'name' => 'required|string|min:3|max:40',
             'email' => 'required|email|min:8|max:40',
-            'mobile' => 'required|numeric|digits:10',
+            'mobile_number' => 'required|numeric|digits:10',
         ]);
 
         $frontendUser = new FrontendUser();
