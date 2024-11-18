@@ -17,6 +17,10 @@
    
 }
 
+.z-99{
+    z-index: 99;
+}
+
 .btn-login {
     --bs-btn-color:#FFFFFF;
     --bs-btn-bg: #FE3B96;
@@ -1766,6 +1770,36 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .basic-event-one-main-insider-full {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 21.8% 74%;
+        gap: 19px;
+    }
+
+    .basic-event-one-main-insider-half {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 25% 72%;
+        gap: 15px;
+        align-items: end;
+    }
+
+    .basic-event-one-main-insider-full {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 21% 75%;
+        gap: 19px;
+    }
+    .grid-outer {
+        background-color: #000000;
+        border: 1px solid #FE3B96;
+        padding: 12px 12px 12px 12px;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 45.4% 1% 53.4%;
+        grid-gap: 1px;
+    }
     
     .basic-event-one-main-insider {
         align-items: center;
@@ -1836,6 +1870,20 @@ body {
     }
 }
 @media screen and (max-width:1200px) {
+    .basic-event-one-main-insider-half{
+        display: grid;
+        grid-template-columns: 30% 65%;
+        gap: 15px;
+        align-items: end;
+    }
+
+    .basic-event-one-main-insider-full {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 26% 69%;
+        gap: 19px;
+    }
+
     .two-container-grp {
         display: grid;
         grid-template-columns: 48.5% 48.5%;
@@ -2433,6 +2481,30 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .smboxblurbox{
+        z-index: 99;
+        position: absolute;
+        left: -36px;
+        top: -1.8em;
+        width: 162px;
+    }
+    .bigarrowsm{
+        position: absolute;
+        top: 13em;
+        right: unset;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .basic-event-one-main-insider-half {
+        gap: 9px;
+       
+    }
+
+    .basic-event-one-main-insider-full {       
+        grid-template-columns: 30% 66%;
+        gap: 9px;
+    }
+
     .navcircle-img {
         display: none;
     }
@@ -2610,15 +2682,15 @@ body {
 
     }
 .fssm-8px{
-    font-size: 10px;
+    font-size: 2.7vw;
     font-weight: 300;
 }
 .box-twobtpra{
-font-size: 10px;
+font-size: 2.8vw;
 font-weight: 300;
 }
     .bx-twoeventname{
-        font-size: 12px;
+        font-size: 3.55vw;
         font-weight: 400;
     }
 

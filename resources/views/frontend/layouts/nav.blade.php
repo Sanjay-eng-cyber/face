@@ -2,11 +2,14 @@
     <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" srcset="" >
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
     <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-    class="img-fluid blurhero-img">
+    class="img-fluid blurhero-img d-none d-sm-block">
+
+    <img src="{{ asset('frontend/images/basic-event-one/navsmimg.svg') }}" alt="Blurred background hero image"
+    class="img-fluid blurhero-img d-block d-sm-none">
 
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
     
-    <div class="container-fluid position-relative" style="z-index:99;;">
+    <div class="container-fluid position-relative" style="z-index:9999;">
         <div class="custom-ctnrfluid " id="mainNavbar" >
             <div class="container pall0 position-relative" style="z-index:999;">
             <nav class="navbar navbar-expand-lg text-white  " style="">

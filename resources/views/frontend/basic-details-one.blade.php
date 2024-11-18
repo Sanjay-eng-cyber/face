@@ -13,6 +13,7 @@
             border-radius: 34px;
         }
    @media screen and (max-width: 768px) {
+   
     .smalllarrow-img2{
       display: none;
     }
@@ -20,6 +21,7 @@
    .blurhero-img{
             border-radius: 15px;
             margin-top: 0px;
+            top: 7px
         }
         .custom-ctnrfluid{
           margin-top: 7px;
@@ -42,17 +44,21 @@
                 alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-
+            <img src="{{asset('frontend/images/gallery/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
+            <img src="{{asset('frontend/images/basic-event-one/bigarrow.svg')}}" alt="" srcset="" class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99">
+                
             <div class="container overflow-hide">
-                <div class="row d-flex justify-content-center pt-35px">
-                  <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+                <div class="row d-flex justify-content-center pt-35px position-relative">
+                  <img src="{{asset('frontend/images/basic-event-one/smboxblur.svg')}}" alt="" srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
+                  <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
                     <div class="row">
 
 
                         <div class="col-12 ">
                     
                        
-                          <div class="basic-event-one-main-bdt" >
+                          <div class="basic-event-one-main-bdt">
+
                             <div class="basic-event-one-main-insider-bdt" >
                                 <div>
                                     <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img w-100" >
