@@ -2481,6 +2481,9 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .basic-event-one-main-bdt{
+        padding: 9px 9px;
+    }
     .smboxblurbox{
         z-index: 99;
         position: absolute;
@@ -2621,15 +2624,17 @@ body {
         grid-template-columns: 100%;
     }
     .bdt-eventname{
-        font-size: 14px;
+        font-size: 4.2vw;
         font-weight: 600;
     }
     .bdt-date{
-        font-size: 12px;
+        /* font-size: 12px; */
+        font-size: 3.56vw;
         font-weight: 300;
     }
     .bdt-date-longpara{
-        font-size: 12px;
+        /* font-size: 12px; */
+        font-size: 3.56vw;
         font-weight: 400;
 
     }
