@@ -138,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="row  row-cols-2 row-cols-lg-4">
+                <div class="row px-4 px-sm-0 row-cols-2 row-cols-lg-4">
                     <div class="col pb78px">
                         <div class="scn-sharemain">
                             <div class="share-box">
@@ -146,7 +146,7 @@
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px lh18px">
                                 Share event link with attendees via email, QR code or WhatsApp
                             </h5>
                         </div>
@@ -161,7 +161,7 @@
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px lh18px">
                                 Attendees go to the link and take a selfie
                             </h5>
                         </div>
@@ -175,7 +175,7 @@
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px lh18px">
                                 Our AI recognizes attendees with 99% accuracy and show them all their images
                             </h5>
                         </div>
@@ -188,7 +188,7 @@
 
                             </div>
 
-                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px">
+                            <h5 class="text-white kanit-thin fw-400 mb-0 fs-es-12px fs-sm14px lh18px">
                                 Images can be printed or downloaded right from mobile
                             </h5>
                         </div>

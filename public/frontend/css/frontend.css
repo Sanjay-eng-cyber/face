@@ -2549,6 +2549,9 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .lh18px{
+        line-height:18px;
+    }
     .ip-fheight{
         height:65px;
     }
