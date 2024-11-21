@@ -187,7 +187,7 @@
                             <div id="cameraModal" class="modal" style="display:none;">
                                 
                                 <div class="modal-content">
-                                    <div class="h5 mb-0 pb-3 fw-600 text-white">
+                                    <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
                                         Scan Your Face
                                     </div>
                                     <div class="w-100 d-flex justify-content-center">
