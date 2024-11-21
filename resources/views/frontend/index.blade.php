@@ -511,7 +511,7 @@
 
 
 
-    <div class="container d-none d-sm-block">
+    <div class="container d-none d-sm-block main-large-slider">
 
         <div class="main_slide_main">
             <div class="outer-smarty-bg position-relative">
@@ -595,7 +595,7 @@
 
 
 
-                    <div class="col-12 mobile-align">
+                    <div class="col-12 ">
                         <div class="rev_slider">
                             <div class="rev_slide active">
                                 <div class="test">
@@ -809,6 +809,7 @@
 
 
 
+
     <div class="position-relative isolation overflow-hidden">
 
         <img src="{{ asset('frontend/images/index/index-new/pricebgimg.png') }}" alt="" srcset=""
@@ -833,130 +834,274 @@
                 </div>
             </div>
 
-
-            <div class="curve">
-
-                <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-3">
-
-
-                    <div class="card-price mb-xl-2 mb-md-4 white card-price-tentb">
-
-                        <div class="tentb-bgblck">
-                            <img src="{{ asset('frontend/images/priceimg/tenelement.svg') }}" alt=""
-                                srcset="" class="img-fluid tenelement-img">
-                            <div class="main-tentb">
-                                <h5 class="text-prime">FREE</h5>
-                                <p class="data">10GB</p>
-                                <span class="duration d-block"> 14 day trial</span>
-                                <div class="text-center my-4">
-                                    <button class="btn-round first"> TRY NOW</button>
-                                </div>
-                                <p class="points">10GB</p>
-                                <p class="points">5MB</p>
-                                <p class="points">25 per event</p>
-                                <p class="points">25 per event</p>
-                                <p class="points">1</p>
-                                <p class="points" style="margin-bottom: 0px;padding-bottom:1rem">10</p>
-                            </div>
+            <div class="row">
+                    <div class="col-6 col-sm-0 d-flex flex-column justify-content-between d-sm-none">
+                        <div class=" text-white">
+                            Pricing <br/>
+                            plans <br />
+                            for algoshare
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="li12px text-white pb-3">Storage</li>
+                                <li class="li12px text-white pb-3">Max Image Size</li>
+                                <li class="li12px text-white pb-3">Face Searches</li>
+                                <li class="li12px text-white pb-3">Pre Registrations</li>
+                                <li class="li12px text-white pb-3">Events</li>
+                                <li class="li12px text-white pb-3">Image limit per sub event</li>
+                            </ul>
                         </div>
                     </div>
 
+                    <div class="col-6 col-sm-12">
 
-                    <div class="card-price mb-xl-2 mb-md-4 orange card-price-hundredtb">
-                        <div class="hundredtb-bgblck">
-                            <img src="{{ asset('frontend/images/priceimg/hundredelement.svg') }}" alt=""
-                                srcset="" class="img-fluid hundred-element-img">
-                            <div class="main-hundredtb">
-                                <h5 class="yclr">BASIC</h5>
-                                <p class="data">100GB</p>
-                                <span class="duration d-block"> Contact Sales For Pricing</span>
-                                <div class="text-center my-4">
-                                    <button class="btn-round basic-btn second"> CONTACT SALES</button>
+                        <div class="slider curve-main-slider row">
+                            
+                            <div class="col card-price mb-xl-2 mb-md-4 white card-price-tentb">
+
+                                <div class="tentb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/tenelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid tenelement-img">
+                                    <div class="main-tentb">
+                                        <h5 class="text-prime">FREE</h5>
+                                        <p class="data">10GB</p>
+                                        <span class="duration d-block"> 14 day trial</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round first"> TRY NOW</button>
+                                        </div>
+                                        <p class="points">10GB</p>
+                                        <p class="points">5MB</p>
+                                        <p class="points">25 per event</p>
+                                        <p class="points">25 per event</p>
+                                        <p class="points">1</p>
+                                        <p class="points" style="margin-bottom: 0px;padding-bottom:1rem">10</p>
+                                    </div>
                                 </div>
-                                <p class="points">100GB</p>
-                                <p class="points">5MB</p>
-                                <p class="points">15 per event</p>
-                                <p class="points">15 per event</p>
-                                <p class="points">100</p>
-                                <p class="points">6000</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card-price mb-xl-2 mb-md-4 empty">
-                        <h5 class="text-white">Pricing plans for algoshare</h5>
-
-                        <div class="mt-sm-5  pt-5">
-                            <p class="points">Storage</p>
-                            <p class="points">Max Image Size</p>
-                            <p class="points">Face Searches</p>
-                            <p class="points">Pre Registrations</p>
-
-                            <p class="points">Events</p>
-                            <p class="points">Storage</p>
-                            <p class="points">Image Limit Per Sub Event</p>
-                        </div>
-                    </div>
-
-                    <div class="card-price mb-xl-2 mb-md-4 position-relative purple card-price-onetb">
-                        <div class="onetb-bgblck">
-                            <img src="{{ asset('frontend/images/priceimg/onetbelement.svg') }}" alt=""
-                                srcset="" class="img-fluid one-element-img">
-
-                            <div class="main-onetb">
-                                <span class="recomend">Recommended</span>
-                                <h5 class="narangicolor">ADVANCE</h5>
-                                <p class="data">1TB</p>
-                                <span class="duration d-block"> Contact Sales For Pricing</span>
-                                <div class="text-center my-4">
-                                    <button class="btn-round advance-btn third"> CONTACT SALES</button>
-                                </div>
-                                <p class="points">1TB</p>
-                                <p class="points">15MB</p>
-                                <p class="points">2000 per event</p>
-                                <p class="points">2000 per event</p>
-                                <p class="points">200</p>
-                                <p class="points">10000</p>
                             </div>
 
-                        </div>
 
-                    </div>
-
-                    <div class="card-price mb-xl-2 mb-md-4 green card-price-fivetb">
-                        <div class="fivetb-bgblck">
-                            <img src="{{ asset('frontend/images/priceimg/fivetbelement.svg') }}" alt=""
-                                srcset="" class="img-fluid five-element-img">
-
-                            <div class="main-fivetb">
-                                <h5 class="greencolor">PREMIUM</h5>
-                                <p class="data">10GB</p>
-                                <span class="duration d-block"> Contact Sales For Pricing</span>
-                                <div class="text-center my-4">
-                                    <button class="btn-round premium-btn fifth"> CONTACT SALES</button>
+                            <div class="col card-price mb-xl-2 mb-md-4 orange card-price-hundredtb">
+                                <div class="hundredtb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/hundredelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid hundred-element-img">
+                                    <div class="main-hundredtb">
+                                        <h5 class="yclr">BASIC</h5>
+                                        <p class="data">100GB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round basic-btn second"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">100GB</p>
+                                        <p class="points">5MB</p>
+                                        <p class="points">15 per event</p>
+                                        <p class="points">15 per event</p>
+                                        <p class="points">100</p>
+                                        <p class="points">6000</p>
+                                    </div>
                                 </div>
-                                <p class="points">5TB</p>
-                                <p class="points">25MB</p>
-                                <p class="points">Unlimited</p>
-                                <p class="points">Unlimited</p>
-                                <p class="points">Unlimited</p>
-                                <p class="points">20000</p>
+                            </div>
+
+
+                            <div class="col card-price mb-xl-2 mb-md-4 empty">
+                                <h5 class="text-white">Pricing plans for algoshare</h5>
+
+                                <div class="mt-sm-5  pt-5">
+                                    <p class="points">Storage</p>
+                                    <p class="points">Max Image Size</p>
+                                    <p class="points">Face Searches</p>
+                                    <p class="points">Pre Registrations</p>
+
+                                    <p class="points">Events</p>
+                                    <p class="points">Storage</p>
+                                    <p class="points">Image Limit Per Sub Event</p>
+                                </div>
+                            </div>
+
+                            <div class="col card-price mb-xl-2 mb-md-4 position-relative purple card-price-onetb">
+                                <div class="onetb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/onetbelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid one-element-img">
+
+                                    <div class="main-onetb">
+                                        <span class="recomend">Recommended</span>
+                                        <h5 class="narangicolor">ADVANCE</h5>
+                                        <p class="data">1TB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round advance-btn third"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">1TB</p>
+                                        <p class="points">15MB</p>
+                                        <p class="points">2000 per event</p>
+                                        <p class="points">2000 per event</p>
+                                        <p class="points">200</p>
+                                        <p class="points">10000</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col card-price mb-xl-2 mb-md-4 green card-price-fivetb">
+                                <div class="fivetb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/fivetbelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid five-element-img">
+
+                                    <div class="main-fivetb">
+                                        <h5 class="greencolor">PREMIUM</h5>
+                                        <p class="data">10GB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round premium-btn fifth"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">5TB</p>
+                                        <p class="points">25MB</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">20000</p>
+                                    </div>
+
+                                </div>
                             </div>
 
                         </div>
+                        
                     </div>
-
-
-
-                </div>
-
-                <div class="text-center mt-5 pb-5 mb-2">
-                    <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing
-                        your data securely.</p>
-                </div>
-
             </div>
+              
+
+                {{-- <div class="curve">
+
+                    <div class="row d-flex gap-4 justify-content-center mt-5 px-md-0 px-3">
+
+                        <div class="col">
+                            <div class="card-price mb-xl-2 mb-md-4 white card-price-tentb">
+
+                                <div class="tentb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/tenelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid tenelement-img">
+                                    <div class="main-tentb">
+                                        <h5 class="text-prime">FREE</h5>
+                                        <p class="data">10GB</p>
+                                        <span class="duration d-block"> 14 day trial</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round first"> TRY NOW</button>
+                                        </div>
+                                        <p class="points">10GB</p>
+                                        <p class="points">5MB</p>
+                                        <p class="points">25 per event</p>
+                                        <p class="points">25 per event</p>
+                                        <p class="points">1</p>
+                                        <p class="points" style="margin-bottom: 0px;padding-bottom:1rem">10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card-price mb-xl-2 mb-md-4 orange card-price-hundredtb">
+                                <div class="hundredtb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/hundredelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid hundred-element-img">
+                                    <div class="main-hundredtb">
+                                        <h5 class="yclr">BASIC</h5>
+                                        <p class="data">100GB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round basic-btn second"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">100GB</p>
+                                        <p class="points">5MB</p>
+                                        <p class="points">15 per event</p>
+                                        <p class="points">15 per event</p>
+                                        <p class="points">100</p>
+                                        <p class="points">6000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card-price mb-xl-2 mb-md-4 empty">
+                                <h5 class="text-white">Pricing plans for algoshare</h5>
+
+                                <div class="mt-sm-5  pt-5">
+                                    <p class="points">Storage</p>
+                                    <p class="points">Max Image Size</p>
+                                    <p class="points">Face Searches</p>
+                                    <p class="points">Pre Registrations</p>
+
+                                    <p class="points">Events</p>
+                                    <p class="points">Storage</p>
+                                    <p class="points">Image Limit Per Sub Event</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card-price mb-xl-2 mb-md-4 position-relative purple card-price-onetb">
+                                <div class="onetb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/onetbelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid one-element-img">
+
+                                    <div class="main-onetb">
+                                        <span class="recomend">Recommended</span>
+                                        <h5 class="narangicolor">ADVANCE</h5>
+                                        <p class="data">1TB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round advance-btn third"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">1TB</p>
+                                        <p class="points">15MB</p>
+                                        <p class="points">2000 per event</p>
+                                        <p class="points">2000 per event</p>
+                                        <p class="points">200</p>
+                                        <p class="points">10000</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="col card-price mb-xl-2 mb-md-4 green card-price-fivetb">
+                                <div class="fivetb-bgblck">
+                                    <img src="{{ asset('frontend/images/priceimg/fivetbelement.svg') }}" alt=""
+                                        srcset="" class="img-fluid five-element-img">
+
+                                    <div class="main-fivetb">
+                                        <h5 class="greencolor">PREMIUM</h5>
+                                        <p class="data">10GB</p>
+                                        <span class="duration d-block"> Contact Sales For Pricing</span>
+                                        <div class="text-center my-4">
+                                            <button class="btn-round premium-btn fifth"> CONTACT SALES</button>
+                                        </div>
+                                        <p class="points">5TB</p>
+                                        <p class="points">25MB</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">Unlimited</p>
+                                        <p class="points">20000</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <div>
+                        
+
+
+                    </div>
+
+                    <div class="text-center mt-5 pb-5 mb-2">
+                        <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing
+                            your data securely.</p>
+                    </div>
+
+                </div> --}}
+
         </div>
     </div> 
 
@@ -965,6 +1110,47 @@
 
 @endsection
 @section('js')
+<script>
+    $(document).ready(function() {
+      $('.slider').slick({
+        dots: false,          
+        infinite: true,      
+        speed: 300,          
+        slidesToShow: 5,    
+        arrows: false,  
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 1200, 
+            settings: {
+              slidesToShow: 4 
+            }
+          },
+          {
+            breakpoint: 992, 
+            settings: {
+              slidesToShow: 3 
+            }
+          },
+          {
+            breakpoint: 768, 
+            settings: {
+              slidesToShow: 2 
+            }
+          },
+
+          {
+            breakpoint: 576, 
+            settings: {
+              slidesToShow: 1
+            }
+          }
+
+        ]
+      });
+    });
+  </script>
+  
     {{-- <script>
         $('.heroslider').slick({
             centerMode: true,
