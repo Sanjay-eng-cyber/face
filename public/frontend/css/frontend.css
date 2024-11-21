@@ -1218,7 +1218,7 @@ body {
 }
 .rs-img{
     position: absolute;
-    bottom: -100px;
+    bottom: -70px;
     left: 0px;
     z-index: -1;                        
 }

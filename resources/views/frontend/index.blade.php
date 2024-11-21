@@ -14,41 +14,51 @@
             background-image: unset;
             backdrop-filter: unset;
         }
-        /* .custom-ctnrfluid.sticky-nav {
+        .custom-ctnrfluid.sticky-nav {
             background-image: url(/frontend/images/index/navbg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    backdrop-filter: blur(29px);
-    display: flex;
-    align-items: center;
-    min-height: 106px;
-    margin-top: 14px;
-    position: fixed;
-    width: 98%;
-    left: 50%;
-    border-radius: 34px;
-    transform: translate(-50%);
-        } */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(29px);
+            display: flex;
+            align-items: center;
+            min-height: 106px;
+            margin-top: 14px;
+            position: fixed;
+            width: 98%;
+            left: 50%;
+            border-radius: 34px;
+            transform: translate(-50%);
+        }
 
         .smalllarrow-img {
             display: none;
         }
 
         @media (max-width: 576px) {
-            .navsmimg{
-            display: block;
-        }
-        .navsmimg{
-            top:7px;
-        }
-        .custom-ctnrfluid{
-            margin-top: 14px;
-        }
+            .custom-ctnrfluid.sticky-nav {
+                min-height:unset; 
+                background-image: url(/frontend/images/index/index-new/blurhero.svg));
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
 
-        .custom-ctnrfluid.sticky-nav{
-            margin-top: 7px;
-        }
+            }
+
+    
+        .navsmimg{
+            display: block;
+            }
+            .navsmimg{
+                top:7px;
+            }
+            .custom-ctnrfluid{
+                margin-top: 14px;
+            }
+
+            .custom-ctnrfluid.sticky-nav{
+                margin-top: 7px;
+            }
 
         }
     </style>
