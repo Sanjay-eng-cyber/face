@@ -199,7 +199,7 @@
 
         </div>
 
-        <div class="container pb-25px pt-sm-80px" style="padding-bottom:80px">
+        <div class="container pb-25px pt-sm-80px">
             <div class="row position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
                     class="img-fluid lptbg-img d-none d-lg-block">
@@ -220,7 +220,7 @@
                     <img src="{{ asset('frontend/images/index/index-new/tg-three.png') }}" alt="" srcset=""
                         class="img-fluid tg-three-img d-none d-md-block d-lg-none">
 
-                    <img src="{{asset('frontend/images/index/sm-laptop.png')}}" alt="" srcset="" class="img-fluid d-block d-md-none">
+                    <img src="{{asset('frontend/images/index/sm-newlptimg.svg')}}" alt="" srcset="" class="w-100 px-4 img-fluid d-block d-md-none">
                 </div>
                 <div class="col-12 col-md-6 col-lg-7 col-xxl-8 position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/thanoshand.svg') }}" alt=""
@@ -511,7 +511,7 @@
 
 
 
-    <div class="container d-none d-sm-block main-large-slider">
+    <div class="container main-large-slider">
 
         <div class="main_slide_main">
             <div class="outer-smarty-bg position-relative">
@@ -1129,41 +1129,41 @@
   $('.slider').slick({
     dots: false,
     infinite: true,
-    speed: 500, // Duration of the slide animation in milliseconds
+    speed: 500, 
     slidesToShow: 5,
     arrows: false,
     adaptiveHeight: true,
-    cssEase: 'ease-in-out', // Smooth easing effect
+    cssEase: 'ease-in-out', 
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 4,
-          autoplay: false // No autoplay above 576px
+          autoplay: false 
         }
       },
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          autoplay: false // No autoplay above 576px
+          autoplay: false 
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          autoplay: false // No autoplay above 576px
+          autoplay: false 
         }
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          autoplay: false, // Autoplay below 576px
-          autoplaySpeed: 2000, // Autoplay interval in milliseconds
-          cssEase: 'ease-in-out', // Smooth easing effect
-          speed: 700 // Slightly slower for smaller screens
+          autoplay: true, 
+          autoplaySpeed: 2000, 
+          cssEase: 'ease-in-out',
+          speed: 700 
         }
       }
     ]

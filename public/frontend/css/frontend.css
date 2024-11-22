@@ -1458,6 +1458,7 @@ body {
 }
 
 .main-large-slider .slick-list {
+    padding-top: 7% !important;
     /* padding-top: 10% !important; */
     padding-bottom: 10% !important;
     /* padding-left: 15%!important;
@@ -1518,9 +1519,9 @@ body {
     width: 300px;
 }
 
-.main-large-slider .slick-sprev .rev_slideimg {
+/* .main-large-slider .slick-sprev .rev_slideimg {
     width: 310px;
-}
+} */
 
 .main-large-slider slick-slide img {
     width: 300px;
@@ -1852,6 +1853,34 @@ body {
 }
 
 @media screen and (max-width:1400px) {
+    .main-large-slider .slick-slide.slick-current{
+        opacity: 1;
+        position: relative;
+        display: block;
+        width: 470px !important;
+        height: 387px;
+        margin: 0 auto;
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%, 0) translate3d(0, 0, 20px);
+    }
+    .main-large-slider .slick-sprev {
+        opacity: 1;
+        left: 0;
+        right: unset;
+        bottom: -41px;
+        left: 155px;
+        transform: rotate(-25deg) translate3d(-20%, 0, 0);
+    }
+    .main-large-slider .slick-snext {
+        opacity: 1;
+        left: unset;
+        right: 0;
+        transform: rotate(25deg) translate3d(20%, 0, 0px);
+        z-index: 1;
+        right: 155px;
+        bottom: -41px;
+    }
     .share-img-text{
         font-size: 60px;
     }
@@ -1905,8 +1934,8 @@ body {
         opacity: 1;
         left: 0;
         right: unset;
-        bottom: -77px;
-        left: 113px;
+        bottom: -70px;
+        left: 152px;
         transform: rotate(-25deg) translate3d(-20%, 0, 0);
     }
 
@@ -1916,10 +1945,13 @@ body {
         right: 0;
         transform: rotate(25deg) translate3d(20%, 0, 0px);
         z-index: 1;
-        right: 97px;
-        bottom: -72px;
+        right: 152px;
+        bottom: -70px;
     }
 
+    .main-large-slider .slick-sprev .rev_slideimg{
+        width: auto;
+    }
 
     .rs-img {
         position: absolute;
@@ -2078,7 +2110,7 @@ body {
         padding-bottom:40px;
       }
       .main-large-slider .slick-slide.slick-current img {
-        width: 300px !important;
+        width: 100% !important;
     }
 
     .main-topheading {
@@ -2333,8 +2365,14 @@ body {
         grid-gap: 1px;
     }
 
+    .main-large-slider .slick-initialized .slick-slide img{
+        width:300px !important ;
+
+    }
     .main-large-slider .slick-slide.slick-current img {
         width: 100% !important;
+        width: 275px !important ;
+
         object-fit: contain;
     }
 
@@ -2425,6 +2463,11 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .main-large-slider .slick-slide.slick-current img {
+        width: 100% !important;
+        width: 243px !important;
+        object-fit: contain;
+    }
     .using-herotext {
         font-size: 40px;
     }
@@ -2526,20 +2569,37 @@ body {
         font-size: 24px;
     }
 
-    .main-large-slider .slick-sprev {
+    /* .main-large-slider .slick-sprev {
         opacity: 0 !important;
         display: none;
     }
 
+    .main-large-slider .slick-sprev {
+        opacity: 1;
+        left: 0;
+        right: unset;
+        bottom: -77px;
+        left: 54px;
+        transform: rotate(-25deg) translate3d(-20%, 0, 0);
+    } */
 
-    .main-large-slider .slick-snext {
+    .main-large-slider .slick-sprev {
+        opacity: 1;
+        left: 0;
+        right: unset;
+        bottom: -77px;
+        left: 54px;
+        transform: rotate(-25deg) translate3d(-20%, 0, 0);
+    }
+
+ .main-large-slider .slick-snext {
         opacity: 1;
         left: unset;
         right: 0;
-        transform: rotate(0deg) translate3d(23%, 0, 0px);
+        transform: rotate(25deg) translate3d(20%, 0, 0px);
         z-index: 1;
         right: 56px;
-        bottom: -19px;
+        bottom: -72px;
     }
 
     .main-large-slider .slick-slide img {
@@ -2581,6 +2641,10 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .smarty-bg{
+        min-height: 467px;
+        border-radius: 32px;
+    }
     .algobottom{
         font-size: 10px;;
     }
@@ -3137,6 +3201,7 @@ font-weight: 300;
 
     .custopmainpad {
         padding-top: 0px;
+        padding-bottom:54px;
     }
     .hkmt-text {
         font-size: 18px;
@@ -3179,6 +3244,18 @@ font-weight: 300;
 
 }
 @media screen and (max-width:480px) {
+    .main-large-slider .slick-initialized .slick-slide img {
+        width: 264px !important;
+    }
+    
+    
+    .main-large-slider .slick-slide.slick-current img {
+        width: 100% !important;
+        width: 207px !important;
+        object-fit: contain;
+    }
+
+   
     .basic-event-one-main-insider-bdt {
         align-items: center;
         display: grid;
