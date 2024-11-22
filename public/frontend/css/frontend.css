@@ -1150,6 +1150,25 @@ body {
     backdrop-filter: blur(15px);
     padding-top: 55px;
 }
+.recomend{
+    background-color: #8b1fba;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    padding: 5px 18px;
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+}
+.slick-list{
+    padding-top: 15px;
+}
+.prcard-minheight{
+    min-height: 540px;
+}
 .one-element-img{
     position: absolute;
     z-index: 0;
@@ -2559,6 +2578,33 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .algoshare{
+        font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
+    }
+    .prcard-minheight{
+        min-height: 450px;
+    }
+    .main-tentb {
+        padding-top: 18px;
+    }
+    .main-hundredtb{
+        padding-top: 34px;
+    }
+    
+    .card-price .btn-round {
+        border: 0.95px solid #94FEFE;
+        margin: auto;
+        padding: 5px 4px;
+        font-size: 12px;
+    }
+
+.card-price .duration {
+    font-size: 12px;
+}
+
     .li12px{
         font-size:12px;
     }
@@ -3024,10 +3070,10 @@ font-weight: 300;
     }
 
     .card-price h5 {
-        font-size: 22px;
+        font-size: 16px;
          }
          .card-price .data {
-       font-size: 34px;
+       font-size: 14px;
          }
 
     .w-sm-100{
@@ -3485,4 +3531,10 @@ position: relative;
     }
 
 }
+
+
+  
+
+
+
 

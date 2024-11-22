@@ -835,14 +835,14 @@
             </div>
 
             <div class="row">
-                    <div class="col-6 col-sm-0 d-flex flex-column justify-content-between d-sm-none">
+                    <div class="col-6 col-sm-0 d-flex flex-column gap-5 d-sm-none">
                         <div class=" text-white">
                             Pricing <br/>
                             plans <br />
                             for algoshare
                         </div>
                         <div>
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li class="li12px text-white pb-3">Storage</li>
                                 <li class="li12px text-white pb-3">Max Image Size</li>
                                 <li class="li12px text-white pb-3">Face Searches</li>
@@ -856,13 +856,15 @@
                     <div class="col-6 col-sm-12">
 
                         <div class="slider curve-main-slider row">
-                            
-                            <div class="col card-price mb-xl-2 mb-md-4 white card-price-tentb">
 
-                                <div class="tentb-bgblck">
+                          
+                            
+                             <div class="col  card-price mb-xl-2 mb-md-4 white card-price-tentb" >
+
+                                <div class="tentb-bgblck ">
                                     <img src="{{ asset('frontend/images/priceimg/tenelement.svg') }}" alt=""
                                         srcset="" class="img-fluid tenelement-img">
-                                    <div class="main-tentb">
+                                    <div class="main-tentb prcard-minheight">
                                         <h5 class="text-prime">FREE</h5>
                                         <p class="data">10GB</p>
                                         <span class="duration d-block"> 14 day trial</span>
@@ -880,11 +882,11 @@
                             </div>
 
 
-                            <div class="col card-price mb-xl-2 mb-md-4 orange card-price-hundredtb">
+                            <div class="col card-price mb-xl-2 mb-md-4 orange card-price-hundredtb" >
                                 <div class="hundredtb-bgblck">
                                     <img src="{{ asset('frontend/images/priceimg/hundredelement.svg') }}" alt=""
                                         srcset="" class="img-fluid hundred-element-img">
-                                    <div class="main-hundredtb">
+                                    <div class="main-hundredtb prcard-minheight">
                                         <h5 class="yclr">BASIC</h5>
                                         <p class="data">100GB</p>
                                         <span class="duration d-block"> Contact Sales For Pricing</span>
@@ -899,22 +901,24 @@
                                         <p class="points">6000</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
 
 
-                            <div class="col card-price mb-xl-2 mb-md-4 empty">
-                                <h5 class="text-white">Pricing plans for algoshare</h5>
+                            <div class="col card-price mb-xl-2 mb-md-4 empty ">
+                               <div class="prcard-minheight">
+                                    <h5 class="text-white">Pricing plans for algoshare</h5>
 
-                                <div class="mt-sm-5  pt-5">
-                                    <p class="points">Storage</p>
-                                    <p class="points">Max Image Size</p>
-                                    <p class="points">Face Searches</p>
-                                    <p class="points">Pre Registrations</p>
+                                    <div class="mt-sm-5  pt-5">
+                                        <p class="points">Storage</p>
+                                        <p class="points">Max Image Size</p>
+                                        <p class="points">Face Searches</p>
+                                        <p class="points">Pre Registrations</p>
 
-                                    <p class="points">Events</p>
-                                    <p class="points">Storage</p>
-                                    <p class="points">Image Limit Per Sub Event</p>
-                                </div>
+                                        <p class="points">Events</p>
+                                        <p class="points">Storage</p>
+                                        <p class="points">Image Limit Per Sub Event</p>
+                                    </div>
+                               </div>
                             </div>
 
                             <div class="col card-price mb-xl-2 mb-md-4 position-relative purple card-price-onetb">
@@ -922,8 +926,11 @@
                                     <img src="{{ asset('frontend/images/priceimg/onetbelement.svg') }}" alt=""
                                         srcset="" class="img-fluid one-element-img">
 
-                                    <div class="main-onetb">
-                                        <span class="recomend">Recommended</span>
+                                    <div class="main-onetb position-relative prcard-minheight">
+                                        <span class="recomend"
+                                        style="background-color: #37054D;border-radius:5px;font-size:14px;font-weight:600;color:white;padding:5px 18px"
+                                        >Recommended</span>
+
                                         <h5 class="narangicolor">ADVANCE</h5>
                                         <p class="data">1TB</p>
                                         <span class="duration d-block"> Contact Sales For Pricing</span>
@@ -947,7 +954,7 @@
                                     <img src="{{ asset('frontend/images/priceimg/fivetbelement.svg') }}" alt=""
                                         srcset="" class="img-fluid five-element-img">
 
-                                    <div class="main-fivetb">
+                                    <div class="main-fivetb prcard-minheight">
                                         <h5 class="greencolor">PREMIUM</h5>
                                         <p class="data">10GB</p>
                                         <span class="duration d-block"> Contact Sales For Pricing</span>
@@ -1111,44 +1118,52 @@
 @endsection
 @section('js')
 <script>
-    $(document).ready(function() {
-      $('.slider').slick({
-        dots: false,          
-        infinite: true,      
-        speed: 300,          
-        slidesToShow: 5,    
-        arrows: false,  
-        adaptiveHeight: true,
-        responsive: [
-          {
-            breakpoint: 1200, 
-            settings: {
-              slidesToShow: 4 
-            }
-          },
-          {
-            breakpoint: 992, 
-            settings: {
-              slidesToShow: 3 
-            }
-          },
-          {
-            breakpoint: 768, 
-            settings: {
-              slidesToShow: 2 
-            }
-          },
+ $(document).ready(function () {
+  $('.slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 500, // Duration of the slide animation in milliseconds
+    slidesToShow: 5,
+    arrows: false,
+    adaptiveHeight: true,
+    cssEase: 'ease-in-out', // Smooth easing effect
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          autoplay: false // No autoplay above 576px
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          autoplay: false // No autoplay above 576px
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          autoplay: false // No autoplay above 576px
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true, // Autoplay below 576px
+          autoplaySpeed: 2000, // Autoplay interval in milliseconds
+          cssEase: 'ease-in-out', // Smooth easing effect
+          speed: 700 // Slightly slower for smaller screens
+        }
+      }
+    ]
+  });
+});
 
-          {
-            breakpoint: 576, 
-            settings: {
-              slidesToShow: 1
-            }
-          }
 
-        ]
-      });
-    });
   </script>
   
     {{-- <script>
