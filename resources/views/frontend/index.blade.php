@@ -199,7 +199,7 @@
 
         </div>
 
-        <div class="container" style="padding-bottom:80px">
+        <div class="container pb-25px pt-sm-80px" style="padding-bottom:80px">
             <div class="row position-relative">
                     <img src="{{ asset('frontend/images/index/index-new/lptbg.png') }}" alt="" srcset=""
                     class="img-fluid lptbg-img d-none d-lg-block">
@@ -975,6 +975,13 @@
                         </div>
                         
                     </div>
+
+                    <div class="col-12 text-center text-white">
+                        <div class="text-start text-sm-center  mt-5 pb-5 mb-2">
+                            <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing
+                                your data securely.</p>
+                        </div>
+                    </div>
             </div>
               
 
@@ -1153,7 +1160,7 @@
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          autoplay: true, // Autoplay below 576px
+          autoplay: false, // Autoplay below 576px
           autoplaySpeed: 2000, // Autoplay interval in milliseconds
           cssEase: 'ease-in-out', // Smooth easing effect
           speed: 700 // Slightly slower for smaller screens

@@ -70,6 +70,9 @@
  min-height: 44px;
 }
 
+.pt-sm-80px{
+    padding-bottom: 80px;
+}
 .hero-mh{
     min-height: 481px;
 }
@@ -1829,7 +1832,7 @@ body {
 
 
 .curve-main-slider .slick-slide {
-        margin: 0 6px; 
+        margin: 0 10px; 
       }
     
 .curve-main-slider  .slick-list {
@@ -2578,11 +2581,24 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .algobottom{
+        font-size: 10px;;
+    }
+    .pb-25px{
+        padding-bottom: 25px;
+    }
+    .slick-list{
+        padding-top:0px;
+    }
+    .curve-main-slider .slick-slide {
+        margin: 0 5px; 
+      }
     .algoshare{
         font-size: 12px;
     font-weight: 400;
     text-align: center;
     color: #ffffff;
+    padding-bottom:20px;
     }
     .prcard-minheight{
         min-height: 450px;
@@ -2598,7 +2614,7 @@ body {
         border: 0.95px solid #94FEFE;
         margin: auto;
         padding: 5px 4px;
-        font-size: 12px;
+        font-size: 8px;
     }
 
 .card-price .duration {
