@@ -473,7 +473,7 @@
             </div>
 
             <hr class="fhrtag">
-            <div class="container">
+            <div class="container pb-4 pb-sm-0">
                 <div class="row">
                     
                     <div class="col-12">                      
@@ -511,7 +511,7 @@
 
 
 
-    <div class="container main-large-slider">
+    <div class="container main-large-slider sm-container-padd">
 
         <div class="main_slide_main">
             <div class="outer-smarty-bg position-relative">
@@ -523,10 +523,10 @@
                     <div class="row d-flex align-items-center justify-content-center">
                         <div class="col-11 col-md-9">
                             <div class="slidetext text-white active text-center">
-                                <div class="h1 mb-0 main-topheading fw-300">
+                                <div class="h1 mb-0 main-topheading fw-300 px-5 px-sm-0">
                                     <span class="text-prime fw-600"> 1 Market smartly </span> at every step
                                 </div>
-                                <div class="h5 mb-0 fw-500 sm-sltext">
+                                <div class="h5 mb-0 fw-500 sm-sltext px-4 px-sm-0">
                                     1 Collect invaluable client data with their consent. Use it to reach just the
                                     right audience at fraction of a price compared to instagram marketing.
                                 </div>
@@ -581,6 +581,8 @@
                     </div>
 
 
+                    
+
                 </div>
 
 
@@ -589,7 +591,7 @@
         </div>
 
 
-        <div class="row d-flex align-items-center justify-content-center">
+        <div class="row d-flex align-items-center justify-content-center slider-mainpadding">
             <div class="col-12">
                 <div class="row">
 

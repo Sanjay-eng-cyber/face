@@ -2641,6 +2641,33 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .sm-container-padd{
+        padding-bottom: 110px;
+    }
+   
+    .main-topheading {
+        font-size: 20px;
+    }
+    .sm-sltext{
+        font-size: 14px;
+    }
+    .pre-arrow {
+        width: 44px;
+        height: 44px;
+    }
+    .pre-arrow-insider {
+        width: 20px;
+        height: 20px;
+    }
+    .next-arrow {
+        width: 44px;
+        height:44px;
+    }
+    .next-arrow-insider {
+        width: 20px;
+        height: 20px;
+    }
+
     .smarty-bg{
         min-height: 467px;
         border-radius: 32px;
@@ -2979,8 +3006,16 @@ font-weight: 300;
 
     .next-arrow{
         top: unset;
-        right: 0px;
-
+        right: 34%;
+      
+        bottom: -17.5em;
+    }
+    .pre-arrow {
+        position: relative;
+     
+        top: unset;
+        left: 35%;
+        bottom: -17.5em;
     }
     .main_slide_main {
         padding-bottom: inherit;
@@ -2991,7 +3026,7 @@ font-weight: 300;
         background: linear-gradient(146.76deg, #045959 10.04%, rgba(123, 69, 139, 0) 62.25%);
         padding: 1px;
         min-height: unset;
-        border-radius: 60px;
+        border-radius: 32px;
         margin-bottom: 0em;
     }
     .outer-smarty-bg{
@@ -3140,11 +3175,11 @@ font-weight: 300;
     .fs-20px{
         font-size: 20px;
     }
-    .pre-arrow {
+    /* .pre-arrow {
         position: relative;
         top:0px;
         left:0px;
-    }
+    } */
     .card-price {
         width: 100%;
     }
@@ -3242,13 +3277,20 @@ font-weight: 300;
         padding-bottom: 50px;
     }
 
+    .slider-mainpadding{
+        padding-bottom: 7em;
+    }
+    .main_slide_main{
+        margin-bottom: -16em;
+    }
+
 }
 @media screen and (max-width:480px) {
     .main-large-slider .slick-initialized .slick-slide img {
         width: 264px !important;
     }
     
-    
+
     .main-large-slider .slick-slide.slick-current img {
         width: 100% !important;
         width: 207px !important;
