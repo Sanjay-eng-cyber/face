@@ -2641,6 +2641,43 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .hr-tag{
+        width: 100%; 
+        border: none; 
+        height: 0.15px; 
+        opacity: 100%;
+        background-color:#9C215F;
+        margin-bottom: 1.5em;
+      
+    }
+    .bottom-footer{
+    border-top:unset;
+    }
+    .bt-para-footer{
+        font-size:14px;
+    }
+    .footer-links li a{
+        font-size: 14px;
+    }
+    .social a {
+        padding: 0px 8px !important;
+        margin: 0px 10px;
+    }
+    .fabook-mb-icon  svg{
+        width: 12px;
+    }
+    .whatsapp-mb-icon svg{
+    width: 13px;
+    }
+    .x-mb-icon svg{
+        width: 13px;
+    }
+    
+    .instagram-mb-icon svg{
+        width: 13px;
+
+    }
+
     
     .footer-insider{
         border-radius: 10px;
@@ -3390,6 +3427,15 @@ font-weight: 300;
 
 }
 @media screen and (max-width:480px) {
+    .fheartone {
+        position: absolute;
+        z-index: 0;
+        bottom: 24px;
+        left: -10px;
+    }
+    .bt-para-footer{
+        font-size: 12px;
+    }
     .smarty-bg {
         min-height: 418px;
         border-radius: 32px;
@@ -3534,10 +3580,10 @@ font-weight: 300;
 }
 @media screen and (max-width:440px) {
    
-    .social a {
+    /* .social a {
     padding: 8px 10px !important;
     margin: 0px 10px;
-    }
+    } */
 
   
 }
@@ -3846,3 +3892,4 @@ position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
