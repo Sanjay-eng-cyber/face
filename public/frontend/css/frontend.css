@@ -2641,6 +2641,15 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    
+    .footer-insider{
+        border-radius: 10px;
+        padding: 18px;
+    }
+    .footer-loop{
+        border-radius: 10px;
+
+    }
     .main-large-slider .slick-slide.slick-current img {
         width: 100% !important;
         width: 290px !important;
@@ -3527,6 +3536,7 @@ font-weight: 300;
    
     .social a {
     padding: 8px 10px !important;
+    margin: 0px 10px;
     }
 
   
@@ -3830,4 +3840,9 @@ position: relative;
 
   .footer-class{
     margin-bottom: 58px
+  }
+
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
   }

@@ -9,19 +9,35 @@
                         <div class="row  pb-3 text-lg-start text-center">
 
                             <div class="col-lg-8 ">
-                                <ul class="footer-links ">
+                                {{-- <ul class="footer-links ">
                                     <li><a href="">Home</a></li>
                                     <li><a href="">About Us</a></li>
                                     <li><a href="">Contact Us</a></li>
                                     <li><a href="">Pricing</a></li>
                                     <li><a href="">Blog</a></li>
 
-                                </ul>
+                                </ul> --}}
+
+                                <div class="footer-grid" >
+                                   
+                                        <ul class="footer-links d-flex flex-column align-items-start ">
+                                            <li><a href="">Home</a></li>
+                                            <li><a href="">About Us</a></li>
+                                            <li><a href="">Contact Us</a></li>                                         
+                                        </ul>
+                                   
+                                   
+                                        <ul class="footer-links d-flex flex-column align-items-start">
+                                            <li><a href="">Pricing</a></li>
+                                            <li><a href="">Blog</a></li>        
+                                        </ul>                              
+
+                                </div>
                             </div>
 
                             <div class="col-lg-4 text-right justify-content-lg-end  justify-content-center  d-flex">
                                 <div class="social">
-                                    <a href="">
+                                    <a href="" class="">
                                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
