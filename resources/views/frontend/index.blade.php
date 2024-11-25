@@ -5,6 +5,10 @@
         .halfarrowt-img {
             display: none
         }
+        .footer-class{
+            margin-bottom: 0px
+        }
+
       
         /* .custom-ctnrfluid {
             background: none;
@@ -35,6 +39,11 @@
             display: none;
         }
 
+        @media (max-width: 576px) {
+            .footer-class{
+                padding-bottom: 45px;
+            }
+        }
         @media (max-width: 576px) {
             .custom-ctnrfluid.sticky-nav {
                 min-height:unset; 
@@ -812,10 +821,10 @@
 
 
 
-    <div class="position-relative isolation overflow-hidden">
+    <div class="position-relative isolation overflow-hidden bg-pricetag">
 
         <img src="{{ asset('frontend/images/index/index-new/pricebgimg.png') }}" alt="" srcset=""
-            class="img-fluid w-100 position-absolute" style="z-index: -1;">
+            class="img-fluid w-100 position-absolute h-100" style="z-index: -1;">
 
         <div class="container pt-5 mt-xl-5">
 
@@ -976,13 +985,13 @@
 
                         </div>
 
-                        <div class="progress-container">
+                        <div class="progress-container d-block d-sm-none">
                             <div class="progress-bar"></div>
                         </div>
                         
                     </div>
 
-                    <div class="col-12 text-center text-white">
+                    <div class="col-12 text-center text-white ">
                         <div class="text-start text-sm-center  mt-5 pb-5 mb-2">
                             <p class="algobottom"> * After your subscription ends, a 15-day countdown will commence before removing
                                 your data securely.</p>

@@ -1,5 +1,5 @@
 <section class="">
-    <footer class="footer px-3" style="margin-bottom: 58px">
+    <footer class="footer footer-class px-3" >
         <div class="footer-outer">
             <div class="footer-loop" >
                 <img src="{{ asset('frontend/images/index/index-new/fheartone.svg') }}" alt="" srcset="" class="img-fluid fheartone" >

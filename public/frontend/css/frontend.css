@@ -3815,3 +3815,19 @@ position: relative;
     transition: width 0.5s linear; 
   }
   
+
+  /* .price-sctn-bg{
+    background-image: url(/frontend/images/index/index-new/pricebgimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  } */
+
+  .bg-pricetag{
+    margin-bottom: -288px;
+    padding-bottom: 262px;
+  }
+
+  .footer-class{
+    margin-bottom: 58px
+  }
