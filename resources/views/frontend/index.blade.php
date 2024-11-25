@@ -975,6 +975,10 @@
                             </div>
 
                         </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
                         
                     </div>
 
@@ -1127,163 +1131,60 @@
 @endsection
 @section('js')
 <script>
- $(document).ready(function () {
+  $(document).ready(function () {
+  var totalSlides = $('.slider .card-price').length; 
+  console.log("total slide", totalSlides);
+  var progressStep = 100 / (totalSlides - 1);
+  var currentProgress = 0; 
   $('.slider').slick({
     dots: false,
     infinite: true,
-    speed: 500, 
+    speed: 500,
     slidesToShow: 5,
     arrows: false,
     adaptiveHeight: true,
-    cssEase: 'ease-in-out', 
+    cssEase: 'ease-in-out',
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 4,
-          autoplay: false 
-        }
+        },
       },
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          autoplay: false 
-        }
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          autoplay: false 
-        }
+        },
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          autoplay: true, 
-          autoplaySpeed: 2000, 
-          cssEase: 'ease-in-out',
-          speed: 700 
-        }
-      }
-    ]
+        },
+      },
+    ],
+  });
+
+  $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    if (nextSlide > currentSlide) {
+      currentProgress = nextSlide * progressStep; 
+    } else if (nextSlide === 0) {
+      currentProgress = 0; 
+    }
+    $('.progress-bar').css('width', currentProgress + '%');
   });
 });
 
-
   </script>
-  
-    {{-- <script>
-        $('.heroslider').slick({
-            centerMode: true,
-            centerPadding: '0px',
-            slidesToShow: 3,
-            responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-
-
-        var slider = $('.slider');
-
-        $('.prev').click(function() {
-            slider.slick('slickPrev');
-            return false;
-        });
-
-        $('.next').click(function() {
-            slider.slick('slickNext');
-            return false;
-        });
-
-        slider.slick({
-            infinite: true,
-            dots: false,
-            arrows: false,
-            fade: true,
-            fadeSpeed: 1000
-        });
-    </script> --}}
-
-
-
-    {{-- <script>
-        var mq = window.matchMedia("(min-width: 1396px)");
-        if (mq.matches) {
-
-            setInterval(function() {
-                $('.scan').css('transition', 'all 1s linear');
-                $('.scan').css('top', '0px');
-
-            }, 1000);
-
-
-            setInterval(function() {
-
-                $('.scan').css('top', '400px');
-            }, 3000);
-
-
-        }
-
-
-
-        var mq = window.matchMedia("(min-width: 577px)");
-        if (mq.matches) {
-            setInterval(function() {
-                $('.scan').css('transition', 'all 1s linear');
-                $('.scan').css('top', '0px');
-
-            }, 1000);
-
-            setInterval(function() {
-
-                $('.scan').css('top', '350px');
-            }, 3000);
-
-        }
-
-        var mq = window.matchMedia("(max-width: 576px)");
-        if (mq.matches) {
-
-            setInterval(function() {
-                $('.scan').css('transition', 'all 1s linear');
-                $('.scan').css('top', '0px');
-
-            }, 1000);
-
-
-            setInterval(function() {
-
-                $('.scan').css('top', '250px');
-            }, 3000);
-
-
-        }
-
-
-        $('.navbar-nav .nav-link').click(function() {
-            $('.navbar-nav .nav-link').removeClass('active');
-            $(this).toggleClass('active');
-
-        });
-    </script> --}}
 
 
 
