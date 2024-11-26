@@ -430,6 +430,27 @@ body {
     min-height: 672px;
 }
 
+
+.blurhero-img-login-new{
+    /* position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 97%;
+    margin-top: -72px;
+    min-height: 672px; */
+
+    background-image:url('/frontend/images/index/index-new/blurhero.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(12px);
+    margin-top: 14px;
+
+
+}
+
 .blurhero-bdptwo{
     position: absolute;
     z-index: -1;
@@ -512,6 +533,10 @@ body {
 
 .hero-main{
     padding-top:40px;
+    padding-bottom:60px;
+}
+.hero-main-login{
+    padding-top: 178px;
     padding-bottom:60px;
 }
 
@@ -2470,6 +2495,13 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .blurhero-img-login-new{
+        margin-top: 7px;
+    }
+    .hero-main-login {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
     .main-large-slider .slick-slide.slick-current img {
         width: 100% !important;
         width: 243px !important;
@@ -2648,6 +2680,10 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .hero-main-login {
+        padding-top: 70px;
+        padding-bottom: 60px;
+    }
     .hr-tag{
         width: 100%; 
         border: none; 
