@@ -535,6 +535,12 @@ body {
     padding-top:40px;
     padding-bottom:60px;
 }
+
+.hero-main-frgtpw{
+    padding-top:80px;
+    padding-bottom:60px;
+}
+
 .hero-main-login{
     padding-top: 178px;
     padding-bottom:60px;
@@ -2680,6 +2686,12 @@ body {
 }
 
 @media screen and (max-width:576px) {
+  
+    .withsignin-fdtps-btn{
+        width: 88px;
+        border-radius: 15px;
+        font-size: 11px;
+    }
     .hero-main-login {
         padding-top: 70px;
         padding-bottom: 60px;
