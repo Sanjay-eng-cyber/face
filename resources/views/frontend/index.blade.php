@@ -838,7 +838,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center mb-4">
-                                <p class="algoshare">
+                                <p class="algoshare pt-4 pt-sm-0">
                                     Picscan offers tiered pricing plans <br />
                                     with options for free basic access, mid-tier advanced features, <br />
                                     and a premium plan with full access to all tools and priority support.

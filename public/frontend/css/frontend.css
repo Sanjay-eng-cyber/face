@@ -290,6 +290,13 @@ body {
     gap: 56px;
     width: 100%;
 }
+.navbar-nav .nav-link{
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link.active{
+    font-weight: 700;
+}
 .navbar-brand{
     position: absolute;
     left: 0px;
