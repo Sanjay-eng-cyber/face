@@ -8,8 +8,8 @@
                     <div class="container px-0">
                         <div class="row  pb-3 text-lg-start text-center">
 
-                            <div class="col-lg-8 d-none d-sm-block">
-                                <ul class="footer-links ">
+                            <div class="col-lg-8 ">
+                                <ul class="footer-links d-none d-sm-block">
                                     <li><a href="">Home</a></li>
                                     <li><a href="">About Us</a></li>
                                     <li><a href="">Contact Us</a></li>
@@ -18,8 +18,8 @@
 
                                 </ul>
 
-                                <div class="footer-grid d-block d-sm-none">
-                                   
+                                <div class=" d-block d-sm-none">
+                                    <div class="footer-grid">
                                         <ul class="footer-links d-flex flex-column align-items-start ">
                                             <li><a href="">Home</a></li>
                                             <li><a href="">About Us</a></li>
@@ -31,7 +31,7 @@
                                             <li><a href="">Pricing</a></li>
                                             <li><a href="">Blog</a></li>        
                                         </ul>                              
-
+                                    </div>
                                 </div>
                             </div>
 
