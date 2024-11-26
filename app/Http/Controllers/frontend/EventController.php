@@ -14,9 +14,9 @@ class EventController extends Controller
 {
     public function show(Request $request, $eventSlug)
     {
-        if (!$request->hasValidSignature()) {
-            abort(401);
-        }
+        // if (!$request->hasValidSignature()) {
+        //     abort(401);
+        // }
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         $categories = $event->categories()->latest()->paginate(10);
         // dd($event);

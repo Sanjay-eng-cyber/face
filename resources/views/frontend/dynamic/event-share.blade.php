@@ -5,14 +5,15 @@
 @endsection
 @section('content')
 
-<!-- Include this SVG in your HTML -->
-<svg width="0" height="0">
-    <defs>
-        <clipPath id="custom-shape" clipPathUnits="objectBoundingBox">
-            <path d="M1 0.363636C1 0.63816 0.77614 1 0.5 1C0.22386 1 0 0.63816 0 0.363636C0 0.0891123 0.22386 0 0.5 0C0.77614 0 1 0.0891123 1 0.363636Z" />
-        </clipPath>
-    </defs>
-</svg>
+    <!-- Include this SVG in your HTML -->
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="custom-shape" clipPathUnits="objectBoundingBox">
+                <path
+                    d="M1 0.363636C1 0.63816 0.77614 1 0.5 1C0.22386 1 0 0.63816 0 0.363636C0 0.0891123 0.22386 0 0.5 0C0.77614 0 1 0.0891123 1 0.363636Z" />
+            </clipPath>
+        </defs>
+    </svg>
 
 
     <div id="mainDiv">
@@ -143,7 +144,7 @@
                                     </div>
 
                                     <div class="d-flex flex-column align-items-center gap-2">
-                                        <button  class="btn scan-facebtn"  onclick="openCameraModal()">
+                                        <button class="btn scan-facebtn" @click="openCameraModal">
                                             Scan Your Face
                                         </button>
                                         <div class="ortext">
@@ -185,36 +186,40 @@
                             </div>
 
                             <div id="cameraModal" class="modal" style="display:none;">
-                                
+
                                 <div class="modal-content">
                                     <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
                                         Scan Your Face
                                     </div>
                                     <div class="w-100 d-flex justify-content-center">
                                         <div class="model-outer-box">
-                                            <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}" alt="" class="img-fluid top-left-img">
-                                            <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}" alt="" class="img-fluid top-right-img">
-                                            <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}" alt="" class="img-fluid bottom-left-img">
-                                            <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}" alt="" class="img-fluid bottom-right-img">
+                                            <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}"
+                                                alt="" class="img-fluid top-left-img">
+                                            <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}"
+                                                alt="" class="img-fluid top-right-img">
+                                            <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}"
+                                                alt="" class="img-fluid bottom-left-img">
+                                            <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}"
+                                                alt="" class="img-fluid bottom-right-img">
                                             <div id="camera-frame">
                                                 <div id="my_camera" class="camera-mask">
                                                     <video id="video" autoplay></video>
-                                                </div>                                            
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="capture-area">
-                                            <button class="btn capture-btn" onclick="takeSnapshot()">Capture</button>
-                                            <div class="btn cancel-btn  close" onclick="closeCameraModal()">
-                                             Cancel
+                                        <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
+                                        <div class="btn cancel-btn  close" @click="closeCameraModal">
+                                            Cancel
 
-                                            </div>
+                                        </div>
                                     </div>
 
-                                    <!-- <img id="captured-image" alt="Captured Image" style="width: 100px; height: 100px;" /> -->
+                                    {{-- <img id="captured-image" alt="Captured Image" style="width: 100px; height: 100px;" /> --}}
                                 </div>
                             </div>
-                              
+
 
                         </div>
                     </div>
@@ -233,56 +238,8 @@
     <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
 
     <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
-    
-    <script>
-        // Open Camera Modal
-        function openCameraModal() {
-            document.getElementById('cameraModal').style.display = 'flex';
-            Webcam.set({
-                width: 340,
-            height: 460,
-            dest_width: 340,
-            dest_height: 460,
-            crop_width: 180,  
-            crop_height: 230,
-            });
-            Webcam.attach('#my_camera');
-        }
-    
-        // Close Camera Modal
-        function closeCameraModal() {
-            Webcam.reset();
-            document.getElementById('cameraModal').style.display = 'none';
-        }
-    
-        // Take Snapshot
-        function takeSnapshot() {
-            Webcam.snap(function(data_uri) {
-                // Display the captured image
-                const myimg = document.getElementById('captured-image').src = data_uri;
-                console.log(myimg);
-                // Send image to the server
-                fetch('/save-image', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({ image: data_uri })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Image saved successfully:', data);
-                })
-                .catch(error => {
-                    console.error('Error saving image:', error);
-                });
-    
-                // Close the modal
-                closeCameraModal();
-            });
-        }
-        </script>
+
+    <script></script>
 
 
     <script>
@@ -295,7 +252,7 @@
             data() {
                 return {
                     pinValues: ref(Array(4).fill('')),
-                    step: 1,
+                    step: 2,
                     name: '',
                     email: '',
                     mobile: '',
@@ -398,7 +355,30 @@
                                 });
                             }
                         });
+                },
+                openCameraModal() {
+                    document.getElementById('cameraModal').style.display = 'flex';
+                    Webcam.set({
+                        width: 340,
+                        height: 460,
+                        dest_width: 340,
+                        dest_height: 460,
+                        crop_width: 340,
+                        crop_height: 460,
+                    });
+                    Webcam.attach('#my_camera');
+                },
+                closeCameraModal() {
+                    Webcam.reset();
+                    document.getElementById('cameraModal').style.display = 'none';
+                },
+                takeSnapshot() {
+                    Webcam.snap(function(data_uri) {
+                        console.log(data_uri);
 
+                        // Close the modal
+                        this.closeCameraModal();
+                    });
                 }
             },
         }).mount('#mainDiv')
