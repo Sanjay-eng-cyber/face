@@ -476,6 +476,13 @@ body {
     width:100%
 }
 
+.plainplate-img2-frgtpasswd{
+    position: absolute;
+    z-index:-2;
+    bottom: 28px;
+    width:100%
+}
+
 .plainplate-img2new{
     position: absolute;
     z-index:-2;
@@ -2481,6 +2488,9 @@ body {
     .hometarrow-img{
         display: none;
     }
+    .frtg-text{
+        font-size: 24px;
+    }
     /* .custom-ctnrfluid{
         background-image: url(/frontend/images/index/navbg.svg);
         background-repeat: no-repeat;
@@ -2686,6 +2696,9 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .footer-outer{
+        border-radius:10px;
+    }
   
     .withsignin-fdtps-btn{
         width: 88px;
@@ -3482,6 +3495,11 @@ font-weight: 300;
 
 }
 @media screen and (max-width:480px) {
+    .withsignin-loginpg{
+        width: 100px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
     .fheartone {
         position: absolute;
         z-index: 0;

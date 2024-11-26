@@ -87,7 +87,7 @@
             {{-- <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
                 class="img-fluid blurhero-img-login"> --}}
             <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
+                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2-frgtpasswd">
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
 
@@ -95,7 +95,7 @@
                 <div class="container overflow-hide">
                     <div class="row d-flex align-items-center justify-content-center hero-mh hero-main-frgtpw gx-5">
                         <div class="col-12 col-md-6">
-                            <div class="lightcolor fw-600 text-center pt-35 fs-30 fs-20 pb-3 pb-md-0">
+                            <div class="lightcolor fw-600 text-center pt-35 fs-30 fs-20 pb-3 pb-md-0 frtg-text">
 
                                 <span class="darkpink">Picscan</span>
                                 Is The World's Only End To End Al Powered Image Post Production Solution
