@@ -140,10 +140,10 @@
                                 <div class="basic-face-box">
                                     <div class="scan-face-box-insider-twopage">
                                         <img id="captured-image" alt="Captured Image" class="faceimg-img"
-                                            style="width: 100%;height: 150px;object-fit: contain;" v-if="userImageData"
-                                            :src="userImageData" />
+                                            style="width: 100%;height: 150px;object-fit: contain;" :src="userImageData"
+                                            v-if="userImageData" />
                                         <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
-                                            srcset="" class="faceimg-img" v-else>
+                                            class="faceimg-img" v-else>
                                     </div>
 
                                     <div class="d-flex flex-column align-items-center gap-2">
@@ -153,13 +153,13 @@
                                         <div class="ortext">
                                             Or
                                         </div>
-                                        <form action="/file-upload" class="dropzone " id="myDropzone">
-                                            <div class="dz-message scan-textboxbdpt-btn">
+                                        <label for="userImgInput">
+                                            <div class="dz-message scan-textboxbdpt-btn cursor-pointer">
                                                 Upload File
+                                                <input type="file" id="userImgInput"
+                                                    @change="handleUserImageFieldChange" hidden>
                                             </div>
-                                        </form>
-
-
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="text-center drgreen fs-12pxnew fw-500 d-block d-sm-none">
@@ -313,6 +313,15 @@
                 handleStepTwoFormSubmit() {
                     $('.form-err-msg').html('');
                     const fullPin = this.pinValues.join('');
+                    if (!this.userImageData) {
+                        Snackbar.show({
+                            text: 'Kindly Upload Image',
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
+                        return;
+                    }
                     axios.post("{{ route('frontend.event.user-submit') }}", {
                             eventSlug: '{{ $event->slug }}',
                             pin: 1234,
@@ -379,8 +388,20 @@
                         this.userImageData = data_uri;
                         this.closeCameraModal();
                     });
-                }
-            },
+                },
+                handleUserImageFieldChange(e) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            this.imageSrc = e.target.result;
+                            this.userImageData = this.imageSrc;
+                            console.log(this.userImageData);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                },
+            }
         }).mount('#mainDiv')
     </script>
 

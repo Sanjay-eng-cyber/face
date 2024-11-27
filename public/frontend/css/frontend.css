@@ -3966,3 +3966,7 @@ position: relative;
     grid-template-columns: 50% 50%;
   }
 
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
