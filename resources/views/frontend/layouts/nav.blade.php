@@ -14,7 +14,7 @@
             <div class="container pall0 position-relative" style="z-index:999;">
             <nav class="navbar navbar-expand-lg text-white  " style="">
                 <div class="container-fluid insidenavcont position-relative pall0">
-                <a class="navbar-brand fs-43px fs-30px fw-900 fs-20px" href="#" >
+                <a class="navbar-brand fs-43px fs-30px fw-900 fs-20px" href="{{route('index')}}" >
                     <span class="text-white">Pic</span><span class=" darkpink">scan</span>
                 </a>
                 <div class="navbar-toggler-parent">
@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav navbar-nav-blw1400 me-auto mb-2 mb-lg-0 pt-20px" >
                         <li class="nav-item home-left">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a href="{{ route('index') }}" class="nav-link {{ URL::current() == route('index') ? 'active' : '' }}" aria-current="page" >Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About us</a>
