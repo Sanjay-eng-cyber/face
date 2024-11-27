@@ -139,8 +139,11 @@
                             <div class="two-container-grp">
                                 <div class="basic-face-box">
                                     <div class="scan-face-box-insider-twopage">
+                                        <img id="captured-image" alt="Captured Image" class="faceimg-img"
+                                            style="width: 100%;height: 150px;object-fit: contain;" v-if="userImageData"
+                                            :src="userImageData" />
                                         <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
-                                            srcset="" class="faceimg-img">
+                                            srcset="" class="faceimg-img" v-else>
                                     </div>
 
                                     <div class="d-flex flex-column align-items-center gap-2">
@@ -215,8 +218,6 @@
 
                                         </div>
                                     </div>
-
-                                    {{-- <img id="captured-image" alt="Captured Image" style="width: 100px; height: 100px;" /> --}}
                                 </div>
                             </div>
 
@@ -256,6 +257,7 @@
                     name: '',
                     email: '',
                     mobile: '',
+                    userImageData: null,
                 }
             },
             methods: {
@@ -311,14 +313,13 @@
                 handleStepTwoFormSubmit() {
                     $('.form-err-msg').html('');
                     const fullPin = this.pinValues.join('');
-                    // alert(`Full PIN: ${fullPin}`);
-                    //{{ route('frontend.event.user-submit') }}
-                    axios.post('', {
+                    axios.post("{{ route('frontend.event.user-submit') }}", {
                             eventSlug: '{{ $event->slug }}',
-                            pin: fullPin,
+                            pin: 1234,
                             name: this.name,
                             email: this.email,
                             mobile_number: this.mobile,
+                            userImageData: this.userImageData,
                         })
                         .then((res) => {
                             if (res.data.status) {
@@ -373,10 +374,9 @@
                     document.getElementById('cameraModal').style.display = 'none';
                 },
                 takeSnapshot() {
-                    Webcam.snap(function(data_uri) {
+                    Webcam.snap((data_uri) => {
                         console.log(data_uri);
-
-                        // Close the modal
+                        this.userImageData = data_uri;
                         this.closeCameraModal();
                     });
                 }

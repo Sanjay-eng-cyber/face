@@ -43,6 +43,7 @@ class EventController extends Controller
 
     public function userFormSubmit(Request $request)
     {
+        // dd($request->all());
         $event = Event::whereSlug($request->eventSlug)->firstOrFail();
         // dd($request->pin);
         if (!$request->pin || ($event->pin != $request->pin)) {
@@ -53,12 +54,29 @@ class EventController extends Controller
             'name' => 'required|string|min:3|max:40',
             'email' => 'required|email|min:8|max:40',
             'mobile_number' => 'required|numeric|digits:10',
+            'userImageData' => 'required|string'
         ]);
+
+        $imageData = $request->userImageData;
+        if (strpos($imageData, 'data:image/') === 0) {
+            preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
+            $imageType = $type[1];
+            $imageData = substr($imageData, strpos($imageData, ',') + 1);
+            $imageData = base64_decode($imageData);
+            $manager = ImageManager::gd();
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
+            $destinationPath = public_path("storage/images/events/frontend_users/");
+            $imageInstance = $manager->read($imageData);
+            $imageInstance->save($destinationPath . '/' . $filename, 90);
+        } else {
+            return response()->json(['status' => false, 'message' => 'Invalid Image Data']);
+        }
 
         $frontendUser = new FrontendUser();
         $frontendUser->name = $request->name;
         $frontendUser->email = $request->email;
         $frontendUser->phone = $request->mobile;
+        $frontendUser->image = $filename;
         if ($frontendUser->save()) {
             return response()->json(['status' => true, 'message' => 'User Registered Successfully.']);
         }
@@ -73,7 +91,6 @@ class EventController extends Controller
 
     public function stepTwoFormSubmit(Request $request, $eventSlug)
     {
-        // dd($request->all());
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         // dd($event);
         $request->validate([
