@@ -543,6 +543,12 @@ body {
     padding-bottom:60px;
 }
 
+.hero-main-basic-details{
+    padding-top: 175px;
+    padding-bottom:60px;
+}
+
+
 .hero-main-frgtpw{
     padding-top:80px;
     padding-bottom:60px;
@@ -660,7 +666,7 @@ body {
     /* border: 1px solid red; */
     position: relative;
     backdrop-filter: blur(53px);
-    padding: 61px 22px;
+    padding: 22px 22px;
     border-radius: 45px;
 }
 
@@ -1884,6 +1890,11 @@ body {
 .curve-main-slider  .slick-list {
         margin: 0 -6px; 
       } 
+    
+    .bdp-img-height{
+        height:221px;
+        object-fit: cover;
+    }
 
 @media screen and (max-width:1116px) {
     .card-price {
@@ -2191,6 +2202,18 @@ body {
    
 }
 @media screen and (max-width:992px) {
+    
+.event-detailsbg{
+   
+    padding: 22px 22px;
+   
+}
+
+.hero-main-basic-details {
+    padding-top: 115px;
+    padding-bottom: 60px;
+}
+
     .navbar-brand {
         top: 0px;
     }
@@ -2511,6 +2534,10 @@ body {
 
 
 @media screen and (max-width:768px) {
+    .hero-main-basic-details {
+        padding-top: 95px;
+        padding-bottom: 60px;
+    }
     .blurhero-img-login-new{
         margin-top: 7px;
     }
@@ -2696,6 +2723,88 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .btn.btn-login.btn-event {
+        font-size: 11px;
+        width: 100px;
+        font-weight: 500;
+        padding: 4px;
+        border-radius: 13px;
+    }
+    .bd-card-heading{
+        font-size: 12px;
+    }
+    .bd-peventname{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .bd-be-page{
+        font-size: 16px;
+        font-weight: 600; 
+    }
+    .bd-sm-eventdate{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .bd-sm-actualdate{
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .bd-mtctpage{
+        margin-top:20px;
+    }
+    .bdp-img-height {
+        height: 200px;
+        object-fit: cover;
+    }
+    .event-detailsbg {
+        background-image: unset;
+        background-repeat: unset;
+        background-size: unset;
+        background-position: unset;
+        /* border: 1px solid red; */
+        position: relative;
+        backdrop-filter:unset;
+        padding:unset;
+        border-radius:unset;
+    }
+
+    .event-detailsbg-mbbg {
+        background-image: url(/frontend/images/gallery/gallerybg.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* border: 1px solid red; */
+        position: relative;
+        backdrop-filter: blur(53px);
+        padding: 78px 7px 1px 7px;
+        border-radius: 15px;
+        margin-top: -89px;
+    }
+
+    .event-detailsbg-fouter {
+        background: unset;
+        padding:unset;
+        border-radius: unset;
+    }
+    .event-detailsbg-souter {
+        background: unset;
+        border-radius:unset;
+    }
+
+    .event-detailsbg-souter-mbbg {
+        background: #040404;
+        border-radius: 15px;
+    }
+
+    .event-detailsbg-fouter-mbbg {
+        background: unset;
+        padding: 1px;
+        border-radius: 15px;
+    }
+
+    
+   
     .footer-outer{
         border-radius:10px;
     }
@@ -3495,6 +3604,27 @@ font-weight: 300;
 
 }
 @media screen and (max-width:480px) {
+    .bd-peventname{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .bd-be-page{
+        font-size: 14px;
+        font-weight: 600; 
+    }
+    .bd-sm-eventdate{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .bd-sm-actualdate{
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .bdp-img-height {
+        height: 141px;
+        object-fit: cover;
+    }
     .withsignin-loginpg{
         width: 100px;
         border-radius: 8px;
