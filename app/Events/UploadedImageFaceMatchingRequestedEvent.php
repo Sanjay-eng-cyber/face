@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\FrontendUser;
 use App\Models\Upload;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -18,7 +19,7 @@ class UploadedImageFaceMatchingRequestedEvent
     /**
      * Create a new event instance.
      */
-    public function __construct(public Upload $upload)
+    public function __construct(public FrontendUser $frontend_user)
     {
         //
     }

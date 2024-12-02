@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Event;
+use App\Models\Upload;
 use App\Models\Category;
+use App\Models\GuestUpload;
 use App\Models\FrontendUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\GuestUpload;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
+use App\Events\UploadedImageFaceMatchingRequestedEvent;
 
 class EventController extends Controller
 {
@@ -58,27 +63,67 @@ class EventController extends Controller
         ]);
 
         $imageData = $request->userImageData;
-        if (strpos($imageData, 'data:image/') === 0) {
-            preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
-            $imageType = $type[1];
-            $imageData = substr($imageData, strpos($imageData, ',') + 1);
-            $imageData = base64_decode($imageData);
-            $manager = ImageManager::gd();
-            $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
-            $destinationPath = public_path("storage/images/events/frontend_users/");
-            $imageInstance = $manager->read($imageData);
-            $imageInstance->save($destinationPath . '/' . $filename, 90);
-        } else {
+        if (!strpos($imageData, 'data:image/') === 0) {
             return response()->json(['status' => false, 'message' => 'Invalid Image Data']);
         }
 
         $frontendUser = new FrontendUser();
+        $frontendUser->event_id = $event->id;
         $frontendUser->name = $request->name;
         $frontendUser->email = $request->email;
         $frontendUser->phone = $request->mobile;
-        $frontendUser->image = $filename;
+
         if ($frontendUser->save()) {
-            return response()->json(['status' => true, 'message' => 'User Registered Successfully.']);
+            try {
+                preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
+                $imageType = $type[1];
+                $imageData = substr($imageData, strpos($imageData, ',') + 1);
+                $imageData = base64_decode($imageData);
+                $manager = ImageManager::gd();
+                $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
+                $destinationPath = public_path("storage/images/uploads/");
+                $imageInstance = $manager->read($imageData);
+                $imageInstance->save($destinationPath . '/' . $filename, 90);
+
+                $res = Http::attach(
+                    'image_name', // The name of the file field in the request
+                    file_get_contents($destinationPath . $filename), // The file's content
+                    $filename, // The file name
+                    ['Content-Type' => 'image/jpeg']
+                )->post(config('app.python_api_url') . '/inputimg/');
+
+                if ($res->successful()) {
+                    $data = $res->json();
+                    $status = $data['status'] ?? null;
+                    if ($status !== true) {
+                        return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                    }
+                    $face_encoding = $data['face_encoding'] ?? null;
+                    $face_locations = $data['face_locations'] ?? null;
+
+                    $frontendUser->image = $filename;
+                    $frontendUser->image_url = "images/uploads/{$filename}";
+                    $frontendUser->face_encoding = $face_encoding;
+                    $frontendUser->face_locations = $face_locations;
+                    if ($frontendUser->save()) {
+
+                        UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+
+                        return response()->json([
+                            'status' => true,
+                            'fileName' => $filename,
+                            'id' => $frontendUser->id,
+                            // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                            'message' => 'User Registered Successfully.'
+                        ]);
+                    }
+                }
+            } catch (\Throwable $th) {
+                // dd($th->getMessage());
+                Log::info('Catch Err : ' . $th->getMessage());
+                return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+            }
+
         }
     }
 
