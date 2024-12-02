@@ -62,69 +62,80 @@ class EventController extends Controller
             'userImageData' => 'required|string'
         ]);
 
+        $frontendUser = new FrontendUser();
+        $frontendUser->event_id = $event->id;
+
         $imageData = $request->userImageData;
         if (!strpos($imageData, 'data:image/') === 0) {
             return response()->json(['status' => false, 'message' => 'Invalid Image Data']);
         }
+        try {
+            preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
+            $imageType = $type[1];
+            $imageData = substr($imageData, strpos($imageData, ',') + 1);
+            $imageData = base64_decode($imageData);
+            $manager = ImageManager::gd();
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
+            $destinationPath = public_path("storage/images/uploads/");
+            $imageInstance = $manager->read($imageData);
+            $imageInstance->save($destinationPath . '/' . $filename, 90);
 
-        $frontendUser = new FrontendUser();
-        $frontendUser->event_id = $event->id;
+            $res = Http::attach(
+                'image_name', // The name of the file field in the request
+                file_get_contents($destinationPath . $filename), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
+
+            if ($res->successful()) {
+                // dd($res);
+                $data = $res->json();
+                $status = $data['status'] ?? null;
+                if ($status !== true) {
+                    return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                }
+                $face_encoding = $data['face_encoding'] ?? null;
+                $face_locations = $data['face_locations'] ?? null;
+
+                $frontendUser->image = $filename;
+                $frontendUser->image_url = "images/uploads/{$filename}";
+                $frontendUser->face_encoding = $face_encoding;
+                $frontendUser->face_locations = $face_locations;
+                if ($frontendUser->save()) {
+                    UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+
+                }
+            } else {
+                Log::info('Python API Image Err');
+                return response()->json(['status' => false, 'message' => 'Please try any other images.']);
+            }
+        } catch (\Throwable $th) {
+            // dd($th->getMessage());
+            Log::info('Catch Err : ' . $th->getMessage());
+        }
+
         $frontendUser->name = $request->name;
         $frontendUser->email = $request->email;
         $frontendUser->phone = $request->mobile;
 
         if ($frontendUser->save()) {
-            try {
-                preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
-                $imageType = $type[1];
-                $imageData = substr($imageData, strpos($imageData, ',') + 1);
-                $imageData = base64_decode($imageData);
-                $manager = ImageManager::gd();
-                $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
-                $destinationPath = public_path("storage/images/uploads/");
-                $imageInstance = $manager->read($imageData);
-                $imageInstance->save($destinationPath . '/' . $filename, 90);
-
-                $res = Http::attach(
-                    'image_name', // The name of the file field in the request
-                    file_get_contents($destinationPath . $filename), // The file's content
-                    $filename, // The file name
-                    ['Content-Type' => 'image/jpeg']
-                )->post(config('app.python_api_url') . '/inputimg/');
-
-                if ($res->successful()) {
-                    $data = $res->json();
-                    $status = $data['status'] ?? null;
-                    if ($status !== true) {
-                        return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
-                    }
-                    $face_encoding = $data['face_encoding'] ?? null;
-                    $face_locations = $data['face_locations'] ?? null;
-
-                    $frontendUser->image = $filename;
-                    $frontendUser->image_url = "images/uploads/{$filename}";
-                    $frontendUser->face_encoding = $face_encoding;
-                    $frontendUser->face_locations = $face_locations;
-                    if ($frontendUser->save()) {
-
-                        UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
-
-                        return response()->json([
-                            'status' => true,
-                            'fileName' => $filename,
-                            'id' => $frontendUser->id,
-                            // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
-                            'message' => 'User Registered Successfully.'
-                        ]);
-                    }
-                }
-            } catch (\Throwable $th) {
-                // dd($th->getMessage());
-                Log::info('Catch Err : ' . $th->getMessage());
-                return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
-            }
-
+            return response()->json([
+                'status' => true,
+                'id' => $frontendUser->id,
+                'event_id' => $frontendUser->event_id,
+                'image' => $frontendUser->image,
+                // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                'message' => 'User Registered Successfully.'
+            ]);
         }
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+    }
+
+    public function getFetchedImages()
+    {
+        // dd($request);
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+
     }
 
     public function stepTwoForm($eventSlug)

@@ -256,26 +256,29 @@
                                                 <div class="basic-event-one-main-insider-half user-detailsinfo">
                                                     <div>
                                                         <div class="fw-600 text-white pb-2 uptoptext">Uploaded Photo</div>
-                                                        <img :src="userImageData"
-                                                            alt="" class="img-fluid w-100 rounded-3 step3-img">
+                                                        <img :src="userImageData" alt=""
+                                                            class="img-fluid w-100 rounded-3 step3-img">
                                                     </div>
                                                     <div class="details-box-one">
 
                                                         <div class="d-flex gap-1">
                                                             <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
-                                                            <div class="text-white fw-600 h5 mb-0 name-title">@{{ name }}</div>
+                                                            <div class="text-white fw-600 h5 mb-0 name-title">
+                                                                @{{ name }}</div>
                                                         </div>
 
                                                         <div class="d-flex gap-1 box-one-nummain">
                                                             <div class="text-white fw-600 h5 mb-0 number-head">Number:
                                                             </div>
-                                                            <div class="text-white fw-600 h5 mb-0 number-title">@{{ mobile_number }}</div>
+                                                            <div class="text-white fw-600 h5 mb-0 number-title">
+                                                                @{{ mobile_number }}</div>
                                                         </div>
 
                                                         <div class="d-flex gap-1">
                                                             <div class="text-white fw-600 h5 mb-0 email-head"> Email ID:
                                                             </div>
-                                                            <div class="text-white fw-600 h5 mb-0 email-title">@{{ email }}</div>
+                                                            <div class="text-white fw-600 h5 mb-0 email-title">
+                                                                @{{ email }}</div>
                                                         </div>
 
                                                     </div>
@@ -397,12 +400,15 @@
         createApp({
             data() {
                 return {
+                    event_id: '{{ $event->id }}',
                     pinValues: ref(Array(4).fill('')),
                     step: 2,
                     name: '',
                     email: '',
                     mobile: '',
                     userImageData: null,
+                    id: null,
+                    image: null,
                 }
             },
             methods: {
@@ -477,6 +483,8 @@
                         })
                         .then((res) => {
                             if (res.data.status) {
+                                this.id = res.data.id;
+                                this.image = res.data.image;
                                 Snackbar.show({
                                     text: 'User Created Successfully',
                                     pos: 'top-right',
@@ -486,7 +494,7 @@
                                 this.step = 3;
                             } else {
                                 Snackbar.show({
-                                    text: 'Something Went Wrong',
+                                    text: res.data.message ?? 'Something Went Wrong',
                                     pos: 'top-right',
                                     actionTextColor: '#fff',
                                     backgroundColor: '#e7515a'
@@ -545,6 +553,53 @@
                         };
                         reader.readAsDataURL(file);
                     }
+                },
+                fetchMatchedImages() {
+                    axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
+                            eventSlug: '{{ $event->slug }}',
+                            pin: 1234,
+                            name: this.name,
+                            email: this.email,
+                            mobile_number: this.mobile,
+                            userImageData: this.userImageData,
+                        })
+                        .then((res) => {
+                            if (res.data.status) {
+                                this.id = res.data.id;
+                                this.image = res.data.image;
+                                Snackbar.show({
+                                    text: 'User Created Successfully',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#1abc9c'
+                                });
+                                this.step = 3;
+                            } else {
+                                Snackbar.show({
+                                    text: res.data.message ?? 'Something Went Wrong',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            if (error.status == 422) {
+                                $.each(error.response.data.errors, function(i, err) {
+                                    var el = $(document).find('[name="' + i + '"]');
+                                    el.after($('<div class="form-err-msg text-danger text-left" role="alert">' +
+                                        err[0] + '</div>'));
+                                });
+                            } else {
+                                Snackbar.show({
+                                    text: "Something Went Wrong",
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
+                        });
                 },
             }
         }).mount('#mainDiv')
