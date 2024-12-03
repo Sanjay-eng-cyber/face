@@ -335,7 +335,7 @@
 
                                 <div class="d-flex justify-content-center">
                                     <button id="toggleButton" class="btn pink-btn showmshol mt-3"
-                                        @click="fetchMatchedImages">Show More</button>
+                                        @click="loadMoreMatchedPhotos">Show More</button>
                                 </div>
 
                             </div>
@@ -355,6 +355,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
 
     <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
@@ -381,6 +382,7 @@
                     user_id: null,
                     image: null,
                     matchedImages: [],
+                    imagesPageCount: 1,
                 }
             },
             methods: {
@@ -527,7 +529,7 @@
                         reader.readAsDataURL(file);
                     }
                 },
-                fetchMatchedImages() {
+                fetchMatchedImages: _.debounce(function() {
                     console.log("Called fetchMatchedImages()");
 
                     axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
@@ -564,7 +566,13 @@
                                 backgroundColor: '#e7515a'
                             });
                         });
-                },
+                }, 2000),
+                loadMoreMatchedPhotos() {
+                    if (this.matchedImages >= 12) {
+                        this.imagesPageCount += 1;
+                    }
+                    this.fetchMatchedImages();
+                }
             }
         }).mount('#mainDiv')
     </script>
