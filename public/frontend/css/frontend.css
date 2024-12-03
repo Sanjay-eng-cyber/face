@@ -1851,7 +1851,7 @@ body {
     padding: 12px 12px 12px 12px;
     border-radius: 12px;
     display: grid;
-    grid-template-columns: 40.4% 1% 58.4%;
+    grid-template-columns: 58.4% 1% 40.4%;
     grid-gap: 1px;
 }
 
@@ -1970,7 +1970,7 @@ body {
         padding: 12px 12px 12px 12px;
         border-radius: 12px;
         display: grid;
-        grid-template-columns: 45.4% 1% 53.4%;
+        grid-template-columns: 53.4% 1% 45.4%;
         grid-gap: 1px;
     }
     

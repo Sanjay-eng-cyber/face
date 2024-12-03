@@ -252,40 +252,6 @@
 
                                     <div class="col-12">
                                         <div class="grid-outer">
-                                            <div class="basic-event-one-main h-100">
-                                                <div class="basic-event-one-main-insider-half user-detailsinfo">
-                                                    <div>
-                                                        <div class="fw-600 text-white pb-2 uptoptext">Uploaded Photo</div>
-                                                        <img :src="userImageData" alt=""
-                                                            class="img-fluid w-100 rounded-3 step3-img">
-                                                    </div>
-                                                    <div class="details-box-one">
-
-                                                        <div class="d-flex gap-1">
-                                                            <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
-                                                            <div class="text-white fw-600 h5 mb-0 name-title">
-                                                                @{{ name }}</div>
-                                                        </div>
-
-                                                        <div class="d-flex gap-1 box-one-nummain">
-                                                            <div class="text-white fw-600 h5 mb-0 number-head">Number:
-                                                            </div>
-                                                            <div class="text-white fw-600 h5 mb-0 number-title">
-                                                                @{{ mobile_number }}</div>
-                                                        </div>
-
-                                                        <div class="d-flex gap-1">
-                                                            <div class="text-white fw-600 h5 mb-0 email-head"> Email ID:
-                                                            </div>
-                                                            <div class="text-white fw-600 h5 mb-0 email-title">
-                                                                @{{ email }}</div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="sgl-divider d-lg-block"></div>
 
                                             <div class="basic-event-one-main h-100">
                                                 <div class="basic-event-one-main-insider-full">
@@ -311,6 +277,42 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="sgl-divider d-lg-block"></div>
+
+                                            <div class="basic-event-one-main h-100">
+                                                <div class="basic-event-one-main-insider-half user-detailsinfo">
+                                                    <div>
+                                                        <div class="fw-600 text-white pb-2 uptoptext">Uploaded Photo</div>
+                                                        <img :src="userImageData" alt=""
+                                                            class="img-fluid w-100 rounded-3 step3-img">
+                                                    </div>
+                                                    <div class="details-box-one">
+
+                                                        <div class="d-flex gap-1">
+                                                            <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
+                                                            <div class="text-white fw-600 h5 mb-0 name-title">
+                                                                @{{ name }}</div>
+                                                        </div>
+
+                                                        <div class="d-flex gap-1 box-one-nummain">
+                                                            <div class="text-white fw-600 h5 mb-0 number-head">Number:
+                                                            </div>
+                                                            <div class="text-white fw-600 h5 mb-0 number-title">
+                                                                @{{ mobile }}</div>
+                                                        </div>
+
+                                                        <div class="d-flex gap-1">
+                                                            <div class="text-white fw-600 h5 mb-0 email-head"> Email ID:
+                                                            </div>
+                                                            <div class="text-white fw-600 h5 mb-0 email-title">
+                                                                @{{ email }}</div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                     </div>
@@ -322,49 +324,18 @@
                                 </div>
 
                                 <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery">
-                                    <div class="col pb-4 pb-sm-4" data-index="1">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
 
-                                    <div class="col pb-4" data-index="2">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-
-                                    <div class="col pb-4" data-index="3">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-
-                                    <div class="col pb-4" data-index="4">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-
-
-                                    <div class="col pb-4" data-index="5">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-
-                                    <div class="col pb-4" data-index="6">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-                                    <div class="col pb-4" data-index="7">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
-                                    </div>
-                                    <div class="col pb-4" data-index="8">
-                                        <img src="{{ asset('frontend/images/basic-event-one/testgallery.png') }}"
-                                            alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                    <div class="col pb-4 pb-sm-4" v-for="(img, index) in matchedImages"
+                                        :key="index" :data-index="index">
+                                        <img :src="'/storage/' + img.image_url" alt="Gallery Image"
+                                            class="gallery-img img-fluid rounded-3">
                                     </div>
 
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button id="toggleButton" class="btn pink-btn showmshol mt-3">Show More</button>
+                                    <button id="toggleButton" class="btn pink-btn showmshol mt-3"
+                                        @click="fetchMatchedImages">Show More</button>
                                 </div>
 
                             </div>
@@ -407,8 +378,9 @@
                     email: '',
                     mobile: '',
                     userImageData: null,
-                    id: null,
+                    user_id: null,
                     image: null,
+                    matchedImages: [],
                 }
             },
             methods: {
@@ -483,7 +455,7 @@
                         })
                         .then((res) => {
                             if (res.data.status) {
-                                this.id = res.data.id;
+                                this.user_id = res.data.id;
                                 this.image = res.data.image;
                                 Snackbar.show({
                                     text: 'User Created Successfully',
@@ -492,6 +464,7 @@
                                     backgroundColor: '#1abc9c'
                                 });
                                 this.step = 3;
+                                this.fetchMatchedImages();
                             } else {
                                 Snackbar.show({
                                     text: res.data.message ?? 'Something Went Wrong',
@@ -555,20 +528,19 @@
                     }
                 },
                 fetchMatchedImages() {
+                    console.log("Called fetchMatchedImages()");
+
                     axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
                             eventSlug: '{{ $event->slug }}',
-                            pin: 1234,
-                            name: this.name,
-                            email: this.email,
-                            mobile_number: this.mobile,
-                            userImageData: this.userImageData,
+                            user_id: this.user_id,
                         })
                         .then((res) => {
+                            // console.log('fetchMatchedImages : ', res);
+
                             if (res.data.status) {
-                                this.id = res.data.id;
-                                this.image = res.data.image;
+                                this.matchedImages = res.data.images.data;
                                 Snackbar.show({
-                                    text: 'User Created Successfully',
+                                    text: 'Matched Images Fetched Successfully',
                                     pos: 'top-right',
                                     actionTextColor: '#fff',
                                     backgroundColor: '#1abc9c'
@@ -585,20 +557,12 @@
                         })
                         .catch((error) => {
                             console.log(error);
-                            if (error.status == 422) {
-                                $.each(error.response.data.errors, function(i, err) {
-                                    var el = $(document).find('[name="' + i + '"]');
-                                    el.after($('<div class="form-err-msg text-danger text-left" role="alert">' +
-                                        err[0] + '</div>'));
-                                });
-                            } else {
-                                Snackbar.show({
-                                    text: "Something Went Wrong",
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            }
+                            Snackbar.show({
+                                text: "Something Went Wrong",
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
                         });
                 },
             }

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use App\Events\UploadedImageFaceMatchingRequestedEvent;
+use App\Models\MatchedImage;
 
 class EventController extends Controller
 {
@@ -131,11 +132,19 @@ class EventController extends Controller
         return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
     }
 
-    public function getFetchedImages()
+    public function getFetchedImages(Request $request)
     {
         // dd($request);
-        return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+        $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+        $frontendUser = FrontendUser::findOrFail($request->user_id);
+        $images = MatchedImage::select('matched_images.frontend_user_id', 'matched_images.gallery_image_id', 'gallery_images.image_name', 'gallery_images.image_url')
+            ->join('gallery_images', 'matched_images.gallery_image_id', '=', 'gallery_images.id')
+            ->where('matched_images.frontend_user_id', $frontendUser->id)
+            ->orderBy('matched_images.created_at', 'asc')
+            ->paginate(12);
+        // dd($images);
 
+        return response()->json(['status' => true, 'images' => $images]);
     }
 
     public function stepTwoForm($eventSlug)
