@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Router;
 use App\Http\Middleware\CmsUserRole;
+use App\Http\Middleware\isEventValid;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -21,7 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
             users: '/'
         );
         $middleware->alias([
-            'cms_user_role' => CmsUserRole::class
+            'cms_user_role' => CmsUserRole::class,
+            'is_event_valid' => isEventValid::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
