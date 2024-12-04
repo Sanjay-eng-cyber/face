@@ -130,9 +130,9 @@
                                         </div>
                                         
                                         <div class="d-flex flex-column align-items-center gap-2">
-                                            <div class="scan-facebtn">
+                                            <button class="btn scan-facebtn">
                                                 Scan Your Face
-                                            </div>
+                                            </button>
                                             <div class="ortext" >
                                                 Or
                                             </div>

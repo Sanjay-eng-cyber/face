@@ -3,20 +3,26 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Event;
+use App\Models\Upload;
 use App\Models\Category;
+use App\Models\GuestUpload;
 use App\Models\FrontendUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\GuestUpload;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
+use App\Events\UploadedImageFaceMatchingRequestedEvent;
+use App\Models\MatchedImage;
 
 class EventController extends Controller
 {
     public function show(Request $request, $eventSlug)
     {
-        if (!$request->hasValidSignature()) {
-            abort(401);
-        }
+        // if (!$request->hasValidSignature()) {
+        //     abort(401);
+        // }
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         $categories = $event->categories()->latest()->paginate(10);
         // dd($event);
@@ -43,6 +49,7 @@ class EventController extends Controller
 
     public function userFormSubmit(Request $request)
     {
+        // dd($request->all());
         $event = Event::whereSlug($request->eventSlug)->firstOrFail();
         // dd($request->pin);
         if (!$request->pin || ($event->pin != $request->pin)) {
@@ -53,15 +60,91 @@ class EventController extends Controller
             'name' => 'required|string|min:3|max:40',
             'email' => 'required|email|min:8|max:40',
             'mobile_number' => 'required|numeric|digits:10',
+            'userImageData' => 'required|string'
         ]);
 
         $frontendUser = new FrontendUser();
+        $frontendUser->event_id = $event->id;
+
+        $imageData = $request->userImageData;
+        if (!strpos($imageData, 'data:image/') === 0) {
+            return response()->json(['status' => false, 'message' => 'Invalid Image Data']);
+        }
+        try {
+            preg_match('/^data:image\/(\w+);base64,/', $imageData, $type);
+            $imageType = $type[1];
+            $imageData = substr($imageData, strpos($imageData, ',') + 1);
+            $imageData = base64_decode($imageData);
+            $manager = ImageManager::gd();
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $imageType;
+            $destinationPath = public_path("storage/images/uploads/");
+            $imageInstance = $manager->read($imageData);
+            $imageInstance->save($destinationPath . '/' . $filename, 90);
+
+            $res = Http::attach(
+                'image_name', // The name of the file field in the request
+                file_get_contents($destinationPath . $filename), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
+
+            if ($res->successful()) {
+                // dd($res);
+                $data = $res->json();
+                $status = $data['status'] ?? null;
+                if ($status !== true) {
+                    return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                }
+                $face_encoding = $data['face_encoding'] ?? null;
+                $face_locations = $data['face_locations'] ?? null;
+
+                $frontendUser->image = $filename;
+                $frontendUser->image_url = "images/uploads/{$filename}";
+                $frontendUser->face_encoding = $face_encoding;
+                $frontendUser->face_locations = $face_locations;
+                if ($frontendUser->save()) {
+                    UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+
+                }
+            } else {
+                Log::info('Python API Image Err');
+                return response()->json(['status' => false, 'message' => 'Please try any other images.']);
+            }
+        } catch (\Throwable $th) {
+            // dd($th->getMessage());
+            Log::info('Catch Err : ' . $th->getMessage());
+        }
+
         $frontendUser->name = $request->name;
         $frontendUser->email = $request->email;
         $frontendUser->phone = $request->mobile;
+
         if ($frontendUser->save()) {
-            return response()->json(['status' => true, 'message' => 'User Registered Successfully.']);
+            return response()->json([
+                'status' => true,
+                'id' => $frontendUser->id,
+                'event_id' => $frontendUser->event_id,
+                'image' => $frontendUser->image,
+                // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                'message' => 'User Registered Successfully.'
+            ]);
         }
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+    }
+
+    public function getFetchedImages(Request $request)
+    {
+        // dd($request);
+        $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+        $frontendUser = FrontendUser::findOrFail($request->user_id);
+        $images = MatchedImage::select('matched_images.frontend_user_id', 'matched_images.gallery_image_id', 'gallery_images.image_name', 'gallery_images.image_url')
+            ->join('gallery_images', 'matched_images.gallery_image_id', '=', 'gallery_images.id')
+            ->where('matched_images.frontend_user_id', $frontendUser->id)
+            ->orderBy('matched_images.created_at', 'asc')
+            ->paginate(12);
+        // dd($images);
+
+        return response()->json(['status' => true, 'images' => $images]);
     }
 
     public function stepTwoForm($eventSlug)
@@ -73,7 +156,6 @@ class EventController extends Controller
 
     public function stepTwoFormSubmit(Request $request, $eventSlug)
     {
-        // dd($request->all());
         $event = Event::where('slug', $eventSlug)->firstOrFail();
         // dd($event);
         $request->validate([

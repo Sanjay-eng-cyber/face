@@ -26,13 +26,13 @@ class UploadedImageFaceMatchingRequestedListener implements ShouldQueue
     public function handle(UploadedImageFaceMatchingRequestedEvent $event): void
     {
         // dd($event);
-        $upload = $event->upload;
-        $event = Event::findOrFail($upload->event_id);
-        $category = Category::where('event_id', $event->id)->findOrFail($upload->category_id);
-        $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
+        $frontend_user = $event->frontend_user;
+        $event = Event::findOrFail($frontend_user->event_id);
+        // $category = Category::where('event_id', $event->id)->findOrFail($upload->category_id);
+        // $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
+        $gallery_images = GalleryImage::where('event_id', $event->id)->get();
         foreach ($gallery_images as $gallery_image) {
-            CompareUploadedImagesForFaceMatching::dispatch($upload, $gallery_image);
+            CompareUploadedImagesForFaceMatching::dispatch($frontend_user, $gallery_image);
         }
-        
     }
 }
