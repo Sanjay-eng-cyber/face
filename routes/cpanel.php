@@ -49,7 +49,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         // Route::group(["middleware" => "cms_user_role:admin"], function () {
 
         Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
-        Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show')->middleware('is_event_valid');
+        Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
         Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
         Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
         Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');

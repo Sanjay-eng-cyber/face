@@ -132,7 +132,19 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Pin</label><br>
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Visibility</label><br>
+                                                @if ($event->visibility)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Pin</label><br>
                                                 {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
                                                 <p class="text-white badge badge-primary">
                                                     {{ $event->pin ?? '----' }}</p>
