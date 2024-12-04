@@ -311,6 +311,32 @@
                                         </div>
                                     @endif
                                 </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Visibility :</label><br>
+
+                                    @if (old('visibility'))
+                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                            @if (old('visibility') == '1') {{ 'checked' }} @endif>
+                                        <label for="visibilityYes">Yes</label>
+                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                            @if (old('visibility') == '0') {{ 'checked' }} @endif>
+                                        <label for="visibilityNo">No</label>
+                                    @else
+                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                            @if ($event->visibility == '1') {{ 'checked' }} @endif>
+                                        <label for="visibilityYes">Yes</label>
+                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                            @if ($event->visibility == '0') {{ 'checked' }} @endif>
+                                        <label for="visibilityNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('visibility'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('visibility') }}
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
                             <input type="submit" class="btn btn-primary">
                         </form>

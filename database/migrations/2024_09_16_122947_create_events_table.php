@@ -29,6 +29,7 @@ return new class extends Migration
             $table->boolean('guest_images_upload')->default(0)->nullable();
             $table->boolean('single_image_download')->default(0)->nullable();
             $table->boolean('bulk_image_download')->default(0)->nullable();
+            $table->boolean('visibility')->default(0)->nullable();
             $table->boolean('is_watermark_required')->nullable();
             $table->string('watermark_image')->nullable();
             $table->timestamps();

@@ -102,6 +102,7 @@ class EventController extends Controller
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
             'guest_images_upload' => 'nullable|in:1,0',
+            'visibility' => 'nullable|in:1,0',
             'is_watermark_required' => 'nullable|required_with:watermark_image|in:1,0',
             'watermark_image' => 'nullable|required_if:is_watermark_required,1|mimes:jpeg,png,jpg|max:512',
         ]);
@@ -144,6 +145,7 @@ class EventController extends Controller
         $event->link_end_date = $request->link_end_date;
         $event->descriptions = $request->descriptions;
         $event->guest_images_upload = $request->guest_images_upload;
+        $event->visibility = $request->visibility;
         $event->is_watermark_required = $request->is_watermark_required;
 
         if ($event->save()) {
@@ -178,6 +180,7 @@ class EventController extends Controller
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
             'guest_images_upload' => 'nullable|in:1,0',
+            'visibility' => 'nullable|in:1,0',
             'is_watermark_required' => 'nullable|required_with:watermark_image|in:1,0',
             'watermark_image' => 'nullable|required_if:is_watermark_required,1|mimes:jpeg,png,jpg|max:512',
 
@@ -221,6 +224,7 @@ class EventController extends Controller
         $event->link_end_date = $request->link_end_date;
         $event->descriptions = $request->descriptions;
         $event->guest_images_upload = $request->guest_images_upload;
+        $event->visibility = $request->visibility;
         $event->is_watermark_required = $request->is_watermark_required;
         if ($event->save()) {
             return redirect()->route('backend.event.index')->with(toast('Event Update Successfully', 'success'));
