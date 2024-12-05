@@ -89,7 +89,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@getFetchedImages')->name('frontend.event.fetch-matched-images');
     });
 
-    Route::prefix('dynamic')->group(function () {
-        Route::get('event/share', 'App\Http\Controllers\frontend\EventShareController@index');
+    Route::group(['middleware' => 'is_event_valid'], function () {
+        Route::prefix('dynamic')->group(function () {
+            Route::get('event/share', 'App\Http\Controllers\frontend\EventShareController@index');
+        });
     });
 });

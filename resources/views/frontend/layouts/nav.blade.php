@@ -8,7 +8,7 @@
     class="img-fluid navsmimg">
 
     <img src="{{asset('frontend/images/index/index-new/navcircle.svg')}}" alt="" srcset="" class="img-fluid navcircle-img">
-    
+
     <div class="container-fluid position-relative" style="z-index:9999;">
         <div class="custom-ctnrfluid " id="mainNavbar" >
             <div class="container pall0 position-relative" style="z-index:999;">
@@ -49,11 +49,11 @@
                         </a>
                         @endguest
 
-                        @auth
+                        {{-- @auth
                         <a href="{{route('frontend.logout')}}" class="btn btn-login  mb-0 fw-500">
                             LogOut
                         </a>
-                        @endauth
+                        @endauth --}}
                     </ul>
 
                 </div>
