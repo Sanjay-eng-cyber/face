@@ -215,34 +215,21 @@
 @endsection
 @section('js')
 <script>
-    $('[data-fancybox="gallery"]').fancybox({
-      buttons: [
-        "slideShow",
-        "download",
-        "thumbs",
-        "zoom",
-        "fullScreen",
-        "share",  // Make sure "share" is included
-        "close"
-      ],
-      loop: false,
-      protect: true,
-      afterLoad: function (instance, current) {
-        // This function will be triggered after each image is loaded
-        var customShareHTML = `
-          <div class="fancybox-share-content">
-            <h1>Share</h1>
-            <p><a class="fancybox-share__button fancybox-share__button--fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(current.src)}" target="_blank">Facebook</a></p>
-            <p><a class="fancybox-share__button fancybox-share__button--tw" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(current.src)}&text=${encodeURIComponent(current.opts.caption)}" target="_blank">Twitter</a></p>
-            <p><a class="fancybox-share__button fancybox-share__button--pt" href="https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(current.src)}&description=${encodeURIComponent(current.opts.caption)}" target="_blank">Pinterest</a></p>
-            <p><input class="fancybox-share__input" type="text" value="${current.src}" onclick="this.select()"></p>
-          </div>
-        `;
-    
-        // Replace the default share content with custom content
-        $(".fancybox-share").html(customShareHTML);
-      }
-    });
+  $('[data-fancybox="gallery"]').fancybox({
+  buttons: [
+    "slideShow",
+    "download",
+    "thumbs",
+    "zoom",
+    "fullScreen",
+    "share",  // Make sure "share" is included
+    "close"
+  ],
+  loop: false,
+  protect: true,
+
+});
+
     
   </script>
 <script>
