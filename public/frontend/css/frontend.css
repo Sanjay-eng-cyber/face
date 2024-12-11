@@ -1846,8 +1846,13 @@ body {
     height: 221px;
     object-fit: cover;
     width: 100%;
+    transition: transform 0.9s ease; /* Smooth transition */
+
 }
 
+.gallery-img:hover {
+    transform: scale(1.05); /* Slightly increase scale */
+}
 .grid-outer{
     background-color: #000000;
     border: 1px solid #FE3B96;
