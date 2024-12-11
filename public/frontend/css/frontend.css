@@ -24,6 +24,9 @@
 .drgreen{
     color: var(--drgreen);
 }
+.fancybox__container {
+    z-index: 99999;
+}
 
 .btn-login {
     --bs-btn-color:#FFFFFF;
@@ -4105,3 +4108,17 @@ position: relative;
     object-fit: contain;
   }
 
+
+  /* .fancybox-content{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform:unset !important;
+    margin-bottom:unset !important
+  } */
+
+  /* .fancybox-content img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  } */

@@ -107,70 +107,98 @@
                             <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
                         </div>
 
-                        <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery">
-                            <div class="col pb-4 pb-sm-4" data-index="1">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                        <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
+                            <div class="col pb-4" data-index="1">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 1">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 1" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="2">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 2">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 2" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="3">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 3">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 3" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="4">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 4">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 4" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
-
+                        
                             <div class="col pb-4" data-index="5">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 5">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 5" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="6">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 6">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 6" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
+                        
                             <div class="col pb-4" data-index="7">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 7">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 7" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
+                        
                             <div class="col pb-4" data-index="8">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 8">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 8" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="9">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 9">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 9" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="10">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 10">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 10" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
-
+                        
                             <div class="col pb-4" data-index="11">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 11">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 11" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="12">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 12">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 12" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="13">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 13">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 13" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="14">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 14">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 14" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
+                        
                             <div class="col pb-4" data-index="15">
-                                <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="" srcset="" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 15">
+                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 15" class="gallery-img img-fluid rounded-3">
+                                </a>
                             </div>
-
-
-
                         </div>
+                        
 
                         <div class="d-flex justify-content-center">
                             <button id="toggleButton" class="btn pink-btn showmshol mt-3">Show More</button>
@@ -186,10 +214,40 @@
     </section>
 @endsection
 @section('js')
-
+<script>
+    $('[data-fancybox="gallery"]').fancybox({
+      buttons: [
+        "slideShow",
+        "download",
+        "thumbs",
+        "zoom",
+        "fullScreen",
+        "share",  // Make sure "share" is included
+        "close"
+      ],
+      loop: false,
+      protect: true,
+      afterLoad: function (instance, current) {
+        // This function will be triggered after each image is loaded
+        var customShareHTML = `
+          <div class="fancybox-share-content">
+            <h1>Share</h1>
+            <p><a class="fancybox-share__button fancybox-share__button--fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(current.src)}" target="_blank">Facebook</a></p>
+            <p><a class="fancybox-share__button fancybox-share__button--tw" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(current.src)}&text=${encodeURIComponent(current.opts.caption)}" target="_blank">Twitter</a></p>
+            <p><a class="fancybox-share__button fancybox-share__button--pt" href="https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(current.src)}&description=${encodeURIComponent(current.opts.caption)}" target="_blank">Pinterest</a></p>
+            <p><input class="fancybox-share__input" type="text" value="${current.src}" onclick="this.select()"></p>
+          </div>
+        `;
+    
+        // Replace the default share content with custom content
+        $(".fancybox-share").html(customShareHTML);
+      }
+    });
+    
+  </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const galleryItems = document.querySelectorAll("#gallery .col");
+    const galleryItems = document.querySelectorAll("#gallery-mainscn .col");
     const toggleButton = document.getElementById("toggleButton");
     let maxVisible = 12; // Default max visible items
 
