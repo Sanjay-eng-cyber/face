@@ -56,13 +56,13 @@
                                             <div class="basic-event-one-main-insider-half user-detailsinfo" >
                                                 <div>
                                                     <div class="fw-600 text-white pb-2 uptoptext" >Uploaded Photo</div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid w-100 rounded-3">
+                                                    <img src="{{ asset('frontend/images/basic-event-one/textimg.png') }}" alt="" class="img-fluid textimg-new rounded-3">
                                                 </div>
                                                 <div class="details-box-one">
                                                    
                                                         <div class="d-flex gap-1">
                                                             <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
-                                                            <div class="text-white fw-600 h5 mb-0 name-title">joe alberto</div>
+                                                            <div class="text-white fw-600 h5 mb-0 name-title">joe alberto joe albertojoe</div>
                                                         </div>
 
                                                         <div class="d-flex gap-1 box-one-nummain" >
@@ -79,12 +79,14 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="sgl-divider d-lg-block"></div>
-                                    
-                                        <div class="basic-event-one-main h-100" >
+                                        {{-- <div class="sgl-divider d-lg-block"></div> --}}
+                                        <div class="">
+                                            <div class="vr" ></div>
+                                        </div>
+                                        <div class="basic-event-one-main h-100 d-flex align-items-center">
                                             <div class="basic-event-one-main-insider-full" >
                                                 <div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img-new w-100 rounded-3" >
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}" alt="" class="img-fluid ex-one-img-new rounded-3" >
                                                 </div>
                                                 <div>
                                                     <div class="eventanddatespit ">
