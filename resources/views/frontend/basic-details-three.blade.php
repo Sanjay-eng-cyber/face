@@ -109,8 +109,8 @@
 
                         <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                             <div class="col pb-4" data-index="1">
-                                <a href="{{asset('frontend/images/basic-event-one/testgallery.png')}}" data-fancybox="gallery" data-caption="Image 1">
-                                    <img src="{{asset('frontend/images/basic-event-one/testgallery.png')}}" alt="Image 1" class="gallery-img img-fluid rounded-3">
+                                <a href="{{asset('https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg')}}" data-fancybox="gallery" data-caption="Image 1">
+                                    <img src="{{asset('https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg')}}" alt="Image 1" class="gallery-img img-fluid rounded-3">
                                 </a>
                             </div>
                         
