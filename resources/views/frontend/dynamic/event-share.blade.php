@@ -32,6 +32,58 @@
                 <div class="container overflow-hide">
 
                     <div v-if="step == 1">
+                        <div class="row d-flex justify-content-center pt-35px position-relative">
+                            <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
+                                srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
+                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                                <div class="row">
+
+
+                                    <div class="col-12 ">
+
+
+                                        <div class="basic-event-one-main-bdt">
+
+                                            <div class="basic-event-one-main-insider-bdt">
+                                                <div>
+                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
+                                                        alt="" class="img-fluid ex-one-img w-100">
+                                                </div>
+                                                <div>
+                                                    <div class="eventanddatespit-bdt ">
+                                                        <div class="h5 fw-600 mb-0 text-white bdt-eventname">
+                                                            {{ $event->name }}
+                                                        </div>
+                                                        @if ($event->start_date && $event->end_date)
+                                                            @if ($event->start_date == $event->end_date)
+                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                    {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                            @else
+                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                    {{ dd_format($event->start_date, 'd/m/Y') }} to
+                                                                    {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                                </div>
+                                                            @endif
+                                                        @endif
+                                                    </div>
+
+                                                    @if ($event->descriptions)
+                                                        <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara">
+                                                            {!! $event->descriptions !!}
+                                                        </div>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row ptpb-55px" id="enterPinDiv">
                             <div class="col-12">
@@ -389,7 +441,7 @@
                 return {
                     event_id: '{{ $event->id }}',
                     pinValues: ref(Array(4).fill('')),
-                    step: 2,
+                    step: 1,
                     name: '',
                     email: '',
                     mobile: '',
@@ -462,9 +514,10 @@
                         });
                         return;
                     }
+                    console.log(fullPin);
                     axios.post("{{ route('frontend.event.user-submit') }}", {
                             eventSlug: '{{ $event->slug }}',
-                            pin: 1234,
+                            pin: fullPin,
                             name: this.name,
                             email: this.email,
                             mobile_number: this.mobile,
