@@ -18,11 +18,16 @@
    
 }
 
+.brd-50{
+border-radius: 50%;
+}
 .z-99{
     z-index: 99;
 }
 .ex-one-img-new{
     width: 112px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 .drgreen{
     color: var(--drgreen);
@@ -1919,6 +1924,8 @@ grid-template-columns: 42.4% 1% 56.4%;
     }
 .textimg-new{
     width: 121px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 @media screen and (max-width:1116px) {
@@ -3148,7 +3155,7 @@ grid-template-columns: 42.4% 1% 56.4%;
         font-weight: 500;
         min-height: 37px;
         position: absolute;
-        bottom: 100px;
+        bottom: 23px;
     }
     .upload-section button.guest-uploader{
         padding: 8px 9px;
