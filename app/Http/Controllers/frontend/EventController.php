@@ -86,7 +86,7 @@ class EventController extends Controller
                 file_get_contents($destinationPath . $filename), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/inputimg/');
+            )->post(config('app.python_api_url') . '/api/inputimg/');
 
             if ($res->successful()) {
                 // dd($res);

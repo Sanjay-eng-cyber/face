@@ -49,7 +49,7 @@ class GalleryController extends Controller
                     'images',  
                     file_get_contents($image->getRealPath()), 
                     $mainImgFilename // File name
-                )->post('http://127.0.0.1:8000/inputimg/', [
+                )->post(config('app.python_api_url') . '/api/inputimg/', [
                     'user_id' => $request->user_id,
                     'event_id' => $request->event_id,
                 ]);

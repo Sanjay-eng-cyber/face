@@ -39,12 +39,14 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
         }
 
         try {
+            // Log::info('Api Resp : ', ['data' => config('app.python_api_url') . '/api/capture-input-image/']);
             $res = Http::post(config('app.python_api_url') . '/api/capture-input-image/', [
                 'image_face_encodings' => json_decode($frontend_user->face_encoding),
                 'gallery_face_encodings' => json_decode($gallery_image->face_encoding)
             ]);
             $data = $res->json();
             // dd($data);
+            // Log::info('Api Resp : ', $data);
             if ($res->successful()) {
                 $status = $data['status'] ?? null;
                 if (!$status) {
@@ -52,7 +54,7 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
                     return 0;
                 }
                 Log::info('Api Res : ', $data);
-                if ($data['matched'] == true) {
+                if (isset($data['matched']) && in_array(true,$data['matched'])) {
                     $matched = new MatchedImage();
                     $matched->frontend_user_id = $frontend_user->id;
                     $matched->gallery_image_id = $gallery_image->id;
