@@ -11,6 +11,9 @@
          display: none;
         }
 
+        .step-two{
+                padding-bottom: 120px
+        }
         .custom-ctnrfluid {
             background-image: url(/frontend/images/index/navbg.svg);
             background-repeat: no-repeat;
@@ -32,31 +35,41 @@
             .pobdh {
             height: 75px;
         }
-            .custom-ctnrfluid .navbar-collapse.collapse.show {
+        .custom-ctnrfluid {
+                 background-image:unset;
+                background-repeat: no-repeat;
+                backdrop-filter: blur(29px);
+                min-height: unset;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+             .custom-ctnrfluid .navbar-collapse.collapse.show {
                 background-image:unset;
                 background-repeat: unset;
                 background-size: unset;
                 backdrop-filter: unset;
                 border-bottom-left-radius: unset;
                 border-bottom-right-radius: unset;
-            }
-            .custom-ctnrfluid {
-                min-height:unset;
-            }
+            } 
+
         }
 
 
         @media screen and (max-width: 576px) {
+            .step-two{
+                padding-bottom: 120px;
+                padding-top: 20px;
+        }
             .main-div{
                 margin-top: -17px;
             }
-            .custom-ctnrfluid {
+            /* .custom-ctnrfluid {
                 background-image: unset;
                 backdrop-filter: unset;
                 min-height: unset;
                 padding-left: 12px;
                 padding-right: 12px;
-            }
+            } */
             .pobdh {
                 height: 0px;
             }
@@ -170,21 +183,15 @@
                             </div>
                         </div>
 
-                        <div v-if="step == 2">
+                        <div class="step-two" v-if="step == 2">
 
-                            <div class="row d-flex justify-content-center pt-35px position-relative">
+                            <div class="row  pt-17px pb-30 position-relative">
                                 <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                     srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                                <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
-                                    <div class="row">
-
-
-                                        <div class="col-12 ">
-
-
-                                            <div class="basic-event-one-main-bdt">
-
-                                                <div class="basic-event-one-main-insider-bdt">
+                                <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">           
+        
+                                    <div class="basic-event-one-main-bdt">
+                                        <div class="basic-event-one-main-insider-bdt">
                                                     <div>
                                                         <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
                                                             alt="" class="img-fluid ex-one-img w-100">
@@ -213,15 +220,9 @@
                                                             </div>
                                                         @endif
                                                     </div>
-                                                </div>
-                                            </div>
-
-
-
                                         </div>
-
-
                                     </div>
+
                                 </div>
                             </div>
 

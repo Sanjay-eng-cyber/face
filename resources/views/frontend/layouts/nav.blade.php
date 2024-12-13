@@ -2,7 +2,7 @@
     <img src="{{asset('frontend/images/index/index-new/tpzigzag.svg')}}" alt="" class="img-fluid tpzigzag-img" srcset="" >
     <img src="{{asset('frontend/images/index/index-new/halfarrowt.svg')}}" alt="" class="img-fluid halfarrowt-img" srcset="" >
     <img src="{{ asset('frontend/images/index/index-new/blurhero.svg') }}" alt="Blurred background hero image"
-    class="img-fluid blurhero-img d-none d-sm-block">
+    class="img-fluid blurhero-img">
 
     <img src="{{ asset('frontend/images/basic-event-one/navsmimg.svg') }}" alt="Blurred background hero image"
     class="img-fluid navsmimg">
