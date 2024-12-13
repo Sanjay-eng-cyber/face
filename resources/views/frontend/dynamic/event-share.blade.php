@@ -64,7 +64,7 @@
 
         @media screen and (max-width: 576px) {
             .step-three {
-                padding-bottom: 102px;
+                padding-bottom: 55px;
             }
 
             .step-two {
