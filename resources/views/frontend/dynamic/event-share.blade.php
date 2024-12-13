@@ -2,6 +2,8 @@
 @section('title')
 @section('cdn')
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/fancybox-min.css') }}" />
+
     <style>
         .halfarrowt-img {
             display: none;
@@ -134,7 +136,7 @@
                                     <div class="col-12 ">
 
 
-                                        <div class="basic-event-one-main-bdt">
+                                        <div class="basic-event-one-main-bdt text-white">
 
                                             <div class="basic-event-one-main-insider-bdt">
                                                 <div>
@@ -202,7 +204,7 @@
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
 
-                                <div class="basic-event-one-main-bdt">
+                                <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
                                             <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
@@ -457,7 +459,11 @@
                         <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                             <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                 :data-index="index">
-                                <a :src="'/storage/' + img.image_url" data-fancybox="gallery" data-caption="Image 1">
+                                {{-- <a :src="'/storage/' + img.image_url" data-fancybox="gallery" data-caption="Image 1">
+                                    <img :src="'/storage/' + img.image_url" alt="Image 1"
+                                        class="gallery-img img-fluid rounded-3">
+                                </a> --}}
+                                <a :src="'/storage/' + img.image_url"  data-caption="Image 1">
                                     <img :src="'/storage/' + img.image_url" alt="Image 1"
                                         class="gallery-img img-fluid rounded-3">
                                 </a>
@@ -490,26 +496,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
-
+    <script src="{{asset('frontend/js/fancybox-min.js')}}"></script>
     <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
 
-    <script>
-        $('[data-fancybox="gallery"]').fancybox({
-            buttons: [
-                "slideShow",
-                "download",
-                "thumbs",
-                "zoom",
-                "fullScreen",
-                "share", // Make sure "share" is included
-                "close"
-            ],
-            loop: false,
-            protect: true,
-
-        });
-    </script>
-
+ 
 
     <script>
         const {
@@ -534,6 +524,21 @@
                 }
             },
             methods: {
+            //     initializeFancybox() {
+            //     this.$nextTick(() => {
+            //         Fancybox.bind('[data-fancybox="gallery"]', {
+            //             buttons: [
+            //                 "zoom",
+            //                 "slideShow",
+            //                 "thumbs",
+            //                 "download",
+            //                 "close"
+            //             ],
+            //             loop: true,
+            //             protect: true
+            //         });
+            //     });
+            // },
                 handleInput(index) {
                     if (this.pinValues[index].length === 1 && index < this.pinValues.length - 1) {
                         this.focusInput(index + 1);
@@ -716,6 +721,8 @@
                             });
                         });
                 }, 2000),
+              
+             
                 loadMoreMatchedPhotos() {
                     console.log(this.matchedImages);
                     console.log(this.imagesPageCount);
@@ -725,9 +732,32 @@
                     }
                     this.fetchMatchedImages();
                 }
+            },
+
+            mounted() {
+                this.initializeFancybox();
             }
+
         }).mount('#mainDiv')
     </script>
+
+    {{-- <script>
+        $('[data-fancybox="gallery"]').fancybox({
+            buttons: [
+                "slideShow",
+                "download",
+                "thumbs",
+                "zoom",
+                "fullScreen",
+                "share", // Make sure "share" is included
+                "close"
+            ],
+            loop: false,
+            protect: true,
+
+        });
+    </script> --}}
+
 
 @endsection
 

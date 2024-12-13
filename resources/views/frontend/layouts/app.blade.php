@@ -36,7 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
-    <script src="{{asset('frontend/js/fancybox-min.js')}}"></script>
+  
 
   
     @yield('js')
