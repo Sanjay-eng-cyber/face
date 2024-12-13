@@ -421,6 +421,7 @@ body {
     margin-top: 0px;
     min-height: 697px;
     object-fit: cover;
+    display: block;
 
 }
 
@@ -1931,6 +1932,17 @@ grid-template-columns: 42.4% 1% 56.4%;
         width: 220px;
     }
 }
+.main-div{
+    background-image: url(/frontend/images/index/index-new/blurhero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(23px);
+    width: 98%;
+    margin: auto;
+}
+/* .sub-maindiv{
+    backdrop-filter: blur(23px);
+} */
 
 @media screen and (max-width:1400px) {
     .main-large-slider .slick-slide.slick-current{
