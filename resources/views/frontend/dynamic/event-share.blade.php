@@ -431,7 +431,7 @@
                                                 <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
                                                     alt="" class="img-fluid ex-one-img-new rounded-3">
                                             </div>
-                                            <div>
+                                            <div class="d-flex flex-column justify-content-center">
                                                 <div class="eventanddatespit ">
                                                     <div class="h5 fw-600 mb-0 text-white bx-twoeventname">Business
                                                         event</div>
@@ -461,7 +461,7 @@
                                 <a :src="'/storage/' + img.image_url" 
                                 :data-download-src="'/storage/' + img.image_url"
                                 data-fancybox="gallery" data-caption="Image 1">
-                                    <img :src="'/storage/' + img.image_url" alt="Image 1"
+                                    <img :src="'/storage/' + img.image_url" alt=""
                                         class="gallery-img img-fluid rounded-3">
                                 </a>
                              
