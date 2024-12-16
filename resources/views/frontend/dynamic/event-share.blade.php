@@ -2,7 +2,6 @@
 @section('title')
 @section('cdn')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('frontend/css/fancybox-min.css') }}" />
 
     <style>
         .halfarrowt-img {
@@ -459,14 +458,13 @@
                         <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                             <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                 :data-index="index">
-                                {{-- <a :src="'/storage/' + img.image_url" data-fancybox="gallery" data-caption="Image 1">
-                                    <img :src="'/storage/' + img.image_url" alt="Image 1"
-                                        class="gallery-img img-fluid rounded-3">
-                                </a> --}}
-                                <a :src="'/storage/' + img.image_url"  data-caption="Image 1">
+                                <a :src="'/storage/' + img.image_url" 
+                                :data-download-src="'/storage/' + img.image_url"
+                                data-fancybox="gallery" data-caption="Image 1">
                                     <img :src="'/storage/' + img.image_url" alt="Image 1"
                                         class="gallery-img img-fluid rounded-3">
                                 </a>
+                             
                             </div>
                         </div>
 
@@ -496,8 +494,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
-    <script src="{{asset('frontend/js/fancybox-min.js')}}"></script>
-    <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
 
  
 
@@ -734,29 +730,32 @@
                 }
             },
 
-            mounted() {
-                this.initializeFancybox();
-            }
+        
 
         }).mount('#mainDiv')
     </script>
 
-    {{-- <script>
-        $('[data-fancybox="gallery"]').fancybox({
-            buttons: [
-                "slideShow",
-                "download",
-                "thumbs",
-                "zoom",
-                "fullScreen",
-                "share", // Make sure "share" is included
-                "close"
-            ],
+<script>
+     Fancybox.bind("[data-fancybox='gallery']", {
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: [
+                        "zoomIn",
+                    "zoomOut",
+                    "toggle1to1",
+                    "rotateCCW",
+                    "rotateCW",
+                    "flipX",
+                    "flipY",
+                    ],
+                    right: ["slideshow", "download", "thumbs", "close"]
+                },
+            },
             loop: false,
             protect: true,
-
         });
-    </script> --}}
+</script>
 
 
 @endsection

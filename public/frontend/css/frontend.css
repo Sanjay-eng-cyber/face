@@ -4179,3 +4179,16 @@ position: relative;
     object-fit: contain;
   }
 
+  .fancybox__container{
+    z-index: 99999 !important;
+  }
+
+
+
+  .fancybox-button.download-button {
+    background: red !important;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
