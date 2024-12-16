@@ -64,6 +64,9 @@
 
 
         @media screen and (max-width: 576px) {
+            .custom-ctnrfluid{
+                margin-top: 7px;
+            }
             .step-three {
                 padding-bottom: 55px;
             }
@@ -743,11 +746,7 @@
                     middle: [
                         "zoomIn",
                     "zoomOut",
-                    "toggle1to1",
-                    "rotateCCW",
-                    "rotateCW",
-                    "flipX",
-                    "flipY",
+                  
                     ],
                     right: ["slideshow", "download", "thumbs", "close"]
                 },

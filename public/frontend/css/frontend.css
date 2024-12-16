@@ -3155,7 +3155,7 @@ grid-template-columns: 42.4% 1% 56.4%;
         font-weight: 500;
         min-height: 37px;
         position: absolute;
-        bottom: 100px;
+        bottom: 22px;
     }
     .upload-section button.guest-uploader{
         padding: 8px 9px;
