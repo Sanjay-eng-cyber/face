@@ -51,16 +51,6 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
-                                        name="watermark_image">
-                                    @if ($errors->has('watermark_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="start_date" value="{{ old('start_date') }}">
@@ -198,6 +188,49 @@
                                     @endif
                                 </div>
 
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Is Watermark Required :</label><br>
+                                    <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
+                                    value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
+                                    <label for="is_watermark_requiredYes">Yes</label>
+                                    <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
+                                    value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
+                                    <label for="is_watermark_requiredNo">No</label>
+
+                                    @if ($errors->has('is_watermark_required'))
+                                    <div class="text-danger" role="alert">
+                                        {{ $errors->first('is_watermark_required') }}
+                                    </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    name="watermark_image">
+                                    @if ($errors->has('watermark_image'))
+                                    <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
+                                    </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Visibility :</label><br>
+                                    <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                    @if (old('visibility') == '1') {{ 'checked' }} @endif>
+                                    <label for="visibilityYes">Yes</label>
+                                    <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                    @if (old('visibility') == '0') {{ 'checked' }} @endif>
+                                    <label for="visibilityNo">No</label>
+
+                                    @if ($errors->has('visibility'))
+                                    <div class="text-danger" role="alert">
+                                        {{ $errors->first('visibility') }}
+                                    </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Guest Images Upload :</label><br>
                                     <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
@@ -210,37 +243,6 @@
                                     @if ($errors->has('guest_images_upload'))
                                         <div class="text-danger" role="alert">
                                             {{ $errors->first('guest_images_upload') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Is Watermark Required :</label><br>
-                                    <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
-                                        value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
-                                    <label for="is_watermark_requiredYes">Yes</label>
-                                    <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
-                                        value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
-                                    <label for="is_watermark_requiredNo">No</label>
-
-                                    @if ($errors->has('is_watermark_required'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('is_watermark_required') }}
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Visibility :</label><br>
-                                    <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                        @if (old('visibility') == '1') {{ 'checked' }} @endif>
-                                    <label for="visibilityYes">Yes</label>
-                                    <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                        @if (old('visibility') == '0') {{ 'checked' }} @endif>
-                                    <label for="visibilityNo">No</label>
-
-                                    @if ($errors->has('visibility'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('visibility') }}
                                         </div>
                                     @endif
                                 </div>

@@ -54,20 +54,6 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
-                                        name="watermark_image">
-                                    <div id="lightgallery_two" class="text-end">
-                                        <a
-                                            href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}">View</a>
-                                    </div>
-                                    @if ($errors->has('watermark_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="start_date"
@@ -260,31 +246,6 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Guest Images Upload :</label><br>
-
-                                    @if (old('guest_images_upload'))
-                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
-                                            value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadYes">Yes</label>
-                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
-                                            value="0" @if (old('guest_images_upload') == '0') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadNo">No</label>
-                                    @else
-                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
-                                            value="1" @if ($event->guest_images_upload == '1') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadYes">Yes</label>
-                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
-                                            value="0" @if ($event->guest_images_upload == '0') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('guest_images_upload'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('guest_images_upload') }}
-                                        </div>
-                                    @endif
-                                </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Is Watermark Required :</label><br>
@@ -313,6 +274,22 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                        name="watermark_image">
+                                    @if ($event->watermark_image)
+                                        <div id="lightgallery_two" class="text-end">
+                                            <a
+                                                href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}">View</a>
+                                        </div>
+                                    @endif
+                                    @if ($errors->has('watermark_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Visibility :</label><br>
 
                                     @if (old('visibility'))
@@ -334,6 +311,32 @@
                                     @if ($errors->has('visibility'))
                                         <div class="text-danger" role="alert">
                                             {{ $errors->first('visibility') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="descriptions">Guest Images Upload :</label><br>
+
+                                    @if (old('guest_images_upload'))
+                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
+                                            value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadYes">Yes</label>
+                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
+                                            value="0" @if (old('guest_images_upload') == '0') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadNo">No</label>
+                                    @else
+                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
+                                            value="1" @if ($event->guest_images_upload == '1') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadYes">Yes</label>
+                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
+                                            value="0" @if ($event->guest_images_upload == '0') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('guest_images_upload'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('guest_images_upload') }}
                                         </div>
                                     @endif
                                 </div>

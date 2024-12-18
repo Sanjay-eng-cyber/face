@@ -120,7 +120,6 @@ class EventController extends Controller
         }
 
         $watermark_image = request()->file('watermark_image');
-        $manager = ImageManager::gd();
         if ($watermark_image) {
             $filename = date('Ymd-his') . "." . uniqid() . "." . $watermark_image->clientExtension();
             $destinationPath = public_path("storage/images/events/watermark_image/");
@@ -189,10 +188,10 @@ class EventController extends Controller
         // Create a new Event instance
         $event = Event::findOrFail($id);
         $cover_image = request()->file('cover_image');
+        $manager = ImageManager::gd();
         if ($cover_image) {
             $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
             $destinationPath = public_path("storage/images/events/");
-            $manager = ImageManager::gd();
             $image = $manager->read($cover_image->getRealPath());
             optional(Storage::disk('public')->delete('images/events/' . $event->cover_image));
             $image->save($destinationPath . '/' . $filename, 90);
