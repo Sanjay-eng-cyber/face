@@ -62,7 +62,7 @@ class CategoryController extends Controller
     {
         $events = Event::pluck('id')->toArray();
         $request->validate([
-            'name' => 'required|string|min:3|max:30',
+            'name' => 'required|string|min:3|max:40',
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
@@ -113,7 +113,7 @@ class CategoryController extends Controller
         // Validate the request data
         $events = Event::pluck('id')->toArray();
         $request->validate([
-            'name' => 'required|string|min:3|max:30',
+            'name' => 'required|string|min:3|max:40',
             'event_id' => ['required', Rule::in($events)],
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',

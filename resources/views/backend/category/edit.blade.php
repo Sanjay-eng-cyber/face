@@ -33,7 +33,7 @@
                             <div class="form-group mb-3 row">
 
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Event</label>
+                                    <label for="formGroupExampleInput" class="">Event*</label>
                                     <select class="form-control" name="event_id" required>
                                         <option value="">Select Any</option>
                                         @foreach ($events as $event)
@@ -56,7 +56,7 @@
                                 <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Name" minlength="3" maxlength="30" required name="name"
+                                        placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
                                         value="{{ old('name') ?? $category->name }}">
                                     @if ($errors->has('name'))
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
@@ -64,13 +64,15 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Cover Image*</label>
+                                    <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="cover_image">
-                                    <div id="lightgallery" class="text-end">
-                                        <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
-                                            target="_blank">View</a>
-                                    </div>
+                                    @if ($category->cover_image)
+                                        <div id="lightgallery" class="text-end">
+                                            <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
+                                                target="_blank">View</a>
+                                        </div>
+                                    @endif
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
                                         </div>
@@ -78,7 +80,7 @@
                                 </div>
 
                                 <div class="col-6  mb-3">
-                                    <label for="descriptions">Sharing :</label><br>
+                                    <label for="descriptions">Sharing* :</label><br>
                                     @if (old('sharing'))
                                         <input type="radio" id="sharingYes" name="sharing" value="1"
                                             @if (old('sharing') == '1') {{ 'checked' }} @endif required>
@@ -102,7 +104,7 @@
                                 </div>
 
                                 <div class="col-6 mb-3">
-                                    <label for="descriptions">Visibility :</label><br>
+                                    <label for="descriptions">Visibility* :</label><br>
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"
                                             @if (old('visibility') == '1') {{ 'checked' }} @endif required>
