@@ -59,7 +59,7 @@ class NewPasswordController extends Controller
         // If the password was successfully reset, we will redirect the user back to
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
-        $redirectRoute = auth()->guard('admin')->check() ? 'cms.login' : 'frontend.login';
+        $redirectRoute = auth()->guard('admin')->check() ? 'frontend.login' : 'cms.login';
         return $status == $this->broker()::PASSWORD_RESET
             ? redirect()->route($redirectRoute)->with('status', __($status))
             : back()->withInput($request->only('email'))
