@@ -23,14 +23,24 @@
                 <div class="col-12 col-lg-7 col-md-10 widget box box-shadow ">
                     <div class="statbox widget box box-shadow">
                         <h4>Change Password</h4>
-                        <form class="mt-3" method="POST" action="{{ route('cms.password.submit',$user->id) }}"
+                        <form class="mt-3" method="POST" action="{{ route('cms.password.submit', $user->id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row mb-3">
                                 <div class="col-md-12 mb-2 col-12">
+                                    <label for="formGroupExampleInput">Name</label>
+                                    <input id="name" name="name" type="name" placeholder="Name"
+                                        value="{{ old('name', $user->name) }}" class="form-control" minlength="3"
+                                        maxlength="50" required>
+                                    @if ($errors->has('name'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-md-12 mb-2 col-12">
                                     <label for="formGroupExampleInput">Email</label>
                                     <input id="email" name="email" type="email" placeholder="Email"
-                                    value="{{ old('email', $user->email) }}" class="form-control" readonly required>
+                                        value="{{ old('email', $user->email) }}" class="form-control" minlength="6"
+                                        maxlength="255" required>
                                     @if ($errors->has('email'))
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
@@ -43,9 +53,8 @@
                                 </div>
                                 <div class="col-md-12 mb-2 col-12">
                                     <label for="formGroupExampleInput">Confirm Password</label>
-                                    <input id="password2" name="password_confirmation" type="password"
-                                        class="form-control" placeholder="Confirm Password" required minlength="8"
-                                        maxlength="16">
+                                    <input id="password2" name="password_confirmation" type="password" class="form-control"
+                                        placeholder="Confirm Password" required minlength="8" maxlength="16">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">{{ $errors->first('password') }}
                                         </div>
@@ -73,7 +82,7 @@
 @endsection
 
 @section('js')
-<script>
-    $("html,body").css("overflow-x","hidden");
-</script>
+    <script>
+        $("html,body").css("overflow-x", "hidden");
+    </script>
 @endsection

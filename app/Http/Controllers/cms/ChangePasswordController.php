@@ -19,11 +19,13 @@ class ChangePasswordController extends Controller
     {
         $validate = $request->validate([
             'email' => ['required', 'string', 'email', 'min:6', 'max:255', "unique:cms_users,email,$id"],
+            'name' => ['required', 'string', 'min:3', 'max:50'],
             'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
         ]);
 
         $password = Auth::guard('admin')->user();
         $password->email = $request->email;
+        $password->name = $request->name;
         $password->password = Hash::make($request->password);
         if ($password->save()) {
             return redirect()->back()->with([
