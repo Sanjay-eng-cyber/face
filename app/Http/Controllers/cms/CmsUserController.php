@@ -35,6 +35,7 @@ class CmsUserController extends Controller
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'required|digits:10|numeric',
+            'plan' => 'nullable|in:1,2',
             'portfolio_website' => [
                 'nullable',
                 'string',
@@ -103,6 +104,20 @@ class CmsUserController extends Controller
         $cmsUser->youtube_url = $request->youtube_url;
         $cmsUser->instagram_url = $request->instagram_url;
         $cmsUser->twitter_url = $request->twitter_url;
+
+        if ($request->plan == 1) {
+            $cmsUser->max_image_size = 5;
+            $cmsUser->max_images_count = 100;
+            $cmsUser->max_face_search = 5;
+            $cmsUser->max_storage_limit = 50;
+            $cmsUser->max_events = 1;
+        } elseif ($request->plan == 2) {
+            $cmsUser->max_image_size = 10;
+            $cmsUser->max_images_count = 10000;
+            $cmsUser->max_face_search = 25;
+            $cmsUser->max_storage_limit = 10000;
+            $cmsUser->max_events = 10;
+        }
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [
@@ -134,6 +149,7 @@ class CmsUserController extends Controller
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'nullable|digits:10|numeric',
+            'plan' => 'nullable|in:1,2',
             'portfolio_website' => [
                 'nullable',
                 'string',
@@ -202,6 +218,20 @@ class CmsUserController extends Controller
         $cmsUser->youtube_url = $request->youtube_url;
         $cmsUser->instagram_url = $request->instagram_url;
         $cmsUser->twitter_url = $request->twitter_url;
+
+        if ($request->plan == 1) {
+            $cmsUser->max_image_size = 5;
+            $cmsUser->max_images_count = 100;
+            $cmsUser->max_face_search = 5;
+            $cmsUser->max_storage_limit = 50;
+            $cmsUser->max_events = 1;
+        } elseif ($request->plan == 2) {
+            $cmsUser->max_image_size = 10;
+            $cmsUser->max_images_count = 10000;
+            $cmsUser->max_face_search = 25;
+            $cmsUser->max_storage_limit = 10000;
+            $cmsUser->max_events = 10;
+        }
         if ($cmsUser->save()) {
             return redirect()->route('backend.cms-user.index')->with(
                 [

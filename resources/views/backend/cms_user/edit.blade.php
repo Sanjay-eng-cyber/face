@@ -57,6 +57,22 @@
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Plan</label>
+                                    <select name="plan" class="form-control">
+                                        <Option value="">
+                                            Select Any
+                                        </Option>
+                                        <option value="1" @if (old('plan') == 1) {{ 'selected' }} @endif>
+                                            Plan 1</option>
+                                        <option value="2" @if (old('plan') == 2) {{ 'selected' }} @endif>
+                                            Plan 2
+                                        </option>
+                                    </select>
+                                    @if ($errors->has('plan'))
+                                        <div class="text-danger" plan="alert">{{ $errors->first('role') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Email</label>
                                     <input type="email" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Email" minlength="5" maxlength="40" required name="email"

@@ -47,6 +47,7 @@
                                                 <p class="label-title">{{ $cmsUser->role }}</p>
                                             </div>
                                         </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
@@ -117,6 +118,23 @@
                                                 <p class="label-title">{{ $cmsUser->twitter_url ?? '---' }}</p>
                                             </div>
                                         </div>
+                                        @if ($cmsUser->max_events)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">{{ $cmsUser->max_events == 1 ? 'Plan 1' : 'Plan 2' }}</label><br>
+                                                    <p class="label-title">Max Events : {{ $cmsUser->max_events }}</p>
+                                                    <p class="label-title">Max Image Size : {{ $cmsUser->max_image_size }}
+                                                    </p>
+                                                    <p class="label-title">Max Image Count :
+                                                        {{ $cmsUser->max_images_count }}</p>
+                                                    <p class="label-title">Max Face Search :
+                                                        {{ $cmsUser->max_face_search }}</p>
+                                                    <p class="label-title">Max Storage Limit :
+                                                        {{ $cmsUser->max_storage_limit }}</p>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
@@ -124,6 +142,7 @@
                                                 <p class="label-title">{!! $cmsUser->bio ?? '---' !!}</p>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
