@@ -27,6 +27,11 @@ return new class extends Migration
             $table->string('youtube_url')->nullable();
             $table->string('instagram_url')->nullable();
             $table->string('twitter_url')->nullable();
+            $table->string('max_events')->nullable();
+            $table->string('max_image_size')->nullable();
+            $table->string('max_images_count')->nullable();
+            $table->string('max_face_search')->nullable();
+            $table->string('max_storage_limit')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
