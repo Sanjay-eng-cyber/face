@@ -61,7 +61,6 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area">
                     <div class="row layout-top-spacing">
-                        @cmsUserRole('admin')
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
@@ -126,7 +125,6 @@
                                     </div>
                                 </div>
                             </div>
-                        @endcmsUserRole
 
                         @cmsUserRole('super-admin')
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">

@@ -343,7 +343,7 @@
                           </div>
                       </a>
                   </li> --}}
-                  @cmsUserRole('admin')
+                  @cmsUserRole(['admin','super-admin'])
                       <li class="menu">
                           <a href="{{ route('backend.event.index') }}"
                               aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"

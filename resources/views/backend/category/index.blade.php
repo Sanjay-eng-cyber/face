@@ -41,13 +41,14 @@
                                 </div>
                             @endif
                         </div>
-                        <div
-                            class="align-items-center col-xl-3 col-lg-4  d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.category.create') }}" name="txt"
-                                class="btn btn-primary mt-2 ml-3 ">
-                                Add Category
-                            </a>
-                        </div>
+                        @cmsUserRole('admin')
+                            <div class="align-items-center col-xl-3 col-lg-4  d-flex justify-content-end row mb-2">
+                                <a href="{{ route('backend.category.create') }}" name="txt"
+                                    class="btn btn-primary mt-2 ml-3 ">
+                                    Add Category
+                                </a>
+                            </div>
+                        @endcmsUserRole
                     </div>
                 </div>
             </div>
@@ -88,17 +89,19 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.category.show', $category->id) }}">View</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
-                                                            Images</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.upload-image-show', $category->id) }}">View
-                                                            Uploaded Images</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.delete', $category->id) }}"
-                                                            onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
+                                                        @cmsUserRole('admin')
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
+                                                                Images</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.category.upload-image-show', $category->id) }}">View
+                                                                Uploaded Images</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.category.delete', $category->id) }}"
+                                                                onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
+                                                        @endcmsUserRole
                                                     </div>
                                                 </div>
 

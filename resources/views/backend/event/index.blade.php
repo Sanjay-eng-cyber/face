@@ -43,12 +43,13 @@
                                 @endif
                             </div>
                         </div>
-                        <div
-                            class="align-items-center col-lg-3 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
-                                Add Event
-                            </a>
-                        </div>
+                        @cmsUserRole('admin')
+                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
+                                    Add Event
+                                </a>
+                            </div>
+                        @endcmsUserRole
                     </div>
                 </div>
             </div>
@@ -89,16 +90,18 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.event.show', $event->id) }}">View</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('share.event', $event->id) }}">Share Event</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.event.edit', $event->id) }}">Edit</a>
-                                                        {{-- <a class="dropdown-item"
+                                                        @cmsUserRole('admin')
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('share.event', $event->id) }}">Share Event</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.event.edit', $event->id) }}">Edit</a>
+                                                            {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.event.gallery', $event->id) }}">Add
                                                             Gallery</a> --}}
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.event.delete', $event->id) }}"
-                                                            onclick="return confirm('Are you sure you want delete this event?');">Delete</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.event.delete', $event->id) }}"
+                                                                onclick="return confirm('Are you sure you want delete this event?');">Delete</a>
+                                                        @endcmsUserRole
                                                     </div>
                                                 </div>
 

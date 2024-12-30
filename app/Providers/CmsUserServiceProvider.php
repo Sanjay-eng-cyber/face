@@ -21,8 +21,12 @@ class CmsUserServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::if('cmsUserRole', function ($role) {
-            return Auth::check() && auth()->user()->role === $role;
+        Blade::if('cmsUserRole', function ($roles) {
+            if (Auth::check()) {
+                $userRole = auth()->user()->role;
+                return in_array($userRole, (array) $roles, true);
+            }
+            return false;
         });
     }
 }

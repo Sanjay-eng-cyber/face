@@ -48,8 +48,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         // Route::group(["middleware" => "cms_user_role:admin"], function () {
         Route::group(["middleware" => "cms_user_role:admin"], function () {
-            Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
-            Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
+            // Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
+            // Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
             Route::get('/event/create', [EventController::class, 'create'])->name('backend.event.create');
             Route::post('/event/store', [EventController::class, 'store'])->name('backend.event.store');
             Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('backend.event.edit');
@@ -68,8 +68,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
 
-            Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.category.index');
-            Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
+            // Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.category.index');
+            // Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
             Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
             Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
             Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('backend.category.edit');
@@ -86,6 +86,13 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::post('/upload/store', [UploadController::class, 'store'])->name('backend.upload.store');
             Route::get('/upload/{eventid}', [UploadController::class, 'show'])->name('backend.upload.show');
         });
+
+        // Route::group(["middleware" => "cms_user_role:admin,super-admin"], function () {
+            Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
+            Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
+            Route::get('/categories/', [CategoryController::class, 'index'])->name('backend.category.index');
+            Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
+        // });
 
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {
             Route::get('/cms-users/', [CmsUserController::class, 'index'])->name('backend.cms-user.index');
