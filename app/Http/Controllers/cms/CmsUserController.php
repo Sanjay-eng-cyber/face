@@ -34,7 +34,7 @@ class CmsUserController extends Controller
             'password' => 'required|string|min:8|max:16',
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
-            'phone' => 'nullable|digits:10|numeric',
+            'phone' => 'required|digits:10|numeric',
             'portfolio_website' => [
                 'nullable',
                 'string',
