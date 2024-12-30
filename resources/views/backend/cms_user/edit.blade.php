@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Role</label>
-                                    <select name="role" class="form-control" required>
+                                    <select name="role" class="form-control" id="role-select" required>
                                         <Option value="">
                                             Select Any
                                         </Option>
@@ -54,22 +54,6 @@
                                     </select>
                                     @if ($errors->has('role'))
                                         <div class="text-danger" role="alert">{{ $errors->first('role') }}</div>
-                                    @endif
-                                </div>
-                                <div class="col-xl-6 col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="">Plan</label>
-                                    <select name="plan" class="form-control">
-                                        <Option value="">
-                                            Select Any
-                                        </Option>
-                                        <option value="1" @if (old('plan') == 1) {{ 'selected' }} @endif>
-                                            Plan 1</option>
-                                        <option value="2" @if (old('plan') == 2) {{ 'selected' }} @endif>
-                                            Plan 2
-                                        </option>
-                                    </select>
-                                    @if ($errors->has('plan'))
-                                        <div class="text-danger" plan="alert">{{ $errors->first('role') }}</div>
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-12 mb-3">
@@ -90,6 +74,26 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                                     @endif
                                 </div>
+                            </div>
+                            <div class="form-group mb-3 row" id="additional-fields">
+                                <div class="col-xl-6 col-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Plan</label>
+                                    <select name="plan" class="form-control">
+                                        <Option value="">
+                                            Select Any
+                                        </Option>
+                                        <option value="1"
+                                            @if (old('plan') == 1) {{ 'selected' }} @endif>
+                                            Plan 1</option>
+                                        <option value="2"
+                                            @if (old('plan') == 2) {{ 'selected' }} @endif>
+                                            Plan 2
+                                        </option>
+                                    </select>
+                                    @if ($errors->has('plan'))
+                                        <div class="text-danger" plan="alert">{{ $errors->first('role') }}</div>
+                                    @endif
+                                </div>
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Custom Domain Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
@@ -97,7 +101,8 @@
                                         name="custom_domain_name"
                                         value="{{ old('custom_domain_name') ?? $cmsUser->custom_domain_name }}">
                                     @if ($errors->has('custom_domain_name'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('custom_domain_name') }}
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('custom_domain_name') }}
                                         </div>
                                     @endif
                                 </div>
@@ -118,7 +123,8 @@
                                         name="portfolio_website"
                                         value="{{ old('portfolio_website') ?? $cmsUser->portfolio_website }}">
                                     @if ($errors->has('portfolio_website'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('portfolio_website') }}
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('portfolio_website') }}
                                         </div>
                                     @endif
                                 </div>
@@ -272,5 +278,25 @@
         //     tags: true,
         //     placeholder: "Select / Enter Tags",
         // });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const roleSelect = document.getElementById('role-select');
+            const additionalFields = document.getElementById('additional-fields');
+
+            function toggleFields() {
+                if (roleSelect.value === 'super-admin') {
+                    additionalFields.style.display = 'none';
+                } else {
+                    additionalFields.style.display = 'block';
+                }
+            }
+
+            // Initialize toggle based on old value or default
+            toggleFields();
+
+            // Add change event listener
+            roleSelect.addEventListener('change', toggleFields);
+        });
     </script>
 @endsection
