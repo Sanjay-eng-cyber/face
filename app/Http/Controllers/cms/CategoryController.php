@@ -186,7 +186,6 @@ class CategoryController extends Controller
 
     public function uploadImages(Request $request, $eventSlug, $categorySlug)
     {
-        // dd();
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
 
@@ -225,6 +224,7 @@ class CategoryController extends Controller
                 $gallery_image->image_url = "images/galleries/{$event->slug}/{$category->slug}/{$filename}";
                 $gallery_image->face_encoding = $face_encoding;
                 $gallery_image->face_locations = $face_locations;
+                $gallery_image->file_size = $fileWithExt->getSize();
                 if ($gallery_image->save()) {
                     return response()->json([
                         'status' => true,

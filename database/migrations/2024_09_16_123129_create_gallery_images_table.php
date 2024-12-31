@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('image_url')->nullable();
             $table->longText('face_encoding')->nullable();
             $table->longText('face_locations')->nullable();
+            $table->unsignedBigInteger('file_size')->nullable();
             $table->timestamps();
         });
     }
