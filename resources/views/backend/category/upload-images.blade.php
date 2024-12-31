@@ -291,6 +291,10 @@
 
                                                     </form>
                                                 </div>
+                                                @if ($errors->has('file'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('file') }}
+                                                    </div>
+                                                @endif
                                             </section>
 
                                             <div id="preview-template" style="display: none;">
@@ -359,7 +363,7 @@
             url: `/upload/${eventSlug}/${categorySlug}`,
             autoProcessQueue: false, // Prevent automatic upload
             maxFiles: 10000, // Set a high limit
-            maxFilesize: 4, // Max file size (in MB)
+            maxFilesize: 10, // Max file size (in MB)
             addRemoveLinks: true,
             acceptedFiles: ".jpeg, .jpg, .png",
             parallelUploads: 1, // Only one upload at a time
@@ -504,8 +508,8 @@
 
     <style>
         /* .dropzone .dz-preview.dz-error:hover .dz-error-message {
-                                width: 100% !important;
-                            } */
+                                    width: 100% !important;
+                                } */
     </style>
 
 @endsection
