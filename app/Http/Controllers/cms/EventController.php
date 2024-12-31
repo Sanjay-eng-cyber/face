@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use App\Models\GalleryImage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
@@ -73,8 +74,8 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
-        // dd($event);
-        return view('backend.event.show', compact('event'));
+        $galleryImagesCount = GalleryImage::count();
+        return view('backend.event.show', compact('event','galleryImagesCount'));
     }
 
     public function create()

@@ -210,6 +210,15 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Uploaded Images Count</label><br>
+                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
+                                                <p class="text-white badge badge-primary">
+                                                    {{ $galleryImagesCount ?? '----' }}</p>
+                                            </div>
+                                        </div>
                                         @if (session('shared_url'))
                                             <div class="col-md-4">
                                                 <div class="form-group">

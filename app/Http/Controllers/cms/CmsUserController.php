@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cms;
 
 use App\Models\CmsUser;
+use App\Models\GalleryImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,10 @@ class CmsUserController extends Controller
     public function show($id)
     {
         $cmsUser = CmsUser::where('id', '!=', auth()->user()->id)->findOrFail($id);
-        return view('backend.cms_user.show', compact('cmsUser'));
+        $galleryImagesCount = GalleryImage::count();
+        $eventsCount = $cmsUser->events()->count();
+        // dd($eventsCount);
+        return view('backend.cms_user.show', compact('cmsUser','galleryImagesCount','eventsCount'));
     }
 
     public function create()

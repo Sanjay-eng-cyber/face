@@ -11,4 +11,9 @@ use Illuminate\Notifications\Notifiable;
 class CmsUser extends Authenticatable
 {
     use HasFactory, Notifiable;
+
+    function events()
+    {
+        return $this->hasMany('App\Models\Event');
+    }
 }
