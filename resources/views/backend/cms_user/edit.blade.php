@@ -31,7 +31,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="30" required name="name"
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Role</label>
                                     <select name="role" class="form-control" id="role-select" required>
                                         <Option value="">
@@ -56,7 +56,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('role') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Email</label>
                                     <input type="email" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Email" minlength="5" maxlength="40" required name="email"
@@ -65,18 +65,18 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Password</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Password" minlength="8" maxlength="16" required name="password"
+                                        placeholder="Enter Password" minlength="8" maxlength="16" name="password"
                                         value="{{ old('password') }}">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group mb-3 row" id="additional-fields">
-                                <div class="col-xl-6 col-12 mb-3">
+                            <div class="form-group mb-3 row d-none" id="additional-fields">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Plan</label>
                                     <select name="plan" class="form-control">
                                         <Option value="">
@@ -94,7 +94,7 @@
                                         <div class="text-danger" plan="alert">{{ $errors->first('role') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Custom Domain Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Custom Domain Name" minlength="3" maxlength="50"
@@ -106,7 +106,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Phone No.</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Phone No" minlength="10" maxlength="10" name="phone"
@@ -116,7 +116,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Portfolio Website</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Portfolio Website" minlength="3" maxlength="50"
@@ -130,7 +130,7 @@
                                 </div>
 
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Vimeo Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Vimeo Url" minlength="3" maxlength="50" name="vimeo_url"
@@ -141,7 +141,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Linkedin Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Linkedin Url" minlength="3" maxlength="50"
@@ -152,7 +152,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Facebook Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Facebook Url" minlength="3" maxlength="50"
@@ -163,7 +163,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Youtube Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Youtube Url" minlength="3" maxlength="50" name="youtube_url"
@@ -174,7 +174,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Instagram Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Instagram Url" minlength="3" maxlength="50"
@@ -186,7 +186,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Twitter Url</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Twitter Url" minlength="3" maxlength="50" name="twitter_url"
@@ -285,10 +285,10 @@
             const additionalFields = document.getElementById('additional-fields');
 
             function toggleFields() {
-                if (roleSelect.value === 'super-admin') {
-                    additionalFields.style.display = 'none';
+                if (roleSelect.value === 'admin') {
+                    additionalFields.classList.remove("d-none");
                 } else {
-                    additionalFields.style.display = 'block';
+                    additionalFields.classList.add("d-none");
                 }
             }
 

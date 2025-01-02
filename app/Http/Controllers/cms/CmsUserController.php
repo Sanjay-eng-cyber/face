@@ -22,7 +22,7 @@ class CmsUserController extends Controller
         $galleryImagesCount = GalleryImage::count();
         $eventsCount = $cmsUser->events()->count();
         // dd($eventsCount);
-        return view('backend.cms_user.show', compact('cmsUser','galleryImagesCount','eventsCount'));
+        return view('backend.cms_user.show', compact('cmsUser', 'galleryImagesCount', 'eventsCount'));
     }
 
     public function create()
@@ -149,7 +149,7 @@ class CmsUserController extends Controller
         $request->validate([
             'name' => 'required|string|min:3|max:30',
             'email' => 'required|string|email:rfc,dns|min:5|max:40',
-            'password' => 'required|string|min:8|max:16',
+            'password' => 'nullable|string|min:8|max:16',
             'role' => 'required|in:admin,super-admin',
             'custom_domain_name' => 'nullable|string|min:3|max:50',
             'phone' => 'nullable|digits:10|numeric',
@@ -211,7 +211,9 @@ class CmsUserController extends Controller
         $cmsUser->name = $request->name;
         $cmsUser->email = $request->email;
         $cmsUser->role = $request->role;
-        $cmsUser->password = Hash::make($request->password);
+        if ($request->password) {
+            $cmsUser->password = Hash::make($request->password);
+        }
         $cmsUser->custom_domain_name = $request->custom_domain_name;
         $cmsUser->phone = $request->phone;
         $cmsUser->portfolio_website = $request->portfolio_website;
