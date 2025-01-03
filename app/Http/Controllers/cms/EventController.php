@@ -75,7 +75,7 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
         $galleryImagesCount = GalleryImage::count();
-        return view('backend.event.show', compact('event','galleryImagesCount'));
+        return view('backend.event.show', compact('event', 'galleryImagesCount'));
     }
 
     public function create()
@@ -103,7 +103,7 @@ class EventController extends Controller
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
             'guest_images_upload' => 'nullable|in:1,0',
-            'visibility' => 'nullable|in:1,0',
+            'visibility' => 'required|in:1,0',
             'is_watermark_required' => 'nullable|required_with:watermark_image|in:1,0',
             'watermark_image' => 'nullable|required_if:is_watermark_required,1|mimes:jpeg,png,jpg|max:512',
         ]);
@@ -164,7 +164,7 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         // Validate the request data
-        // dd($request->password_protection);
+        // dd($request);
         $request->validate([
             'name' => 'required|string|min:3|max:60',
             'start_date' => 'required|date',
@@ -180,7 +180,7 @@ class EventController extends Controller
             'descriptions' => 'nullable|string|min:3|max:20000',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
             'guest_images_upload' => 'nullable|in:1,0',
-            'visibility' => 'nullable|in:1,0',
+            'visibility' => 'required|in:1,0',
             'is_watermark_required' => 'nullable|required_with:watermark_image|in:1,0',
             'watermark_image' => 'nullable|required_if:is_watermark_required,1|mimes:jpeg,png,jpg|max:512',
 
@@ -238,7 +238,8 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         if ($event->categories()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
-        };
+        }
+
         if ($event->delete() && Storage::disk('public')->delete('images/events/' . $event->cover_image) && Storage::disk('public')->delete('images/events/watermark_image/' . $event->watermark_image)) {
             return redirect()->route('backend.event.index')->with(
                 [
