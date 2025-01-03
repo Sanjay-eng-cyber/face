@@ -62,8 +62,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/event/general-setting', [EventController::class, 'gsetting'])->name('backend.event.gsetting');
 
 
-            Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
-            Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
+            // Route::get('/share-event/{eventid}', 'App\Http\Controllers\cms\ShareEventController@shareEvent')->name('share.event');
+            // Route::post('/share-event/store/{eventid}', 'App\Http\Controllers\cms\ShareEventController@submit')->name('share.event.store');
 
             Route::get('/gallery/index', [GalleryController::class, 'index'])->name('backend.gallery.index');
             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');

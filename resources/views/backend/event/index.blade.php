@@ -92,8 +92,6 @@
                                                             href="{{ route('backend.event.show', $event->id) }}">View</a>
                                                         @cmsUserRole('admin')
                                                             <a class="dropdown-item"
-                                                                href="{{ route('share.event', $event->id) }}">Share Event</a>
-                                                            <a class="dropdown-item"
                                                                 href="{{ route('backend.event.edit', $event->id) }}">Edit</a>
                                                             {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.event.gallery', $event->id) }}">Add
