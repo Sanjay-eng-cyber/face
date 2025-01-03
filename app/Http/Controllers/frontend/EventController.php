@@ -24,6 +24,12 @@ class EventController extends Controller
         //     abort(401);
         // }
         $event = Event::where('slug', $eventSlug)->firstOrFail();
+        if (!$event->visibility) {
+            return redirect()->route('index')->with(toast('Event is not active', 'info'));
+        }
+        if ($event->link_start_date > now() || $event->link_end_date < now()) {
+            return redirect()->route('index')->with(toast('Event is not Active', 'info'));
+        }
         $categories = $event->categories()->latest()->paginate(10);
         // dd($event);
         return view('frontend.dynamic.event-share', compact('event', 'categories'));
