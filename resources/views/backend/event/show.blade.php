@@ -197,41 +197,58 @@
                                                 @endif
                                             </div>
                                         </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                {{-- <label for="degree3" class="cust-title" class="label-title">Share
+                                        @cmsUserRole('admin')
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    {{-- <label for="degree3" class="cust-title" class="label-title">Share
                                                     Event Url</label><br> --}}
-                                                <form method="Post"
-                                                    action="{{ route('backend.event.url', $event->id) }}">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-primary">Generate Event
-                                                        Url</button>
-                                                </form>
+                                                    <form method="Post"
+                                                        action="{{ route('backend.event.url', $event->id) }}">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-primary">Generate Event
+                                                            Url</button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endcmsUserRole
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Uploaded Images Count</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Uploaded
+                                                    Images Count</label><br>
                                                 {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
                                                 <p class="text-white badge badge-primary">
                                                     {{ $galleryImagesCount ?? '----' }}</p>
                                             </div>
                                         </div>
-                                        @if (session('shared_url'))
+                                        {{-- @if (session('shared_url'))
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Event
                                                         Url</label><br>
-                                                    <div class="">
+                                                    <div class="" id="eventUrl">
                                                         {{ session('shared_url') }}
                                                     </div>
                                                 </div>
+                                                <button class="btn btn-secondary mt-2" onclick="copyEventUrl()">Copy Event
+                                                    Share URL</button>
                                             </div>
-                                        @endif
-
-
+                                        @endif --}}
+                                        @cmsUserRole('admin')
+                                            @if (session('shared_url'))
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="degree3" class="cust-title" class="label-title">Event
+                                                            Url</label><br>
+                                                        <div>
+                                                            <input type="text" id="eventUrl" class="form-control"
+                                                                value="{{ session('shared_url') }}" readonly>
+                                                        </div>
+                                                        <button class="btn btn-primary mt-2" onclick="copyEventUrl()">Copy
+                                                            Event Share URL</button>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endcmsUserRole
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -296,6 +313,40 @@
             // });
             // getValues();
         });
+
+        function copyEventUrl() {
+            const eventUrl = document.getElementById("eventUrl");
+
+            if (eventUrl) {
+                // Use the Clipboard API if supported
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(eventUrl.value)
+                        .then(() => alert("Event URL copied: " + eventUrl.value))
+                        .catch(err => {
+                            console.error("Clipboard API failed: ", err);
+                            fallbackCopy(eventUrl);
+                        });
+                } else {
+                    // Fallback for older browsers
+                    fallbackCopy(eventUrl);
+                }
+            } else {
+                alert("Event URL input field not found.");
+            }
+        }
+
+        function fallbackCopy(inputElement) {
+            inputElement.select();
+            inputElement.setSelectionRange(0, 99999); // For mobile devices
+
+            try {
+                document.execCommand("copy");
+                alert("Event URL copied");
+            } catch (err) {
+                console.error("Fallback copy failed: ", err);
+                alert("Failed to copy the Event URL.");
+            }
+        }
     </script>
 @endsection
 <style>
