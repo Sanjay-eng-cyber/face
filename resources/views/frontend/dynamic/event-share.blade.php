@@ -64,9 +64,10 @@
 
 
         @media screen and (max-width: 576px) {
-            .custom-ctnrfluid{
+            .custom-ctnrfluid {
                 margin-top: 7px;
             }
+
             .step-three {
                 padding-bottom: 55px;
             }
@@ -81,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                    background-image: unset;
-                    backdrop-filter: unset;
-                    min-height: unset;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                } */
+                                                background-image: unset;
+                                                backdrop-filter: unset;
+                                                min-height: unset;
+                                                padding-left: 12px;
+                                                padding-right: 12px;
+                                            } */
             .pobdh {
                 height: 0px;
             }
@@ -395,7 +396,9 @@
                                             <div>
                                                 <div class="fw-600 text-white pb-2 uptoptext">Uploaded Photo</div>
                                                 <img :src="userImageData" alt=""
-                                                    class="img-fluid textimg-new rounded-3">
+                                                    class="img-fluid textimg-new rounded-3" v-if="userImageData">
+                                                <img :src="user_image_url" alt=""
+                                                    class="img-fluid textimg-new rounded-3" v-if="user_image_url">
                                             </div>
                                             <div class="details-box-one">
 
@@ -461,13 +464,12 @@
                         <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                             <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                 :data-index="index">
-                                <a :src="'/storage/' + img.image_url" 
-                                :data-download-src="'/storage/' + img.image_url"
-                                data-fancybox="gallery" data-caption="Image 1">
+                                <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
+                                    data-fancybox="gallery" data-caption="Image 1">
                                     <img :src="'/storage/' + img.image_url" alt=""
                                         class="gallery-img img-fluid rounded-3">
                                 </a>
-                             
+
                             </div>
                         </div>
 
@@ -498,7 +500,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
 
- 
+
 
     <script>
         const {
@@ -516,28 +518,39 @@
                     email: '',
                     mobile: '',
                     userImageData: null,
+                    user_image_url: null,
                     user_id: null,
                     image: null,
                     matchedImages: [],
                     imagesPageCount: 1,
                 }
             },
+            mounted() {
+                let userId = localStorage.getItem("user_id");
+                console.log("userId : ", userId);
+                if (userId) {
+                    this.user_id = userId;
+                    this.fetchUserDetails();
+                    // this.fetchMatchedImages();
+                }
+
+            },
             methods: {
-            //     initializeFancybox() {
-            //     this.$nextTick(() => {
-            //         Fancybox.bind('[data-fancybox="gallery"]', {
-            //             buttons: [
-            //                 "zoom",
-            //                 "slideShow",
-            //                 "thumbs",
-            //                 "download",
-            //                 "close"
-            //             ],
-            //             loop: true,
-            //             protect: true
-            //         });
-            //     });
-            // },
+                //     initializeFancybox() {
+                //     this.$nextTick(() => {
+                //         Fancybox.bind('[data-fancybox="gallery"]', {
+                //             buttons: [
+                //                 "zoom",
+                //                 "slideShow",
+                //                 "thumbs",
+                //                 "download",
+                //                 "close"
+                //             ],
+                //             loop: true,
+                //             protect: true
+                //         });
+                //     });
+                // },
                 handleInput(index) {
                     if (this.pinValues[index].length === 1 && index < this.pinValues.length - 1) {
                         this.focusInput(index + 1);
@@ -599,7 +612,7 @@
                         });
                         return;
                     }
-                    console.log(fullPin);
+                    // console.log(fullPin);
                     axios.post("{{ route('frontend.event.user-submit') }}", {
                             eventSlug: '{{ $event->slug }}',
                             pin: fullPin,
@@ -610,8 +623,9 @@
                         })
                         .then((res) => {
                             if (res.data.status) {
-                                this.user_id = res.data.id;
+                                this.user_id = res.data.user_id;
                                 this.image = res.data.image;
+                                localStorage.setItem("user_id", this.user_id);
                                 Snackbar.show({
                                     text: 'User Created Successfully',
                                     pos: 'top-right',
@@ -720,8 +734,6 @@
                             });
                         });
                 }, 2000),
-              
-             
                 loadMoreMatchedPhotos() {
                     console.log(this.matchedImages);
                     console.log(this.imagesPageCount);
@@ -730,23 +742,63 @@
                         this.imagesPageCount += 1;
                     }
                     this.fetchMatchedImages();
+                },
+                fetchUserDetails() {
+                    axios.post("{{ route('frontend.user.details') }}", {
+                            eventSlug: '{{ $event->slug }}',
+                            user_id: this.user_id,
+                        })
+                        .then((res) => {
+                            console.log('fetchMatchedImages : ', res);
+
+                            if (res.data.status) {
+                                this.name = res.data.name;
+                                this.email = res.data.email;
+                                this.mobile_number = res.data.phone;
+                                this.user_image_url = res.data.image_url;
+                                // Snackbar.show({
+                                //     text: 'Matched Images Fetched Successfully',
+                                //     pos: 'top-right',
+                                //     actionTextColor: '#fff',
+                                //     backgroundColor: '#1abc9c'
+                                // });
+                                this.step = 3;
+                                this.fetchMatchedImages();
+                            } else {
+                                Snackbar.show({
+                                    text: res.data.message ?? 'Something Went Wrong',
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            Snackbar.show({
+                                text: "Something Went Wrong",
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                        });
                 }
             },
 
-        
+
 
         }).mount('#mainDiv')
     </script>
 
-<script>
-     Fancybox.bind("[data-fancybox='gallery']", {
+    <script>
+        Fancybox.bind("[data-fancybox='gallery']", {
             Toolbar: {
                 display: {
                     left: ["infobar"],
                     middle: [
                         "zoomIn",
-                    "zoomOut",
-                  
+                        "zoomOut",
+
                     ],
                     right: ["slideshow", "download", "thumbs", "close"]
                 },
@@ -754,7 +806,7 @@
             loop: false,
             protect: true,
         });
-</script>
+    </script>
 
 
 @endsection

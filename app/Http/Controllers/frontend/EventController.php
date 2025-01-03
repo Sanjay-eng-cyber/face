@@ -65,6 +65,9 @@ class EventController extends Controller
 
         $frontendUser = new FrontendUser();
         $frontendUser->event_id = $event->id;
+        $frontendUser->name = $request->name;
+        $frontendUser->email = $request->email;
+        $frontendUser->phone = $request->mobile_number;
 
         $imageData = $request->userImageData;
         if (!strpos($imageData, 'data:image/') === 0) {
@@ -86,7 +89,7 @@ class EventController extends Controller
                 file_get_contents($destinationPath . $filename), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/api/inputimg/');
+            )->post(config('app.python_api_url') . '/inputimg/');
 
             if ($res->successful()) {
                 // dd($res);
@@ -102,9 +105,17 @@ class EventController extends Controller
                 $frontendUser->image_url = "images/uploads/{$filename}";
                 $frontendUser->face_encoding = $face_encoding;
                 $frontendUser->face_locations = $face_locations;
+
                 if ($frontendUser->save()) {
                     UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
-
+                    return response()->json([
+                        'status' => true,
+                        'user_id' => $frontendUser->id,
+                        'event_id' => $frontendUser->event_id,
+                        'image' => asset("storage/images/uploads/" . $frontendUser->image),
+                        // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                        'message' => 'User Registered Successfully.'
+                    ]);
                 }
             } else {
                 Log::info('Python API Image Err');
@@ -115,20 +126,7 @@ class EventController extends Controller
             Log::info('Catch Err : ' . $th->getMessage());
         }
 
-        $frontendUser->name = $request->name;
-        $frontendUser->email = $request->email;
-        $frontendUser->phone = $request->mobile;
 
-        if ($frontendUser->save()) {
-            return response()->json([
-                'status' => true,
-                'id' => $frontendUser->id,
-                'event_id' => $frontendUser->event_id,
-                'image' => $frontendUser->image,
-                // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
-                'message' => 'User Registered Successfully.'
-            ]);
-        }
         return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
     }
 
@@ -205,6 +203,25 @@ class EventController extends Controller
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }
+    }
+
+    public function getUserDetails(Request $request)
+    {
+        // dd($request);
+        $user = FrontendUser::findOrFail($request->user_id);
+        if ($user) {
+            return response()->json([
+                'status' => true,
+                'user_id' => $user->id,
+                'event_id' => $user->event_id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'phone' => $user->phone,
+                'image_url' => asset("storage/images/uploads/" . $user->image),
+                'message' => 'User Fetched Successfully.'
+            ]);
+        }
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
     }
 
     public function guestImage(Request $request, $eventSlug)

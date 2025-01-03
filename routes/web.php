@@ -26,7 +26,8 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/basic-details-three', function () {
         return view('frontend.basic-details-three');
     })->name('basic-details-three');
-
+    
+    Route::post("/e/user/details", 'App\Http\Controllers\frontend\EventController@getUserDetails')->name('frontend.user.details');
     Route::get("/e/step-one-form/{eventSlug}", 'App\Http\Controllers\frontend\EventController@stepOneForm')->name('frontend.event.step-one-form');
     Route::post("/e/verify-pin", 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
     Route::get("/e/step-two-form/{eventSlug}", 'App\Http\Controllers\frontend\EventController@stepTwoForm')->name('frontend.event.step-two-form');
