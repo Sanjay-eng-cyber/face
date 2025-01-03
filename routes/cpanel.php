@@ -25,7 +25,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
     // admin auth routes
     Route::group(['middleware' => 'auth:admin'], function () {
 
-        Route::get('/change-password', 'App\Http\Controllers\cms\ChangePasswordController@changePassword')->name('cms.changePassword.index');
+        Route::get('/update-profile', 'App\Http\Controllers\cms\ChangePasswordController@changePassword')->name('cms.changePassword.index');
         Route::post('/change-password/{id}', 'App\Http\Controllers\cms\ChangePasswordController@passwordChange')->name('cms.password.submit');
 
         Route::get('/logout', 'App\Http\Controllers\cms\LoginController@logout')->name("cms.logout");
