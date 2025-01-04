@@ -78,7 +78,7 @@
                                   stroke-linejoin="round" class="feather feather-user">
                                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                   <circle cx="12" cy="7" r="4"></circle>
-                              </svg> <span>Change Password</span>
+                              </svg> <span>Update Profile</span>
                           </a>
                       </div>
 
@@ -343,7 +343,7 @@
                           </div>
                       </a>
                   </li> --}}
-                  @cmsUserRole(['admin','super-admin'])
+                  @cmsUserRole(['admin', 'super-admin'])
                       <li class="menu">
                           <a href="{{ route('backend.event.index') }}"
                               aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"

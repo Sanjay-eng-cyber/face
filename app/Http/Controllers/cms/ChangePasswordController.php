@@ -17,96 +17,90 @@ class ChangePasswordController extends Controller
 
     public function passwordChange(Request $request, $id)
     {
-
-        $validate = $request->validate([
-            'name' => 'required|string|min:3|max:30',
-            'email' => 'required|string|email:rfc,dns|min:5|max:40',
-            'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
-            'role' => 'required|in:admin,super-admin',
-            'custom_domain_name' => 'nullable|string|min:3|max:50',
-            'phone' => 'nullable|digits:10|numeric',
-            'plan' => 'nullable|in:1,2',
-            'portfolio_website' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'vimeo_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'linkedin_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'facebook_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'youtube_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'instagram_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-            'twitter_url' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:50',
-                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
-            ],
-        ]);
-
-        $password = Auth::guard('admin')->user();
-        $password->name = $request->name;
-        $password->email = $request->email;
-        $password->password = Hash::make($request->password);
-        $password->role = $request->role;
-        $password->custom_domain_name = $request->custom_domain_name;
-        $password->phone = $request->phone;
-        $password->portfolio_website = $request->portfolio_website;
-        $password->bio = $request->bio;
-        $password->vimeo_url = $request->vimeo_url;
-        $password->linkedin_url = $request->linkedin_url;
-        $password->facebook_url = $request->facebook_url;
-        $password->youtube_url = $request->youtube_url;
-        $password->instagram_url = $request->instagram_url;
-        $password->twitter_url = $request->twitter_url;
-
-        if ($request->plan == 1) {
-            $password->max_image_size = 5;
-            $password->max_images_count = 100;
-            $password->max_face_search = 5;
-            $password->max_storage_limit = 50;
-            $password->max_events = 1;
-        } elseif ($request->plan == 2) {
-            $password->max_image_size = 10;
-            $password->max_images_count = 10000;
-            $password->max_face_search = 25;
-            $password->max_storage_limit = 10000;
-            $password->max_events = 10;
+        $cmsUser = Auth::guard('admin')->user();
+        if ($cmsUser && $cmsUser->role === 'admin') {
+            $validate = $request->validate([
+                'name' => 'required|string|min:3|max:30',
+                'email' => 'required|string|email:rfc,dns|min:5|max:40',
+                'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
+                'custom_domain_name' => 'nullable|string|min:3|max:50',
+                'phone' => 'required|digits:10|numeric',
+                'portfolio_website' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'vimeo_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'linkedin_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'facebook_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'youtube_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'instagram_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+                'twitter_url' => [
+                    'nullable',
+                    'string',
+                    'min:3',
+                    'max:50',
+                    'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+                ],
+            ]);
+            $cmsUser->name = $request->name;
+            $cmsUser->email = $request->email;
+            $cmsUser->password = Hash::make($request->password);
+            $cmsUser->custom_domain_name = $request->custom_domain_name;
+            $cmsUser->phone = $request->phone;
+            $cmsUser->portfolio_website = $request->portfolio_website;
+            $cmsUser->bio = $request->bio;
+            $cmsUser->vimeo_url = $request->vimeo_url;
+            $cmsUser->linkedin_url = $request->linkedin_url;
+            $cmsUser->facebook_url = $request->facebook_url;
+            $cmsUser->youtube_url = $request->youtube_url;
+            $cmsUser->instagram_url = $request->instagram_url;
+            $cmsUser->twitter_url = $request->twitter_url;
+        } else {
+            $validate = $request->validate([
+                'name' => 'required|string|min:3|max:30',
+                'email' => 'required|string|email:rfc,dns|min:5|max:40',
+                'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
+            ]);
+            $cmsUser->name = $request->name;
+            $cmsUser->email = $request->email;
+            $cmsUser->password = Hash::make($request->password);
         }
-        if ($password->save()) {
+
+
+        if ($cmsUser->save()) {
             return redirect()->back()->with([
                 "message" => "Password Changed Successfully",
                 "alert-type" => "success"
