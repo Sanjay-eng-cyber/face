@@ -5,10 +5,11 @@ namespace App\Http\Controllers\cms;
 use App\Models\Event;
 use Illuminate\Http\File;
 use Illuminate\Support\Str;
+use App\Models\GalleryImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
-use App\Models\GalleryImage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
@@ -40,8 +41,11 @@ class EventController extends Controller
         //     $query->orderBy('name', 'desc');
         // }
 
-        // $events = $query->paginate(10);
+        $user = Auth::guard('admin')->user('id');
         $events = Event::latest();
+        if ($user->role == 'admin') {
+            $events = $events->where('cms_user_id', $user->id);
+        }
         $events = $this->filterResults($request, $events);
         $events = $events->paginate(10);
         return view('backend.event.index', compact('events'));

@@ -12,6 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
@@ -21,7 +22,11 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        $user = Auth::guard('admin')->user('id');
         $categories = Category::latest();
+        if ($user->role == 'admin') {
+            $categories = $categories->where('cms_user_id', $user->id);
+        }
         $categories = $this->filterResults($request, $categories);
         $categories = $categories->paginate(10);
         return view('backend.category.index', compact('categories'));
