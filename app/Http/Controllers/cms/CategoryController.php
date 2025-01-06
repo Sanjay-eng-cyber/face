@@ -210,7 +210,7 @@ class CategoryController extends Controller
                 file_get_contents($fileWithExt->getRealPath()), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/inputimg/');
+            )->post(config('app.python_api_url') . '/api/inputimg/');
 
             if ($res->successful()) {
                 $data = $res->json();
@@ -279,9 +279,9 @@ class CategoryController extends Controller
 
         if ($gallery_image->delete()) {
             optional(Storage::disk('public')->delete($filePath));
-            return redirect()->route('backend.category.uploaded-images-index')->with(toast('Gallery Image Deleted Successfully', 'success'));
+            return redirect()->back()->with(toast('Gallery Image Deleted Successfully', 'success'));
         } else {
-            return redirect()->route('backend.category.uploaded-images-index')->with(toast('Something Went Wrong', 'error'));
+            return redirect()->back()->with(toast('Something Went Wrong', 'error'));
         }
     }
 
