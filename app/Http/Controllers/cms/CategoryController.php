@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -191,6 +192,19 @@ class CategoryController extends Controller
 
     public function uploadImages(Request $request, $eventSlug, $categorySlug)
     {
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|file|mimes:jpeg,png,jpg|max:10240'
+        ], [
+            'max' => 'The image must not be greater than 1 MB.'
+        ]);
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            $err = "Something Went Wrong";
+            if ($errors->has('file')) {
+                $err = $errors->first('file');
+            }
+            return response()->json(['status' => false, 'message' => $err], 500);
+        }
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
 

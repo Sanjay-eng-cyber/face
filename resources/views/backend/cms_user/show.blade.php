@@ -135,7 +135,18 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Bio</label><br>
+                                                <p class="label-title">{!! $cmsUser->bio ?? '---' !!}</p>
+                                            </div>
+                                        </div>
 
+                                    </div>
+
+                                    <div class="row">
+                                        {{-- <h4>Statistics</h4> --}}
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Uploaded
@@ -147,20 +158,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Events Count</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Events
+                                                    Count</label><br>
                                                 {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
                                                 <p class="text-white badge badge-primary">
                                                     {{ $eventsCount ?? '----' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Bio</label><br>
-                                                <p class="label-title">{!! $cmsUser->bio ?? '---' !!}</p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
