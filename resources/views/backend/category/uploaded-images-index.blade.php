@@ -61,8 +61,8 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Image Name</th>
-                                        <th class="text-center">Image</th>
-                                        {{-- <th class="text-center">Action</th> --}}
+                                        {{-- <th class="text-center">Image</th> --}}
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,17 +70,20 @@
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $images) }}</td>
                                             <td>{{ $image->image_name }}</td>
-                                            <td class="text-center">
+                                            {{-- <td class="text-center">
                                                 <span class="lightgallery1">
                                                     <a href="{{ getGalleryImageUrl($image->image_url) }}">
-                                                        {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
+                                                        <img src="{{ getPythonImageUrl($image->image_url) }}"
                                                             style="height: 100px;width:150px;object-fit:contain;"
-                                                            alt=""> --}}
-                                                            View
+                                                            alt="">
+                                                        View
                                                     </a>
                                                 </span>
-                                            </td>
-                                            {{-- <td class="text-center">
+                                                <a href="{{ route('backend.category.image-upload-delete', $image->id) }}">
+                                                    Delete
+                                                </a>
+                                            </td> --}}
+                                            <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
@@ -96,23 +99,23 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                        <span class="lightgallery1">
+                                                            <a class="dropdown-item"
+                                                                href="{{ getGalleryImageUrl($image->image_url) }}">
+                                                                {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
+                                                                    style="height: 100px;width:150px;object-fit:contain;"
+                                                                    alt=""> --}}
+                                                                View
+                                                            </a>
+                                                        </span>
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.category.show', $category->id) }}">View</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
-                                                            Images</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.upload-image-show', $category->id) }}">View
-                                                            Images</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.delete', $category->id) }}"
-                                                            onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
+                                                            href="{{ route('backend.category.image-upload-delete', $image->id) }}">
+                                                            Delete
+                                                        </a>
                                                     </div>
                                                 </div>
 
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
