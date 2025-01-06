@@ -54,7 +54,7 @@
                                 <div class="col-md-4 col-12 mb-3">
                                     <label for="formGroupExampleInput">Confirm Password</label>
                                     <input id="password2" name="password_confirmation" type="password" class="form-control"
-                                        placeholder="Confirm Password" required minlength="8" maxlength="16">
+                                        placeholder="Confirm Password" minlength="8" maxlength="16">
                                     @if ($errors->has('password'))
                                         <div class="text-danger" role="alert">{{ $errors->first('password') }}
                                         </div>

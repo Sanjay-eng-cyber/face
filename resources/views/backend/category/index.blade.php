@@ -89,15 +89,15 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.category.show', $category->id) }}">View</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.category.upload-image-show', $category->id) }}">View
+                                                            Uploaded Images</a>
                                                         @cmsUserRole('admin')
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
                                                                 Images</a>
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('backend.category.upload-image-show', $category->id) }}">View
-                                                                Uploaded Images</a>
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.category.delete', $category->id) }}"
                                                                 onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>

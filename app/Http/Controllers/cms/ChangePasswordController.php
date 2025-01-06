@@ -22,7 +22,7 @@ class ChangePasswordController extends Controller
             $validate = $request->validate([
                 'name' => 'required|string|min:3|max:30',
                 'email' => 'required|string|email:rfc,dns|min:5|max:40',
-                'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
+                'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:16'],
                 'custom_domain_name' => 'nullable|string|min:3|max:50',
                 'phone' => 'required|digits:10|numeric',
                 'portfolio_website' => [
@@ -75,9 +75,6 @@ class ChangePasswordController extends Controller
                     'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
                 ],
             ]);
-            $cmsUser->name = $request->name;
-            $cmsUser->email = $request->email;
-            $cmsUser->password = Hash::make($request->password);
             $cmsUser->custom_domain_name = $request->custom_domain_name;
             $cmsUser->phone = $request->phone;
             $cmsUser->portfolio_website = $request->portfolio_website;
@@ -92,17 +89,19 @@ class ChangePasswordController extends Controller
             $validate = $request->validate([
                 'name' => 'required|string|min:3|max:30',
                 'email' => 'required|string|email:rfc,dns|min:5|max:40',
-                'password' => ['required', 'confirmed', 'string', 'min:8', 'max:16'],
+                'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:16'],
             ]);
-            $cmsUser->name = $request->name;
-            $cmsUser->email = $request->email;
+        }
+        $cmsUser->name = $request->name;
+        $cmsUser->email = $request->email;
+        if ($request->password) {
             $cmsUser->password = Hash::make($request->password);
         }
 
 
         if ($cmsUser->save()) {
             return redirect()->back()->with([
-                "message" => "Password Changed Successfully",
+                "message" => "Profile updated Successfully",
                 "alert-type" => "success"
             ]);
         } else {

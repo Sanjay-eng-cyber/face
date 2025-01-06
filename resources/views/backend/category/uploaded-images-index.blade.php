@@ -108,10 +108,12 @@
                                                                 View
                                                             </a>
                                                         </span>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.category.image-upload-delete', $image->id) }}">
-                                                            Delete
-                                                        </a>
+                                                        @cmsUserRole('admin')
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.category.image-upload-delete', $image->id) }}">
+                                                                Delete
+                                                            </a>
+                                                        @endcmsUserRole
                                                     </div>
                                                 </div>
 
