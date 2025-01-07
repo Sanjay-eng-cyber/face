@@ -200,14 +200,23 @@
                                         @cmsUserRole('admin')
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    {{-- <label for="degree3" class="cust-title" class="label-title">Share
-                                                    Event Url</label><br> --}}
-                                                    <form method="Post"
-                                                        action="{{ route('backend.event.url', $event->id) }}">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-primary">Generate Event
-                                                            Url</button>
-                                                    </form>
+                                                    <label for="degree3" class="cust-title" class="label-title">Event Share
+                                                        URL</label><br>
+                                                    @if (session('shared_url'))
+                                                        <p class="label-title">
+                                                            <a target="_blank"
+                                                                href="{{ session('shared_url') }}">{{ session('shared_url') }}</a>
+                                                            <i class="far fa-clone cursor-pointer"
+                                                                onclick="copyToClipboard('{{ session('shared_url') }}')"></i>
+                                                        </p>
+                                                    @else
+                                                        <form method="Post"
+                                                            action="{{ route('backend.event.url', $event->id) }}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-primary">Generate Event
+                                                                Url</button>
+                                                        </form>
+                                                    @endif
                                                 </div>
                                             </div>
                                         @endcmsUserRole
@@ -233,22 +242,6 @@
                                                     Share URL</button>
                                             </div>
                                         @endif --}}
-                                        @cmsUserRole('admin')
-                                            @if (session('shared_url'))
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label for="degree3" class="cust-title" class="label-title">Event
-                                                            Url</label><br>
-                                                        <div>
-                                                            <input type="text" id="eventUrl" class="form-control"
-                                                                value="{{ session('shared_url') }}" readonly>
-                                                        </div>
-                                                        <button class="btn btn-primary mt-2" onclick="copyEventUrl()">Copy
-                                                            Event Share URL</button>
-                                                    </div>
-                                                </div>
-                                            @endif
-                                        @endcmsUserRole
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -314,37 +307,31 @@
             // getValues();
         });
 
-        function copyEventUrl() {
-            const eventUrl = document.getElementById("eventUrl");
+        function copyToClipboard(text) {
+            if (window.clipboardData && window.clipboardData.setData) {
+                // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
+                return window.clipboardData.setData("Text", text);
 
-            if (eventUrl) {
-                // Use the Clipboard API if supported
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(eventUrl.value)
-                        .then(() => alert("Event URL copied: " + eventUrl.value))
-                        .catch(err => {
-                            console.error("Clipboard API failed: ", err);
-                            fallbackCopy(eventUrl);
-                        });
-                } else {
-                    // Fallback for older browsers
-                    fallbackCopy(eventUrl);
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                var textarea = document.createElement("textarea");
+                textarea.textContent = text;
+                textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in Microsoft Edge.
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand("copy"); // Security exception may be thrown by some browsers.
+                    Snackbar.show({
+                        text: 'Link Copied',
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#1abc9c'
+                    });
+                } catch (ex) {
+                    console.warn("Copy to clipboard failed.", ex);
+                    return false;
+                } finally {
+                    document.body.removeChild(textarea);
                 }
-            } else {
-                alert("Event URL input field not found.");
-            }
-        }
-
-        function fallbackCopy(inputElement) {
-            inputElement.select();
-            inputElement.setSelectionRange(0, 99999); // For mobile devices
-
-            try {
-                document.execCommand("copy");
-                alert("Event URL copied");
-            } catch (err) {
-                console.error("Fallback copy failed: ", err);
-                alert("Failed to copy the Event URL.");
             }
         }
     </script>

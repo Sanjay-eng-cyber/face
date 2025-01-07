@@ -376,3 +376,7 @@ border-color: #64002F;
 
 left: 0px;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
