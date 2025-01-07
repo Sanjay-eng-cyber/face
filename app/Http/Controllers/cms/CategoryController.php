@@ -195,7 +195,7 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
             'file' => 'required|file|mimes:jpeg,png,jpg|max:10240'
         ], [
-            'max' => 'The image must not be greater than 1 MB.'
+            'max' => 'The image must not be greater than 10 MB.'
         ]);
         if ($validator->fails()) {
             $errors = $validator->errors();
