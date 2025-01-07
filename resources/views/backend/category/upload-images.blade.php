@@ -370,6 +370,7 @@
             previewTemplate: previewTemplate,
             thumbnailHeight: null,
             thumbnailWidth: null,
+            uploadMultiple: true
             init: function() {
                 var myDropzone = this;
 
