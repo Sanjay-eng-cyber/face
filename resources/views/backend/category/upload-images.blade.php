@@ -291,10 +291,10 @@
 
                                                     </form>
                                                 </div>
-                                                @if ($errors->has('file'))
+                                                {{-- @if ($errors->has('file'))
                                                     <div class="text-danger" role="alert">{{ $errors->first('file') }}
                                                     </div>
-                                                @endif
+                                                @endif --}}
                                             </section>
 
                                             <div id="preview-template" style="display: none;">
@@ -366,11 +366,13 @@
             maxFilesize: 10, // Max file size (in MB)
             addRemoveLinks: true,
             acceptedFiles: ".jpeg, .jpg, .png",
+            autoQueue: true,
+            autoProcessQueue: true,
             parallelUploads: 1, // Only one upload at a time
             previewTemplate: previewTemplate,
             thumbnailHeight: null,
             thumbnailWidth: null,
-            uploadMultiple: true
+            // uploadMultiple: true
             init: function() {
                 var myDropzone = this;
 
