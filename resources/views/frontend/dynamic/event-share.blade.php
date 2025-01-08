@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                background-image: unset;
-                                                backdrop-filter: unset;
-                                                min-height: unset;
-                                                padding-left: 12px;
-                                                padding-right: 12px;
-                                            } */
+                                                            background-image: unset;
+                                                            backdrop-filter: unset;
+                                                            min-height: unset;
+                                                            padding-left: 12px;
+                                                            padding-right: 12px;
+                                                        } */
             .pobdh {
                 height: 0px;
             }
@@ -591,12 +591,22 @@
                             }
                         })
                         .catch((error) => {
-                            Snackbar.show({
-                                text: "Something Went Wrong",
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#e7515a'
-                            });
+                            console.log("error : ", error);
+                            if (error.status == 403 && error?.response?.data?.message) {
+                                Snackbar.show({
+                                    text: error?.response?.data?.message,
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            } else {
+                                Snackbar.show({
+                                    text: "Something Went Wrong",
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            }
                         });
 
                 },

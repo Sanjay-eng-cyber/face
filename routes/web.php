@@ -26,7 +26,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/basic-details-three', function () {
         return view('frontend.basic-details-three');
     })->name('basic-details-three');
-    
+
     Route::post("/e/user/details", 'App\Http\Controllers\frontend\EventController@getUserDetails')->name('frontend.user.details');
     Route::get("/e/step-one-form/{eventSlug}", 'App\Http\Controllers\frontend\EventController@stepOneForm')->name('frontend.event.step-one-form');
     Route::post("/e/verify-pin", 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
@@ -77,22 +77,22 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
     Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
 
-    Route::get('/e/share/{eventSlug}', 'App\Http\Controllers\frontend\EventController@show')->name('frontend.event.share.index');
+    Route::group(['middleware' => 'is_event_active'], function () {
+
+        Route::get('/e/share/{eventSlug}', 'App\Http\Controllers\frontend\EventController@show')->name('frontend.event.share.index');
+
+        Route::prefix('api')->group(function () {
+
+            Route::post('event/verify-pin', 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
+            Route::post('event/user-submit', 'App\Http\Controllers\frontend\EventController@userFormSubmit')->name('frontend.event.user-submit');
+            Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@getFetchedImages')->name('frontend.event.fetch-matched-images');
+
+        });
+    });
 
 
     Route::get('/c/share/{categorySlug}', function () {
         return 'True';
     })->name('frontend.category.share.index');
 
-    Route::prefix('api')->group(function () {
-        Route::post('event/verify-pin', 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
-        Route::post('event/user-submit', 'App\Http\Controllers\frontend\EventController@userFormSubmit')->name('frontend.event.user-submit');
-        Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@getFetchedImages')->name('frontend.event.fetch-matched-images');
-    });
-
-    Route::group(['middleware' => 'is_event_valid'], function () {
-        Route::prefix('dynamic')->group(function () {
-            Route::get('event/share', 'App\Http\Controllers\frontend\EventShareController@index');
-        });
-    });
 });
