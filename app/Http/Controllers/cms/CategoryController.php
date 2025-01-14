@@ -60,16 +60,18 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $events = Event::all();
+        $user = Auth::guard('admin')->user('id');
+        $events = Event::where('cms_user_id', $user->id)->get();
         return view('backend.category.create', compact('events'));
     }
 
     public function store(Request $request)
     {
-        $events = Event::pluck('id')->toArray();
+        $user = Auth::guard('admin')->user('id');
+        $events = Event::where('id', $request->event_id)->where('cms_user_id', $user->id)->firstOrFail();
         $request->validate([
             'name' => 'required|string|min:3|max:40',
-            'event_id' => ['required', Rule::in($events)],
+            'event_id' => 'required',
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
@@ -110,17 +112,19 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        $events = Event::all();
+        $user = Auth::guard('admin')->user('id');
+        $events = Event::where('cms_user_id', $user->id)->get();
         return view('backend.category.edit', compact('category', 'events'));
     }
 
     public function update(Request $request, $id)
     {
         // Validate the request data
-        $events = Event::pluck('id')->toArray();
+        $user = Auth::guard('admin')->user('id');
+        $events = Event::where('id', $request->event_id)->where('cms_user_id', $user->id)->firstOrFail();
         $request->validate([
             'name' => 'required|string|min:3|max:40',
-            'event_id' => ['required', Rule::in($events)],
+            'event_id' => 'required',
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
@@ -225,7 +229,7 @@ class CategoryController extends Controller
                 file_get_contents($fileWithExt->getRealPath()), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/inputimg/');
+            )->post(config('app.python_api_url') . '/api/inputimg/');
 
             if ($res->successful()) {
                 $data = $res->json();
