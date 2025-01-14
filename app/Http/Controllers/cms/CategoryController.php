@@ -221,8 +221,14 @@ class CategoryController extends Controller
             }
             $manager = ImageManager::gd();
             $image = $manager->read($fileWithExt->getRealPath());
-            $image->resize(1000);
-            $image->save($destinationPath . '/' . $filename, 90);
+            if ($event->upload_image_quality == 'compressed') {
+                // Log::info('Image is stored in compress quality.');
+                $image->resize(1000);
+                $image->save($destinationPath . '/' . $filename, 90);
+            } else {
+                // Log::info('Image is stored in original quality.');
+                $image->save($destinationPath . '/' . $filename, 100);
+            }
 
             $res = Http::attach(
                 'image_name', // The name of the file field in the request
