@@ -201,8 +201,8 @@ class CategoryController extends Controller
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
         $galleryImages = GalleryImage::where('cms_user_id', $user->id)->get();
 
-        if ($galleryImages->count() > $user->max_images_count) {
-            Log::info('exceed');
+        if ($galleryImages->count() >= $user->max_images_count) {
+            // Log::info('exceed');
             return response()->json([
                 'status' => false,
                 'message' => 'You have exceeded the limit of ' . $user->max_images_count . ' images.'
@@ -215,12 +215,19 @@ class CategoryController extends Controller
             $totalUploadedSize += $file->getSize() / 1024; // Convert bytes to KB
         }
 
-        if (($currentStorageUsage + $totalUploadedSize) > $user->max_storage_limit) {
+        if (($currentStorageUsage + $totalUploadedSize) >= $user->max_storage_limit) {
             // Log::info('exceed of max storage');
             $remainingStorage = $user->max_storage_limit - $currentStorageUsage + $totalUploadedSize;
             return response()->json([
                 'status' => false,
                 'message' => 'Uploading these files would exceed your maximum storage limit. You have' . $remainingStorage . 'GB remaining.'
+            ], 500);
+        }
+
+        if (request()->file('file') && request()->file('file')->getSize() / 1024 / 1024 > $user->max_image_size) {
+            return response()->json([
+                'status' => false,
+                'message' => 'The uploaded image exceeds the maximum allowed size of' . $user->max_image_size . ' MB.'
             ], 500);
         }
 
@@ -233,6 +240,7 @@ class CategoryController extends Controller
             }
             $manager = ImageManager::gd();
             $image = $manager->read($fileWithExt->getRealPath());
+
             if ($event->upload_image_quality == 'compressed') {
                 // Log::info('Image is stored in compress quality.');
                 $image->resize(1000);
@@ -280,7 +288,10 @@ class CategoryController extends Controller
             // dd($th->getMessage());
             Log::info('Catch Err : ' . $th->getMessage());
         }
-        return response()->json(['status' => false, 'message' => 'Something Went Wrong'], 500);
+        return response()->json([
+            'status' => false,
+            'message' => 'The uploaded image does not appear to contain a valid face. Please upload a proper face image.'
+        ], 500);
     }
 
     public function deleteUploadedImage(Request $request, $eventSlug, $categorySlug, $id)
