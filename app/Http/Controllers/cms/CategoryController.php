@@ -196,21 +196,33 @@ class CategoryController extends Controller
 
     public function uploadImages(Request $request, $eventSlug, $categorySlug)
     {
-        $validator = Validator::make($request->all(), [
-            'file' => 'required|file|mimes:jpeg,png,jpg|max:10240'
-        ], [
-            'max' => 'The image must not be greater than 10 MB.'
-        ]);
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $err = "Something Went Wrong";
-            if ($errors->has('file')) {
-                $err = $errors->first('file');
-            }
-            return response()->json(['status' => false, 'message' => $err], 500);
-        }
+        $user = Auth::guard('admin')->user('id');
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
+        $galleryImages = GalleryImage::where('cms_user_id', $user->id)->get();
+
+        if ($galleryImages->count() > $user->max_images_count) {
+            Log::info('exceed');
+            return response()->json([
+                'status' => false,
+                'message' => 'You have exceeded the limit of ' . $user->max_images_count . ' images.'
+            ], 500);
+        }
+
+        $totalUploadedSize = 0;
+        $currentStorageUsage = $galleryImages->sum('file_size') / (1024 * 1024);
+        foreach ($request->file('file') as $file) {
+            $totalUploadedSize += $file->getSize() / 1024; // Convert bytes to KB
+        }
+
+        if (($currentStorageUsage + $totalUploadedSize) > $user->max_storage_limit) {
+            // Log::info('exceed of max storage');
+            $remainingStorage = $user->max_storage_limit - $currentStorageUsage + $totalUploadedSize;
+            return response()->json([
+                'status' => false,
+                'message' => 'Uploading these files would exceed your maximum storage limit. You have' . $remainingStorage . 'GB remaining.'
+            ], 500);
+        }
 
         try {
             $fileWithExt = request()->file('file');
