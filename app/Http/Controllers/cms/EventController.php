@@ -77,9 +77,17 @@ class EventController extends Controller
 
     public function show($id)
     {
-        $event = Event::findOrFail($id);
-        $galleryImagesCount = GalleryImage::count();
-        return view('backend.event.show', compact('event', 'galleryImagesCount'));
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $event = Event::where('cms_user_id', $user->id)->findOrFail($id);
+        } else {
+            $event = Event::findOrFail($id);
+        }
+        $galleryImages = $event->galleryImages;
+        $galleryImagesCount = $galleryImages->count();
+        $galleryImagesFileSize = round($galleryImages->sum('file_size') / (1024 * 1024), 0);
+        // dd($galleryImagesFileSize);
+        return view('backend.event.show', compact('event', 'galleryImagesCount', 'galleryImagesFileSize'));
     }
 
     public function create()

@@ -13,4 +13,9 @@ class Event extends Model
     {
         return $this->hasMany('App\Models\Category');
     }
+
+    function galleryImages()
+    {
+        return $this->hasMany('App\Models\GalleryImage');
+    }
 }
