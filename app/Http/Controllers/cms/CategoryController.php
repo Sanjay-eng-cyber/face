@@ -54,7 +54,12 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $category = Category::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $category = Category::where('cms_user_id', $user->id)->findOrFail($id);
+        } else {
+            $category = Category::findOrFail($id);
+        }
         return view('backend.category.show', compact('category'));
     }
 
@@ -214,6 +219,7 @@ class CategoryController extends Controller
         foreach ($request->file('file') as $file) {
             $totalUploadedSize += $file->getSize() / 1024; // Convert bytes to KB
         }
+        // Log::info('Corrent storage use', $currentStorageUsage);
 
         if (($currentStorageUsage + $totalUploadedSize) >= $user->max_storage_limit) {
             // Log::info('exceed of max storage');
