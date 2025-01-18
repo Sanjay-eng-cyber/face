@@ -116,7 +116,11 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        // $category = Category::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $category = Category::where('cms_user_id', $user->id)->findOrFail($id);
+        }
         $user = Auth::guard('admin')->user('id');
         $events = Event::where('cms_user_id', $user->id)->get();
         return view('backend.category.edit', compact('category', 'events'));
@@ -136,7 +140,11 @@ class CategoryController extends Controller
         ]);
 
         // Create a new Category instance
-        $category = Category::findOrFail($id);
+        // $category = Category::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $category = Category::where('cms_user_id', $user->id)->findOrFail($id);
+        }
         $cover_image = request()->file('cover_image');
         if ($cover_image) {
             $filename = date('Ymd-his') . "." . uniqid() . "." . $cover_image->clientExtension();
@@ -170,7 +178,11 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        $category = Category::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $category = Category::where('cms_user_id', $user->id)->findOrFail($id);
+        }
+        // $category = Category::findOrFail($id);
         if ($category->gallery_images()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Gallery Images is present']);
         }
@@ -193,7 +205,8 @@ class CategoryController extends Controller
 
     public function uploadImagesIndex(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        $category = Category::where('cms_user_id', $user->id)->findOrFail($id);
         $event = Event::findOrFail($category->event_id);
         // dd($category, $event);
         return view('backend.category.upload-images', compact('category', 'event'));
