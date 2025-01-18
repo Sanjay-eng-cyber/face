@@ -169,7 +169,11 @@ class EventController extends Controller
 
     public function edit($id)
     {
-        $event = Event::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $event = Event::where('cms_user_id', $user->id)->findOrFail($id);
+        }
+
         return view('backend.event.edit', compact('event'));
     }
 
@@ -199,7 +203,11 @@ class EventController extends Controller
         ]);
 
         // Create a new Event instance
-        $event = Event::findOrFail($id);
+        // $event = Event::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $event = Event::where('cms_user_id', $user->id)->findOrFail($id);
+        }
         $cover_image = request()->file('cover_image');
         $manager = ImageManager::gd();
         if ($cover_image) {
@@ -247,7 +255,12 @@ class EventController extends Controller
 
     public function delete($id)
     {
-        $event = Event::findOrFail($id);
+        $user = Auth::guard('admin')->user('id');
+        if ($user->role == 'admin') {
+            $event = Event::where('cms_user_id', $user->id)->findOrFail($id);
+        }
+
+        // $event = Event::findOrFail($id);
         if ($event->categories()->exists()) {
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Category is present']);
         }
