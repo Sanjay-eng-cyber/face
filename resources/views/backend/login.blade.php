@@ -26,14 +26,14 @@
         }
 
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%,#0FACB3 100%);
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-image: url(/backend/images/login/login-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
             height: 100vh;
             /* Set the height of the container */
         }
+        
 
         .bg-pink-color {
             background-color: #64002F;
