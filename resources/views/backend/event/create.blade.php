@@ -146,11 +146,10 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3" id="pinField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Pin</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
-                                        value="{{ old('pin') }}">
+                                    <input type="text" class="form-control" id="pin" placeholder="Enter Pin"
+                                        minlength="4" maxlength="4" name="pin" value="{{ old('pin') }}">
                                     @if ($errors->has('pin'))
                                         <div class="text-danger" role="alert">{{ $errors->first('pin') }}</div>
                                     @endif
@@ -192,42 +191,42 @@
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Is Watermark Required :</label><br>
                                     <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
-                                    value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
+                                        value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
                                     <label for="is_watermark_requiredYes">Yes</label>
                                     <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
-                                    value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
+                                        value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
                                     <label for="is_watermark_requiredNo">No</label>
 
                                     @if ($errors->has('is_watermark_required'))
-                                    <div class="text-danger" role="alert">
-                                        {{ $errors->first('is_watermark_required') }}
-                                    </div>
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('is_watermark_required') }}
+                                        </div>
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3" id="watermarkField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
-                                    name="watermark_image">
+                                        name="watermark_image">
                                     @if ($errors->has('watermark_image'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
-                                    </div>
+                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
+                                        </div>
                                     @endif
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="descriptions">Visibility :</label><br>
                                     <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                    @if (old('visibility') == '1') {{ 'checked' }} @endif>
+                                        @if (old('visibility') == '1') {{ 'checked' }} @endif required>
                                     <label for="visibilityYes">Yes</label>
                                     <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                    @if (old('visibility') == '0') {{ 'checked' }} @endif>
+                                        @if (old('visibility') == '0') {{ 'checked' }} @endif required>
                                     <label for="visibilityNo">No</label>
 
                                     @if ($errors->has('visibility'))
-                                    <div class="text-danger" role="alert">
-                                        {{ $errors->first('visibility') }}
-                                    </div>
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('visibility') }}
+                                        </div>
                                     @endif
                                 </div>
 
@@ -320,4 +319,34 @@
         //     placeholder: "Select / Enter Tags",
         // });
     </script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script>
+        // Function to toggle the visibility of a field based on radio button selection
+        function toggleField(fieldName, fieldId) {
+            const isRequired = $(`input[name="${fieldName}"]:checked`).val(); // Get selected value
+            if (isRequired === '1') {
+                $(`#${fieldId}`).show(); // Show field if value is '1'
+            } else {
+                $(`#${fieldId}`).hide(); // Hide field otherwise
+            }
+        }
+
+        $(document).ready(function() {
+            // Initialize the fields on page load
+            toggleField('is_pin_protection_required', 'pinField');
+            toggleField('is_watermark_required', 'watermarkField');
+
+            // Add event listeners to radio buttons
+            $('input[name="is_pin_protection_required"]').on('change', function() {
+                toggleField('is_pin_protection_required', 'pinField');
+            });
+
+            $('input[name="is_watermark_required"]').on('change', function() {
+                toggleField('is_watermark_required', 'watermarkField');
+            });
+        });
+    </script>
+
+
+
 @endsection

@@ -90,7 +90,7 @@ class EventController extends Controller
                 file_get_contents($destinationPath . $filename), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/inputimg/');
+            )->post(config('app.python_api_url') . '/api/inputimg/');
 
             if ($res->successful()) {
                 // dd($res);
@@ -113,7 +113,7 @@ class EventController extends Controller
                         'status' => true,
                         'user_id' => $frontendUser->id,
                         'event_id' => $frontendUser->event_id,
-                        'image' => asset("storage/images/uploads/" . $frontendUser->image),
+                        'image' => asset("storage/images/uploads/api/" . $frontendUser->image),
                         // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
                         'message' => 'User Registered Successfully.'
                     ]);

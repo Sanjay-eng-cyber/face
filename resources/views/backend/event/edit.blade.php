@@ -161,7 +161,8 @@
                                     @if (old('is_pin_protection_required'))
                                         <input type="radio" id="is_pin_protection_requiredYes"
                                             name="is_pin_protection_required" value="1"
-                                            @if (old('is_pin_protection_required') == '1') {{ 'checked' }} @endif>
+                                            @if (old('is_pin_protection_required') == '1') {{ 'checked' }} @endif
+                                            onchange="togglePinField()">
                                         <label for="is_pin_protection_requiredYes">Yes</label>
                                         <input type="radio" id="is_pin_protection_requiredNo"
                                             name="is_pin_protection_required" value="0"
@@ -185,7 +186,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3" id="pinField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Pin</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
@@ -273,7 +274,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3">
+                                <div class="col-xl-6 col-12 mb-3" id="watermarkField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="watermark_image">
@@ -422,6 +423,32 @@
             });
             lightGallery(document.getElementById('lightgallery_two'), {
                 download: false,
+            });
+        });
+    </script>
+    <script>
+        // Function to toggle the visibility of a field based on radio button selection
+        function toggleField(fieldName, fieldId) {
+            const isRequired = $(`input[name="${fieldName}"]:checked`).val(); // Get selected value
+            if (isRequired === '1') {
+                $(`#${fieldId}`).show(); // Show field if value is '1'
+            } else {
+                $(`#${fieldId}`).hide(); // Hide field otherwise
+            }
+        }
+
+        $(document).ready(function() {
+            // Initialize the fields on page load
+            toggleField('is_pin_protection_required', 'pinField');
+            toggleField('is_watermark_required', 'watermarkField');
+
+            // Add event listeners to radio buttons
+            $('input[name="is_pin_protection_required"]').on('change', function() {
+                toggleField('is_pin_protection_required', 'pinField');
+            });
+
+            $('input[name="is_watermark_required"]').on('change', function() {
+                toggleField('is_watermark_required', 'watermarkField');
             });
         });
     </script>
