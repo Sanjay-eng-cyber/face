@@ -13,15 +13,17 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex align-items-center justify-content-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Events</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Events</a>
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
+                
 
 
 
@@ -56,7 +58,7 @@
 
             <div class="statbox widget box box-shadow temp-index p-0 mt-3">
                 <div class="">
-                    <div class="widget-content widget-content-area p-0">
+                    <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
                             <table class="table mb-4">
                                 <thead>
@@ -70,11 +72,11 @@
                                 <tbody>
                                     @forelse($events as $event)
                                         <tr>
-                                            <td class="text-white">{{ tableRowSrNo($loop->index, $events) }}</td>
-                                            <td class="text-white">{{ $event->name }}</td>
+                                            <td class="text-white-2">{{ tableRowSrNo($loop->index, $events) }}</td>
+                                            <td class="text-white-2">{{ $event->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
-                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                    <a class="dropdown-toggle text-white-2" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
