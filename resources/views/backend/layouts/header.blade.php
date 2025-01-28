@@ -6,7 +6,9 @@
 <link href="backend/assets/css/loader.css" rel="stylesheet" type="text/css" />
 <script src="backend/assets/js/loader.js"></script>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet"> --}}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="backend/assets/css/plugins.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="{{ asset('frontend/images/index/mainlogo.png') }}" type="image/x-icon">
