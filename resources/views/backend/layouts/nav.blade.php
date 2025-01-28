@@ -44,7 +44,7 @@
           <ul class="navbar-item flex-row search-ul">
 
           </ul>
-          <ul class="navbar-item flex-row navbar-dropdown">
+          <ul class="navbar-item flex-row navbar-dropdown ctsm-margin" >
 
               <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
                   <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
@@ -315,10 +315,9 @@
                                 </a>
                         </li>
                     @endadmin --}}
-                    <li class="nav-item theme-text w-auto">
+                    <li class="menu mb-4 border-0">
                         <a d href="/" class="nav-link">
-                            
-                            <img src="{{asset('backend/images/mainlogo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 150px">
+                            <img src="{{asset('backend/images/login/dmy-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
                         </a>
                     </li>
                     <li class="menu">
@@ -423,11 +422,11 @@
                             </a>
                         </li>
                     @endcmsUserRole
-                    <li class="menu">
+                    {{-- <li class="menu border-0">
                         <a href="" aria-expanded="true">
 
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
 
             </nav>
