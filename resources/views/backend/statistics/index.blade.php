@@ -6,11 +6,11 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
             {{-- new --}}
-            <div class="statbox widget box box-shadow my-1">
+            <div class="statbox widget box box-shadow mt-2 mb-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mt-2 px-3">
                         <div class="col-12 col-sm-6">
-                            <legend class="h4">
+                            <legend class="h4 text-white">
                                 Dashboard
                             </legend>
                         </div>
@@ -58,19 +58,19 @@
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow">
+            <div class="statbox widget box box-shadow mt-2 mt-lg-4">
                 <div class="widget-content widget-content-area">
                     <div class="row layout-top-spacing">
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center">Total Events</h4>
+                                        <h4 class="text-center text-white">Total Events</h4>
                                         <div class="w-title justify-content-center align-items-center">
                                             <div class="w-icon">
                                                 <i class="far fa-chart-bar big-font-icon"> </i>
                                             </div>
                                             <div class="">
-                                                <p class="w-value">{{ $totalEvents }}</p>
+                                                <p class="w-value text-white">{{ $totalEvents }}</p>
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -107,13 +107,13 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center">Total Categories</h4>
+                                        <h4 class="text-center text-white">Total Categories</h4>
                                         <div class="w-title justify-content-center align-items-center">
                                             <div class="w-icon">
                                                 <i class="far fa-chart-bar big-font-icon"> </i>
                                             </div>
                                             <div class="">
-                                                <p class="w-value">{{ $totalCategories }}</p>
+                                                <p class="w-value text-white">{{ $totalCategories }}</p>
                                             </div>
                                         </div>
                                         <div class="text-center">

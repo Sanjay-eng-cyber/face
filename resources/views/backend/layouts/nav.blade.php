@@ -13,13 +13,12 @@
 
           <ul class="navbar-nav theme-brand flex-row  text-center">
 
-              <li class="nav-item theme-text w-auto">
+              {{-- <li class="nav-item theme-text w-auto">
                   <a href="/" class="nav-link">
-                      {{-- FACE RECOG --}}
                       <img src="{{ asset('backend/images/mainlogo.png') }}" class="navbar-logo img-fluid" alt="logo"
                           style="width: 150px">
                   </a>
-              </li>
+              </li> --}}
 
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
@@ -35,12 +34,12 @@
                   </a>
               </li>
           </ul>
-          <div class="d-lg-none d-block m-0 p-0">
+          {{-- <div class="d-lg-none d-block m-0 p-0">
               <a href="{{ url('/') }}">
                   <img src="{{ asset('backend/images/mainlogo.png') }}"
                       class="navbar-logo  m-0 p-0 h-100 w-100 img-fluid" alt="logo" style="width: 150px">
               </a>
-          </div>
+          </div> --}}
 
           <ul class="navbar-item flex-row search-ul">
 
@@ -315,6 +314,12 @@
                             </a>
                       </li>
                   @endadmin --}}
+                  <li class="nav-item theme-text w-auto">
+                    <a d href="/" class="nav-link">
+                        
+                        <img src="{{asset('backend/images/mainlogo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 150px">
+                    </a>
+                </li>
                   <li class="menu">
                       <a href="{{ route('cms.statistics.index') }}"
                           aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"

@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
-                            <legend class="h4">
+                            <legend class="h4 text-clr fw-600">
                                 Events
                             </legend>
                         </div>
@@ -54,9 +54,9 @@
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow temp-index">
+            <div class="statbox widget box box-shadow temp-index p-0 mt-3">
                 <div class="">
-                    <div class="widget-content widget-content-area">
+                    <div class="widget-content widget-content-area p-0">
                         <div class="table-responsive min-height-20em">
                             <table class="table mb-4">
                                 <thead>
@@ -70,8 +70,8 @@
                                 <tbody>
                                     @forelse($events as $event)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $events) }}</td>
-                                            <td>{{ $event->name }}</td>
+                                            <td class="text-white">{{ tableRowSrNo($loop->index, $events) }}</td>
+                                            <td class="text-white">{{ $event->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
