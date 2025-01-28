@@ -87,30 +87,29 @@
                                                 @endif
                                             </div>
                                         </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                {{-- <label for="degree3" class="cust-title" class="label-title">Share
-                                                    Event Url</label><br> --}}
-                                                <form method="Post"
-                                                    action="{{ route('backend.category.url', $category->id) }}">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-primary">Generate Category
-                                                        Url</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        @if (session('shared_url'))
+                                        @cmsUserRole('admin')
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Category
                                                         Url</label><br>
-                                                    <div class="">
-                                                        {{ session('shared_url') }}
-                                                    </div>
+                                                    @if (session('shared_url'))
+                                                        <p class="label-title">
+                                                            <a target="_blank"
+                                                                href="{{ session('shared_url') }}">{{ session('shared_url') }}</a>
+                                                            <i class="far fa-clone cursor-pointer"
+                                                                onclick="copyToClipboard('{{ session('shared_url') }}')"></i>
+                                                        </p>
+                                                    @else
+                                                        <form method="Post"
+                                                            action="{{ route('backend.category.url', $category->id) }}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-primary">Generate Category
+                                                                Url</button>
+                                                        </form>
+                                                    @endif
                                                 </div>
                                             </div>
-                                        @endif
+                                        @endcmsUserRole
                                         {{-- <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree2" class="label-title cust-title">Thumbnail
@@ -175,7 +174,8 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
+    </script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
@@ -193,6 +193,34 @@
             // });
             // getValues();
         });
+
+        function copyToClipboard(text) {
+            if (window.clipboardData && window.clipboardData.setData) {
+                // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
+                return window.clipboardData.setData("Text", text);
+
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                var textarea = document.createElement("textarea");
+                textarea.textContent = text;
+                textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in Microsoft Edge.
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand("copy"); // Security exception may be thrown by some browsers.
+                    Snackbar.show({
+                        text: 'Link Copied',
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#1abc9c'
+                    });
+                } catch (ex) {
+                    console.warn("Copy to clipboard failed.", ex);
+                    return false;
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
+        }
     </script>
 @endsection
 <style>
