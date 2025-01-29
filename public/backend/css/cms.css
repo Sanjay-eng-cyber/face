@@ -564,6 +564,10 @@ p{
 .table>tbody>tr>td{
     color: #C7C6CC;
 }
+.navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .user-profile-section{
+    background: #FE3B96;
+
+}
 @media screen and (max-width:992px) {
     .header.navbar.navbar-expand-sm{
         left: 0px;
@@ -580,4 +584,7 @@ p{
      /* .ctsm-margin{
         margin-right:0px;
     } */
+    #content{
+        margin-left: 0px !important;;
+    }
 }
