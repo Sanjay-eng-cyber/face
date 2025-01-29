@@ -19,9 +19,12 @@
 
     <style>
         .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%);
+            background-image: url(/backend/images/login/login-bg.png);
             background-repeat: no-repeat;
-
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
             /* Set the height of the container */
         }
         .radius-10{
@@ -32,24 +35,36 @@
         }
 
         .bg-pink-color {
-            background-color: #64002F;
-            border-radius: 50px;
+            background-color:#FE3B96;
+            border-radius: 12px;
             color: white;
-            border: 1px solid white;
             transition: none;
-            padding: 12px 35px;
-            width: 180px;
-            margin: auto;
+            padding: 12px 35px !important;
+            width:100%;
             font-weight: 500;
             font-size:18px;
+            border: 0px;
             /* Remove default transition effect */
 
         }
+       
+        .btn:hover, .btn:focus{
+            transform:unset;
+            background-color:#FE3B96;
 
-        .bg-pink-color:hover {
-            background-color: transparent;
-            color: #64002F;
-            border: 2px solid #64002F;
+            color:unset;
+            box-shadow: unset;
+            border: unset;
+            background-color:#FE3B96;
+            border-radius: 12px;
+            color: white;
+            transition: none;
+            padding: 12px 35px !important;
+            width:100%;
+            font-weight: 500;
+            font-size:18px;
+            border: 0px;
+
         }
 
         input[data-custom-attribute="channels-login"] {
@@ -64,6 +79,28 @@
         }
         .form-form .form-form-wrap form .field-wrapper svg {
            top:18px;
+        }
+        .form-form .terms-conditions{
+            margin-top: 35px;
+        }
+        .form-form .form-form-wrap form .field-wrapper input{
+            background-color:#1A1A1A !important;
+            border: 0px;
+            color: white;
+        }
+        .form-form .form-form-wrap form .field-wrapper input::placeholder {
+    color: #8C9187;
+}
+
+        .form-form .form-form-wrap form .field-wrapper input:focus{
+            border-bottom:0px;
+        }
+
+        .form-form .form-form-wrap form .field-wrapper svg{
+            top:21px;
+        }
+        .form-form .form-form-wrap form .field-wrapper input{
+            min-height: 45px;
         }
     </style>
 </head>
@@ -80,8 +117,8 @@
                         <div class="row text-center">
                             <div class="col col-12">
                                 <a href="/">
-                                    <img class="d-block mx-auto " style="max-width:47%;border-radius:10px"
-                                        src="{{ asset('backend/images/mainlogo.png') }}" alt="">
+                                    <img class="img=fluid d-block mx-auto " style="width:128px"
+                                        src="{{ asset('backend/images/login/dmy-logo.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="col col-12 py-3">
@@ -89,7 +126,7 @@
 
                             </div>
                         </div>
-                        <p class="signup-link text-center">Enter your email address to receive a link to reset password!
+                        <p class="signup-link text-center text-white">Enter your email address to receive a link to reset password!
                         </p>
                         <form class="text-left" method="POST" action="{{ route('password.email') }}">
                             @csrf
@@ -101,7 +138,7 @@
                                     </svg> --}}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" class="bi bi-envelope-fill mx-1" viewBox="0 0 16 16"
-                                        style="fill: #6c86f8">
+                                        style="fill:#8C9187 ">
                                         <path
                                             d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z">
                                         </path>
@@ -130,10 +167,10 @@
                         </form>
                         <div class="terms-conditions footer-wrapper justify-content-center">
                             <div class="footer-section f-section-1">
-                                <p class="text-black">
+                                <p class="text-white text-center fw-300 pt-20px">
                                     &copy;
-                                    {{ date('Y') }} All Rights Reserved.
-                                    <a href="http://acetrot.com" target="_blank" class="text-black">
+                                    {{ date('Y') }}  All Rights Reserved | Powered by
+                                    <a href="http://acetrot.com" target="_blank" class="text-white">
                                         Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}" width="24"
                                             alt="">
                                     </a>

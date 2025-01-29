@@ -287,7 +287,7 @@ select.form-control {
 }
 .auth-form-input input {
     border: none;
-    font-size: 25px;
+    font-size: 24px;
     background: #ffffff;
     box-shadow: 1.41941px 1.41941px 8.51649px rgba(0, 0, 0, 0.12);
     border-radius: 5.67766px;
