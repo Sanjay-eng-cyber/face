@@ -7,19 +7,22 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
                         <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
-                            <legend class="h4">
+                            <legend class="h4 text-clr">
                                 Edit Category
                             </legend>
                         </div>
 
                         <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                           
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
-                                            Edit Category</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);"> Edit Category</a>
+                                    </li>
                                 </ol>
                             </nav>
+
                         </div>
                     </div>
                 </div>
@@ -70,7 +73,7 @@
                                     @if ($category->cover_image)
                                         <div id="lightgallery" class="text-end">
                                             <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
-                                                target="_blank">View</a>
+                                                target="_blank" class="text-white-2">View</a>
                                         </div>
                                     @endif
                                     @if ($errors->has('cover_image'))

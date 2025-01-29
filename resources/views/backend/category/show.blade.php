@@ -7,19 +7,22 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-xl-4 col-md-6 mt-2 mb-1">
-                            <legend class="h4">
+                            <legend class="h4 text-clr">
                                 Category Details
                             </legend>
                         </div>
 
                         <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                            
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Category Details</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Category Details</a>
+                                    </li>
                                 </ol>
                             </nav>
+
                         </div>
                     </div>
                 </div>
@@ -54,7 +57,7 @@
                                                         Image</label><br>
                                                     <div id="lightgallery">
                                                         <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
-                                                            target="_blank">View</a>
+                                                            target="_blank"  class="text-white-2">View</a>
                                                     </div>
                                                 </div>
                                             </div>
