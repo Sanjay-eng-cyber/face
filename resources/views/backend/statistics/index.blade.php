@@ -10,18 +10,29 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mt-2 px-3">
                         <div class="col-12 col-sm-6">
-                            <legend class="h4 text-white">
+                            <legend class="h4 text-clr">
                                 Dashboard
                             </legend>
                         </div>
                         <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                            {{-- <nav class="breadcrumb-two" aria-label="breadcrumb">
+                                 <li class="breadcrumb-item active" aria-current="page"><a
+                                     <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Dashboard</a></li>
+                                          href="javascript:void(0);">Dashboard</a></li>
+                                </ol>
+                            </nav> --}}
+
+                            
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Dashboard</a>
+                                    </li>
                                 </ol>
                             </nav>
+
                         </div>
                     </div>
                     {{-- <div class="row">
@@ -64,13 +75,13 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center text-white">Total Events</h4>
+                                        <h4 class="text-center text-clr">Total Events</h4>
                                         <div class="w-title justify-content-center align-items-center">
                                             <div class="w-icon">
                                                 <i class="far fa-chart-bar big-font-icon"> </i>
                                             </div>
                                             <div class="">
-                                                <p class="w-value text-white">{{ $totalEvents }}</p>
+                                                <p class="w-value text-clr">{{ $totalEvents }}</p>
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -107,13 +118,13 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center text-white">Total Categories</h4>
+                                        <h4 class="text-center text-clr">Total Categories</h4>
                                         <div class="w-title justify-content-center align-items-center">
                                             <div class="w-icon">
                                                 <i class="far fa-chart-bar big-font-icon"> </i>
                                             </div>
                                             <div class="">
-                                                <p class="w-value text-white">{{ $totalCategories }}</p>
+                                                <p class="w-value text-clr">{{ $totalCategories }}</p>
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -130,13 +141,13 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                                 <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
                                     <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center">Total Cms Users</h4>
+                                        <h4 class="text-center text-clr">Total Cms Users</h4>
                                         <div class="w-title justify-content-center align-items-center">
                                             <div class="w-icon">
                                                 <i class="far fa-chart-bar big-font-icon"> </i>
                                             </div>
                                             <div class="">
-                                                <p class="w-value">{{ $totalCmsUsers }}</p>
+                                                <p class="w-value text-clr">{{ $totalCmsUsers }}</p>
                                             </div>
                                         </div>
                                         <div class="text-center">
