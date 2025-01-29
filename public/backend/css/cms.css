@@ -561,6 +561,9 @@ p{
     color: #C7C6CC;
 
 }
+.table>tbody>tr>td{
+    color: #C7C6CC;
+}
 @media screen and (max-width:992px) {
     .header.navbar.navbar-expand-sm{
         left: 0px;
