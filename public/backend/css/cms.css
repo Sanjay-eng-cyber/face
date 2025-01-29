@@ -557,6 +557,10 @@ p{
 /* .widget-one_hybrid.widget-referral .widget-heading .w-icon{
     background-color: #5F5E5F;
 } */
+.form-group label, legend, label{
+    color: #C7C6CC;
+
+}
 @media screen and (max-width:992px) {
     .header.navbar.navbar-expand-sm{
         left: 0px;
