@@ -38,7 +38,7 @@ div {
 }
 
 .cust-title {
-    color: #64002F !important;
+    color: #FE3B96 !important;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 1px;
@@ -469,15 +469,18 @@ html,body{
     margin: 0px;
     padding: 0px;
 }
-body {
+html, body {
     background-image: url(/backend/images/login/login-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    position: relative;  
-    
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 .main-container {
    min-height: unset;
 }
@@ -546,7 +549,10 @@ body {
     color:#FE3B96;
 }
 .widget-one_hybrid.widget-referral .widget-heading .w-icon{
-    background-color:#5F5E5F;
+    background-color:#C7C6CC;
+}
+p{
+    color: #C7C6CC;
 }
 /* .widget-one_hybrid.widget-referral .widget-heading .w-icon{
     background-color: #5F5E5F;
