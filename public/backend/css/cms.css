@@ -317,7 +317,7 @@ select.form-control {
 }
 
 thead tr th:first-child{
-    width: 75px;
+    width:80px;
 }
 .navbar{
 
@@ -346,6 +346,10 @@ thead tr th:first-child{
     background:#951350 !important;
     border: 1px solid #7BD2C2;
     border-radius: 15px;
+    box-shadow: unset;
+}
+.btn-primary:hover{
+    box-shadow: 0 10px 20px -10px #4361ee;
 }
 .table > thead > tr > th{
     color:#AD7994;
@@ -441,7 +445,7 @@ left: 0px;
  }
 .sidebar-wrapper{
     top: 0px;
-    width: 289px;
+    width: 287px;
 }
 
 #sidebar, #sidebar ul.menu-categories.ps{
@@ -495,6 +499,7 @@ html, body {
     background: linear-gradient(165.93deg, rgba(48, 46, 46, 0.14) -2%, rgba(84, 7, 43, 0.14) 105.79%);
     border:unset;
     border-radius: 15px;
+    border: 1px solid #181215;
 }
 
 .widget.box .widget-header{
@@ -516,7 +521,17 @@ html, body {
 .table tbody tr {
     border-bottom: 1px solid  #181215 !important; /* Red border for rows */
 }
-
+.table thead tr {
+    border-bottom: 1px solid  #181215 !important; /* Red border for rows */
+}
+.table>thead>tr>th{
+    font-weight: 600;
+    font-size: 14px;
+}
+.table>tbody>tr>td {
+    font-weight: 600;
+    font-size: 14px;
+}
 .table td, .table th {
     border: none !important; /* Remove borders around table cells */
 }
@@ -590,6 +605,20 @@ body {
 .widget-finner{
     background-color:black;border-radius:15px
 }
+.btn-success{
+    box-shadow: unset;
+}
+.btn-success:hover{
+    box-shadow: 0 10px 20px -10px #1abc9c;
+}
+.app_form .app_form_input{
+    margin-left: 32px;
+}
+@media screen and (max-width:992px) {
+    .app_form .app_form_input{
+        margin-left: 15px;
+    }
+}
 @media screen and (max-width:992px) {
     .header.navbar.navbar-expand-sm{
         left: 0px;
@@ -609,4 +638,10 @@ body {
     #content{
         margin-left: 0px !important;;
     }
+}
+
+@media screen and (max-width:576px) {
+    .app_form .app_form_input{
+    margin-left: 0px;
+}
 }

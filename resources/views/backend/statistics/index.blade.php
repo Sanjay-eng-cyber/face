@@ -6,76 +6,72 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
             {{-- new --}}
-            <div class="widget-fouter mt-3 mb-1">
-                <div class="widget-finner">
-                    <div class="statbox widget box box-shadow ">
-                    <div class="widget-header">
-                        <div class="row justify-content-between align-items-center mt-2 px-3">
-                            <div class="col-12 col-sm-6">
-                                <legend class="text-clr h2 fw-600">
-                                    Dashboard
-                                </legend>
-                            </div>
-                            <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
-                                {{-- <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                        <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                            href="javascript:void(0);">Dashboard</a></li>
-                                    </ol>
-                                </nav> --}}
+            
+                    <div class="statbox widget box box-shadow mt-3 mb-1">
+                        <div class="widget-header">
+                            <div class="row justify-content-between align-items-center mt-2 px-3">
+                                <div class="col-12 col-sm-6">
+                                    <legend class="text-clr h2 fw-600">
+                                        Dashboard
+                                    </legend>
+                                </div>
+                                <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
+                                    {{-- <nav class="breadcrumb-two" aria-label="breadcrumb">
+                                        <li class="breadcrumb-item active" aria-current="page"><a
+                                            <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                                href="javascript:void(0);">Dashboard</a></li>
+                                        </ol>
+                                    </nav> --}}
 
-                                
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb breadcrumb-divider">
-                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">
-                                            <a href="javascript:void(0);">Dashboard</a>
-                                        </li>
-                                    </ol>
-                                </nav>
+                                    
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb breadcrumb-divider">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                <a href="javascript:void(0);">Dashboard</a>
+                                            </li>
+                                        </ol>
+                                    </nav>
 
+                                </div>
                             </div>
+                            {{-- <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <form id="form" class="mx-auto w-100 px-3" action="{{ route('cms.statistics.index') }}"
+                                        method="GET" enctype="multipart/form-data">
+                                        <div class="form-group row">
+                                            <div class="col-md-4 mt-2">
+                                                <label>Start Date</label>
+                                                <input class="form-control w-100" type="date" id="start_date"
+                                                    value="{{ request('start_date') }}" name="start_date" required>
+                                                @if ($errors->has('start_date'))
+                                                    <p class="text-danger"> {{ $errors->first('start_date') }} </p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                <label>End Date</label>
+                                                <input class="form-control w-100" type="date" id="end_date"
+                                                    value="{{ request('end_date') }}" name="end_date" required>
+                                                @if ($errors->has('end_date'))
+                                                    <p class="text-danger"> {{ $errors->first('end_date') }} </p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-4 mt-3">
+                                                <button type="submit" id="check"
+                                                    class="btn btn-success  waves-effect waves-light align-items-start mt-4 search_btn_size">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="align-items-center col-md-3 d-flex justify-content-end">
+                                </div>
+                            </div> --}}
                         </div>
-                        {{-- <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <form id="form" class="mx-auto w-100 px-3" action="{{ route('cms.statistics.index') }}"
-                                    method="GET" enctype="multipart/form-data">
-                                    <div class="form-group row">
-                                        <div class="col-md-4 mt-2">
-                                            <label>Start Date</label>
-                                            <input class="form-control w-100" type="date" id="start_date"
-                                                value="{{ request('start_date') }}" name="start_date" required>
-                                            @if ($errors->has('start_date'))
-                                                <p class="text-danger"> {{ $errors->first('start_date') }} </p>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-4 mt-2">
-                                            <label>End Date</label>
-                                            <input class="form-control w-100" type="date" id="end_date"
-                                                value="{{ request('end_date') }}" name="end_date" required>
-                                            @if ($errors->has('end_date'))
-                                                <p class="text-danger"> {{ $errors->first('end_date') }} </p>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <button type="submit" id="check"
-                                                class="btn btn-success  waves-effect waves-light align-items-start mt-4 search_btn_size">Search</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="align-items-center col-md-3 d-flex justify-content-end">
-                            </div>
-                        </div> --}}
                     </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="widget-fouter mt-3 mt-lg-4">
-                <div class="widget-finner">
-                    <div class="statbox widget box box-shadow">
+           
+            
+                    <div class="statbox widget box box-shadow mt-3 mt-lg-4">
                         <div class="widget-content widget-content-area p-0">
                             <div class="row layout-top-spacing p-0">
                                     <div class="col-xl-4 col-md-6 col-sm-12 col-12">
@@ -169,8 +165,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+               
         </div>
     </div>
 @endsection
