@@ -6,160 +6,168 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
             {{-- new --}}
-            <div class="statbox widget box box-shadow mt-2 mb-1">
-                <div class="widget-header">
-                    <div class="row justify-content-between align-items-center mt-2 px-3">
-                        <div class="col-12 col-sm-6">
-                            <legend class="h4 text-clr">
-                                Dashboard
-                            </legend>
-                        </div>
-                        <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
-                            {{-- <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                 <li class="breadcrumb-item active" aria-current="page"><a
-                                     <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                          href="javascript:void(0);">Dashboard</a></li>
-                                </ol>
-                            </nav> --}}
+            <div class="widget-fouter mt-3 mb-1">
+                <div class="widget-finner">
+                    <div class="statbox widget box box-shadow ">
+                    <div class="widget-header">
+                        <div class="row justify-content-between align-items-center mt-2 px-3">
+                            <div class="col-12 col-sm-6">
+                                <legend class="text-clr h2 fw-600">
+                                    Dashboard
+                                </legend>
+                            </div>
+                            <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
+                                {{-- <nav class="breadcrumb-two" aria-label="breadcrumb">
+                                    <li class="breadcrumb-item active" aria-current="page"><a
+                                        <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            href="javascript:void(0);">Dashboard</a></li>
+                                    </ol>
+                                </nav> --}}
 
-                            
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        <a href="javascript:void(0);">Dashboard</a>
-                                    </li>
-                                </ol>
-                            </nav>
+                                
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb breadcrumb-divider">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            <a href="javascript:void(0);">Dashboard</a>
+                                        </li>
+                                    </ol>
+                                </nav>
 
+                            </div>
                         </div>
+                        {{-- <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <form id="form" class="mx-auto w-100 px-3" action="{{ route('cms.statistics.index') }}"
+                                    method="GET" enctype="multipart/form-data">
+                                    <div class="form-group row">
+                                        <div class="col-md-4 mt-2">
+                                            <label>Start Date</label>
+                                            <input class="form-control w-100" type="date" id="start_date"
+                                                value="{{ request('start_date') }}" name="start_date" required>
+                                            @if ($errors->has('start_date'))
+                                                <p class="text-danger"> {{ $errors->first('start_date') }} </p>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-4 mt-2">
+                                            <label>End Date</label>
+                                            <input class="form-control w-100" type="date" id="end_date"
+                                                value="{{ request('end_date') }}" name="end_date" required>
+                                            @if ($errors->has('end_date'))
+                                                <p class="text-danger"> {{ $errors->first('end_date') }} </p>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-4 mt-3">
+                                            <button type="submit" id="check"
+                                                class="btn btn-success  waves-effect waves-light align-items-start mt-4 search_btn_size">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="align-items-center col-md-3 d-flex justify-content-end">
+                            </div>
+                        </div> --}}
                     </div>
-                    {{-- <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <form id="form" class="mx-auto w-100 px-3" action="{{ route('cms.statistics.index') }}"
-                                method="GET" enctype="multipart/form-data">
-                                <div class="form-group row">
-                                    <div class="col-md-4 mt-2">
-                                        <label>Start Date</label>
-                                        <input class="form-control w-100" type="date" id="start_date"
-                                            value="{{ request('start_date') }}" name="start_date" required>
-                                        @if ($errors->has('start_date'))
-                                            <p class="text-danger"> {{ $errors->first('start_date') }} </p>
-                                        @endif
-                                    </div>
-                                    <div class="col-md-4 mt-2">
-                                        <label>End Date</label>
-                                        <input class="form-control w-100" type="date" id="end_date"
-                                            value="{{ request('end_date') }}" name="end_date" required>
-                                        @if ($errors->has('end_date'))
-                                            <p class="text-danger"> {{ $errors->first('end_date') }} </p>
-                                        @endif
-                                    </div>
-                                    <div class="col-md-4 mt-3">
-                                        <button type="submit" id="check"
-                                            class="btn btn-success  waves-effect waves-light align-items-start mt-4 search_btn_size">Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="align-items-center col-md-3 d-flex justify-content-end">
-                        </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow mt-2 mt-lg-4">
-                <div class="widget-content widget-content-area">
-                    <div class="row layout-top-spacing">
-                            <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
-                                <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
-                                    <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center text-white-2">Total Events</h4>
-                                        <div class="w-title justify-content-center align-items-center">
-                                            <div class="w-icon">
-                                                <i class="far fa-chart-bar big-font-icon"> </i>
+            <div class="widget-fouter mt-3 mt-lg-4">
+                <div class="widget-finner">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content widget-content-area p-0">
+                            <div class="row layout-top-spacing p-0">
+                                    <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                                        <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
+                                            <div class="widget-heading py-4 m-0">
+                                                <h4 class="text-center text-white-2">Total Events</h4>
+                                                <div class="w-title justify-content-center align-items-center">
+                                                    <div class="w-icon">
+                                                        <i class="far fa-chart-bar big-font-icon"> </i>
+                                                    </div>
+                                                    <div class="">
+                                                        <p class="w-value text-white-2">{{ $totalEvents }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a href="{{ route('backend.event.index') }}"
+                                                        class="btn btn-outline-primary mx-auto">
+                                                        <small><i class="far fa-edit"> </i></small> Manage
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <p class="w-value text-white-2">{{ $totalEvents }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <a href="{{ route('backend.event.index') }}"
-                                                class="btn btn-outline-primary mx-auto">
-                                                <small><i class="far fa-edit"> </i></small> Manage
-                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {{-- <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
-                            <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
-                                <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Total Users</h4>
-                                    <div class="w-title justify-content-center align-items-center">
-                                        <div class="w-icon">
-                                            <i class="far fa-chart-bar big-font-icon"> </i>
-                                        </div>
-                                        <div class="">
-                                            <p class="w-value">{{ $totalUsers }}</p>
+                                    {{-- <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
+                                    <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
+                                        <div class="widget-heading p-0 m-0">
+                                            <h4 class="text-center">Total Users</h4>
+                                            <div class="w-title justify-content-center align-items-center">
+                                                <div class="w-icon">
+                                                    <i class="far fa-chart-bar big-font-icon"> </i>
+                                                </div>
+                                                <div class="">
+                                                    <p class="w-value">{{ $totalUsers }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <a href="{{ route('backend.user.index') }}" class="btn btn-outline-primary mx-auto">
+                                                    <small><i class="far fa-edit"> </i></small> Manage
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="text-center">
-                                        <a href="{{ route('backend.user.index') }}" class="btn btn-outline-primary mx-auto">
-                                            <small><i class="far fa-edit"> </i></small> Manage
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+                                </div> --}}
 
-                            <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
-                                <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
-                                    <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center text-white-2">Total Categories</h4>
-                                        <div class="w-title justify-content-center align-items-center">
-                                            <div class="w-icon">
-                                                <i class="far fa-chart-bar big-font-icon"> </i>
+                                    <div class="col-xl-4 col-md-6 col-sm-12 col-12  mt-md-0 mt-3">
+                                        <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
+                                            <div class="widget-heading py-4 m-0">
+                                                <h4 class="text-center text-white-2">Total Categories</h4>
+                                                <div class="w-title justify-content-center align-items-center">
+                                                    <div class="w-icon">
+                                                        <i class="far fa-chart-bar big-font-icon"> </i>
+                                                    </div>
+                                                    <div class="">
+                                                        <p class="w-value text-white-2">{{ $totalCategories }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a href="{{ route('backend.category.index') }}"
+                                                        class="btn btn-outline-primary mx-auto">
+                                                        <small><i class="far fa-edit"> </i></small> Manage
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <p class="w-value text-white-2">{{ $totalCategories }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <a href="{{ route('backend.category.index') }}"
-                                                class="btn btn-outline-primary mx-auto">
-                                                <small><i class="far fa-edit"> </i></small> Manage
-                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                        @cmsUserRole('super-admin')
-                            <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
-                                <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
-                                    <div class="widget-heading p-0 m-0">
-                                        <h4 class="text-center text-white-2">Total Cms Users</h4>
-                                        <div class="w-title justify-content-center align-items-center">
-                                            <div class="w-icon">
-                                                <i class="far fa-chart-bar big-font-icon"> </i>
+                                @cmsUserRole('super-admin')
+                                    <div class="col-xl-4 col-md-6 col-sm-12 col-12  mt-md-0 mt-3">
+                                        <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-md-3 py-4">
+                                            <div class="widget-heading py-4 m-0">
+                                                <h4 class="text-center text-white-2">Total Cms Users</h4>
+                                                <div class="w-title justify-content-center align-items-center">
+                                                    <div class="w-icon">
+                                                        <i class="far fa-chart-bar big-font-icon"> </i>
+                                                    </div>
+                                                    <div class="">
+                                                        <p class="w-value text-white-2">{{ $totalCmsUsers }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a href="{{ route('backend.cms-user.index') }}"
+                                                        class="btn btn-outline-primary mx-auto">
+                                                        <small><i class="far fa-edit"> </i></small> Manage
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <p class="w-value text-white-2">{{ $totalCmsUsers }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <a href="{{ route('backend.cms-user.index') }}"
-                                                class="btn btn-outline-primary mx-auto">
-                                                <small><i class="far fa-edit"> </i></small> Manage
-                                            </a>
                                         </div>
                                     </div>
-                                </div>
+                                @endcmsUserRole
                             </div>
-                        @endcmsUserRole
+                        </div>
                     </div>
                 </div>
             </div>
