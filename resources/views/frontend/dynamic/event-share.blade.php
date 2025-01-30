@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                            background-image: unset;
-                                                            backdrop-filter: unset;
-                                                            min-height: unset;
-                                                            padding-left: 12px;
-                                                            padding-right: 12px;
-                                                        } */
+                                                                                                                        background-image: unset;
+                                                                                                                        backdrop-filter: unset;
+                                                                                                                        min-height: unset;
+                                                                                                                        padding-left: 12px;
+                                                                                                                        padding-right: 12px;
+                                                                                                                    } */
             .pobdh {
                 height: 0px;
             }
@@ -143,7 +143,7 @@
 
                                             <div class="basic-event-one-main-insider-bdt">
                                                 <div>
-                                                    <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
+                                                    <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                                         alt="" class="img-fluid ex-one-img w-100">
                                                 </div>
                                                 <div>
@@ -166,7 +166,7 @@
 
                                                     @if ($event->descriptions)
                                                         <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara">
-                                                            {!! $event->descriptions !!}
+                                                            {!! Str::limit($event->descriptions, 100, '...') !!}
                                                         </div>
                                                     @endif
                                                 </div>
@@ -210,7 +210,7 @@
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
-                                            <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
+                                            <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                                 alt="" class="img-fluid ex-one-img w-100">
                                         </div>
                                         <div>
@@ -233,7 +233,7 @@
 
                                             @if ($event->descriptions)
                                                 <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara">
-                                                    {!! $event->descriptions !!}
+                                                    {!! Str::limit($event->descriptions, 100, '...') !!}
                                                 </div>
                                             @endif
                                         </div>
@@ -412,7 +412,7 @@
                                                     <div class="text-white fw-600 h5 mb-0 number-head">Number:
                                                     </div>
                                                     <div class="text-white fw-600 h5 mb-0 number-title">
-                                                        @{{ mobile }}
+                                                        @{{ mobile_number }}
                                                     </div>
                                                 </div>
 
@@ -434,393 +434,393 @@
                                     <div class="basic-event-one-main h-100 d-flex align-items-center">
                                         <div class="basic-event-one-main-insider-full">
                                             <div>
-                                                <img src="{{ asset('frontend/images/basic-event-one/ex-one.png') }}"
+                                                <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                                     alt="" class="img-fluid ex-one-img-new rounded-3">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <div class="eventanddatespit ">
-                                                    <div class="h5 fw-600 mb-0 text-white bx-twoeventname">Business
-                                                        event</div>
-                                                    <div class="text-white fw-300 fs-14 fssm-8px">10/09/2024 to
-                                                        14/09/2024</div>
-                                                </div>
-                                                <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
-                                                    Picscan is the world's only end-to-end AI-powered image
-                                                    post-production solution.
+                                                    <div class="h5 fw-600 mb-0 text-white bx-twoeventname">
+                                                        {{ $event->name }}</div>
+                                                    <div class="text-white fw-300 fs-14 fssm-8px">
+                                                        {{ dd_format($event->start_date, 'd/m/Y') }} to
+                                                        {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                    </div>
+                                                    <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
+                                                        {!! Str::limit($event->descriptions, 100, '...') !!}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
                             </div>
 
-                        </div>
-
-                        <div class="row pt-3 pb-3 pt-sm-5 pb-sm-4">
-                            <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
-                        </div>
-
-                        <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
-                            <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
-                                :data-index="index">
-                                <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
-                                    data-fancybox="gallery" data-caption="Image 1">
-                                    <img :src="'/storage/' + img.image_url" alt=""
-                                        class="gallery-img img-fluid rounded-3">
-                                </a>
-
+                            <div class="row pt-3 pb-3 pt-sm-5 pb-sm-4">
+                                <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
                             </div>
+
+                            <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
+                                <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
+                                    :data-index="index">
+                                    <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
+                                        data-fancybox="gallery" data-caption="Image 1">
+                                        <img :src="'/storage/' + img.image_url" alt=""
+                                            class="gallery-img img-fluid rounded-3">
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex justify-content-center">
+                                <button id="toggleButton" class="btn pink-btn showmshol mt-3"
+                                    @click="loadMoreMatchedPhotos">Show More</button>
+                            </div>
+
+
+
+
+
                         </div>
-
-
-                        <div class="d-flex justify-content-center">
-                            <button id="toggleButton" class="btn pink-btn showmshol mt-3"
-                                @click="loadMoreMatchedPhotos">Show More</button>
-                        </div>
-
-
-
-
 
                     </div>
-
                 </div>
+
             </div>
-
         </div>
-    </div>
 
-@endsection
-@section('js')
+    @endsection
+    @section('js')
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
-
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/webcamjs/webcam.min.js"></script>
 
 
-    <script>
-        const {
-            createApp,
-            ref
-        } = Vue
 
-        createApp({
-            data() {
-                return {
-                    event_id: '{{ $event->id }}',
-                    pinValues: ref(Array(4).fill('')),
-                    step: 1,
-                    name: '',
-                    email: '',
-                    mobile: '',
-                    userImageData: null,
-                    user_image_url: null,
-                    user_id: null,
-                    image: null,
-                    matchedImages: [],
-                    imagesPageCount: 1,
-                }
-            },
-            mounted() {
-                let userId = localStorage.getItem("user_id");
-                console.log("userId : ", userId);
-                if (userId) {
-                    this.user_id = userId;
-                    this.fetchUserDetails();
-                    // this.fetchMatchedImages();
-                }
+        <script>
+            const {
+                createApp,
+                ref
+            } = Vue
 
-            },
-            methods: {
-                //     initializeFancybox() {
-                //     this.$nextTick(() => {
-                //         Fancybox.bind('[data-fancybox="gallery"]', {
-                //             buttons: [
-                //                 "zoom",
-                //                 "slideShow",
-                //                 "thumbs",
-                //                 "download",
-                //                 "close"
-                //             ],
-                //             loop: true,
-                //             protect: true
-                //         });
-                //     });
-                // },
-                handleInput(index) {
-                    if (this.pinValues[index].length === 1 && index < this.pinValues.length - 1) {
-                        this.focusInput(index + 1);
+            createApp({
+                data() {
+                    return {
+                        event_id: '{{ $event->id }}',
+                        pinValues: ref(Array(4).fill('')),
+                        step: 1,
+                        name: '',
+                        email: '',
+                        mobile: '',
+                        userImageData: null,
+                        user_image_url: null,
+                        user_id: null,
+                        image: null,
+                        matchedImages: [],
+                        imagesPageCount: 1,
                     }
                 },
-                handleBackspace(event, index) {
-                    if (event.key === 'Backspace' && this.pinValues[index] === '' && index > 0) {
-                        this.focusInput(index - 1);
+                mounted() {
+                    let userId = localStorage.getItem("user_id");
+                    console.log("userId : ", userId);
+                    if (userId) {
+                        this.user_id = userId;
+                        this.fetchUserDetails();
+                        // this.fetchMatchedImages();
                     }
+
                 },
-                focusInput(index) {
-                    document.querySelectorAll('.pin-input')[index].focus();
-                },
-                handleStepOneFormSubmit() {
-                    $('.form-err-msg').html('');
-                    const fullPin = this.pinValues.join('');
-                    // alert(`Full PIN: ${fullPin}`);
-                    axios.post('{{ route('frontend.event.verify-pin') }}', {
-                            eventSlug: '{{ $event->slug }}',
-                            pin: fullPin
-                        })
-                        .then((res) => {
-                            if (res.data.status) {
-                                Snackbar.show({
-                                    text: 'Pin Verified Successfully',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#1abc9c'
-                                });
-                                this.step = 2;
-                            } else {
-                                Snackbar.show({
-                                    text: 'Incorrect Pin',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            }
-                        })
-                        .catch((error) => {
-                            console.log("error : ", error);
-                            if (error.status == 403 && error?.response?.data?.message) {
-                                Snackbar.show({
-                                    text: error?.response?.data?.message,
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            } else {
+                methods: {
+                    //     initializeFancybox() {
+                    //     this.$nextTick(() => {
+                    //         Fancybox.bind('[data-fancybox="gallery"]', {
+                    //             buttons: [
+                    //                 "zoom",
+                    //                 "slideShow",
+                    //                 "thumbs",
+                    //                 "download",
+                    //                 "close"
+                    //             ],
+                    //             loop: true,
+                    //             protect: true
+                    //         });
+                    //     });
+                    // },
+                    handleInput(index) {
+                        if (this.pinValues[index].length === 1 && index < this.pinValues.length - 1) {
+                            this.focusInput(index + 1);
+                        }
+                    },
+                    handleBackspace(event, index) {
+                        if (event.key === 'Backspace' && this.pinValues[index] === '' && index > 0) {
+                            this.focusInput(index - 1);
+                        }
+                    },
+                    focusInput(index) {
+                        document.querySelectorAll('.pin-input')[index].focus();
+                    },
+                    handleStepOneFormSubmit() {
+                        $('.form-err-msg').html('');
+                        const fullPin = this.pinValues.join('');
+                        // alert(`Full PIN: ${fullPin}`);
+                        axios.post('{{ route('frontend.event.verify-pin') }}', {
+                                eventSlug: '{{ $event->slug }}',
+                                pin: fullPin
+                            })
+                            .then((res) => {
+                                if (res.data.status) {
+                                    Snackbar.show({
+                                        text: 'Pin Verified Successfully',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#1abc9c'
+                                    });
+                                    this.step = 2;
+                                } else {
+                                    Snackbar.show({
+                                        text: 'Incorrect Pin',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            })
+                            .catch((error) => {
+                                console.log("error : ", error);
+                                if (error.status == 403 && error?.response?.data?.message) {
+                                    Snackbar.show({
+                                        text: error?.response?.data?.message,
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                } else {
+                                    Snackbar.show({
+                                        text: "Something Went Wrong",
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            });
+
+                    },
+                    handleStepTwoFormSubmit() {
+                        $('.form-err-msg').html('');
+                        const fullPin = this.pinValues.join('');
+                        if (!this.userImageData) {
+                            Snackbar.show({
+                                text: 'Kindly Upload Image',
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                            return;
+                        }
+                        // console.log(fullPin);
+                        axios.post("{{ route('frontend.event.user-submit') }}", {
+                                eventSlug: '{{ $event->slug }}',
+                                pin: fullPin,
+                                name: this.name,
+                                email: this.email,
+                                mobile_number: this.mobile,
+                                userImageData: this.userImageData,
+                            })
+                            .then((res) => {
+                                if (res.data.status) {
+                                    this.user_id = res.data.user_id;
+                                    this.image = res.data.image;
+                                    localStorage.setItem("user_id", this.user_id);
+                                    Snackbar.show({
+                                        text: 'User Created Successfully',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#1abc9c'
+                                    });
+                                    this.step = 3;
+                                    this.fetchMatchedImages();
+                                } else {
+                                    Snackbar.show({
+                                        text: res.data.message ?? 'Something Went Wrong',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                                if (error.status == 422) {
+                                    $.each(error.response.data.errors, function(i, err) {
+                                        var el = $(document).find('[name="' + i + '"]');
+                                        el.after($('<div class="form-err-msg text-danger text-left" role="alert">' +
+                                            err[0] + '</div>'));
+                                    });
+                                } else {
+                                    Snackbar.show({
+                                        text: "Something Went Wrong",
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            });
+                    },
+                    openCameraModal() {
+                        document.getElementById('cameraModal').style.display = 'flex';
+                        Webcam.set({
+                            width: 340,
+                            height: 460,
+                            dest_width: 340,
+                            dest_height: 460,
+                            crop_width: 340,
+                            crop_height: 460,
+                        });
+                        Webcam.attach('#my_camera');
+                    },
+                    closeCameraModal() {
+                        Webcam.reset();
+                        document.getElementById('cameraModal').style.display = 'none';
+                    },
+                    takeSnapshot() {
+                        Webcam.snap((data_uri) => {
+                            console.log(data_uri);
+                            this.userImageData = data_uri;
+                            this.closeCameraModal();
+                        });
+                    },
+                    handleUserImageFieldChange(e) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                this.imageSrc = e.target.result;
+                                this.userImageData = this.imageSrc;
+                                console.log(this.userImageData);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    },
+                    fetchMatchedImages: _.debounce(function() {
+                        console.log("Called fetchMatchedImages()");
+
+                        axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
+                                eventSlug: '{{ $event->slug }}',
+                                user_id: this.user_id,
+                            })
+                            .then((res) => {
+                                console.log('fetchMatchedImages : ', res);
+
+                                if (res.data.status) {
+                                    this.matchedImages = res.data.images.data;
+                                    Snackbar.show({
+                                        text: 'Matched Images Fetched Successfully',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#1abc9c'
+                                    });
+                                    this.step = 3;
+                                } else {
+                                    Snackbar.show({
+                                        text: res.data.message ?? 'Something Went Wrong',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            })
+                            .catch((error) => {
+                                console.log(error);
                                 Snackbar.show({
                                     text: "Something Went Wrong",
                                     pos: 'top-right',
                                     actionTextColor: '#fff',
                                     backgroundColor: '#e7515a'
                                 });
-                            }
-                        });
+                            });
+                    }, 2000),
+                    loadMoreMatchedPhotos() {
+                        console.log(this.matchedImages);
+                        console.log(this.imagesPageCount);
 
-                },
-                handleStepTwoFormSubmit() {
-                    $('.form-err-msg').html('');
-                    const fullPin = this.pinValues.join('');
-                    if (!this.userImageData) {
-                        Snackbar.show({
-                            text: 'Kindly Upload Image',
-                            pos: 'top-right',
-                            actionTextColor: '#fff',
-                            backgroundColor: '#e7515a'
-                        });
-                        return;
-                    }
-                    // console.log(fullPin);
-                    axios.post("{{ route('frontend.event.user-submit') }}", {
-                            eventSlug: '{{ $event->slug }}',
-                            pin: fullPin,
-                            name: this.name,
-                            email: this.email,
-                            mobile_number: this.mobile,
-                            userImageData: this.userImageData,
-                        })
-                        .then((res) => {
-                            if (res.data.status) {
-                                this.user_id = res.data.user_id;
-                                this.image = res.data.image;
-                                localStorage.setItem("user_id", this.user_id);
-                                Snackbar.show({
-                                    text: 'User Created Successfully',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#1abc9c'
-                                });
-                                this.step = 3;
-                                this.fetchMatchedImages();
-                            } else {
-                                Snackbar.show({
-                                    text: res.data.message ?? 'Something Went Wrong',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            }
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                            if (error.status == 422) {
-                                $.each(error.response.data.errors, function(i, err) {
-                                    var el = $(document).find('[name="' + i + '"]');
-                                    el.after($('<div class="form-err-msg text-danger text-left" role="alert">' +
-                                        err[0] + '</div>'));
-                                });
-                            } else {
+                        if (this.matchedImages >= 12) {
+                            this.imagesPageCount += 1;
+                        }
+                        this.fetchMatchedImages();
+                    },
+                    fetchUserDetails() {
+                        axios.post("{{ route('frontend.user.details') }}", {
+                                eventSlug: '{{ $event->slug }}',
+                                user_id: this.user_id,
+                            })
+                            .then((res) => {
+                                console.log('fetchMatchedImages : ', res);
+
+                                if (res.data.status) {
+                                    this.name = res.data.name;
+                                    this.email = res.data.email;
+                                    this.mobile_number = res.data.phone;
+                                    this.user_image_url = res.data.image_url;
+                                    // Snackbar.show({
+                                    //     text: 'Matched Images Fetched Successfully',
+                                    //     pos: 'top-right',
+                                    //     actionTextColor: '#fff',
+                                    //     backgroundColor: '#1abc9c'
+                                    // });
+                                    this.step = 3;
+                                    this.fetchMatchedImages();
+                                } else {
+                                    Snackbar.show({
+                                        text: res.data.message ?? 'Something Went Wrong',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            })
+                            .catch((error) => {
+                                console.log(error);
                                 Snackbar.show({
                                     text: "Something Went Wrong",
                                     pos: 'top-right',
                                     actionTextColor: '#fff',
                                     backgroundColor: '#e7515a'
                                 });
-                            }
-                        });
-                },
-                openCameraModal() {
-                    document.getElementById('cameraModal').style.display = 'flex';
-                    Webcam.set({
-                        width: 340,
-                        height: 460,
-                        dest_width: 340,
-                        dest_height: 460,
-                        crop_width: 340,
-                        crop_height: 460,
-                    });
-                    Webcam.attach('#my_camera');
-                },
-                closeCameraModal() {
-                    Webcam.reset();
-                    document.getElementById('cameraModal').style.display = 'none';
-                },
-                takeSnapshot() {
-                    Webcam.snap((data_uri) => {
-                        console.log(data_uri);
-                        this.userImageData = data_uri;
-                        this.closeCameraModal();
-                    });
-                },
-                handleUserImageFieldChange(e) {
-                    const file = event.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            this.imageSrc = e.target.result;
-                            this.userImageData = this.imageSrc;
-                            console.log(this.userImageData);
-                        };
-                        reader.readAsDataURL(file);
+                            });
                     }
                 },
-                fetchMatchedImages: _.debounce(function() {
-                    console.log("Called fetchMatchedImages()");
 
-                    axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
-                            eventSlug: '{{ $event->slug }}',
-                            user_id: this.user_id,
-                        })
-                        .then((res) => {
-                            console.log('fetchMatchedImages : ', res);
 
-                            if (res.data.status) {
-                                this.matchedImages = res.data.images.data;
-                                Snackbar.show({
-                                    text: 'Matched Images Fetched Successfully',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#1abc9c'
-                                });
-                                this.step = 3;
-                            } else {
-                                Snackbar.show({
-                                    text: res.data.message ?? 'Something Went Wrong',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            }
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                            Snackbar.show({
-                                text: "Something Went Wrong",
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#e7515a'
-                            });
-                        });
-                }, 2000),
-                loadMoreMatchedPhotos() {
-                    console.log(this.matchedImages);
-                    console.log(this.imagesPageCount);
 
-                    if (this.matchedImages >= 12) {
-                        this.imagesPageCount += 1;
-                    }
-                    this.fetchMatchedImages();
+            }).mount('#mainDiv')
+        </script>
+
+        <script>
+            Fancybox.bind("[data-fancybox='gallery']", {
+                Toolbar: {
+                    display: {
+                        left: ["infobar"],
+                        middle: [
+                            "zoomIn",
+                            "zoomOut",
+
+                        ],
+                        right: ["slideshow", "download", "thumbs", "close"]
+                    },
                 },
-                fetchUserDetails() {
-                    axios.post("{{ route('frontend.user.details') }}", {
-                            eventSlug: '{{ $event->slug }}',
-                            user_id: this.user_id,
-                        })
-                        .then((res) => {
-                            console.log('fetchMatchedImages : ', res);
-
-                            if (res.data.status) {
-                                this.name = res.data.name;
-                                this.email = res.data.email;
-                                this.mobile_number = res.data.phone;
-                                this.user_image_url = res.data.image_url;
-                                // Snackbar.show({
-                                //     text: 'Matched Images Fetched Successfully',
-                                //     pos: 'top-right',
-                                //     actionTextColor: '#fff',
-                                //     backgroundColor: '#1abc9c'
-                                // });
-                                this.step = 3;
-                                this.fetchMatchedImages();
-                            } else {
-                                Snackbar.show({
-                                    text: res.data.message ?? 'Something Went Wrong',
-                                    pos: 'top-right',
-                                    actionTextColor: '#fff',
-                                    backgroundColor: '#e7515a'
-                                });
-                            }
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                            Snackbar.show({
-                                text: "Something Went Wrong",
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#e7515a'
-                            });
-                        });
-                }
-            },
+                loop: false,
+                protect: true,
+            });
+        </script>
 
 
+    @endsection
 
-        }).mount('#mainDiv')
-    </script>
+    @section('cdn')
 
-    <script>
-        Fancybox.bind("[data-fancybox='gallery']", {
-            Toolbar: {
-                display: {
-                    left: ["infobar"],
-                    middle: [
-                        "zoomIn",
-                        "zoomOut",
-
-                    ],
-                    right: ["slideshow", "download", "thumbs", "close"]
-                },
-            },
-            loop: false,
-            protect: true,
-        });
-    </script>
-
-
-@endsection
-
-@section('cdn')
-
-@endsection
+    @endsection

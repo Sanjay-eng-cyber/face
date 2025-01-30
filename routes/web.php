@@ -77,7 +77,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('/upload/{eventSlug}/{categorySlug}', 'App\Http\controllers\frontend\UploadController@uploadImg')->name('upload-img');
     Route::get('/compare-uploaded-img/{upload_id}', 'App\Http\controllers\frontend\UploadController@compareImg')->name('compare-img');
 
-    Route::group(['middleware' => 'is_event_active'], function () {
+    // Route::group(['middleware' => 'is_event_active'], function () {
 
         Route::get('/e/share/{eventSlug}', 'App\Http\Controllers\frontend\EventController@show')->name('frontend.event.share.index');
 
@@ -88,7 +88,7 @@ Route::domain(config('app.web_domain'))->group(function () {
             Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@getFetchedImages')->name('frontend.event.fetch-matched-images');
 
         });
-    });
+    // });
 
 
     Route::get('/c/share/{categorySlug}', function () {
