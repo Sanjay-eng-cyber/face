@@ -614,6 +614,49 @@ body {
 .app_form .app_form_input{
     margin-left: 32px;
 }
+input::placeholder {
+    color: #8C9187 !important; 
+    background:#1A1A1A !important;     
+
+}
+
+input{
+    color: #ffffff !important; 
+    background: #1A1A1A !important;
+}
+.mce-container, .mce-container *, .mce-widget, .mce-widget *, .mce-reset{
+    color: #ffffff !important; 
+    background: #1A1A1A !important;
+    border: 1px solid #181215 !important;
+}
+/* #tinymce {
+    background-color: #1A1A1A !important;
+} */
+
+.form-control{
+    border: 1px solid transparent !important;
+}
+/* Default state (jab click nahi kiya ho) */
+
+/* Jab click karein (checked state) */
+input[type="radio"]:checked, 
+input[type="checkbox"]:checked {
+    accent-color: #FE3B96;
+}
+
+.ctr-submit{
+    width: 160px;
+}
+/* WebKit Browsers (Chrome, Edge, Safari) */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* White color ke liye */
+}
+
+/* Firefox ke liye (Currently not supported for color change) */
+body.mceContentBody { 
+    background: #bc1111 !important; 
+    color:#000;
+ }
 @media screen and (max-width:992px) {
     .app_form .app_form_input{
         margin-left: 15px;

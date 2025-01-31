@@ -25,6 +25,7 @@
 
     @include('backend.layouts.js')
     @yield('js')
+
 </body>
 
 </html>

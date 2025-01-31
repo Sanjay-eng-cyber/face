@@ -7,24 +7,27 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
                         <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
-                            <legend class="h4">
+                            <legend class="h2 text-clr fw-600">
                                 Create Event
                             </legend>
                         </div>
 
                         <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
-                                            Create Event</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Create Event</a>
+                                    </li>
                                 </ol>
                             </nav>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-12 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-12 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.store') }}"
@@ -53,7 +56,7 @@
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
-                                        name="start_date" value="{{ old('start_date') }}">
+                                        name="start_date"  value="{{ old('start_date') }}">
                                     @if ($errors->has('start_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('start_date') }}</div>
                                     @endif
@@ -246,7 +249,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary">
+                            <input type="submit" class="btn btn-primary ctr-submit">
                         </form>
                     </div>
                 </div>
@@ -266,6 +269,9 @@
             height: 200,
             plugins: 'textcolor colorpicker lists link',
             toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
+            content_style: "body { background-color:#1A1A1A; color: white; border: none; }",
+            
+
             // theme: 'modern',
             // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
             // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
