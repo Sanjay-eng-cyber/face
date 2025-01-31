@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
-                            <legend class="h4">
+                            <legend class="h2 text-clr fw-600">
                                 Categories
                             </legend>
                         </div>
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow temp-index">
+            <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
