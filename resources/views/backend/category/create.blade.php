@@ -7,24 +7,25 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
                         <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
-                            <legend class="h4">
+                            <legend class="h2 text-clr fw-600">
                                 Create Category
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">                            
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">
-                                            Create Category</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Create Category</a>
+                                    </li>
                                 </ol>
-                            </nav>
+                            </nav>                            
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-6 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-6 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.category.store') }}"
@@ -34,7 +35,7 @@
 
                                 <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Event*</label>
-                                    <select class="form-control" name="event_id" required>
+                                    <select class="form-control event-dpd-cust" name="event_id" required>
                                         <option value="">Select Any</option>
                                         @foreach ($events as $event)
                                             <option value="{{ $event->id }}"
@@ -97,7 +98,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary">
+                            <input type="submit" class="btn btn-primary ctr-submit">
                         </form>
                     </div>
                 </div>
