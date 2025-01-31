@@ -7,7 +7,7 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-xl-4 col-md-6 mt-2 mb-1">
-                            <legend class="h4 text-clr ">
+                            <legend class="h2 text-clr fw-600 ">
                                 Event Details
                             </legend>
                         </div>

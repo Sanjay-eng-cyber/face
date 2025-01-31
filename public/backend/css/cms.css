@@ -657,6 +657,12 @@ body.mceContentBody {
     background: #bc1111 !important; 
     color:#000;
  }
+ .badge-secondary{
+    background-color:#951350 !important;
+ }
+ .badge-primary{
+    background-color:#951350 ;
+ }
 @media screen and (max-width:992px) {
     .app_form .app_form_input{
         margin-left: 15px;
