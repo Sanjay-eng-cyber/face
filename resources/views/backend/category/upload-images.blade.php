@@ -218,7 +218,7 @@
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-xl-4 col-md-6 mt-2 mb-1">
-                            <legend class="h4 text-clr">
+                            <legend class="h2 text-clr fw-600">
                                 Upload Images
                             </legend>
                         </div>
@@ -241,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow">
+            <div class="info statbox widget box box-shadow mt-3 mt-lg-4">
                 <div class="row widget-header">
                     <div class="col-md-11">
                         <div class="work-section">

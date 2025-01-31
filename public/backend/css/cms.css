@@ -663,6 +663,25 @@ body.mceContentBody {
  .badge-primary{
     background-color:#951350 ;
  }
+ .form-control.event-dpd-cust{
+background-color: #1A1A1A !important;
+color: white !important;
+ }
+ .page-item.disabled .page-link{
+    background-color: black;
+    color:white;
+    border: 1px solid #181215;
+ }
+ .page-item.active .page-link{
+    background-color:#FE3B96;
+    color: white;
+    border: 1px solid #181215;
+ }
+ .page-link{
+    background-color: black;
+    color:white;
+    border: 1px solid #181215;
+ }
 @media screen and (max-width:992px) {
     .app_form .app_form_input{
         margin-left: 15px;

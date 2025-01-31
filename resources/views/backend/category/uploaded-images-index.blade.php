@@ -7,13 +7,13 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <legend class="h4 text-clr ">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <legend class="h4 text-clr fw-600 ">
                                 Uploaded Images (Total - {{ $totalImages }})
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
+                        <div class="col-lg-6 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
                            
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow temp-index">
+            <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
