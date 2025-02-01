@@ -659,6 +659,7 @@ body.mceContentBody {
  }
  .badge-secondary{
     background-color:#951350 !important;
+    border-radius: 8px;
  }
  .badge-primary{
     background-color:#951350 ;
@@ -682,6 +683,22 @@ color: white !important;
     color:white;
     border: 1px solid #181215;
  }
+
+ .browsertext {
+    color: #D0D0D0;
+}
+
+.guest-uploader {
+    font-weight: bold;
+    padding: 10px 9px;
+    border: none;
+    border-radius: 22px;
+    border: 1px solid #B0ABAB;
+    width: 150px;
+    font-size: 14px;
+    color: #FE3B96;
+}
+
 @media screen and (max-width:992px) {
     .app_form .app_form_input{
         margin-left: 15px;

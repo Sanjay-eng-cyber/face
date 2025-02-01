@@ -198,7 +198,25 @@
             display: none;
         }
 
+        .dropzone.dz-clickable{
+            background-image: url(/backend/images/uploadbg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            border: 1.32px solid #3AB4B4;
+            padding: 35px 35px 35px 35px;
+            height: 100%;
+            position: relative;
+        }
+       
+        .dropzone.dz-clickable .dz-message{
+            position: relative;
+            z-index: 2;
 
+        }
         @media screen and (max-width:576px) {
             .dz-filename {
                 display: inline-block;
@@ -276,20 +294,34 @@
                                                         @csrf
                                                         <div class="dz-message needsclick ">
                                                             <div class="d-flex flex-column align-items-center">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                    width="40" height="40" fill="currentColor">
-                                                                    <path d="M12 2l-5 5h3v6h4V7h3l-5-5zm6 15H6v2h12v-2z" />
-                                                                </svg>
-
-                                                                <div class=" img-circle h5">
+                                                                <div class="pb-4 browsertext brsr-14pxtx">
                                                                     Drag and Drop here photos
                                                                 </div>
-                                                                <div class="h5">Or</div>
 
-                                                                <div class=" img-circle h5"
-                                                                    style="color:#445ede;font-weight:600">
-                                                                    Browse Photos
-                                                                </div>
+                                                                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g filter="url(#filter0_d_434_150)">
+                                                                    <rect x="4" width="46" height="46" rx="23" fill="#222E4B" shape-rendering="crispEdges"/>
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27 13C25.8426 12.9998 24.7098 13.3343 23.7381 13.9633C22.7665 14.5923 21.9976 15.4889 21.524 16.545C21.4566 16.6964 21.3876 16.8471 21.317 16.997L21.297 16.998C21.233 17 21.146 17 21 17C19.9391 17 18.9217 17.4214 18.1716 18.1716C17.4214 18.9217 17 19.9391 17 21C17 22.0609 17.4214 23.0783 18.1716 23.8284C18.9217 24.5786 19.9391 25 21 25H21.172L23.172 23H21C20.4696 23 19.9609 22.7893 19.5858 22.4142C19.2107 22.0391 19 21.5304 19 21C19 20.4696 19.2107 19.9609 19.5858 19.5858C19.9609 19.2107 20.4696 19 21 19H21.064C21.272 19 21.514 19.001 21.714 18.96C21.963 18.9174 22.2009 18.8256 22.414 18.69C22.655 18.534 22.821 18.34 22.947 18.163C23.0242 18.049 23.0915 17.9285 23.148 17.803C23.2013 17.6917 23.2667 17.549 23.344 17.375L23.348 17.365C23.6634 16.6602 24.1761 16.0617 24.8241 15.6417C25.4721 15.2217 26.2278 14.9983 27 14.9983C27.7722 14.9983 28.5279 15.2217 29.1759 15.6417C29.8239 16.0617 30.3366 16.6602 30.652 17.365L30.657 17.375C30.7337 17.5483 30.7987 17.691 30.852 17.803C30.898 17.9 30.966 18.041 31.053 18.163C31.179 18.339 31.344 18.534 31.586 18.691C31.828 18.847 32.073 18.918 32.286 18.961C32.486 19.001 32.728 19.001 32.936 19.001L33 19C33.5304 19 34.0391 19.2107 34.4142 19.5858C34.7893 19.9609 35 20.4696 35 21C35 21.5304 34.7893 22.0391 34.4142 22.4142C34.0391 22.7893 33.5304 23 33 23H30.828L32.828 25H33C34.0609 25 35.0783 24.5786 35.8284 23.8284C36.5786 23.0783 37 22.0609 37 21C37 19.9391 36.5786 18.9217 35.8284 18.1716C35.0783 17.4214 34.0609 17 33 17C32.854 17 32.767 17 32.703 16.998H32.683L32.658 16.945C32.5961 16.8122 32.5354 16.6789 32.476 16.545C32.0024 15.4889 31.2335 14.5923 30.2619 13.9633C29.2902 13.3343 28.1574 12.9998 27 13Z" fill="white"/>
+                                                                    <path d="M27 22.9999L26.293 22.2929L27 21.5859L27.707 22.2929L27 22.9999ZM28 31.9999C28 32.2652 27.8946 32.5195 27.7071 32.707C27.5195 32.8946 27.2652 32.9999 27 32.9999C26.7348 32.9999 26.4804 32.8946 26.2929 32.707C26.1053 32.5195 26 32.2652 26 31.9999H28ZM22.293 26.2929L26.293 22.2929L27.707 23.7069L23.707 27.7069L22.293 26.2929ZM27.707 22.2929L31.707 26.2929L30.293 27.7069L26.293 23.7069L27.707 22.2929ZM28 22.9999V31.9999H26V22.9999H28Z" fill="white"/>
+                                                                    </g>
+                                                                    <defs>
+                                                                    <filter id="filter0_d_434_150" x="0" y="0" width="54" height="54" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                                                    <feOffset dy="4"/>
+                                                                    <feGaussianBlur stdDeviation="2"/>
+                                                                    <feComposite in2="hardAlpha" operator="out"/>
+                                                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_434_150"/>
+                                                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_434_150" result="shape"/>
+                                                                    </filter>
+                                                                    </defs>
+                                                                </svg>
+                                                                
+                                                                <button type="button " class="mb-3 guest-uploader">Browse Photos</button>
+
+                                                                <div class="fs-10 fw-600 newwcolor">JPG,JPEG, PNG,WEBP,AVIF formats, up to 1 MB.</div>
+
                                                             </div>
 
                                                         </div>
