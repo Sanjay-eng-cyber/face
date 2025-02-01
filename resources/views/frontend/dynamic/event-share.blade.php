@@ -437,19 +437,23 @@
                                                 <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                                     alt="" class="img-fluid ex-one-img-new rounded-3">
                                             </div>
-                                            <div class="d-flex flex-column justify-content-center">
+
+                                            <div>
                                                 <div class="eventanddatespit ">
                                                     <div class="h5 fw-600 mb-0 text-white bx-twoeventname">
-                                                        {{ $event->name }}</div>
-                                                    <div class="text-white fw-300 fs-14 fssm-8px">
+                                                        {{ $event->name }}
+                                                    </div>
+                                                    <div class="text-white fw-300 fs-14 fssm-8px" >
                                                         {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                         {{ dd_format($event->end_date, 'd/m/Y') }}
                                                     </div>
-                                                    <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
-                                                        {!! Str::limit($event->descriptions, 100, '...') !!}
-                                                    </div>
+                                                </div>
+                                                <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
+                                                    {!! Str::limit($event->descriptions, 100, '...') !!}
                                                 </div>
                                             </div>
+
+                                          
                                         </div>
                                     </div>
 
