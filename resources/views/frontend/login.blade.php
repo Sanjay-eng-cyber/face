@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="pb-3">
                                         <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
-                                        <input type="email" name="email" minlength="8" maxlength="30" required
+                                        <input type="email" name="email" minlength="8" maxlength="30" placeholder="E-mail" required
                                             class="form-control sin-input">
                                     </div>
                                     {{-- @if ($errors->has('email'))
@@ -121,7 +121,7 @@
                                     <div class="pb-2">
                                         <label for="password" class="fw-600 frtwhitcolor pb-2">Password*</label>
                                         <input type="password" name="password" minlength="8" maxlength="16" required
-                                            class="form-control sin-input">
+                                            class="form-control sin-input" placeholder="Password">
 
                                     </div>
                                     {{-- @if ($errors->has('password'))

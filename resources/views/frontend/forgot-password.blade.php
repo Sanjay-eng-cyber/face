@@ -91,7 +91,7 @@
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
 
-            <div class="blurhero-img-login-new">    
+            <div class="blurhero-img-login-new">
                 <div class="container overflow-hide">
                     <div class="row d-flex align-items-center justify-content-center hero-mh hero-main-frgtpw gx-5">
                         <div class="col-12 col-md-6">
@@ -109,7 +109,7 @@
                                     <div class="pb-3">
                                         <label for="email" class="fw-600 frtwhitcolor pb-2">Email ID*</label>
                                         <input type="email" name="email" minlength="8" maxlength="30" required
-                                            class="form-control sin-input">
+                                            class="form-control sin-input" placeholder="E-mail">
                                         @if ($errors->has('email'))
                                             <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                         @endif
@@ -131,7 +131,7 @@
                     </div>
 
                 </div>
-            </div>    
+            </div>
 
         </div>
     </section>
