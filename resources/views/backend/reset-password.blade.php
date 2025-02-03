@@ -29,9 +29,11 @@
 
             /* Set the height of the container */
         }
+
         .text-black {
             color: #000000 !important;
         }
+
         .bg-pink-color {
             background-color: #64002F;
             border-radius: 50px;
@@ -42,7 +44,7 @@
             width: 180px;
             margin: auto;
             font-weight: 500;
-            font-size:18px;
+            font-size: 18px;
             /* Remove default transition effect */
 
         }
@@ -63,6 +65,13 @@
         .text-cl {
             color: #000000;
         }
+
+        input[data-custom-attribute="channels-login"][readonly] {
+            background-color: rgba(25, 28, 25,1) !important;
+            color: #FFFFFF !important;
+            border-radius: 10.9544px;
+
+        }
     </style>
 </head>
 
@@ -79,9 +88,9 @@
                     required hidden data-custom-attribute="channels-login">
                 <div class="auth-form-input mt-5">
                     <img class="icon" src="backend/images/icon-user.svg" draggable="false">
-                    <input class="form-control" placeholder="E-mail or Username " id="email" name="email"
-                        type="email" minlength="8" maxlength="30" value="{{ request('email') }}" readonly required
-                        data-custom-attribute="channels-login">
+                    <input class="form-control readonly-field" placeholder="E-mail or Username " id="email"
+                        name="email" type="email" minlength="8" maxlength="30" value="{{ request('email') }}"
+                        readonly required data-custom-attribute="channels-login">
                 </div>
                 @if ($errors->has('email'))
                     <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
