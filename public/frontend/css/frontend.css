@@ -29,6 +29,11 @@ border-radius: 50%;
     aspect-ratio: 1/1;
     object-fit: cover;
 }
+.ex-one-img-new-fi{
+    width: 95px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 .drgreen{
     color: var(--drgreen);
 }
@@ -2092,6 +2097,9 @@ grid-template-columns: 42.4% 1% 56.4%;
     .ex-one-img-new {
         width: 121px;
     }
+    .ex-one-img-new-fi {
+        width: 95px;
+    }
 
     .share-img-text{
         font-size: 48px;
@@ -3198,6 +3206,9 @@ grid-template-columns: 42.4% 1% 56.4%;
         gap: 9px;
     }
     .ex-one-img-new {
+        width:100%;
+    }
+    .ex-one-img-new-fi {
         width:100%;
     }
     .navcircle-img {
