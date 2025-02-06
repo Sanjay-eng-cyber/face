@@ -211,7 +211,7 @@
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
                                             <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
-                                                alt="" class="img-fluid ex-one-img w-100">
+                                                alt="" class="img-fluid ex-one-img-new-fi rounded-2">
                                         </div>
                                         <div>
                                             <div class="eventanddatespit-bdt ">
