@@ -170,6 +170,30 @@ body {
 .pt-17px{
     padding-top: 17px;
 }
+.full-text {
+    transition: all 0.3s ease-in-out;
+}
+
+.show-more-btn { 
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    color: #FE3B96;
+    border-bottom: 1px solid #FE3B96;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.show-more-btn:hover,
+.show-more-btn:focus,
+.show-more-btn:active {
+    color: #FE3B96;
+    border-bottom: 1px solid #FE3B96;
+    text-decoration: none;
+    outline: none;
+}
 
 
 .yclr{

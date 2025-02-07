@@ -165,10 +165,18 @@
                                                     </div>
 
                                                     @if ($event->descriptions)
-                                                        <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara">
-                                                            {!! Str::limit($event->descriptions, 100, '...') !!}
+                                                        <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                            <span class="short-text">
+                                                                {!! Str::limit(strip_tags($event->descriptions), 100, '...') !!}
+                                                            </span>
+                                                            <span class="full-text d-none">
+                                                            {!! nl2br(e(strip_tags($event->descriptions))) !!}
+                                                            </span>
+                                                            <button class="btn show-more-btn ">Show More</button>
                                                         </div>
                                                     @endif
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -822,7 +830,30 @@
             });
         </script>
 
+        <script>
+           document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".show-more-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            let container = this.closest(".limit-para");
+            let shortText = container.querySelector(".short-text");
+            let fullText = container.querySelector(".full-text");
 
+            if (shortText.style.display !== "none") {
+                shortText.style.display = "none";
+                fullText.classList.remove("d-none");
+                this.textContent = "Show Less";
+            } else {
+                shortText.style.display = "inline";
+                fullText.classList.add("d-none");
+                this.textContent = "Show More";
+            }
+        });
+    });
+});
+
+
+
+        </script>
     @endsection
 
     @section('cdn')
