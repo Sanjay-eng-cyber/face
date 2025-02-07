@@ -164,17 +164,27 @@
                                                         @endif
                                                     </div>
 
+                                                    
                                                     @if ($event->descriptions)
+                                                        @php
+                                                            $cleanDescription = strip_tags($event->descriptions);
+                                                            $shortDescription = Str::limit($cleanDescription, 180, '...');
+                                                        @endphp
                                                         <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
                                                             <span class="short-text">
-                                                                {!! Str::limit(strip_tags($event->descriptions), 100, '...') !!}
+                                                                {!! $shortDescription !!}
                                                             </span>
                                                             <span class="full-text d-none">
-                                                            {!! nl2br(e(strip_tags($event->descriptions))) !!}
+                                                                {!! nl2br(e($cleanDescription)) !!}
                                                             </span>
-                                                            <button class="btn show-more-btn ">Show More</button>
+                                                            @if (strlen($cleanDescription) > 180)
+                                                                <button class="btn show-more-btn">Show More</button>
+                                                            @endif
                                                         </div>
                                                     @endif
+
+
+                                                   
 
 
                                                 </div>
@@ -240,8 +250,20 @@
                                             </div>
 
                                             @if ($event->descriptions)
-                                                <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara">
-                                                    {!! Str::limit($event->descriptions, 100, '...') !!}
+                                                @php
+                                                    $cleanDescription = strip_tags($event->descriptions);
+                                                    $shortDescription = Str::limit($cleanDescription, 180, '...');
+                                                @endphp
+                                                <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                    <span class="short-text">
+                                                        {!! $shortDescription !!}
+                                                    </span>
+                                                    <span class="full-text d-none">
+                                                        {!! nl2br(e($cleanDescription)) !!}
+                                                    </span>
+                                                    @if (strlen($cleanDescription) >180)
+                                                        <button class="btn show-more-btn">Show More</button>
+                                                    @endif
                                                 </div>
                                             @endif
                                         </div>
@@ -456,9 +478,26 @@
                                                         {{ dd_format($event->end_date, 'd/m/Y') }}
                                                     </div>
                                                 </div>
-                                                <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra">
-                                                    {!! Str::limit($event->descriptions, 100, '...') !!}
+
+                                                @if ($event->descriptions)
+                                                        @php
+                                                            $cleanDescription = strip_tags($event->descriptions);
+                                                            $shortDescription = Str::limit($cleanDescription, 180, '...');
+                                                        @endphp
+                                                <div class="text-white pt-2 pt-xl-3 fs-14 box-twobtpra limit-para">
+                                                    <span class="short-text">
+                                                        {!! $shortDescription !!}
+                                                    </span>
+                                                    <span class="full-text d-none">
+                                                        {!! nl2br(e($cleanDescription)) !!}
+                                                    </span>
+                                                    @if (strlen($cleanDescription) > 180)
+                                                        <button class="btn show-more-btn">Show More</button>
+                                                    @endif
                                                 </div>
+
+                                                @endif
+
                                             </div>
 
                                           
@@ -831,28 +870,23 @@
         </script>
 
         <script>
-           document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".show-more-btn").forEach(function (button) {
-        button.addEventListener("click", function () {
-            let container = this.closest(".limit-para");
-            let shortText = container.querySelector(".short-text");
-            let fullText = container.querySelector(".full-text");
+         document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("show-more-btn")) {
+                let container = event.target.closest(".limit-para");
+                let shortText = container.querySelector(".short-text");
+                let fullText = container.querySelector(".full-text");
 
-            if (shortText.style.display !== "none") {
-                shortText.style.display = "none";
-                fullText.classList.remove("d-none");
-                this.textContent = "Show Less";
-            } else {
-                shortText.style.display = "inline";
-                fullText.classList.add("d-none");
-                this.textContent = "Show More";
+                if (shortText.style.display !== "none") {
+                    shortText.style.display = "none";
+                    fullText.classList.remove("d-none");
+                    event.target.textContent = "Show Less";
+                } else {
+                    shortText.style.display = "inline";
+                    fullText.classList.add("d-none");
+                    event.target.textContent = "Show More";
+                }
             }
         });
-    });
-});
-
-
-
         </script>
     @endsection
 
