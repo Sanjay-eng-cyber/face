@@ -4227,3 +4227,9 @@ position: relative;
     border-radius: 5px;
     cursor: pointer;
 }
+
+[v-cloak] {
+    display: none;
+}
+
+

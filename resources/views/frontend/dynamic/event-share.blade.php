@@ -128,7 +128,7 @@
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
 
-                    <div class="pb-5" v-if="step == 1">
+                    <div class="pb-5" v-if="step == 1" v-show="step !== 2 && step !== 3">
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
@@ -223,7 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="step-two" v-if="step == 2">
+                    <div class="step-two" v-if="step == 2"  v-cloak>
 
                         <div class="row  pt-17px pb-30 position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
@@ -417,7 +417,7 @@
                         </div>
                     </div>
 
-                    <div class="step-three" v-if="step == 3">
+                    <div class="step-three" v-if="step == 3"  v-cloak>
 
 
 
