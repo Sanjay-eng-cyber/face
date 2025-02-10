@@ -318,7 +318,7 @@
                                                                     </defs>
                                                                 </svg>
                                                                 
-                                                                <button type="button " class="mb-3 guest-uploader">Browse Photos</button>
+                                                                <div class="mb-3 guest-uploader">Browse Photos</div>
 
                                                                 <div class="fs-10 fw-600 newwcolor">JPG,JPEG, PNG,WEBP,AVIF formats, up to 1 MB.</div>
 
@@ -398,7 +398,6 @@
 
         var dropzone = new Dropzone('.demo-upload', {
             url: `/upload/${eventSlug}/${categorySlug}`,
-            autoProcessQueue: false, // Prevent automatic upload
             maxFiles: 10000, // Set a high limit
             maxFilesize: 10, // Max file size (in MB)
             addRemoveLinks: true,
