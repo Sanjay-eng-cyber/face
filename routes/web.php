@@ -86,13 +86,11 @@ Route::domain(config('app.web_domain'))->group(function () {
             Route::post('event/verify-pin', 'App\Http\Controllers\frontend\EventController@verifyPin')->name('frontend.event.verify-pin');
             Route::post('event/user-submit', 'App\Http\Controllers\frontend\EventController@userFormSubmit')->name('frontend.event.user-submit');
             Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@getFetchedImages')->name('frontend.event.fetch-matched-images');
-
         });
     });
 
 
-    Route::get('/c/share/{categorySlug}', function () {
-        return 'True';
-    })->name('frontend.category.share.index');
+    Route::get('/c/share/{eventSlug}/{categorySlug}', 'App\Http\Controllers\frontend\CategoryController@show')->name('frontend.category.share.index');
+    Route::post('category/user-submit', 'App\Http\Controllers\frontend\CategoryController@userFormSubmit')->name('frontend.category.user-submit');
 
 });

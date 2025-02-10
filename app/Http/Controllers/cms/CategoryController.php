@@ -214,6 +214,7 @@ class CategoryController extends Controller
 
     public function uploadImages(Request $request, $eventSlug, $categorySlug)
     {
+        // dd($request);
         $user = Auth::guard('admin')->user('id');
         $event = Event::whereSlug($eventSlug)->firstOrFail();
         $category = Category::whereSlug($categorySlug)->where('event_id', $event->id)->firstOrFail();
@@ -355,7 +356,8 @@ class CategoryController extends Controller
     public function categoryUrl($id)
     {
         $category = Category::findOrFail($id);
-        $url = URL::temporarySignedRoute('frontend.category.share.index', now()->addDays(3), ['categorySlug' => $category->slug]);
+        $event = Event::findOrFail($category->event_id);
+        $url = URL::temporarySignedRoute('frontend.category.share.index', now()->addDays(3), ['eventSlug' => $event->slug, 'categorySlug' => $category->slug]);
         return redirect()->route('backend.category.show', $id)->with('shared_url', $url);
     }
 }

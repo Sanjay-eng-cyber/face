@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                                                                                            background-image: unset;
-                                                                                                                            backdrop-filter: unset;
-                                                                                                                            min-height: unset;
-                                                                                                                            padding-left: 12px;
-                                                                                                                            padding-right: 12px;
-                                                                                                                        } */
+                                                                                                                                background-image: unset;
+                                                                                                                                backdrop-filter: unset;
+                                                                                                                                min-height: unset;
+                                                                                                                                padding-left: 12px;
+                                                                                                                                padding-right: 12px;
+                                                                                                                            } */
             .pobdh {
                 height: 0px;
             }
@@ -679,8 +679,9 @@
                             return;
                         }
                         // console.log(fullPin);
-                        axios.post("{{ route('frontend.event.user-submit') }}", {
+                        axios.post("{{ route('frontend.category.user-submit') }}", {
                                 eventSlug: '{{ $event->slug }}',
+                                categorySlug: '{{ $category->slug }}',
                                 pin: fullPin,
                                 name: this.name,
                                 email: this.email,
