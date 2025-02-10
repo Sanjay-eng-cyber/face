@@ -217,6 +217,16 @@
             z-index: 2;
 
         }
+        .dropzone .dz-preview.dz-image-preview{
+            background:transparent !important;
+        }
+        .progress{
+            background-color:unset !important;
+            box-shadow:unset !important;
+        }
+        .progress-bar{
+            background-color: #FE3B96  !important;
+        }
         @media screen and (max-width:576px) {
             .dz-filename {
                 display: inline-block;
