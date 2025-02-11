@@ -29,11 +29,12 @@
             min-height: 106px;
             margin-top: 14px;
             position: fixed;
-            width: 98%;
+            width: 96%;
             left: 50%;
             border-radius: 34px;
             transform: translate(-50%);
         }
+        
 
         .smalllarrow-img {
             display: none;
