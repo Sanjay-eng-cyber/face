@@ -197,8 +197,8 @@ class EventController extends Controller
             'cover_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
             'guest_images_upload' => 'nullable|in:1,0',
             'visibility' => 'required|in:1,0',
-            'is_watermark_required' => 'nullable|required_with:watermark_image|in:1,0',
-            'watermark_image' => 'nullable|required_if:is_watermark_required,1|mimes:jpeg,png,jpg|max:512',
+            'is_watermark_required' => 'nullable|in:1,0',
+            'watermark_image' => 'nullable|mimes:jpeg,png,jpg|max:512',
 
         ]);
 
