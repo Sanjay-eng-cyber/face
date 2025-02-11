@@ -8,87 +8,160 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('backend/images/mainlogo.png') }}" type="image/x-icon">
     <title>Reset Password - face</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="backend/css/cms.css">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .cubold {
-            font-weight: 600
-        }
+.text-cl {
+    color: #000000;
+}
 
-        .body-bg {
-            background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, #0FACB3 100%) !important;
-            background-repeat: no-repeat;
+.text-black {
+    color: #000000 !important;
+}
 
-            /* Set the height of the container */
-        }
+.body-bg {
+    background-image: url(/backend/images/login/login-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    /* Set the height of the container */
+}
 
-        .text-black {
-            color: #000000 !important;
-        }
 
-        .bg-pink-color {
-            background-color: #64002F;
-            border-radius: 50px;
-            color: white;
-            border: 1px solid white;
-            transition: none;
-            padding: 12px 35px;
-            width: 180px;
-            margin: auto;
-            font-weight: 500;
-            font-size: 18px;
-            /* Remove default transition effect */
+.bg-pink-color {
+    background-color:#FE3B96;
+    border-radius:12px;
+    color: white;
+    border: 1px solid transparent;
+    transition: none;
+    padding: 10.5px 35px;
+    width: 100%;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+        /* Remove default transition effect */
 
-        }
+}
 
-        .bg-pink-color:hover {
-            background-color: transparent;
-            color: #64002F;
-            border: 2px solid #64002F;
-        }
+/* .bg-pink-color:hover {
+    background-color: transparent;
+    color: #64002F;
+    border: 1px solid #64002F;
+} */
 
-        input[data-custom-attribute="channels-login"] {
-            background: #FFFFFF;
-            box-shadow: 8.03325px 11.6847px 15.3362px 1.46059px rgba(0, 0, 0, 0.13);
-            border-radius: 10.9544px;
+/* input[data-custom-attribute="channels-login"] {
+    background:#1A1A1A;     
+    box-shadow: 8.03325px 11.6847px 15.3362px 1.46059px rgba(0, 0, 0, 0.13);
+    border-radius: 10.9544px;
+    
 
-        }
+} */
+.form-control:focus{
+    background:#1A1A1A;
 
-        .text-cl {
-            color: #000000;
-        }
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.pt-20px{
+    padding-top: 20px;
+}
+.auth-form{
+    background: linear-gradient(114.88deg, #5A1837 7.26%, #181215 25.65%, #181215 41.63%, #181215 59.05%, #F99EC9 104.07%);
+    padding: 1px;
+    border-radius: 25px;
 
-        input[data-custom-attribute="channels-login"][readonly] {
-            background-color: rgba(25, 28, 25,1) !important;
-            color: #FFFFFF !important;
-            border-radius: 10.9544px;
+}
+.auth-form-inner{
+    background: linear-gradient(165.93deg, rgba(48, 46, 46, 0.14) -2%, rgba(84, 7, 43, 0.14) 105.79%);
+    padding: 36px 59px 59px 60px;
+    border-radius: 25px;
+    display: flex;
+flex-direction: column;
+align-items: center;
 
-        }
-    </style>
+}
+.auth-form-inner-one{
+    background: black;
+    border-radius: 25px;
+}
+
+
+
+.auth-form-input input::placeholder {
+color: #8C9187; 
+background:#1A1A1A;     
+
+}
+
+.cmn-input {
+color: #ffffff; 
+background: #1A1A1A !important;
+}
+
+.cmn-input:focus {
+outline: none; 
+background-color: transparent; 
+color: white;
+border: none;
+}
+
+.z-index-1{
+z-index: -1;
+}
+.login-form{
+    max-width: 441px;
+    width: 100%;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly]{
+    background-color: #1A1A1A !important;
+}
+
+@media screen and (max-width:576px) {
+.auth-form-inner{
+padding: 25px 15px 25px 15px;
+}
+}
+
+</style>
 </head>
 
-<body class="auth-page-bg body-bg">
-    <div class="container">
 
-        <div class="auth-form px-2 mx-auto" style="max-width:550px">
-            <img class="d-block mx-auto w-100 mt-5" style="max-width:250px;border-radius:10px"
-                src="backend/images/mainlogo.png" alt="">
-            <h1 class="text-center h3 mt-5 auth-text-primary cubold text-cl">Reset Password</h1>
-            <form method="POST" action="{{ route('password.update') }}">
+
+<body class="auth-page-bg body-bg">
+    <img src="{{ asset('backend/images/login/ele-login.svg') }}" alt="" srcset=""
+        class="img-fluid position-absolute start-0 top-0 z-index-1">
+    <div class="container h-100 d-flex  align-items-center">
+
+        <div class="auth-form mx-auto" style="width:694px;">
+            <div class="auth-form-inner-one">
+                <div class="auth-form-inner">
+                <a href="{{ url('/') }}"> <img class="d-block mx-auto " style=""
+                        src="{{ asset('backend/images/login/dmy-logo.png') }}" alt=""></a>
+                <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl text-white">Login</h1>
+                
+            <form method="POST" action="{{ route('password.update') }}" class="login-form">
                 @csrf
                 <input class="form-control" type="text" name="token" value="{{ $request->route('token') }}"
                     required hidden data-custom-attribute="channels-login">
                 <div class="auth-form-input mt-5">
                     <img class="icon" src="backend/images/icon-user.svg" draggable="false">
-                    <input class="form-control readonly-field" placeholder="E-mail or Username " id="email"
+                    <input class="form-control readonly-field cmn-input" placeholder="E-mail or Username " id="email"
                         name="email" type="email" minlength="8" maxlength="30" value="{{ request('email') }}"
                         readonly required data-custom-attribute="channels-login">
                 </div>
@@ -97,12 +170,12 @@
                 @endif
                 <div class="auth-form-input mt-4">
                     <img class="icon eye-show-pass" src="backend/images/icon-eye.svg" draggable="false">
-                    <input class="form-control password" type="password" placeholder="Password" id="password"
+                    <input class="form-control password cmn-input" type="password" placeholder="Password" id="password"
                         name="password" minlength="8" maxlength="16" required>
                 </div>
                 <div class="auth-form-input mt-4">
                     <img class="icon eye-show-pass" src="backend/images/icon-eye.svg" draggable="false">
-                    <input class="form-control password" type="password" placeholder="Password" id="password2"
+                    <input class="form-control password cmn-input" type="password" placeholder="Password" id="password2"
                         name="password_confirmation" minlength="8" maxlength="16" required
                         data-custom-attribute="channels-login">
                 </div>
@@ -110,23 +183,26 @@
                     <div class="text-danger" role="alert">{{ $errors->first('password') }}</div>
                 @endif
 
-                <div class="text-center">
-                    <button type="submit" class="form-control  mx-auto  h-auto mt-3  font-bold bg-pink-color">
+                <button type="submit" class="form-control btn-lg h-auto bg-pink-color font-bold mt-4">
                         Login
-                    </button>
-                </div>
+                </button>
+
+            
 
             </form>
-            <div class="text-center text-muted mt-3">
-                <small class="text-black">
-                    &copy;
-                    {{ date('Y') }} All Rights Reserved | Powered by
-                    <a href="http://acetrot.com" class="text-muted text-black text-underline" target="_blank">
-                        Acetrot.com
-                    </a>
-                </small>
+
+
+                {{-- <div class="text-center text-muted mt-3 text-white">
+                    <small class="p-0 text-black">
+                        &copy;
+                        {{ date('Y') }} All Rights Reserved | Powered by
+                        <a href="http://acetrot.com" class="text-muted text-black text-underline" target="_blank">
+                            Acetrot.com
+                        </a>
+                    </small>
+                </div> --}}
+                </div>
             </div>
-            <img class="mt-5 w-100" src="backend/images/login-bg.png" draggable="false" alt="">
         </div>
     </div>
 
@@ -149,5 +225,6 @@
         });
     </script>
 </body>
+
 
 </html>

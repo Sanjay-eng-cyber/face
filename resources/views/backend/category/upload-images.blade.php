@@ -227,6 +227,8 @@
         .progress-bar{
             background-color: #FE3B96  !important;
         }
+        .dropzone .dz-preview .dz-remove{color:white !important}
+        .dropzone .dz-preview .dz-cancel{color:white !important}
         @media screen and (max-width:576px) {
             .dz-filename {
                 display: inline-block;
