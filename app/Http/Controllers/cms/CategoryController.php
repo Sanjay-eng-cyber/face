@@ -75,7 +75,13 @@ class CategoryController extends Controller
         $user = Auth::guard('admin')->user('id');
         $events = Event::where('id', $request->event_id)->where('cms_user_id', $user->id)->firstOrFail();
         $request->validate([
-            'name' => 'required|string|min:3|max:40',
+            'name' => [
+                'required',
+                'string',
+                'min:3',
+                'max:40',
+                Rule::unique('categories')->where('event_id', $request->event_id)
+            ],
             'event_id' => 'required',
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
@@ -132,7 +138,13 @@ class CategoryController extends Controller
         $user = Auth::guard('admin')->user('id');
         $events = Event::where('id', $request->event_id)->where('cms_user_id', $user->id)->firstOrFail();
         $request->validate([
-            'name' => 'required|string|min:3|max:40',
+            'name' => [
+                'required',
+                'string',
+                'min:3',
+                'max:40',
+                Rule::unique('categories')->where('event_id', $request->event_id)->ignore($request->id)
+            ],
             'event_id' => 'required',
             'visibility' => 'required|in:1,0',
             'sharing' => 'required|in:1,0',
