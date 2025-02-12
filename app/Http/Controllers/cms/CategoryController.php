@@ -24,7 +24,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $user = Auth::guard('admin')->user('id');
-        $categories = Category::latest();
+        $categories = Category::with('event')->latest();
         if ($user->role == 'admin') {
             $categories = $categories->where('cms_user_id', $user->id);
         }

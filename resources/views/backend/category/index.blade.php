@@ -64,6 +64,7 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
+                                        <th>Event Name</th>
                                         <th>Name</th>
                                         {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
@@ -73,6 +74,7 @@
                                     @forelse($categories as $category)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $categories) }}</td>
+                                            <td>{{ $category->event->name }}</td>
                                             <td>{{ $category->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
@@ -112,7 +114,7 @@
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
-                                            <td colspan="3">No Records Found</td>
+                                            <td colspan="4">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
