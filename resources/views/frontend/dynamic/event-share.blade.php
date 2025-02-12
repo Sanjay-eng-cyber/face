@@ -304,7 +304,7 @@
                                             class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
                                         <input type="text" id="mobile_number" name="mobile_number" minlength="10"
                                             maxlength="10" placeholder="Enter Your Mobile Number" required
-                                            v-model="mobile" class="form-control sin-input">
+                                            v-model="mobile_number" class="form-control sin-input">
                                     </div>
 
 
@@ -815,7 +815,7 @@
                                 user_id: this.user_id,
                             })
                             .then((res) => {
-                                console.log('fetchMatchedImages : ', res);
+                                console.log('fetchUserDetails : ', res);
 
                                 if (res.data.status) {
                                     this.name = res.data.name;
@@ -832,7 +832,7 @@
                                     this.fetchMatchedImages();
                                 } else {
                                     Snackbar.show({
-                                        text: res.data.message ?? 'Something Went Wrong',
+                                        text: res.data.message ?? 'Something Went Wrong.',
                                         pos: 'top-right',
                                         actionTextColor: '#fff',
                                         backgroundColor: '#e7515a'

@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use App\Events\UploadedImageFaceMatchingRequestedEvent;
+use App\Events\CategoryUploadedImageFaceMatchingRequestedEvent;
 
 class CategoryController extends Controller
 {
@@ -84,7 +85,7 @@ class CategoryController extends Controller
                 $frontendUser->face_locations = $face_locations;
 
                 if ($frontendUser->save()) {
-                    UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+                    CategoryUploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser, $category);
                     return response()->json([
                         'status' => true,
                         'user_id' => $frontendUser->id,

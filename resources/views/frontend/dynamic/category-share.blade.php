@@ -304,7 +304,7 @@
                                             class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
                                         <input type="text" id="mobile_number" name="mobile_number" minlength="10"
                                             maxlength="10" placeholder="Enter Your Mobile Number" required
-                                            v-model="mobile" class="form-control sin-input">
+                                            v-model="mobile_number" class="form-control sin-input">
                                     </div>
 
 
