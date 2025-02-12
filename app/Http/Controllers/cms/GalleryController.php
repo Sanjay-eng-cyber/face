@@ -49,7 +49,7 @@ class GalleryController extends Controller
                     'images',  
                     file_get_contents($image->getRealPath()), 
                     $mainImgFilename // File name
-                )->post(config('app.python_api_url') . '/api/inputimg/', [
+                )->post(config('app.python_api_url') . '/inputimg/', [
                     'user_id' => $request->user_id,
                     'event_id' => $request->event_id,
                 ]);
