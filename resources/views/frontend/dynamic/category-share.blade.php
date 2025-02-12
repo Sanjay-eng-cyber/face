@@ -572,7 +572,7 @@
                         step: 1,
                         name: '',
                         email: '',
-                        mobile: '',
+                        mobile_number: '',
                         userImageData: null,
                         user_image_url: null,
                         user_id: null,
@@ -582,7 +582,7 @@
                     }
                 },
                 mounted() {
-                    let userId = localStorage.getItem("user_id");
+                    let userId = localStorage.getItem("category_user_id");
                     console.log("userId : ", userId);
                     if (userId) {
                         this.user_id = userId;
@@ -685,14 +685,14 @@
                                 pin: fullPin,
                                 name: this.name,
                                 email: this.email,
-                                mobile_number: this.mobile,
+                                mobile_number: this.mobile_number,
                                 userImageData: this.userImageData,
                             })
                             .then((res) => {
                                 if (res.data.status) {
                                     this.user_id = res.data.user_id;
                                     this.image = res.data.image;
-                                    localStorage.setItem("user_id", this.user_id);
+                                    localStorage.setItem("category_user_id", this.user_id);
                                     Snackbar.show({
                                         text: 'User Created Successfully',
                                         pos: 'top-right',
