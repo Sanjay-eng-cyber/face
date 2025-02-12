@@ -116,8 +116,8 @@
 
         <div class="position-relative">
             <div class="pobdh"></div>
-            <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
+            <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
+                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
             <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
