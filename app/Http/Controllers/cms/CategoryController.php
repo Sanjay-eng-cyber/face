@@ -287,7 +287,7 @@ class CategoryController extends Controller
                 file_get_contents($fileWithExt->getRealPath()), // The file's content
                 $filename, // The file name
                 ['Content-Type' => 'image/jpeg']
-            )->post(config('app.python_api_url') . '/api/inputimg/');
+            )->post(config('app.python_api_url') . '/inputimg/');
 
             if ($res->successful()) {
                 $data = $res->json();
