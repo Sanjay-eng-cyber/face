@@ -101,6 +101,14 @@ class EventController extends Controller
         // dd($request);
 
         // Validate the request data
+        $user = Auth::guard('admin')->user('id');
+        $maxEventCount = $user->max_events; // Get the max event limit
+        $eventCount = Event::where('cms_user_id', $user->id)->count(); // Count user's events
+
+        if ($eventCount >= $maxEventCount) {
+            return redirect()->route('backend.event.index')->with(toast('You have reached the maximum event limit of '  . $maxEventCount . '.', 'error'));
+        }
+
         $request->validate([
             'name' => 'required|string|min:3|max:60|unique:events,name',
             'start_date' => 'required|date',
