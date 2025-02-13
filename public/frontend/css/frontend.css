@@ -1681,7 +1681,6 @@ body {
   .pin-title {
     font-size: 24px;
     font-weight: 500;
-    box-shadow: 0px 4px 4px 0px #00000040;
     color: #fff;
     padding-bottom: 29px;
   }
@@ -1785,9 +1784,9 @@ body {
 
     .eventanddatespit-bdt{
         display: grid;
-    grid-template-columns: 73% 25%;
-    grid-gap: 15px;
-    align-items: center;
+        grid-template-columns: 71% 27%;
+        grid-gap: 15px;
+        align-items: center;
     }
 
 /* .scan-facebtn{
@@ -1969,18 +1968,23 @@ grid-template-columns: 42.4% 1% 56.4%;
         width: 220px;
     }
 }
-.main-div{
+/* .main-div{
     background-image: url(/frontend/images/index/index-new/blurhero.svg);
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(23px);
     width: 98%;
     margin: auto;
-}
+} */
 /* .sub-maindiv{
     backdrop-filter: blur(23px);
 } */
-
+.bdt-date{
+    background: #16000B;
+    padding: 10px;
+    border-radius: 10px;
+    color:#FFABD2;
+}
 @media screen and (max-width:1400px) {
     .main-large-slider .slick-slide.slick-current{
         opacity: 1;
@@ -2160,7 +2164,7 @@ grid-template-columns: 42.4% 1% 56.4%;
     }
     .eventanddatespit-bdt{
         display: grid;
-        grid-template-columns: 70% 27%;
+        grid-template-columns: 68% 29%;
         grid-gap: 15px;
         align-items: center;
     }
@@ -2673,7 +2677,6 @@ grid-template-columns: 42.4% 1% 56.4%;
     .pin-title {
         font-size: 20px;
         font-weight: 500;
-        box-shadow: 0px 4px 4px 0px #00000040;
         color: #fff;
         padding-bottom: 16px;
     }
@@ -3269,7 +3272,6 @@ grid-template-columns: 42.4% 1% 56.4%;
     .pin-title {
         font-size: 14px;
         font-weight: 500;
-        box-shadow: 0px 4px 4px 0px #00000040;
         color: #fff;
         padding-bottom: 16px;
     }
@@ -3368,7 +3370,7 @@ grid-template-columns: 42.4% 1% 56.4%;
 
     }
     .basic-event-one-main-insider-bdt {
-        align-items: center;
+        align-items: start;
         display: grid;
         grid-template-columns: 29% 68%;
         gap: 10px;
@@ -3711,9 +3713,14 @@ font-weight: 300;
     .main_slide_main{
         margin-bottom: -17em;
     }
-
+    .bdt-date {
+        padding: 4px;
+    }
 }
 @media screen and (max-width:480px) {
+    .bdt-date {
+        padding: 4px;
+    }
     .bd-peventname{
         font-size: 14px;
         font-weight: 400;
@@ -3788,7 +3795,7 @@ font-weight: 300;
 
    
     .basic-event-one-main-insider-bdt {
-        align-items: center;
+        align-items:start;
         display: grid;
         grid-template-columns: 34% 64%;
         gap: 7px;
