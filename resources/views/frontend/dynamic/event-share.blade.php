@@ -242,10 +242,10 @@
 
                     <div class="step-two" v-if="step == 2" v-cloak>
 
-                        <div class="row  pt-17px pb-30 position-relative">
+                        <div class="row  pt-17px pb-30 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-10 position-relative z-99">
 
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
