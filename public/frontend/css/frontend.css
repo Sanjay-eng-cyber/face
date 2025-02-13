@@ -2129,6 +2129,9 @@ grid-template-columns: 42.4% 1% 56.4%;
     }
 }
 @media screen and (max-width:1200px) {
+    .upload-section{
+        padding: 25px;
+    }
     .ex-one-img-new {
         width: 121px;
     }

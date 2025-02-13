@@ -242,10 +242,10 @@
 
                     <div class="step-two" v-if="step == 2" v-cloak>
 
-                        <div class="row  pt-17px pb-30 position-relative d-flex justify-content-center">
+                        <div class="row  pt-17px pb-4 mb-0 mb-sm-1 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-10 position-relative z-99">
+                            <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
 
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
@@ -297,11 +297,11 @@
                         
                         
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10">
-		                        <div class="row gx-3 gx-lg-4 gx-xxl-5">
+                            <div class="col-12 col-lg-11 col-xl-10 ">
+		                        <div class="row ">
 
-                                    <div class="col">
-                                        <form method="post" class="login-form pt-5 pt-lg-0"
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <form method="post" class="login-form  pt-lg-0"
                                             @submit.prevent="handleStepTwoFormSubmit">
                                             <div class="dblwhitecolor h4 mb-0 fw-600 pb-3 form-details">Details</div>
 
@@ -335,7 +335,7 @@
 
                                         </form>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
                                             <div class="basic-face-box">
                                                 <div class="scan-face-box-insider-twopage">
                                                     <img id="captured-image" alt="Captured Image"
@@ -396,7 +396,7 @@
                                             </div>
 
                                     </div>
-                                    <div class="col">
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
                                         <div class="upload-section">
                                             {{-- <label for="userGuestImgInput"> --}}
                                             <div class="pb-4 browsertext brsr-14pxtx">
