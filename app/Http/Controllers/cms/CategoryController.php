@@ -260,7 +260,7 @@ class CategoryController extends Controller
         if (request()->file('file') && request()->file('file')->getSize() / 1024 / 1024 > $user->max_image_size) {
             return response()->json([
                 'status' => false,
-                'message' => 'The uploaded image exceeds the maximum allowed size of' . $user->max_image_size . ' MB.'
+                'message' => 'The uploaded image exceeds the maximum allowed size of ' . $user->max_image_size . ' MB.'
             ], 500);
         }
 
