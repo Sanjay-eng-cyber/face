@@ -105,6 +105,7 @@ border-radius: 50%;
 body {
     font-family: "Montserrat", sans-serif;
     /* overflow: hidden; */
+    background: #040404;
 }
 .kanit-thin {
     font-family: "Kanit", sans-serif;
@@ -179,7 +180,7 @@ body {
     border-radius: 0px;
     padding: 0px;
     color: #FE3B96;
-    border-bottom: 1px solid #FE3B96;`  
+    border-bottom: 1px solid #FE3B96;  
     background: none;
     outline: none;
     cursor: pointer;
@@ -1762,7 +1763,7 @@ body {
         gap: 19px;
     }
     .basic-event-one-main-insider-bdt{
-        align-items: center;
+        align-items: start;
         display: grid;
         grid-template-columns: 12% 85%;
         gap: 15px;

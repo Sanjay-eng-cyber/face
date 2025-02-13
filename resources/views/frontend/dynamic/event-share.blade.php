@@ -20,6 +20,16 @@
             padding-bottom: 120px
         }
 
+        body {
+            
+            background-image: url(/frontend/images/gallery/body-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh; /* This ensures the body takes the full height of the viewport */
+        }
+        
         .custom-ctnrfluid {
             background-image: url(/frontend/images/index/navbg.svg);
             background-repeat: no-repeat;
