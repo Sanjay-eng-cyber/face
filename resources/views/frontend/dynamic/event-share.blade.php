@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                                                                                            background-image: unset;
-                                                                                                                            backdrop-filter: unset;
-                                                                                                                            min-height: unset;
-                                                                                                                            padding-left: 12px;
-                                                                                                                            padding-right: 12px;
-                                                                                                                        } */
+                                                                                                                                                background-image: unset;
+                                                                                                                                                backdrop-filter: unset;
+                                                                                                                                                min-height: unset;
+                                                                                                                                                padding-left: 12px;
+                                                                                                                                                padding-right: 12px;
+                                                                                                                                            } */
             .pobdh {
                 height: 0px;
             }
@@ -117,7 +117,7 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
             <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
@@ -223,7 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="step-two" v-if="step == 2"  v-cloak>
+                    <div class="step-two" v-if="step == 2" v-cloak>
 
                         <div class="row  pt-17px pb-30 position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
@@ -417,7 +417,7 @@
                         </div>
                     </div>
 
-                    <div class="step-three" v-if="step == 3"  v-cloak>
+                    <div class="step-three" v-if="step == 3" v-cloak>
 
 
 
@@ -532,7 +532,7 @@
 
                             <div class="d-flex justify-content-center">
                                 <button id="toggleButton" class="btn pink-btn showmshol mt-3"
-                                    @click="loadMoreMatchedPhotos">Show More</button>
+                                    @click="loadMoreMatchedPhotos" v-if="hasMoreImages">Show More</button>
                             </div>
 
 
@@ -569,7 +569,7 @@
                     return {
                         event_id: '{{ $event->id }}',
                         pinValues: ref(Array(4).fill('')),
-                        step: {{$event->is_pin_protection_required ? 1 : 2}},
+                        step: {{ $event->is_pin_protection_required ? 1 : 2 }},
                         name: '',
                         email: '',
                         mobile_number: '',
@@ -579,6 +579,7 @@
                         image: null,
                         matchedImages: [],
                         imagesPageCount: 1,
+                        hasMoreImages: true,
                     }
                 },
                 mounted() {
@@ -768,12 +769,18 @@
                         axios.post("{{ route('frontend.event.fetch-matched-images') }}", {
                                 eventSlug: '{{ $event->slug }}',
                                 user_id: this.user_id,
+                                page: this.imagesPageCount
                             })
                             .then((res) => {
                                 console.log('fetchMatchedImages : ', res);
 
                                 if (res.data.status) {
-                                    this.matchedImages = res.data.images.data;
+                                    // // Append new images instead of replacing
+                                    // this.matchedImages = [...this.matchedImages, ...res.data.images.data];
+
+                                    this.matchedImages.push(...res.data.images.data);
+                                    this.hasMoreImages = res.data.images.next_page_url !== null;
+
                                     Snackbar.show({
                                         text: 'Matched Images Fetched Successfully',
                                         pos: 'top-right',
@@ -781,6 +788,7 @@
                                         backgroundColor: '#1abc9c'
                                     });
                                     this.step = 3;
+                                    this.imagesPageCount += 1;
                                 } else {
                                     Snackbar.show({
                                         text: res.data.message ?? 'Something Went Wrong',
