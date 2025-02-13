@@ -29,7 +29,7 @@ class CategoryController extends Controller
         $event = Event::whereSlug($request->eventSlug)->firstOrFail();
         $category = Category::whereSlug($request->categorySlug)->firstOrFail();
         // dd($request->pin);
-        if (!$request->pin || ($event->pin != $request->pin)) {
+        if ($event->is_pin_protection_required && $event->pin != $request->pin) {
             return response()->json(['status' => false, 'message' => 'Incorrect Pin']);
         }
 

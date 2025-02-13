@@ -569,7 +569,7 @@
                     return {
                         event_id: '{{ $event->id }}',
                         pinValues: ref(Array(4).fill('')),
-                        step: 1,
+                        step: {{$event->is_pin_protection_required ? 1 : 2}},
                         name: '',
                         email: '',
                         mobile_number: '',
