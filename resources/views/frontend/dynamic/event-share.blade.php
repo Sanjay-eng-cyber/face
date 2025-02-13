@@ -481,7 +481,7 @@
                                     </div>
 
                                     {{-- <div class="sgl-divider d-lg-block"></div> --}}
-                                    <div class="">
+                                    <div class="d-flex align-items-center  justify-content-center">
                                         <div class="vr"></div>
                                     </div>
                                     <div class="basic-event-one-main h-100 d-flex align-items-center">

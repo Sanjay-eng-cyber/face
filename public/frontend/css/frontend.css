@@ -1932,9 +1932,8 @@ body {
     border: 1px solid #FE3B96;
     padding: 12px 12px 12px 12px;
     border-radius: 12px;
-    display: grid
-;
-grid-template-columns: 42.4% 1% 56.4%;
+    display: grid;
+    grid-template-columns: 47% 5.8% 47%;
     grid-gap: 1px;
 }
 
