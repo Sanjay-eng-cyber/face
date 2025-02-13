@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
-                            
+
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -49,7 +49,8 @@
                                     <input type="file" class="form-control" id="formGroupExampleInput"
                                         name="cover_image">
                                     <div id="lightgallery_one" class="text-end">
-                                        <a href="{{ asset('storage/images/events/' . $event->cover_image) }}">View</a>
+                                        <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
+                                            target="_blank">View</a>
                                     </div>
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
@@ -283,8 +284,8 @@
                                         name="watermark_image">
                                     @if ($event->watermark_image)
                                         <div id="lightgallery_two" class="text-end">
-                                            <a
-                                                href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}">View</a>
+                                            <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
+                                                target="_blank">View</a>
                                         </div>
                                     @endif
                                     @if ($errors->has('watermark_image'))

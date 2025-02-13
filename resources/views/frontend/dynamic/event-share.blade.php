@@ -15,11 +15,21 @@
         .blurhero-img {
             display: none;
         }
-
+    
         .step-two {
             padding-bottom: 120px
         }
 
+        body {
+            
+            background-image: url(/frontend/images/gallery/body-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh; /* This ensures the body takes the full height of the viewport */
+        }
+        
         .custom-ctnrfluid {
             background-image: url(/frontend/images/index/navbg.svg);
             background-repeat: no-repeat;
@@ -81,20 +91,27 @@
                 margin-top: -17px;
             }
 
-            /* .custom-ctnrfluid {
-                                                                                                                                                background-image: unset;
-                                                                                                                                                backdrop-filter: unset;
-                                                                                                                                                min-height: unset;
-                                                                                                                                                padding-left: 12px;
-                                                                                                                                                padding-right: 12px;
-                                                                                                                                            } */
+            
             .pobdh {
                 height: 0px;
             }
 
             .stepmaincontainer {
                 padding-top: 32px;
-
+            }
+            .navsmimg{
+                position:unset;
+                z-index:unset;
+                backdrop-filter: unset;
+                left: unset;
+                transform: unset;
+                width: unset;
+                top: unset;
+                margin-top:unset;
+                min-height: unset;
+                object-fit: unset;
+                display: none;
+                border-radius: unset;
             }
         }
     </style>
@@ -117,13 +134,13 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
-            <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
+                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+            <!-- <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
                 alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
             <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
                 class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
             <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99">
+                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
 
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
@@ -153,10 +170,10 @@
                                                         </div>
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
-                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                <div class="fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }}</div>
                                                             @else
-                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                <div class="fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
                                                                 </div>
@@ -175,7 +192,7 @@
                                                             );
                                                         @endphp
                                                         <div
-                                                            class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                            class="pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
                                                             <span class="short-text">
                                                                 {!! $shortDescription !!}
                                                             </span>
@@ -243,10 +260,10 @@
                                                 </div>
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
-                                                        <div class="text-white fw-300 fs-14 bdt-date">
+                                                        <div class=" fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }}</div>
                                                     @else
-                                                        <div class="text-white fw-300 fs-14 bdt-date">
+                                                        <div class=" fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
                                                         </div>
@@ -259,7 +276,7 @@
                                                     $cleanDescription = strip_tags($event->descriptions);
                                                     $shortDescription = Str::limit($cleanDescription, 180, '...');
                                                 @endphp
-                                                <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                <div class=" pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
                                                     <span class="short-text">
                                                         {!! $shortDescription !!}
                                                     </span>

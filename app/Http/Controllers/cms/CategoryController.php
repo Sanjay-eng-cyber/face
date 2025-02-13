@@ -12,6 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use App\Models\MatchedImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
@@ -259,7 +260,7 @@ class CategoryController extends Controller
         if (request()->file('file') && request()->file('file')->getSize() / 1024 / 1024 > $user->max_image_size) {
             return response()->json([
                 'status' => false,
-                'message' => 'The uploaded image exceeds the maximum allowed size of' . $user->max_image_size . ' MB.'
+                'message' => 'The uploaded image exceeds the maximum allowed size of ' . $user->max_image_size . ' MB.'
             ], 500);
         }
 
@@ -356,9 +357,15 @@ class CategoryController extends Controller
         $event = Event::findOrFail($gallery_image->event_id);
         $category = Category::where('event_id', $event->id)->findOrFail($gallery_image->category_id);
         $filePath = "images/galleries/{$event->slug}/{$category->slug}/{$gallery_image->image_name}";
+        $matchImages =  MatchedImage::where('gallery_image_id', $id)->get();
 
         if ($gallery_image->delete()) {
             optional(Storage::disk('public')->delete($filePath));
+
+            foreach ($matchImages as $macthImage) {
+                $macthImage->delete();
+            }
+
             return redirect()->back()->with(toast('Gallery Image Deleted Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
