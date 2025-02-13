@@ -906,7 +906,7 @@ body {
     border-radius: 10px;
     text-align: center;
     border: 1.32px solid #3AB4B4;
-    padding: 35px 35px 35px 35px;
+    padding: 25px 25px 25px 25px;
     height:100%
 }
 
@@ -938,6 +938,37 @@ body {
     font-size: 14px;
     color:#FE3B96;
 }
+
+
+.nw-guest-updrbtn {
+    --bs-btn-color:#FE3B96;
+    --bs-btn-bg: white;
+    --bs-btn-border-color: #B0ABAB;
+    --bs-btn-hover-color: #FE3B96;
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-border-color: #B0ABAB;
+    --bs-btn-focus-shadow-rgb: 211, 212, 213;
+    --bs-btn-active-color:#FE3B96;
+    --bs-btn-active-bg: white;
+    --bs-btn-active-border-color: #B0ABAB;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color:#FE3B96;
+    --bs-btn-disabled-bg: white;
+    --bs-btn-disabled-border-color: #B0ABAB;
+    margin-top: 25px;
+    width: 145px;
+    /* color: #434445; */
+    /* padding: 10px 15px; */
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 22px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .upload-section p {
     margin: 15px 0 0;
@@ -1728,7 +1759,7 @@ body {
     }
 
     .submit-btn-bept {
-       
+        font-size: 14px;
          width:100%;
          border-radius: 10px;
          background-color:  #FE3B96;

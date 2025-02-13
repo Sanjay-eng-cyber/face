@@ -83,7 +83,7 @@
             }
 
             .step-two {
-                padding-bottom: 120px;
+                padding-bottom: 60px;
                 padding-top: 20px;
             }
 
@@ -305,20 +305,20 @@
                                             @submit.prevent="handleStepTwoFormSubmit">
                                             <div class="dblwhitecolor h4 mb-0 fw-600 pb-3 form-details">Details</div>
 
-                                            <div class="pb-2 pb-sm-3">
+                                            <div class="pb-2 pb-sm-3 mb-1">
                                                 <input type="text" name="name" minlength="8" maxlength="30" required
                                                     placeholder="Enter Your Name" v-model="name" required
                                                     class="form-control sin-input">
                                             </div>
 
-                                            <div class="pb-2 pb-sm-3">
+                                            <div class="pb-2 pb-sm-3 mb-1">
                                                
                                                 <input type="email" name="email" minlength="8" maxlength="40" required
                                                     placeholder="Enter Your Email ID" v-model="email"
                                                     class="form-control sin-input">
                                             </div>
 
-                                            <div class="pb-3 pb-sm-3">
+                                            <div class="pb-3 pb-sm-3 mb-1">
 
                                                 <input type="text" id="mobile_number" name="mobile_number" minlength="10"
                                                     maxlength="10" placeholder="Enter Your Mobile Number" required
@@ -410,8 +410,8 @@
                                             </div>
 
                                             <form>
-                                                <div class="dz-message">
-                                                    <div class="mb-3 guest-uploader">
+                                                <div class="dz-message d-flex flex-column align-items-center">
+                                                    <div class="mb-3 guest-uploader btn nw-guest-updrbtn">
                                                         as Guest Upload
                                                         <input type="file" id="userGuestImgInput"
                                                             @change="handleUserGuestImageFieldChange" hidden>
