@@ -209,7 +209,7 @@ class EventController extends Controller
     public function getUserDetails(Request $request)
     {
         // dd($request);
-        $user = FrontendUser::findOrFail($request->user_id);
+        $user = FrontendUser::find($request->user_id);
         if ($user) {
             return response()->json([
                 'status' => true,
@@ -222,7 +222,7 @@ class EventController extends Controller
                 'message' => 'User Fetched Successfully.'
             ]);
         }
-        return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+        return response()->json(['status' => false, 'message' => 'No User Found.']);
     }
 
     public function guestImage(Request $request, $eventSlug)

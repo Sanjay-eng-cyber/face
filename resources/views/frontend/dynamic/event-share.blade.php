@@ -856,12 +856,12 @@
                                     this.step = 3;
                                     this.fetchMatchedImages();
                                 } else {
-                                    Snackbar.show({
-                                        text: res.data.message ?? 'Something Went Wrong.',
-                                        pos: 'top-right',
-                                        actionTextColor: '#fff',
-                                        backgroundColor: '#e7515a'
-                                    });
+                                    // Snackbar.show({
+                                    //     text: res.data.message ?? 'Something Went Wrong.',
+                                    //     pos: 'top-right',
+                                    //     actionTextColor: '#fff',
+                                    //     backgroundColor: '#e7515a'
+                                    // });
                                 }
                             })
                             .catch((error) => {
