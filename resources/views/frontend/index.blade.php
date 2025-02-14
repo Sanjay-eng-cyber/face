@@ -830,7 +830,7 @@
     <div class="position-relative isolation overflow-hidden bg-pricetag">
 
         <img src="{{ asset('frontend/images/index/index-new/pricebgimg.png') }}" alt="" srcset=""
-            class="img-fluid w-100 position-absolute h-100" style="z-index: -1;">
+            class="img-fluid w-100 position-absolute h-100 pricebgimg-img" style="z-index: -1;">
 
         <div class="container pt-5 mt-xl-5">
 
