@@ -172,17 +172,13 @@
                                                         </div>
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
-                                                                <div class="fw-300 fs-14 ">
-                                                                    <span class="bdt-date">
+                                                                <div class="fw-300 fs-14 bdt-date">
                                                                         {{ dd_format($event->start_date, 'd/m/Y') }}
-                                                                    </span>
                                                                 </div>
                                                             @else
-                                                                <div class="fw-300 fs-14 ">
-                                                                    <span class="bdt-date">
+                                                                <div class="fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
-                                                                    </span>
                                                                  
                                                                 </div>
                                                             @endif
@@ -271,16 +267,12 @@
                                                 </div>
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
-                                                        <div class=" fw-300 fs-14 ">
-                                                            <span class="bdt-date">
+                                                        <div class=" fw-300 fs-14 bdt-date">
                                                                 {{ dd_format($event->start_date, 'd/m/Y') }}</div>
-                                                            </span>
                                                     @else
-                                                        <div class=" fw-300 fs-14">
-                                                            <span class="bdt-date">
+                                                        <div class=" fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
-                                                            </span>
                                                         </div>
                                                     @endif
                                                 @endif
@@ -515,12 +507,9 @@
                                                     <div class="h5 fw-600 mb-0 text-white bx-twoeventname">
                                                         {{ $event->name }}
                                                     </div>
-                                                    <div class="text-white fw-300 fs-14 fssm-8px ">
-                                                        <span class="bdt-date">
+                                                    <div class="text-white fw-300 fs-14 fssm-8px bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
-                                                        </span>
-                                                        
                                                     </div>
                                                 </div>
 
