@@ -83,7 +83,7 @@
             }
 
             .step-two {
-                padding-bottom: 120px;
+                padding-bottom: 60px;
                 padding-top: 20px;
             }
 
@@ -146,10 +146,12 @@
                 <div class="container overflow-hide stepmaincontainer">
 
                     <div class="pb-5" v-if="step == 1" v-show="step !== 2 && step !== 3">
+                       
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                           
                                 <div class="row">
 
 
@@ -170,12 +172,18 @@
                                                         </div>
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
-                                                                <div class="fw-300 fs-14 bdt-date">
-                                                                    {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                                <div class="fw-300 fs-14 ">
+                                                                    <span class="bdt-date">
+                                                                        {{ dd_format($event->start_date, 'd/m/Y') }}
+                                                                    </span>
+                                                                </div>
                                                             @else
-                                                                <div class="fw-300 fs-14 bdt-date">
+                                                                <div class="fw-300 fs-14 ">
+                                                                    <span class="bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                                    </span>
+                                                                 
                                                                 </div>
                                                             @endif
                                                         @endif
@@ -224,9 +232,9 @@
 
                         <div class="row ptpb-55px" id="enterPinDiv">
                             <div class="col-12">
-                                <div class="pin-container">
+                                <div class="pin-container d-flex flex-column align-items-center">
                                     <div class="pin-title">Enter Your Pin Number</div>
-                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit">
+                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit" class="pin-num">
                                         <div class="d-flex justify-content-center basic-input-main">
                                             <input placeholder="0" v-for="(value, index) in pinValues"
                                                 :key="index" type="text" maxlength="1" class="pin-input"
@@ -242,11 +250,14 @@
 
                     <div class="step-two" v-if="step == 2" v-cloak>
 
-                        <div class="row  pt-17px pb-30 position-relative">
+                        <div class="row  pt-17px pb-4 mb-0 mb-sm-3 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
-
+                            <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
+                                    <a href="http://" class="mb-4">
+                                        <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                            class="img-fluid logo-img">
+                                    </a>
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
@@ -260,12 +271,16 @@
                                                 </div>
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
-                                                        <div class=" fw-300 fs-14 bdt-date">
-                                                            {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                        <div class=" fw-300 fs-14 ">
+                                                            <span class="bdt-date">
+                                                                {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                            </span>
                                                     @else
-                                                        <div class=" fw-300 fs-14 bdt-date">
+                                                        <div class=" fw-300 fs-14">
+                                                            <span class="bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                            </span>
                                                         </div>
                                                     @endif
                                                 @endif
@@ -294,144 +309,145 @@
 
                             </div>
                         </div>
+                        
+                        
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-12 col-lg-11 col-xl-10 ">
+		                        <div class="row ">
 
-                        <div class="row gx-3 gx-lg-4 gx-xxl-5">
-                            <div class="col-12 col-lg-5 col-xl-5 col-xxl-5 order-br">
-                                <form method="post" class="login-form pt-5 pt-lg-0"
-                                    @submit.prevent="handleStepTwoFormSubmit">
-                                    <div class="dblwhitecolor h4 mb-0 fw-600 pb-2 form-details">Details</div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <form method="post" class="login-form  pt-lg-0"
+                                            @submit.prevent="handleStepTwoFormSubmit">
+                                            <div class="dblwhitecolor h4 mb-0 fw-600 pb-3 form-details">Details</div>
 
-                                    <div class="pb-2 pb-sm-3">
-                                        <label for="name" class="fw-600 frtwhitcolor pb-2 name-form">Name</label>
-                                        <input type="text" name="name" minlength="8" maxlength="30" required
-                                            placeholder="Enter Your Name" v-model="name" required
-                                            class="form-control sin-input">
-                                    </div>
-
-                                    <div class="pb-2 pb-sm-3">
-                                        <label for="email" class="fw-600 frtwhitcolor pb-2 email-form">Email
-                                            ID*</label>
-                                        <input type="email" name="email" minlength="8" maxlength="40" required
-                                            placeholder="Enter Your Email ID" v-model="email"
-                                            class="form-control sin-input">
-                                    </div>
-
-                                    <div class="pb-3 pb-sm-3">
-                                        <label for="mobile_number"
-                                            class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
-                                        <input type="text" id="mobile_number" name="mobile_number" minlength="10"
-                                            maxlength="10" placeholder="Enter Your Mobile Number" required
-                                            v-model="mobile_number" class="form-control sin-input">
-                                    </div>
-
-
-                                    <div>
-
-                                        <button type="submit" class="submit-btn-bept">Submit</button>
-
-                                    </div>
-
-
-                                </form>
-
-                            </div>
-                            <div class="col-12 col-lg-7 col-xl-7 col-xxl-7 order-bl">
-                                <div class="two-container-grp">
-                                    <div class="basic-face-box">
-                                        <div class="scan-face-box-insider-twopage">
-                                            <img id="captured-image" alt="Captured Image"
-                                                class="faceimg-img w-100 h-100 object-fit-cover brd-50"
-                                                :src="userImageData" v-if="userImageData" />
-                                            <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
-                                                class="faceimg-img" v-else>
-                                        </div>
-
-                                        <div class="d-flex flex-column align-items-center gap-2">
-                                            <button class="btn scan-facebtn" @click="openCameraModal">
-                                                Scan Your Face
-                                            </button>
-                                            <div class="ortext">
-                                                Or
+                                            <div class="pb-2 pb-sm-3 mb-1">
+                                                <input type="text" name="name" minlength="8" maxlength="30" required
+                                                    placeholder="Enter Your Name" v-model="name" required
+                                                    class="form-control sin-input">
                                             </div>
-                                            <label for="userImgInput">
-                                                <div class="dz-message scan-textboxbdpt-btn cursor-pointer">
-                                                    Upload File
-                                                    <input type="file" id="userImgInput"
-                                                        @change="handleUserImageFieldChange" hidden>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="text-center drgreen fs-12pxnew fw-500 d-block d-sm-none">
-                                        Or
-                                    </div>
-                                    <div class="upload-section">
-                                        {{-- <label for="userGuestImgInput"> --}}
-                                        <div class="pb-4 browsertext brsr-14pxtx">
-                                            Browse File
-                                        </div>
-                                        <div class="d-flex justify-content-center pb-3">
-                                            <div class="uploder-up">
-                                                <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
-                                                    alt="" srcset="" class="img-fluid">
-                                            </div>
-                                        </div>
 
-                                        <form>
-                                            <div class="dz-message">
-                                                <div class="mb-3 guest-uploader">
-                                                    as Guest Upload
-                                                    <input type="file" id="userGuestImgInput"
-                                                        @change="handleUserGuestImageFieldChange" hidden>
-                                                </div>
-                                                <div>
-                                                    <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to 50
-                                                        MB.
-                                                    </div>
-                                                </div>
+                                            <div class="pb-2 pb-sm-3 mb-1">
+                                               
+                                                <input type="email" name="email" minlength="8" maxlength="40" required
+                                                    placeholder="Enter Your Email ID" v-model="email"
+                                                    class="form-control sin-input">
                                             </div>
+
+                                            <div class="pb-3 pb-sm-3 mb-1">
+
+                                                <input type="text" id="mobile_number" name="mobile_number" minlength="10"
+                                                    maxlength="10" placeholder="Enter Your Mobile Number" required
+                                                    v-model="mobile_number" class="form-control sin-input">
+                                            </div>
+
+
+                                            <div>
+
+                                                <button type="submit" class="submit-btn-bept">Submit</button>
+
+                                            </div>
+
+
                                         </form>
-                                        {{-- </label> --}}
-
                                     </div>
-                                </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="basic-face-box">
+                                                <div class="scan-face-box-insider-twopage">
+                                                    <img id="captured-image" alt="Captured Image"
+                                                        class="faceimg-img w-100 h-100 object-fit-cover brd-50"
+                                                        :src="userImageData" v-if="userImageData" />
+                                                    <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
+                                                        class="faceimg-img" v-else>
+                                                </div>
 
-                                <div id="cameraModal" class="modal" style="display:none;">
+                                                <div class="d-flex flex-column align-items-center gap-2">
+                                                    <button class="btn scan-facebtn" @click="openCameraModal">
+                                                        Scan Your Face
+                                                    </button>
+                                                    <div class="ortext">
+                                                        Or
+                                                    </div>
+                                                    <label for="userImgInput">
+                                                        <div class="dz-message scan-textboxbdpt-btn cursor-pointer">
+                                                            Upload File
+                                                            <input type="file" id="userImgInput"
+                                                                @change="handleUserImageFieldChange" hidden>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
 
-                                    <div class="modal-content">
-                                        <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
-                                            Scan Your Face
-                                        </div>
-                                        <div class="w-100 d-flex justify-content-center">
-                                            <div class="model-outer-box">
-                                                <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}"
-                                                    alt="" class="img-fluid top-left-img">
-                                                <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}"
-                                                    alt="" class="img-fluid top-right-img">
-                                                <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}"
-                                                    alt="" class="img-fluid bottom-left-img">
-                                                <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}"
-                                                    alt="" class="img-fluid bottom-right-img">
-                                                <div id="camera-frame">
-                                                    <div id="my_camera" class="camera-mask">
-                                                        <video id="video" autoplay></video>
+                                            <div id="cameraModal" class="modal" style="display:none;">
+
+                                                <div class="modal-content">
+                                                    <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
+                                                        Scan Your Face
+                                                    </div>
+                                                    <div class="w-100 d-flex justify-content-center">
+                                                        <div class="model-outer-box">
+                                                            <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}"
+                                                                alt="" class="img-fluid top-left-img">
+                                                            <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}"
+                                                                alt="" class="img-fluid top-right-img">
+                                                            <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}"
+                                                                alt="" class="img-fluid bottom-left-img">
+                                                            <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}"
+                                                                alt="" class="img-fluid bottom-right-img">
+                                                            <div id="camera-frame">
+                                                                <div id="my_camera" class="camera-mask">
+                                                                    <video id="video" autoplay></video>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="capture-area">
+                                                        <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
+                                                        <div class="btn cancel-btn  close" @click="closeCameraModal">
+                                                            Cancel
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="capture-area">
-                                            <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
-                                            <div class="btn cancel-btn  close" @click="closeCameraModal">
-                                                Cancel
 
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="upload-section">
+                                            {{-- <label for="userGuestImgInput"> --}}
+                                            <div class="pb-4 browsertext brsr-14pxtx">
+                                                Browse File
                                             </div>
+                                            <div class="d-flex justify-content-center pb-3">
+                                                <div class="uploder-up">
+                                                    <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
+                                                        alt="" srcset="" class="img-fluid">
+                                                </div>
+                                            </div>
+
+                                            <form>
+                                                <div class="dz-message d-flex flex-column align-items-center">
+                                                    <div class="mb-3 guest-uploader btn nw-guest-updrbtn">
+                                                        as Guest Upload
+                                                        <input type="file" id="userGuestImgInput"
+                                                            @change="handleUserGuestImageFieldChange" hidden>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to 50
+                                                            MB.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            {{-- </label> --}}
+
                                         </div>
                                     </div>
+
                                 </div>
-
-
                             </div>
                         </div>
+
+                     
                     </div>
 
                     <div class="step-three" v-if="step == 3" v-cloak>
@@ -480,7 +496,7 @@
                                     </div>
 
                                     {{-- <div class="sgl-divider d-lg-block"></div> --}}
-                                    <div class="">
+                                    <div class="d-flex align-items-center  justify-content-center">
                                         <div class="vr"></div>
                                     </div>
                                     <div class="basic-event-one-main h-100 d-flex align-items-center">
