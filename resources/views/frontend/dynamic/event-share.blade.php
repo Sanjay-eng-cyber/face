@@ -146,10 +146,12 @@
                 <div class="container overflow-hide stepmaincontainer">
 
                     <div class="pb-5" v-if="step == 1" v-show="step !== 2 && step !== 3">
+                       
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                           
                                 <div class="row">
 
 
@@ -170,12 +172,18 @@
                                                         </div>
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
-                                                                <div class="fw-300 fs-14 bdt-date">
-                                                                    {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                                <div class="fw-300 fs-14 ">
+                                                                    <span class="bdt-date">
+                                                                        {{ dd_format($event->start_date, 'd/m/Y') }}
+                                                                    </span>
+                                                                </div>
                                                             @else
-                                                                <div class="fw-300 fs-14 bdt-date">
+                                                                <div class="fw-300 fs-14 ">
+                                                                    <span class="bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                                    </span>
+                                                                 
                                                                 </div>
                                                             @endif
                                                         @endif
@@ -224,9 +232,9 @@
 
                         <div class="row ptpb-55px" id="enterPinDiv">
                             <div class="col-12">
-                                <div class="pin-container">
+                                <div class="pin-container d-flex flex-column align-items-center">
                                     <div class="pin-title">Enter Your Pin Number</div>
-                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit">
+                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit" class="pin-num">
                                         <div class="d-flex justify-content-center basic-input-main">
                                             <input placeholder="0" v-for="(value, index) in pinValues"
                                                 :key="index" type="text" maxlength="1" class="pin-input"
@@ -242,11 +250,14 @@
 
                     <div class="step-two" v-if="step == 2" v-cloak>
 
-                        <div class="row  pt-17px pb-4 mb-0 mb-sm-1 position-relative d-flex justify-content-center">
+                        <div class="row  pt-17px pb-4 mb-0 mb-sm-3 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
-
+                                    <a href="http://" class="mb-4">
+                                        <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                            class="img-fluid logo-img">
+                                    </a>
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
@@ -260,12 +271,16 @@
                                                 </div>
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
-                                                        <div class=" fw-300 fs-14 bdt-date">
-                                                            {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                        <div class=" fw-300 fs-14 ">
+                                                            <span class="bdt-date">
+                                                                {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                            </span>
                                                     @else
-                                                        <div class=" fw-300 fs-14 bdt-date">
+                                                        <div class=" fw-300 fs-14">
+                                                            <span class="bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                            </span>
                                                         </div>
                                                     @endif
                                                 @endif
