@@ -254,9 +254,9 @@
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
-                                    <a href="http://" class="mb-4">
+                                    <a href="http://" class="">
                                         <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
-                                            class="img-fluid logo-img">
+                                            class="img-fluid mb-2 mb-sm-4">
                                     </a>
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
@@ -456,7 +456,11 @@
 
 
                         <div class="row  pt-35px">
-
+                            
+                        <a href="http://" class="">
+                                        <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                            class="img-fluid mb-2 mb-sm-4">
+                                    </a>
                             <div class="col-12">
                                 <div class="grid-outer">
                                     <div class="basic-event-one-main h-100">
@@ -511,9 +515,12 @@
                                                     <div class="h5 fw-600 mb-0 text-white bx-twoeventname">
                                                         {{ $event->name }}
                                                     </div>
-                                                    <div class="text-white fw-300 fs-14 fssm-8px">
-                                                        {{ dd_format($event->start_date, 'd/m/Y') }} to
-                                                        {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                    <div class="text-white fw-300 fs-14 fssm-8px ">
+                                                        <span class="bdt-date">
+                                                            {{ dd_format($event->start_date, 'd/m/Y') }} to
+                                                            {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                        </span>
+                                                        
                                                     </div>
                                                 </div>
 
