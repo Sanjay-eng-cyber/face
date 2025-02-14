@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                                                                                                            background-image: unset;
-                                                                                                                                            backdrop-filter: unset;
-                                                                                                                                            min-height: unset;
-                                                                                                                                            padding-left: 12px;
-                                                                                                                                            padding-right: 12px;
-                                                                                                                                        } */
+                                                                                                                                                background-image: unset;
+                                                                                                                                                backdrop-filter: unset;
+                                                                                                                                                min-height: unset;
+                                                                                                                                                padding-left: 12px;
+                                                                                                                                                padding-right: 12px;
+                                                                                                                                            } */
             .pobdh {
                 height: 0px;
             }
@@ -840,12 +840,12 @@
                                     this.step = 3;
                                     this.fetchMatchedImages();
                                 } else {
-                                    Snackbar.show({
-                                        text: res.data.message ?? 'Something Went Wrong',
-                                        pos: 'top-right',
-                                        actionTextColor: '#fff',
-                                        backgroundColor: '#e7515a'
-                                    });
+                                    // Snackbar.show({
+                                    //     text: res.data.message ?? 'Something Went Wrong',
+                                    //     pos: 'top-right',
+                                    //     actionTextColor: '#fff',
+                                    //     backgroundColor: '#e7515a'
+                                    // });
                                 }
                             })
                             .catch((error) => {
