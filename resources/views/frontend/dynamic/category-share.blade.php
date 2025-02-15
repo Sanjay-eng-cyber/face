@@ -82,12 +82,12 @@
             }
 
             /* .custom-ctnrfluid {
-                                                                                                                                                background-image: unset;
-                                                                                                                                                backdrop-filter: unset;
-                                                                                                                                                min-height: unset;
-                                                                                                                                                padding-left: 12px;
-                                                                                                                                                padding-right: 12px;
-                                                                                                                                            } */
+                                                                                                                                                    background-image: unset;
+                                                                                                                                                    backdrop-filter: unset;
+                                                                                                                                                    min-height: unset;
+                                                                                                                                                    padding-left: 12px;
+                                                                                                                                                    padding-right: 12px;
+                                                                                                                                                } */
             .pobdh {
                 height: 0px;
             }
@@ -521,7 +521,7 @@
                                 <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                     :data-index="index">
                                     <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
-                                        data-fancybox="gallery" data-caption="Image 1">
+                                        data-fancybox="gallery" :data-caption="img.image_name">
                                         <img :src="'/storage/' + img.image_url" alt=""
                                             class="gallery-img img-fluid rounded-3">
                                     </a>
@@ -875,7 +875,9 @@
                             "zoomOut",
 
                         ],
-                        right: ["slideshow", "download", "thumbs", "close"]
+                        right: ["slideshow", @json($event->single_image_download ? 'download' : null), "thumbs",
+                            "close"
+                        ].filter(Boolean),
                     },
                 },
                 loop: false,
