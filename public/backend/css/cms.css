@@ -296,7 +296,7 @@ select.form-control {
     font-size: 24px;
     background: #ffffff;
     box-shadow: 1.41941px 1.41941px 8.51649px rgba(0, 0, 0, 0.12);
-    border-radius: 5.67766px;
+    border-radius:12px;
 }
 .auth-page-bg {
     background-color: #f1f2f8;
