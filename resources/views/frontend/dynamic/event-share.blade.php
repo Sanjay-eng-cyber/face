@@ -136,13 +136,13 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                                                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+                                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <!-- <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
-                                                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-                                            <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
-                                                class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
-                                            <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                                                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
+                                                    alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
+                                                <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
+                                                    class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
+                                                <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
+                                                    class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
 
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
@@ -175,13 +175,13 @@
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
                                                                 <div class="fw-300 fs-14 bdt-date">
-                                                                        {{ dd_format($event->start_date, 'd/m/Y') }}
+                                                                    {{ dd_format($event->start_date, 'd/m/Y') }}
                                                                 </div>
                                                             @else
                                                                 <div class="fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
-                                                                 
+
                                                                 </div>
                                                             @endif
                                                         @endif
@@ -252,10 +252,10 @@
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
                             <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
-                                    <a href="http://" class="">
-                                        <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
-                                            class="img-fluid mb-2 mb-sm-4">
-                                    </a>
+                                <a href="http://" class="">
+                                    <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                        class="img-fluid mb-2 mb-sm-4">
+                                </a>
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
@@ -270,7 +270,7 @@
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
                                                         <div class=" fw-300 fs-14 bdt-date">
-                                                                {{ dd_format($event->start_date, 'd/m/Y') }}</div>
+                                                            {{ dd_format($event->start_date, 'd/m/Y') }}</div>
                                                     @else
                                                         <div class=" fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
@@ -290,7 +290,8 @@
                                                         {!! $shortDescription !!}
                                                     </span>
                                                     <span class="full-text d-none">
-                                                        {!! nl2br(e($cleanDescription)) !!}
+                                                        {!! $cleanDescription !!}
+                                                        {{-- {!! nl2br(e($cleanDescription)) !!} --}}
                                                     </span>
                                                     @if (strlen($cleanDescription) > 180)
                                                         <button class="btn show-more-btn">Show More</button>
@@ -451,11 +452,11 @@
 
 
                         <div class="row  pt-35px">
-                            
-                        <a href="http://" class="">
-                                        <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
-                                            class="img-fluid mb-2 mb-sm-4">
-                                    </a>
+
+                            <a href="http://" class="">
+                                <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                    class="img-fluid mb-2 mb-sm-4">
+                            </a>
                             <div class="col-12">
                                 <div class="grid-outer">
                                     <div class="basic-event-one-main h-100">
@@ -511,8 +512,8 @@
                                                         {{ $event->name }}
                                                     </div>
                                                     <div class="text-white fw-300 fs-14 fssm-8px bdt-date">
-                                                            {{ dd_format($event->start_date, 'd/m/Y') }} to
-                                                            {{ dd_format($event->end_date, 'd/m/Y') }}
+                                                        {{ dd_format($event->start_date, 'd/m/Y') }} to
+                                                        {{ dd_format($event->end_date, 'd/m/Y') }}
                                                     </div>
                                                 </div>
 

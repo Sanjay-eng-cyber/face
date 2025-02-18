@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use App\Events\UploadedImageFaceMatchingRequestedEvent;
+use App\Models\GalleryImage;
 use App\Models\MatchedImage;
 
 class EventController extends Controller
@@ -136,12 +137,32 @@ class EventController extends Controller
         // dd($request);
         $event = Event::whereSlug($request->eventSlug)->firstOrFail();
         $frontendUser = FrontendUser::findOrFail($request->user_id);
-        $images = MatchedImage::select('matched_images.frontend_user_id', 'matched_images.gallery_image_id', 'gallery_images.image_name', 'gallery_images.image_url')
-            ->join('gallery_images', 'matched_images.gallery_image_id', '=', 'gallery_images.id')
+
+        $galleryImages = MatchedImage::select(
+            'matched_images.frontend_user_id',
+            'matched_images.model_id as image_id',
+            'gallery_images.image_name',
+            'gallery_images.image_url',
+            'matched_images.created_at'
+        )
+            ->join('gallery_images', 'matched_images.model_id', '=', 'gallery_images.id')
             ->where('matched_images.frontend_user_id', $frontendUser->id)
-            ->orderBy('matched_images.created_at', 'asc')
+            ->where('matched_images.model_type', GalleryImage::class);
+
+        $guestUploads = MatchedImage::select(
+            'matched_images.frontend_user_id',
+            'matched_images.model_id as image_id',
+            'guest_uploads.image_name',
+            'guest_uploads.image_url',
+            'matched_images.created_at'
+        )
+            ->join('guest_uploads', 'matched_images.model_id', '=', 'guest_uploads.id')
+            ->where('matched_images.frontend_user_id', $frontendUser->id)
+            ->where('matched_images.model_type', GuestUpload::class);
+
+        $images = $galleryImages->union($guestUploads)
+            ->orderBy('created_at', 'asc')
             ->paginate(12);
-        // dd($images);
 
         return response()->json(['status' => true, 'images' => $images]);
     }

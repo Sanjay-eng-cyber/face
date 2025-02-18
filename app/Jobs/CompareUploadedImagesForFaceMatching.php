@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\Models\FrontendUser;
 use App\Models\Upload;
+use App\Models\FrontendUser;
 use App\Models\GalleryImage;
 use App\Models\MatchedImage;
 use Illuminate\Support\Facades\Log;
@@ -57,7 +57,8 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
                 if (isset($data['matched']) && in_array(true,$data['matched'])) {
                     $matched = new MatchedImage();
                     $matched->frontend_user_id = $frontend_user->id;
-                    $matched->gallery_image_id = $gallery_image->id;
+                    $matched->model_id = $gallery_image->id;
+                    $matched->model_type = GalleryImage::class;
                     $matched->save();
                 }
                 return true;
