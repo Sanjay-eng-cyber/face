@@ -132,6 +132,79 @@ class EventController extends Controller
         return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
     }
 
+    public function guestImageSubmit(Request $request)
+    {
+        // dd($request->all());
+        $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+        // dd($request->pin);
+        if ($event->is_pin_protection_required && $event->pin != $request->pin) {
+            return response()->json(['status' => false, 'message' => 'Incorrect Pin']);
+        }
+
+        $request->validate([
+            'guest_image.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $guestUpload = new GuestUpload();
+        $guestUpload->event_id = $event->id;
+        $guestUpload->frontend_user_id = 1;
+
+        $imageData = $request->userImageData;
+        if (!strpos($imageData, 'data:image/') === 0) {
+            return response()->json(['status' => false, 'message' => 'Invalid Image Data']);
+        }
+        try {
+            $guest_image = $request->file('guest_image');
+            $manager = ImageManager::gd();
+            $filename = date('Ymd-his') . "." . uniqid() . "." . $guest_image->clientExtension();
+            $destinationPath = public_path("storage/images/events/guest_images/");
+
+            $imageInstance = $manager->read($guest_image->getRealPath());
+            $imageInstance->save($destinationPath . '/' . $filename, 90);
+
+            $res = Http::attach(
+                'image_name', // The name of the file field in the request
+                file_get_contents($destinationPath . $filename), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
+
+            if ($res->successful()) {
+                // dd($res);
+                $data = $res->json();
+                $status = $data['status'] ?? null;
+                if ($status !== true) {
+                    return response()->json(['status' => false, 'message' => 'Something Went Wrong.'], 500);
+                }
+                $face_encoding = $data['face_encoding'] ?? null;
+                $face_locations = $data['face_locations'] ?? null;
+
+                $guestUpload->image = $filename;
+                $guestUpload->image_url = "images/events/guest_images/{$filename}";
+                $guestUpload->face_encoding = $face_encoding;
+                $guestUpload->face_locations = $face_locations;
+
+                if ($guestUpload->save()) {
+                    // UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+                    return response()->json([
+                        'status' => true,
+                        // 'user_id' => $guestUpload->id,
+                        'event_id' => $guestUpload->event_id,
+                        // 'image' => asset("storage/images/uploads/api/" . $frontendUser->image),
+                        // 'path' => "/storage/images/{$eventSlug}/{$categorySlug}/{$filename}"
+                        'message' => 'Guest Image Uploaded Successfully.'
+                    ]);
+                }
+            }
+        } catch (\Throwable $th) {
+            // dd($th->getMessage());
+            Log::info('Catch Err : ' . $th->getMessage());
+        }
+
+
+        return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+    }
+
     public function getFetchedImages(Request $request)
     {
         // dd($request);

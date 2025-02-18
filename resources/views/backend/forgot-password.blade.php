@@ -79,6 +79,7 @@
         }
         .form-form .form-form-wrap form .field-wrapper svg {
            top:18px;
+           left: 7px;
         }
         .form-form .terms-conditions{
             margin-top: 35px;
@@ -87,6 +88,7 @@
             background-color:#1A1A1A !important;
             border: 0px;
             color: white;
+            border-radius: 12px !important;
         }
         .form-form .form-form-wrap form .field-wrapper input::placeholder {
     color: #8C9187;
@@ -101,6 +103,52 @@
         }
         .form-form .form-form-wrap form .field-wrapper input{
             min-height: 45px;
+            padding: 0px 0 0px 45px !important;
+        }
+        .form-form .form-form-wrap p.signup-link {
+            margin-bottom: 20px;
+        }
+
+        .auth-form{
+            background: linear-gradient(114.88deg, #5A1837 7.26%, #181215 25.65%, #181215 41.63%, #181215 59.05%, #F99EC9 104.07%);
+            padding: 1px;
+            border-radius: 25px;
+
+        }
+        .auth-form-inner{
+            background: linear-gradient(165.93deg, rgba(48, 46, 46, 0.14) -2%, rgba(84, 7, 43, 0.14) 105.79%);
+            padding: 36px 59px 59px 60px;
+            border-radius: 25px;
+            display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        }
+        .auth-form-inner-one{
+            background: black;
+            border-radius: 25px;
+        }
+
+        .form-form .form-form-wrap{
+            max-width: 480px;
+            margin: 0 auto;
+            min-width: 311px;
+            min-height: 100%;
+            height: auto;
+        }
+        .form-container{
+            height: 100%;
+            display: flex;
+    align-items: center;
+
+        }
+
+        .form-form{
+            width: 100%;
+    display: flex
+;
+    flex-direction: column;
+    min-height: 100%;
         }
     </style>
 </head>
@@ -109,77 +157,83 @@
 
 
     <div class="form-container justify-content-center">
-        <div class="form-form">
-            <div class="form-form-wrap">
-                <div class="form-container px-3">
-                    <div class="form-content">
+        <div class="auth-form mx-auto" style="width:694px;">
+            <div class="auth-form-inner-one">
+                <div class="auth-form-inner">
+                    <div class="form-form">
+                        <div class="form-form-wrap">
+                            <div class="form-container px-3">
+                                <div class="form-content">
 
-                        <div class="row text-center">
-                            <div class="col col-12">
-                                <a href="/">
-                                    <img class="img=fluid d-block mx-auto " style="width:128px"
-                                        src="{{ asset('backend/images/login/dmy-logo.png') }}" alt="">
-                                </a>
-                            </div>
-                            <div class="col col-12 py-3">
-                                <h1 class="h3"><span class="text-cl">Reset Password</span></h1>
-
-                            </div>
-                        </div>
-                        <p class="signup-link text-center text-white">Enter your email address to receive a link to reset password!
-                        </p>
-                        <form class="text-left" method="POST" action="{{ route('password.email') }}">
-                            @csrf
-                            <div class="form">
-                                <div id="email-field" class="field-wrapper input ">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
-                                        <circle cx="12" cy="12" r="4"></circle>
-                                        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
-                                    </svg> --}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        fill="currentColor" class="bi bi-envelope-fill mx-1" viewBox="0 0 16 16"
-                                        style="fill:#8C9187 ">
-                                        <path
-                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z">
-                                        </path>
-                                    </svg>
-                                    <span><i class="bi bi-envelope-fill "></i></span>
-                                    <input id="email" name="email" type="email" value=""
-                                        placeholder="Email" minlength="8" maxlength="30" required
-                                        data-custom-attribute="channels-login" class=" py-2  radius-10 rounded">
-                                    @if ($errors->has('email'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
-                                    @endif
-                                    @if (session('status'))
-                                        <div class="text-success">
-                                            <li> {{ session('status') }} </li>
+                                    <div class="row text-center">
+                                        <div class="col col-12">
+                                            <a href="/">
+                                                <img class="img=fluid d-block mx-auto " style="width:128px"
+                                                    src="{{ asset('backend/images/login/dmy-logo.png') }}" alt="">
+                                            </a>
                                         </div>
-                                    @endif
-                                </div>
-                                <div class=" w-100">
-                                    <div class="field-wrapper text-center">
-                                        <button type="submit" class="btn  bg-pink-color mx-auto fw-bold"
-                                            value="">Submit</button>
+                                        <div class="col col-12 py-3">
+                                            <h1 class="h3"><span class="text-cl text-white">Reset Password</span></h1>
+
+                                        </div>
                                     </div>
+                                    <p class="signup-link text-center text-white ">Enter your email address <br/> to receive a link to reset password!
+                                    </p>
+                                    <form class="text-left" method="POST" action="{{ route('password.email') }}">
+                                        @csrf
+                                        <div class="form">
+                                            <div id="email-field" class="field-wrapper input ">
+                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
+                                                    <circle cx="12" cy="12" r="4"></circle>
+                                                    <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                                                </svg> --}}
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" class="bi bi-envelope-fill mx-1" viewBox="0 0 16 16"
+                                                    style="fill:#8C9187 ">
+                                                    <path
+                                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z">
+                                                    </path>
+                                                </svg>
+                                                <span><i class="bi bi-envelope-fill "></i></span>
+                                                <input id="email" name="email" type="email" value=""
+                                                    placeholder="Email" minlength="8" maxlength="30" required
+                                                    data-custom-attribute="channels-login" class=" py-2  radius-10 rounded">
+                                                @if ($errors->has('email'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
+                                                @endif
+                                                @if (session('status'))
+                                                    <div class="text-success">
+                                                        <li> {{ session('status') }} </li>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            <div class=" w-100">
+                                                <div class="field-wrapper text-center">
+                                                    <button type="submit" class="btn  bg-pink-color mx-auto fw-bold"
+                                                        value="">Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <div class="terms-conditions footer-wrapper justify-content-center">
+                                        <div class="footer-section f-section-1">
+                                            <p class="text-white text-center fw-300 pt-20px">
+                                                &copy;
+                                                {{ date('Y') }}  All Rights Reserved | Powered by
+                                                <a href="http://acetrot.com" target="_blank" class="text-white">
+                                                    Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}" width="24"
+                                                        alt="">
+                                                </a>
+
+                                            </p>
+                                        </div>
+                                    </div>
+
+
                                 </div>
-
-                            </div>
-                        </form>
-                        <div class="terms-conditions footer-wrapper justify-content-center">
-                            <div class="footer-section f-section-1">
-                                <p class="text-white text-center fw-300 pt-20px">
-                                    &copy;
-                                    {{ date('Y') }}  All Rights Reserved | Powered by
-                                    <a href="http://acetrot.com" target="_blank" class="text-white">
-                                        Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}" width="24"
-                                            alt="">
-                                    </a>
-
-                                </p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>

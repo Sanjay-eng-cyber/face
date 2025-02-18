@@ -50,8 +50,10 @@ body {
     font-weight: 500;
         /* Remove default transition effect */
 
-}
 
+    }
+
+  
 /* .bg-pink-color:hover {
     background-color: transparent;
     color: #64002F;
@@ -131,7 +133,10 @@ z-index: -1;
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly]{
     background-color: #1A1A1A !important;
 }
-
+.bg-pink-color.form-control:focus{
+        background-color:#FE3B96;
+    color: white
+    }
 @media screen and (max-width:576px) {
 .auth-form-inner{
 padding: 25px 15px 25px 15px;
@@ -153,7 +158,7 @@ padding: 25px 15px 25px 15px;
                 <div class="auth-form-inner">
                 <a href="{{ url('/') }}"> <img class="d-block mx-auto " style=""
                         src="{{ asset('backend/images/login/dmy-logo.png') }}" alt=""></a>
-                <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl text-white">Login</h1>
+                <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl text-white">Reset Password</h1>
                 
             <form method="POST" action="{{ route('password.update') }}" class="login-form">
                 @csrf
@@ -184,7 +189,7 @@ padding: 25px 15px 25px 15px;
                 @endif
 
                 <button type="submit" class="form-control btn-lg h-auto bg-pink-color font-bold mt-4">
-                        Login
+                        Done
                 </button>
 
             
