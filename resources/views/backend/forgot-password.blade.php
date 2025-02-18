@@ -79,6 +79,7 @@
         }
         .form-form .form-form-wrap form .field-wrapper svg {
            top:18px;
+           left: 7px;
         }
         .form-form .terms-conditions{
             margin-top: 35px;
@@ -87,6 +88,7 @@
             background-color:#1A1A1A !important;
             border: 0px;
             color: white;
+            border-radius: 12px !important;
         }
         .form-form .form-form-wrap form .field-wrapper input::placeholder {
     color: #8C9187;
@@ -101,6 +103,7 @@
         }
         .form-form .form-form-wrap form .field-wrapper input{
             min-height: 45px;
+            padding: 0px 0 0px 45px !important;
         }
     </style>
 </head>
