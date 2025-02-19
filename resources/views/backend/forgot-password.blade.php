@@ -104,7 +104,9 @@
         }
 
         .form-form .terms-conditions {
-            margin-top: 35px;
+            margin: 0px;
+            padding: 0px;
+            padding-top: 20px;
         }
 
         .form-form .form-form-wrap form .field-wrapper input {
@@ -236,7 +238,7 @@
 
 
     <div class="form-container justify-content-center">
-        <div class="auth-form mx-auto" style="width:694px;">
+        <div class="auth-form mx-auto" style="width:576px;">
             <div class="auth-form-inner-one">
                 <div class="auth-form-inner">
                     <div class="form-form">
@@ -302,8 +304,9 @@
                                             &copy;
                                             {{ date('Y') }} All Rights Reserved | Powered by
                                             <a href="http://acetrot.com" target="_blank" class="text-white text-underline fw-300">
-                                                Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}"
-                                                    width="24" alt="">
+                                                Acetrot.Com 
+                                                {{-- <img src="{{ url('/backend/assets/img/acetrot.png') }}"
+                                                    width="24" alt=""> --}}
                                             </a>
 
                                         </p>
