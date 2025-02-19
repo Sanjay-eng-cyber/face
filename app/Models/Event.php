@@ -18,4 +18,9 @@ class Event extends Model
     {
         return $this->hasMany('App\Models\GalleryImage');
     }
+
+    function frontendUsers()
+    {
+        return $this->hasMany('App\Models\FrontendUser');
+    }
 }
