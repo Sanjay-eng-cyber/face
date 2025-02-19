@@ -205,7 +205,7 @@ class EventController extends Controller
         return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
     }
 
-    public function getFetchedImages(Request $request)
+    public function fetchMatchedImages(Request $request)
     {
         // dd($request);
         $event = Event::whereSlug($request->eventSlug)->firstOrFail();
@@ -354,6 +354,20 @@ class EventController extends Controller
             return redirect()->route('frontend.event.step-two-form', $event->slug)->with(toast('Guest Image Uploaded Successfully', 'success'));
         } else {
             return redirect()->back()->with(toast('Something Went Wrong', 'error'));
+        }
+    }
+
+    public function syncMatchedImages(Request $request)
+    {
+        // dd($request);
+        try {
+            $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+            $frontendUser = FrontendUser::findOrFail($request->user_id);
+
+            UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+            return response()->json(['status' => true, 'message' => "Images Synced Successfully"]);
+        } catch (\Throwable $th) {
+            return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
         }
     }
 }

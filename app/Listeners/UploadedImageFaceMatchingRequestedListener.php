@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Jobs\CompareUploadedImagesForFaceMatching;
 use App\Events\UploadedImageFaceMatchingRequestedEvent;
+use App\Models\GuestUpload;
 
 class UploadedImageFaceMatchingRequestedListener implements ShouldQueue
 {
@@ -28,11 +29,22 @@ class UploadedImageFaceMatchingRequestedListener implements ShouldQueue
         // dd($event);
         $frontend_user = $event->frontend_user;
         $event = Event::findOrFail($frontend_user->event_id);
-        // $category = Category::where('event_id', $event->id)->findOrFail($upload->category_id);
-        // $gallery_images = GalleryImage::where('event_id', $event->id)->where('category_id', $category->id)->get();
-        $gallery_images = GalleryImage::where('event_id', $event->id)->get();
+        $galleryQuery = GalleryImage::where('event_id', $event->id);
+        $guestQuery = GuestUpload::where('event_id', $event->id);
+
+        if (!empty($frontend_user->last_synced)) {
+            $galleryQuery->where('created_at', '>=', $frontend_user->last_synced);
+            $guestQuery->where('created_at', '>=', $frontend_user->last_synced);
+        }
+
+        $gallery_images = $galleryQuery->get();
         foreach ($gallery_images as $gallery_image) {
             CompareUploadedImagesForFaceMatching::dispatch($frontend_user, $gallery_image);
+        }
+
+        $guest_uploads = $guestQuery->get();
+        foreach ($guest_uploads as $guest_upload) {
+            CompareUploadedImagesForFaceMatching::dispatch($frontend_user, $guest_upload);
         }
     }
 }
