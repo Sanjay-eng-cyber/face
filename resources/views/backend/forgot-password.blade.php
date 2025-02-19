@@ -150,7 +150,39 @@
     flex-direction: column;
     min-height: 100%;
         }
+
+
+
+@media screen and (max-width:480px){
+    .auth-form-inner {
+    padding: 15px;
+}
+    .form-form .form-form-wrap {
+    max-width:100%;
+    margin: 0 auto;
+    min-width:100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.bg-pink-color {
+    font-size: 16px;
+}
+.form-form .terms-conditions{
+    margin-top: 13px;
+}
+
+.footer-wrapper .footer-section p {
+    font-size: 12px;
+}
+.form-form .form-form-wrap p.signup-link {
+    font-size: 12px;
+}
+
+
+}
     </style>
+
 </head>
 
 <body class="form body-bg">
@@ -162,7 +194,6 @@
                 <div class="auth-form-inner">
                     <div class="form-form">
                         <div class="form-form-wrap">
-                            <div class="form-container px-3">
                                 <div class="form-content">
 
                                     <div class="row text-center">
@@ -232,7 +263,6 @@
 
 
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
