@@ -499,7 +499,7 @@
                                     <div class="d-flex align-items-center  justify-content-center">
                                         <div class="vr"></div>
                                     </div>
-                                    <div class="basic-event-one-main h-100 d-flex align-items-center">
+                                    <div class="basic-event-one-main h-100">
                                         <div class="basic-event-one-main-insider-full">
                                             <div>
                                                 <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
@@ -548,7 +548,7 @@
 
                             <div class="row pt-3 pb-3 pt-sm-5 pb-sm-4">
                                 <div class="d-flex align-items-center  justify-content-between">
-                                    <div class="fw-600 h4 mb-0 text-white yourmatchtext">Your matched photos </div>
+                                    <div class="fw-600 h4 mb-0 text-white yourmatchtext">Your Matched Photos </div>
                                     <div>
                                         <a href="javascript:void(0);" class="text-decoration-none text-white"
                                             onclick="rotateAndReload();" @click="refreshMatchedPhotos">
