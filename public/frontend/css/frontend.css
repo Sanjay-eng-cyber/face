@@ -3783,6 +3783,9 @@ font-weight: 300;
     }
 }
 @media screen and (max-width:480px) {
+    .yourmatchtext{
+        font-size: 16px;
+    }
     .bdt-date {
         padding: 4px 10px 4px 10px;
         max-width: 218px;
@@ -4308,4 +4311,13 @@ position: relative;
     display: none;
 }
 
+
+.rotaterefresh {
+    animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 

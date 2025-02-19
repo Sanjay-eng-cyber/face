@@ -547,7 +547,18 @@
                             </div>
 
                             <div class="row pt-3 pb-3 pt-sm-5 pb-sm-4">
-                                <div class="fw-600 h4 mb-0 text-white text-center">Matched photos </div>
+                                <div class="d-flex align-items-center  justify-content-between">
+                                    <div class="fw-600 h4 mb-0 text-white yourmatchtext">Your matched photos </div>
+                                    <div>
+                                        <a href="javascript:void(0);" class="text-decoration-none text-white" onclick="rotateAndReload();">
+                                            Refresh
+                                            <svg id="refreshIcon" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.33333 8.5C9.33333 7.76667 8.73333 7.16667 8 7.16667C7.26667 7.16667 6.66667 7.76667 6.66667 8.5C6.66667 9.23333 7.26667 9.83333 8 9.83333C8.73333 9.83333 9.33333 9.23333 9.33333 8.5ZM8 2.5C6.4087 2.5 4.88258 3.13214 3.75736 4.25736C2.63214 5.38258 2 6.9087 2 8.5H0L2.66667 11.1667L5.33333 8.5H3.33333C3.33333 5.92 5.42 3.83333 8 3.83333C10.58 3.83333 12.6667 5.92 12.6667 8.5C12.6676 9.35719 12.4322 10.1981 11.9864 10.9302C11.5406 11.6623 10.9016 12.2575 10.1397 12.6501C9.3777 13.0428 8.52225 13.2179 7.66729 13.1561C6.81232 13.0944 5.99093 12.7981 5.29333 12.3L4.34667 13.26C5.1031 13.8405 5.98697 14.2323 6.92505 14.403C7.86312 14.5738 8.82837 14.5185 9.74081 14.2417C10.6533 13.965 11.4866 13.4748 12.1718 12.8117C12.857 12.1487 13.3743 11.3319 13.6808 10.429C13.9874 9.52616 14.0744 8.56324 13.9345 7.62007C13.7947 6.67689 13.4321 5.78063 12.8768 5.00554C12.3214 4.23046 11.5894 3.59889 10.7413 3.16316C9.89321 2.72743 8.95348 2.5001 8 2.5Z" fill="white"/>
+                                            </svg>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
@@ -936,6 +947,19 @@
                 }
             });
         </script>
+
+        <script>
+            function rotateAndReload() {
+                let icon = document.getElementById("refreshIcon");
+                icon.classList.add("rotaterefresh");
+
+                // Wait for animation to complete before reload
+                setTimeout(() => {
+                    location.reload();
+                }, 500);  // 500ms = animation duration
+            }
+        </script>
+
     @endsection
 
     @section('cdn')
