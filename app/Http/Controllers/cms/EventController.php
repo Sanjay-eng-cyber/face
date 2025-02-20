@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use App\Models\FrontendUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
@@ -302,6 +303,22 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $url = URL::temporarySignedRoute('frontend.event.share.index', now()->addDays(3), ['eventSlug' => $event->slug]);
         return redirect()->route('backend.event.show', $id)->with('shared_url', $url);
+    }
+
+    public function frontendUserIndex($event_id)
+    {
+        $event = Event::findOrFail($event_id);
+        $frontendUsers = $event->frontendUsers()->paginate(10);
+        return view('backend.frontend-users.index', compact('frontendUsers', 'event'));
+    }
+
+    public function frontendUserShow($event_id, $frontend_user_id)
+    {
+        $event = Event::findOrFail($event_id);
+        $frontendUser = FrontendUser::findOrFail($frontend_user_id);
+        $matchedImagesCount = $frontendUser->matchedImages()->count();
+        $guestUploadsCount =  $frontendUser->guestUploads()->count();
+        return view('backend.frontend-users.show', compact('frontendUser', 'matchedImagesCount', 'guestUploadsCount'));
     }
 
     // public function gallery($id)

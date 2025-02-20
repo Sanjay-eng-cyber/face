@@ -54,6 +54,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::post('/event/update/{id}', [EventController::class, 'update'])->name('backend.event.update');
             Route::get('/event/delete/{id}', [EventController::class, 'delete'])->name('backend.event.delete');
             Route::post('/generate/event-url/{id}', [EventController::class, 'eventUrl'])->name('backend.event.url');
+            Route::get('/frontend-users/{event_id}', [EventController::class, 'frontendUserIndex'])->name('backend.frotend-user.index');
+            Route::get('/frontend-users/{event_id}/{frontend_user_id}', [EventController::class, 'frontendUserShow'])->name('backend.frotend-user.show');
 
             Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
             Route::post('/category/store', [CategoryController::class, 'store'])->name('backend.category.store');
@@ -63,20 +65,19 @@ Route::domain(config('app.cms_domain'))->group(function () {
             Route::get('/category/upload-images/{id}', [CategoryController::class, 'uploadImagesIndex'])->name('backend.category.upload-image-index');
             Route::get('category/uploaded-images/delete/{id}', [CategoryController::class, 'deleteUploadImage'])->name('backend.category.image-upload-delete');
             Route::post('/generate/category-url/{id}', [CategoryController::class, 'categoryUrl'])->name('backend.category.url');
-            
+
             Route::post('/upload/{eventSlug}/{categorySlug}', [CategoryController::class, 'uploadImages'])->name('backend.category.image-upload');
             Route::delete('/delete-upload-image/{eventSlug}/{categorySlug}/{id}', [CategoryController::class, 'deleteUploadedImage'])->name('backend.category.delete-uploaded-image');
-            
+
             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('backend.gallery.store');
-            
         });
-        
+
         Route::get('/events', [EventController::class, 'index'])->name('backend.event.index');
         Route::get('/event/show/{id}', [EventController::class, 'show'])->name('backend.event.show');
-        
+
         Route::get('/categories', [CategoryController::class, 'index'])->name('backend.category.index');
         Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('backend.category.show');
-        
+
         Route::get('/category/uploaded-images/{id}', [CategoryController::class, 'uploadedImagesIndex'])->name('backend.category.upload-image-show');
 
         Route::group(["middleware" => "cms_user_role:super-admin"], function () {

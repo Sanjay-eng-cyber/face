@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Events')
+@section('title', 'Frontend Users')
 @section('content')
     <div class="row layout-top-spacing m-0 pa-padding-remove">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h2 text-clr fw-600">
-                                Events
+                                Frontend Users
                             </legend>
                         </div>
 
@@ -18,40 +18,11 @@
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        <a href="javascript:void(0);">Events</a>
+                                        <a href="javascript:void(0);">Frontend Users</a>
                                     </li>
                                 </ol>
                             </nav>
                         </div>
-
-
-
-
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-9 mt-2 px-xl-0">
-                            <form class="form-inline row app_form" action="{{ route('backend.event.index') }}"
-                                method="GET">
-                                <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
-                                    type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="3" maxlength="40">
-                                <input type="submit" value="Search"
-                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
-                            </form>
-                            <div class="mt-2">
-                                @if ($errors->has('q'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                        @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
-                                    Add Event
-                                </a>
-                            </div>
-                        @endcmsUserRole
                     </div>
                 </div>
             </div>
@@ -66,15 +37,18 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
-                                        {{-- <th>Image</th> --}}
+                                        <th>Phone</th>
+                                        <th>Email</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($events as $event)
+                                    @forelse($frontendUsers as $frontendUser)
                                         <tr>
-                                            <td class="text-white-2">{{ tableRowSrNo($loop->index, $events) }}</td>
-                                            <td class="text-white-2">{{ $event->name }}</td>
+                                            <td class="text-white-2">{{ tableRowSrNo($loop->index, $frontendUsers) }}</td>
+                                            <td class="text-white-2">{{ $frontendUser->name }}</td>
+                                            <td class="text-white-2">{{ $frontendUser->phone }}</td>
+                                            <td class="text-white-2">{{ $frontendUser->email }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
@@ -91,20 +65,9 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.event.show', $event->id) }}">View</a>
                                                         @cmsUserRole('admin')
                                                             <a class="dropdown-item"
-                                                                href="{{ route('backend.frotend-user.index', $event->id) }}">View
-                                                                Users</a>
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('backend.event.edit', $event->id) }}">Edit</a>
-                                                            {{-- <a class="dropdown-item"
-                                                                    href="{{ route('backend.event.gallery', $event->id) }}">Add
-                                                                    Gallery</a> --}}
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('backend.event.delete', $event->id) }}"
-                                                                onclick="return confirm('Are you sure you want delete this event?');">Delete</a>
+                                                                href="{{ route('backend.frotend-user.show', ['event_id' => $event->id, 'frontend_user_id' => $frontendUser->id]) }}">View</a>
                                                         @endcmsUserRole
                                                     </div>
                                                 </div>
@@ -113,7 +76,7 @@
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
-                                            <td colspan="3">No Records Found</td>
+                                            <td colspan="5">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -122,7 +85,7 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $events->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $frontendUsers->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
