@@ -106,201 +106,184 @@
       <!--  BEGIN SIDEBAR  -->
     
         <div class="sidebar-wrapper sidebar-theme">
-            <nav id="sidebar">
-                <ul class="list-unstyled menu-categories" id="accordionExample">
-                    {{-- <li class="menu">
-                        <a href="{{ route('cms.calendar.index') }}"
-                            aria-expanded="{{ route('cms.calendar.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-                                    <rect x="3" y="4" width="18" height="18" rx="2"
-                                        ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>Calendar</span>
-                            </div>
-                        </a>
-                    </li> --}}
-                    {{-- @admin() --}}
-                    {{-- <li class="menu">
-                            <a href="{{ route('cms.statistics.index') }}"
-                                aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
+            <div class="main-sidebar">
+                <nav id="sidebar">
+                    <ul class="list-unstyled menu-categories" id="accordionExample">
+                        {{-- <li class="menu">
+                            <a href="{{ route('cms.calendar.index') }}"
+                                aria-expanded="{{ route('cms.calendar.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"
+                                            ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
                                     </svg>
-                                    <span>Dashboard</span>
+                                    <span>Calendar</span>
                                 </div>
                             </a>
-                            </li>
-                            @endadmin
-                    <li class="menu">
-                        <a href="{{ route('cms.patients.index') }}"
-                        aria-expanded="{{ route('cms.patients.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    </svg>
-                                    <span>Patients</span>
-                                </div>
-                            </a>
-                        </li>
+                        </li> --}}
+                        {{-- @admin() --}}
+                        {{-- <li class="menu">
+                                <a href="{{ route('cms.statistics.index') }}"
+                                    aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        <span>Dashboard</span>
+                                    </div>
+                                </a>
+                                </li>
+                                @endadmin
                         <li class="menu">
-                            <a href="{{ route('cms.appointments.index') }}"
-                            aria-expanded="{{ route('cms.appointments.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard">
-                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
-                                    </path>
-                                    <rect x="8" y="2" width="8" height="4" rx="1"
-                                        ry="1"></rect>
-                                </svg>
-                                <span>Appointments</span>
-                            </div>
-                        </a>
-                    </li>
-                        <li class="menu">
-                            <a href="{{ route('cms.tempappointment.index') }}"
-                                aria-expanded="{{ route('cms.tempappointment.index') == request()->url() ? 'true' : 'false' }}"
+                            <a href="{{ route('cms.patients.index') }}"
+                            aria-expanded="{{ route('cms.patients.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
-                                    <i class='bx bx-folder-open'></i>
-                                    <span>Temporary Appointment</span>
-                                </div>
-                            </a>
-                        </li>
-                    <li class="menu">
-                        <a href="{{ route('cms.followups.index') }}"
-                            aria-expanded="{{ route('cms.followups.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-fast-forward">
-                                    <polygon points="13 19 22 12 13 5 13 19"></polygon>
-                                    <polygon points="2 19 11 12 2 5 2 19"></polygon>
-                                </svg>
-
-                                <span>Follow Ups</span>
-                            </div>
-                        </a>
-                        </li>
-                        <li class="menu">
-                        <a href="{{ route('cms.surgery.index') }}"
-                            aria-expanded="{{ route('cms.surgery.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <i class='bx bx-cut'></i>
-                                <span>Surgeries</span>
-                            </div>
-                        </a>
-                        <li class="menu">
-                            <a href="{{ route('cms.dischargecard.index') }}"
-                                aria-expanded="{{ route('cms.dischargecard.index') == request()->url() ? 'true' : 'false' }}"
-                                class="dropdown-toggle">
-                                <div class="">
-                                    <i class='bx bx-file'></i>
-                                    <span>Discharge Cards</span>
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                        <span>Patients</span>
                                     </div>
                                 </a>
                             </li>
-                        </li>
-                        <li class="menu">
-                            <a href="{{ route('cms.surgerybill.index') }}"
-                                aria-expanded="{{ route('cms.surgerybill.index') == request()->url() ? 'true' : 'false' }}"
+                            <li class="menu">
+                                <a href="{{ route('cms.appointments.index') }}"
+                                aria-expanded="{{ route('cms.appointments.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
-
-                                    <i class='bx bx-rupee'></i> <span>Surgery Bills</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard">
+                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                        </path>
+                                        <rect x="8" y="2" width="8" height="4" rx="1"
+                                            ry="1"></rect>
+                                    </svg>
+                                    <span>Appointments</span>
                                 </div>
                             </a>
                         </li>
+                            <li class="menu">
+                                <a href="{{ route('cms.tempappointment.index') }}"
+                                    aria-expanded="{{ route('cms.tempappointment.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <i class='bx bx-folder-open'></i>
+                                        <span>Temporary Appointment</span>
+                                    </div>
+                                </a>
+                            </li>
                         <li class="menu">
-                            <a href="{{ route('cms.expenses.index') }}"
-                            aria-expanded="{{ route('cms.expenses.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <i class='bx bxs-store'></i>
-                                <span>Inventory</span>
-                            </div>
-                        </a>
-                    </li> --}}
-
-
-                    {{-- @admin()
-                        <li class="menu">
-                            <a href="{{ route('cms.medicine.index') }}"
-                                aria-expanded="{{ route('cms.medicine.index') == request()->url() ? 'true' : 'false' }}"
+                            <a href="{{ route('cms.followups.index') }}"
+                                aria-expanded="{{ route('cms.followups.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
-                                    <i class='bx bx-capsule'></i>
-                                    <span>Medicines</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-fast-forward">
+                                        <polygon points="13 19 22 12 13 5 13 19"></polygon>
+                                        <polygon points="2 19 11 12 2 5 2 19"></polygon>
+                                    </svg>
+
+                                    <span>Follow Ups</span>
                                 </div>
                             </a>
-                        </li>
-                        <li class="menu">
-                            <a href="{{ route('cms.expensesmaster.index') }}"
-                                aria-expanded="{{ route('cms.expensesmaster.index') == request()->url() ? 'true' : 'false' }}"
+                            </li>
+                            <li class="menu">
+                            <a href="{{ route('cms.surgery.index') }}"
+                                aria-expanded="{{ route('cms.surgery.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
-                                    <i class='bx bxs-bar-chart-alt-2'></i>
-                                    <span>Expenses Master</span>
+                                    <i class='bx bx-cut'></i>
+                                    <span>Surgeries</span>
                                 </div>
                             </a>
-                        </li>
-                        <li class="menu">
-                            <a href="{{ route('cms.subexpensesmaster.index') }}"
-                                aria-expanded="{{ route('cms.subexpensesmaster.index') == request()->url() ? 'true' : 'false' }}"
+                            <li class="menu">
+                                <a href="{{ route('cms.dischargecard.index') }}"
+                                    aria-expanded="{{ route('cms.dischargecard.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <i class='bx bx-file'></i>
+                                        <span>Discharge Cards</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </li>
+                            <li class="menu">
+                                <a href="{{ route('cms.surgerybill.index') }}"
+                                    aria-expanded="{{ route('cms.surgerybill.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+
+                                        <i class='bx bx-rupee'></i> <span>Surgery Bills</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="menu">
+                                <a href="{{ route('cms.expenses.index') }}"
+                                aria-expanded="{{ route('cms.expenses.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
-                                    <i class='bx bx-bar-chart'></i>
-
-                                    <span>Sub Expenses Master</span>
+                                    <i class='bx bxs-store'></i>
+                                    <span>Inventory</span>
                                 </div>
                             </a>
-                        </li>
-                    @endadmin --}}
+                        </li> --}}
 
-                    {{-- <li class="menu">
-                        <a href="{{ route('cms.export.index') }}"
-                            aria-expanded="{{ route('cms.export.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-database">
-                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                                </svg>
-                                <span>Export Data</span>
-                            </div>
-                        </a>
-                    </li> --}}
 
-                    {{-- @admin()
-                        <li class="menu">
-                            <a href="{{ route('cms.user.index') }}"
-                                aria-expanded="{{ route('cms.user.index') == request()->url() ? 'true' : 'false' }}"
+                        {{-- @admin()
+                            <li class="menu">
+                                <a href="{{ route('cms.medicine.index') }}"
+                                    aria-expanded="{{ route('cms.medicine.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <i class='bx bx-capsule'></i>
+                                        <span>Medicines</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="menu">
+                                <a href="{{ route('cms.expensesmaster.index') }}"
+                                    aria-expanded="{{ route('cms.expensesmaster.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <i class='bx bxs-bar-chart-alt-2'></i>
+                                        <span>Expenses Master</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="menu">
+                                <a href="{{ route('cms.subexpensesmaster.index') }}"
+                                    aria-expanded="{{ route('cms.subexpensesmaster.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <i class='bx bx-bar-chart'></i>
+
+                                        <span>Sub Expenses Master</span>
+                                    </div>
+                                </a>
+                            </li>
+                        @endadmin --}}
+
+                        {{-- <li class="menu">
+                            <a href="{{ route('cms.export.index') }}"
+                                aria-expanded="{{ route('cms.export.index') == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -310,106 +293,107 @@
                                         <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                                         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                                     </svg>
+                                    <span>Export Data</span>
+                                </div>
+                            </a>
+                        </li> --}}
+
+                        {{-- @admin()
+                            <li class="menu">
+                                <a href="{{ route('cms.user.index') }}"
+                                    aria-expanded="{{ route('cms.user.index') == request()->url() ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-database">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                        </svg>
+                                        <span>Users</span>
+                                        </div>
+                                    </a>
+                            </li>
+                        @endadmin --}}
+                        <li class="menu mb-4 border-0">
+                            <a d href="/" class="nav-link">
+                                <img src="{{asset('backend/images/login/dmy-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a href="{{ route('cms.statistics.index') }}"
+                                aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
+                                class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 24 24">
+                                        <path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3" />
+                                    </svg>
+                                    <span>Dashboard</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        {{-- <li class="menu">
+                            <a href="{{ route('backend.user.index') }}"
+                                aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
+                                class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                                    </svg>
                                     <span>Users</span>
+                                </div>
+                            </a>
+                        </li> --}}
+                        @cmsUserRole(['admin', 'super-admin'])
+                            <li class="menu">
+                                <a href="{{ route('backend.event.index') }}"
+                                    aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
+                                    </svg> --}}
+
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path
+                                                d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z" />
+                                        </svg>
+                                        <span>Events</span>
                                     </div>
                                 </a>
-                        </li>
-                    @endadmin --}}
-                    <li class="menu mb-4 border-0">
-                        <a d href="/" class="nav-link">
-                            <img src="{{asset('backend/images/login/dmy-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
-                        </a>
-                    </li>
-                    <li class="menu">
-                        <a href="{{ route('cms.statistics.index') }}"
-                            aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                    viewBox="0 0 24 24">
-                                    <path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3" />
-                                </svg>
-                                <span>Dashboard</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    {{-- <li class="menu">
-                        <a href="{{ route('backend.user.index') }}"
-                            aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                                </svg>
-                                <span>Users</span>
-                            </div>
-                        </a>
-                    </li> --}}
-                    @cmsUserRole(['admin', 'super-admin'])
-                        <li class="menu">
-                            <a href="{{ route('backend.event.index') }}"
-                                aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"
-                                class="dropdown-toggle">
-                                <div class="">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
-                                </svg> --}}
-
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            </li>
+                            <li class="menu">
+                                <a href="{{ route('backend.category.index') }}"
+                                    aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.category') ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 24 24">
                                         <path
-                                            d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z" />
-                                    </svg>
-                                    <span>Events</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="menu">
-                            <a href="{{ route('backend.category.index') }}"
-                                aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.category') ? 'true' : 'false' }}"
-                                class="dropdown-toggle">
-                                <div class="">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
-                                </svg> --}}
+                                            d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
+                                    </svg> --}}
 
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path
-                                            d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z" />
-                                    </svg>
-                                    <span>Categories</span>
-                                </div>
-                            </a>
-                        </li>
-                    @endcmsUserRole
-                    {{-- <li class="menu">
-                        <a href="{{ route('backend.user.index') }}"
-                            aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.user') ? 'true' : 'false' }}"
-                            class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
-                                </svg>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"/></svg>
-                                <span>Users</span>
-                            </div>
-                        </a>
-                    </li> --}}
-                    @cmsUserRole('super-admin')
-                        <li class="menu">
-                            <a href="{{ route('backend.cms-user.index') }}"
-                                aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.cms-user') ? 'true' : 'false' }}"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path
+                                                d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z" />
+                                        </svg>
+                                        <span>Categories</span>
+                                    </div>
+                                </a>
+                            </li>
+                        @endcmsUserRole
+                        {{-- <li class="menu">
+                            <a href="{{ route('backend.user.index') }}"
+                                aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.user') ? 'true' : 'false' }}"
                                 class="dropdown-toggle">
                                 <div class="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -417,20 +401,37 @@
                                         <path
                                             d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
                                     </svg>
-                                    <span>Cms Users</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"/></svg>
+                                    <span>Users</span>
                                 </div>
                             </a>
-                        </li>
-                    @endcmsUserRole
-                    {{-- <li class="menu border-0">
-                        <a href="" aria-expanded="true">
+                        </li> --}}
+                        @cmsUserRole('super-admin')
+                            <li class="menu">
+                                <a href="{{ route('backend.cms-user.index') }}"
+                                    aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.cms-user') ? 'true' : 'false' }}"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
+                                        </svg>
+                                        <span>Cms Users</span>
+                                    </div>
+                                </a>
+                            </li>
+                        @endcmsUserRole
+                        {{-- <li class="menu border-0">
+                            <a href="" aria-expanded="true">
 
-                        </a>
-                    </li> --}}
-                </ul>
+                            </a>
+                        </li> --}}
+                    </ul>
 
-            </nav>
-
+                </nav>
+            </div>
         </div>
 
       <!--  END SIDEBAR  -->
