@@ -114,8 +114,10 @@ class EventController extends Controller
                 $frontendUser->face_locations = $face_locations;
 
                 if ($frontendUser->save()) {
-                    foreach ($request->guestImages as $guestImage) {
-                        StoreGuestUploadedImage::dispatch($event, $frontendUser, $guestImage);
+                    foreach ($request->file('guestImages') as $guestImage) {
+                        $fileContent = base64_encode(file_get_contents($guestImage->getRealPath()));
+                        $fileExt = $guestImage->clientExtension();
+                        StoreGuestUploadedImage::dispatch($event, $frontendUser, $fileContent, $fileExt);
                     }
                     UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
                     return response()->json([

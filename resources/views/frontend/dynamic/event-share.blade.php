@@ -136,13 +136,13 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                                                                                                                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+                                                                                                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <!-- <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
-                                                                                                                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-                                                                                                            <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
-                                                                                                                class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
-                                                                                                            <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                                                                                                                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
+                                                                                                                    alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
+                                                                                                                <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                    class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
+                                                                                                                <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                    class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
 
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
@@ -746,8 +746,8 @@
                         formData.append('userImageData', this.userImageData);
 
                         if (this.guestImages.length > 0) {
-                            this.guestImages.forEach((file, index) => {
-                                formData.append(`guestImages[${index}]`, file);
+                            this.guestImages.forEach((file) => {
+                                formData.append('guestImages[]', file);
                             });
                         }
                         axios.post("{{ route('frontend.event.user-submit') }}", formData, {

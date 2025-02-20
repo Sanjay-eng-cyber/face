@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\GuestUpload;
 use App\Models\FrontendUser;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
 use Illuminate\Queue\SerializesModels;
@@ -21,7 +22,7 @@ class StoreGuestUploadedImage implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(public Event $event, public FrontendUser $frontend_user, public $guestImage)
+    public function __construct(public Event $event, public FrontendUser $frontend_user, public $fileContent, public $fileExt)
     {
         //
     }
@@ -33,13 +34,21 @@ class StoreGuestUploadedImage implements ShouldQueue
     {
         $event = $this->event;
         $frontend_user = $this->frontend_user;
-        $guest_image = $this->guestImage;
+        $fileContent = $this->fileContent;
+        $fileExt = $this->fileExt;
+
+        $destinationPath = public_path("storage/images/uploads/");
+        $filename = date('Ymd-his') . "." . uniqid() . "." . $fileExt;
+
+        $imageData = base64_decode($fileContent);
         $manager = ImageManager::gd();
-        $filename = date('Ymd-his') . "." . uniqid() . "." . $guest_image->clientExtension();
-        $destinationPath = public_path("storage/images/events/guest_images/");
+        $imageInstance = $manager->read($imageData);
         $destinationPath = public_path("storage/images/galleries/{$event->slug}/guest_uploaded_images/");
 
-        $imageInstance = $manager->read($guest_image->getRealPath());
+        if (!File::exists($destinationPath)) {
+            File::makeDirectory($destinationPath, 0777, true, true);
+        }
+
         $imageInstance->save($destinationPath . '/' . $filename, 90);
 
         $res = Http::attach(
@@ -63,7 +72,7 @@ class StoreGuestUploadedImage implements ShouldQueue
             $guestUpload = new GuestUpload();
             $guestUpload->event_id = $frontend_user->event_id;
             $guestUpload->frontend_user_id = $frontend_user->id;
-            $guestUpload->image = $filename;
+            $guestUpload->image_name = $filename;
             $guestUpload->image_url = "images/galleries/{$event->slug}/guest_uploaded_images/{$filename}";
             $guestUpload->face_encoding = $face_encoding;
             $guestUpload->face_locations = $face_locations;
