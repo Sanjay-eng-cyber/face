@@ -537,7 +537,7 @@ html, body {
 }
 
 .sidebar-wrapper{
-    background-color:black;
+    background-color:transparent;
     padding: 10px 20px 14px 20px;
     border: 0px;
 }
@@ -697,6 +697,9 @@ color: white !important;
     width: 150px;
     font-size: 14px;
     color: #FE3B96;
+}
+.main-sidebar{
+    background-color: black;
 }
 
 @media screen and (max-width:992px) {
