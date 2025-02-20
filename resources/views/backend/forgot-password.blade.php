@@ -193,6 +193,16 @@
         .text-underline {
     text-decoration: underline;
 }
+.footer-wrapper .footer-section p{
+    font-size: 14px;
+}
+.form-form .form-form-wrap{
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+}
             @media screen and (max-width:576px) {   
 
             }
@@ -200,6 +210,12 @@
             .auth-form-inner {
                 padding: 15px;
             }
+            .form-form .form-form-wrap form .field-wrapper input{
+                font-size:12px;
+        }
+        .form-form .form-form-wrap form .field-wrapper input::placeholder {
+            font-size:12px;
+        }
 
             .form-form .form-form-wrap {
                 max-width: 100%;
@@ -214,12 +230,16 @@
             }
 
             .form-form .terms-conditions {
-                margin-top: 13px;
+                margin-top: 0px;
             }
 
             .footer-wrapper .footer-section p {
-                font-size: 12px;
+                font-size: 8px;
             }
+
+            .bg-pink-color {
+        font-size: 13px;
+    }
 
             .form-form .form-form-wrap p.signup-link {
                 font-size: 12px;
@@ -238,7 +258,7 @@
 
 
     <div class="form-container justify-content-center">
-        <div class="auth-form mx-auto" style="width:576px;">
+        <div class="auth-form mx-auto" style="width:563px;">
             <div class="auth-form-inner-one">
                 <div class="auth-form-inner">
                     <div class="form-form">
