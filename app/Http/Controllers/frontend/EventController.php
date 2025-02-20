@@ -7,15 +7,16 @@ use App\Models\Upload;
 use App\Models\Category;
 use App\Models\GuestUpload;
 use App\Models\FrontendUser;
+use App\Models\GalleryImage;
+use App\Models\MatchedImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Intervention\Image\ImageManager;
+use App\Jobs\StoreGuestUploadedImage;
 use App\Events\UploadedImageFaceMatchingRequestedEvent;
-use App\Models\GalleryImage;
-use App\Models\MatchedImage;
 
 class EventController extends Controller
 {
@@ -62,8 +63,12 @@ class EventController extends Controller
             'name' => 'required|string|min:3|max:40',
             'email' => 'required|email|min:8|max:40',
             'mobile_number' => 'required|numeric|digits:10',
-            'userImageData' => 'required|string'
+            'userImageData' => 'required|string',
+            'guestImages' => 'nullable|array|max:20',
+            'guestImages.*' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
         ]);
+
+        // dd($request->guestImages);
 
         $frontendUser = new FrontendUser();
         $frontendUser->event_id = $event->id;
@@ -109,6 +114,9 @@ class EventController extends Controller
                 $frontendUser->face_locations = $face_locations;
 
                 if ($frontendUser->save()) {
+                    foreach ($request->guestImages as $guestImage) {
+                        StoreGuestUploadedImage::dispatch($event, $frontendUser, $guestImage);
+                    }
                     UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
                     return response()->json([
                         'status' => true,

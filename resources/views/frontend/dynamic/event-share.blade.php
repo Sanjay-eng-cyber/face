@@ -136,13 +136,13 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                                                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+                                                                                                                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <!-- <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
-                                                                    alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-                                                                <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
-                                                                    class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
-                                                                <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                                                                    class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
+                                                                                                                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
+                                                                                                            <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
+                                                                                                            <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
 
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
@@ -408,33 +408,35 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                                         <div class="upload-section">
-                                            {{-- <label for="userGuestImgInput"> --}}
-                                            <div class="pb-4 browsertext brsr-14pxtx">
-                                                Browse File
-                                            </div>
-                                            <div class="d-flex justify-content-center pb-3">
-                                                <div class="uploder-up">
-                                                    <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
-                                                        alt="" srcset="" class="img-fluid">
+                                            <label for="userGuestImgInput">
+                                                <div class="pb-4 browsertext brsr-14pxtx">
+                                                    Browse File
                                                 </div>
-                                            </div>
-
-                                            <form>
-                                                <div class="dz-message d-flex flex-column align-items-center">
-                                                    <div class="mb-3 guest-uploader btn nw-guest-updrbtn">
-                                                        as Guest Upload
-                                                        <input type="file" id="userGuestImgInput"
-                                                            @change="handleUserGuestImageFieldChange" hidden>
+                                                <div class="d-flex justify-content-center pb-3">
+                                                    <div class="uploder-up">
+                                                        <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
+                                                            alt="" srcset="" class="img-fluid">
                                                     </div>
-                                                    <div>
-                                                        <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to
-                                                            50
-                                                            MB.
+                                                </div>
+
+                                                <div class="fs-10 fw-600 newwcolor" v-if="guestImagesCount">
+                                                    @{{ guestImagesCount }} Images Selected</div>
+
+                                                <form>
+                                                    <div class="dz-message d-flex flex-column align-items-center">
+                                                        <div class="mb-3 guest-uploader btn nw-guest-updrbtn">
+                                                            as Guest Upload
+                                                            <input type="file" multiple id="userGuestImgInput"
+                                                                @change="handleUserGuestImageFieldChange" hidden />
+                                                        </div>
+                                                        <div>
+                                                            <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, Max
+                                                                20 Files & Max 10 MB file each.
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </form>
-                                            {{-- </label> --}}
+                                                </form>
+                                            </label>
 
                                         </div>
                                     </div>
@@ -628,6 +630,8 @@
                         matchedImages: [],
                         imagesPageCount: 1,
                         hasMoreImages: true,
+                        guestImagesCount: 0,
+                        guestImages: [],
                     }
                 },
                 mounted() {
@@ -716,6 +720,10 @@
 
                     },
                     handleStepTwoFormSubmit() {
+                        console.log('this.guestImages : ', this.guestImages);
+                        // alert("submitted");
+                        // return;
+
                         $('.form-err-msg').html('');
                         const fullPin = this.pinValues.join('');
                         if (!this.userImageData) {
@@ -728,13 +736,24 @@
                             return;
                         }
                         // console.log(fullPin);
-                        axios.post("{{ route('frontend.event.user-submit') }}", {
-                                eventSlug: '{{ $event->slug }}',
-                                pin: fullPin,
-                                name: this.name,
-                                email: this.email,
-                                mobile_number: this.mobile_number,
-                                userImageData: this.userImageData,
+
+                        const formData = new FormData();
+                        formData.append('eventSlug', '{{ $event->slug }}');
+                        formData.append('pin', fullPin);
+                        formData.append('name', this.name);
+                        formData.append('email', this.email);
+                        formData.append('mobile_number', this.mobile_number);
+                        formData.append('userImageData', this.userImageData);
+
+                        if (this.guestImages.length > 0) {
+                            this.guestImages.forEach((file, index) => {
+                                formData.append(`guestImages[${index}]`, file);
+                            });
+                        }
+                        axios.post("{{ route('frontend.event.user-submit') }}", formData, {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
                             })
                             .then((res) => {
                                 if (res.data.status) {
@@ -810,6 +829,23 @@
                             };
                             reader.readAsDataURL(file);
                         }
+                    },
+                    handleUserGuestImageFieldChange(e) {
+                        // console.log("e : ", e);
+                        this.guestImagesCount = 0;
+                        const files = Array.from(e.target.files);
+                        if (files.length > 20) {
+                            Snackbar.show({
+                                text: 'You can upload maximum 20 images',
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                            document.getElementById('userGuestImgInput').value = '';
+                            return;
+                        }
+                        this.guestImagesCount = files.length;
+                        this.guestImages = files;
                     },
                     fetchMatchedImages: _.debounce(function() {
                         console.log("Called fetchMatchedImages()");
