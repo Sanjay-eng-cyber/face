@@ -40,7 +40,8 @@ div {
 }
 
 .min-height-20em {
-    min-height: 20em;
+    /* min-height: 20em; */
+    min-height: 100%;
 }
 
 .cust-title {
@@ -700,6 +701,8 @@ color: white !important;
 }
 .main-sidebar{
     background-color: black;
+    border-radius: 15px;
+    height: 100%;
 }
 
 @media screen and (max-width:992px) {
