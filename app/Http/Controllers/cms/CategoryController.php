@@ -274,14 +274,19 @@ class CategoryController extends Controller
             $manager = ImageManager::gd();
             $image = $manager->read($fileWithExt->getRealPath());
 
+            $quality = 100;
             if ($event->upload_image_quality == 'compressed') {
                 // Log::info('Image is stored in compress quality.');
-                $image->resize(1000);
-                $image->save($destinationPath . '/' . $filename, 90);
-            } else {
-                // Log::info('Image is stored in original quality.');
-                $image->save($destinationPath . '/' . $filename, 100);
+                $image->scale(1000);
+                $quality = 90;
+                $image->save($destinationPath . '/' . $filename, $quality);
             }
+            if ($event->is_watermark_required) {
+                $watermark = $manager->read(public_path('storage/images/events/watermark_image/' . $event->watermark_image));
+                $watermark->scale($image->width() * 0.1);
+                $image->place($watermark, 'bottom-right', 10, 10);
+            }
+            $image->save($destinationPath . '/' . $filename, $quality);
 
             $res = Http::attach(
                 'image_name', // The name of the file field in the request
@@ -357,7 +362,7 @@ class CategoryController extends Controller
         $event = Event::findOrFail($gallery_image->event_id);
         $category = Category::where('event_id', $event->id)->findOrFail($gallery_image->category_id);
         $filePath = "images/galleries/{$event->slug}/{$category->slug}/{$gallery_image->image_name}";
-        $matchImages =  MatchedImage::where('gallery_image_id', $id)->get();
+        $matchImages = MatchedImage::where('gallery_image_id', $id)->get();
 
         if ($gallery_image->delete()) {
             optional(Storage::disk('public')->delete($filePath));
