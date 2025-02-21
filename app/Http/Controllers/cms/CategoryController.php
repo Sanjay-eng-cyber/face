@@ -29,6 +29,10 @@ class CategoryController extends Controller
         if ($user->role == 'admin') {
             $categories = $categories->where('cms_user_id', $user->id);
         }
+        if ($request->e) {
+            $event = Event::whereSlug($request->e)->firstOrFail();
+            $categories = $categories->where('event_id', $event->id);
+        }
         $categories = $this->filterResults($request, $categories);
         $categories = $categories->paginate(10);
         return view('backend.category.index', compact('categories'));
