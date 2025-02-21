@@ -98,6 +98,9 @@
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.frotend-user.index', $event->id) }}">View
                                                                 Users</a>
+                                                                <a class="dropdown-item"
+                                                                href="{{ route('backend.category.index') . '?e=' . $event->slug }}">View
+                                                                Categories</a>
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.event.edit', $event->id) }}">Edit</a>
                                                             {{-- <a class="dropdown-item"
