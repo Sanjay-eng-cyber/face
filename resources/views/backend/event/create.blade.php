@@ -3,6 +3,7 @@
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+            
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
@@ -101,7 +102,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Upload Image Quality :</label><br>
+                                    <label for="descriptions">Upload Image Quality</label><br>
                                     <input type="radio" id="original" name="upload_image_quality" value="original"
                                         @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
                                     <label for="original">Original</label>
@@ -117,7 +118,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Link Sharing :</label><br>
+                                    <label for="descriptions">Link Sharing</label><br>
                                     <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
                                         @if (old('link_sharing') == '1') {{ 'checked' }} @endif>
                                     <label for="link_sharingYes">Yes</label>
@@ -132,7 +133,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Is Pin Protection Required :</label><br>
+                                    <label for="descriptions">Is Pin Protection Required</label><br>
                                     <input type="radio" id="is_pin_protection_requiredYes"
                                         name="is_pin_protection_required" value="1"
                                         @if (old('is_pin_protection_required') == '1') {{ 'checked' }} @endif>
@@ -159,7 +160,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Single Image Download :</label><br>
+                                    <label for="descriptions">Single Image Download </label><br>
                                     <input type="radio" id="single_image_downloadYes" name="single_image_download"
                                         value="1" @if (old('single_image_download') == '1') {{ 'checked' }} @endif>
                                     <label for="single_image_downloadYes">Yes</label>
@@ -175,7 +176,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Bulk Image Download :</label><br>
+                                    <label for="descriptions">Bulk Image Download </label><br>
                                     <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
                                         value="1" @if (old('bulk_image_download') == '1') {{ 'checked' }} @endif>
                                     <label for="bulk_image_downloadYes">Yes</label>
@@ -192,7 +193,7 @@
 
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Is Watermark Required :</label><br>
+                                    <label for="descriptions">Is Watermark Required </label><br>
                                     <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
                                         value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
                                     <label for="is_watermark_requiredYes">Yes</label>
@@ -234,7 +235,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Guest Images Upload :</label><br>
+                                    <label for="descriptions">Guest Images Upload </label><br>
                                     <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
                                         value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
                                     <label for="guest_images_uploadYes">Yes</label>
@@ -254,6 +255,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/select2/select2.min.css') }}">
