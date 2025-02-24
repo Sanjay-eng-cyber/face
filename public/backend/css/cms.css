@@ -735,4 +735,8 @@ color: white !important;
     .app_form .app_form_input{
     margin-left: 0px;
 }
+.row{
+    margin-right: unset;
+    margin-left: unset;
+}
 }

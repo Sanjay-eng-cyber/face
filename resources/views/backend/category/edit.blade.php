@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="col-6  mb-3">
-                                    <label for="descriptions">Sharing* :</label><br>
+                                    <label for="descriptions">Sharing*</label><br>
                                     @if (old('sharing'))
                                         <input type="radio" id="sharingYes" name="sharing" value="1"
                                             @if (old('sharing') == '1') {{ 'checked' }} @endif required>
@@ -107,7 +107,7 @@
                                 </div>
 
                                 <div class="col-6 mb-3">
-                                    <label for="descriptions">Visibility* :</label><br>
+                                    <label for="descriptions">Visibility* </label><br>
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"
                                             @if (old('visibility') == '1') {{ 'checked' }} @endif required>

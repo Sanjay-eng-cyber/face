@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Upload Image Quality :</label><br>
+                                    <label for="descriptions">Upload Image Quality </label><br>
                                     @if (old('upload_image_quality'))
                                         <input type="radio" id="original" name="upload_image_quality"
                                             value="original" @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
@@ -137,7 +137,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Link Sharing :</label><br>
+                                    <label for="descriptions">Link Sharing </label><br>
                                     @if (old('link_sharing'))
                                         <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
                                             @if (old('link_sharing') == '1') {{ 'checked' }} @endif>
@@ -161,7 +161,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Is Pin Protection Required :</label><br>
+                                    <label for="descriptions">Is Pin Protection Required </label><br>
                                     @if (old('is_pin_protection_required'))
                                         <input type="radio" id="is_pin_protection_requiredYes"
                                             name="is_pin_protection_required" value="1"
@@ -201,7 +201,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Single Image Download :</label><br>
+                                    <label for="descriptions">Single Image Download </label><br>
                                     @if (old('single_image_download'))
                                         <input type="radio" id="single_image_downloadYes" name="single_image_download"
                                             value="1" @if (old('single_image_download') == '1') {{ 'checked' }} @endif>
@@ -226,7 +226,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Bulk Image Download :</label><br>
+                                    <label for="descriptions">Bulk Image Download </label><br>
 
                                     @if (old('bulk_image_download'))
                                         <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
@@ -253,7 +253,7 @@
 
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Is Watermark Required :</label><br>
+                                    <label for="descriptions">Is Watermark Required </label><br>
 
                                     @if (old('is_watermark_required'))
                                         <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
@@ -295,7 +295,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Visibility :</label><br>
+                                    <label for="descriptions">Visibility </label><br>
 
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"
@@ -321,7 +321,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Guest Images Upload :</label><br>
+                                    <label for="descriptions">Guest Images Upload </label><br>
 
                                     @if (old('guest_images_upload'))
                                         <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
