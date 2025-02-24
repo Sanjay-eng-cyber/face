@@ -40,8 +40,8 @@ div {
 }
 
 .min-height-20em {
-    /* min-height: 20em; */
-    min-height: 100%;
+    min-height: 20em;
+    /* min-height: 100%; */
 }
 
 .cust-title {

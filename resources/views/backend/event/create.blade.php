@@ -219,7 +219,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-12 mb-3">
-                                    <label for="descriptions">Visibility :</label><br>
+                                    <label for="descriptions">Visibility </label><br>
                                     <input type="radio" id="visibilityYes" name="visibility" value="1"
                                         @if (old('visibility') == '1') {{ 'checked' }} @endif required>
                                     <label for="visibilityYes">Yes</label>
