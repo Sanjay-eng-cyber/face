@@ -1,7 +1,8 @@
 @extends('backend.layouts.app')
 @section('title', 'Uploaded Images')
 @section('content')
-    <div class="row layout-top-spacing m-0 pa-padding-remove">
+        <div class="layout-px-spacing row layout-top-spacing m-0">
+
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
             <div class="statbox widget box box-shadow my-1">
