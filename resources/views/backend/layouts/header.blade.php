@@ -32,3 +32,4 @@
 <link href="{{ asset('backend/assets/css/tinymce/tinymce.min.css') }}" rel="stylesheet" />
 
 <link rel="stylesheet" href="{{ asset('backend/css/cms.css') }}">
+<link rel="stylesheet" href="{{ asset('backend/assets/css/newstyle.css') }}">

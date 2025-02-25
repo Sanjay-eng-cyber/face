@@ -56,81 +56,76 @@
                 </div>
             </div>
 
-            <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
+
+
+            <div class="statbox  box box-shadow ">
                 <div class="">
-                    <div class="widget-content widget-content-area">
-                        <div class="table-responsive min-height-20em">
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th>Sr no.</th>
-                                        <th>Image Name</th>
-                                        {{-- <th class="text-center">Image</th> --}}
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($images as $image)
-                                        <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $images) }}</td>
-                                            <td>{{ $image->image_name }}</td>
-                                            {{-- <td class="text-center">
-                                                <span class="lightgallery1">
-                                                    <a href="{{ getGalleryImageUrl($image->image_url) }}">
-                                                        <img src="{{ getPythonImageUrl($image->image_url) }}"
-                                                            style="height: 100px;width:150px;object-fit:contain;"
-                                                            alt="">
-                                                        View
-                                                    </a>
-                                                </span>
-                                                <a href="{{ route('backend.category.image-upload-delete', $image->id) }}">
-                                                    Delete
+                    <div class="widget-content widget-content-area p-0">
+                        
+                        <div class="row row-cols-1 row-cols-sm-2  row-cols-lg-2 row-cols-xl-3 mt-4">
+                            @forelse($images as $image)
+            
+                                <div class="col mb-4">
+                                    <div class="up-main-box" >
+                                        <img src="{{asset('backend/assets/img/ct/imgclone.svg')}}" alt="" class="img-fluid h-100">
+                                        <div>
+                                            <div class="dr-clr fs-13 text-truncate">{{ $image->image_name }}</div>
+                                            <div class="dr-clr-light fw-600 pt-2 fs-11">
+                                                {{ round($image->file_size / 1024, 2) }} KB
+            
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            
+                                            <div class="dropdown custom-dropdown">
+                                                <a class="dropdown-toggle text-white-2" href="#" role="button"
+                                                    id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                        <circle cx="12" cy="12" r="1"></circle>
+                                                        <circle cx="19" cy="12" r="1"></circle>
+                                                        <circle cx="5" cy="12" r="1"></circle>
+                                                    </svg>
                                                 </a>
-                                            </td> --}}
-                                            <td class="text-center">
-                                                <div class="dropdown custom-dropdown">
-                                                    <a class="dropdown-toggle text-white-2" href="#" role="button"
-                                                        id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="19" cy="12" r="1"></circle>
-                                                            <circle cx="5" cy="12" r="1"></circle>
-                                                        </svg>
-                                                    </a>
-
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        <span class="lightgallery1">
-                                                            <a class="dropdown-item"
-                                                                href="{{ getGalleryImageUrl($image->image_url) }}">
-                                                                {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
-                                                                    style="height: 100px;width:150px;object-fit:contain;"
-                                                                    alt=""> --}}
-                                                                View
-                                                            </a>
-                                                        </span>
-                                                        @cmsUserRole('admin')
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('backend.category.image-upload-delete', $image->id) }}">
-                                                                Delete
-                                                            </a>
-                                                        @endcmsUserRole
-                                                    </div>
+            
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                    <span class="lightgallery1">
+                                                        <a class="dropdown-item"
+                                                            href="{{ getGalleryImageUrl($image->image_url) }}">
+                                                            {{-- <img src="{{ getPythonImageUrl($image->image_url) }}"
+                                                                style="height: 100px;width:150px;object-fit:contain;"
+                                                                alt=""> --}}
+                                                            View
+                                                        </a>
+                                                    </span>
+                                                    @cmsUserRole('admin')
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.category.image-upload-delete', $image->id) }}">
+                                                            Delete
+                                                        </a>
+                                                    @endcmsUserRole
                                                 </div>
-
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr class="text-md-center">
-                                            <td colspan="3">No Records Found</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
+                                            </div>
+            
+            
+            
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                                <div>
+                                    No Records Found
+                                </div>
+                            @endforelse
+            
+            
                         </div>
+            
+
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">

@@ -354,7 +354,7 @@ class CategoryController extends Controller
     public function uploadedImagesIndex(Request $request, $id)
     {
         $category = Category::findOrFail($id);
-        $images = $category->gallery_images()->paginate(10);
+        $images = $category->gallery_images()->paginate(15);
         $totalImages = $category->gallery_images()->count();
         // dd($images);
         return view('backend.category.uploaded-images-index', compact('category', 'images', 'totalImages'));

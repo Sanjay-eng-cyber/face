@@ -1,0 +1,30 @@
+:root{
+    --dr: #6C6C6D;
+    --dr-light: #9E9E9F;
+
+}
+
+.dr-clr{
+    color: var(--dr);
+}
+
+.dr-clr-light{
+    color: var(--dr-light);
+}
+
+.up-main-box{
+    background-color: #0C0B0B;
+    padding: 12px;
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: 11% 71% 10%;
+    grid-gap: 15px;
+    border-radius:8px;
+}
+
+.fs-13{
+    font-size: 13px;
+}
+.fs-11{
+    font-size: 11.6px;
+}
