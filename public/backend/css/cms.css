@@ -553,7 +553,7 @@ html, body {
 } */
 #sidebar ul.menu-categories li.menu > .dropdown-toggle {
     color:#BFC1CA;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #sidebar ul.menu-categories li.menu:not(.active) > .dropdown-toggle[aria-expanded="true"]{
