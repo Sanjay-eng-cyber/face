@@ -33,8 +33,8 @@
         }
 
         .dropzone .dz-preview.dz-image-preview {
-            padding-left: 10px;
-            padding-right: 10px;
+         
+            padding: 12px;
         }
 
         .dropzone {
@@ -108,8 +108,8 @@
         }
 
         .dropzone .dz-preview .dz-details {
-            height: 50px;
-            min-height: 50px;
+            /* height: 50px;
+            min-height: 50px; */
             padding: 0;
             padding-left: 25px;
             text-align: left;
@@ -123,12 +123,12 @@
             padding-left: 55px;
         }
 
-        .dropzone .dz-preview {
+        /* .dropzone .dz-preview {
             width: 100%;
             height: 55px;
             min-height: 50px;
             margin: 0;
-        }
+        } */
 
 
 
@@ -178,8 +178,8 @@
             text-decoration: none;
             padding: 0 25px;
             position: absolute;
-            right: 0;
-            top: 27%;
+            right: 20px;
+            top: 19%;
             transform: translateY(-50%);
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -218,7 +218,9 @@
 
         }
         .dropzone .dz-preview.dz-image-preview{
-            background:transparent !important;
+            background:#a56d6d !important;
+            border-radius: 10px;
+
         }
         .progress{
             background-color:unset !important;
@@ -271,7 +273,7 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow mt-3 mt-lg-4">
+            <div class="info statbox box box-shadow mt-3 mt-lg-4">
                 <div class="row widget-header">
                     <div class="col-md-11">
                         <div class="work-section">
@@ -393,14 +395,30 @@
 
         var previewTemplate = `
                 <div class="dz-preview dz-file-preview">
-                    <div style="display: flex;align-items: center;">
-                        <span class="dz-filename"  ><strong data-dz-name></strong></span>
-                        (<span class="dz-size" data-dz-size></span>)
+                 
+                    <div class="subgrd-row">
+                        <img src="{{asset('backend/assets/img/ct/imgclone.svg')}}" alt="" class="img-fluid h-100">
+                        <div class="subgrd-col">
+                            <span class="dz-filename"><strong data-dz-name></strong></span>
+                            <div>
+                                <span class="dz-size" data-dz-size></span>
+                                <div class="dz-success-mark">
+                                    <span>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 14px;height:14px">
+                                             <path d="M6.99935 1.16699C3.79102 1.16699 1.16602 3.79199 1.16602 7.00033C1.16602 10.2087 3.79102 12.8337 6.99935 12.8337C10.2077 12.8337 12.8327 10.2087 12.8327 7.00033C12.8327 3.79199 10.2077 1.16699 6.99935 1.16699ZM6.99935 11.667C4.42685 11.667 2.33268 9.57283 2.33268 7.00033C2.33268 4.42783 4.42685 2.33366 6.99935 2.33366C9.57185 2.33366 11.666 4.42783 11.666 7.00033C11.666 9.57283 9.57185 11.667 6.99935 11.667ZM9.67685 4.42199L5.83268 8.26616L4.32185 6.76116L3.49935 7.58366L5.83268 9.91699L10.4993 5.25033L9.67685 4.42199Z" fill="#84FF89"/>
+                                        </svg>
+                                    </span>
+                                    <span style="color: #84FF89;font-size:12px;">
+                                        Successfully uploaded
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="progress" style="margin-top: 8px">
+                    <div class="progress" >
                         <div class="progress-bar" role="progressbar" data-dz-uploadprogress></div>
                     </div>
-                    <div class="dz-success-mark"><span>✔</span></div>
                     <div class="dz-error-mark"><span>✘</span></div>
                     <div class="dz-error-message"><span data-dz-errormessage></span></div>
                 </div>
@@ -420,6 +438,8 @@
             previewTemplate: previewTemplate,
             thumbnailHeight: null,
             thumbnailWidth: null,
+            dictRemoveFile: "X",
+            dictCancelUpload: "X",
             // uploadMultiple: true
             init: function() {
                 var myDropzone = this;
@@ -550,6 +570,8 @@
             }
         });
     </script>
+
+
 @endsection
 
 @section('cdn')

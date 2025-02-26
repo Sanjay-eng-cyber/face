@@ -28,3 +28,65 @@
 .fs-11{
     font-size: 11.6px;
 }
+/* 
+.dz-preview.dz-image-preview.dz-processing.dz-error.dz-complete{
+    width: 33.33%;
+} */
+
+
+.dropzone.needsclick.demo-upload.dz-clickable.dz-started{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: unset !important;
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+}
+
+
+.subgrd-row{
+    display: grid;
+    grid-template-columns: 11% 71% 10%;
+    grid-gap: 15px;
+}
+.subgrd-col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropzone .dz-preview .dz-remove{
+    padding: 0px !important;
+}
+.progress{
+    margin: 0px !important;
+}
+
+.dropzone .dz-preview{
+    margin: 0px !important;
+}
+
+.dz-success-mark{
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.dropzone .dz-preview.dz-success .dz-success-mark{
+    -webkit-animation:unset !important;
+    animation:unset !important;
+}
+
+ .dz-success-mark{
+    pointer-events:unset !important; 
+    opacity: unset !important;
+    z-index:unset !important;
+    position: unset !important;
+    display: unset !important;
+    top: unset !important;
+    left: unset !important;
+    margin-left: unset !important;
+    margin-top: unset !important;
+}
