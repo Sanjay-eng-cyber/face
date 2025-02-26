@@ -218,9 +218,8 @@
 
         }
         .dropzone .dz-preview.dz-image-preview{
-            background:#a56d6d !important;
+            background: #0C0B0B !important;
             border-radius: 10px;
-
         }
         .progress{
             background-color:unset !important;
@@ -400,7 +399,7 @@
                         <img src="{{asset('backend/assets/img/ct/imgclone.svg')}}" alt="" class="img-fluid h-100">
                         <div class="subgrd-col">
                             <span class="dz-filename"><strong data-dz-name></strong></span>
-                            <div>
+                            <div class="main-db">
                                 <span class="dz-size" data-dz-size></span>
                                 <div class="dz-success-mark">
                                     <span>
@@ -480,12 +479,12 @@
                     console.log("File uploaded successfully:", response);
                     file.previewElement.classList.add("dz-success");
                     file.fileName = response
-                        .fileName; // Store the file name for potential removal later
+                        .fileName; 
                     file.id = response
                         .id;
 
-                    totalFiles--; // Decrease the count after successful upload
-                    checkFileCount(); // Check if the warning can be removed
+                    totalFiles--; 
+                    checkFileCount(); 
 
                     // Process the next file in the queue after the current one is done
                     if (myDropzone.getQueuedFiles().length > 0) {

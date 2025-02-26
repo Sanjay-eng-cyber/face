@@ -35,6 +35,7 @@
 
 
 .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
+    background-image: unset !important;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: unset !important;
@@ -62,31 +63,53 @@
 }
 .progress{
     margin: 0px !important;
+    margin-top: 12px !important;
 }
 
 .dropzone .dz-preview{
     margin: 0px !important;
 }
 
-.dz-success-mark{
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
+
 
 .dropzone .dz-preview.dz-success .dz-success-mark{
     -webkit-animation:unset !important;
     animation:unset !important;
 }
 
- .dz-success-mark{
+.dz-preview.dz-success .dz-success-mark{
     pointer-events:unset !important; 
     opacity: unset !important;
     z-index:unset !important;
     position: unset !important;
-    display: unset !important;
     top: unset !important;
     left: unset !important;
     margin-left: unset !important;
     margin-top: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.main-db{
+    display: flex;
+    gap: 13px;;
+}
+.dropzone .dz-preview{
+    min-height: auto !important;
+}
+
+@media screen and (max-width:1200px){
+    .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width:576px){
+    .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
