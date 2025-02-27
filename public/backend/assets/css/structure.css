@@ -1081,13 +1081,13 @@ code {
   background-color: #304aca; }
 
 .sidebar-closed > .sidebar-wrapper {
-  /* width: 54px;  */
-width: 0;
-display: none;
+  width: 168px;
+  /* width: 0;
+  display: none; */
 }
 
 .sidebar-closed > #content {
-  margin-left: 54px; }
+  margin-left: 170px; }
 
 .sidebar-closed > .sidebar-wrapper .profile-info {
   position: relative; }
@@ -1128,7 +1128,7 @@ display: none;
   margin: 0px 15px 3px 15px; }
 
 .sidebar-closed > .sidebar-wrapper:hover {
-  width: 255px; }
+  width: 168px; }
   .sidebar-closed > .sidebar-wrapper:hover .profile-info {
     position: relative; }
     .sidebar-closed > .sidebar-wrapper:hover .profile-info figure {

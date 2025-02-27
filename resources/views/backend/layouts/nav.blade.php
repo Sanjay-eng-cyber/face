@@ -317,21 +317,21 @@
                             </li>
                         @endadmin --}}
                         <li class="menu mb-4 border-0">
-                            <a d href="/" class="nav-link">
-                                <img src="{{asset('backend/images/login/dmy-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
+                            <a d href="/" class="nav-link ">
+                                <img src="{{asset('backend/images/login/picscanai-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
                             </a>
                         </li>
                         <li class="menu">
                             <a href="{{ route('cms.statistics.index') }}"
                                 aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
-                                class="dropdown-toggle">
+                                class="dropdown-toggle link-sdb">
                                 <div class="">
                                   
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13 9V3H21V9H13ZM3 13V3H11V13H3ZM13 21V11H21V21H13ZM3 21V15H11V21H3ZM5 11H9V5H5V11ZM15 19H19V13H15V19ZM15 7H19V5H15V7ZM5 19H9V17H5V19Z" />
                                     </svg>
                                         
-                                    <span>Dashboard</span>
+                                    <span class="nav-sidetext">Dashboard</span>
                                 </div>
                             </a>
                         </li>
@@ -354,7 +354,7 @@
                             <li class="menu">
                                 <a href="{{ route('backend.event.index') }}"
                                     aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.event') ? 'true' : 'false' }}"
-                                    class="dropdown-toggle">
+                                    class="dropdown-toggle link-sdb">
                                     <div class="">
                                         {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 24 24">
@@ -366,14 +366,14 @@
                                         <path d="M16 2H15V0H13V2H5V0H3V2H2C0.9 2 0 2.9 0 4V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM16 18H2V8H16V18ZM2 6V4H16V6H2ZM4 10H14V12H4V10ZM4 14H11V16H4V14Z" />
                                         </svg>
                                         
-                                        <span>All Events</span>
+                                        <span class="nav-sidetext">All Events</span>
                                     </div>
                                 </a>
                             </li>
                             <li class="menu">
                                 <a href="{{ route('backend.category.index') }}"
                                     aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.category') ? 'true' : 'false' }}"
-                                    class="dropdown-toggle">
+                                    class="dropdown-toggle link-sdb">
                                     <div class="">
                                         {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 24 24">
@@ -385,7 +385,7 @@
                                         <path d="M12 2L6.5 11H17.5L12 2ZM12 5.84L13.93 9H10.06L12 5.84ZM17.5 13C15.01 13 13 15.01 13 17.5C13 19.99 15.01 22 17.5 22C19.99 22 22 19.99 22 17.5C22 15.01 19.99 13 17.5 13ZM17.5 20C16.837 20 16.2011 19.7366 15.7322 19.2678C15.2634 18.7989 15 18.163 15 17.5C15 16.837 15.2634 16.2011 15.7322 15.7322C16.2011 15.2634 16.837 15 17.5 15C18.163 15 18.7989 15.2634 19.2678 15.7322C19.7366 16.2011 20 16.837 20 17.5C20 18.163 19.7366 18.7989 19.2678 19.2678C18.7989 19.7366 18.163 20 17.5 20ZM3 21.5H11V13.5H3V21.5ZM5 15.5H9V19.5H5V15.5Z"/>
                                         </svg>
                                         
-                                        <span>Manage Categories</span>
+                                        <span class="nav-sidetext">Manage Categories</span>
                                     </div>
                                 </a>
                             </li>
@@ -410,14 +410,14 @@
                             <li class="menu">
                                 <a href="{{ route('backend.cms-user.index') }}"
                                     aria-expanded="{{ str_contains(request()->route()->getName(), 'backend.cms-user') ? 'true' : 'false' }}"
-                                    class="dropdown-toggle">
+                                    class="dropdown-toggle link-sdb">
                                     <div class="">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                             viewBox="0 0 24 24">
                                             <path
                                                 d="M12,13A5,5 0 0,1 7,8H9A3,3 0 0,0 12,11A3,3 0 0,0 15,8H17A5,5 0 0,1 12,13M12,3A3,3 0 0,1 15,6H9A3,3 0 0,1 12,3M19,6H17A5,5 0 0,0 12,1A5,5 0 0,0 7,6H5C3.89,6 3,6.89 3,8V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V8C21,6.89 20.1,6 19,6Z" />
                                         </svg>
-                                        <span>Cms Users</span>
+                                        <span class="nav-sidetext">Cms Users</span>
                                     </div>
                                 </a>
                             </li>

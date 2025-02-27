@@ -675,14 +675,14 @@ color: white !important;
     border: 1px solid #181215;
  }
  .page-item.active .page-link{
-    background-color:#FE3B96;
+    background-color:#8E0043;
     color: white;
     border: 1px solid #181215;
  }
  .page-link{
-    background-color: black;
+    background-color:#0E0B0B;
     color:white;
-    border: 1px solid #181215;
+    border: 1px solid #0E0B0B;
  }
 
  .browsertext {
