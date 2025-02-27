@@ -446,7 +446,7 @@ left: 0px;
  }
 .sidebar-wrapper{
     top: 0px;
-    width: 287px;
+    width: 305px;
 }
 
 #sidebar, #sidebar ul.menu-categories.ps{
@@ -464,7 +464,7 @@ left: 0px;
     margin-left: 31px;
 }
 #content {
-margin-left: 272px;
+margin-left: 290px;
 }
 #sidebar ul.menu-categories li.menu{
     transition:unset;

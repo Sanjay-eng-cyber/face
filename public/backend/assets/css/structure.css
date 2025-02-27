@@ -1081,7 +1081,10 @@ code {
   background-color: #304aca; }
 
 .sidebar-closed > .sidebar-wrapper {
-  width: 54px; }
+  /* width: 54px;  */
+width: 0;
+display: none;
+}
 
 .sidebar-closed > #content {
   margin-left: 54px; }

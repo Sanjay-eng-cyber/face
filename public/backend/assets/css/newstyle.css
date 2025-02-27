@@ -125,6 +125,22 @@
     font-size: 36px !important;
 }
 
+.arrow-main-btn{
+    position: relative;
+    top: 50%;
+    left: -51px;
+    z-index: 9999;         
+}
+
+.sidebarCollapse svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-closed .sidebarCollapse svg {
+    transform: rotate(180deg);
+}
+
+
 @media screen and (max-width:1200px){
     .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
         display: grid;
