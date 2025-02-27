@@ -51,9 +51,7 @@
                                                         <h6 class="text-center text-b mb-0" style="--text-blue:#BA71FF">Total Events</h6>
                                                     </div>
                                                     <div class="d-flex">
-                                                            {{-- <div class="w-icon">
-                                                                <i class="far fa-chart-bar big-font-icon"> </i>
-                                                            </div> --}}
+                                                        
                                                         <div class="">
                                                             <div class="w-value  text-b tens" style="--text-blue:#BA71FF">
                                                                 {{ str_pad($totalEvents, 2, '0', STR_PAD_LEFT) }}
@@ -93,9 +91,7 @@
                                                         <h6 class="text-center text-b mb-0 " style="--text-blue:#FFB96A">Event Categories</h6>
                                                     </div>
                                                     <div class="d-flex">
-                                                            {{-- <div class="w-icon">
-                                                                <i class="far fa-chart-bar big-font-icon"> </i>
-                                                            </div> --}}
+                                                    
                                                         <div class="">
                                                             <div class="w-value  text-b tens" style="--text-blue:#FFB96A">
                                                                 {{ str_pad($totalCategories , 2, '0', STR_PAD_LEFT) }}
