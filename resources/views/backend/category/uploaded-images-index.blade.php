@@ -1,5 +1,26 @@
 @extends('backend.layouts.app')
 @section('title', 'Uploaded Images')
+@section('cdn')
+<style>
+    .page-link{
+        min-height: 53px;
+        width: 47px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    } 
+
+    @media (max-width: 576px) {
+        .page-link{
+            min-height:unset;
+            width:unset;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+</style>
+@endsection
 @section('content')
         <div class="layout-px-spacing row layout-top-spacing m-0">
 
@@ -128,12 +149,13 @@
             
 
                         <div class="pagination col-lg-12 mt-3">
-                            <div class=" text-center mx-auto">
+                            <div class="text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
+                        
 
                     </div>
                 </div>
@@ -144,7 +166,7 @@
 @endsection
 @section('js')
     <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
-    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
+    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>
     <script>
         $(document).ready(function() {
             $(".lightgallery1").each(function() {
