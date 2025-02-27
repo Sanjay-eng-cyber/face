@@ -64,7 +64,7 @@
 
                                                
                                                     <a href="{{ route('backend.event.index') }}"
-                                                        class="btn box-shadow-none mx-auto w-100 d-flex justify-content-between align-item-center view-eventbtn" style="transform:unset">
+                                                        class="btn box-shadow-none mx-auto w-100 d-flex justify-content-between align-items-center view-eventbtn" style="transform:unset">
                                                         <div class="text-white fw-500">
                                                             View events    
                                                         </div>         
