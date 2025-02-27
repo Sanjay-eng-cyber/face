@@ -107,6 +107,17 @@
 .dsa-box-main:hover .dsa-box{
     border:1px solid var(--ds-hrborder);
 }
+.dsa-box-main .view-eventbtn {
+    background-color: #0B0A0A;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    border-radius: 12px;
+    padding: 0.9rem 1.25rem;
+}
+
+.dsa-box-main:hover .view-eventbtn {
+    background-color: #333333;
+}
+
 .text-b{
     color: var(--text-blue);
 }
