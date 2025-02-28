@@ -1,35 +1,38 @@
 @extends('backend.layouts.app')
 @section('title', 'Uploaded Images')
 @section('cdn')
-<style>
-    .page-link{
-        min-height: 53px;
-        width: 47px;
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    } 
-
-    @media (max-width: 576px) {
-        .page-link{
-            min-height:unset;
-            width:unset;
+    <style>
+        .page-link {
+            min-height: 53px;
+            width: 47px;
             display: flex;
-        justify-content: center;
-        align-items: center;
+            justify-content: center;
+            align-items: center;
         }
-    }
-</style>
+
+        @media (max-width: 576px) {
+            .page-link {
+                min-height: unset;
+                width: unset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
 @endsection
 @section('content')
-        <div class="layout-px-spacing row layout-top-spacing m-0">
+    <div class="layout-px-spacing row layout-top-spacing m-0">
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-            <a href="javascript:void(0);" class="sidebarCollapse arrow-main-btn d-none d-lg-block" data-placement="bottom" style="width:33px;" >
+            <a href="javascript:void(0);" class="sidebarCollapse arrow-main-btn d-none d-lg-block" data-placement="bottom"
+                style="width:33px;">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="15" fill="#D9D9D9"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8431 16.7111L17.5001 22.3681L18.9141 20.9541L13.9641 16.0041L18.9141 11.0541L17.5001 9.64014L11.8431 15.2971C11.6556 15.4847 11.5503 15.739 11.5503 16.0041C11.5503 16.2693 11.6556 16.5236 11.8431 16.7111Z" fill="black"/>
-                </svg>    
+                    <rect width="32" height="32" rx="15" fill="#D9D9D9" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.8431 16.7111L17.5001 22.3681L18.9141 20.9541L13.9641 16.0041L18.9141 11.0541L17.5001 9.64014L11.8431 15.2971C11.6556 15.4847 11.5503 15.739 11.5503 16.0041C11.5503 16.2693 11.6556 16.5236 11.8431 16.7111Z"
+                        fill="black" />
+                </svg>
             </a>
 
             <div class="statbox widget box box-shadow my-1">
@@ -42,7 +45,7 @@
                         </div>
 
                         <div class="col-lg-6 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
-                           
+
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -89,36 +92,37 @@
             <div class="statbox  box box-shadow ">
                 <div class="">
                     <div class="widget-content widget-content-area p-0">
-                        
+
                         <div class="row row-cols-1 row-cols-sm-2  row-cols-lg-2 row-cols-xl-3 mt-4">
                             @forelse($images as $image)
-            
+
                                 <div class="col mb-4">
-                                    <div class="up-main-box" >
-                                        <img src="{{asset('backend/assets/img/ct/imgclone.svg')}}" alt="" class="img-fluid h-100">
+                                    <div class="up-main-box">
+                                        <img src="{{ asset('backend/assets/img/ct/imgclone.svg') }}" alt=""
+                                            class="img-fluid h-100">
                                         <div>
                                             <div class="dr-clr fs-13 text-truncate">{{ $image->image_name }}</div>
                                             <div class="dr-clr-light fw-600 pt-2 fs-11">
                                                 {{ round($image->file_size / 1024, 2) }} KB
-            
+
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            
+
                                             <div class="dropdown custom-dropdown">
                                                 <a class="dropdown-toggle text-white-2" href="#" role="button"
                                                     id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-more-horizontal">
                                                         <circle cx="12" cy="12" r="1"></circle>
                                                         <circle cx="19" cy="12" r="1"></circle>
                                                         <circle cx="5" cy="12" r="1"></circle>
                                                     </svg>
                                                 </a>
-            
+
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                     <span class="lightgallery1">
                                                         <a class="dropdown-item"
@@ -137,10 +141,10 @@
                                                     @endcmsUserRole
                                                 </div>
                                             </div>
-            
-            
-            
-            
+
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -149,10 +153,10 @@
                                     No Records Found
                                 </div>
                             @endforelse
-            
-            
+
+
                         </div>
-            
+
 
                         {{-- <div class="pagination col-lg-12 mt-3">
                             <div class="text-center mx-auto">
@@ -162,16 +166,52 @@
                             </div>
                         </div>  --}}
 
-                        <ul class="pagination">
+                        {{-- <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">‹</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li> 
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">›</a></li>
+                        </ul> --}}
+
+                        <ul class="pagination">
+                            {{-- Previous Page Link --}}
+                            @if ($images->onFirstPage())
+                                <li class="page-item disabled"><span class="page-link">‹</span></li>
+                            @else
+                                <li class="page-item"><a class="page-link" href="{{ $images->previousPageUrl() }}">‹</a>
+                                </li>
+                            @endif
+
+                            {{-- Pagination Numbers with Current Page in Center --}}
+                            @php
+                                $totalPages = $images->lastPage();
+                                $currentPage = $images->currentPage();
+                                $range = 2; // Number of pages to show before and after current page
+                                $start = max(1, $currentPage - $range);
+                                $end = min($totalPages, $currentPage + $range);
+                                $pages = range($start, $end);
+                                rsort($pages); // Reverse the order
+                            @endphp
+
+                            @foreach ($pages as $page)
+                                <li class="page-item {{ $currentPage == $page ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $images->url($page) }}">{{ $page }}</a>
+                                </li>
+                            @endforeach
+
+                            {{-- Next Page Link --}}
+                            @if ($images->hasMorePages())
+                                <li class="page-item"><a class="page-link" href="{{ $images->nextPageUrl() }}">›</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled"><span class="page-link">›</span></li>
+                            @endif
                         </ul>
-                        
+
+
 
                     </div>
                 </div>
