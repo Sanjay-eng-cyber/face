@@ -316,7 +316,7 @@
                                     </a>
                             </li>
                         @endadmin --}}
-                        <li class="menu mb-4 border-0">
+                        <li class="menu mb-2 border-0">
                             <a d href="/" class="nav-link ">
                                 <img src="{{asset('backend/images/login/picscanai-logo.png')}}" class="navbar-logo img-fluid" alt="logo" style="width: 128px">
                             </a>

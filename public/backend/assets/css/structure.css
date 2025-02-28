@@ -1145,8 +1145,8 @@ code {
       .sidebar-closed > .sidebar-wrapper:hover .profile-info .user-info h6, .sidebar-closed > .sidebar-wrapper:hover .profile-info .user-info p {
         opacity: 1; }
 
-.sidebar-closed .sidebar-wrapper:hover #sidebar ul.menu-categories {
-  padding: 20px 0 20px 0; }
+/* .sidebar-closed .sidebar-wrapper:hover #sidebar ul.menu-categories {
+  padding: 20px 0 20px 0; } */
 
 .sidebar-closed .sidebar-wrapper:hover ul.menu-categories li.menu.menu-heading > .heading .feather-minus {
   display: none; }
