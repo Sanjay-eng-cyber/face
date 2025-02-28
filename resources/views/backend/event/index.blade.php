@@ -11,11 +11,11 @@
                 </svg>    
             </a>
 
-            <div class="statbox widget box box-shadow mt-3 mb-1">
-                <div class="widget-header">
+            <div class="statbox widget box box-shadow mt-3 mb-1 ">
+                <div class="widget-header p-smm-0">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <legend class="h2 text-clr fw-600">
+                        <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
+                            <legend class="h2 text-clr fw-600 fs-24">
                                 Events
                             </legend>
                         </div>
@@ -36,7 +36,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-lg-9 mt-2 px-xl-0">
+                        <div class="col-lg-9 mt-2 px-xl-0 p-smm-0">
                             <form class="form-inline row app_form" action="{{ route('backend.event.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
@@ -71,8 +71,8 @@
                             <table class="table mb-4">
                                 <thead>
                                     <tr>
-                                        <th>Sr no.</th>
-                                        <th>Name</th>
+                                        <th class="white-space">Sr no.</th>
+                                        <th class="white-space">Name</th>
                                         {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -81,7 +81,7 @@
                                     @forelse($events as $event)
                                         <tr>
                                             <td class="text-white-2">{{ tableRowSrNo($loop->index, $events) }}</td>
-                                            <td class="text-white-2">{{ $event->name }}</td>
+                                            <td class="text-white-2 white-space">{{ $event->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
