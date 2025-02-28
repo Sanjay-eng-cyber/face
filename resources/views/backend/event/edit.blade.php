@@ -47,7 +47,7 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="cover_image">
                                     <div id="lightgallery_one" class="text-end">
                                         <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
@@ -281,7 +281,7 @@
 
                                 <div class="col-xl-6 col-12 mb-3" id="watermarkField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="watermark_image">
                                     @if ($event->watermark_image)
                                         <div id="lightgallery_two" class="text-end">
