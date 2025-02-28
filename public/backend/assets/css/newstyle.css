@@ -128,8 +128,8 @@
 .arrow-main-btn{
     position: relative;
     top: 50%;
-    left: -51px;
-    z-index: 9999;         
+    left: 91%;
+    z-index: 9999;      
 }
 
 .sidebarCollapse svg {
