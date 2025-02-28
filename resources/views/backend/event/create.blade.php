@@ -53,7 +53,7 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="cover_image">
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
@@ -216,7 +216,7 @@
 
                                 <div class="col-xl-6 col-12 mb-3" id="watermarkField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="watermark_image">
                                     @if ($errors->has('watermark_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
