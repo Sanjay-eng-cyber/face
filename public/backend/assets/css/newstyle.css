@@ -167,6 +167,9 @@ display: none;
     color: #fff;
     border-radius: 10px;
 }
+.white-space{
+    white-space: nowrap;
+}
 @media screen and (max-width:1200px){
     .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
         display: grid;
@@ -174,10 +177,27 @@ display: none;
     }
 }
 
-
+@media screen and (max-width:992px){
+.header{
+    background-color: black;
+}
+}
 @media screen and (max-width:576px){
     .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
         display: grid;
         grid-template-columns: 1fr;
     }
+    .dsa-box-main .view-eventbtn {
+        padding: 0.5rem 0.6rem;
+    }
+    .header-container .navbar-nav.theme-brand {
+        margin-left: 15px;
+    }
+    .p-smm-0{
+        padding: 0px !important;;
+    }
+    .fs-24{
+        font-size: 24px !important;
+    }
+
 }

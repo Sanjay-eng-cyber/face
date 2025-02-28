@@ -3,6 +3,12 @@
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+            <a href="javascript:void(0);" class="sidebarCollapse arrow-main-btn d-none d-lg-block" data-placement="bottom" style="width:33px;" >
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="15" fill="#D9D9D9"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8431 16.7111L17.5001 22.3681L18.9141 20.9541L13.9641 16.0041L18.9141 11.0541L17.5001 9.64014L11.8431 15.2971C11.6556 15.4847 11.5503 15.739 11.5503 16.0041C11.5503 16.2693 11.6556 16.5236 11.8431 16.7111Z" fill="black"/>
+                </svg>    
+            </a>
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
@@ -35,7 +41,7 @@
                                 <div class="col-md-12">
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Name</label><br>
@@ -43,7 +49,7 @@
                                             </div>
                                         </div>
                                         @if ($event->cover_image)
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-6 col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Cover
                                                         Image</label><br>
@@ -56,7 +62,7 @@
                                         @endif
 
                                         @if ($event->watermark_image)
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-6 col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Watermark
                                                         Image</label><br>
@@ -67,7 +73,7 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Start
                                                     Date</label><br>
@@ -76,7 +82,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">End
                                                     Date</label><br>
@@ -84,7 +90,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Link Start
                                                     Date</label><br>
@@ -93,7 +99,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Link End
                                                     Date</label><br>
@@ -101,7 +107,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Upload Image
                                                     Quality</label><br>
@@ -110,7 +116,7 @@
                                                     {{ ucfirst($event->upload_image_quality ?? '----') }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Link
                                                     Sharing</label><br>
@@ -121,7 +127,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Is Pin
                                                     Protection Required</label><br>
@@ -132,7 +138,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Visibility</label><br>
@@ -143,7 +149,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Pin</label><br>
@@ -152,7 +158,7 @@
                                                     {{ $event->pin ?? '----' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Single
                                                     Image
@@ -164,7 +170,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Bulk Image
                                                     Download</label><br>
@@ -176,7 +182,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Guest Images
                                                     Upload</label><br>
@@ -188,7 +194,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Is Watermark
                                                     Required</label><br>
@@ -200,7 +206,7 @@
                                             </div>
                                         </div>
                                         @cmsUserRole('admin')
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-6 col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Event Share
                                                         URL</label><br>
@@ -222,7 +228,7 @@
                                                 </div>
                                             </div>
                                         @endcmsUserRole
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Uploaded
                                                     Images Count</label><br>
@@ -231,7 +237,7 @@
                                                     {{ $galleryImagesCount ?? '----' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Uploaded
                                                     Images Size</label><br>
