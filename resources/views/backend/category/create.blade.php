@@ -62,7 +62,7 @@
 
                                 <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="cover_image" value="{{ old('cover_image') }}">
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}

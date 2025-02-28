@@ -70,7 +70,7 @@
 
                                 <div class="col-xl-12 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control" id="formGroupExampleInput"
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="cover_image">
                                     @if ($category->cover_image)
                                         <div id="lightgallery" class="text-end">
