@@ -180,4 +180,10 @@ display: none;
         display: grid;
         grid-template-columns: 1fr;
     }
+    .dsa-box-main .view-eventbtn {
+        padding: 0.5rem 0.6rem;
+    }
+    .header-container .navbar-nav.theme-brand {
+        margin-left: 15px;
+    }
 }
