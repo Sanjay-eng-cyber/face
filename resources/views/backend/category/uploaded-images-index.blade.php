@@ -148,13 +148,23 @@
                         </div>
             
 
-                        <div class="pagination col-lg-12 mt-3">
+                        {{-- <div class="pagination col-lg-12 mt-3">
                             <div class="text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
-                        </div>
+                        </div>  --}}
+
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">‹</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li> 
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">›</a></li>
+                        </ul>
                         
 
                     </div>
