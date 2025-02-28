@@ -82,14 +82,10 @@
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="19" cy="12" r="1"></circle>
-                                                            <circle cx="5" cy="12" r="1"></circle>
-                                                        </svg>
+                                                        <svg width="46" height="1" viewBox="0 0 46 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8"/>
+                                                            </svg>
+                                                            
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
