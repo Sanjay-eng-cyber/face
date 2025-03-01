@@ -184,11 +184,21 @@ display: none;
 }
 
 @media screen and (max-width:992px){
+    .btn-close-main{
+        position: absolute;
+        right: 27px;
+        top: 24px;
+        z-index: 9999;
+    }
 .header{
     background-color: black;
 }
 }
 @media screen and (max-width:576px){
+
+    .sidebar-wrapper {
+        padding: 10px 29px 14px 10px;
+    }
     .dropzone.needsclick.demo-upload.dz-clickable.dz-started{
         display: grid;
         grid-template-columns: 1fr;

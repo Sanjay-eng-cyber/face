@@ -106,7 +106,6 @@
       <!--  BEGIN SIDEBAR  -->
     
         <div class="sidebar-wrapper sidebar-theme">
-         
             <div class="main-sidebar">
                 <a href="javascript:void(0);" class="sidebarCollapse arrow-main-btn d-none d-lg-block" data-placement="bottom" style="width:33px;">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,6 +114,13 @@
                     </svg>
                 </a>
                 <nav id="sidebar">
+                    <div class="btn-close-main sidebarCollapse d-block d-lg-none" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                          
+                    </div>
                     <ul class="list-unstyled menu-categories" id="accordionExample">
                         {{-- <li class="menu">
                             <a href="{{ route('cms.calendar.index') }}"
