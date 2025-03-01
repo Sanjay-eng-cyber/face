@@ -4,7 +4,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <style>
-        .halfarrowt-img {
+             .halfarrowt-img {
             display: none;
         }
 
@@ -18,6 +18,17 @@
 
         .step-two {
             padding-bottom: 120px
+        }
+
+        body {
+
+            background-image: url(/frontend/images/gallery/body-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            /* This ensures the body takes the full height of the viewport */
         }
 
         .custom-ctnrfluid {
@@ -73,7 +84,7 @@
             }
 
             .step-two {
-                padding-bottom: 120px;
+                padding-bottom: 60px;
                 padding-top: 20px;
             }
 
@@ -81,20 +92,28 @@
                 margin-top: -17px;
             }
 
-            /* .custom-ctnrfluid {
-                                                                                                                                                    background-image: unset;
-                                                                                                                                                    backdrop-filter: unset;
-                                                                                                                                                    min-height: unset;
-                                                                                                                                                    padding-left: 12px;
-                                                                                                                                                    padding-right: 12px;
-                                                                                                                                                } */
+
             .pobdh {
                 height: 0px;
             }
 
             .stepmaincontainer {
                 padding-top: 32px;
+            }
 
+            .navsmimg {
+                position: unset;
+                z-index: unset;
+                backdrop-filter: unset;
+                left: unset;
+                transform: unset;
+                width: unset;
+                top: unset;
+                margin-top: unset;
+                min-height: unset;
+                object-fit: unset;
+                display: none;
+                border-radius: unset;
             }
         }
     </style>
@@ -116,19 +135,11 @@
 
         <div class="position-relative">
             <div class="pobdh"></div>
-            <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2">
-            <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
-                alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-            <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
-                class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
-            <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99">
-
+        
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
 
-                    <div class="pb-5" v-if="step == 1">
+                    <div class="pb-5" v-if="step == 1" v-show="step !== 2 && step !== 3">
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
@@ -207,7 +218,7 @@
 
                         <div class="row ptpb-55px" id="enterPinDiv">
                             <div class="col-12">
-                                <div class="pin-container">
+                                <div class="pin-container d-flex flex-column align-items-center">
                                     <div class="pin-title">Enter Your Pin Number</div>
                                     <form action="" method="post" @submit.prevent="handleStepOneFormSubmit">
                                         <div class="d-flex justify-content-center basic-input-main">
@@ -223,13 +234,16 @@
                         </div>
                     </div>
 
-                    <div class="step-two" v-if="step == 2">
+                    <div class="step-two" v-if="step == 2" v-cloak>
 
-                        <div class="row  pt-17px pb-30 position-relative">
+                        <div class="row  pt-17px pb-4 mb-0 mb-sm-3 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
-
+                            <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
+                                <a href="http://" class="">
+                                    <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
+                                        class="img-fluid mb-2 mb-sm-4">
+                                </a>
                                 <div class="basic-event-one-main-bdt text-white">
                                     <div class="basic-event-one-main-insider-bdt">
                                         <div>
@@ -237,7 +251,7 @@
                                                 alt="" class="img-fluid ex-one-img-new-fi rounded-2">
                                         </div>
                                         <div>
-                                            <div class="eventanddatespit-bdt ">
+                                            <div class="eventanddatespit-bdt eventanddatespit-bdt-divide">
                                                 <div class="h5 fw-600 mb-0 text-white bdt-eventname">
                                                     {{ $event->name }}
                                                 </div>
@@ -259,7 +273,7 @@
                                                     $cleanDescription = strip_tags($event->descriptions);
                                                     $shortDescription = Str::limit($cleanDescription, 180, '...');
                                                 @endphp
-                                                <div class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                <div class="text-white pt-2  fs-14 bdt-date-longpara limit-para">
                                                     <span class="short-text">
                                                         {!! $shortDescription !!}
                                                     </span>
@@ -278,7 +292,7 @@
                             </div>
                         </div>
 
-                        <div class="row gx-3 gx-lg-4 gx-xxl-5">
+                        <div class="row d-flex justify-content-center">
                             <div class="col-12 col-lg-5 col-xl-5 col-xxl-5 order-br">
                                 <form method="post" class="login-form pt-5 pt-lg-0"
                                     @submit.prevent="handleStepTwoFormSubmit">
@@ -417,7 +431,7 @@
                         </div>
                     </div>
 
-                    <div class="step-three" v-if="step == 3">
+                    <div class="step-three" v-if="step == 3" v-cloak>
 
 
 
