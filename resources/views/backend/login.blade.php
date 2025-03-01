@@ -218,7 +218,7 @@
                             <div class="text-danger text-left mx-3" role="alert">{{ $errors->first('email') }}</div>
                         @endif
                         <div class="auth-form-input mt-3 mt-sm-4">
-                            {{-- <img class="icon eye-show-pass" src="backend/images/icon-eye.svg" draggable="false"> --}}
+                            <img class="icon eye-show-pass" src="backend/images/icon-eye.svg" draggable="false">
                             <input class="form-control password cmn-input" type="password" placeholder="Enter Password"
                                 id="password" name="password" minlength="8" maxlength="16" required
                                 data-custom-attribute="channels-login">
