@@ -197,7 +197,7 @@
                                                                 '...',
                                                             );
                                                         @endphp
-                                                        <div class="pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                        <div class="pt-2  fs-14 bdt-date-longpara limit-para">
                                                             <span class="short-text">
                                                                 {!! $shortDescription !!}
                                                             </span>
@@ -263,7 +263,7 @@
                                                 alt="" class="img-fluid ex-one-img-new-fi rounded-2">
                                         </div>
                                         <div>
-                                            <div class="eventanddatespit-bdt ">
+                                            <div class="eventanddatespit-bdt eventanddatespit-bdt-divide">
                                                 <div class="h5 fw-600 mb-0 text-white bdt-eventname">
                                                     {{ $event->name }}
                                                 </div>
@@ -285,7 +285,7 @@
                                                     $cleanDescription = strip_tags($event->descriptions);
                                                     $shortDescription = Str::limit($cleanDescription, 180, '...');
                                                 @endphp
-                                                <div class=" pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                <div class=" pt-2 fs-14 bdt-date-longpara limit-para">
                                                     <span class="short-text">
                                                         {!! $shortDescription !!}
                                                     </span>
