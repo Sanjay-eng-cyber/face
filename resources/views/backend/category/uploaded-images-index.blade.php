@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
                             @empty
-                                <div>
+                                <div class="text-center">
                                     No Records Found
                                 </div>
                             @endforelse
