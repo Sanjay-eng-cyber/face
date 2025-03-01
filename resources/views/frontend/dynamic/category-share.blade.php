@@ -293,141 +293,148 @@
                         </div>
 
                         <div class="row d-flex justify-content-center">
-                            <div class="col-12 col-lg-5 col-xl-5 col-xxl-5 order-br">
-                                <form method="post" class="login-form pt-5 pt-lg-0"
-                                    @submit.prevent="handleStepTwoFormSubmit">
-                                    <div class="dblwhitecolor h4 mb-0 fw-600 pb-2 form-details">Details</div>
 
-                                    <div class="pb-2 pb-sm-3">
-                                        <label for="name" class="fw-600 frtwhitcolor pb-2 name-form">Name</label>
-                                        <input type="text" name="name" minlength="8" maxlength="30" required
-                                            placeholder="Enter Your Name" v-model="name" required
-                                            class="form-control sin-input">
-                                    </div>
+                            <div class="col-12 col-lg-11 col-xl-10">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <form method="post" class="login-form pt-5 pt-lg-0"
+                                            @submit.prevent="handleStepTwoFormSubmit">
+                                            <div class="dblwhitecolor h4 mb-0 fw-600 pb-2 form-details">Details</div>
 
-                                    <div class="pb-2 pb-sm-3">
-                                        <label for="email" class="fw-600 frtwhitcolor pb-2 email-form">Email
-                                            ID*</label>
-                                        <input type="email" name="email" minlength="8" maxlength="40" required
-                                            placeholder="Enter Your Email ID" v-model="email"
-                                            class="form-control sin-input">
-                                    </div>
-
-                                    <div class="pb-3 pb-sm-3">
-                                        <label for="mobile_number"
-                                            class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
-                                        <input type="text" id="mobile_number" name="mobile_number" minlength="10"
-                                            maxlength="10" placeholder="Enter Your Mobile Number" required
-                                            v-model="mobile_number" class="form-control sin-input">
-                                    </div>
-
-
-                                    <div>
-
-                                        <button type="submit" class="submit-btn-bept">Submit</button>
-
-                                    </div>
-
-
-                                </form>
-
-                            </div>
-                            <div class="col-12 col-lg-7 col-xl-7 col-xxl-7 order-bl">
-                                <div class="two-container-grp">
-                                    <div class="basic-face-box">
-                                        <div class="scan-face-box-insider-twopage">
-                                            <img id="captured-image" alt="Captured Image"
-                                                class="faceimg-img w-100 h-100 object-fit-cover brd-50"
-                                                :src="userImageData" v-if="userImageData" />
-                                            <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
-                                                class="faceimg-img" v-else>
-                                        </div>
-
-                                        <div class="d-flex flex-column align-items-center gap-2">
-                                            <button class="btn scan-facebtn" @click="openCameraModal">
-                                                Scan Your Face
-                                            </button>
-                                            <div class="ortext">
-                                                Or
+                                            <div class="pb-2 pb-sm-3">
+                                                <label for="name" class="fw-600 frtwhitcolor pb-2 name-form">Name</label>
+                                                <input type="text" name="name" minlength="8" maxlength="30" required
+                                                    placeholder="Enter Your Name" v-model="name" required
+                                                    class="form-control sin-input">
                                             </div>
-                                            <label for="userImgInput">
-                                                <div class="dz-message scan-textboxbdpt-btn cursor-pointer">
-                                                    Upload File
-                                                    <input type="file" id="userImgInput"
-                                                        @change="handleUserImageFieldChange" hidden>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="text-center drgreen fs-12pxnew fw-500 d-block d-sm-none">
-                                        Or
-                                    </div>
-                                    <div class="upload-section">
-                                        {{-- <label for="userGuestImgInput"> --}}
-                                        <div class="pb-4 browsertext brsr-14pxtx">
-                                            Browse File
-                                        </div>
-                                        <div class="d-flex justify-content-center pb-3">
-                                            <div class="uploder-up">
-                                                <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
-                                                    alt="" srcset="" class="img-fluid">
-                                            </div>
-                                        </div>
 
-                                        <form>
-                                            <div class="dz-message">
-                                                <div class="mb-3 guest-uploader">
-                                                    as Guest Upload
-                                                    <input type="file" id="userGuestImgInput"
-                                                        @change="handleUserGuestImageFieldChange" hidden>
-                                                </div>
-                                                <div>
-                                                    <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to 50
-                                                        MB.
-                                                    </div>
-                                                </div>
+                                            <div class="pb-2 pb-sm-3">
+                                                <label for="email" class="fw-600 frtwhitcolor pb-2 email-form">Email
+                                                    ID*</label>
+                                                <input type="email" name="email" minlength="8" maxlength="40" required
+                                                    placeholder="Enter Your Email ID" v-model="email"
+                                                    class="form-control sin-input">
                                             </div>
+
+                                            <div class="pb-3 pb-sm-3">
+                                                <label for="mobile_number"
+                                                    class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
+                                                <input type="text" id="mobile_number" name="mobile_number" minlength="10"
+                                                    maxlength="10" placeholder="Enter Your Mobile Number" required
+                                                    v-model="mobile_number" class="form-control sin-input">
+                                            </div>
+
+
+                                            <div>
+
+                                                <button type="submit" class="submit-btn-bept">Submit</button>
+
+                                            </div>
+
+
                                         </form>
-                                        {{-- </label> --}}
-
                                     </div>
-                                </div>
 
-                                <div id="cameraModal" class="modal" style="display:none;">
-
-                                    <div class="modal-content">
-                                        <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
-                                            Scan Your Face
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="basic-face-box">
+                                            <div class="scan-face-box-insider-twopage">
+                                                <img id="captured-image" alt="Captured Image"
+                                                    class="faceimg-img w-100 h-100 object-fit-cover brd-50"
+                                                    :src="userImageData" v-if="userImageData" />
+                                                <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
+                                                    class="faceimg-img" v-else>
+                                            </div>
+    
+                                            <div class="d-flex flex-column align-items-center gap-2">
+                                                <button class="btn scan-facebtn" @click="openCameraModal">
+                                                    Scan Your Face
+                                                </button>
+                                                <div class="ortext">
+                                                    Or
+                                                </div>
+                                                <label for="userImgInput">
+                                                    <div class="dz-message scan-textboxbdpt-btn cursor-pointer">
+                                                        Upload File
+                                                        <input type="file" id="userImgInput"
+                                                            @change="handleUserImageFieldChange" hidden>
+                                                    </div>
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="w-100 d-flex justify-content-center">
-                                            <div class="model-outer-box">
-                                                <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}"
-                                                    alt="" class="img-fluid top-left-img">
-                                                <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}"
-                                                    alt="" class="img-fluid top-right-img">
-                                                <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}"
-                                                    alt="" class="img-fluid bottom-left-img">
-                                                <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}"
-                                                    alt="" class="img-fluid bottom-right-img">
-                                                <div id="camera-frame">
-                                                    <div id="my_camera" class="camera-mask">
-                                                        <video id="video" autoplay></video>
+
+                                        <div id="cameraModal" class="modal" style="display:none;">
+
+                                            <div class="modal-content">
+                                                <div class="h5 mb-0 pb-3 fw-600 text-white scan-your-facetext">
+                                                    Scan Your Face
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-center">
+                                                    <div class="model-outer-box">
+                                                        <img src="{{ asset('frontend/images/modelimg/top-left.svg') }}"
+                                                            alt="" class="img-fluid top-left-img">
+                                                        <img src="{{ asset('frontend/images/modelimg/top-right.svg') }}"
+                                                            alt="" class="img-fluid top-right-img">
+                                                        <img src="{{ asset('frontend/images/modelimg/bottom-left.svg') }}"
+                                                            alt="" class="img-fluid bottom-left-img">
+                                                        <img src="{{ asset('frontend/images/modelimg/bottom-right.svg') }}"
+                                                            alt="" class="img-fluid bottom-right-img">
+                                                        <div id="camera-frame">
+                                                            <div id="my_camera" class="camera-mask">
+                                                                <video id="video" autoplay></video>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="capture-area">
+                                                    <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
+                                                    <div class="btn cancel-btn  close" @click="closeCameraModal">
+                                                        Cancel
+        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="capture-area">
-                                            <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
-                                            <div class="btn cancel-btn  close" @click="closeCameraModal">
-                                                Cancel
 
-                                            </div>
-                                        </div>
                                     </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        
+                                        <div class="upload-section">
+                                            {{-- <label for="userGuestImgInput"> --}}
+                                            <div class="pb-4 browsertext brsr-14pxtx">
+                                                Browse File
+                                            </div>
+                                            <div class="d-flex justify-content-center pb-3">
+                                                <div class="uploder-up">
+                                                    <img src="{{ asset('frontend/images/gallery/uploadicon.svg') }}"
+                                                        alt="" srcset="" class="img-fluid">
+                                                </div>
+                                            </div>
+    
+                                            <form>
+                                                <div class="dz-message">
+                                                    <div class="mb-3 guest-uploader">
+                                                        as Guest Upload
+                                                        <input type="file" id="userGuestImgInput"
+                                                            @change="handleUserGuestImageFieldChange" hidden>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to 50
+                                                            MB.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            {{-- </label> --}}
+    
+                                        </div>
+                                        
+                                    </div>
+
                                 </div>
-
-
                             </div>
+
+                           
                         </div>
                     </div>
 
