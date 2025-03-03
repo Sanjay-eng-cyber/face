@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow">
+            <div class="info statbox widget box box-shadow mt-3">
                 <div class="row widget-header p-smm-0">
                     <div class="col-md-11 p-smm-0">
                         <div class="work-section">
