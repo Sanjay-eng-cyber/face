@@ -2044,6 +2044,11 @@ body {
     margin-right: 0;
 }
 
+.eventanddatespit-tdbox{
+    display: grid;
+    grid-template-columns: 54% 42%;
+}
+
 @media screen and (max-width:1400px) {
     .eventanddatespit-bdt {
         display: grid;
@@ -2059,6 +2064,13 @@ body {
         display: grid;
         grid-template-columns: 70% 28%;
     }
+
+    .eventanddatespit-tdbox{
+            display: grid ;
+            grid-template-columns: 48% 48%;
+            grid-gap: 15px;
+    }
+   
     .main-large-slider .slick-slide.slick-current{
         opacity: 1;
         position: relative;

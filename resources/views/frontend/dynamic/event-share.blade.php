@@ -509,7 +509,7 @@
                                             </div>
 
                                             <div>
-                                                <div class="eventanddatespit ">
+                                                <div class="eventanddatespit eventanddatespit-tdbox">
                                                     <div class="h5 fw-600 mb-0 text-white bx-twoeventname">
                                                         {{ $event->name }}
                                                     </div>

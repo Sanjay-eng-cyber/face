@@ -20,7 +20,7 @@
     </div> --}}
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
             <div class="row">
-                <div class="col-12 col-lg-12 col-md-10 widget box box-shadow ">
+                <div class="col-12 col-lg-12 col-md-10 box box-shadow ">
                     <div class="statbox widget box box-shadow">
                         <h4 class="text-clr">Update Profile</h4>
                         <form class="mt-3" method="POST" action="{{ route('cms.password.submit', $user->id) }}"
