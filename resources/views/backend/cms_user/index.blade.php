@@ -14,13 +14,17 @@
                         </div>
 
                         <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
-                            <nav class="breadcrumb-two" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                       
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Cms Users</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <a href="javascript:void(0);">Cms Users</a>
+                                    </li>
                                 </ol>
                             </nav>
+
                         </div>
 
 
