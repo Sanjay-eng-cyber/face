@@ -543,10 +543,10 @@ html, body {
     border: 0px;
 }
 #sidebar{
-    background: linear-gradient(166.22deg, rgba(48, 46, 46, 0.14) -5.99%, rgba(84, 7, 43, 0.14) 107.81%);
-    border: 1px solid #181215;
+    /* background: linear-gradient(166.22deg, rgba(48, 46, 46, 0.14) -5.99%, rgba(84, 7, 43, 0.14) 107.81%);
+    border: 1px solid #181215; */
     border-radius: 15px;
-    padding-top:20px;
+    /* padding-top:20px; */
 }
 /* .ctsm-margin{
     margin-right: 255px;
@@ -703,6 +703,8 @@ color: white !important;
     background-color: black;
     border-radius: 15px;
     height: 100%;
+    border: 1px solid #181215;
+
 }
 
 @media screen and (max-width:992px) {
