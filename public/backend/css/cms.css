@@ -160,6 +160,32 @@ padding all page */
 .temp-index {
     padding: 20px 20px 20px 15px;
 }
+
+.dz-preview.dz-image-preview .uploading-before{
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.svg-icon {
+    animation: rotate360 2s linear infinite;
+}
+
+
+.dz-preview.dz-image-preview.dz-processing.dz-success.dz-complete .uploading-before{
+    display: none;
+}
+
 @media (max-width: 992px) {
     .controllinput_Spectacle {
         width: 100%;
