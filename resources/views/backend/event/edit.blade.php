@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-12 col-md-10">
+            <div class="statbox widget box box-shadow col-xl-12 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.update', $event->id) }}"
@@ -47,8 +47,8 @@
 
                                 <div class="col-xl-6 col-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
-                                        name="cover_image">
+                                    <input type="file" class="form-control p-8px " id="formGroupExampleInput"
+                                        name="cover_image" style="color:#C7C6CC">
                                     <div id="lightgallery_one" class="text-end">
                                         <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
                                             target="_blank">View</a>

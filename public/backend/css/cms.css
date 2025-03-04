@@ -539,7 +539,7 @@ html, body {
 
 .sidebar-wrapper{
     background-color:transparent;
-    padding: 10px 20px 14px 20px;
+    padding: 20px 20px 14px 20px;
     border: 0px;
 }
 #sidebar{
@@ -700,7 +700,7 @@ color: white !important;
     color: #FE3B96;
 }
 .main-sidebar{
-    background-color: black;
+    background-color:#060405;
     border-radius: 15px;
     height: 100%;
     border: 1px solid #181215;
