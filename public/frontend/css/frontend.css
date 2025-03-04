@@ -1720,14 +1720,14 @@ body {
     text-align: center;
   }
   .pin-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     color: #fff;
     padding-bottom: 29px;
   }
   .pin-input {
-    width: 60px;
-    height: 76px;
+    width: 48px;
+    height: 60px;
     font-size: 24px;
     text-align: center;
     margin: 5px 10px;
@@ -1735,6 +1735,7 @@ body {
     border-radius: 8px;
     background-color:#161313;
     color: #fff;
+    font-weight: 600;
     text-shadow: 0px 6.2px 6.2px #00000040; 
   }
  
