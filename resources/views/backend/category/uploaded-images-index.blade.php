@@ -150,13 +150,13 @@
                         </div>
 
 
-                        {{-- <div class="pagination col-lg-12 mt-3">
+                        <div class="pagination col-lg-12 mt-3">
                             <div class="text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
-                        </div>  --}}
+                        </div> 
 
                         {{-- <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">‹</a></li>
@@ -167,9 +167,8 @@
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">›</a></li>
                         </ul> --}}
-
+{{-- 
                         <ul class="pagination">
-                            {{-- Previous Page Link --}}
                             @if ($images->onFirstPage())
                                 <li class="page-item disabled"><span class="page-link">‹</span></li>
                             @else
@@ -177,15 +176,14 @@
                                 </li>
                             @endif
 
-                            {{-- Pagination Numbers with Current Page in Center --}}
                             @php
                                 $totalPages = $images->lastPage();
                                 $currentPage = $images->currentPage();
-                                $range = 2; // Number of pages to show before and after current page
+                                $range = 2; 
                                 $start = max(1, $currentPage - $range);
                                 $end = min($totalPages, $currentPage + $range);
                                 $pages = range($start, $end);
-                                rsort($pages); // Reverse the order
+                                rsort($pages); 
                             @endphp
 
                             @foreach ($pages as $page)
@@ -194,14 +192,13 @@
                                 </li>
                             @endforeach
 
-                            {{-- Next Page Link --}}
                             @if ($images->hasMorePages())
                                 <li class="page-item"><a class="page-link" href="{{ $images->nextPageUrl() }}">›</a>
                                 </li>
                             @else
                                 <li class="page-item disabled"><span class="page-link">›</span></li>
                             @endif
-                        </ul>
+                        </ul> --}}
 
 
 
