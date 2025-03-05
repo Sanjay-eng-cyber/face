@@ -820,5 +820,8 @@ color: white !important;
 legend{
     font-size: 18px !important;
 }
+.mp-0{
+padding: 0px;
+}
 
 }

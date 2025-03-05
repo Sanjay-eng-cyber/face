@@ -9,7 +9,7 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="col-lg-4 col-md-12 col-sm-12 mp-0">
                             <legend class="h2 text-clr fw-600">
                                 Categories
                             </legend>
