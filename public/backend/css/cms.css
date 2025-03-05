@@ -85,6 +85,7 @@ label {
 }
 legend {
     font-weight: bolder !important;
+    font-size: 1.25rem !important;;
 }
 
 form .widget-heading {
@@ -402,17 +403,17 @@ thead tr th:first-child{
     padding-right: .5rem;
     color: #C7C6CC;
     content: ">";
-    font-size: 20px;;
+    font-size: 16px;
 }
 .breadcrumb-item a{
     color: #C7C6CC;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
 }
 .breadcrumb-item.active a{
     color: #FE3B96;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
 }
 .widget-one_hybrid.widget-referral .widget-heading .w-icon
 {
@@ -508,7 +509,8 @@ html,body{
     padding: 0px;
 }
 html, body {
-    background-image: url(/backend/images/login/login-bg.png);
+    /* background-image: url(/backend/images/login/login-bg.png); */
+    background-color:#6d5656;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -573,7 +575,7 @@ html, body {
     /* background: linear-gradient(166.22deg, rgba(48, 46, 46, 0.14) -5.99%, rgba(84, 7, 43, 0.14) 107.81%);
     border: 1px solid #181215; */
     border-radius: 15px;
-    margin-top: -18px;
+    margin-top: -6px;
     /* padding-top:20px; */
 }
 /* .ctsm-margin{
