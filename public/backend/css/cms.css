@@ -86,6 +86,7 @@ label {
 legend {
     font-weight: bolder !important;
     font-size: 1.25rem !important;;
+    margin: 0px !important;
 }
 
 form .widget-heading {
@@ -373,8 +374,11 @@ thead tr th:first-child{
 .btn-primary{
     background:#951350 !important;
     border: 1px solid #7BD2C2;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: unset;
+}
+.btn-success{
+    border-radius: 8px;
 }
 .btn-primary:hover{
     box-shadow: 0 10px 20px -10px #4361ee;
@@ -414,6 +418,9 @@ thead tr th:first-child{
     color: #FE3B96;
     font-weight: 400;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .widget-one_hybrid.widget-referral .widget-heading .w-icon
 {
@@ -737,6 +744,22 @@ color: white !important;
 
 }
 
+.main-bredcrumb{
+     display: grid;
+    grid-template-columns: auto auto;
+    align-items:center;
+
+}
+.breadcrumb{
+    justify-content:flex-end;
+    padding-right: 0px;
+    padding-left: 0px;;
+}
+@media screen and (max-width:992px) {
+    .app_form .app_form_input {
+        margin-left: 18px;
+    }
+}
 @media screen and (max-width:992px) {
     .app_form .app_form_input{
         margin-left: 15px;
@@ -762,6 +785,9 @@ color: white !important;
     #content{
         margin-left: 0px !important;;
     }
+    #sidebar{
+        margin-top: 11px;
+    }
 }
 
 @media screen and (max-width:576px) {
@@ -772,4 +798,27 @@ color: white !important;
     margin-right: unset;
     margin-left: unset;
 }
+
+.widget{
+    padding: 12px;
+}
+.breadcrumb-item a{
+    font-size: 14px;
+}
+.breadcrumb-item.active a{
+    display: inline-block;
+    max-width: 150px; /* Adjust width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    font-size: 14px;
+}
+legend{
+    font-size: 18px !important;
+}
+
 }

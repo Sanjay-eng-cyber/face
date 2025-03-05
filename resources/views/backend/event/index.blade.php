@@ -8,26 +8,20 @@
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
-                            <legend class="h2 text-clr fw-600 fs-24">
+                    <div class="main-bredcrumb">
+
+                            <legend class="h2 text-clr fw-600">
                                 Events
                             </legend>
-                        </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex align-items-center justify-content-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        <a href="javascript:void(0);">Events</a>
+                                    <li class="breadcrumb-item d-flex align-items-center"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item  d-flex align-items-center active" aria-current="page">
+                                        <a href="javascript:void(0);" class="">Events</a>
                                     </li>
                                 </ol>
                             </nav>
-                        </div>
-
-
-
 
                     </div>
                     <div class="row">
@@ -48,7 +42,7 @@
                             </div>
                         </div>
                         @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2">
+                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2" style="padding-right: 0px">
                                 <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
                                     Add Event
                                 </a>
