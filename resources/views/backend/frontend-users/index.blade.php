@@ -39,7 +39,7 @@
                             <table class="table mb-4">
                                 <thead>
                                     <tr>
-                                        <th>Sr no.</th>
+                                        <th style="white-space: nowrap">Sr no.</th>
                                         <th>Name</th>
                                         <th>Phone</th>
                                         <th>Email</th>

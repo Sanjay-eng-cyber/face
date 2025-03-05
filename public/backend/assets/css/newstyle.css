@@ -195,6 +195,9 @@ display: none;
 }
 }
 @media screen and (max-width:576px){
+    .form-group label, legend, label{
+        font-weight: 600;
+    }
     #sidebar ul.menu-categories li.menu > .dropdown-toggle{
         font-size: 14px;
     }
