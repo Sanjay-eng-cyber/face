@@ -8,13 +8,13 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-xl-4 col-md-6 mt-2 mb-1">
+                        <div class="col-xl-4 col-md-6 mt-2 mb-1 mp-0">
                             <legend class="h2 text-clr fw-600">
                                 Category Details
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2">
+                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2 mp-0">
                             
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -32,20 +32,20 @@
  
             <div class="info statbox widget box box-shadow mt-3 mt-lg-4">
                 <div class="row widget-header">
-                    <div class="col-md-11">
+                    <div class="col-md-11 mp-0">
                         <div class="work-section">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mp-0">
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Name</label><br>
                                                 <p class="label-title">{{ $category->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Event</label><br>
@@ -53,7 +53,7 @@
                                             </div>
                                         </div>
                                         @if ($category->cover_image)
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 mp-0">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Cover
                                                         Image</label><br>
@@ -64,7 +64,7 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Sharing</label><br>
@@ -81,7 +81,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Visibility</label><br>
@@ -93,7 +93,7 @@
                                             </div>
                                         </div>
                                         @cmsUserRole('admin')
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 mp-0">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Category
                                                         Url</label><br>

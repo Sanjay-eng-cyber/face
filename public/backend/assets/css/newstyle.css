@@ -230,5 +230,8 @@ display: none;
         stroke-width: 1px;
         fill: #888ea8;
     }
+    .mpv{
+        padding: 0px !important;
+    }
 
 }

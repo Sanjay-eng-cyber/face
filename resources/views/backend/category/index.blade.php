@@ -7,7 +7,7 @@
           
 
             <div class="statbox widget box box-shadow my-1">
-                <div class="widget-header">
+                <div class="widget-header mpv">
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12 mp-0">
                             <legend class="h2 text-clr fw-600">
@@ -15,7 +15,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
+                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4  ">
                             
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -32,7 +32,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-9 col-lg-8  mt-2 px-xl-0">
+                        <div class="col-xl-9 col-lg-8  mt-2 px-xl-0 mp-0">
                             <form class="form-inline row app_form" action="{{ route('backend.category.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
@@ -60,13 +60,13 @@
 
             <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
                 <div class="">
-                    <div class="widget-content widget-content-area">
+                    <div class="widget-content widget-content-area mpv">
                         <div class="table-responsive min-height-20em">
                             <table class="table mb-4">
                                 <thead>
                                     <tr>
-                                        <th>Sr no.</th>
-                                        <th>Event Name</th>
+                                        <th style="white-space: nowrap">Sr no.</th>
+                                        <th style="white-space: nowrap">Event Name</th>
                                         <th>Name</th>
                                         {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>

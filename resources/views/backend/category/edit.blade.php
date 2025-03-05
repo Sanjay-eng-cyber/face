@@ -8,13 +8,13 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
-                        <div class="col-xl-4 col-md-6  mt-2 mb-2 ">
+                        <div class="col-xl-4 col-md-6  mt-2 mb-2  mp-0">
                             <legend class="h2 text-clr fw-600">
                                 Edit Category
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2 mp-0">
                            
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -31,13 +31,13 @@
             </div>
             <div class="statbox widget box box-shadow col-xl-6 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
-                    <div class="col-md-12">
-                        <form class="mt-3" method="POST" action="{{ route('backend.category.update', $category->id) }}"
+                    <div class="col-md-12 mp-0">
+                        <form class="mt-3 mb-3" method="POST" action="{{ route('backend.category.update', $category->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-12 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Event*</label>
                                     <select class="form-control event-dpd-cust" name="event_id" required>
                                         <option value="">Select Any</option>
@@ -58,7 +58,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-12 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -68,7 +68,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3">
+                                <div class="col-xl-12 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="cover_image">
@@ -84,7 +84,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-6  mb-3">
+                                <div class="col-6  mb-3 mp-0">
                                     <label for="descriptions">Sharing*</label><br>
                                     @if (old('sharing'))
                                         <input type="radio" id="sharingYes" name="sharing" value="1"
@@ -108,7 +108,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-6 mb-3">
+                                <div class="col-6 mb-3 mp-0">
                                     <label for="descriptions">Visibility* </label><br>
                                     @if (old('visibility'))
                                         <input type="radio" id="visibilityYes" name="visibility" value="1"
