@@ -195,7 +195,9 @@ display: none;
 }
 }
 @media screen and (max-width:576px){
-
+    #sidebar ul.menu-categories li.menu > .dropdown-toggle{
+        font-size: 14px;
+    }
     .sidebar-wrapper {
         padding: 10px 29px 14px 10px;
     }
@@ -214,6 +216,16 @@ display: none;
     }
     .fs-24{
         font-size: 24px !important;
+    }
+
+    #sidebar ul.menu-categories li.menu > .dropdown-toggle svg {
+        color: #888ea8;
+        margin-right: 9px;
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        stroke-width: 1px;
+        fill: #888ea8;
     }
 
 }
