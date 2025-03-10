@@ -40,8 +40,7 @@
                             </legend>
                         </div>
 
-                        <div
-                            class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end align-items-center">
+                        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end align-items-center">
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
