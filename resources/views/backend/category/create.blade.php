@@ -3,8 +3,8 @@
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-         
-            
+
+
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
@@ -14,7 +14,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2 mp-0">                            
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-lg-end align-it mt-1 mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -22,7 +22,7 @@
                                         <a href="javascript:void(0);">Create Category</a>
                                     </li>
                                 </ol>
-                            </nav>                            
+                            </nav>
                         </div>
                     </div>
                 </div>
