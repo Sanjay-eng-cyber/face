@@ -259,14 +259,14 @@
 
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
-                    <div class="row justify-content-between align-items-center mb-1 ">
+                    <div class="row justify-content-between align-items-center mb-1">
                         <div class="col-xl-4 col-md-6 mt-2 mb-1">
                             <legend class="h2 text-clr fw-600">
                                 Upload Images
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2">
+                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-lg-end align-it mt-1">
 
 
                             <nav aria-label="breadcrumb">
@@ -472,7 +472,7 @@
 
         var previewTemplate = `
                 <div class="dz-preview dz-file-preview">
-                 
+
                     <div class="subgrd-row">
                         <img src="{{ asset('backend/assets/img/ct/imgclone.svg') }}" alt="" class="img-fluid h-100">
                         <div class="subgrd-col">
@@ -487,7 +487,7 @@
                                     </span>
                                     <span style="color: #84FF89;font-size:12px;">
                                         Successfully uploaded
-                                    </span>                               
+                                    </span>
 
                                 </div>
 
@@ -508,8 +508,8 @@
                                     </span>
 
                                 </div>
-                                    
-                                    
+
+
                             </div>
                         </div>
 

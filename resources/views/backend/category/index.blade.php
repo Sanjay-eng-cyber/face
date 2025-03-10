@@ -4,7 +4,7 @@
     <div class="layout-px-spacing row layout-top-spacing m-0">
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-          
+
 
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header mpv">
@@ -15,8 +15,8 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4  ">
-                            
+                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-lg-end align-it mt-1 px-0">
+
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -25,7 +25,7 @@
                                     </li>
                                 </ol>
                             </nav>
-                            
+
                         </div>
 
 
@@ -86,7 +86,7 @@
                                                         <svg width="46" height="1" viewBox="0 0 46 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8"/>
                                                             </svg>
-                                                            
+
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
