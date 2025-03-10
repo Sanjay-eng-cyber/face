@@ -3,8 +3,8 @@
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-       
-            
+
+
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
@@ -14,7 +14,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2 mp-0">
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-lg-end align-it mt-1 mp-0">
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -274,7 +274,7 @@
             plugins: 'textcolor colorpicker lists link',
             toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
             content_style: "body { background-color:#1A1A1A; color: white; border: none; }",
-            
+
 
             // theme: 'modern',
             // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',

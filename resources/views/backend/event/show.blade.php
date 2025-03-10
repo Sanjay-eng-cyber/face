@@ -3,7 +3,7 @@
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-        
+
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
@@ -13,7 +13,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2 mp-0">
+                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-lg-end align-it mt-1 mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -22,7 +22,7 @@
                                     </li>
                                 </ol>
                             </nav>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -98,13 +98,15 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Link End
                                                     Date</label><br>
-                                                <p class="label-title">{{ dd_format($event->link_end_date, 'd-m-y h:i a') }}
+                                                <p class="label-title">
+                                                    {{ dd_format($event->link_end_date, 'd-m-y h:i a') }}
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-4 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Upload Image
+                                                <label for="degree3" class="cust-title" class="label-title">Upload
+                                                    Image
                                                     Quality</label><br>
                                                 {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
                                                 <p class="text-white badge badge-primary">
@@ -167,7 +169,8 @@
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-4 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Bulk Image
+                                                <label for="degree3" class="cust-title" class="label-title">Bulk
+                                                    Image
                                                     Download</label><br>
                                                 @if ($event->bulk_image_download)
                                                     <label class="text-white badge badge-primary">Yes</label>
@@ -179,7 +182,8 @@
 
                                         <div class="col-12 col-sm-6 col-md-4 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Guest Images
+                                                <label for="degree3" class="cust-title" class="label-title">Guest
+                                                    Images
                                                     Upload</label><br>
                                                 @if ($event->guest_images_upload)
                                                     <label class="text-white badge badge-primary">Yes</label>
@@ -191,7 +195,8 @@
 
                                         <div class="col-12 col-sm-6 col-md-4 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Is Watermark
+                                                <label for="degree3" class="cust-title" class="label-title">Is
+                                                    Watermark
                                                     Required</label><br>
                                                 @if ($event->is_watermark_required)
                                                     <label class="text-white badge badge-primary">Yes</label>
@@ -203,7 +208,8 @@
                                         @cmsUserRole('admin')
                                             <div class="col-12 col-sm-6 col-md-4 p-smm-0">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Event Share
+                                                    <label for="degree3" class="cust-title" class="label-title">Event
+                                                        Share
                                                         URL</label><br>
                                                     @if (session('shared_url'))
                                                         <p class="label-title">

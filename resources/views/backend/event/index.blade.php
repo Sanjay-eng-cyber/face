@@ -4,18 +4,18 @@
     <div class="layout-px-spacing row layout-top-spacing m-0">
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-         
+
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-center mb-1 ">
+                    <div class="row justify-content-between align-items-center mb-0">
                         <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Events
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex align-items-center justify-content-end">
+                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex align-items-center justify-content-lg-end mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -25,11 +25,8 @@
                                 </ol>
                             </nav>
                         </div>
-
-
-
-
                     </div>
+
                     <div class="row">
                         <div class="col-lg-9 mt-2 px-xl-0 p-smm-0">
                             <form class="form-inline row app_form" action="{{ route('backend.event.index') }}"
@@ -82,10 +79,11 @@
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        <svg width="46" height="1" viewBox="0 0 46 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8"/>
-                                                            </svg>
-                                                            
+                                                        <svg width="46" height="1" viewBox="0 0 46 1" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8" />
+                                                        </svg>
+
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
@@ -95,7 +93,7 @@
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.frotend-user.index', $event->id) }}">View
                                                                 Users</a>
-                                                                <a class="dropdown-item"
+                                                            <a class="dropdown-item"
                                                                 href="{{ route('backend.category.index') . '?e=' . $event->slug }}">View
                                                                 Categories</a>
                                                             <a class="dropdown-item"
