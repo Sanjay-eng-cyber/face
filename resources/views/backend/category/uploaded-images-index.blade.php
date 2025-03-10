@@ -19,13 +19,17 @@
                 align-items: center;
             }
         }
+
+        .up-main-box {
+            margin-top: -15px;
+        }
     </style>
 @endsection
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
-       
+
 
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
@@ -36,7 +40,8 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-6 col-md-12 col-sm-12 mb-2 d-flex justify-content-end align-it mt-2 px-4 ">
+                        <div
+                            class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end align-items-center">
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
@@ -153,10 +158,11 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class="text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{-- {{ $images->appends(Request::all())->links('pagination::bootstrap-4') }} --}}
+                                    {{ $images->onEachSide(0)->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
-                        </div> 
+                        </div>
 
                         {{-- <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">‹</a></li>
@@ -167,7 +173,7 @@
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">›</a></li>
                         </ul> --}}
-{{-- 
+                        {{--
                         <ul class="pagination">
                             @if ($images->onFirstPage())
                                 <li class="page-item disabled"><span class="page-link">‹</span></li>
@@ -179,11 +185,11 @@
                             @php
                                 $totalPages = $images->lastPage();
                                 $currentPage = $images->currentPage();
-                                $range = 2; 
+                                $range = 2;
                                 $start = max(1, $currentPage - $range);
                                 $end = min($totalPages, $currentPage + $range);
                                 $pages = range($start, $end);
-                                rsort($pages); 
+                                rsort($pages);
                             @endphp
 
                             @foreach ($pages as $page)
