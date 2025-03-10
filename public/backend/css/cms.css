@@ -516,7 +516,7 @@ html,body{
     padding: 0px;
 }
 html, body {
-    /* background-image: url(/backend/images/login/login-bg.png); */
+    background-image: url(/backend/images/login/login-bg.png);
     background-color:#6d5656;
     background-repeat: no-repeat;
     background-size: cover;
