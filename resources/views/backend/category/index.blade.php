@@ -121,7 +121,7 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $categories->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $categories->onEachSide(0)->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>

@@ -89,7 +89,7 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $frontendUsers->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $frontendUsers->onEachSide(0)->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
