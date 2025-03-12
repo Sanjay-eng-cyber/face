@@ -18,11 +18,12 @@
                 justify-content: center;
                 align-items: center;
             }
+              .up-main-box {
+            margin-bottom: 7px;
+            }
         }
 
-        .up-main-box {
-            margin-top: -15px;
-        }
+      
     </style>
 @endsection
 @section('content')
