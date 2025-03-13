@@ -6,17 +6,16 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
 
-            <div class="statbox widget box box-shadow my-1">
-                <div class="widget-header mpv">
-                    <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-12 col-sm-12 mp-0">
-                            <legend class="h2 text-clr fw-600">
+            <div class="statbox widget box box-shadow mt-3 mb-1 ">
+                <div class="widget-header p-smm-0">
+                    <div class="row justify-content-between align-items-center mb-0">
+                        <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
+                            <legend class="h2 text-clr fw-600 ">
                                 Categories
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex justify-content-lg-end align-it mt-1 px-0">
-
+                        <div class="col-lg-8 col-md-12 col-sm-12  d-flex align-items-center justify-content-lg-end mp-0">                 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -25,38 +24,41 @@
                                     </li>
                                 </ol>
                             </nav>
-
                         </div>
-
-
-
                     </div>
+
                     <div class="row">
-                        <div class="col-xl-9 col-lg-8  mt-2 px-xl-0 mp-0">
-                            <form class="form-inline row app_form" action="{{ route('backend.category.index') }}"
+                        <div class="col-lg-9 mt-0 mt-sm-0  px-xl-0 p-smm-0">
+                            <form class="form-inline row app_form h-100" action="{{ route('backend.category.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
-                                    type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="3" maxlength="40">
-                                <input type="submit" value="Search"
-                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                                type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
+                                minlength="3" maxlength="40">
+                            <input type="submit" value="Search"
+                                class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
                             </form>
-                            @if ($errors->has('q'))
+                            <div class="mt-0 mt-sm-2">
+                                @if ($errors->has('q'))
                                 <div class="text-danger" role="alert">{{ $errors->first('q') }}
                                 </div>
-                            @endif
+                                @endif
+                            </div>
                         </div>
                         @cmsUserRole('admin')
-                            <div class="align-items-center col-xl-3 col-lg-4  d-flex justify-content-end row mb-2">
-                                <a href="{{ route('backend.category.create') }}" name="txt"
-                                    class="btn btn-primary mt-2 ml-3 ">
+                            <div class="align-items-center col-lg-3 d-flex justify-content-end row p-0">
+                                <a href="{{ route('backend.category.create') }}" name="txt" class="btn btn-primary  maz mto mwh">
                                     Add Category
+
                                 </a>
                             </div>
                         @endcmsUserRole
                     </div>
                 </div>
             </div>
+
+
+
+
 
             <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
                 <div class="">
@@ -75,7 +77,7 @@
                                 <tbody>
                                     @forelse($categories as $category)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $categories) }}</td>
+                                            <td class="text-center">{{ tableRowSrNo($loop->index, $categories) }}</td>
                                             <td>{{ $category->event->name }}</td>
                                             <td>{{ $category->name }}</td>
                                             <td class="text-center">
