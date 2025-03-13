@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-9 mt-2 px-xl-0 p-smm-0">
+                        <div class="col-lg-9 mt-0 mt-sm-0  px-xl-0 p-smm-0">
                             <form class="form-inline row app_form" action="{{ route('backend.event.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm app_form_input col-xl-5 mt-md-0 mt-3 maz"
@@ -46,7 +46,7 @@
                         </div>
                         @cmsUserRole('admin')
                             <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2 p-0">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 maz mto w-290-px">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 maz mto mwh">
                                     Add Event
                                 </a>
                             </div>

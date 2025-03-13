@@ -758,6 +758,26 @@ color: white !important;
 .btn-success{
     background: #FE3B96 !important;
 }
+.custom-dropdown .dropdown-menu{
+background-color: #060405;
+color:white;
+
+}
+.custom-dropdown .dropdown-item{
+    color:white;
+
+}
+
+.custom-dropdown .dropdown-item:focus {
+    background-color: transparent !important;
+    outline: none;
+    box-shadow: none;
+}
+
+.custom-dropdown .dropdown-item.active, .custom-dropdown .dropdown-item:active, .custom-dropdown .dropdown-item:hover {
+    color:white;
+    background-color: #060405;
+}
 @media screen and (max-width:1200px) {
     .app_form .app_form_input{
         margin-left: 15px;
@@ -804,6 +824,9 @@ color: white !important;
     }
     .mto{
         margin-top: 1rem !important;
+    }
+    .mwh{
+        width: 100%;
     }
     .pbz{
         padding-bottom: 0px !important;
