@@ -825,6 +825,9 @@ color:white;
 }
 
 @media screen and (max-width:576px) {
+    .ctr-submit{
+        width: 100%;
+    }
     .date-column-grid {
         display: grid;
         grid-template-columns: calc(50% - 4px) calc(50% - 4px);
