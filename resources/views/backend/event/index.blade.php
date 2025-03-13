@@ -15,9 +15,9 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12 mb-2 d-flex align-items-center justify-content-lg-end mp-0">
+                        <div class="col-lg-8 col-md-12 col-sm-12 mb-0 mb-sm-2 d-flex align-items-center justify-content-lg-end mp-0">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider">
+                                <ol class="breadcrumb breadcrumb-divider pbz">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Events</a>
@@ -31,13 +31,13 @@
                         <div class="col-lg-9 mt-2 px-xl-0 p-smm-0">
                             <form class="form-inline row app_form" action="{{ route('backend.event.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
+                                <input class="form-control form-control-sm app_form_input col-xl-5 mt-md-0 mt-3 maz"
                                     type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
                                     minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
-                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size maz">
                             </form>
-                            <div class="mt-2">
+                            <div class="mt-0 mt-sm-2">
                                 @if ($errors->has('q'))
                                     <div class="text-danger" role="alert">{{ $errors->first('q') }}
                                     </div>
@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 ">
+                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2 p-0">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 maz mto w-290-px">
                                     Add Event
                                 </a>
                             </div>

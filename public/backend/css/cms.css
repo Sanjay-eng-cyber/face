@@ -208,13 +208,13 @@ gap: 5px;
 @media (max-width: 632px) {
     .app_form {
         display: flex;
-
-        flex-flow: row wrap;
+        flex-flow: row;
         -ms-flex-align: center;
-        flex-direction: column;
-        flex-wrap: wrap;
+        /* flex-direction: column;
+        flex-wrap: wrap; */
         align-content: flex-start;
         align-items: flex-start;
+        gap: 15px;
     }
     .app_form .app_form_select {
         width: 100%;
@@ -516,7 +516,7 @@ html,body{
     padding: 0px;
 }
 html, body {
-    background-image: url(/backend/images/login/login-bg.png);
+        /* background-image: url(/backend/images/login/login-bg.png); */
     background-color:#6d5656;
     background-repeat: no-repeat;
     background-size: cover;
@@ -755,6 +755,14 @@ color: white !important;
     padding-right: 0px;
     padding-left: 0px;;
 }
+.btn-success{
+    background: #FE3B96 !important;
+}
+@media screen and (max-width:1200px) {
+    .app_form .app_form_input{
+        margin-left: 15px;
+    }
+}
 @media screen and (max-width:992px) {
     .app_form .app_form_input {
         margin-left: 18px;
@@ -791,6 +799,15 @@ color: white !important;
 }
 
 @media screen and (max-width:576px) {
+    .maz{
+        margin: 0px !important;
+    }
+    .mto{
+        margin-top: 1rem !important;
+    }
+    .pbz{
+        padding-bottom: 0px !important;
+    }
     .app_form .app_form_input{
     margin-left: 0px;
 }
