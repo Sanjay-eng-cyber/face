@@ -778,6 +778,12 @@ color:white;
     color:white;
     background-color: #060405;
 }
+.date-column-grid {
+    display: grid;
+    grid-template-columns: calc(50% - 12px) calc(50% - 12px);
+    gap: 24px;
+}
+
 @media screen and (max-width:1200px) {
     .app_form .app_form_input{
         margin-left: 15px;
@@ -819,20 +825,29 @@ color:white;
 }
 
 @media screen and (max-width:576px) {
+    .date-column-grid {
+        display: grid;
+        grid-template-columns: calc(50% - 4px) calc(50% - 4px);
+        gap: 8px;
+        padding: 0px;
+    }
     .maz{
         margin: 0px !important;
     }
     .mto{
-        margin-top: 1rem !important;
+        margin-top: 1.35rem !important;
     }
     .mwh{
         width: 100%;
     }
     .pbz{
-        padding-bottom: 0px !important;
+        padding-bottom: 0.75rem !important;
     }
     .app_form .app_form_input{
     margin-left: 0px;
+}
+.form-group label, label{
+    font-size: 1rem;
 }
 .row{
     margin-right: unset;

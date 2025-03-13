@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row mb-2 p-0">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary mt-2 ml-3 maz mto mwh">
+                            <div class="align-items-center col-lg-3 d-flex justify-content-end row p-0">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh">
                                     Add Event
                                 </a>
                             </div>
