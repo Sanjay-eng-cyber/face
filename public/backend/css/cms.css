@@ -206,6 +206,7 @@ gap: 5px;
 }
 
 @media (max-width: 632px) {
+
     .app_form {
         display: flex;
         flex-flow: row;
@@ -231,6 +232,9 @@ gap: 5px;
         margin-top: 20px;
         margin-bottom: 15px;
     }
+    .coem{
+        margin-right: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -247,6 +251,9 @@ gap: 5px;
 }
 
 @media (max-width: 576px) {
+    .coem{
+        margin-right:unset;
+    }
     .layout-px-spacing{
         padding: 0px !important;
     }
