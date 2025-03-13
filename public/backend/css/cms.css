@@ -533,7 +533,7 @@ html, body {
 }
 
 .widget{
-    background: linear-gradient(165.93deg, rgba(48, 46, 46, 0.14) -2%, rgba(84, 7, 43, 0.14) 105.79%);
+    background: #060405;
     border:unset;
     border-radius: 15px;
     border: 1px solid #181215;
