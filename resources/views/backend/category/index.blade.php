@@ -8,7 +8,7 @@
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-center mb-0">
+                    <div class="row justify-content-between align-items-start mb-0 pb18">
                         <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Categories
@@ -17,7 +17,7 @@
 
                         <div class="col-lg-8 col-md-12 col-sm-12  d-flex align-items-center justify-content-lg-end mp-0">                 
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider">
+                                <ol class="breadcrumb breadcrumb-divider pbz ptpb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Categories</a>
@@ -31,11 +31,11 @@
                         <div class="col-lg-9 mt-0 mt-sm-0  px-xl-0 p-smm-0">
                             <form class="form-inline row app_form h-100" action="{{ route('backend.category.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
+                                <input class="form-control form-control-sm app_form_input col-xl-5  maz"
                                 type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
                                 minlength="3" maxlength="40">
                             <input type="submit" value="Search"
-                                class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                                class="btn btn-success btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4 coem  search_btn  search_btn_size maz">
                             </form>
                             <div class="mt-0 mt-sm-2">
                                 @if ($errors->has('q'))

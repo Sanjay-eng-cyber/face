@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-12 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow col-xl-12 col-12 mt-3 mt-lg-4">
                
                         <form class="mt-3" method="POST" action="{{ route('backend.event.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
