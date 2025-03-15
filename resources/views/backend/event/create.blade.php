@@ -135,7 +135,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
                                     <label for="descriptions">Is Pin Protection Required</label><br>
                                     <input type="radio" id="is_pin_protection_requiredYes"
                                         name="is_pin_protection_required" value="1"
@@ -195,7 +195,7 @@
                                 </div>
 
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
                                     <label for="descriptions">Is Watermark Required </label><br>
                                     <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
                                         value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>

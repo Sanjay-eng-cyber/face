@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-12 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow col-12 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12 mp-0">
                         <form class="mt-3" method="POST" action="{{ route('backend.event.update', $event->id) }}"
@@ -51,7 +51,7 @@
                                         name="cover_image" style="color:#C7C6CC">
                                     <div id="lightgallery_one" class="text-end">
                                         <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
-                                            target="_blank">View</a>
+                                            target="_blank" style="color:#C7C6CC">View</a>
                                     </div>
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
@@ -161,7 +161,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
                                     <label for="descriptions">Is Pin Protection Required </label><br>
                                     @if (old('is_pin_protection_required'))
                                         <input type="radio" id="is_pin_protection_requiredYes"
@@ -253,7 +253,7 @@
                                 </div>
 
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
                                     <label for="descriptions">Is Watermark Required </label><br>
 
                                     @if (old('is_watermark_required'))
@@ -286,7 +286,7 @@
                                     @if ($event->watermark_image)
                                         <div id="lightgallery_two" class="text-end">
                                             <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
-                                                target="_blank">View</a>
+                                                target="_blank" style="color:#C7C6CC">View</a>
                                         </div>
                                     @endif
                                     @if ($errors->has('watermark_image'))
