@@ -259,6 +259,9 @@ gap: 5px;
 }
 
 @media (max-width: 576px) {
+    .app_form {
+        gap: 12px;
+    }
     .coem{
         margin-right:unset;
     }
@@ -840,6 +843,12 @@ color:white;
 }
 
 @media screen and (max-width:576px) {
+    .form-control{
+        height: auto;
+    }
+    .search_btn_size{
+        padding: 0.4375rem 1.25rem !important;
+    }
     .pb18{
         padding-bottom: 0px;
     }
@@ -856,13 +865,14 @@ color:white;
         margin: 0px !important;
     }
     .mto{
-        margin-top: 1.35rem !important;
+        margin-top: 12px !important;
     }
     .mwh{
         width: 100%;
     }
     .pbz{
-        padding-bottom: 0.75rem !important;
+        padding-bottom: 12px !important;
+        padding-top: 10px;
     }
     .app_form .app_form_input{
     margin-left: 0px;
