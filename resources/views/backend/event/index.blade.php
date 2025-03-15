@@ -8,7 +8,7 @@
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-center mb-0">
+                    <div class="row justify-content-between align-items-start mb-0 pb18">
                         <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Events
@@ -17,7 +17,7 @@
 
                         <div class="col-lg-8 col-md-12 col-sm-12  d-flex align-items-center justify-content-lg-end mp-0">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider pbz">
+                                <ol class="breadcrumb breadcrumb-divider pbz ptpb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Events</a>

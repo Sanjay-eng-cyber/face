@@ -169,6 +169,14 @@ align-items: center;
 gap: 5px;
 }
 
+.ptpb{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.pb18{
+    padding-bottom:18px;
+}
 
 @keyframes rotate360 {
     from {
@@ -832,6 +840,9 @@ color:white;
 }
 
 @media screen and (max-width:576px) {
+    .pb18{
+        padding-bottom: 0px;
+    }
     .ctr-submit{
         width: 100%;
     }
