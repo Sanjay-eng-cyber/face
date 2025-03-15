@@ -203,6 +203,13 @@ gap: 5px;
         font-size: 15px;
         padding: 10px;
     }
+    .pb18 {
+        padding-bottom: 0px;
+    }
+    .ptpb {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
 }
 .navclr {
@@ -259,6 +266,9 @@ gap: 5px;
 }
 
 @media (max-width: 576px) {
+    .bdpd{
+        padding: 0px;
+    }
     .app_form {
         gap: 12px;
     }

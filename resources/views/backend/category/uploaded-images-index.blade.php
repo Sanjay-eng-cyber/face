@@ -41,10 +41,10 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end align-items-center">
+                        <div class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
 
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider">
+                                <ol class="breadcrumb breadcrumb-divider bdpd">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Uploaded Images</a>
