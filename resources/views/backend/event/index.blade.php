@@ -27,15 +27,23 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-9 mt-0 mt-sm-0  px-xl-0 p-smm-0">
-                            <form class="form-inline row app_form h-100" action="{{ route('backend.event.index') }}"
+                    <div class="cutome-topgrid m-0">
+                      
+                        @cmsUserRole('admin')
+                            <div class="p-0 ">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh ">
+                                    Add Event
+                                </a>
+                            </div>
+                        @endcmsUserRole
+
+                            <form class="form-inline  h-100" action="{{ route('backend.event.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm app_form_input col-xl-5  maz"
-                                    type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
+                                <input class="form-control form-control-sm  col-xl-5  maz"
+                                    type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
                                     minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
-                                    class="btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4 coem  search_btn  search_btn_size maz">
+                                    class="btn searchbtn  ml-0 ml-lg-4 ml-md-4 ml-sm-4 coem  search_btn  search_btn_size maz">
                             </form>
                             <div class="mt-0 mt-sm-2">
                                 @if ($errors->has('q'))
@@ -43,14 +51,7 @@
                                     </div>
                                 @endif
                             </div>
-                        </div>
-                        @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row p-0">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh">
-                                    Add Event
-                                </a>
-                            </div>
-                        @endcmsUserRole
+
                     </div>
                 </div>
             </div>

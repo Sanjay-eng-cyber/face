@@ -145,9 +145,9 @@ textarea[readonly] {
     padding: 6px;
 }
 
-.search_btn_size {
+ .search_btn_size {
     padding: 10px 20px 10px 20px;
-}
+} 
 
 .pa_form_responsive .pa_form_input {
     width: 272px;
@@ -196,6 +196,21 @@ gap: 5px;
     display: none;
 }
 
+.add-event-margin{
+    margin-left: 32px;
+}
+
+.cutome-topgrid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+}
+.searchbtn{
+    background: #0B0206 !important;
+    border: 1px solid #4D0C2A !important;
+    border-radius: 15px;
+    font-weight: 600 !important;
+}
 @media (max-width: 992px) {
     .controllinput_Spectacle {
         width: 100%;
@@ -544,7 +559,7 @@ html,body{
     padding: 0px;
 }
 html, body {
-        /* background-image: url(/backend/images/login/login-bg.png); */
+    /* background-image: url(/backend/images/login/login-bg.png); */
     background-color:#6d5656;
     background-repeat: no-repeat;
     background-size: cover;
@@ -701,6 +716,7 @@ input{
 
 .form-control{
     border: 1px solid transparent !important;
+    border-radius: 15px;
 }
 /* Default state (jab click nahi kiya ho) */
 
@@ -784,7 +800,7 @@ color: white !important;
     padding-left: 0px;;
 }
 .btn-success{
-    background: #FE3B96 !important;
+    background: #951350 !important;
 }
 .custom-dropdown .dropdown-menu{
 background-color: #060405;
@@ -810,6 +826,10 @@ color:white;
     display: grid;
     grid-template-columns: calc(50% - 12px) calc(50% - 12px);
     gap: 24px;
+}
+
+.form-inline{
+    justify-content: flex-end;
 }
 
 @media screen and (max-width:1200px) {
@@ -856,9 +876,9 @@ color:white;
     .form-control{
         height: auto;
     }
-    .search_btn_size{
+     .search_btn_size{
         padding: 0.4375rem 1.25rem !important;
-    }
+    } 
     .pb18{
         padding-bottom: 0px;
     }
