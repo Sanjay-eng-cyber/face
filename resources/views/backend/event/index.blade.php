@@ -8,7 +8,7 @@
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-start mb-0 pb18">
+                    <div class="row justify-content-between align-items-center mb-0 pb18">
                         <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Events
@@ -30,20 +30,20 @@
                     <div class="cutome-topgrid m-0">
                       
                         @cmsUserRole('admin')
-                            <div class="p-0 ">
+                            <div class="p-0 odr-2">
                                 <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh ">
                                     Add Event
                                 </a>
                             </div>
                         @endcmsUserRole
 
-                            <form class="form-inline  h-100" action="{{ route('backend.event.index') }}"
+                            <form class="form-inline  h-100 form-csw" action="{{ route('backend.event.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm  col-xl-5  maz"
+                                <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi"
                                     type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
                                     minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
-                                    class="btn searchbtn  ml-0 ml-lg-4 ml-md-4 ml-sm-4 coem  search_btn  search_btn_size maz">
+                                    class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
                             </form>
                             <div class="mt-0 mt-sm-2">
                                 @if ($errors->has('q'))

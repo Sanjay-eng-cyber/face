@@ -175,7 +175,10 @@ gap: 5px;
 }
 
 .pb18{
-    padding-bottom:18px;
+    padding-bottom:36px;
+}
+.cswoffi{
+    max-width: 352px;
 }
 
 @keyframes rotate360 {
@@ -236,7 +239,7 @@ gap: 5px;
 }
 
 @media (max-width: 632px) {
-
+ 
     .app_form {
         display: flex;
         flex-flow: row;
@@ -554,6 +557,9 @@ margin-left: 290px;
     margin: 0px 15px 3px 15px;
 }
 
+.btn:hover, .btn:focus{
+    box-shadow: unset;
+}
 html,body{
     margin: 0px;
     padding: 0px;
@@ -805,6 +811,7 @@ color: white !important;
 .custom-dropdown .dropdown-menu{
 background-color: #060405;
 color:white;
+padding: 0px !important;
 
 }
 .custom-dropdown .dropdown-item{
@@ -812,6 +819,13 @@ color:white;
 
 }
 
+/* .custom-dropdown .dropdown-item {
+    padding: 10px 15px;
+} */
+
+.navbar .navbar-item .nav-item.dropdown .dropdown-menu{
+    background-color: #060405 !important;
+}
 .custom-dropdown .dropdown-item:focus {
     background-color: transparent !important;
     outline: none;
@@ -820,8 +834,11 @@ color:white;
 
 .custom-dropdown .dropdown-item.active, .custom-dropdown .dropdown-item:active, .custom-dropdown .dropdown-item:hover {
     color:white;
-    background-color: #060405;
+    background-color: #FE3B96;
 }
+/* .dropdown-menu{
+    padding: 0px !important;
+} */
 .date-column-grid {
     display: grid;
     grid-template-columns: calc(50% - 12px) calc(50% - 12px);
@@ -833,6 +850,12 @@ color:white;
 }
 
 @media screen and (max-width:1200px) {
+    .cutome-topgrid {
+        display: grid
+    ;
+        grid-template-columns: 25% 75%;
+        align-items: center;
+    }
     .app_form .app_form_input{
         margin-left: 15px;
     }
@@ -872,6 +895,36 @@ color:white;
     }
 }
 
+.cstml{
+    margin-left: 12px;
+}
+@media (max-width: 632px) {
+    .cswoffi {
+        max-width: 100%;
+    }
+    .form-csw {
+        display: grid;
+        grid-template-columns: calc(70% - 6px) calc(30% - 6px);
+        gap: 12px;
+        justify-content: space-between;
+    }
+    .mto {
+        margin-top: 12px !important;
+    }
+    
+
+    .mwh {
+        width: 100%;
+    }
+    .odr-2{
+        order: 2;
+    }
+    .cutome-topgrid {
+        display: grid;
+        grid-template-columns:100%;
+        align-items: center;
+    }
+}
 @media screen and (max-width:576px) {
     .form-control{
         height: auto;
