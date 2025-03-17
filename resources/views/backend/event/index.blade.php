@@ -41,7 +41,7 @@
                                 method="GET">
                                 <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi"
                                     type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="3" maxlength="40">
+                                    minlength="3" maxlength="40" >
                                 <input type="submit" value="Search"
                                     class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
                             </form>
