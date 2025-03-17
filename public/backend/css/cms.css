@@ -265,9 +265,9 @@ gap: 5px;
         margin-top: 20px;
         margin-bottom: 15px;
     }
-    .coem{
+    /* .coem{
         margin-right: 1rem;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
@@ -451,12 +451,12 @@ thead tr th:first-child{
 .breadcrumb-item+.breadcrumb-item::before{
     float: left;
     padding-right: .5rem;
-    color: #C7C6CC;
+    color:#5F5E5F;
     content: ">";
     font-size: 16px;
 }
 .breadcrumb-item a{
-    color: #C7C6CC;
+    color: #5F5E5F;
     font-weight: 400;
     font-size: 16px;
 }
@@ -675,7 +675,7 @@ p{
 }
 .navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .user-profile-section{
     background: #FE3B96;
-
+    border: 1px solid white;
 }
 
 body {
