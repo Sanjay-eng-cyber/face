@@ -276,7 +276,7 @@ label {
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
-    height: calc(1.4em + 1.4rem + 2px);
+    height: calc(1.4em + 1.4rem + 3px);
     padding: .75rem 1.25rem;
     border-radius: 6px;
 }
@@ -2196,7 +2196,7 @@ select.form-control.form-custom {
     color: #888ea8;
     display: block;
     font-weight: 700;
-    padding: 11px 8px;
+    padding: 11px 12px;
     font-size: 12px;
 }
 

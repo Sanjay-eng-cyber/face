@@ -9,13 +9,13 @@
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
                     <div class="row justify-content-between align-items-center mb-0 pb18">
-                        <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
+                        <div class="col-md-4 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Events
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12  d-flex align-items-center justify-content-lg-end mp-0">
+                        <div class="col-md-8  col-sm-12  d-flex align-items-center justify-content-md-end mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider pbz ptpb" style="line-height: 1;">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -31,7 +31,7 @@
                       
                         @cmsUserRole('admin')
                             <div class="p-0 odr-2">
-                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh ">
+                                <a href="{{ route('backend.event.create') }}" name="txt" class="btn btn-primary  maz mto mwh  newadd-eventbtn">
                                     Add Event
                                 </a>
                             </div>
@@ -39,9 +39,9 @@
 
                             <form class="form-inline  h-100 form-csw" action="{{ route('backend.event.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi"
+                                <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi csipb"
                                     type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="3" maxlength="40" >
+                                    minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
                             </form>

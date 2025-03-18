@@ -5,17 +5,16 @@
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
-
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-start mb-0 pb18">
-                        <div class="col-lg-4 col-md-12 col-sm-12 p-smm-0">
+                    <div class="row justify-content-between align-items-center mb-0 pb18">
+                        <div class="col-md-4 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Categories
                             </legend>
                         </div>
 
-                        <div class="col-lg-8 col-md-12 col-sm-12  d-flex align-items-center justify-content-lg-end mp-0">                 
+                        <div class="col-md-8  col-sm-12  d-flex align-items-center justify-content-md-end mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider pbz ptpb" style="line-height: 1;">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -27,38 +26,34 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-9 mt-0 mt-sm-0  px-xl-0 p-smm-0">
-                            <form class="form-inline row app_form h-100" action="{{ route('backend.category.index') }}"
-                                method="GET">
-                                <input class="form-control form-control-sm app_form_input col-xl-5  maz"
-                                type="text" placeholder="Name" name="q" value="{{ request('q') ?? '' }}"
-                                minlength="3" maxlength="40">
-                            <input type="submit" value="Search"
-                                class="btn btn-success btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4 coem  search_btn  search_btn_size maz">
-                            </form>
-                            <div class="mt-0 mt-sm-2">
-                                @if ($errors->has('q'))
-                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                </div>
-                                @endif
-                            </div>
-                        </div>
+                    <div class="cutome-topgrid m-0">
+                      
                         @cmsUserRole('admin')
-                            <div class="align-items-center col-lg-3 d-flex justify-content-end row p-0">
-                                <a href="{{ route('backend.category.create') }}" name="txt" class="btn btn-primary  maz mto mwh">
+                            <div class="p-0 odr-2">
+                                <a href="{{ route('backend.category.create') }}" name="txt" class="btn btn-primary  maz mto mwh  add-cggbtn">
                                     Add Category
-
                                 </a>
                             </div>
                         @endcmsUserRole
+
+                            <form class="form-inline  h-100 form-csw" action="{{ route('backend.category.index') }}"
+                                method="GET">
+                                <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi csipb"
+                                    type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
+                                    minlength="3" maxlength="40">
+                                <input type="submit" value="Search"
+                                    class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
+                            </form>
+                            <div class="mt-0 mt-sm-2">
+                                @if ($errors->has('q'))
+                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                    </div>
+                                @endif
+                            </div>
+
                     </div>
                 </div>
             </div>
-
-
-
-
 
             <div class="statbox widget box box-shadow temp-index mt-3 mt-lg-4">
                 <div class="">

@@ -146,7 +146,7 @@ textarea[readonly] {
 }
 
  .search_btn_size {
-    padding: 10px 20px 10px 20px;
+    padding: 11px 20px 11px 20px;
 } 
 
 .pa_form_responsive .pa_form_input {
@@ -213,6 +213,24 @@ gap: 5px;
     border: 1px solid #4D0C2A !important;
     border-radius: 15px;
     font-weight: 600 !important;
+}
+.newadd-eventbtn{
+    width: 121px;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.add-cggbtn{
+    width: 144px;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 992px) {
     .controllinput_Spectacle {
@@ -420,7 +438,7 @@ thead tr th:first-child{
 .btn-primary{
     background:#951350 !important;
     border: 1px solid #7BD2C2;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: unset;
 }
 .btn-success{
@@ -834,7 +852,7 @@ padding: 0px !important;
 
 .custom-dropdown .dropdown-item.active, .custom-dropdown .dropdown-item:active, .custom-dropdown .dropdown-item:hover {
     color:white;
-    background-color: #FE3B96;
+    background-color: #FE3B96 !important;
 }
 /* .dropdown-menu{
     padding: 0px !important;
@@ -926,6 +944,12 @@ padding: 0px !important;
     }
 }
 @media screen and (max-width:576px) {
+    .add-cggbtn{
+        min-height: 37px;
+    }
+    .newadd-eventbtn {
+        min-height: 37px;
+    }
     .form-control{
         height: auto;
     }
@@ -993,4 +1017,8 @@ legend{
 padding: 0px;
 }
 
+}
+
+.csipb{
+    border: 1px solid #151515 !important
 }
