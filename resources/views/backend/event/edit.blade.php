@@ -46,7 +46,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control p-8px " id="formGroupExampleInput"
                                         name="cover_image" style="color:#C7C6CC">
@@ -56,6 +56,32 @@
                                     </div>
                                     @if ($errors->has('cover_image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-3 col-12 mb-3 mp-0">
+                                    <label for="descriptions">Visibility </label><br>
+
+                                    @if (old('visibility'))
+                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                            @if (old('visibility') == '1') {{ 'checked' }} @endif>
+                                        <label for="visibilityYes">Yes</label>
+                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                            @if (old('visibility') == '0') {{ 'checked' }} @endif>
+                                        <label for="visibilityNo">No</label>
+                                    @else
+                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                            @if ($event->visibility == '1') {{ 'checked' }} @endif>
+                                        <label for="visibilityYes">Yes</label>
+                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                            @if ($event->visibility == '0') {{ 'checked' }} @endif>
+                                        <label for="visibilityNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('visibility'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('visibility') }}
+                                        </div>
                                     @endif
                                 </div>
 
@@ -110,11 +136,12 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-4 col-12 mb-3 mp-0">
                                     <label for="descriptions">Upload Image Quality </label><br>
                                     @if (old('upload_image_quality'))
                                         <input type="radio" id="original" name="upload_image_quality"
-                                            value="original" @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
+                                            value="original"
+                                            @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
                                         <label for="original">Original</label>
                                         <input type="radio" id="compressed" name="upload_image_quality"
                                             value="compressed"
@@ -138,7 +165,33 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-4 col-12 mb-3 mp-0">
+                                    <label for="descriptions">Guest Images Upload </label><br>
+
+                                    @if (old('guest_images_upload'))
+                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
+                                            value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadYes">Yes</label>
+                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
+                                            value="0" @if (old('guest_images_upload') == '0') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadNo">No</label>
+                                    @else
+                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
+                                            value="1" @if ($event->guest_images_upload == '1') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadYes">Yes</label>
+                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
+                                            value="0" @if ($event->guest_images_upload == '0') {{ 'checked' }} @endif>
+                                        <label for="guest_images_uploadNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('guest_images_upload'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('guest_images_upload') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-4 col-12 mb-3 mp-0">
                                     <label for="descriptions">Link Sharing </label><br>
                                     @if (old('link_sharing'))
                                         <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
@@ -162,7 +215,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
+                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 adjustable-col">
                                     <label for="descriptions">Is Pin Protection Required </label><br>
                                     @if (old('is_pin_protection_required'))
                                         <input type="radio" id="is_pin_protection_requiredYes"
@@ -192,13 +245,81 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0" id="pinField" style="display: none;">
+                                <div class="col-xl-3 col-12 mb-3 mp-0" id="pinField" style="display: none;">
                                     <label for="formGroupExampleInput" class="">Pin</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
                                         value="{{ old('pin') ?? $event->pin }}">
                                     @if ($errors->has('pin'))
                                         <div class="text-danger" role="alert">{{ $errors->first('pin') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 adjustable-col">
+                                    <label for="descriptions">Is Watermark Required </label><br>
+
+                                    @if (old('is_watermark_required'))
+                                        <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
+                                            value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
+                                        <label for="is_watermark_requiredYes">Yes</label>
+                                        <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
+                                            value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
+                                        <label for="is_watermark_requiredNo">No</label>
+                                    @else
+                                        <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
+                                            value="1" @if ($event->is_watermark_required == '1') {{ 'checked' }} @endif>
+                                        <label for="is_watermark_requiredYes">Yes</label>
+                                        <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
+                                            value="0" @if ($event->is_watermark_required == '0') {{ 'checked' }} @endif>
+                                        <label for="is_watermark_requiredNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('is_watermark_required'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('is_watermark_required') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-3 col-12 mb-3 mp-0" id="watermarkField" style="display: none;">
+                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
+                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
+                                        name="watermark_image">
+                                    @if ($event->watermark_image)
+                                        <div id="lightgallery_two" class="text-end">
+                                            <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
+                                                target="_blank" style="color:#C7C6CC">View</a>
+                                        </div>
+                                    @endif
+                                    @if ($errors->has('watermark_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-2 col-12 mb-3 mp-0 adjustable-col">
+                                    <label for="descriptions">Bulk Image Download </label><br>
+
+                                    @if (old('bulk_image_download'))
+                                        <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
+                                            value="1" @if (old('bulk_image_download') == '1') {{ 'checked' }} @endif>
+                                        <label for="bulk_image_downloadYes">Yes</label>
+                                        <input type="radio" id="bulk_image_downloadNo" name="bulk_image_download"
+                                            value="0" @if (old('bulk_image_download') == '0') {{ 'checked' }} @endif>
+                                        <label for="bulk_image_downloadNo">No</label>
+                                    @else
+                                        <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
+                                            value="1" @if ($event->bulk_image_download == '1') {{ 'checked' }} @endif>
+                                        <label for="bulk_image_downloadYes">Yes</label>
+                                        <input type="radio" id="bulk_image_downloadNo" name="bulk_image_download"
+                                            value="0" @if ($event->bulk_image_download == '0') {{ 'checked' }} @endif>
+                                        <label for="bulk_image_downloadNo">No</label>
+                                    @endif
+
+                                    @if ($errors->has('bulk_image_download'))
+                                        <div class="text-danger" role="alert">
+                                            {{ $errors->first('bulk_image_download') }}
+                                        </div>
                                     @endif
                                 </div>
 
@@ -226,127 +347,6 @@
                                         </div>
                                     @endif
                                 </div>
-
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
-                                    <label for="descriptions">Bulk Image Download </label><br>
-
-                                    @if (old('bulk_image_download'))
-                                        <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
-                                            value="1" @if (old('bulk_image_download') == '1') {{ 'checked' }} @endif>
-                                        <label for="bulk_image_downloadYes">Yes</label>
-                                        <input type="radio" id="bulk_image_downloadNo" name="bulk_image_download"
-                                            value="0" @if (old('bulk_image_download') == '0') {{ 'checked' }} @endif>
-                                        <label for="bulk_image_downloadNo">No</label>
-                                    @else
-                                        <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download"
-                                            value="1" @if ($event->bulk_image_download == '1') {{ 'checked' }} @endif>
-                                        <label for="bulk_image_downloadYes">Yes</label>
-                                        <input type="radio" id="bulk_image_downloadNo" name="bulk_image_download"
-                                            value="0" @if ($event->bulk_image_download == '0') {{ 'checked' }} @endif>
-                                        <label for="bulk_image_downloadNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('bulk_image_download'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('bulk_image_download') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-
-                                <div class="col-xl-6 col-12 mb-0 mb-xl-3 mp-0">
-                                    <label for="descriptions">Is Watermark Required </label><br>
-
-                                    @if (old('is_watermark_required'))
-                                        <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
-                                            value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
-                                        <label for="is_watermark_requiredYes">Yes</label>
-                                        <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
-                                            value="0" @if (old('is_watermark_required') == '0') {{ 'checked' }} @endif>
-                                        <label for="is_watermark_requiredNo">No</label>
-                                    @else
-                                        <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
-                                            value="1" @if ($event->is_watermark_required == '1') {{ 'checked' }} @endif>
-                                        <label for="is_watermark_requiredYes">Yes</label>
-                                        <input type="radio" id="is_watermark_requiredNo" name="is_watermark_required"
-                                            value="0" @if ($event->is_watermark_required == '0') {{ 'checked' }} @endif>
-                                        <label for="is_watermark_requiredNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('is_watermark_required'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('is_watermark_required') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3 mp-0" id="watermarkField" style="display: none;">
-                                    <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
-                                        name="watermark_image">
-                                    @if ($event->watermark_image)
-                                        <div id="lightgallery_two" class="text-end">
-                                            <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
-                                                target="_blank" style="color:#C7C6CC">View</a>
-                                        </div>
-                                    @endif
-                                    @if ($errors->has('watermark_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('watermark_image') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
-                                    <label for="descriptions">Visibility </label><br>
-
-                                    @if (old('visibility'))
-                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                            @if (old('visibility') == '1') {{ 'checked' }} @endif>
-                                        <label for="visibilityYes">Yes</label>
-                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                            @if (old('visibility') == '0') {{ 'checked' }} @endif>
-                                        <label for="visibilityNo">No</label>
-                                    @else
-                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                            @if ($event->visibility == '1') {{ 'checked' }} @endif>
-                                        <label for="visibilityYes">Yes</label>
-                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                            @if ($event->visibility == '0') {{ 'checked' }} @endif>
-                                        <label for="visibilityNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('visibility'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('visibility') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
-                                    <label for="descriptions">Guest Images Upload </label><br>
-
-                                    @if (old('guest_images_upload'))
-                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
-                                            value="1" @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadYes">Yes</label>
-                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
-                                            value="0" @if (old('guest_images_upload') == '0') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadNo">No</label>
-                                    @else
-                                        <input type="radio" id="guest_images_uploadYes" name="guest_images_upload"
-                                            value="1" @if ($event->guest_images_upload == '1') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadYes">Yes</label>
-                                        <input type="radio" id="guest_images_uploadNo" name="guest_images_upload"
-                                            value="0" @if ($event->guest_images_upload == '0') {{ 'checked' }} @endif>
-                                        <label for="guest_images_uploadNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('guest_images_upload'))
-                                        <div class="text-danger" role="alert">
-                                            {{ $errors->first('guest_images_upload') }}
-                                        </div>
-                                    @endif
-                                </div>
                             </div>
                             <input type="submit" class="btn btn-primary">
                         </form>
@@ -360,9 +360,6 @@
 @section('js')
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
-    <link type="text/css" rel="stylesheet" href="{{ asset('custom/plugins/lightgallery/css/lightgallery.min.css') }}" />
-    <script src="{{ asset('custom/plugins/lightgallery/js/lightgallery.min.js') }}"></script>
-    <script src="{{ asset('custom/plugins/lightgallery/js/lg-zoom.js') }}"></script>
     {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
     </script> --}}
     <script>
@@ -372,6 +369,8 @@
             plugins: 'textcolor colorpicker lists link',
             toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
             content_style: "body { background-color:#1A1A1A; color: white; border: none; }",
+
+
             // theme: 'modern',
             // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
             // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
@@ -424,23 +423,31 @@
         //     tags: true,
         //     placeholder: "Select / Enter Tags",
         // });
-        $(document).ready(function() {
-            lightGallery(document.getElementById('lightgallery_one'), {
-                download: false,
-            });
-            lightGallery(document.getElementById('lightgallery_two'), {
-                download: false,
-            });
-        });
     </script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <script>
         // Function to toggle the visibility of a field based on radio button selection
         function toggleField(fieldName, fieldId) {
             const isRequired = $(`input[name="${fieldName}"]:checked`).val(); // Get selected value
+            const field = $(`#${fieldId}`);
+
             if (isRequired === '1') {
-                $(`#${fieldId}`).show(); // Show field if value is '1'
+                field.show(); // Show field if value is '1'
             } else {
-                $(`#${fieldId}`).hide(); // Hide field otherwise
+                field.hide(); // Hide field otherwise
+            }
+
+            adjustColumns(); // Call function to adjust column sizes
+        }
+
+        function adjustColumns() {
+            const pinVisible = $('#pinField').is(':visible');
+            const watermarkVisible = $('#watermarkField').is(':visible');
+
+            if (!pinVisible && !watermarkVisible) {
+                $('.adjustable-col').removeClass('col-xl-2').addClass('col-xl-4'); // Expand when both are hidden
+            } else {
+                $('.adjustable-col').removeClass('col-xl-4').addClass('col-xl-2'); // Shrink when any is visible
             }
         }
 
@@ -459,4 +466,116 @@
             });
         });
     </script>
+@section('js')
+    <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
+    {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
+</script> --}}
+    <script>
+        tinymce.init({
+            selector: '.team-about',
+            height: 200,
+            plugins: 'textcolor colorpicker lists link',
+            toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
+            content_style: "body { background-color:#1A1A1A; color: white; border: none; }",
+
+
+            // theme: 'modern',
+            // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
+            // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+            // image_advtab: true,
+            // templates: [{
+            //         title: 'Test template 1',
+            //         content: 'Test 1'
+            //     },
+            //     {
+            //         title: 'Test template 2',
+            //         content: 'Test 2'
+            //     }
+            // ],
+            // content_css: [
+            //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+
+            // ]
+        });
+
+        // function getValues() {
+        //     $('#sub').html('')
+
+        //     if ($('#sel1').val()) {
+
+        //         $.ajax({
+        //             url: '/category/get/subcategory/' + $('#sel1').val(),
+        //             method: "GET",
+        //             success: function(data) {
+        //                 if (data.data == '') {
+        //                     $('#sub').append(`<option value=''>No data</option>`)
+        //                 } else {
+        //                     $('#sub').append(`<option value=''>Select If Required</option>`)
+        //                     $.each(data.data, function(id, value) {
+        //                         $('#sub').append(`<option value="${value.id}">${value.name}</option>`)
+        //                     })
+        //                 }
+        //             },
+        //             error: function() {
+        //                 Snackbar.show({
+        //                     text: "Internal Error",
+        //                     pos: 'top-right',
+        //                     actionTextColor: '#fff',
+        //                     backgroundColor: '#e7515a'
+        //                 });
+        //             }
+        //         })
+        //     }
+        // }
+        // $(".tagging").select2({
+        //     tags: true,
+        //     placeholder: "Select / Enter Tags",
+        // });
+    </script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script>
+        // Function to toggle the visibility of a field based on radio button selection
+        function toggleField(fieldName, fieldId) {
+            const isRequired = $(`input[name="${fieldName}"]:checked`).val(); // Get selected value
+            const field = $(`#${fieldId}`);
+
+            if (isRequired === '1') {
+                field.show(); // Show field if value is '1'
+            } else {
+                field.hide(); // Hide field otherwise
+            }
+
+            adjustColumns(); // Call function to adjust column sizes
+        }
+
+        function adjustColumns() {
+            const pinVisible = $('#pinField').is(':visible');
+            const watermarkVisible = $('#watermarkField').is(':visible');
+
+            if (!pinVisible && !watermarkVisible) {
+                $('.adjustable-col').removeClass('col-xl-2').addClass('col-xl-4'); // Expand when both are hidden
+            } else {
+                $('.adjustable-col').removeClass('col-xl-4').addClass('col-xl-2'); // Shrink when any is visible
+            }
+        }
+
+        $(document).ready(function() {
+            // Initialize the fields on page load
+            toggleField('is_pin_protection_required', 'pinField');
+            toggleField('is_watermark_required', 'watermarkField');
+
+            // Add event listeners to radio buttons
+            $('input[name="is_pin_protection_required"]').on('change', function() {
+                toggleField('is_pin_protection_required', 'pinField');
+            });
+
+            $('input[name="is_watermark_required"]').on('change', function() {
+                toggleField('is_watermark_required', 'watermarkField');
+            });
+        });
+    </script>
+
+
+
 @endsection
