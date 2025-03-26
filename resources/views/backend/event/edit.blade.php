@@ -36,7 +36,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-3 mp-0 bottom-margin ">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="250" required name="name"
@@ -46,7 +46,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-3 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="formGroupExampleInput" class="">Cover Image</label>
                                     <input type="file" class="form-control p-8px " id="formGroupExampleInput"
                                         name="cover_image" style="color:#C7C6CC">
@@ -59,7 +59,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-3 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Visibility </label><br>
 
                                     @if (old('visibility'))
@@ -85,7 +85,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-12 mb-3 mp-0">
+                                <div class="col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $event->descriptions }}</textarea>
                                     @if ($errors->has('descriptions'))
@@ -94,7 +94,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-6 mb-2 bottom-margin">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="start_date"
@@ -104,7 +104,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-6 mb-2 bottom-margin">
                                     <label for="formGroupExampleInput" class="">End Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="end_date"
@@ -114,7 +114,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-6 mb-2 bottom-margin">
                                     <label for="formGroupExampleInput" class="">Link Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="link_start_date"
@@ -125,7 +125,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-3 col-6 mb-2 bottom-margin">
                                     <label for="formGroupExampleInput" class="">Link End Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                         name="link_end_date"
@@ -136,7 +136,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-4 col-12 mb-3 mp-0">
+                                <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Upload Image Quality </label><br>
                                     @if (old('upload_image_quality'))
                                         <input type="radio" id="original" name="upload_image_quality"
@@ -165,7 +165,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-4 col-12 mb-3 mp-0">
+                                <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Guest Images Upload </label><br>
 
                                     @if (old('guest_images_upload'))
@@ -191,7 +191,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-4 col-12 mb-3 mp-0">
+                                <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Link Sharing </label><br>
                                     @if (old('link_sharing'))
                                         <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
@@ -215,7 +215,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 adjustable-col">
+                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 bottom-margin adjustable-col">
                                     <label for="descriptions">Is Pin Protection Required </label><br>
                                     @if (old('is_pin_protection_required'))
                                         <input type="radio" id="is_pin_protection_requiredYes"
@@ -245,7 +245,8 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-3 col-12 mb-3 mp-0" id="pinField" style="display: none;">
+                                <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin" id="pinField"
+                                    style="display: none;">
                                     <label for="formGroupExampleInput" class="">Pin</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
@@ -255,7 +256,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 adjustable-col">
+                                <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 bottom-margin adjustable-col">
                                     <label for="descriptions">Is Watermark Required </label><br>
 
                                     @if (old('is_watermark_required'))
@@ -281,7 +282,8 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-3 col-12 mb-3 mp-0" id="watermarkField" style="display: none;">
+                                <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin" id="watermarkField"
+                                    style="display: none;">
                                     <label for="formGroupExampleInput" class="">Watermark Image</label>
                                     <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                         name="watermark_image">
@@ -297,7 +299,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-2 col-12 mb-3 mp-0 adjustable-col">
+                                <div class="col-xl-2 col-12 mb-3 mp-0 bottom-margin adjustable-col">
                                     <label for="descriptions">Bulk Image Download </label><br>
 
                                     @if (old('bulk_image_download'))
@@ -323,7 +325,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-6 col-12 mb-3 mp-0">
+                                <div class="col-xl-6 col-12 mb-3 mp-0 bottom-margin">
                                     <label for="descriptions">Single Image Download </label><br>
                                     @if (old('single_image_download'))
                                         <input type="radio" id="single_image_downloadYes" name="single_image_download"

@@ -147,7 +147,7 @@ textarea[readonly] {
 
  .search_btn_size {
     padding: 11px 20px 11px 20px;
-} 
+}
 
 .pa_form_responsive .pa_form_input {
     width: 272px;
@@ -257,7 +257,7 @@ gap: 5px;
 }
 
 @media (max-width: 632px) {
- 
+
     .app_form {
         display: flex;
         flex-flow: row;
@@ -425,7 +425,7 @@ thead tr th:first-child{
     background: #FE3B96 !important;
 }
 .breadcrumb-two .breadcrumb li a{
-    color:#5F5E5F; 
+    color:#5F5E5F;
 }
 
 .btn-outline-primary{
@@ -533,7 +533,7 @@ left: 0px;
     left: 254px;
     margin-top: 8px;
  }
- 
+
  .header.navbar.navbar-expand-sm.expand-header{
     left: 54px;
  }
@@ -722,17 +722,17 @@ body {
     margin-left: 32px;
 }
 input::placeholder {
-    color: #8C9187 !important; 
-    background:#1A1A1A !important;     
+    color: #8C9187 !important;
+    background:#1A1A1A !important;
 
 }
 
 input{
-    color: #ffffff !important; 
+    color: #ffffff !important;
     background: #1A1A1A !important;
 }
 .mce-container, .mce-container *, .mce-widget, .mce-widget *, .mce-reset{
-    color: #ffffff !important; 
+    color: #ffffff !important;
     background: #1A1A1A !important;
     border: 1px solid #181215 !important;
 }
@@ -747,7 +747,7 @@ input{
 /* Default state (jab click nahi kiya ho) */
 
 /* Jab click karein (checked state) */
-input[type="radio"]:checked, 
+input[type="radio"]:checked,
 input[type="checkbox"]:checked {
     accent-color: #FE3B96;
 }
@@ -761,8 +761,8 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 /* Firefox ke liye (Currently not supported for color change) */
-body.mceContentBody { 
-    background: #bc1111 !important; 
+body.mceContentBody {
+    background: #bc1111 !important;
     color:#000;
  }
  .badge-secondary{
@@ -931,7 +931,7 @@ padding: 0px !important;
     .mto {
         margin-top: 12px !important;
     }
-    
+
 
     .mwh {
         width: 100%;
@@ -957,7 +957,7 @@ padding: 0px !important;
     }
      .search_btn_size{
         padding: 0.4375rem 1.25rem !important;
-    } 
+    }
     .pb18{
         padding-bottom: 0px;
     }
@@ -1023,4 +1023,14 @@ padding: 0px;
 
 .csipb{
     border: 1px solid #151515 !important
+}
+
+.bottom-margin input {
+    margin-bottom: 20px; /* Default for large screens */
+}
+
+@media (max-width: 768px) {
+    .bottom-margin input {
+        margin-bottom: 16px; /* Smaller margin for small screens */
+    }
 }
