@@ -13,7 +13,8 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end  align-it mt-1  mp-0">
+                        <div
+                            class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end  align-it mt-1  mp-0">
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
@@ -58,6 +59,15 @@
                                     @endif
                                 </div>
 
+                                <div class="col-12 mb-3 mp-0">
+                                    <label for="descriptions">Description</label>
+                                    <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $event->descriptions }}</textarea>
+                                    @if ($errors->has('descriptions'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                        </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-xl-6 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Start Date*</label>
                                     <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
@@ -96,15 +106,6 @@
                                         value="{{ old('link_end_date') ?? dd_format($event->link_end_date, 'Y-m-d\TH:i') }}">
                                     @if ($errors->has('link_end_date'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link_end_date') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-12 mb-3 mp-0">
-                                    <label for="descriptions">Description</label>
-                                    <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $event->descriptions }}</textarea>
-                                    @if ($errors->has('descriptions'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
                                 </div>
