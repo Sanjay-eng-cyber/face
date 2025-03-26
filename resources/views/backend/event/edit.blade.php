@@ -350,7 +350,9 @@
                                     @endif
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary">
+                            <div class="d-flex justify-content-lg-end">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
                         </form>
                     </div>
                 </div>

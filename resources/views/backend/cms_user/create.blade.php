@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
-                         
+
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -207,7 +207,9 @@
                                     @endif
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary">
+                            <div class="d-flex justify-content-lg-end">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
                         </form>
                     </div>
                 </div>

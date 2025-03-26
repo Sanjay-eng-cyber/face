@@ -14,7 +14,8 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
+                        <div
+                            class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
@@ -32,8 +33,9 @@
             <div class="statbox widget box box-shadow col-xl-6 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12 mp-0">
-                        <form class="mt-3 mb-3" method="POST" action="{{ route('backend.category.update', $category->id) }}"
-                            enctype="multipart/form-data" autocomplete="off">
+                        <form class="mt-3 mb-3" method="POST"
+                            action="{{ route('backend.category.update', $category->id) }}" enctype="multipart/form-data"
+                            autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
 
@@ -132,7 +134,9 @@
                                     @endif
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary ctr-submit">
+                            <div class="d-flex justify-content-lg-end">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
                         </form>
                     </div>
                 </div>
