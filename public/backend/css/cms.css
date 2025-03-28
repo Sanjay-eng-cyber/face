@@ -288,6 +288,11 @@ gap: 5px;
     } */
 }
 
+.bottom-margin{
+    margin-bottom: 20px; /* Default for large screens */
+}
+
+
 @media (max-width: 768px) {
     .controllinput {
         padding: 10px;
@@ -299,9 +304,20 @@ gap: 5px;
     .fc .fc-toolbar.fc-header-toolbar > .fc-toolbar-chunk {
         margin-top: 0.5em;
     }
+    .bottom-margin {
+        margin-bottom: 16px; /* Smaller margin for small screens */
+    }
 }
 
 @media (max-width: 576px) {
+    .cl-pl{
+        padding: 0px;
+        padding-left: 5px;
+    }
+    .cl-pr{
+        padding: 0px;
+        padding-right: 5px;
+    }
     .bdpd{
         padding: 0px;
     }
@@ -1025,12 +1041,3 @@ padding: 0px;
     border: 1px solid #151515 !important
 }
 
-.bottom-margin input {
-    margin-bottom: 20px; /* Default for large screens */
-}
-
-@media (max-width: 768px) {
-    .bottom-margin input {
-        margin-bottom: 16px; /* Smaller margin for small screens */
-    }
-}

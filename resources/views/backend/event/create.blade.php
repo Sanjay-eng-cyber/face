@@ -36,7 +36,7 @@
                     enctype="multipart/form-data" autocomplete="off">
                     @csrf
                     <div class="form-group mb-3 row">
-                        <div class="col-xl-6 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-6 col-12  mp-0 bottom-margin">
                             <label for="formGroupExampleInput" class="">Name*</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name"
                                 minlength="3" maxlength="250" required name="name" value="{{ old('name') }}">
@@ -45,7 +45,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-6 col-12  mp-0 bottom-margin">
                             <label for="formGroupExampleInput" class="">Cover Image</label>
                             <input type="file" class="form-control p-8px" id="formGroupExampleInput" name="cover_image">
                             @if ($errors->has('cover_image'))
@@ -53,23 +53,9 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-3 col-12 mb-3 mp-0 bottom-margin">
-                            <label for="descriptions">Visibility </label><br>
-                            <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                @if (old('visibility') == '1') {{ 'checked' }} @endif required>
-                            <label for="visibilityYes">Yes</label>
-                            <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                @if (old('visibility') == '0') {{ 'checked' }} @endif required>
-                            <label for="visibilityNo">No</label>
+                        
 
-                            @if ($errors->has('visibility'))
-                                <div class="text-danger" role="alert">
-                                    {{ $errors->first('visibility') }}
-                                </div>
-                            @endif
-                        </div>
-
-                        <div class="col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-12  mp-0 bottom-margin">
                             <label for="descriptions">Description</label>
                             <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') }}</textarea>
                             @if ($errors->has('descriptions'))
@@ -78,7 +64,7 @@
                             @endif
                         </div>
 
-                        <div class="col-lg-3 col-md-6 col-6 mb-3">
+                        <div class="col-xl-3 col-6 bottom-margin cl-pr">
                             <label for="formGroupExampleInput" class="">Start Date*</label>
                             <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                 name="start_date" value="{{ old('start_date') }}">
@@ -86,7 +72,7 @@
                                 <div class="text-danger" role="alert">{{ $errors->first('start_date') }}</div>
                             @endif
                         </div>
-                        <div class="col-lg-3 col-md-6 col-6 mb-3">
+                        <div class="col-xl-3 col-6 bottom-margin cl-pl">
                             <label for="formGroupExampleInput" class="">End Date*</label>
                             <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                 name="end_date" value="{{ old('end_date') }}">
@@ -95,7 +81,7 @@
                             @endif
                         </div>
 
-                        <div class="col-lg-3 col-md-6 col-6 mb-3">
+                        <div class="col-xl-3 col-6 bottom-margin cl-pr">
                             <label for="formGroupExampleInput" class="">Link Start Date*</label>
                             <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                 name="link_start_date" value="{{ old('link_start_date') }}">
@@ -104,7 +90,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="col-lg-3 col-md-6 col-6 mb-3">
+                        <div class="col-xl-3 col-6 bottom-margin cl-pl">
                             <label for="formGroupExampleInput" class="">Link End Date*</label>
                             <input type="datetime-local" class="form-control" id="formGroupExampleInput" required
                                 name="link_end_date" value="{{ old('link_end_date') }}">
@@ -116,7 +102,7 @@
 
 
 
-                        <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-4 col-12  mp-0 bottom-margin">
                             <label for="descriptions">Upload Image Quality</label><br>
                             <input type="radio" id="original" name="upload_image_quality" value="original"
                                 @if (old('upload_image_quality') == 'original') {{ 'checked' }} @endif>
@@ -132,7 +118,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-4 col-12  mp-0 bottom-margin">
                             <label for="descriptions">Guest Images Upload </label><br>
                             <input type="radio" id="guest_images_uploadYes" name="guest_images_upload" value="1"
                                 @if (old('guest_images_upload') == '1') {{ 'checked' }} @endif>
@@ -148,7 +134,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-4 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-4 col-12  mp-0 bottom-margin">
                             <label for="descriptions">Link Sharing</label><br>
                             <input type="radio" id="link_sharingYes" name="link_sharing" value="1"
                                 @if (old('link_sharing') == '1') {{ 'checked' }} @endif>
@@ -188,7 +174,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-2 col-12 mb-0 mb-xl-3 mp-0 bottom-margin adjustable-col">
+                        <div class="col-xl-2 col-12  mp-0 bottom-margin adjustable-col">
                             <label for="descriptions">Is Watermark Required </label><br>
                             <input type="radio" id="is_watermark_requiredYes" name="is_watermark_required"
                                 value="1" @if (old('is_watermark_required') == '1') {{ 'checked' }} @endif>
@@ -204,7 +190,22 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-3 col-12 mb-3" id="watermarkField" style="display: none;">
+                        <div class="col-xl-3 col-12  mp-0 bottom-margin">
+                            <label for="descriptions">Visibility </label><br>
+                            <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                @if (old('visibility') == '1') {{ 'checked' }} @endif required>
+                            <label for="visibilityYes">Yes</label>
+                            <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                @if (old('visibility') == '0') {{ 'checked' }} @endif required>
+                            <label for="visibilityNo">No</label>
+
+                            @if ($errors->has('visibility'))
+                                <div class="text-danger" role="alert">
+                                    {{ $errors->first('visibility') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="col-xl-3 col-12 bottom-margin" id="watermarkField" style="display: none;">
                             <label for="formGroupExampleInput" class="">Watermark Image</label>
                             <input type="file" class="form-control p-8px" id="formGroupExampleInput"
                                 name="watermark_image">
@@ -214,7 +215,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-2 col-12 mb-3 mp-0 bottom-margin adjustable-col">
+                        <div class="col-xl-2 col-12  mp-0 bottom-margin adjustable-col">
                             <label for="descriptions">Bulk Image Download </label><br>
                             <input type="radio" id="bulk_image_downloadYes" name="bulk_image_download" value="1"
                                 @if (old('bulk_image_download') == '1') {{ 'checked' }} @endif>
@@ -230,7 +231,7 @@
                             @endif
                         </div>
 
-                        <div class="col-xl-6 col-12 mb-3 mp-0 bottom-margin">
+                        <div class="col-xl-6 col-12  mp-0 bottom-margin">
                             <label for="descriptions">Single Image Download </label><br>
                             <input type="radio" id="single_image_downloadYes" name="single_image_download"
                                 value="1" @if (old('single_image_download') == '1') {{ 'checked' }} @endif>
