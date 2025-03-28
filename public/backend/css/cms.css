@@ -885,6 +885,16 @@ padding: 0px !important;
     justify-content: flex-end;
 }
 
+.main-dv-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}
+.inside-grid{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
 @media screen and (max-width:1200px) {
     .cutome-topgrid {
         display: grid
