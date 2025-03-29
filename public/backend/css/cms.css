@@ -237,7 +237,18 @@ gap: 5px;
     padding: 18px;
     border-radius: 19px;
 }
+.top-arrowbtn{
+    position: relative;
+    top: -36px;
+    z-index: 9999;
+}
+
 @media (max-width: 992px) {
+    .top-arrowbtn {
+        position: relative;
+        top: -14px;
+        z-index: 9999;
+    }
     .controllinput_Spectacle {
         width: 100%;
         padding: 0px;
@@ -261,11 +272,7 @@ gap: 5px;
     margin-left: 15px;
 }
 
-.top-arrowbtn{
-    position: relative;
-    top: -44px;
-    z-index: 9999;
-}
+
 @media (max-width: 632px) {
 
     .app_form {
@@ -320,6 +327,12 @@ gap: 5px;
 }
 
 @media (max-width: 576px) {
+    .top-arrowbtn {
+        position: relative;
+        top: -14px;
+        z-index: 9999;
+        left: 20px;
+    }
     .sdmt-dcrptn p:not(:empty){
         padding: 12px;
     }
