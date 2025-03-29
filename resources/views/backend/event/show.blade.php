@@ -30,13 +30,13 @@
 
             <div class="info statbox widget box box-shadow mt-3">
                 <div class="row widget-header p-smm-0">
-                    <div class="col-md-11 p-smm-0">
+                    <div class="col-md-12 p-smm-0">
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12 p-smm-0">
 
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                        <div class="col-12 col-sm-6 col-xl-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Name</label><br>
@@ -44,20 +44,20 @@
                                             </div>
                                         </div>
                                         @if ($event->cover_image)
-                                            <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                            <div class="col-12 col-sm-6 col-xl-3 p-smm-0">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Cover
                                                         Image</label><br>
                                                     <div id="lightgallery_one">
                                                         <a href="{{ asset('storage/images/events/' . $event->cover_image) }}"
-                                                            target="blank">View</a>
+                                                            target="blank" style="color: #C7C6CC">View</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         @endif
 
                                         @if ($event->watermark_image)
-                                            <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                            <div class="col-12 col-sm-6 col-xl-3 p-smm-0">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Watermark
                                                         Image</label><br>
@@ -68,42 +68,8 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Start
-                                                    Date</label><br>
-                                                <p class="label-title">
-                                                    {{ dd_format($event->start_date, 'd-m-y h:i a') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">End
-                                                    Date</label><br>
-                                                <p class="label-title">{{ dd_format($event->end_date, 'd-m-y h:i a') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Link Start
-                                                    Date</label><br>
-                                                <p class="label-title">
-                                                    {{ dd_format($event->link_start_date, 'd-m-y h:i a') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Link End
-                                                    Date</label><br>
-                                                <p class="label-title">
-                                                    {{ dd_format($event->link_end_date, 'd-m-y h:i a') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+
+                                        <div class="col-12 col-sm-6 col-xl-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Upload
                                                     Image
@@ -113,49 +79,57 @@
                                                     {{ ucfirst($event->upload_image_quality ?? '----') }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Link
-                                                    Sharing</label><br>
-                                                @if ($event->link_sharing)
-                                                    <label class="text-white badge badge-primary">Yes</label>
-                                                @else
-                                                    <label class="text-white badge badge-secondary">No</label>
-                                                @endif
+                                                <label for="degree3" class="cust-title" class="label-title">Start
+                                                    Date</label><br>
+                                                <p class="label-title">
+                                                    {{ dd_format($event->start_date, 'd-m-y h:i a') }}
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Is Pin
-                                                    Protection Required</label><br>
-                                                @if ($event->is_pin_protection_required)
-                                                    <label class="text-white badge badge-primary">Yes</label>
-                                                @else
-                                                    <label class="text-white badge badge-secondary">No</label>
-                                                @endif
+                                                <label for="degree3" class="cust-title" class="label-title">End
+                                                    Date</label><br>
+                                                <p class="label-title">{{ dd_format($event->end_date, 'd-m-y h:i a') }}
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Link Start
+                                                    Date</label><br>
+                                                <p class="label-title">
+                                                    {{ dd_format($event->link_start_date, 'd-m-y h:i a') }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Link End
+                                                    Date</label><br>
+                                                <p class="label-title">
+                                                    {{ dd_format($event->link_end_date, 'd-m-y h:i a') }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">Visibility</label><br>
-                                                @if ($event->visibility)
-                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                    class="label-title">Descriptions</label><br>
+                                                @if ($event->descriptions)
+                                                    <p class="label-title">{!! $event->descriptions !!}</p>
                                                 @else
-                                                    <label class="text-white badge badge-secondary">No</label>
+                                                    <p class="label-title">---</p>
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Pin</label><br>
-                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
-                                                <p class="text-white badge badge-primary">
-                                                    {{ $event->pin ?? '----' }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+
+ 
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Single
                                                     Image
@@ -167,7 +141,48 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Visibility</label><br>
+                                                @if ($event->visibility)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Is
+                                                    Watermark
+                                                    Required</label><br>
+                                                @if ($event->is_watermark_required)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Link
+                                                    Sharing</label><br>
+                                                @if ($event->link_sharing)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Bulk
                                                     Image
@@ -180,7 +195,68 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Uploaded
+                                                    Images Size</label><br>
+                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
+                                                <p class="text-white badge badge-primary">
+                                                    {{ $galleryImagesFileSize ?? '----' }} GB</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Pin</label><br>
+                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
+                                                <p class="text-white badge badge-primary">
+                                                    {{ $event->pin ?? '----' }}</p>
+                                            </div>
+                                        </div>
+
+                                     
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Is Pin
+                                                    Protection Required</label><br>
+                                                @if ($event->is_pin_protection_required)
+                                                    <label class="text-white badge badge-primary">Yes</label>
+                                                @else
+                                                    <label class="text-white badge badge-secondary">No</label>
+                                                @endif
+                                            </div>
+                                        </div>
+                                   
+
+                                    
+                                        @cmsUserRole('admin')
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Event
+                                                    Share
+                                                    URL</label><br>
+                                                @if (session('shared_url'))
+                                                    <p class="label-title">
+                                                        <a target="_blank"
+                                                            href="{{ session('shared_url') }}">{{ session('shared_url') }}</a>
+                                                        <i class="far fa-clone cursor-pointer"
+                                                            onclick="copyToClipboard('{{ session('shared_url') }}')"></i>
+                                                    </p>
+                                                @else
+                                                    <form method="Post"
+                                                        action="{{ route('backend.event.url', $event->id) }}">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-primary">Generate Event
+                                                            Url</button>
+                                                    </form>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @endcmsUserRole
+
+
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Guest
                                                     Images
@@ -193,43 +269,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Is
-                                                    Watermark
-                                                    Required</label><br>
-                                                @if ($event->is_watermark_required)
-                                                    <label class="text-white badge badge-primary">Yes</label>
-                                                @else
-                                                    <label class="text-white badge badge-secondary">No</label>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        @cmsUserRole('admin')
-                                            <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                                <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Event
-                                                        Share
-                                                        URL</label><br>
-                                                    @if (session('shared_url'))
-                                                        <p class="label-title">
-                                                            <a target="_blank"
-                                                                href="{{ session('shared_url') }}">{{ session('shared_url') }}</a>
-                                                            <i class="far fa-clone cursor-pointer"
-                                                                onclick="copyToClipboard('{{ session('shared_url') }}')"></i>
-                                                        </p>
-                                                    @else
-                                                        <form method="Post"
-                                                            action="{{ route('backend.event.url', $event->id) }}">
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-primary">Generate Event
-                                                                Url</button>
-                                                        </form>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        @endcmsUserRole
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
+                                   
+                                 
+                                        <div class="col-12 col-sm-6 col-md-3 p-smm-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Uploaded
                                                     Images Count</label><br>
@@ -238,15 +280,7 @@
                                                     {{ $galleryImagesCount ?? '----' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Uploaded
-                                                    Images Size</label><br>
-                                                {{-- <p class="label-title">{{ ucfirst($event->download_size) }}</p> --}}
-                                                <p class="text-white badge badge-primary">
-                                                    {{ $galleryImagesFileSize ?? '----' }} GB</p>
-                                            </div>
-                                        </div>
+                                   
                                         {{-- @if (session('shared_url'))
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -261,19 +295,7 @@
                                             </div>
                                         @endif --}}
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Descriptions</label><br>
-                                                @if ($event->descriptions)
-                                                    <p class="label-title">{!! $event->descriptions !!}</p>
-                                                @else
-                                                    <p class="label-title">---</p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
+                               
                                 </div>
                             </div>
                         </div>
