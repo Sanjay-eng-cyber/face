@@ -225,7 +225,7 @@
 
                                     <div class="mp-0 bottom-margin" id="pinField" style="display: none;">
                                         <label for="formGroupExampleInput" class="">Pin</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                        <input type="text" class="form-control pin-width" id="formGroupExampleInput"
                                             placeholder="Enter Pin" minlength="4" maxlength="4" name="pin"
                                             value="{{ old('pin') ?? $event->pin }}">
                                         @if ($errors->has('pin'))
@@ -267,8 +267,8 @@
 
                                     <div id="watermarkField" style="display: none;">
                                         <label for="formGroupExampleInput" class="">Watermark Image</label>
-                                        <input type="file" class="form-control p-8px" id="formGroupExampleInput"
-                                            name="watermark_image">
+                                        <input type="file" class="form-control p-8px watermarkimg-width"
+                                            id="formGroupExampleInput" name="watermark_image">
                                         @if ($event->watermark_image)
                                             <div id="lightgallery_two" class="text-end">
                                                 <a href="{{ asset('storage/images/events/watermark_image/' . $event->watermark_image) }}"
@@ -365,13 +365,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-lg-end">
-                            <input type="submit" class="btn btn-primary">
-                        </div>
-                </form>
-                {{-- </div> --}}
+                    </div>
             </div>
+            <div class="d-flex justify-content-lg-end">
+                <input type="submit" class="btn btn-primary">
+            </div>
+            </form>
         </div>
+    </div>
     </div>
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/select2/select2.min.css') }}">
 @endsection
