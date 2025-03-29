@@ -117,11 +117,11 @@
                                         </div>
 
                                         <div class="col-12 p-smm-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
+                                            <div class="form-group sdmt-dcrptn">
+                                                <label for="degree3" class="cust-title 1"
                                                     class="label-title">Descriptions</label><br>
                                                 @if ($event->descriptions)
-                                                    <p class="label-title">{!! $event->descriptions !!}</p>
+                                                    <p class="label-title ">{!! $event->descriptions !!}</p>
                                                 @else
                                                     <p class="label-title">---</p>
                                                 @endif
