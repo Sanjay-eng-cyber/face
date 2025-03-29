@@ -286,7 +286,7 @@
 
             <div class="info statbox box box-shadow mt-3 mt-lg-4">
                 <div class="row widget-header">
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12">

@@ -1,21 +1,24 @@
 @extends('backend.layouts.app')
 @section('title', 'Frontend Users')
 @section('content')
-    <div class="row layout-top-spacing m-0 pa-padding-remove">
+  
+    <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+        
+        
 
             <div class="statbox widget box box-shadow mt-3 mb-1 ">
                 <div class="widget-header p-smm-0">
-                    <div class="row justify-content-between align-items-center mb-0 pb18">
+                    <div class="row justify-content-between align-items-center mb-0">
                         <div class="col-md-4 col-sm-12 p-smm-0">
                             <legend class="h2 text-clr fw-600 ">
                                 Frontend Users
                             </legend>
                         </div>
 
-                        <div class="col-md-8  col-sm-12  d-flex align-items-center justify-content-md-end mp-0">
+                        <div class="col-md-8  col-sm-12  d-flex align-items-center justify-content-md-end mp-0 my-2">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-divider pbz ptpb" style="line-height: 1;">
+                                <ol class="breadcrumb breadcrumb-divider pbz " style="line-height: 1;">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Frontend Users</a>
