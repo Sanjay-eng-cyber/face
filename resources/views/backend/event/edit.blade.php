@@ -267,7 +267,7 @@
                                         @endif
                                     </div>
 
-                                    <div id="watermarkField" style="display: none;">
+                                    <div class="bottom-margin" id="watermarkField" style="display: none;">
                                         <label for="formGroupExampleInput" class="">Watermark Image</label>
                                         <input type="file" class="form-control p-8px watermarkimg-width"
                                             id="formGroupExampleInput" name="watermark_image">

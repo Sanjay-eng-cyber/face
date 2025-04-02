@@ -292,17 +292,17 @@
                     <div class="col-md-12">
                         <div class="work-section">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 pmv">
                                     <div class="row">
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 pmv">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Event
                                                     Name</label><br>
                                                 <p class="label-title">{{ $category->event->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 pmv">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Category
                                                     Name</label><br>
@@ -313,7 +313,7 @@
                                     </div>
                                     <div class="row">
 
-                                        <div class="col-12">
+                                        <div class="col-12 pmv">
 
                                             <section>
                                                 <div id="dropzone">

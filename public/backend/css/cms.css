@@ -1148,6 +1148,12 @@ padding: 0px !important;
     }
 }
 @media screen and (max-width:576px) {
+    .pmv{
+        padding: 0px;
+    }
+    .min-height-20em {
+        height: calc(100vh - var(--header-height) - var(--mycustom-height) - var(--footer-height) - var(--fk-height));
+    }
     .iwmp{
         padding: 0px;
     }

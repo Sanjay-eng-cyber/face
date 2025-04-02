@@ -7,7 +7,7 @@
         
         
 
-            <div class="statbox widget box box-shadow mt-3 mb-1 ">
+            <div class="statbox widget box box-shadow mt-3 mb-1 my-custom-section p-0">
                 <div class="widget-header p-smm-0">
                     <div class="row justify-content-between align-items-center mb-0">
                         <div class="col-md-4 col-sm-12 p-smm-0">
