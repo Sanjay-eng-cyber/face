@@ -1,5 +1,5 @@
 <div class="footer-wrapper justify-content-center align-items-end">
-    <div class="footer-section f-section-1 text-center pt-sm-1 pt-3">
+    <div class="footer-section f-section-1 text-center">
         <p class="text-white footer-text">
             &copy;
             {{ date('Y') }}

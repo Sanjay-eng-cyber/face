@@ -25,8 +25,28 @@
 
     @include('backend.layouts.js')
     @yield('js')
-
-
+    <script>
+        function updateHeights() {
+                   const header = document.querySelector("header");
+                   const myCustom = document.querySelector(".my-custom-section");
+                   const footer = document.querySelector(".footer-wrapper");
+       
+                   if (header) {
+                       document.documentElement.style.setProperty("--header-height", `${header.offsetHeight}px`);
+                   }
+                   if (myCustom) {
+                       document.documentElement.style.setProperty("--mycustom-height", `${myCustom.offsetHeight}px`);
+                   }
+                   if (footer) {
+                       document.documentElement.style.setProperty("--footer-height", `${footer.offsetHeight}px`);
+                   }
+               }
+       
+               window.addEventListener("load", updateHeights);
+               window.addEventListener("resize", updateHeights);
+       
+       </script>
+   
 </body>
 
 </html>

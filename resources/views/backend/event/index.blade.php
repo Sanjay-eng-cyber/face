@@ -1,12 +1,13 @@
 @extends('backend.layouts.app')
 @section('title', 'Events')
 @section('content')
+   
     <div class="layout-px-spacing row layout-top-spacing m-0">
 
-        <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+        <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing pb-0">
 
 
-            <div class="statbox widget box box-shadow mt-3 mb-1 ">
+            <div class="statbox widget box box-shadow mt-3 mb-1 my-custom-section">
                 <div class="widget-header p-smm-0">
                     <div class="row justify-content-between align-items-center mb-0 pb18">
                         <div class="col-md-4 col-sm-12 p-smm-0">
@@ -57,7 +58,7 @@
             </div>
 
 
-            <div class="statbox widget box box-shadow temp-index p-0 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow temp-index p-0 mt-3 mt-lg-4 ">
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
@@ -119,13 +120,13 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="pagination col-lg-12 mt-3">
+                        {{-- <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $events->onEachSide(0)->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

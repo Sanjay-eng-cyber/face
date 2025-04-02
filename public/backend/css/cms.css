@@ -17,6 +17,14 @@ div {
     word-wrap: break-word;
 }
 
+
+:root {
+    --header-height: 0px;
+    --mycustom-height: 0px;
+    --footer-height: 0px;
+    --fk-height: 100px;
+}
+
 ::selection {
     color: white;
     background: #536adde8;
@@ -40,9 +48,9 @@ div {
 }
 
 .min-height-20em {
-    min-height: 20em;
-    /* min-height: 100%; */
+    height: calc(100vh - var(--header-height) - var(--mycustom-height) - var(--footer-height) - var(--fk-height));
 }
+
 
 .cust-title {
     color: #FE3B96 !important;
