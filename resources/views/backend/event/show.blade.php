@@ -20,7 +20,7 @@
                         <div class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
-                                    <li class="breadcrumb-item"><a href="/">Events</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('backend.event.index') }}">Events</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Event Details</a>
                                     </li>

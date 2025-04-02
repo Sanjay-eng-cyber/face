@@ -4,7 +4,10 @@
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
-
+            <a href="{{ route('backend.category.index') }}" class="top-arrowbtn">
+                <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset="" class="img-fluid logo">
+            </a>
+            
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
@@ -18,7 +21,7 @@
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('backend.category.index') }}">Categories</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Category Details</a>
                                     </li>

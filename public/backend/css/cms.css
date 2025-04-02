@@ -1140,6 +1140,9 @@ padding: 0px !important;
     }
 }
 @media screen and (max-width:576px) {
+    .iwmp{
+        padding: 0px;
+    }
     .add-cggbtn{
         min-height: 37px;
     }

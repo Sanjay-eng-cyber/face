@@ -31,11 +31,14 @@
 
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
 
-
+            <a href="{{ route('backend.category.index') }}" class="top-arrowbtn">
+                <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset="" class="img-fluid logo">
+            </a>
+            
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="col-lg-6 col-md-12 col-sm-12 iwmp">
                             <legend class="h4 text-clr fw-600 ">
                                 Uploaded Images (Total - {{ $totalImages }})
                             </legend>
@@ -45,7 +48,7 @@
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('backend.category.index') }}">Categories</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Uploaded Images</a>
                                     </li>
@@ -146,8 +149,10 @@
                                     </div>
                                 </div>
                             @empty
-                                <div class="text-center">
-                                    No Records Found
+                                <div style="position: absolute;left: 50%;transform: translateX(-50%);">
+                                    <div class="text-center">
+                                        No Records Found
+                                    </div>
                                 </div>
                             @endforelse
 
