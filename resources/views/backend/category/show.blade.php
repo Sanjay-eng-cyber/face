@@ -33,70 +33,93 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow mt-3 mt-lg-4">
-                <div class="row widget-header">
-                    <div class="col-md-11 mp-0">
+            <div class="info statbox widget box box-shadow mt-3 mt-lg-4 col-xl-7 col-md-9">
+               
+                    <div class="mp-0">
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12 mp-0">
 
                                     <div class="row">
-                                        <div class="col-md-4 mp-0">
+                                        <div class="col-sm-6 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">Name</label><br>
+                                                    class="label-title">Category Name</label><br>
                                                 <p class="label-title">{{ $category->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 mp-0">
+                                        <div class="col-sm-6 mp-0">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">Event</label><br>
+                                                    class="label-title">Event Name</label><br>
                                                 <p class="label-title">{{ $category->event->name }}</p>
                                             </div>
                                         </div>
-                                        @if ($category->cover_image)
-                                            <div class="col-md-4 mp-0">
-                                                <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Cover
-                                                        Image</label><br>
-                                                    <div id="lightgallery">
-                                                        <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
-                                                            target="_blank"  class="text-white-2">View</a>
+
+
+                                        <div class="col-12 p-smm-0">
+                                            @if ($category->cover_image)
+                                                <div class=" mp-0 d-block d-sm-none">
+                                                    <div class="form-group">
+                                                        <label for="degree3" class="cust-title" class="label-title">Cover
+                                                            Image</label><br>
+                                                        <div id="lightgallery">
+                                                            <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
+                                                                target="_blank"  class="text-white-2">View</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+
+                                            <div class="grid-container {{ $category->cover_image ? 'three-cols' : 'two-cols' }}">
+
+
+                                                @if ($category->cover_image)
+                                                    <div class=" mp-0 d-none d-sm-block">
+                                                        <div class="form-group">
+                                                            <label for="degree3" class="cust-title" class="label-title">Cover
+                                                                Image</label><br>
+                                                            <div id="lightgallery">
+                                                                <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
+                                                                    target="_blank"  class="text-white-2">View</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <div class=" mp-0">
+                                                    <div class="form-group">
+                                                        <label for="degree3" class="cust-title"
+                                                            class="label-title">Sharing</label><br>
+                                                        @if ($category->sharing)
+                                                            <label class="text-white badge badge-primary">Yes</label>
+                                                            {{-- @elseif ($category->status == '')
+                                                            <label
+                                                                class="text-white badge badge-warning">{{ $category->status }}</label>
+                                                        @elseif ($category->status == '')
+                                                            <label
+                                                                class="text-white badge badge-success">{{ $category->status }}</label> --}}
+                                                        @else
+                                                            <label class="text-white badge badge-secondary">No</label>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="mp-0">
+                                                    <div class="form-group">
+                                                        <label for="degree3" class="cust-title"
+                                                            class="label-title">Visibility</label><br>
+                                                        @if ($category->visibility)
+                                                            <label class="text-white badge badge-primary">Yes</label>
+                                                        @else
+                                                            <label class="text-white badge badge-secondary">No</label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endif
-                                        <div class="col-md-4 mp-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Sharing</label><br>
-                                                @if ($category->sharing)
-                                                    <label class="text-white badge badge-primary">Yes</label>
-                                                    {{-- @elseif ($category->status == '')
-                                                    <label
-                                                        class="text-white badge badge-warning">{{ $category->status }}</label>
-                                                @elseif ($category->status == '')
-                                                    <label
-                                                        class="text-white badge badge-success">{{ $category->status }}</label> --}}
-                                                @else
-                                                    <label class="text-white badge badge-secondary">No</label>
-                                                @endif
-                                            </div>
                                         </div>
-                                        <div class="col-md-4 mp-0">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Visibility</label><br>
-                                                @if ($category->visibility)
-                                                    <label class="text-white badge badge-primary">Yes</label>
-                                                @else
-                                                    <label class="text-white badge badge-secondary">No</label>
-                                                @endif
-                                            </div>
-                                        </div>
+
+
                                         @cmsUserRole('admin')
-                                            <div class="col-md-4 mp-0">
+                                            <div class="col-md-12 mp-0">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Category
                                                         Url</label><br>
@@ -155,7 +178,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
             {{-- <div class="widget-content widget-content-area">
 
