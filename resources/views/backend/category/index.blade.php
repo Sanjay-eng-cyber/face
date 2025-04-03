@@ -39,7 +39,7 @@
                             <form class="form-inline  h-100 form-csw" action="{{ route('backend.category.index') }}"
                                 method="GET">
                                 <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi csipb"
-                                    type="text" placeholder="Enter Your Event Name" name="q" value="{{ request('q') ?? '' }}"
+                                    type="text" placeholder="Enter Your Category Name" name="q" value="{{ request('q') ?? '' }}"
                                     minlength="3" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
@@ -63,8 +63,8 @@
                                 <thead>
                                     <tr>
                                         <th style="white-space: nowrap">Sr no.</th>
+                                        <th style="white-space: nowrap">Category Name</th>
                                         <th style="white-space: nowrap">Event Name</th>
-                                        <th>Name</th>
                                         {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -73,8 +73,8 @@
                                     @forelse($categories as $category)
                                         <tr>
                                             <td class="text-center">{{ tableRowSrNo($loop->index, $categories) }}</td>
-                                            <td>{{ $category->event->name }}</td>
                                             <td>{{ $category->name }}</td>
+                                            <td>{{ $category->event->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
