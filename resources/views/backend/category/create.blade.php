@@ -30,15 +30,15 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-6 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow col-xl-7 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12 mp-0">
-                        <form class="mt-3 mb-3" method="POST" action="{{ route('backend.category.store') }}"
+                        <form class="mb-1" method="POST" action="{{ route('backend.category.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
-                            <div class="form-group mb-3 row">
+                            <div class="row">
 
-                                <div class="col-xl-12 col-12 mb-3 mp-0">
+                                <div class="col-xl-12 col-12 mb-3 mp-0 p-0">
                                     <label for="formGroupExampleInput" class="">Event*</label>
                                     <select class="form-control event-dpd-cust" name="event_id" required>
                                         <option value="">Select Any</option>
@@ -53,7 +53,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-xl-12 col-12 mb-3 mp-0">
+                                <div class="col-xl-12 col-12 mb-3 mp-0 p-0">
                                     <label for="formGroupExampleInput" class="">Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -62,50 +62,55 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
+                                <div class="col-12 mp-0 ccm-grid p-0">
+                                    <div class="mb-3 mp-0">
+                                        <label for="formGroupExampleInput" class="">Cover Image</label>
+                                        <input type="file" class="form-control p-8px" id="formGroupExampleInput"
+                                            name="cover_image" value="{{ old('cover_image') }}">
+                                        @if ($errors->has('cover_image'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="mb-3 mb-sm-0 ccm-grid-child">
+                                        <div class="mp-0">
+                                            <label for="descriptions">Sharing* </label><br>
+                                            <input type="radio" id="sharingYes" name="sharing" value="1"
+                                                @if (old('sharing')) {{ 'checked' }} @endif required>
+                                            <label for="sharingYes" class="mb-0">Yes</label>
+                                            <input type="radio" id="sharingNo" name="sharing" value="0"
+                                                @if (old('sharing')) {{ 'checked' }} @endif required>
+                                            <label for="sharingNo" class="mb-0">No</label>
 
-                                <div class="col-xl-12 col-12 mb-3 mp-0">
-                                    <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
-                                        name="cover_image" value="{{ old('cover_image') }}">
-                                    @if ($errors->has('cover_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
+                                            @if ($errors->has('sharing'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
+                                                </div>
+                                            @endif
                                         </div>
-                                    @endif
+
+                                        <div class="mp-0">
+                                            <label for="descriptions">Visibility* </label><br>
+                                            <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                                @if (old('visibility')) {{ 'checked' }} @endif required>
+                                            <label for="visibilityYes" class="mb-0">Yes</label>
+                                            <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                                @if (old('visibility')) {{ 'checked' }} @endif required>
+                                            <label for="visibilityNo" class="mb-0">No</label>
+
+                                            @if ($errors->has('visibility'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="col-6 mb-3 mp-0">
-                                    <label for="descriptions">Sharing* </label><br>
-                                    <input type="radio" id="sharingYes" name="sharing" value="1"
-                                        @if (old('sharing')) {{ 'checked' }} @endif required>
-                                    <label for="sharingYes">Yes</label>
-                                    <input type="radio" id="sharingNo" name="sharing" value="0"
-                                        @if (old('sharing')) {{ 'checked' }} @endif required>
-                                    <label for="sharingNo">No</label>
-
-                                    @if ($errors->has('sharing'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-6 mb-3 mp-0">
-                                    <label for="descriptions">Visibility* </label><br>
-                                    <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                        @if (old('visibility')) {{ 'checked' }} @endif required>
-                                    <label for="visibilityYes">Yes</label>
-                                    <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                        @if (old('visibility')) {{ 'checked' }} @endif required>
-                                    <label for="visibilityNo">No</label>
-
-                                    @if ($errors->has('visibility'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
-                                        </div>
-                                    @endif
+                                <div class="col-xl-12 col-12  mp-0 p-0">
+                                    <input type="submit" class="btn btn-primary w-100">
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-lg-end">
-                                <input type="submit" class="btn btn-primary">
-                            </div>
+                            {{-- <div class="d-flex justify-content-lg-end">
+                                <input type="submit" class="btn btn-primary w-100">
+                            </div> --}}
                         </form>
                     </div>
                 </div>
