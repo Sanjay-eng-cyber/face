@@ -32,14 +32,14 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-6 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow col-xl-7 col-md-10 mt-3 mt-lg-4">
                 <div class="row m-0">
-                    <div class="col-md-12 mp-0">
-                        <form class="mt-3 mb-3" method="POST"
+                    <div class="col-md-12 mp-0 p-0">
+                        <form class="" method="POST"
                             action="{{ route('backend.category.update', $category->id) }}" enctype="multipart/form-data"
                             autocomplete="off">
                             @csrf
-                            <div class="form-group mb-3 row">
+                            <div class="row">
 
                                 <div class="col-xl-12 col-12 mb-3 mp-0">
                                     <label for="formGroupExampleInput" class="">Event*</label>
@@ -71,73 +71,78 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
+                                <div class="col-12 mp-0 ccm-grid">
 
-                                <div class="col-xl-12 col-12 mb-3 mp-0">
-                                    <label for="formGroupExampleInput" class="">Cover Image</label>
-                                    <input type="file" class="form-control p-8px" id="formGroupExampleInput"
-                                        name="cover_image">
-                                    @if ($category->cover_image)
-                                        <div id="lightgallery" class="text-end">
-                                            <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
-                                                target="_blank" class="text-white-2">View</a>
+                                    <div class=" mb-3 mp-0">
+                                        <label for="formGroupExampleInput" class="">Cover Image</label>
+                                        <input type="file" class="form-control p-8px" id="formGroupExampleInput"
+                                            name="cover_image">
+                                        @if ($category->cover_image)
+                                            <div id="lightgallery" class="text-end">
+                                                <a href="{{ asset('storage/images/categories/' . $category->cover_image) }}"
+                                                    target="_blank" class="text-white-2">View</a>
+                                            </div>
+                                        @endif
+                                        @if ($errors->has('cover_image'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="mb-3 mb-sm-0 ccm-grid-child">
+
+                                        <div class="mp-0">
+                                            <label for="descriptions">Sharing*</label><br>
+                                            @if (old('sharing'))
+                                                <input type="radio" id="sharingYes" name="sharing" value="1"
+                                                    @if (old('sharing') == '1') {{ 'checked' }} @endif required>
+                                                <label for="sharingYes" class="mb-0">Yes</label>
+                                                <input type="radio" id="sharingNo" name="sharing" value="0"
+                                                    @if (old('sharing') == '0') {{ 'checked' }} @endif required>
+                                                <label for="sharingNo" class="mb-0">No</label>
+                                            @else
+                                                <input type="radio" id="sharingYes" name="sharing" value="1"
+                                                    @if ($category->sharing == '1') {{ 'checked' }} @endif required>
+                                                <label for="sharingYes" class="mb-0">Yes</label>
+                                                <input type="radio" id="sharingNo" name="sharing" value="0"
+                                                    @if ($category->sharing == '0') {{ 'checked' }} @endif required>
+                                                <label for="sharingNo" class="mb-0">No</label>
+                                            @endif
+
+                                            @if ($errors->has('sharing'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
+                                                </div>
+                                            @endif
                                         </div>
-                                    @endif
-                                    @if ($errors->has('cover_image'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}
+
+                                        <div class="mp-0">
+                                            <label for="descriptions">Visibility* </label><br>
+                                            @if (old('visibility'))
+                                                <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                                    @if (old('visibility') == '1') {{ 'checked' }} @endif required>
+                                                <label for="visibilityYes">Yes</label>
+                                                <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                                    @if (old('visibility') == '0') {{ 'checked' }} @endif required>
+                                                <label for="visibilityNo">No</label>
+                                            @else
+                                                <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                                    @if ($category->visibility == '1') {{ 'checked' }} @endif required>
+                                                <label for="visibilityYes">Yes</label>
+                                                <input type="radio" id="visibilityNo" name="visibility" value="0"
+                                                    @if ($category->visibility == '0') {{ 'checked' }} @endif required>
+                                                <label for="visibilityNo">No</label>
+                                            @endif
+
+                                            @if ($errors->has('visibility'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
+                                                </div>
+                                            @endif
                                         </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-6  mb-3 mp-0">
-                                    <label for="descriptions">Sharing*</label><br>
-                                    @if (old('sharing'))
-                                        <input type="radio" id="sharingYes" name="sharing" value="1"
-                                            @if (old('sharing') == '1') {{ 'checked' }} @endif required>
-                                        <label for="sharingYes">Yes</label>
-                                        <input type="radio" id="sharingNo" name="sharing" value="0"
-                                            @if (old('sharing') == '0') {{ 'checked' }} @endif required>
-                                        <label for="sharingNo">No</label>
-                                    @else
-                                        <input type="radio" id="sharingYes" name="sharing" value="1"
-                                            @if ($category->sharing == '1') {{ 'checked' }} @endif required>
-                                        <label for="sharingYes">Yes</label>
-                                        <input type="radio" id="sharingNo" name="sharing" value="0"
-                                            @if ($category->sharing == '0') {{ 'checked' }} @endif required>
-                                        <label for="sharingNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('sharing'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('sharing') }}
-                                        </div>
-                                    @endif
-                                </div>
-
-                                <div class="col-6 mb-3 mp-0">
-                                    <label for="descriptions">Visibility* </label><br>
-                                    @if (old('visibility'))
-                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                            @if (old('visibility') == '1') {{ 'checked' }} @endif required>
-                                        <label for="visibilityYes">Yes</label>
-                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                            @if (old('visibility') == '0') {{ 'checked' }} @endif required>
-                                        <label for="visibilityNo">No</label>
-                                    @else
-                                        <input type="radio" id="visibilityYes" name="visibility" value="1"
-                                            @if ($category->visibility == '1') {{ 'checked' }} @endif required>
-                                        <label for="visibilityYes">Yes</label>
-                                        <input type="radio" id="visibilityNo" name="visibility" value="0"
-                                            @if ($category->visibility == '0') {{ 'checked' }} @endif required>
-                                        <label for="visibilityNo">No</label>
-                                    @endif
-
-                                    @if ($errors->has('visibility'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
-                                        </div>
-                                    @endif
+                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-lg-end">
-                                <input type="submit" class="btn btn-primary">
+                                <input type="submit" class="btn btn-primary w-100">
                             </div>
                         </form>
                     </div>
