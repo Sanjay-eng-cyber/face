@@ -211,6 +211,12 @@ display: none;
 }
 }
 @media screen and (max-width:576px){
+    .navbar {
+        min-height: 55px;
+    }
+    #content {
+        margin-top: 58px;
+    }
     .grid-container.three-cols {
         grid-template-columns: 1fr 1fr;
     }

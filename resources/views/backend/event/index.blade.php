@@ -7,7 +7,7 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing pb-0">
 
 
-            <div class="statbox widget box box-shadow mt-3 mb-1 my-custom-section">
+            <div class="statbox widget box box-shadow mt-0 mt-sm-3 mb-1 my-custom-section">
                 <div class="widget-header p-smm-0">
                     <div class="row justify-content-between align-items-center mb-0 pb18">
                         <div class="col-md-4 col-sm-12 p-smm-0">
