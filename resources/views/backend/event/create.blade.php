@@ -38,7 +38,7 @@
                 <form class="" method="POST" action="{{ route('backend.event.store') }}"
                     enctype="multipart/form-data" autocomplete="off">
                     @csrf
-                    <div class="form-group mb-3 row">
+                    <div class="row">
                         <div class="col-xl-6 col-12  mp-0 bottom-margin">
                             <label for="formGroupExampleInput" class="">Name*</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name"
@@ -317,7 +317,7 @@
 
                     </div>
                     <div class="d-flex justify-content-lg-end">
-                        <input type="submit" class="btn btn-primary">
+                        <input type="submit" class="btn btn-primary mcsw wm100">
                     </div>
                 </form>
 
