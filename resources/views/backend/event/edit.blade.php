@@ -33,7 +33,7 @@
             </div>
             <div class="statbox widget box box-shadow col-xl-12 col-12 mt-3 mt-lg-4">
                 {{-- <div class="col-md-12 mp-0"> --}}
-                <form class="mt-3" method="POST" action="{{ route('backend.event.update', $event->id) }}"
+                <form class="" method="POST" action="{{ route('backend.event.update', $event->id) }}"
                     enctype="multipart/form-data" autocomplete="off">
                     @csrf
                     <div class="form-group mb-3 row">
@@ -368,11 +368,12 @@
                             </div>
                         </div>
                     </div>
+            
+                    <div class="d-flex justify-content-lg-end">
+                        <input type="submit" class="btn btn-primary mcsw wm100">
+                    </div>
+                </form>
             </div>
-            <div class="d-flex justify-content-lg-end">
-                <input type="submit" class="btn btn-primary">
-            </div>
-            </form>
         </div>
     </div>
     </div>
