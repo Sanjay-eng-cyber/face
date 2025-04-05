@@ -42,7 +42,7 @@
                             <div class="row">
 
                                 <div class="col-xl-12 col-12 mb-3 mp-0">
-                                    <label for="formGroupExampleInput" class="">Event*</label>
+                                    <label for="formGroupExampleInput" class="">Event Name*</label>
                                     <select class="form-control event-dpd-cust" name="event_id" required>
                                         <option value="">Select Any</option>
                                         @foreach ($events as $event)
@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="col-xl-12 col-12 mb-3 mp-0">
-                                    <label for="formGroupExampleInput" class="">Name*</label>
+                                    <label for="formGroupExampleInput" class="">Category Name*</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
                                         value="{{ old('name') ?? $category->name }}">

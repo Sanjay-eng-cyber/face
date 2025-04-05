@@ -969,8 +969,9 @@ padding: 0px !important;
     width: 140px;
 }
 .ccm-grid{
-    display: grid;
-    grid-template-columns:auto auto;
+    display: grid
+    ;
+        grid-template-columns: 43% 55%;
     align-items: center;
     gap: 10px;
 }
@@ -978,7 +979,8 @@ padding: 0px !important;
     display: grid;
     grid-template-columns: 48.5% 48.5%;
     gap: 10px;
-    justify-items: center;
+    justify-items: end;
+    align-items: center;
 
 }
 @media screen and (max-width:1500px) {
@@ -1177,6 +1179,9 @@ padding: 0px !important;
     }
 }
 @media screen and (max-width:576px) {
+    .pbzero{
+        padding-bottom: 0px;
+    }
     .wm100{
         width: 100%;
     }
