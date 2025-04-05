@@ -5,7 +5,9 @@
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
         
-        
+            <a href="{{ route('backend.event.index') }}" class="top-arrowbtn">
+                <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset="" class="img-fluid logo">
+            </a>
 
             <div class="statbox widget box box-shadow mt-3 mb-1 my-custom-section p-0">
                 <div class="widget-header p-smm-0">
