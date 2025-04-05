@@ -1793,9 +1793,9 @@ body {
     }
     .basic-event-one-main-insider-half{
         display: grid;
-        grid-template-columns: 24% 73%;
-    gap: 15px;
-    align-items: end;
+        grid-template-columns: 17% auto;
+        gap: 15px;
+        align-items: center;
     }
     .basic-event-one-main-insider-full{
         /* align-items: center; */
@@ -1804,10 +1804,10 @@ body {
         gap: 19px;
     }
     .basic-event-one-main-insider-bdt{
-        align-items: start;
+        align-items: center;
         display: grid;
-        grid-template-columns: 12% 86%;
-        gap: 15px;
+        grid-template-columns: 9% 88%;
+        gap: 27px;
     }
     .basic-event-one-main-insider.user-detailsinfo{
         gap: 35px;
@@ -1976,7 +1976,7 @@ body {
     padding-bottom:13px;
 }
 .uptoptext{
-    font-size: 14px
+    font-size: 10px
 }
 
 .share-img-text{
@@ -2000,7 +2000,7 @@ body {
         object-fit: cover;
     }
 .textimg-new{
-    width: 121px;
+    width: 95px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
@@ -3823,7 +3823,7 @@ font-weight: 300;
     }
     .bdt-date {
         padding: 4px 10px 4px 10px;
-        max-width: 218px;
+        max-width: 238px;
 
     }
     

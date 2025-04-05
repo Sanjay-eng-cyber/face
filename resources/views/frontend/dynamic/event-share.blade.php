@@ -463,9 +463,10 @@
                             <div class="col-12">
                                 <div class="grid-outer">
                                     <div class="basic-event-one-main h-100">
+                                        <div class="fw-600 text-white pb-2 uptoptext">Your Uploaded Photo</div>
+
                                         <div class="basic-event-one-main-insider-half user-detailsinfo">
                                             <div>
-                                                <div class="fw-600 text-white pb-2 uptoptext">Uploaded Photo</div>
                                                 <img :src="userImageData" alt=""
                                                     class="img-fluid textimg-new rounded-3" v-if="userImageData">
                                                 <img :src="user_image_url" alt=""
@@ -473,22 +474,22 @@
                                             </div>
                                             <div class="details-box-one">
 
-                                                <div class="d-flex gap-1">
-                                                    <div class="text-white fw-600 h5 mb-0 name-head">Name:</div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div class="text-white fw-600 h6 mb-0 name-head">Name:</div>
                                                     <div class="text-white fw-600 h5 mb-0 name-title">
                                                         @{{ name }}</div>
                                                 </div>
 
-                                                <div class="d-flex gap-1 box-one-nummain">
-                                                    <div class="text-white fw-600 h5 mb-0 number-head">Number:
+                                                <div class="d-flex align-items-center gap-1 box-one-nummain">
+                                                    <div class="text-white fw-600 h6 mb-0 number-head">Number:
                                                     </div>
                                                     <div class="text-white fw-600 h5 mb-0 number-title">
                                                         @{{ mobile_number }}
                                                     </div>
                                                 </div>
 
-                                                <div class="d-flex gap-1">
-                                                    <div class="text-white fw-600 h5 mb-0 email-head"> Email ID:
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div class="text-white fw-600 h6 mb-0 email-head"> Email ID:
                                                     </div>
                                                     <div class="text-white fw-600 h5 mb-0 email-title">
                                                         @{{ email }}</div>
