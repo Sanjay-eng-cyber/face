@@ -352,7 +352,7 @@
                             </a>
                         </li>
 
-                        <li class="menu" style="display: none">
+                        {{-- <li class="menu" style="display: none">
                             <a href="{{ route('backend.frotend-user.index', $event->id) }}"
                                 aria-expanded="{{ route('backend.frotend-user.index', $event->id) == request()->url() ? 'true' : 'false' }}"
                                 class="dropdown-toggle link-sdb">
@@ -365,7 +365,7 @@
                                     <span class="nav-sidetext">Frontend User</span>
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
 
 
                         {{-- <li class="menu">
