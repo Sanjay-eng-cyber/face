@@ -3,13 +3,13 @@
 @section('content')
   
     <div class="layout-px-spacing row layout-top-spacing m-0">
-        <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
+        <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing pb-0">
         
             <a href="{{ route('backend.event.index') }}" class="top-arrowbtn">
                 <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset="" class="img-fluid logo">
             </a>
 
-            <div class="statbox widget box box-shadow mt-3 mb-1 my-custom-section p-0">
+            <div class="statbox widget box box-shadow  mb-1 my-custom-section p-0">
                 <div class="widget-header p-smm-0">
                     <div class="row widget justify-content-between align-items-center mb-0">
                         <div class="col-md-4 col-sm-12 p-smm-0">
@@ -87,13 +87,13 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="pagination col-lg-12 mt-3">
+                        {{-- <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $frontendUsers->onEachSide(0)->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
