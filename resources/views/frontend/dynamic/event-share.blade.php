@@ -28,6 +28,7 @@
             background-position: center;
             width: 100%;
             height: 100vh;
+            /* background: white; */
             /* This ensures the body takes the full height of the viewport */
         }
 
@@ -152,7 +153,7 @@
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                            <div class="col-12 col-lg-11 col-xl-11 col-xxl-10 position-relative z-99">
 
                                 <div class="row">
 
@@ -251,7 +252,7 @@
                         <div class="row  pt-17px pb-4 mb-0 mb-sm-3 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
+                            <div class="col-12 col-lg-11 col-xl-11 col-xxl-10 position-relative z-99">
                                 <a href="http://" class="">
                                     <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
                                         class="img-fluid mb-2 mb-sm-4">
