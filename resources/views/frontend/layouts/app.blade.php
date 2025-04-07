@@ -23,14 +23,17 @@
 </head>
 
 <body>
-    <header>
-        @include('frontend.layouts.nav')
-    </header>
-    <main class="w-100">
-        @yield('content')
-    </main>
+    <div class="wrapper">
+        <header>
+            @include('frontend.layouts.nav')
+        </header>
 
-    @include('frontend.layouts.footer')
+        <main class="w-100">
+            @yield('content')
+        </main>
+
+        @include('frontend.layouts.footer')
+    </div>
 
     <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
