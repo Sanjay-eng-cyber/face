@@ -410,7 +410,7 @@
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                                         <div class="upload-section">
                                             <label for="userGuestImgInput">
-                                                <div class="pb-4 browsertext brsr-14pxtx">
+                                                <div class="pb-3 browsertext brsr-14pxtx">
                                                     Browse File
                                                 </div>
                                                 <div class="d-flex justify-content-center pb-3">
@@ -420,19 +420,25 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="fs-10 fw-600 newwcolor" v-if="guestImagesCount">
-                                                    @{{ guestImagesCount }} Images Selected</div>
+                                                <div class="fs-10 fw-600 newwcolor" style="min-height: 16px;">
+                                                    <span v-if="guestImagesCount">@{{ guestImagesCount }} Images Selected</span>
+                                                </div>
+
+                                                
+                                                {{-- <div class="fs-10 fw-600 newwcolor" v-if="guestImagesCount">
+                                                    @{{ guestImagesCount }} Images Selected
+                                                </div> --}}
 
                                                 <form>
                                                     <div class="dz-message d-flex flex-column align-items-center">
-                                                        <div class="mb-3 guest-uploader btn nw-guest-updrbtn">
+                                                        <div class="mb-2 mt-2 guest-uploader btn nw-guest-updrbtn">
                                                             as Guest Upload
                                                             <input type="file" multiple id="userGuestImgInput"
                                                                 @change="handleUserGuestImageFieldChange" hidden />
                                                         </div>
                                                         <div>
-                                                            <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, Max
-                                                                20 Files & Max 10 MB file each.
+                                                            <div class="fs-10 fw-600 newwcolor">
+                                                                PNG, JPG, JPEG formats allowed, max 10MB per file and up to 40 files.
                                                             </div>
                                                         </div>
                                                     </div>
