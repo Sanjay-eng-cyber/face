@@ -51,6 +51,7 @@ class UploadController extends Controller
                 )->post(config('app.python_api_url') . '/inputimg/');
 
             // dd($res);
+            Log::info('Python API Response : ' . $res->body());
             if ($res->successful()) {
                 $data = $res->json();
                 $status = $data['status'] ?? null;
