@@ -509,7 +509,7 @@
                                     <div class="d-flex align-items-center  justify-content-center">
                                         <div class="vr"></div>
                                     </div>
-                                    <div class="basic-event-one-main h-100">
+                                    <div class="basic-event-one-main h-100 d-flex align-items-center">
                                         <div class="basic-event-one-main-insider-full">
                                             <div>
                                                 <img src="{{ asset('storage/images/events/' . $event->cover_image) }}"
