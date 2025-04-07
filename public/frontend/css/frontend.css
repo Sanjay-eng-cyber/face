@@ -2051,6 +2051,33 @@ body {
     grid-template-columns: auto auto;
     justify-content: space-between;
 }
+.gallery-box-main {
+    position: relative;
+}
+
+.gallery-box-imgdwld {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 8px 23px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 26px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.gallery-box-main:hover .gallery-box-imgdwld {
+    opacity: 1;
+    visibility: visible;
+    bottom: 7px; /* little lift for nice effect */
+}
+
 
 @media screen and (max-width:1400px) {
     .eventanddatespit-bdt {
