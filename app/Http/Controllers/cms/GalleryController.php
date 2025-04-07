@@ -12,7 +12,7 @@ use App\Models\Event;
 
 class GalleryController extends Controller
 {
-  
+
     public function index(Request $request)
     {
         // Retrieve the event ID from the request
@@ -20,51 +20,53 @@ class GalleryController extends Controller
 
         // Retrieve the event based on the event ID
         $event = Event::find($eventId);
-       
+
 
         return view('backend.gallery.index', compact('event'));
     }
 
-  
+
     // public function create()
     // {
     //     return view('galleries.create');
     // }
 
-    
-    
+
+
     public function store(Request $request)
     {
-   // dd($request->all());
+        // dd($request->all());
         $request->validate([
-            'image_name.*' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048', 
+            'image_name.*' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         try {
             $responseDataArray = [];
-        
+
             foreach ($request->file('image_name') as $image) {
                 $mainImgFilename = $image->getClientOriginalName();
-                $response = Http::attach(
-                    'images',  
-                    file_get_contents($image->getRealPath()), 
-                    $mainImgFilename // File name
-                )->post(config('app.python_api_url') . '/inputimg/', [
-                    'user_id' => $request->user_id,
-                    'event_id' => $request->event_id,
-                ]);
-            
+                $response = Http::withHeaders([
+                    'X-API-TOKEN' => config('app.python_api_token'),
+                ])->attach(
+                        'images',
+                        file_get_contents($image->getRealPath()),
+                        $mainImgFilename // File name
+                    )->post(config('app.python_api_url') . '/inputimg/', [
+                            'user_id' => $request->user_id,
+                            'event_id' => $request->event_id,
+                        ]);
+
                 $responseData = $response->json();
-              //  dd($responseData);
+                //  dd($responseData);
                 $responseDataArray[] = $responseData;
             }
-            
-        
+
+
             return view('backend.img-upload-success', ['responseDataArray' => $responseDataArray]);
         } catch (\Exception $e) {
             return view('upload_error', ['error' => $e->getMessage()]);
         }
-        
+
 
 
     }

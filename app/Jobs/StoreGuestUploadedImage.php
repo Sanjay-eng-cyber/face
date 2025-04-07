@@ -51,12 +51,14 @@ class StoreGuestUploadedImage implements ShouldQueue
 
         $imageInstance->save($destinationPath . '/' . $filename, 90);
 
-        $res = Http::attach(
-            'image_name', // The name of the file field in the request
-            file_get_contents($destinationPath . $filename), // The file's content
-            $filename, // The file name
-            ['Content-Type' => 'image/jpeg']
-        )->post(config('app.python_api_url') . '/inputimg/');
+        $res = Http::withHeaders([
+            'X-API-TOKEN' => config('app.python_api_token'),
+        ])->attach(
+                'image_name', // The name of the file field in the request
+                file_get_contents($destinationPath . $filename), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
 
         if ($res->successful()) {
             // dd($res);

@@ -62,10 +62,12 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
                 return false;
             }
 
-            $res = Http::post(config('app.python_api_url') . '/api/capture-input-image/', [
-                'image_face_encodings' => $frontendEncodings,
-                'gallery_face_encodings' => $imageEncodings,
-            ]);
+            $res = Http::withHeaders([
+                'X-API-TOKEN' => config('app.python_api_token'),
+            ])->post(config('app.python_api_url') . '/api/capture-input-image/', [
+                        'image_face_encodings' => $frontendEncodings,
+                        'gallery_face_encodings' => $imageEncodings,
+                    ]);
             $data = $res->json();
             // dd($data);
             // Log::info('Api Resp : ', $data);
