@@ -100,6 +100,7 @@ class EventController extends Controller
                     ['Content-Type' => 'image/jpeg']
                 )->post(config('app.python_api_url') . '/inputimg/');
 
+            Log::info('Sending Token: ' . config('app.python_api_token'));
             Log::info('Python API Response : ' . $res->body());
             if ($res->successful()) {
                 // dd($res);
