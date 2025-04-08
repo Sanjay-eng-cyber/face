@@ -40,8 +40,8 @@
                     @csrf
                     <div class="row">
                         <div class="col-xl-6 col-12  mp-0 bottom-margin">
-                            <label for="formGroupExampleInput" class="">Name*</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name"
+                            <label for="formGroupExampleInput" class="">Event Name*</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Event Name"
                                 minlength="3" maxlength="250" required name="name" value="{{ old('name') }}">
                             @if ($errors->has('name'))
                                 <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
