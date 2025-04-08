@@ -157,7 +157,7 @@
                         <div class="row d-flex justify-content-center pt-35px position-relative">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-relative z-99">
+                            <div class="col-12 col-lg-11 col-xl-11 col-xxl-10 position-relative z-99">
                                 <div class="row">
 
 
@@ -178,10 +178,10 @@
                                                         </div>
                                                         @if ($event->start_date && $event->end_date)
                                                             @if ($event->start_date == $event->end_date)
-                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                <div class=" fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }}</div>
                                                             @else
-                                                                <div class="text-white fw-300 fs-14 bdt-date">
+                                                                <div class=" fw-300 fs-14 bdt-date">
                                                                     {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                                     {{ dd_format($event->end_date, 'd/m/Y') }}
                                                                 </div>
@@ -200,7 +200,7 @@
                                                             );
                                                         @endphp
                                                         <div
-                                                            class="text-white pt-2 pt-md-3 fs-14 bdt-date-longpara limit-para">
+                                                            class="text-white pt-2 fs-14 bdt-date-longpara limit-para">
                                                             <span class="short-text">
                                                                 {!! $shortDescription !!}
                                                             </span>
@@ -234,7 +234,7 @@
                             <div class="col-12">
                                 <div class="pin-container d-flex flex-column align-items-center">
                                     <div class="pin-title">Enter Your Pin Number</div>
-                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit">
+                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit" class="pin-num">
                                         <div class="d-flex justify-content-center basic-input-main">
                                             <input placeholder="0" v-for="(value, index) in pinValues"
                                                 :key="index" type="text" maxlength="1" class="pin-input"
@@ -253,7 +253,7 @@
                         <div class="row  pt-17px pb-4 mb-0 mb-sm-3 position-relative d-flex justify-content-center">
                             <img src="{{ asset('frontend/images/basic-event-one/smboxblur.svg') }}" alt=""
                                 srcset="" class="img-fluid d-block d-sm-none smboxblurbox ">
-                            <div class="col-12 col-lg-11 col-xl-10 position-relative z-99">
+                            <div class="col-12 col-lg-11 col-xl-11 col-xxl-10 position-relative z-99">
                                 <a href="http://" class="">
                                     <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"
                                         class="img-fluid mb-2 mb-sm-4">
@@ -313,26 +313,23 @@
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                                         <form method="post" class="login-form pt-5 pt-lg-0"
                                             @submit.prevent="handleStepTwoFormSubmit">
-                                            <div class="dblwhitecolor h4 mb-0 fw-600 pb-2 form-details">Details</div>
+                                            <div class="dblwhitecolor h4 mb-0 fw-600 pb-3 form-details">Details</div>
 
                                             <div class="pb-2 pb-sm-3">
-                                                <label for="name" class="fw-600 frtwhitcolor pb-2 name-form">Name</label>
                                                 <input type="text" name="name" minlength="8" maxlength="30" required
                                                     placeholder="Enter Your Name" v-model="name" required
                                                     class="form-control sin-input">
                                             </div>
 
                                             <div class="pb-2 pb-sm-3">
-                                                <label for="email" class="fw-600 frtwhitcolor pb-2 email-form">Email
-                                                    ID*</label>
+                                               
                                                 <input type="email" name="email" minlength="8" maxlength="40" required
                                                     placeholder="Enter Your Email ID" v-model="email"
                                                     class="form-control sin-input">
                                             </div>
 
                                             <div class="pb-3 pb-sm-3">
-                                                <label for="mobile_number"
-                                                    class="fw-600 frtwhitcolor pb-2 num-form">Number</label>
+                                               
                                                 <input type="text" id="mobile_number" name="mobile_number" minlength="10"
                                                     maxlength="10" placeholder="Enter Your Mobile Number" required
                                                     v-model="mobile_number" class="form-control sin-input">
