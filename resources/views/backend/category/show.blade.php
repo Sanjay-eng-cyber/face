@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow mt-3 mt-lg-4 col-xl-7 col-md-9">
+            <div class="info statbox widget box box-shadow mt-3 mt-lg-4 main-widthcc-show">
                
                     <div class="mp-0">
                         <div class="work-section">
@@ -48,7 +48,7 @@
                                                 <p class="label-title">{{ $category->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 mp-0">
+                                        <div class="col-sm-6 mp-0 pmsp">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Event Name</label><br>
@@ -103,7 +103,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="mp-0">
+                                                <div class="mp-0 custome-vis">
                                                     <div class="form-group">
                                                         <label for="degree3" class="cust-title"
                                                             class="label-title">Visibility</label><br>

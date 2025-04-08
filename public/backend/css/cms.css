@@ -1008,6 +1008,10 @@ padding: 0px !important;
         gap: 1rem;
     }
 }
+.main-widthcc-show{
+    width: 610px;
+
+}
 .main-widthcc{
     width: 610px;
 }
@@ -1090,6 +1094,10 @@ padding: 0px !important;
     .main-widthcc{
         width: 100%;
     }
+    .main-widthcc-show{
+        width: 100%;
+    }
+  
     .main-dv-grid-outer {
         display: grid;
         grid-template-columns: 100%;

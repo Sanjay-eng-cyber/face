@@ -182,13 +182,26 @@ display: none;
 
 /* Default Layout (Large Screens) */
 .grid-container.three-cols {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 49% 23% 24%;
 }
 
 .grid-container.two-cols {
     grid-template-columns: 1fr 1fr;
 }
 
+.pmsp{
+    padding-left:5px;
+}
+
+.three-cols .custome-vis{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.two-cols .custome-vis{
+    display: flex;
+    justify-content: start;
+}
 
 
 @media screen and (max-width:1200px){
@@ -210,6 +223,10 @@ display: none;
 }
 }
 @media screen and (max-width:576px){
+    .three-cols .custome-vis {
+        display: flex;
+        justify-content:start;
+    }
     .navbar {
         min-height: 55px;
     }
