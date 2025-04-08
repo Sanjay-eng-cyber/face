@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-7 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow main-widthcc mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12 mp-0">
                         <form class="mb-1" method="POST" action="{{ route('backend.category.store') }}"
@@ -65,7 +65,7 @@
                                 <div class="col-12 mp-0 ccm-grid p-0">
                                     <div class="mb-3 mp-0">
                                         <label for="formGroupExampleInput" class="">Cover Image</label>
-                                        <input type="file" class="form-control p-8px" id="formGroupExampleInput"
+                                        <input type="file" class="form-control p-8px cvimgcsw" id="formGroupExampleInput"
                                             name="cover_image" value="{{ old('cover_image') }}">
                                         @if ($errors->has('cover_image'))
                                             <div class="text-danger" role="alert">{{ $errors->first('cover_image') }}

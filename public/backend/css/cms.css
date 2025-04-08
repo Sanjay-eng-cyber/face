@@ -1008,6 +1008,12 @@ padding: 0px !important;
         gap: 1rem;
     }
 }
+.main-widthcc{
+    width: 610px;
+}
+.cvimgcsw{
+    width: 245px;
+}
 @media screen and (max-width:1400px) {
     .unique-grid {
         display: grid;
@@ -1081,6 +1087,9 @@ padding: 0px !important;
     }
 }
 @media screen and (max-width:768px) {
+    .main-widthcc{
+        width: 100%;
+    }
     .main-dv-grid-outer {
         display: grid;
         grid-template-columns: 100%;
