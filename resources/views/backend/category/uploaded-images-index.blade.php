@@ -3,7 +3,7 @@
 @section('cdn')
     <style>
         .page-link {
-            min-height: 53px;
+            min-height: 48px;
             width: 47px;
             display: flex;
             justify-content: center;

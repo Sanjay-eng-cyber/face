@@ -165,7 +165,6 @@ display: none;
 .page-item.active .page-link {
     background-color: #880037;
     color: #fff;
-    border-radius: 10px;
 }
 .white-space{
     white-space: nowrap;
