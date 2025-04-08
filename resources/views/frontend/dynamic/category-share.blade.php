@@ -271,10 +271,10 @@
                                                 </div>
                                                 @if ($event->start_date && $event->end_date)
                                                     @if ($event->start_date == $event->end_date)
-                                                        <div class="text-white fw-300 fs-14 bdt-date">
+                                                        <div class="fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }}</div>
                                                     @else
-                                                        <div class="text-white fw-300 fs-14 bdt-date">
+                                                        <div class="fw-300 fs-14 bdt-date">
                                                             {{ dd_format($event->start_date, 'd/m/Y') }} to
                                                             {{ dd_format($event->end_date, 'd/m/Y') }}
                                                         </div>
@@ -315,20 +315,20 @@
                                             @submit.prevent="handleStepTwoFormSubmit">
                                             <div class="dblwhitecolor h4 mb-0 fw-600 pb-3 form-details">Details</div>
 
-                                            <div class="pb-2 pb-sm-3">
+                                            <div class="pb-2 pb-sm-3 mb-1">
                                                 <input type="text" name="name" minlength="8" maxlength="30" required
                                                     placeholder="Enter Your Name" v-model="name" required
                                                     class="form-control sin-input">
                                             </div>
 
-                                            <div class="pb-2 pb-sm-3">
+                                            <div class="pb-2 pb-sm-3 mb-1">
                                                
                                                 <input type="email" name="email" minlength="8" maxlength="40" required
                                                     placeholder="Enter Your Email ID" v-model="email"
                                                     class="form-control sin-input">
                                             </div>
 
-                                            <div class="pb-3 pb-sm-3">
+                                            <div class="pb-3 pb-sm-3 mb-1">
                                                
                                                 <input type="text" id="mobile_number" name="mobile_number" minlength="10"
                                                     maxlength="10" placeholder="Enter Your Mobile Number" required
