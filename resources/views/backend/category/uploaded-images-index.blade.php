@@ -96,7 +96,7 @@
                         <div class="row row-cols-1 row-cols-sm-2  row-cols-lg-2 row-cols-xl-3 mt-4">
                             @forelse($images as $image)
 
-                                <div class="col mb-4">
+                                <div class="col mb-1 mb-md-2 mb-lg-3 ">
                                     <div class="up-main-box">
                                         <img src="{{ asset('backend/assets/img/ct/imgclone.svg') }}" alt=""
                                             class="img-fluid h-100">
