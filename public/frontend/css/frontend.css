@@ -1398,7 +1398,9 @@ body {
   object-fit: cover;
 }
 .dba-img{
-    width: 474px
+    width: 474px;
+    position: relative;
+    top: 46px;
 }
 .nwunionimg{
    position: absolute;
@@ -2077,6 +2079,7 @@ body {
     visibility: visible;
     bottom: 7px; /* little lift for nice effect */
 }
+
 
 
 @media screen and (max-width:1400px) {
@@ -4336,7 +4339,7 @@ position: relative;
   }
 
   .footer-class{
-    margin-bottom: 58px
+    margin-bottom: 14px
   }
 
   .footer-grid{
