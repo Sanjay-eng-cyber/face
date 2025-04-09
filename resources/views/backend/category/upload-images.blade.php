@@ -109,7 +109,7 @@
 
         .dropzone .dz-preview .dz-details {
             /* height: 50px;
-                min-height: 50px; */
+                    min-height: 50px; */
             padding: 0;
             padding-left: 25px;
             text-align: left;
@@ -124,11 +124,11 @@
         }
 
         /* .dropzone .dz-preview {
-                width: 100%;
-                height: 55px;
-                min-height: 50px;
-                margin: 0;
-            } */
+                    width: 100%;
+                    height: 55px;
+                    min-height: 50px;
+                    margin: 0;
+                } */
 
 
 
@@ -256,9 +256,10 @@
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
             <a href="{{ route('backend.category.index') }}" class="top-arrowbtn">
-                <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset="" class="img-fluid logo">
+                <img src="{{ asset('backend/assets/img/prearrow.svg') }}" alt="" srcset=""
+                    class="img-fluid logo">
             </a>
-            
+
 
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
@@ -269,12 +270,14 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
+                        <div
+                            class="col-xl-4 col-md-6 mb-0 mb-sm-2 d-flex justify-content-start justify-content-sm-end align-it mt-1  mp-0">
 
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
-                                    <li class="breadcrumb-item"><a href="{{ route('backend.category.index') }}">Categories</a></li>
+                                    <li class="breadcrumb-item"><a
+                                            href="{{ route('backend.category.index') }}">Categories</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);">Upload Images</a>
                                     </li>
@@ -365,8 +368,8 @@
 
                                                                 <div class="mb-3 guest-uploader">Browse Photos</div>
 
-                                                                <div class="fs-10 fw-600 newwcolor">JPG,JPEG, PNG,WEBP,AVIF
-                                                                    formats, up to 1 MB.</div>
+                                                                <div class="fs-10 fw-600 newwcolor">png, jpg, jpeg formats
+                                                                    allowed, max 10MB/file and up to 40 files.</div>
 
                                                             </div>
 
@@ -687,8 +690,8 @@
 
     <style>
         /* .dropzone .dz-preview.dz-error:hover .dz-error-message {
-                                        width: 100% !important;
-                                    } */
+                                            width: 100% !important;
+                                        } */
     </style>
 
 @endsection
