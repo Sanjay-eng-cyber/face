@@ -21,7 +21,8 @@
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-divider bdpd">
-                                    <li class="breadcrumb-item"><a href="{{ route('backend.category.index') }}">Categories</a></li>
+                                    <li class="breadcrumb-item"><a
+                                            href="{{ route('backend.category.index') }}">Categories</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="javascript:void(0);"> Edit Category</a>
                                     </li>
@@ -32,12 +33,11 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow col-xl-7 col-md-10 mt-3 mt-lg-4">
+            <div class="statbox widget box box-shadow main-widthcc mt-3 mt-lg-4">
                 <div class="row m-0">
                     <div class="col-md-12 mp-0 p-0">
-                        <form class="" method="POST"
-                            action="{{ route('backend.category.update', $category->id) }}" enctype="multipart/form-data"
-                            autocomplete="off">
+                        <form class="" method="POST" action="{{ route('backend.category.update', $category->id) }}"
+                            enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="row">
 
@@ -118,14 +118,16 @@
                                         <div class="mp-0">
                                             <label for="descriptions">Visibility* </label><br>
                                             @if (old('visibility'))
-                                                <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                                <input type="radio" id="visibilityYes" name="visibility"
+                                                    value="1"
                                                     @if (old('visibility') == '1') {{ 'checked' }} @endif required>
                                                 <label for="visibilityYes">Yes</label>
                                                 <input type="radio" id="visibilityNo" name="visibility" value="0"
                                                     @if (old('visibility') == '0') {{ 'checked' }} @endif required>
                                                 <label for="visibilityNo">No</label>
                                             @else
-                                                <input type="radio" id="visibilityYes" name="visibility" value="1"
+                                                <input type="radio" id="visibilityYes" name="visibility"
+                                                    value="1"
                                                     @if ($category->visibility == '1') {{ 'checked' }} @endif required>
                                                 <label for="visibilityYes">Yes</label>
                                                 <input type="radio" id="visibilityNo" name="visibility" value="0"
@@ -134,7 +136,8 @@
                                             @endif
 
                                             @if ($errors->has('visibility'))
-                                                <div class="text-danger" role="alert">{{ $errors->first('visibility') }}
+                                                <div class="text-danger" role="alert">
+                                                    {{ $errors->first('visibility') }}
                                                 </div>
                                             @endif
                                         </div>
