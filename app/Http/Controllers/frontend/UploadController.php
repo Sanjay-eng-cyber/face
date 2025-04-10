@@ -42,7 +42,6 @@ class UploadController extends Controller
             $image->save($destinationPath . '/' . $filename, 90);
 
             $res = Http::withHeaders([
-                'Referer' => config('app.python_api_url'),
                 'X-API-TOKEN' => config('app.python_api_token'),
             ])->attach(
                     'image_name', // The name of the file field in the request
