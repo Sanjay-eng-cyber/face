@@ -27,29 +27,32 @@
                     </div>
 
                     <div class="cutome-topgrid m-0">
-                      
+
                         @cmsUserRole('admin')
                             <div class="p-0 odr-2">
-                                <a href="{{ route('backend.category.create') }}" name="txt" class="btn btn-primary  maz mto mwh  add-cggbtn">
+                                <a href="{{ route('backend.category.create') }}" name="txt"
+                                    class="btn btn-primary  maz mto mwh  add-cggbtn">
                                     Add Category
                                 </a>
                             </div>
                         @endcmsUserRole
 
-                            <form class="form-inline  h-100 form-csw" action="{{ route('backend.category.index') }}"
-                                method="GET">
-                                <input class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi csipb"
-                                    type="text" placeholder="Enter Your Category Name" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="3" maxlength="40">
-                                <input type="submit" value="Search"
-                                    class="btn searchbtn  cstml coem  search_btn  search_btn_size maz" style="white-space:nowrap">
-                            </form>
-                            <div class="mt-0 mt-sm-2">
-                                @if ($errors->has('q'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                    </div>
-                                @endif
-                            </div>
+                        <form class="form-inline  h-100 form-csw" action="{{ route('backend.category.index') }}"
+                            method="GET">
+                            <input
+                                class="form-control form-control-sm  col-sm-7 col-md-8 col-lg-6 col-xxl-4  maz cswoffi csipb"
+                                type="text" placeholder="Enter Your Category Name" name="q"
+                                value="{{ request('q') ?? '' }}" minlength="3" maxlength="40">
+                            <input type="submit" value="Search"
+                                class="btn searchbtn  cstml coem  search_btn  search_btn_size maz"
+                                style="white-space:nowrap">
+                        </form>
+                        <div class="mt-0 mt-sm-2">
+                            @if ($errors->has('q'))
+                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                </div>
+                            @endif
+                        </div>
 
                     </div>
                 </div>
@@ -64,6 +67,9 @@
                                     <tr>
                                         <th style="white-space: nowrap">Sr no.</th>
                                         <th style="white-space: nowrap">Category Name</th>
+                                        @cmsUserRole('admin')
+                                            <th style="white-space: nowrap">Upload Images</th>
+                                        @endcmsUserRole
                                         <th style="white-space: nowrap">Event Name</th>
                                         {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
@@ -74,15 +80,22 @@
                                         <tr>
                                             <td class="text-center">{{ tableRowSrNo($loop->index, $categories) }}</td>
                                             <td>{{ $category->name }}</td>
+                                            @cmsUserRole('admin')
+                                                <td> <a href="{{ route('backend.category.upload-image-index', $category->id) }}"
+                                                        name="txt" class="btn btn-primary  maz mto mwh  add-cggbtn">
+                                                        Upload Images
+                                                    </a></td>
+                                            @endcmsUserRole
                                             <td>{{ $category->event->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle text-white-2" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        <svg width="46" height="1" viewBox="0 0 46 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8"/>
-                                                            </svg>
+                                                        <svg width="46" height="1" viewBox="0 0 46 1" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 0.5H45.5" stroke="white" stroke-dasharray="8 8" />
+                                                        </svg>
 
                                                     </a>
 
@@ -95,9 +108,9 @@
                                                         @cmsUserRole('admin')
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
-                                                            <a class="dropdown-item"
+                                                            {{-- <a class="dropdown-item"
                                                                 href="{{ route('backend.category.upload-image-index', $category->id) }}">Upload
-                                                                Images</a>
+                                                                Images</a> --}}
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.category.delete', $category->id) }}"
                                                                 onclick="return confirm('Are you sure you want delete this Category?');">Delete</a>
