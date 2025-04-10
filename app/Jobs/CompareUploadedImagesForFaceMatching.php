@@ -77,7 +77,7 @@ class CompareUploadedImagesForFaceMatching implements ShouldQueue
                     Log::info('CompareUploadedImagesForFaceMatching Status Err : ' . $data['error'] ?? '');
                     return false;
                 }
-                Log::info('Api Res : ', $data);
+                // Log::info('Api Res : ', $data);
                 if (isset($data['matched']) && in_array(true, $data['matched'])) {
                     $matched = new MatchedImage();
                     $matched->frontend_user_id = $frontend_user->id;
