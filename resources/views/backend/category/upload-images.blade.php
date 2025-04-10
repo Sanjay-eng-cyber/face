@@ -109,7 +109,7 @@
 
         .dropzone .dz-preview .dz-details {
             /* height: 50px;
-                    min-height: 50px; */
+                                                        min-height: 50px; */
             padding: 0;
             padding-left: 25px;
             text-align: left;
@@ -124,11 +124,11 @@
         }
 
         /* .dropzone .dz-preview {
-                    width: 100%;
-                    height: 55px;
-                    min-height: 50px;
-                    margin: 0;
-                } */
+                                                        width: 100%;
+                                                        height: 55px;
+                                                        min-height: 50px;
+                                                        margin: 0;
+                                                    } */
 
 
 
@@ -509,11 +509,12 @@
                                         </defs>
                                     </svg>
 
-                                    <span  style="color: #868686;font-size:12px;">
+                                    <span id="upload-status-text" style="color: #868686;font-size:12px;">
                                        Uploading...
                                     </span>
 
                                 </div>
+</div>
 
 
                             </div>
@@ -604,6 +605,19 @@
                 myDropzone.on("error", function(file, errorMessage) {
                     console.log("File upload error:", errorMessage);
                     file.previewElement.classList.add("dz-error");
+
+                    var progressElement = file.previewElement.querySelector("[data-dz-uploadprogress]");
+                    if (progressElement) {
+                        progressElement.style.width = "0%";
+                        progressElement.textContent = "0%";
+                    }
+
+                    // Update status text
+                    const statusText = document.getElementById("upload-status-text");
+                    if (statusText) {
+                        statusText.textContent = "Not uploading";
+                    }
+
                     var message = (typeof errorMessage === 'object' && errorMessage.message) ?
                         errorMessage.message : errorMessage;
                     var errorDisplay = file.previewElement.querySelector("[data-dz-errormessage]");
@@ -690,8 +704,8 @@
 
     <style>
         /* .dropzone .dz-preview.dz-error:hover .dz-error-message {
-                                            width: 100% !important;
-                                        } */
+                                                                                width: 100% !important;
+                                                                            } */
     </style>
 
 @endsection
