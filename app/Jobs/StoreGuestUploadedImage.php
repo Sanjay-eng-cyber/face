@@ -80,7 +80,7 @@ class StoreGuestUploadedImage implements ShouldQueue
             $guestUpload->face_locations = $face_locations;
 
             if ($guestUpload->save()) {
-                Log::info("Guest Image Stored Successfully");
+                // Log::info("Guest Image Stored Successfully");
             } else {
                 Log::error("Guest Image Not Stored");
             }
