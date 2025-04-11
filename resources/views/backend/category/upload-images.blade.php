@@ -316,7 +316,7 @@
                                     </div>
                                     <div class="row d-flex justify-content-center">
 
-                                        <div class="col-12 col-lg-10 col-xl-6 pmv">
+                                        <div class="col-12 pmv">
 
                                             <section>
                                                 <div id="dropzone">
