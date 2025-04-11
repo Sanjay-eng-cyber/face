@@ -573,17 +573,21 @@
                                     </div>
                                 </div>
                             </div>
-
-
+                        
 
                             <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                                 <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                     :data-index="index">
-                                    <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
-                                        data-fancybox="gallery" :data-caption="img.image_name">
-                                        <img :src="'/storage/' + img.image_url" alt=""
-                                            class="gallery-img img-fluid rounded-3">
-                                    </a>
+                                    <div class="position-relative gallery-box-main">
+                                        <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
+                                            data-fancybox="gallery" :data-caption="img.image_name">
+                                            <img :src="'/storage/' + img.image_url" alt=""
+                                                class="gallery-img img-fluid rounded-3">
+                                        </a>
+                                        <a href="" class="text-decoration-none gallery-box-imgdwld" >
+                                            Download
+                                        </a>
+                                    </div>
 
                                 </div>
                             </div>
