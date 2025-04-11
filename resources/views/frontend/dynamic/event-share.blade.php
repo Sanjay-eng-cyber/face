@@ -473,7 +473,7 @@
 
 
 
-                        <div class="row  pt-35px">
+                        <div class="row  pt-35px justify-content-center">
 
                             <a href="http://" class="">
                                 <img src="{{ asset('frontend/images/gallery/arrow.svg') }}" alt="Logo"

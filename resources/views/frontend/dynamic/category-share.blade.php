@@ -454,7 +454,7 @@
 
 
 
-                        <div class="row  pt-35px">
+                        <div class="row  pt-35px justify-content-center">
 
                             <div class="col-12">
                                 <div class="grid-outer">
