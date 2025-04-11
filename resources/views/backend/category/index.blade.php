@@ -68,7 +68,7 @@
                                         <th style="white-space: nowrap">Sr no.</th>
                                         <th style="white-space: nowrap">Category Name</th>
                                         @cmsUserRole('admin')
-                                            <th style="white-space: nowrap">Upload Images</th>
+                                            <th style="white-space: nowrap"></th>
                                         @endcmsUserRole
                                         <th style="white-space: nowrap">Event Name</th>
                                         {{-- <th>Image</th> --}}
@@ -82,7 +82,7 @@
                                             <td>{{ $category->name }}</td>
                                             @cmsUserRole('admin')
                                                 <td> <a href="{{ route('backend.category.upload-image-index', $category->id) }}"
-                                                        name="txt" class="btn btn-primary  maz mto mwh  add-cggbtn">
+                                                        name="txt" class="btn btn-primary  maz mto mwh  add-cggbtn " style="white-space: nowrap">
                                                         Upload Images
                                                     </a></td>
                                             @endcmsUserRole
