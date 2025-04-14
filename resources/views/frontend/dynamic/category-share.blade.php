@@ -591,7 +591,8 @@
                                             <img :src="'/storage/' + img.image_url" alt=""
                                                 class="gallery-img img-fluid rounded-3">
                                         </a>
-                                        <a href="" class="text-decoration-none gallery-box-imgdwld">
+                                        <a :href="'/storage/' + img.image_url" :download="img.image_name"
+                                            class="text-decoration-none gallery-box-imgdwld">
                                             Download
                                         </a>
                                     </div>

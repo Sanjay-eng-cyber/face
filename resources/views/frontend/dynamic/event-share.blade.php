@@ -119,17 +119,16 @@
         }
 
 
-        
-    .wrapper {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
 
-    main {
-        flex: 1;
-    }
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        main {
+            flex: 1;
+        }
     </style>
 @endsection
 @section('content')
@@ -150,13 +149,13 @@
         <div class="position-relative">
             <div class="pobdh"></div>
             <!-- <img src="{{ asset('frontend/images/index/index-new/plainplate2.svg') }}"
-                                                                                                                    alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
+                                                                                                                        alt="Plain plate design element for the hero section" class="img-fluid plainplate-img2"> -->
             <!-- <img src="{{ asset('frontend/images/index/index-new/smalllarrow.svg') }}"
-                                                                                                                    alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
-                                                                                                                <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
-                                                                                                                    class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
-                                                                                                                <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
-                                                                                                                    class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
+                                                                                                                        alt="Small left arrow icon for navigation" class="img-fluid smalllarrow-img2">
+                                                                                                                    <img src="{{ asset('frontend/images/gallery/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                        class="img-fluid bigarrow-img-bdptnew d-none d-sm-block" style="z-index: -99">
+                                                                                                                    <img src="{{ asset('frontend/images/basic-event-one/bigarrow.svg') }}" alt="" srcset=""
+                                                                                                                        class="img-fluid bigarrow-img-bdptnew d-block d-sm-none bigarrowsm" style="z-index: -99"> -->
 
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
@@ -434,10 +433,11 @@
                                                 </div>
 
                                                 <div class="fs-10 fw-600 newwcolor" style="min-height: 16px;">
-                                                    <span v-if="guestImagesCount">@{{ guestImagesCount }} Images Selected</span>
+                                                    <span v-if="guestImagesCount">@{{ guestImagesCount }} Images
+                                                        Selected</span>
                                                 </div>
 
-                                                
+
                                                 {{-- <div class="fs-10 fw-600 newwcolor" v-if="guestImagesCount">
                                                     @{{ guestImagesCount }} Images Selected
                                                 </div> --}}
@@ -451,7 +451,8 @@
                                                         </div>
                                                         <div>
                                                             <div class="fs-10 fw-600 newwcolor">
-                                                                PNG, JPG, JPEG formats allowed, max 10MB per file and up to 40 files.
+                                                                PNG, JPG, JPEG formats allowed, max 10MB per file and up to
+                                                                40 files.
                                                             </div>
                                                         </div>
                                                     </div>
@@ -560,10 +561,10 @@
                                                 @endif
 
                                             </div>
-                                        
-                                       
-                                            
-                                        
+
+
+
+
                                         </div>
                                     </div>
 
@@ -578,19 +579,26 @@
                                         <a href="javascript:void(0);" class="text-decoration-none text-white"
                                             onclick="rotateAndReload();" @click="refreshMatchedPhotos">
                                             Refresh
-                                            <svg  id="refreshIcon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg id="refreshIcon" width="21" height="21" viewBox="0 0 21 21"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <mask id="path-1-inside-1_2835_38" fill="white">
-                                                <path d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z"/>
+                                                    <path
+                                                        d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z" />
                                                 </mask>
-                                                <path d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z" stroke="url(#paint0_linear_2835_38)" stroke-width="6.66667" mask="url(#path-1-inside-1_2835_38)"/>
+                                                <path
+                                                    d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z"
+                                                    stroke="url(#paint0_linear_2835_38)" stroke-width="6.66667"
+                                                    mask="url(#path-1-inside-1_2835_38)" />
                                                 <defs>
-                                                <linearGradient id="paint0_linear_2835_38" x1="19.5186" y1="8.36028" x2="19.1052" y2="19.0904" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0"/>
-                                                </linearGradient>
+                                                    <linearGradient id="paint0_linear_2835_38" x1="19.5186"
+                                                        y1="8.36028" x2="19.1052" y2="19.0904"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="white" />
+                                                        <stop offset="1" stop-color="#666666" stop-opacity="0" />
+                                                    </linearGradient>
                                                 </defs>
-                                                </svg>
-                                                
+                                            </svg>
+
                                         </a>
 
                                     </div>
@@ -601,15 +609,17 @@
                                 <div class="col pb-4 " v-for="(img, index) in matchedImages" :key="index"
                                     :data-index="index">
                                     <div class="position-relative gallery-box-main">
-                                        <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
-                                            data-fancybox="gallery" :data-caption="img.image_name" >
+                                        <a :src="'/storage/' + img.image_url"
+                                            :data-download-src="'/storage/' + img.image_url" data-fancybox="gallery"
+                                            :data-caption="img.image_name">
                                             <img :src="'/storage/' + img.image_url" alt=""
                                                 class="gallery-img img-fluid rounded-3">
-                                                
+
                                         </a>
 
-                                        <a href="" class="text-decoration-none gallery-box-imgdwld" >
-                                                    Download
+                                        <a :href="'/storage/' + img.image_url" :download="img.image_name"
+                                            class="text-decoration-none gallery-box-imgdwld">
+                                            Download
                                         </a>
                                     </div>
 
