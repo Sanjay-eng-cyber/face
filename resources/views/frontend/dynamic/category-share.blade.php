@@ -4,7 +4,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <style>
-             .halfarrowt-img {
+        .halfarrowt-img {
             display: none;
         }
 
@@ -117,19 +117,16 @@
             }
         }
 
-        
-    .wrapper {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
 
-    main {
-        flex: 1;
-    }
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-
-    
+        main {
+            flex: 1;
+        }
     </style>
 @endsection
 @section('content')
@@ -149,7 +146,7 @@
 
         <div class="position-relative">
             <div class="pobdh"></div>
-        
+
             <div class="main-div">
                 <div class="container overflow-hide stepmaincontainer">
 
@@ -199,8 +196,7 @@
                                                                 '...',
                                                             );
                                                         @endphp
-                                                        <div
-                                                            class="text-white pt-2 fs-14 bdt-date-longpara limit-para">
+                                                        <div class="text-white pt-2 fs-14 bdt-date-longpara limit-para">
                                                             <span class="short-text">
                                                                 {!! $shortDescription !!}
                                                             </span>
@@ -234,7 +230,8 @@
                             <div class="col-12">
                                 <div class="pin-container d-flex flex-column align-items-center">
                                     <div class="pin-title">Enter Your Pin Number</div>
-                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit" class="pin-num">
+                                    <form action="" method="post" @submit.prevent="handleStepOneFormSubmit"
+                                        class="pin-num">
                                         <div class="d-flex justify-content-center basic-input-main">
                                             <input placeholder="0" v-for="(value, index) in pinValues"
                                                 :key="index" type="text" maxlength="1" class="pin-input"
@@ -322,17 +319,17 @@
                                             </div>
 
                                             <div class="pb-2 pb-sm-3 mb-1">
-                                               
-                                                <input type="email" name="email" minlength="8" maxlength="40" required
-                                                    placeholder="Enter Your Email ID" v-model="email"
+
+                                                <input type="email" name="email" minlength="8" maxlength="40"
+                                                    required placeholder="Enter Your Email ID" v-model="email"
                                                     class="form-control sin-input">
                                             </div>
 
                                             <div class="pb-3 pb-sm-3 mb-1">
-                                               
-                                                <input type="text" id="mobile_number" name="mobile_number" minlength="10"
-                                                    maxlength="10" placeholder="Enter Your Mobile Number" required
-                                                    v-model="mobile_number" class="form-control sin-input">
+
+                                                <input type="text" id="mobile_number" name="mobile_number"
+                                                    minlength="10" maxlength="10" placeholder="Enter Your Mobile Number"
+                                                    required v-model="mobile_number" class="form-control sin-input">
                                             </div>
 
 
@@ -352,10 +349,10 @@
                                                 <img id="captured-image" alt="Captured Image"
                                                     class="faceimg-img w-100 h-100 object-fit-cover brd-50"
                                                     :src="userImageData" v-if="userImageData" />
-                                                <img src="{{ asset('frontend/images/gallery/faceimg.png') }}" alt=""
-                                                    class="faceimg-img" v-else>
+                                                <img src="{{ asset('frontend/images/gallery/faceimg.png') }}"
+                                                    alt="" class="faceimg-img" v-else>
                                             </div>
-    
+
                                             <div class="d-flex flex-column align-items-center gap-2">
                                                 <button class="btn scan-facebtn" @click="openCameraModal">
                                                     Scan Your Face
@@ -400,7 +397,7 @@
                                                     <button class="btn capture-btn" @click="takeSnapshot">Capture</button>
                                                     <div class="btn cancel-btn  close" @click="closeCameraModal">
                                                         Cancel
-        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -409,7 +406,7 @@
                                     </div>
 
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        
+
                                         <div class="upload-section">
                                             {{-- <label for="userGuestImgInput"> --}}
                                             <div class="pb-4 browsertext brsr-14pxtx">
@@ -421,7 +418,7 @@
                                                         alt="" srcset="" class="img-fluid">
                                                 </div>
                                             </div>
-    
+
                                             <form>
                                                 <div class="dz-message">
                                                     <div class="mb-3 guest-uploader">
@@ -430,22 +427,23 @@
                                                             @change="handleUserGuestImageFieldChange" hidden>
                                                     </div>
                                                     <div>
-                                                        <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to 50
+                                                        <div class="fs-10 fw-600 newwcolor">JPG, PNG, JPEG formats, up to
+                                                            50
                                                             MB.
                                                         </div>
                                                     </div>
                                                 </div>
                                             </form>
                                             {{-- </label> --}}
-    
+
                                         </div>
-                                        
+
                                     </div>
 
                                 </div>
                             </div>
 
-                           
+
                         </div>
                     </div>
 
@@ -553,38 +551,47 @@
                                 <div class="d-flex align-items-center  justify-content-between">
                                     <div class="fw-600 h4 mb-0 text-white yourmatchtext">Your Matched Photos </div>
                                     <div>
-                                        <a href="javascript:void(0);" class="text-decoration-none text-white">
+                                        <a href="javascript:void(0);" class="text-decoration-none text-white"
+                                            onclick="rotateAndReload();" @click="refreshMatchedPhotos">
                                             Refresh
-                                            <svg  id="refreshIcon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg id="refreshIcon" width="21" height="21" viewBox="0 0 21 21"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <mask id="path-1-inside-1_2835_38" fill="white">
-                                                <path d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z"/>
+                                                    <path
+                                                        d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z" />
                                                 </mask>
-                                                <path d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z" stroke="url(#paint0_linear_2835_38)" stroke-width="6.66667" mask="url(#path-1-inside-1_2835_38)"/>
+                                                <path
+                                                    d="M19.2731 9.7963C19.8252 9.78081 20.2653 9.31945 20.1948 8.77169C19.9677 7.00841 19.2736 5.33098 18.1761 3.91708C16.8735 2.23891 15.0703 1.01918 13.0278 0.434712C10.9854 -0.149756 8.8099 -0.0685912 6.8167 0.66644C4.8235 1.40147 3.11617 2.75217 1.94221 4.52274C0.768243 6.29332 0.188651 8.39175 0.287448 10.5139C0.386244 12.636 1.1583 14.6715 2.49169 16.3253C3.82508 17.9792 5.65051 19.1654 7.70339 19.7121C9.43298 20.1726 11.2483 20.1591 12.9609 19.6818C13.4929 19.5336 13.7465 18.9486 13.5459 18.434V18.434C13.3453 17.9195 12.7663 17.6716 12.2307 17.8065C10.9179 18.1372 9.5368 18.1306 8.21803 17.7794C6.57574 17.3421 5.11539 16.3931 4.04867 15.07C2.98196 13.747 2.36432 12.1185 2.28528 10.4209C2.20625 8.72317 2.66992 7.04442 3.60909 5.62796C4.54826 4.2115 5.91413 3.13094 7.50869 2.54291C9.10325 1.95489 10.8436 1.88996 12.4776 2.35753C14.1115 2.82511 15.5541 3.80089 16.5962 5.14343C17.433 6.22149 17.9767 7.49106 18.1831 8.82907C18.2673 9.3749 18.721 9.8118 19.2731 9.7963V9.7963Z"
+                                                    stroke="url(#paint0_linear_2835_38)" stroke-width="6.66667"
+                                                    mask="url(#path-1-inside-1_2835_38)" />
                                                 <defs>
-                                                <linearGradient id="paint0_linear_2835_38" x1="19.5186" y1="8.36028" x2="19.1052" y2="19.0904" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0"/>
-                                                </linearGradient>
+                                                    <linearGradient id="paint0_linear_2835_38" x1="19.5186"
+                                                        y1="8.36028" x2="19.1052" y2="19.0904"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="white" />
+                                                        <stop offset="1" stop-color="#666666" stop-opacity="0" />
+                                                    </linearGradient>
                                                 </defs>
                                             </svg>
-                                                
+
                                         </a>
 
                                     </div>
                                 </div>
                             </div>
-                        
+
 
                             <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4" id="gallery-mainscn">
                                 <div class="col pb-4" v-for="(img, index) in matchedImages" :key="index"
                                     :data-index="index">
                                     <div class="position-relative gallery-box-main">
-                                        <a :src="'/storage/' + img.image_url" :data-download-src="'/storage/' + img.image_url"
-                                            data-fancybox="gallery" :data-caption="img.image_name">
+                                        <a :src="'/storage/' + img.image_url"
+                                            :data-download-src="'/storage/' + img.image_url" data-fancybox="gallery"
+                                            :data-caption="img.image_name">
                                             <img :src="'/storage/' + img.image_url" alt=""
                                                 class="gallery-img img-fluid rounded-3">
                                         </a>
-                                        <a href="" class="text-decoration-none gallery-box-imgdwld" >
+                                        <a href="" class="text-decoration-none gallery-box-imgdwld">
                                             Download
                                         </a>
                                     </div>
@@ -881,7 +888,49 @@
                         }
                         this.fetchMatchedImages();
                     },
-                    
+                    refreshMatchedPhotos() {
+                        console.log("refreshMatchedPhotos()");
+                        // return true;
+
+                        axios.post("{{ route('frontend.category.sync-matched-images') }}", {
+                                eventSlug: '{{ $event->slug }}',
+                                user_id: this.user_id,
+                            })
+                            .then((res) => {
+                                console.log(res);
+                                console.log('refreshMatchedPhotos res : ', res);
+
+                                // console.log("status",res.data.status)
+                                if (res.data.status) {
+                                    Snackbar.show({
+                                        text: 'Images Syncing Started',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#1abc9c'
+                                    });
+                                    // this.imagesPageCount = 1;
+                                    // this.matchedImages = [];
+                                    this.loadMoreMatchedPhotos();
+                                } else {
+                                    Snackbar.show({
+                                        text: res.data.message ?? 'Something Went Wrong',
+                                        pos: 'top-right',
+                                        actionTextColor: '#fff',
+                                        backgroundColor: '#e7515a'
+                                    });
+                                }
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                                Snackbar.show({
+                                    text: "Something Went Wrong",
+                                    pos: 'top-right',
+                                    actionTextColor: '#fff',
+                                    backgroundColor: '#e7515a'
+                                });
+                            });
+                    },
+
                     fetchUserDetails() {
                         axios.post("{{ route('frontend.user.details') }}", {
                                 eventSlug: '{{ $event->slug }}',
@@ -967,6 +1016,18 @@
                     }
                 }
             });
+        </script>
+
+        <script>
+            function rotateAndReload() {
+                let icon = document.getElementById("refreshIcon");
+                icon.classList.add("rotaterefresh");
+
+                setTimeout(() => {
+                    icon.classList.remove("rotaterefresh");
+                    // location.reload();
+                }, 1000);
+            }
         </script>
     @endsection
 

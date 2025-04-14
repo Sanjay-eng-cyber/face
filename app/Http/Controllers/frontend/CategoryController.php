@@ -65,11 +65,11 @@ class CategoryController extends Controller
             $res = Http::withHeaders([
                 'X-API-TOKEN' => config('app.python_api_token'),
             ])->attach(
-                    'image_name', // The name of the file field in the request
-                    file_get_contents($destinationPath . $filename), // The file's content
-                    $filename, // The file name
-                    ['Content-Type' => 'image/jpeg']
-                )->post(config('app.python_api_url') . '/inputimg/');
+                'image_name', // The name of the file field in the request
+                file_get_contents($destinationPath . $filename), // The file's content
+                $filename, // The file name
+                ['Content-Type' => 'image/jpeg']
+            )->post(config('app.python_api_url') . '/inputimg/');
 
             if ($res->successful()) {
                 // dd($res);
@@ -108,5 +108,20 @@ class CategoryController extends Controller
 
 
         return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+    }
+
+    public function syncMatchedImages(Request $request)
+    {
+        // dd($request->eventSlug);
+        try {
+            $event = Event::whereSlug($request->eventSlug)->firstOrFail();
+            // dd($event);
+            $frontendUser = FrontendUser::findOrFail($request->user_id);
+
+            UploadedImageFaceMatchingRequestedEvent::dispatch($frontendUser);
+            return response()->json(['status' => true, 'message' => "Images Synced Successfully"]);
+        } catch (\Throwable $th) {
+            return response()->json(['status' => false, 'message' => 'Something Went Wrong']);
+        }
     }
 }

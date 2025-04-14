@@ -87,6 +87,7 @@ Route::domain(config('app.web_domain'))->group(function () {
             Route::post('event/user-submit', 'App\Http\Controllers\frontend\EventController@userFormSubmit')->name('frontend.event.user-submit');
             Route::post('event/fetch-matched-images', 'App\Http\Controllers\frontend\EventController@fetchMatchedImages')->name('frontend.event.fetch-matched-images');
             Route::post('event/sync-matched-images', 'App\Http\Controllers\frontend\EventController@syncMatchedImages')->name('frontend.event.sync-matched-images');
+            Route::post('category/sync-matched-images', 'App\Http\Controllers\frontend\CategoryController@syncMatchedImages')->name('frontend.category.sync-matched-images');
         });
     });
 
